@@ -9,9 +9,10 @@ CORS-Problem und verhindert, dass der API-Key im Browser sichtbar ist.
 2. Umgebungsvariablen setzen:
    - `POSTAL_URL` – z. B. `https://postal01.meuser-webservice.de`
    - `POSTAL_API_KEY` – dein Postal API-Key
-   - `DEFAULT_FROM` – Absenderadresse, z. B. `info@meuser.biz`
-   - `DEFAULT_TO` – Zieladresse fürs Kontaktformular
    - `ALLOWED_ORIGIN` – deine Landingpage-Domain (statt `*` in Produktion)
+
+   Absender-/Empfängeradresse werden NICHT hier gesetzt, sondern kommen aus dem
+   Admin-Bereich der Landing Page (Postal API → Absender-/Empfänger-Adresse).
 3. Port 3000 exposen, Domain zuweisen (z. B. `proxy.meuser.biz`).
 4. Deployen.
 

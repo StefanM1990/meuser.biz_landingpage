@@ -6,8 +6,6 @@ const http = require('http');
 const PORT = process.env.PORT || 3000;
 const POSTAL_URL = process.env.POSTAL_URL;       // z.B. https://postal01.meuser-webservice.de
 const POSTAL_API_KEY = process.env.POSTAL_API_KEY;
-const DEFAULT_FROM = process.env.DEFAULT_FROM || 'info@meuser.biz';
-const DEFAULT_TO = process.env.DEFAULT_TO || 'info@meuser.biz';
 const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || '*';
 
 function send(res, status, body) {
@@ -33,10 +31,14 @@ const server = http.createServer((req, res) => {
         const message = data.message || '';
         const name = data.name || '';
         const email = data.email || '';
-        const to = data.to || DEFAULT_TO;
+        const to = data.to;
+        const from = data.from;
 
         if (!POSTAL_URL || !POSTAL_API_KEY) {
           return send(res, 500, { ok: false, error: 'Proxy ist nicht konfiguriert (POSTAL_URL/POSTAL_API_KEY fehlen).' });
+        }
+        if (!to || !from) {
+          return send(res, 400, { ok: false, error: 'Absender-/Empfängeradresse fehlt (im Admin-Bereich unter Postal API konfigurieren).' });
         }
 
         const postalRes = await fetch(POSTAL_URL.replace(/\/$/, '') + '/api/v1/send/message', {
@@ -44,7 +46,7 @@ const server = http.createServer((req, res) => {
           headers: { 'Content-Type': 'application/json', 'X-Server-API-Key': POSTAL_API_KEY },
           body: JSON.stringify({
             to: [to],
-            from: DEFAULT_FROM,
+            from: from,
             subject: `[Kontaktformular] ${subject}`,
             plain_body: `Name: ${name}\nE-Mail: ${email}\n\n${message}`
           })
