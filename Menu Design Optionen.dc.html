@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><style>
+body{margin:0;background:#f0eee9;font-family:system-ui,sans-serif}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}
+.icon{width:15px;height:15px;flex-shrink:0}
+</style></helmet>
+<section class="dv-turn" id="t1">
+  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Moderneres Menü — 3 Richtungen</span></div>
+  <div class="dv-opts">
+
+    <div class="dv-opt" id="1a">
+      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Glass Pill — schwebend, weicher Schatten, aktiver Punkt statt Block</div>
+      <div class="dv-card" style="width:820px; padding:60px 30px; background:linear-gradient(135deg,#eef2f7,#e4ecf5);">
+        <nav style="display:flex; align-items:center; gap:4px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); padding:6px; border-radius:999px; border:1px solid rgba(255,255,255,0.6); box-shadow:0 10px 30px -10px rgba(15,23,42,0.25); width:fit-content; margin:0 auto;">
+          <a style="display:flex; align-items:center; gap:7px; color:#fff; background:linear-gradient(135deg,#0F172A,#1e293b); font-size:14px; font-weight:600; padding:10px 20px; border-radius:999px; box-shadow:0 4px 12px -2px rgba(15,23,42,0.4);">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v9h13v-9"></path></svg>Start</a>
+          <a style="display:flex; align-items:center; gap:7px; color:#334155; font-size:14px; font-weight:600; padding:10px 20px; border-radius:999px;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-3 11.2c.4.25.6.7.6 1.15V16h4.8v-.65c0-.45.2-.9.6-1.15A6 6 0 0 0 12 3Z"></path><path d="M9 18h6M10 21h4"></path></svg>Leistungen</a>
+          <a style="display:flex; align-items:center; gap:7px; color:#334155; font-size:14px; font-weight:600; padding:10px 20px; border-radius:999px;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"></path></svg>Über uns</a>
+          <a style="display:flex; align-items:center; gap:7px; color:#334155; font-size:14px; font-weight:600; padding:10px 20px; border-radius:999px;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.6 5.9 6.4.6-4.8 4.3 1.5 6.3L12 16.4l-5.7 3.2 1.5-6.3-4.8-4.3 6.4-.6z"></path></svg>Referenzen</a>
+          <a style="display:flex; align-items:center; gap:7px; color:#334155; font-size:14px; font-weight:600; padding:10px 20px; border-radius:999px;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"></path><path d="M4 7l8 6 8-6"></path></svg>Kontakt</a>
+          <a style="margin-left:6px; background:linear-gradient(135deg,#007BFF,#0062cc); color:#fff; padding:10px 22px; border-radius:999px; font-size:14px; font-weight:600; box-shadow:0 6px 16px -4px rgba(0,123,255,0.6);">Anfrage</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="dv-opt" id="1b">
+      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Minimal Underline — kein Container, dünne Linie unter aktivem Punkt</div>
+      <div class="dv-card" style="width:820px; padding:60px 30px; background:#fff;">
+        <nav style="display:flex; align-items:center; gap:30px; width:fit-content; margin:0 auto;">
+          <a style="display:flex; flex-direction:column; align-items:center; gap:6px; color:#0F172A; font-size:14px; font-weight:700; padding-bottom:8px; border-bottom:2px solid #007BFF;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v9h13v-9"></path></svg>Start</a>
+          <a style="display:flex; flex-direction:column; align-items:center; gap:6px; color:#64748B; font-size:14px; font-weight:600; padding-bottom:8px; border-bottom:2px solid transparent;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-3 11.2c.4.25.6.7.6 1.15V16h4.8v-.65c0-.45.2-.9.6-1.15A6 6 0 0 0 12 3Z"></path><path d="M9 18h6M10 21h4"></path></svg>Leistungen</a>
+          <a style="display:flex; flex-direction:column; align-items:center; gap:6px; color:#64748B; font-size:14px; font-weight:600; padding-bottom:8px; border-bottom:2px solid transparent;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"></path></svg>Über uns</a>
+          <a style="display:flex; flex-direction:column; align-items:center; gap:6px; color:#64748B; font-size:14px; font-weight:600; padding-bottom:8px; border-bottom:2px solid transparent;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.6 5.9 6.4.6-4.8 4.3 1.5 6.3L12 16.4l-5.7 3.2 1.5-6.3-4.8-4.3 6.4-.6z"></path></svg>Referenzen</a>
+          <a style="display:flex; flex-direction:column; align-items:center; gap:6px; color:#64748B; font-size:14px; font-weight:600; padding-bottom:8px; border-bottom:2px solid transparent;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"></path><path d="M4 7l8 6 8-6"></path></svg>Kontakt</a>
+          <a style="margin-left:10px; background:#0F172A; color:#fff; padding:11px 24px; border-radius:8px; font-size:14px; font-weight:600;">Anfrage</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="dv-opt" id="1c">
+      <div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Icon-Chip Compact — runde Icon-Kacheln, Label erscheint erst beim Hover/aktiv</div>
+      <div class="dv-card" style="width:820px; padding:60px 30px; background:#F8FAFC;">
+        <nav style="display:flex; align-items:center; gap:8px; width:fit-content; margin:0 auto; background:#fff; padding:6px; border-radius:14px; border:1px solid #E2E8F0; box-shadow:0 4px 14px -6px rgba(15,23,42,0.1);">
+          <a style="display:flex; align-items:center; gap:8px; color:#fff; background:#007BFF; font-size:13.5px; font-weight:600; padding:10px 16px; border-radius:10px;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v9h13v-9"></path></svg>Start</a>
+          <a style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; color:#334155; border-radius:10px;" title="Leistungen">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-3 11.2c.4.25.6.7.6 1.15V16h4.8v-.65c0-.45.2-.9.6-1.15A6 6 0 0 0 12 3Z"></path><path d="M9 18h6M10 21h4"></path></svg></a>
+          <a style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; color:#334155; border-radius:10px;" title="Über uns">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"></path></svg></a>
+          <a style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; color:#334155; border-radius:10px;" title="Referenzen">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.6 5.9 6.4.6-4.8 4.3 1.5 6.3L12 16.4l-5.7 3.2 1.5-6.3-4.8-4.3 6.4-.6z"></path></svg></a>
+          <a style="display:flex; align-items:center; justify-content:center; width:40px; height:40px; color:#334155; border-radius:10px;" title="Kontakt">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"></path><path d="M4 7l8 6 8-6"></path></svg></a>
+          <a style="margin-left:6px; background:#0F172A; color:#fff; padding:10px 20px; border-radius:10px; font-size:13.5px; font-weight:600;">Anfrage</a>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+  <p class="dv-next">Weiter mit: "<a class="dv-oid" href="#1a">1a</a> ins Hauptdesign übernehmen" · "<a class="dv-oid" href="#1b">1b</a> aber mit Icons in Farbe" · "Kombiniere <a class="dv-oid" href="#1c">1c</a> Form mit <a class="dv-oid" href="#1a">1a</a> Farben"</p>
+</section>
+
+</x-dc>
+</body>
+</html>
