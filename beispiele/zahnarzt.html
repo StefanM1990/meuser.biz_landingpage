@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zahnärzte am Rosengarten – Gemeinschaftspraxis in Tönisvorst</title>
+<meta name="description" content="Zahnärzte am Rosengarten in Tönisvorst: Prophylaxe, Implantologie, Ästhetik, Kinderzahnheilkunde und einfühlsame Behandlung von Angstpatienten. Jetzt online Termin anfragen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --soft:#f4faf9;
+  --mint:#e3f4f0;
+  --mint-2:#c9ebe3;
+  --teal:#2fae9a;
+  --teal-deep:#0d7466;
+  --ink:#10302c;
+  --text:#2f4a47;
+  --muted:#5d7774;
+  --line:#e2ecea;
+  --star:#f5b301;
+  --r-lg:28px;
+  --r-md:20px;
+  --r-sm:14px;
+  --shadow:0 1px 2px rgba(16,48,44,.04),0 12px 32px -12px rgba(16,48,44,.14);
+  --wrap:1200px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;overflow-wrap:break-word;hyphens:auto}
+img{max-width:100%;display:block}
+a{color:var(--teal-deep)}
+h1,h2,h3,h4{color:var(--ink);line-height:1.15;margin:0;letter-spacing:-.02em;font-weight:700}
+p{margin:0}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.wrap>*,.wrap>*>*,.grid-3>*,.team-grid>*,.steps>*{min-width:0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep)}
+.eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--teal)}
+.section{padding:112px 0}
+.section-head{max-width:640px;margin-bottom:56px}
+.section-head h2{font-size:clamp(30px,4vw,46px);margin-top:14px}
+.section-head p{margin-top:16px;color:var(--muted);font-size:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:700;font-size:16px;padding:15px 26px;border-radius:999px;border:2px solid transparent;text-decoration:none;cursor:pointer;transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+.btn-primary{background:var(--teal-deep);color:#fff;box-shadow:0 10px 24px -10px rgba(13,116,102,.6)}
+.btn-primary:hover{background:#0a5f54;transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--teal);transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+svg.i{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+
+/* Badge */
+.meuser-badge{position:fixed;left:16px;bottom:16px;z-index:9999;background:rgba(16,48,44,.92);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:10px 16px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(6px);max-width:calc(100vw - 32px)}
+.meuser-badge:hover{background:var(--teal-deep)}
+
+/* Header */
+.top{background:var(--ink);color:#d6ebe7;font-size:14px}
+.top .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
+.top a{color:#fff;text-decoration:none;font-weight:600}
+.top span{display:inline-flex;align-items:center;gap:8px}
+.top svg{width:15px;height:15px}
+header.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.nav.scrolled{border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:80px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:44px;height:44px;border-radius:14px;background:var(--mint);display:grid;place-items:center;color:var(--teal-deep);flex:none}
+.logo-mark svg{width:26px;height:26px}
+.logo b{display:block;font-size:17px;line-height:1.1;letter-spacing:-.01em}
+.logo small{display:block;font-size:12.5px;color:var(--muted);font-weight:500}
+.menu{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}
+.menu a{color:var(--text);text-decoration:none;font-weight:600;font-size:15px}
+.menu a:hover{color:var(--teal-deep)}
+.menu .btn{padding:11px 20px;font-size:15px;color:#fff}
+.burger{display:none;background:var(--mint);border:0;width:46px;height:46px;border-radius:14px;cursor:pointer;color:var(--ink)}
+.burger svg{width:22px;height:22px}
+
+/* Hero */
+.hero{padding:72px 0 96px;background:radial-gradient(1000px 520px at 90% -10%,var(--mint) 0,transparent 60%),radial-gradient(600px 400px at -10% 110%,#f0f9f7 0,transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 16px 7px 8px;font-size:14px;font-weight:600;color:var(--ink);box-shadow:var(--shadow)}
+.pill i{width:26px;height:26px;border-radius:50%;background:var(--mint);display:grid;place-items:center;color:var(--teal-deep);font-style:normal}
+.pill i svg{width:15px;height:15px}
+.hero h1{position:relative;z-index:0;font-size:clamp(40px,5.6vw,70px);font-weight:800;letter-spacing:-.035em;margin-top:24px}
+.hero h1 em{font-style:normal;color:var(--teal-deep);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.22em;background:var(--mint-2);border-radius:8px;z-index:-1}
+.hero h1 .punct{margin-left:-.14em}
+.hero .lead{font-size:19px;color:var(--muted);margin-top:24px;max-width:540px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px;max-width:560px}
+.stat{border-left:2px solid var(--mint-2);padding-left:16px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.1}
+.stat span{font-size:14px;color:var(--muted)}
+.hero-visual{position:relative}
+.hero-visual .photo{border-radius:40px 40px 40px 140px;overflow:hidden;aspect-ratio:4/4.6;box-shadow:var(--shadow)}
+.hero-visual .photo img{width:100%;height:100%;object-fit:cover}
+.float{position:absolute;background:#fff;border-radius:var(--r-md);box-shadow:0 20px 40px -16px rgba(16,48,44,.28);padding:16px 18px;display:flex;align-items:center;gap:14px}
+.float.rating{left:-36px;bottom:56px}
+.float.next{right:-20px;top:40px}
+.float .ico{width:44px;height:44px;border-radius:14px;background:var(--mint);display:grid;place-items:center;color:var(--teal-deep);flex:none}
+.float .ico svg{width:22px;height:22px}
+.float b{display:block;color:var(--ink);font-size:15px;line-height:1.2}
+.float small{color:var(--muted);font-size:13px}
+.stars{display:inline-flex;gap:2px;color:var(--star)}
+.stars svg{width:16px;height:16px;fill:currentColor}
+
+/* Trust strip */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.trust .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 32px;padding-top:26px;padding-bottom:26px}
+.trust div{display:flex;align-items:center;gap:12px;font-weight:600;color:var(--ink);font-size:15px}
+.trust svg{width:22px;height:22px;color:var(--teal-deep);flex:none}
+
+/* Treatments */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--mint-2)}
+.card .ico{width:56px;height:56px;border-radius:18px;background:var(--mint);color:var(--teal-deep);display:grid;place-items:center;margin-bottom:24px}
+.card .ico svg{width:28px;height:28px}
+.card h3{font-size:21px}
+.card p{margin-top:10px;color:var(--muted);font-size:16px}
+.card ul{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.card li{font-size:13px;font-weight:600;color:var(--teal-deep);background:var(--soft);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+.card.feature{background:var(--ink);border-color:var(--ink);color:#cfe6e1;position:relative;overflow:hidden}
+.card.feature h3{color:#fff}
+.card.feature p{color:#b9d6d0}
+.card.feature .ico{background:rgba(255,255,255,.1);color:#7fe0cf}
+.card.feature li{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);color:#bff0e6}
+.card.feature::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(47,174,154,.35),transparent 70%)}
+
+/* About */
+.about{background:var(--soft)}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.about-imgs{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:end}
+.about-imgs img{border-radius:var(--r-lg);width:100%;object-fit:cover;box-shadow:var(--shadow)}
+.about-imgs img:first-child{aspect-ratio:3/4}
+.about-imgs img:last-child{aspect-ratio:3/3.6;margin-bottom:48px}
+.about h2{font-size:clamp(30px,4vw,44px);margin-top:14px}
+.about p.body{margin-top:20px;color:var(--muted)}
+.checks{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:14px}
+.checks li{display:flex;gap:14px;align-items:flex-start;color:var(--ink);font-weight:500}
+.checks li svg{width:24px;height:24px;flex:none;color:#fff;background:var(--teal);border-radius:50%;padding:5px;stroke-width:2.6}
+
+/* Team */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.member{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.member:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.member .img{aspect-ratio:4/4.4;background:var(--mint);overflow:hidden}
+.member img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .5s}
+.member:hover img{transform:scale(1.04)}
+.member .body{padding:22px 24px 26px}
+.member h3{font-size:19px}
+.member .role{color:var(--teal-deep);font-weight:600;font-size:14px;margin-top:4px}
+.member p{color:var(--muted);font-size:15px;margin-top:12px}
+.member .lang{margin-top:14px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.member .lang svg{width:16px;height:16px;color:var(--teal-deep)}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s;position:relative}
+.step{position:relative;padding:32px 28px;border-radius:var(--r-lg);background:var(--soft);border:1px solid var(--line)}
+.step .num{width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid var(--mint-2);display:grid;place-items:center;font-weight:800;color:var(--teal-deep);font-size:18px;margin-bottom:22px}
+.step h3{font-size:19px}
+.step p{color:var(--muted);font-size:15.5px;margin-top:10px}
+.step .time{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13px;font-weight:700;color:var(--teal-deep)}
+.step .time svg{width:15px;height:15px}
+.bring{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;background:#fff;border:1px dashed var(--mint-2);border-radius:var(--r-md);padding:20px 28px;font-size:15px}
+.bring b{color:var(--ink)}
+.bring span{display:inline-flex;align-items:center;gap:8px;color:var(--muted)}
+.bring svg{width:18px;height:18px;color:var(--teal-deep)}
+
+/* Hours */
+.hours{background:linear-gradient(180deg,#fff 0,var(--soft) 100%)}
+.hours .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:stretch}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:40px;box-shadow:var(--shadow)}
+.panel h2{font-size:clamp(28px,3.4vw,38px);margin-top:12px}
+table.times{width:100%;border-collapse:collapse;margin-top:28px;font-size:16px}
+.times th,.times td{padding:14px 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.times th{font-weight:600;color:var(--ink);width:38%}
+.times td{color:var(--text);font-variant-numeric:tabular-nums}
+.times td small{color:var(--muted)}
+.times tr.today th,.times tr.today td{color:var(--teal-deep)}
+.times tr.today th::after{content:"Heute";margin-left:10px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:var(--mint);color:var(--teal-deep);padding:3px 8px;border-radius:999px;vertical-align:2px}
+.times tr:last-child th,.times tr:last-child td{border-bottom:0}
+.note{margin-top:22px;font-size:14.5px;color:var(--muted)}
+.emergency{border-radius:var(--r-lg);padding:40px;background:var(--ink);color:#cfe6e1;display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden}
+.emergency::before{content:"";position:absolute;inset:auto -80px -80px auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(47,174,154,.35),transparent 70%)}
+.emergency .tag{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#fff1ee;color:#a2321f;font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px}
+.emergency .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:#d9472d;box-shadow:0 0 0 4px rgba(217,71,45,.2)}
+.emergency h3{color:#fff;font-size:26px}
+.emergency p{color:#b9d6d0;font-size:16px}
+.emergency .phone{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:16px 18px;text-decoration:none;color:#fff;position:relative}
+.emergency .phone svg{width:24px;height:24px;color:#7fe0cf;flex:none}
+.emergency .phone b{display:block;font-size:19px}
+.emergency .phone small{color:#a9cdc6;font-size:13px}
+.emergency ul{margin:0;padding-left:20px;color:#b9d6d0;font-size:15px}
+
+/* Reviews */
+.reviews-top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:48px}
+.reviews-top .section-head{margin-bottom:0}
+.score{display:flex;align-items:center;gap:20px;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:20px 26px;box-shadow:var(--shadow)}
+.score b{font-size:48px;font-weight:800;color:var(--ink);letter-spacing:-.04em;line-height:1}
+.score .stars svg{width:20px;height:20px}
+.score small{display:block;color:var(--muted);font-size:13.5px;margin-top:4px}
+.review{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column;gap:16px}
+.review header{display:flex;align-items:center;gap:12px}
+.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;flex:none}
+.review header b{display:block;color:var(--ink);font-size:15.5px}
+.review header small{color:var(--muted);font-size:13px}
+.review .src{margin-left:auto;font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 9px;white-space:nowrap}
+.review p{color:var(--text);font-size:16px}
+.review .stars svg{width:17px;height:17px}
+.review .reply{font-size:14px;color:var(--muted);background:var(--soft);border-radius:var(--r-sm);padding:12px 14px;border-left:3px solid var(--teal)}
+
+/* FAQ */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+.faq .section-head{position:sticky;top:120px;align-self:start}
+.acc{display:grid;gap:14px}
+.acc details{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .2s,box-shadow .2s}
+.acc details[open]{border-color:var(--mint-2);box-shadow:var(--shadow)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;font-weight:700;color:var(--ink);font-size:17px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .pm{width:32px;height:32px;border-radius:50%;background:var(--mint);display:grid;place-items:center;flex:none;color:var(--teal-deep);transition:transform .25s}
+.acc summary .pm svg{width:16px;height:16px;stroke-width:2.4}
+.acc details[open] .pm{transform:rotate(45deg)}
+.acc .ans{padding:0 26px 24px;color:var(--muted);font-size:16px}
+
+/* Booking */
+.booking{background:var(--soft)}
+.booking-card{display:grid;grid-template-columns:.9fr 1.1fr;background:#fff;border-radius:36px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.booking-info{background:var(--teal-deep);color:#e3f4f0;padding:52px 48px;position:relative;overflow:hidden}
+.booking-info::after{content:"";position:absolute;right:-90px;bottom:-90px;width:300px;height:300px;border-radius:50%;border:40px solid rgba(255,255,255,.07)}
+.booking-info h2{color:#fff;font-size:clamp(28px,3.4vw,40px);margin-top:14px}
+.booking-info .eyebrow{color:#bff0e6}
+.booking-info .eyebrow::before{background:#7fe0cf}
+.booking-info p{margin-top:16px;color:#cdeee7}
+.contact-list{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:18px;position:relative;z-index:1}
+.contact-list li{display:flex;gap:14px;align-items:flex-start}
+.contact-list svg{width:22px;height:22px;flex:none;margin-top:2px;color:#9ff0e0}
+.contact-list b{display:block;color:#fff}
+.contact-list a{color:#fff}
+form.book{padding:52px 48px;display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label,.field legend{font-size:14px;font-weight:700;color:var(--ink)}
+.field input,.field select,.field textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--soft);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:13px 16px;width:100%;transition:border-color .2s,background .2s}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal);background:#fff;box-shadow:0 0 0 4px rgba(47,174,154,.15)}
+fieldset.field{border:0;padding:0;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-block;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:14.5px;font-weight:600;color:var(--text);transition:all .2s}
+.chips input:checked+span{background:var(--mint);border-color:var(--teal);color:var(--teal-deep)}
+.chips input:focus-visible+span{outline:3px solid var(--teal);outline-offset:2px}
+.consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted)}
+.consent input{width:20px;height:20px;accent-color:var(--teal-deep);margin-top:2px;flex:none}
+.form-foot{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.form-foot small{color:var(--muted);font-size:13.5px}
+.success{grid-column:1/-1;display:none;align-items:center;gap:14px;background:var(--mint);color:var(--teal-deep);font-weight:600;border-radius:var(--r-sm);padding:16px 18px}
+.success svg{width:24px;height:24px;flex:none}
+.success.show{display:flex}
+
+/* Footer */
+footer{background:var(--ink);color:#a9cdc6;padding:72px 0 96px;font-size:15px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer h4{color:#fff;font-size:15px;margin-bottom:14px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer a{color:#d6ebe7;text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+footer .logo{color:#fff}
+footer .logo small{color:#a9cdc6}
+footer .logo-mark{background:rgba(255,255,255,.08);color:#7fe0cf}
+footer .about-f{margin-top:18px;max-width:320px}
+.legal{margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13.5px}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{transition:none!important;animation:none!important}
+}
+
+/* Responsive */
+@media (max-width:1100px){
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .float.rating{left:-12px}
+  .float.next{right:-8px}
+}
+@media (max-width:1024px){
+  .menu{gap:20px}
+  .hero .wrap{gap:40px}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .about .wrap{gap:48px}
+  .faq .wrap{grid-template-columns:1fr;gap:0}
+  .faq .section-head{position:static}
+  footer .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .burger{display:grid;place-items:center}
+  .menu{position:absolute;left:0;right:0;top:80px;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:12px 28px 24px;border-bottom:1px solid var(--line);box-shadow:0 20px 30px -20px rgba(16,48,44,.25);display:none}
+  .menu.open{display:flex}
+  .menu li a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+  .menu li:last-child a{border:0;margin-top:14px;text-align:center}
+  .hero .wrap,.about .wrap,.hours .wrap,.booking-card{grid-template-columns:minmax(0,1fr)}
+  .hero-visual{max-width:560px}
+  .about-imgs{order:2}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .section{padding:76px 0}
+  .section-head{margin-bottom:36px}
+  .top .wrap{justify-content:center;font-size:13px}
+  .top .hide-s{display:none}
+  .hero{padding:44px 0 64px}
+  .stats{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .stat{padding-left:10px}
+  .stat b{font-size:22px}
+  .stat span{font-size:12.5px;line-height:1.35;display:block}
+  .float.next{display:none}
+  .float.rating{left:12px;bottom:16px;right:auto}
+  .grid-3,.team-grid,.steps{grid-template-columns:minmax(0,1fr)}
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .card,.step{padding:26px}
+  .panel,.emergency{padding:28px 22px}
+  .times th{width:44%}
+  .booking-info,form.book{padding:36px 22px}
+  form.book{grid-template-columns:minmax(0,1fr)}
+  .about-imgs img:last-child{margin-bottom:24px}
+  footer .cols{grid-template-columns:1fr}
+  .acc summary{padding:18px 20px;font-size:16px}
+  .acc .ans{padding:0 20px 20px}
+  .score{width:100%}
+}
+</style>
+</head>
+<body>
+
+<a class="meuser-badge" href="../beispiele.html">← Beispielseite von meuser.biz · Zur Übersicht</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></symbol>
+  </defs>
+</svg>
+
+<div class="top">
+  <div class="wrap">
+    <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Di &amp; Do bis 19:00 Uhr geöffnet</span>
+    <span class="hide-s"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Am Rosengarten 4, 47918 Tönisvorst</span>
+    <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+4921511234567">02151 123 45 67</a></span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Zahnärzte am Rosengarten – Startseite">
+      <span class="logo-mark"><svg class="i" viewBox="0 0 32 32" aria-hidden="true"><path d="M10.5 5.5c-3.4 0-5.5 2.7-5.5 6.2 0 3.2 1.4 5.3 2.3 8.3.9 3.2 1.3 6.5 3.3 6.5 2.3 0 2.1-6 5.4-6s3.1 6 5.4 6c2 0 2.4-3.3 3.3-6.5.9-3 2.3-5.1 2.3-8.3 0-3.5-2.1-6.2-5.5-6.2-2.3 0-3.4 1.3-5.5 1.3s-3.2-1.3-5.5-1.3z"/><path d="M13 11.5c1 .6 2 .9 3 .9"/></svg></span>
+      <span><b>Zahnärzte am Rosengarten</b><small>Gemeinschaftspraxis · Tönisvorst</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="menu" id="menu">
+      <li><a href="#leistungen">Behandlungen</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#erster-besuch">Erster Besuch</a></li>
+      <li><a href="#zeiten">Öffnungszeiten</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a class="btn btn-primary" href="#termin">Termin anfragen</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="pill"><i><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></i>Neue Patientinnen und Patienten willkommen</span>
+      <h1>Gesunde Zähne<span class="punct">,</span> <em>ganz entspannt<span class="punct">.</span></em></h1>
+      <p class="lead">Vier Zahnärztinnen und Zahnärzte, ein ruhiges Haus und viel Zeit für Ihre Fragen. Wir behandeln modern, schonend und erklären jeden Schritt, bevor wir ihn gehen.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#termin">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>
+          Online Termin anfragen
+        </a>
+        <a class="btn btn-ghost" href="tel:+4921511234567">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          02151 123 45 67
+        </a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>18 Jahre</b><span>Praxis am Rosengarten</span></div>
+        <div class="stat"><b>6.400+</b><span>Patientinnen &amp; Patienten</span></div>
+        <div class="stat"><b>4,9 / 5</b><span>aus 312 Bewertungen</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=80&auto=format&fit=crop" alt="Heller, moderner Behandlungsraum mit mintfarbenem Behandlungsstuhl" width="800" height="920"></div>
+      <div class="float next">
+        <span class="ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17M8 14h3"/></svg></span>
+        <span><b>Nächster freier Termin</b><small>Donnerstag, 9:30 Uhr</small></span>
+      </div>
+      <div class="float rating">
+        <span><b>4,9 von 5</b><span class="stars" aria-label="4,9 von 5 Sternen"><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg></span><small>312 Patientenbewertungen</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Alle Kassen &amp; Privat</div>
+    <div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>Barrierefreie Praxis im EG</div>
+    <div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="16" height="11" rx="2"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg>Hygiene nach RKI-Richtlinie</div>
+    <div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h2l2-7h10l2 7h2"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="16.5" cy="18" r="1.6"/></svg>Kostenlose Parkplätze am Haus</div>
+    <div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Termine auch bis 19 Uhr</div>
+  </div>
+</div>
+
+<section class="section" id="leistungen">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Behandlungsschwerpunkte</span>
+      <h2>Alles für Ihr Lächeln – unter einem Dach.</h2>
+      <p>Von der Vorsorge bis zum festsitzenden Zahnersatz: Jede Behandlung planen wir gemeinsam mit Ihnen, transparent und mit schriftlichem Kostenplan.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card reveal">
+        <div class="ico"><svg class="i" viewBox="0 0 32 32" aria-hidden="true"><path d="M10.5 6c-3.2 0-5 2.5-5 5.8 0 3 1.3 5 2.1 7.8.8 3 1.2 6.2 3.1 6.2 2.1 0 2-5.6 5.3-5.6s3.2 5.6 5.3 5.6c1.9 0 2.3-3.2 3.1-6.2.8-2.8 2.1-4.8 2.1-7.8C26.5 8.5 24.7 6 21.5 6c-2.1 0-3.2 1.2-5.5 1.2S12.6 6 10.5 6z"/><path d="M24 3l.7 1.6L26.3 5l-1.6.7L24 7.3l-.7-1.6L21.7 5l1.6-.4z"/></svg></div>
+        <h3>Prophylaxe &amp; PZR</h3>
+        <p>Professionelle Zahnreinigung durch unsere Dentalhygienikerin – gründlich, schmerzarm und mit Tipps für zu Hause. Ab 89 € pro Sitzung.</p>
+        <ul><li>Airflow</li><li>Fluoridierung</li><li>Bonusheft</li></ul>
+      </article>
+      <article class="card feature reveal">
+        <div class="ico"><svg class="i" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 4h12c0 4-2 6-6 6s-6-2-6-6z"/><path d="M13 10v3h6v-3M13 16h6M13.5 19h5M14 22h4M15 25h2"/><path d="M16 13v15"/></svg></div>
+        <h3>Implantologie</h3>
+        <p>Feste Zähne mit digitaler 3D-Planung, schonender Navigation und Sofortversorgung in geeigneten Fällen. Inklusive Knochenaufbau.</p>
+        <ul><li>DVT-Diagnostik</li><li>Navigiert</li><li>Sofortimplantat</li></ul>
+      </article>
+      <article class="card reveal">
+        <div class="ico"><svg class="i" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 13c3.5 4 7 6 11 6s7.5-2 11-6"/><path d="M8 15.5c2.3 4.5 5 7.5 8 7.5s5.7-3 8-7.5"/><path d="M12 18.5v2.7M16 19v3.6M20 18.5v2.7"/><path d="M25 4l.8 1.8 1.8.8-1.8.8L25 9.2l-.8-1.8-1.8-.8 1.8-.8z"/></svg></div>
+        <h3>Ästhetik &amp; Aligner</h3>
+        <p>Bleaching, hauchdünne Veneers und unsichtbare Zahnschienen. Vorab zeigen wir Ihnen Ihr neues Lächeln als digitales Mock-up.</p>
+        <ul><li>Bleaching</li><li>Veneers</li><li>Aligner</li></ul>
+      </article>
+      <article class="card reveal">
+        <div class="ico"><svg class="i" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="15" r="10"/><path d="M12 13.5v.01M20 13.5v.01"/><path d="M11.5 18c1.2 1.6 2.7 2.4 4.5 2.4s3.3-.8 4.5-2.4"/><path d="M13 5.6c.5 1.6 1.5 2.4 3 2.4"/></svg></div>
+        <h3>Kinderzahnheilkunde</h3>
+        <p>Spielerisch, geduldig und kindgerecht erklärt – mit eigenem Kinderbehandlungsraum, Fissurenversiegelung und Schatzkiste.</p>
+        <ul><li>Ab dem 1. Zahn</li><li>Versiegelung</li><li>Putzschule</li></ul>
+      </article>
+      <article class="card reveal">
+        <div class="ico"><svg class="i" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27s-10-6.2-10-13.3C6 10 8.6 7 12 7c2 0 3.2 1 4 2.3C16.8 8 18 7 20 7c3.4 0 6 3 6 6.7C26 20.8 16 27 16 27z"/><path d="M10.5 15.5h3l1.5-3 2 6 1.5-3h3"/></svg></div>
+        <h3>Angstpatienten</h3>
+        <p>Ruhige Termine ohne Zeitdruck, Stopp-Signal per Handzeichen, Musik über Kopfhörer sowie Lachgas- oder Dämmerschlafsedierung.</p>
+        <ul><li>Lachgas</li><li>Dämmerschlaf</li><li>Extra-Zeit</li></ul>
+      </article>
+      <article class="card reveal">
+        <div class="ico"><svg class="i" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 11c3 2 6.5 3 11 3s8-1 11-3"/><path d="M9 13.2v4.3c0 3 1.2 7.5 3 7.5s1.8-4 4-4 2.2 4 4 4 3-4.5 3-7.5v-4.3"/><path d="M8 7.5c2.4 1 5 1.5 8 1.5s5.6-.5 8-1.5"/></svg></div>
+        <h3>Parodontologie &amp; Zahnersatz</h3>
+        <p>Zahnfleischbehandlung nach aktuellem Leitlinienstandard, Kronen und Brücken aus Vollkeramik – gefertigt im Partnerlabor in Krefeld.</p>
+        <ul><li>PAR-Therapie</li><li>Vollkeramik</li><li>CEREC</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="praxis">
+  <div class="wrap">
+    <div class="about-imgs reveal">
+      <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1600&q=80&auto=format&fit=crop" alt="Lichtdurchfluteter Behandlungsraum mit modernem Behandlungsstuhl" loading="lazy" width="600" height="800">
+      <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=1600&q=80&auto=format&fit=crop" alt="Bambus-Zahnbürsten in einem Glas auf weißem Tisch" loading="lazy" width="500" height="600">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Unsere Praxis</span>
+      <h2>Ein Ort, an dem man gerne wiederkommt.</h2>
+      <p class="body">Unsere Praxis liegt ruhig am Rosengarten, mit Blick ins Grüne und kurzen Wegen. Fünf helle Behandlungsräume, ein eigener Prophylaxe-Bereich und ein Wartezimmer, das eher an ein Café erinnert: So fühlt sich Zahnmedizin entspannter an.</p>
+      <ul class="checks">
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Digitales Röntgen mit bis zu 90 % weniger Strahlung</li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Intraoralscanner statt unangenehmer Abdrucklöffel</li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Schriftlicher Heil- und Kostenplan vor jeder größeren Behandlung</li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Termin-Erinnerung per SMS – auf Wunsch</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Praxis-Team</span>
+      <h2>Menschen, denen Sie vertrauen können.</h2>
+      <p>Vier Behandelnde mit eigenen Schwerpunkten – und ein Team aus 14 Fachkräften, das sich um alles Weitere kümmert.</p>
+    </div>
+    <div class="team-grid">
+      <article class="member reveal">
+        <div class="img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1600&q=80&auto=format&fit=crop" alt="Porträt von Dr. Katrin Wehling im weißen Kittel" loading="lazy" width="500" height="550"></div>
+        <div class="body">
+          <h3>Dr. Katrin Wehling</h3>
+          <div class="role">Zahnärztin · Praxisinhaberin</div>
+          <p>Tätigkeitsschwerpunkt Implantologie. Plant jedes Implantat digital und nimmt sich Zeit für Zweitmeinungen.</p>
+          <div class="lang"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>Deutsch, Englisch</div>
+        </div>
+      </article>
+      <article class="member reveal">
+        <div class="img"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1600&q=80&auto=format&fit=crop" alt="Porträt von Dr. Jonas Ebeling im weißen Kittel mit Brille" loading="lazy" width="500" height="550"></div>
+        <div class="body">
+          <h3>Dr. Jonas Ebeling</h3>
+          <div class="role">Zahnarzt · Praxisinhaber</div>
+          <p>Ästhetische Zahnheilkunde, Veneers und Aligner. Leidenschaftlicher Fan von Mock-ups vor jeder Behandlung.</p>
+          <div class="lang"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>Deutsch, Englisch, Türkisch</div>
+        </div>
+      </article>
+      <article class="member reveal">
+        <div class="img"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=1600&q=80&auto=format&fit=crop" alt="Porträt von Lena Brüggen in türkisfarbener Praxiskleidung" loading="lazy" width="500" height="550"></div>
+        <div class="body">
+          <h3>Lena Brüggen</h3>
+          <div class="role">Zahnärztin · Kinderzahnheilkunde</div>
+          <p>Zertifizierte Kinderzahnärztin und Ansprechpartnerin für Angstpatienten. Arbeitet mit Hypnose-Elementen.</p>
+          <div class="lang"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>Deutsch, Spanisch</div>
+        </div>
+      </article>
+      <article class="member reveal">
+        <div class="img"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1600&q=80&auto=format&fit=crop" alt="Porträt von Daniel Okafor in blauer Praxiskleidung" loading="lazy" width="500" height="550"></div>
+        <div class="body">
+          <h3>Daniel Okafor</h3>
+          <div class="role">Zahnarzt · Parodontologie</div>
+          <p>Master of Science Parodontologie. Behandelt Zahnfleischentzündungen gründlich und mit viel Ruhe.</p>
+          <div class="lang"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>Deutsch, Englisch, Französisch</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="erster-besuch" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ihr erster Besuch</span>
+      <h2>So läuft Ihr erster Termin ab.</h2>
+      <p>Kein Stress, keine Überraschungen. Planen Sie für den ersten Besuch etwa 45 Minuten ein.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">1</div>
+        <h3>Ankommen &amp; Kennenlernen</h3>
+        <p>Am Empfang begrüßen wir Sie persönlich. Den Anamnesebogen können Sie vorab online oder bei einer Tasse Tee ausfüllen.</p>
+        <span class="time"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>ca. 10 Min.</span>
+      </div>
+      <div class="step reveal">
+        <div class="num">2</div>
+        <h3>Gespräch ohne Kittel-Atmosphäre</h3>
+        <p>Wir sprechen über Ihre Wünsche, Sorgen und Vorgeschichte – im Beratungsraum, nicht auf dem Behandlungsstuhl.</p>
+        <span class="time"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>ca. 10 Min.</span>
+      </div>
+      <div class="step reveal">
+        <div class="num">3</div>
+        <h3>Sanfte Untersuchung</h3>
+        <p>Gründlicher Befund von Zähnen, Zahnfleisch und Kiefergelenk, bei Bedarf mit strahlungsarmem Digitalröntgen.</p>
+        <span class="time"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>ca. 15 Min.</span>
+      </div>
+      <div class="step reveal">
+        <div class="num">4</div>
+        <h3>Klarer Plan</h3>
+        <p>Sie erhalten alle Befunde verständlich erklärt, Behandlungsoptionen und – falls nötig – einen schriftlichen Kostenplan.</p>
+        <span class="time"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>ca. 10 Min.</span>
+      </div>
+    </div>
+    <div class="bring reveal">
+      <b>Bitte mitbringen:</b>
+      <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>Versichertenkarte</span>
+      <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M9 11h6M9 15h6"/></svg>Bonusheft</span>
+      <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>Medikamentenliste</span>
+      <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg>Röntgenbilder (falls vorhanden)</span>
+    </div>
+  </div>
+</section>
+
+<section class="section hours" id="zeiten">
+  <div class="wrap">
+    <div class="panel reveal">
+      <span class="eyebrow">Öffnungszeiten</span>
+      <h2>Wir sind für Sie da.</h2>
+      <table class="times" id="times">
+        <caption class="sr-only" style="position:absolute;left:-9999px">Sprechzeiten der Praxis</caption>
+        <tbody>
+          <tr data-day="1"><th scope="row">Montag</th><td>08:00 – 13:00 · 14:00 – 18:00</td></tr>
+          <tr data-day="2"><th scope="row">Dienstag</th><td>08:00 – 13:00 · 14:00 – 19:00</td></tr>
+          <tr data-day="3"><th scope="row">Mittwoch</th><td>08:00 – 13:00<br><small>nachmittags Prophylaxe nach Vereinbarung</small></td></tr>
+          <tr data-day="4"><th scope="row">Donnerstag</th><td>08:00 – 13:00 · 14:00 – 19:00</td></tr>
+          <tr data-day="5"><th scope="row">Freitag</th><td>08:00 – 14:00</td></tr>
+          <tr data-day="6"><th scope="row">Samstag</th><td>Jeden 1. Samstag im Monat 09:00 – 12:00</td></tr>
+          <tr data-day="0"><th scope="row">Sonntag</th><td>geschlossen</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Schmerzpatienten behandeln wir am selben Tag – bitte rufen Sie uns morgens ab 8:00 Uhr an.</p>
+    </div>
+    <aside class="emergency reveal" aria-labelledby="notdienst">
+      <span class="tag">Zahnärztlicher Notdienst</span>
+      <h3 id="notdienst">Akute Schmerzen außerhalb der Sprechzeiten?</h3>
+      <p>Abends, am Wochenende und an Feiertagen übernimmt der zahnärztliche Notdienst im Kreis Viersen. Die diensthabende Praxis erfahren Sie über die zentrale Notdienstnummer.</p>
+      <a class="phone" href="tel:+4921511234500">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        <span><b>02151 123 45 00</b><small>Notdienst-Ansage (fiktiv)</small></span>
+      </a>
+      <ul>
+        <li>Bei starker Schwellung, Fieber oder Unfall: 112</li>
+        <li>Ausgeschlagener Zahn: in Milch oder Zahnrettungsbox lagern</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="bewertungen">
+  <div class="wrap">
+    <div class="reviews-top">
+      <div class="section-head reveal">
+        <span class="eyebrow">Patientenstimmen</span>
+        <h2>Was unsere Patientinnen und Patienten sagen.</h2>
+      </div>
+      <div class="score reveal">
+        <b>4,9</b>
+        <div>
+          <span class="stars" aria-label="4,9 von 5 Sternen"><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg></span>
+          <small>312 Bewertungen · fiktives Bewertungsportal</small>
+        </div>
+      </div>
+    </div>
+    <div class="grid-3">
+      <article class="review reveal">
+        <header>
+          <span class="avatar" style="background:#2fae9a">SM</span>
+          <span><b>Sabine M.</b><small>vor 2 Wochen</small></span>
+          <span class="src">Verifiziert</span>
+        </header>
+        <span class="stars" aria-label="5 von 5 Sternen"><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg></span>
+        <p>„Ich hatte über zehn Jahre richtig Angst vorm Zahnarzt. Frau Brüggen hat mir jeden Schritt erklärt und nie gedrängt. Heute gehe ich tatsächlich gern zur Kontrolle.“</p>
+      </article>
+      <article class="review reveal">
+        <header>
+          <span class="avatar" style="background:#0d7466">TK</span>
+          <span><b>Thomas K.</b><small>vor 1 Monat</small></span>
+          <span class="src">Verifiziert</span>
+        </header>
+        <span class="stars" aria-label="5 von 5 Sternen"><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg></span>
+        <p>„Implantat bei Dr. Wehling: super Planung, alles vorher am Bildschirm gezeigt, Kosten exakt wie im Plan. Am nächsten Tag konnte ich schon wieder normal arbeiten.“</p>
+        <div class="reply"><b>Antwort der Praxis:</b> Vielen Dank, Herr K.! Wir freuen uns, dass alles so gut verheilt ist.</div>
+      </article>
+      <article class="review reveal">
+        <header>
+          <span class="avatar" style="background:#5d7774">JH</span>
+          <span><b>Jana H.</b><small>vor 2 Monaten</small></span>
+          <span class="src">Verifiziert</span>
+        </header>
+        <span class="stars" aria-label="5 von 5 Sternen"><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg><svg aria-hidden="true"><use href="#star"/></svg></span>
+        <p>„Unsere Kinder (4 und 7) fragen inzwischen, wann sie wieder ‚zur Schatzkiste‘ dürfen. Kurze Wartezeiten, total freundliches Team und Termine nach dem Kindergarten.“</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section faq" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2>Gut zu wissen.</h2>
+      <p>Ihre Frage ist nicht dabei? Rufen Sie uns an oder schreiben Sie an <a href="mailto:praxis@example.de">praxis@example.de</a>.</p>
+    </div>
+    <div class="acc reveal">
+      <details open>
+        <summary>Nehmen Sie auch neue Patientinnen und Patienten auf?<span class="pm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Ja, sehr gern – gesetzlich wie privat Versicherte. Für Erstbesuche halten wir jede Woche feste Zeitfenster frei, meist bekommen Sie innerhalb von 7 bis 10 Tagen einen Termin.</div>
+      </details>
+      <details>
+        <summary>Was kostet eine professionelle Zahnreinigung?<span class="pm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Je nach Aufwand zwischen 89 € und 129 €. Viele gesetzliche Kassen bezuschussen die PZR einmal oder zweimal im Jahr – wir helfen Ihnen gern bei der Einreichung.</div>
+      </details>
+      <details>
+        <summary>Ich habe große Angst vor der Behandlung. Was können Sie tun?<span class="pm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Sagen Sie es uns bei der Terminvereinbarung, dann planen wir doppelt so viel Zeit ein. Wir vereinbaren ein Stopp-Zeichen, erklären alles vorab und bieten auf Wunsch Lachgas oder eine Sedierung im Dämmerschlaf an.</div>
+      </details>
+      <details>
+        <summary>Ab wann sollte mein Kind zum Zahnarzt?<span class="pm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Am besten, sobald der erste Milchzahn da ist – meist um den 6. Lebensmonat. Die Früherkennungsuntersuchungen ab dem 6. Monat übernehmen die gesetzlichen Krankenkassen.</div>
+      </details>
+      <details>
+        <summary>Wie lange hält ein Implantat und was kostet es?<span class="pm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Bei guter Pflege halten Implantate oft 20 Jahre und länger. Ein Einzelzahnimplantat inklusive Krone liegt bei uns je nach Ausgangslage zwischen 2.400 € und 3.200 €. Den genauen Betrag erhalten Sie vorab im schriftlichen Kostenplan.</div>
+      </details>
+      <details>
+        <summary>Kann ich einen Termin kurzfristig absagen?<span class="pm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="ans">Natürlich. Bitte sagen Sie spätestens 24 Stunden vorher telefonisch oder per E-Mail ab, damit wir den Termin an Schmerzpatienten weitergeben können.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section booking" id="termin">
+  <div class="wrap">
+    <div class="booking-card reveal">
+      <div class="booking-info">
+        <span class="eyebrow">Online-Terminanfrage</span>
+        <h2>Ihr Wunschtermin in zwei Minuten.</h2>
+        <p>Wir melden uns innerhalb eines Werktags mit einem passenden Terminvorschlag – telefonisch oder per E-Mail, ganz wie Sie möchten.</p>
+        <ul class="contact-list">
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><b>Zahnärzte am Rosengarten</b>Am Rosengarten 4, 47918 Tönisvorst</span></li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span><b>Telefon</b><a href="tel:+4921511234567">02151 123 45 67</a></span></li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span><b>E-Mail</b><a href="mailto:praxis@example.de">praxis@example.de</a></span></li>
+        </ul>
+      </div>
+      <form class="book" onsubmit="event.preventDefault();document.getElementById('ok').classList.add('show');this.querySelector('button[type=submit]').disabled=true;">
+        <fieldset class="field full">
+          <legend>Worum geht es?</legend>
+          <div class="chips">
+            <label><input type="radio" name="grund" value="kontrolle" checked><span>Kontrolle</span></label>
+            <label><input type="radio" name="grund" value="pzr"><span>Zahnreinigung</span></label>
+            <label><input type="radio" name="grund" value="schmerz"><span>Schmerzen</span></label>
+            <label><input type="radio" name="grund" value="beratung"><span>Beratung</span></label>
+            <label><input type="radio" name="grund" value="kind"><span>Kind</span></label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="vn">Vorname</label><input id="vn" name="vorname" autocomplete="given-name" required></div>
+        <div class="field"><label for="nn">Nachname</label><input id="nn" name="nachname" autocomplete="family-name" required></div>
+        <div class="field"><label for="tel">Telefon</label><input id="tel" name="telefon" type="tel" autocomplete="tel" required></div>
+        <div class="field"><label for="mail">E-Mail</label><input id="mail" name="email" type="email" autocomplete="email"></div>
+        <div class="field"><label for="vers">Versicherung</label>
+          <select id="vers" name="versicherung"><option>Gesetzlich versichert</option><option>Privat versichert</option><option>Beihilfe</option></select>
+        </div>
+        <div class="field"><label for="zeit">Bevorzugte Zeit</label>
+          <select id="zeit" name="zeit"><option>Egal – Hauptsache bald</option><option>Vormittags</option><option>Nachmittags</option><option>Ab 17 Uhr</option></select>
+        </div>
+        <div class="field full"><label for="msg">Nachricht (optional)</label><textarea id="msg" name="nachricht" placeholder="z. B. Ich bin neu in der Praxis und habe etwas Angst vor der Behandlung."></textarea></div>
+        <label class="consent"><input type="checkbox" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Terminanfrage verwendet werden. Hinweise in der <a href="#">Datenschutzerklärung</a>.</span></label>
+        <div class="form-foot">
+          <small>Keine verbindliche Buchung – wir bestätigen Ihren Termin persönlich.</small>
+          <button class="btn btn-primary" type="submit">Anfrage senden
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="success" id="ok" role="status" aria-live="polite">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+          Vielen Dank! Ihre Anfrage ist bei uns eingegangen (Demo – es wurden keine Daten gesendet).
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="#top">
+          <span class="logo-mark"><svg class="i" viewBox="0 0 32 32" aria-hidden="true"><path d="M10.5 5.5c-3.4 0-5.5 2.7-5.5 6.2 0 3.2 1.4 5.3 2.3 8.3.9 3.2 1.3 6.5 3.3 6.5 2.3 0 2.1-6 5.4-6s3.1 6 5.4 6c2 0 2.4-3.3 3.3-6.5.9-3 2.3-5.1 2.3-8.3 0-3.5-2.1-6.2-5.5-6.2-2.3 0-3.4 1.3-5.5 1.3s-3.2-1.3-5.5-1.3z"/></svg></span>
+          <span><b>Zahnärzte am Rosengarten</b><small>Gemeinschaftspraxis</small></span>
+        </a>
+        <p class="about-f">Moderne Zahnmedizin mit Ruhe und Zeit – für die ganze Familie in Tönisvorst, St. Tönis und Umgebung.</p>
+      </div>
+      <div>
+        <h4>Behandlungen</h4>
+        <ul><li><a href="#leistungen">Prophylaxe</a></li><li><a href="#leistungen">Implantologie</a></li><li><a href="#leistungen">Ästhetik</a></li><li><a href="#leistungen">Kinder</a></li></ul>
+      </div>
+      <div>
+        <h4>Praxis</h4>
+        <ul><li><a href="#team">Team</a></li><li><a href="#erster-besuch">Erster Besuch</a></li><li><a href="#zeiten">Öffnungszeiten</a></li><li><a href="#faq">FAQ</a></li></ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul><li>Am Rosengarten 4<br>47918 Tönisvorst</li><li><a href="tel:+4921511234567">02151 123 45 67</a></li><li><a href="mailto:praxis@example.de">praxis@example.de</a></li></ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Zahnärzte am Rosengarten · <a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+      <span>Fiktives Beispielunternehmen – Design &amp; Umsetzung: meuser.biz</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'),b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.setAttribute('aria-expanded','false');});});
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+  var d=new Date().getDay(),row=document.querySelector('#times tr[data-day="'+d+'"]');if(row)row.classList.add('today');
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

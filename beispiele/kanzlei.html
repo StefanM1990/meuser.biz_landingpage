@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Velden &amp; Roth Rechtsanwälte – Wirtschafts- und Familienrecht in Tönisvorst</title>
+<meta name="description" content="Velden &amp; Roth Rechtsanwälte: Kanzlei für Wirtschaftsrecht und Familienrecht am Niederrhein. Fachanwälte für Handels- und Gesellschaftsrecht, Familienrecht, Arbeitsrecht und Erbrecht. Erstberatung zum Festpreis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f1f38;
+  --navy-2:#162a4a;
+  --navy-3:#21385e;
+  --ivory:#f8f4ec;
+  --ivory-2:#efe8da;
+  --paper:#fffdf8;
+  --gold:#b0894f;
+  --gold-soft:#d6bd8f;
+  --gold-text:#8a6632;
+  --ink:#141c2b;
+  --text:#38404f;
+  --muted:#5f6675;
+  --line:#ddd3c0;
+  --serif:"Libre Baskerville",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3",system-ui,sans-serif;
+  --wrap:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ivory);color:var(--text);font-family:var(--sans);font-size:18px;line-height:1.7;overflow-x:hidden;overflow-wrap:break-word;hyphens:auto}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;color:var(--navy);margin:0;line-height:1.22;letter-spacing:-.005em}
+p{margin:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.wrap>*,.wrap>*>*,.area-list>*,.lawyers>*,.steps>*,.quotes>*{min-width:0}
+.kicker{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-text);display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.kicker::before{content:"";width:36px;height:1px;background:var(--gold)}
+.section{padding:120px 0}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:64px;padding-bottom:32px;border-bottom:1px solid var(--line)}
+.head h2{font-size:clamp(30px,3.6vw,46px);margin-top:18px}
+.head p{color:var(--muted);max-width:480px;justify-self:end}
+.btn{display:inline-flex;align-items:center;gap:12px;font:600 15px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:18px 28px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.btn svg{width:18px;height:18px}
+.btn-gold{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
+.btn-line{color:#fff;border-color:rgba(214,189,143,.55)}
+.btn-line:hover{border-color:var(--gold-soft);background:rgba(255,255,255,.04)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-3)}
+svg.i{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+
+.meuser-badge{position:fixed;left:16px;bottom:16px;z-index:9999;background:var(--navy);color:#f3e7cf;border:1px solid var(--gold);text-decoration:none;font:600 13px/1.3 var(--sans);letter-spacing:.02em;padding:10px 16px;box-shadow:0 10px 30px rgba(15,31,56,.25);max-width:calc(100vw - 32px)}
+.meuser-badge:hover{background:var(--navy-3)}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:100;background:var(--navy);color:#e7dfcf;border-bottom:1px solid rgba(176,137,79,.35)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:88px;gap:24px}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:#fff}
+.mono{width:48px;height:48px;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);font-size:17px;color:var(--gold-soft);letter-spacing:.02em;flex:none;position:relative}
+.mono::after{content:"";position:absolute;inset:4px;border:1px solid rgba(176,137,79,.35)}
+.brand b{display:block;font-family:var(--serif);font-weight:400;font-size:20px;letter-spacing:.01em;line-height:1.15}
+.brand small{display:block;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-soft)}
+nav ul{display:flex;align-items:center;gap:34px;list-style:none;margin:0;padding:0}
+nav a{color:#e7dfcf;text-decoration:none;font-size:15.5px;font-weight:500;letter-spacing:.02em;position:relative;padding:6px 0}
+nav a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold);transition:right .3s}
+nav a:not(.btn):hover::after{right:0}
+nav .btn{padding:13px 20px;font-size:13px}
+.burger{display:none;background:none;border:1px solid rgba(176,137,79,.5);color:#fff;width:48px;height:48px;cursor:pointer}
+.burger svg{width:22px;height:22px}
+
+/* Hero */
+.hero{background:var(--navy);color:#d9d3c6;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),rgba(176,137,79,.08) calc(25% - 1px) 25%);pointer-events:none}
+.hero>.wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center;padding-top:96px;padding-bottom:110px;position:relative}
+.hero h1{color:#fff;font-size:clamp(38px,5vw,64px);line-height:1.12;margin-top:28px}
+.hero h1 i{color:var(--gold-soft)}
+.hero .kicker{color:var(--gold-soft)}
+.hero .lead{font-size:20px;color:#c9c3b6;margin-top:28px;max-width:540px;font-weight:400}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:44px}
+.hero-fig{position:relative}
+.hero-fig .frame{position:relative;aspect-ratio:4/5}
+.hero-fig .frame::before{content:"";position:absolute;inset:-18px 18px 18px -18px;border:1px solid rgba(176,137,79,.5);pointer-events:none}
+.hero-fig img{width:100%;height:100%;object-fit:cover;position:relative;filter:saturate(.85) contrast(1.02)}
+.hero-fig figcaption{position:absolute;right:-1px;bottom:-1px;background:var(--ivory);color:var(--navy);padding:22px 26px;max-width:280px;font-family:var(--serif);font-size:15px;line-height:1.55;font-style:italic;border-top:2px solid var(--gold)}
+.hero-fig figcaption span{display:block;font-family:var(--sans);font-style:normal;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-text);margin-top:10px}
+
+.facts{background:var(--navy-2);border-top:1px solid rgba(176,137,79,.3);color:#d9d3c6}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:34px 28px;border-left:1px solid rgba(176,137,79,.25)}
+.fact:last-child{border-right:1px solid rgba(176,137,79,.25)}
+.fact b{display:block;font-family:var(--serif);font-weight:400;font-size:34px;color:#fff;line-height:1.1}
+.fact span{font-size:14.5px;letter-spacing:.04em;color:#b7b1a4}
+
+/* Areas */
+.areas-cols{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.area-group{padding:48px 48px 8px 0}
+.area-group+.area-group{padding:48px 0 8px 48px;border-left:1px solid var(--line)}
+.area-group>h3{font-size:28px;display:flex;align-items:center;gap:16px}
+.area-group>h3 svg{width:34px;height:34px;color:var(--gold);flex:none}
+.area-group>p{margin-top:14px;color:var(--muted);max-width:460px}
+.area-list{display:grid;grid-template-columns:1fr 1fr;margin-top:36px;border-top:1px solid var(--line)}
+.area{padding:26px 22px 28px 0;border-bottom:1px solid var(--line)}
+.area:nth-child(even){padding-left:22px;border-left:1px solid var(--line);padding-right:0}
+.area h4{font-size:18px;line-height:1.35}
+.area p{margin-top:8px;font-size:15.5px;color:var(--muted);line-height:1.6}
+.area .num{font-family:var(--serif);font-size:13px;color:var(--gold-text);display:block;margin-bottom:10px;letter-spacing:.06em}
+
+/* Philosophy */
+.philo{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.philo .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:88px;align-items:center}
+.philo-img{position:relative}
+.philo-img img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(.25)}
+.philo-img::after{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.55);pointer-events:none}
+blockquote.big{margin:28px 0 0;font-family:var(--serif);font-size:clamp(24px,2.8vw,34px);line-height:1.45;color:var(--navy)}
+blockquote.big::before{content:"„";display:block;font-size:72px;line-height:.6;color:var(--gold);margin-bottom:10px}
+.philo .sig{margin-top:22px;font-size:15px;color:var(--muted);letter-spacing:.04em}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:52px;padding-top:36px;border-top:1px solid var(--line)}
+.principles h4{font-size:18px;margin-top:14px}
+.principles p{font-size:15.5px;color:var(--muted);margin-top:8px;line-height:1.6}
+.principles svg{width:30px;height:30px;color:var(--gold)}
+
+/* Lawyers */
+.lawyers{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line)}
+.lawyer{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:44px 40px 44px 0;border-bottom:1px solid var(--line)}
+.lawyer:nth-child(even){padding:44px 0 44px 40px;border-left:1px solid var(--line)}
+.lawyer .ph{aspect-ratio:3/4;overflow:hidden;background:var(--ivory-2)}
+.lawyer img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:grayscale(1) contrast(1.05);transition:filter .5s}
+.lawyer:hover img{filter:grayscale(.2)}
+.lawyer h3{font-size:24px}
+.lawyer .title{color:var(--gold-text);font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
+.lawyer dl{margin:22px 0 0;display:grid;gap:12px}
+.lawyer dt{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.lawyer dd{margin:2px 0 0;font-size:16px;color:var(--ink);line-height:1.5}
+.lawyer .fa{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:14px;color:var(--navy);border:1px solid var(--gold);padding:6px 12px}
+.lawyer .fa svg{width:16px;height:16px;color:var(--gold-text)}
+
+/* Erstberatung */
+.process{background:var(--navy);color:#d9d3c6}
+.process .head{border-bottom-color:rgba(176,137,79,.3)}
+.process .head h2{color:#fff}
+.process .head p{color:#b7b1a4}
+.process .kicker{color:var(--gold-soft)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(176,137,79,.3);border-bottom:1px solid rgba(176,137,79,.3)}
+.step{padding:40px 32px 44px;border-left:1px solid rgba(176,137,79,.22)}
+.step:first-child{border-left:0;padding-left:0}
+.step .n{font-family:var(--serif);font-size:44px;color:var(--gold-soft);line-height:1}
+.step h3{color:#fff;font-size:20px;margin-top:22px}
+.step p{font-size:15.5px;color:#b7b1a4;margin-top:10px;line-height:1.65}
+.costs{display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center;margin-top:56px;padding:36px 40px;background:var(--navy-2);border:1px solid rgba(176,137,79,.35)}
+.costs .price{font-family:var(--serif);color:#fff;font-size:42px;line-height:1;white-space:nowrap}
+.costs .price small{display:block;font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-top:10px}
+.costs p{font-size:15.5px;color:#c9c3b6;line-height:1.65}
+.costs p b{color:#fff;font-weight:600}
+
+/* Testimonials */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.quote{padding:48px 36px;border-left:1px solid var(--line);display:flex;flex-direction:column}
+.quote:first-child{border-left:0;padding-left:0}
+.quote:last-child{padding-right:0}
+.quote .mark{font-family:var(--serif);font-size:60px;line-height:.5;color:var(--gold);height:30px}
+.quote p{font-family:var(--serif);font-size:18px;line-height:1.65;color:var(--navy);margin-top:16px;flex:1}
+.quote footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
+.quote footer b{display:block;color:var(--ink);font-weight:600;font-size:15.5px}
+.disclaimer{margin-top:22px;font-size:13.5px;color:var(--muted)}
+.clients{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px 40px;margin-top:64px;padding-top:36px;border-top:1px solid var(--line)}
+.clients span{font-family:var(--serif);font-size:19px;color:#8b8578;letter-spacing:.04em}
+.clients span.sc{font-family:var(--sans);font-weight:700;letter-spacing:.3em;font-size:14px;text-transform:uppercase}
+.clients span.it{font-style:italic}
+.clients .lbl{font-family:var(--sans);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* Contact */
+.contact{background:var(--paper);border-top:1px solid var(--line)}
+.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
+.contact h2{font-size:clamp(30px,3.6vw,44px);margin-top:18px}
+.contact .intro{margin-top:20px;color:var(--muted)}
+.addr{margin-top:40px;display:grid;gap:0;border-top:1px solid var(--line)}
+.addr div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);font-size:16.5px}
+.addr dt,.addr .k{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.addr a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--gold-soft)}
+.addr a:hover{border-bottom-color:var(--navy)}
+form.callback{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:22px 24px;align-content:start}
+form.callback h3{grid-column:1/-1;font-size:26px}
+form.callback .sub{grid-column:1/-1;color:var(--muted);font-size:16px;margin-top:-12px}
+.f{display:flex;flex-direction:column;gap:8px}
+.f.full{grid-column:1/-1}
+.f label{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.f input,.f select,.f textarea{font:inherit;font-size:17px;color:var(--ink);background:var(--ivory);border:0;border-bottom:1px solid #b9ae98;padding:12px 14px;width:100%;border-radius:0;transition:border-color .2s,background .2s}
+.f textarea{min-height:110px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;background:#fff;border-bottom:2px solid var(--gold);padding-bottom:11px}
+.consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--muted);line-height:1.55}
+.consent input{width:18px;height:18px;margin-top:3px;accent-color:var(--navy);flex:none}
+.form-row{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.form-row small{color:var(--muted);font-size:14px}
+.ok{grid-column:1/-1;display:none;padding:16px 18px;border-left:3px solid var(--gold);background:var(--ivory);color:var(--navy);font-size:16px}
+.ok.show{display:block}
+
+/* Footer */
+footer.site{background:var(--navy);color:#b7b1a4;padding:80px 0 100px;font-size:15.5px;border-top:3px solid var(--gold)}
+footer.site .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px}
+footer.site h4{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+footer.site ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+footer.site a{color:#e7dfcf;text-decoration:none}
+footer.site a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+footer.site .brand{margin-bottom:20px}
+footer.site .legal{margin-top:64px;padding-top:26px;border-top:1px solid rgba(176,137,79,.25);display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:14px}
+footer.site .legal nav{display:flex;gap:24px;flex-wrap:wrap}
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  *{transition:none!important;animation:none!important}
+}
+
+@media (max-width:1100px){
+  .lawyer{grid-template-columns:150px 1fr;gap:24px}
+}
+@media (max-width:1024px){
+  nav ul{gap:22px}
+  .hero>.wrap{gap:48px}
+  .philo .wrap,.contact .wrap{gap:56px}
+  .lawyers{grid-template-columns:1fr}
+  .lawyer,.lawyer:nth-child(even){padding:40px 0;border-left:0;grid-template-columns:200px 1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(3){border-left:0;padding-left:0}
+  .step:nth-child(n+3){border-top:1px solid rgba(176,137,79,.22)}
+  .costs{grid-template-columns:auto 1fr}
+  .costs .btn{grid-column:1/-1;justify-self:start}
+  footer.site .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .burger{display:grid;place-items:center}
+  nav ul{position:absolute;left:0;right:0;top:88px;background:var(--navy);flex-direction:column;align-items:stretch;gap:0;padding:8px 32px 28px;border-bottom:1px solid rgba(176,137,79,.35);display:none}
+  nav ul.open{display:flex}
+  nav li a{display:block;padding:16px 0;border-bottom:1px solid rgba(176,137,79,.18)}
+  nav li a:not(.btn)::after{display:none}
+  nav li:last-child a{border:1px solid var(--gold);margin-top:18px;justify-content:center}
+  .hero>.wrap,.philo .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}
+  .hero-fig{max-width:520px;margin-left:18px}
+  .head{grid-template-columns:minmax(0,1fr);gap:18px}
+  .head p{justify-self:start}
+  .areas-cols{grid-template-columns:1fr}
+  .area-group,.area-group+.area-group{padding:40px 0 8px;border-left:0}
+  .area-group+.area-group{border-top:1px solid var(--line);margin-top:32px}
+  .philo-img{max-width:460px}
+  .quotes{grid-template-columns:1fr}
+  .quote,.quote:first-child,.quote:last-child{padding:40px 0;border-left:0;border-top:1px solid var(--line)}
+  .quote:first-child{border-top:0}
+  .facts .wrap{grid-template-columns:1fr 1fr}
+  .fact:nth-child(n+3){border-top:1px solid rgba(176,137,79,.25)}
+  .fact:nth-child(2){border-right:1px solid rgba(176,137,79,.25)}
+}
+@media (max-width:640px){
+  body{font-size:17px}
+  .wrap{padding:0 20px}
+  .section{padding:80px 0}
+  .head{margin-bottom:40px}
+  header.site .wrap{height:76px}
+  nav ul{top:76px;padding:8px 20px 24px}
+  .brand b{font-size:17px}
+  .brand small{font-size:10.5px;letter-spacing:.2em}
+  .mono{width:42px;height:42px;font-size:15px}
+  .hero>.wrap{padding-top:64px;padding-bottom:80px}
+  .hero .lead{font-size:18px}
+  .hero-fig figcaption{position:relative;max-width:none;right:auto;bottom:auto}
+  .hero-ctas .btn{width:100%;justify-content:center}
+  .fact{padding:24px 16px}
+  .fact b{font-size:26px}
+  .fact span{font-size:13px}
+  .area-list{grid-template-columns:1fr}
+  .area,.area:nth-child(even){padding:22px 0;border-left:0}
+  .principles{grid-template-columns:1fr;gap:28px}
+  .lawyer,.lawyer:nth-child(even){grid-template-columns:1fr;gap:22px}
+  .lawyer .ph{max-width:240px}
+  .steps{grid-template-columns:1fr}
+  .step,.step:first-child,.step:nth-child(3){padding:32px 0;border-left:0}
+  .step+.step{border-top:1px solid rgba(176,137,79,.22)}
+  .costs{grid-template-columns:1fr;gap:20px;padding:28px 22px}
+  .costs .price{white-space:normal}
+  form.callback{grid-template-columns:1fr;padding:32px 22px}
+  .addr div{grid-template-columns:1fr;gap:4px}
+  footer.site .cols{grid-template-columns:1fr}
+  .clients{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<a class="meuser-badge" href="../beispiele.html">← Beispielseite von meuser.biz · Zur Übersicht</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Velden &amp; Roth Rechtsanwälte – Startseite">
+      <span class="mono" aria-hidden="true">V&amp;R</span>
+      <span><b>Velden &amp; Roth</b><small>Rechtsanwälte</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav aria-label="Hauptnavigation">
+      <ul id="menu">
+        <li><a href="#rechtsgebiete">Rechtsgebiete</a></li>
+        <li><a href="#kanzlei">Kanzlei</a></li>
+        <li><a href="#anwaelte">Anwälte</a></li>
+        <li><a href="#erstberatung">Erstberatung</a></li>
+        <li><a class="btn btn-gold" href="#kontakt">Rückruf vereinbaren</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Wirtschaftsrecht · Familienrecht · seit 1998</div>
+      <h1>Klarer Rat, wenn es <i>darauf ankommt.</i></h1>
+      <p class="lead">Wir beraten mittelständische Unternehmen, Gesellschafter und Familien am Niederrhein – mit Sorgfalt, Diskretion und dem Blick für eine tragfähige Lösung, bevor ein Streit entsteht.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#kontakt">Erstberatung anfragen
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-line" href="tel:+4921511234567">02151 123 45 67</a>
+      </div>
+    </div>
+    <figure class="hero-fig reveal" style="margin:0">
+      <div class="frame"><img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1600&q=80&auto=format&fit=crop" alt="Bibliothek mit alten juristischen Werken und einer Marmorbüste" width="760" height="950"></div>
+      <figcaption>„Gutes Recht beginnt mit Zuhören.“<span>Leitsatz der Kanzlei</span></figcaption>
+    </figure>
+  </div>
+  <div class="facts">
+    <div class="wrap">
+      <div class="fact"><b>27</b><span>Jahre Kanzleigeschichte</span></div>
+      <div class="fact"><b>4</b><span>Fachanwaltstitel</span></div>
+      <div class="fact"><b>1.900+</b><span>abgeschlossene Mandate</span></div>
+      <div class="fact"><b>48 h</b><span>bis zur Erstberatung</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rechtsgebiete">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="kicker">Rechtsgebiete</div>
+        <h2>Zwei Schwerpunkte. Eine Haltung.</h2>
+      </div>
+      <p>Unternehmerische und private Fragen hängen oft eng zusammen – etwa bei der Nachfolge im Familienbetrieb oder bei einer Scheidung mit Firmenbeteiligung. Deshalb arbeiten unsere Fachbereiche Hand in Hand.</p>
+    </div>
+    <div class="areas-cols">
+      <div class="area-group reveal">
+        <h3><svg class="i" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 34h28M9 34V16M17 34V16M23 34V16M31 34V16M5 16h30M20 5L5 13h30z"/></svg>Wirtschaftsrecht</h3>
+        <p>Begleitung von Unternehmen und Unternehmern – vom Gesellschaftsvertrag bis zur Prozessführung.</p>
+        <div class="area-list">
+          <div class="area"><span class="num">I.</span><h4>Gesellschaftsrecht</h4><p>Gründung, Gesellschafterstreit, Umwandlung, Unternehmenskauf.</p></div>
+          <div class="area"><span class="num">II.</span><h4>Handels- &amp; Vertragsrecht</h4><p>AGB, Liefer- und Vertriebsverträge, Handelsvertreterrecht.</p></div>
+          <div class="area"><span class="num">III.</span><h4>Arbeitsrecht</h4><p>Kündigung, Aufhebungsvertrag, Betriebsrat, Geschäftsführerverträge.</p></div>
+          <div class="area"><span class="num">IV.</span><h4>Unternehmensnachfolge</h4><p>Übergabe im Familienbetrieb, Testamentsgestaltung für Unternehmer.</p></div>
+        </div>
+      </div>
+      <div class="area-group reveal">
+        <h3><svg class="i" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 19L20 7l14 12"/><path d="M10 16v18h20V16"/><circle cx="17" cy="23" r="2.5"/><circle cx="24" cy="24.5" r="1.8"/><path d="M13 34v-4a4 4 0 0 1 8 0v4M21.5 34v-3a2.6 2.6 0 0 1 5 0v3"/></svg>Familienrecht</h3>
+        <p>Einfühlsame und zugleich entschlossene Vertretung in den persönlichsten Lebenslagen.</p>
+        <div class="area-list">
+          <div class="area"><span class="num">V.</span><h4>Scheidung &amp; Trennung</h4><p>Einvernehmliche Scheidung, Versorgungsausgleich, Hausrat und Ehewohnung.</p></div>
+          <div class="area"><span class="num">VI.</span><h4>Unterhalt</h4><p>Kindes-, Trennungs- und nachehelicher Unterhalt, Elternunterhalt.</p></div>
+          <div class="area"><span class="num">VII.</span><h4>Sorge- &amp; Umgangsrecht</h4><p>Lösungen, die das Wohl der Kinder in den Mittelpunkt stellen.</p></div>
+          <div class="area"><span class="num">VIII.</span><h4>Eheverträge &amp; Erbrecht</h4><p>Güterstand, Zugewinn, Testament und Pflichtteil.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section philo" id="kanzlei">
+  <div class="wrap">
+    <div class="philo-img reveal">
+      <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80&auto=format&fit=crop" alt="Bronzefigur der Justitia mit Waage und Augenbinde" loading="lazy" width="600" height="750">
+    </div>
+    <div class="reveal">
+      <div class="kicker">Kanzlei-Philosophie</div>
+      <blockquote class="big">Wir führen keinen Prozess, den wir nicht auch vermeiden könnten – aber jeden, der geführt werden muss, mit voller Überzeugung.</blockquote>
+      <p class="sig">Dr. Henrik Velden &amp; Dr. Charlotte Roth, Partner</p>
+      <div class="principles">
+        <div>
+          <svg class="i" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4v24M6 28h20M16 8l-9 3 9-3 9 3"/><path d="M7 11l-4 8a4 4 0 0 0 8 0zM25 11l-4 8a4 4 0 0 0 8 0z"/></svg>
+          <h4>Ehrliche Einschätzung</h4>
+          <p>Sie erfahren früh, wie wir Ihre Erfolgsaussichten sehen – auch wenn es unbequem ist.</p>
+        </div>
+        <div>
+          <svg class="i" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="14" width="18" height="13" rx="1"/><path d="M11 14V10a5 5 0 0 1 10 0v4M16 19v3"/></svg>
+          <h4>Absolute Diskretion</h4>
+          <p>Verschwiegenheit ist für uns kein Paragraf, sondern Grundlage jedes Mandats.</p>
+        </div>
+        <div>
+          <svg class="i" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/></svg>
+          <h4>Verlässliche Erreichbarkeit</h4>
+          <p>Rückruf innerhalb eines Werktags, feste Ansprechperson von Anfang bis Ende.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="anwaelte">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="kicker">Anwältinnen &amp; Anwälte</div>
+        <h2>Persönlich verantwortlich für Ihr Mandat.</h2>
+      </div>
+      <p>Bei uns bearbeitet nicht „die Kanzlei“ Ihren Fall, sondern eine Anwältin oder ein Anwalt, den Sie kennen – unterstützt von einem eingespielten Team.</p>
+    </div>
+    <div class="lawyers">
+      <article class="lawyer reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1600&q=80&auto=format&fit=crop" alt="Porträt von Dr. Henrik Velden im dunklen Sakko" loading="lazy" width="400" height="533"></div>
+        <div>
+          <h3>Dr. Henrik Velden</h3>
+          <div class="title">Gründungspartner</div>
+          <dl>
+            <div><dt>Schwerpunkte</dt><dd>Gesellschaftsrecht, Unternehmenskauf, Unternehmensnachfolge</dd></div>
+            <div><dt>Zulassung</dt><dd>Rechtsanwalt seit 1998 · Rechtsanwaltskammer Düsseldorf</dd></div>
+          </dl>
+          <span class="fa"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5 4.5 2.5-1.5-7.5"/></svg>Fachanwalt für Handels- und Gesellschaftsrecht</span>
+        </div>
+      </article>
+      <article class="lawyer reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1600&q=80&auto=format&fit=crop" alt="Porträt von Dr. Charlotte Roth im grauen Blazer" loading="lazy" width="400" height="533"></div>
+        <div>
+          <h3>Dr. Charlotte Roth</h3>
+          <div class="title">Partnerin</div>
+          <dl>
+            <div><dt>Schwerpunkte</dt><dd>Scheidung mit Unternehmensbezug, Zugewinn, Eheverträge, Mediation</dd></div>
+            <div><dt>Zulassung</dt><dd>Rechtsanwältin seit 2005 · Rechtsanwaltskammer Düsseldorf</dd></div>
+          </dl>
+          <span class="fa"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5 4.5 2.5-1.5-7.5"/></svg>Fachanwältin für Familienrecht</span>
+        </div>
+      </article>
+      <article class="lawyer reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1600&q=80&auto=format&fit=crop" alt="Porträt von Jan-Philipp Moers im Anzug" loading="lazy" width="400" height="533"></div>
+        <div>
+          <h3>Jan-Philipp Moers</h3>
+          <div class="title">Rechtsanwalt · Associate Partner</div>
+          <dl>
+            <div><dt>Schwerpunkte</dt><dd>Arbeitsrecht für Arbeitgeber und Führungskräfte, Handelsvertreterrecht</dd></div>
+            <div><dt>Zulassung</dt><dd>Rechtsanwalt seit 2012 · Rechtsanwaltskammer Düsseldorf</dd></div>
+          </dl>
+          <span class="fa"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5 4.5 2.5-1.5-7.5"/></svg>Fachanwalt für Arbeitsrecht</span>
+        </div>
+      </article>
+      <article class="lawyer reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1600&q=80&auto=format&fit=crop" alt="Porträt von Miriam Achterberg" loading="lazy" width="400" height="533"></div>
+        <div>
+          <h3>Miriam Achterberg</h3>
+          <div class="title">Rechtsanwältin</div>
+          <dl>
+            <div><dt>Schwerpunkte</dt><dd>Unterhaltsrecht, Sorge- und Umgangsrecht, Testamentsgestaltung</dd></div>
+            <div><dt>Zulassung</dt><dd>Rechtsanwältin seit 2017 · Rechtsanwaltskammer Düsseldorf</dd></div>
+          </dl>
+          <span class="fa"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5 4.5 2.5-1.5-7.5"/></svg>Fachanwältin für Erbrecht</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section process" id="erstberatung">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="kicker">Erstberatung</div>
+        <h2>So beginnt die Zusammenarbeit.</h2>
+      </div>
+      <p>Transparent von der ersten Minute: Sie wissen vorab, was die Beratung kostet und wie es danach weitergeht.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3>Kontaktaufnahme</h3><p>Sie schildern uns telefonisch oder über das Rückrufformular kurz Ihr Anliegen. Wir prüfen vorab mögliche Interessenkonflikte.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3>Unterlagen sichten</h3><p>Sie erhalten eine kurze Checkliste. Verträge, Bescheide oder Schreiben senden Sie uns vorab verschlüsselt oder bringen sie mit.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3>Beratungsgespräch</h3><p>In 45 bis 60 Minuten analysieren wir Ihre Lage, erläutern Optionen und Risiken – in der Kanzlei oder per Video.</p></div>
+      <div class="step reveal"><div class="n">04</div><h3>Klare Empfehlung</h3><p>Sie erhalten eine nachvollziehbare Einschätzung und ein Kostenangebot für das weitere Vorgehen – ohne Verpflichtung.</p></div>
+    </div>
+    <div class="costs reveal">
+      <div class="price">190 €<small>netto · Erstberatung</small></div>
+      <p><b>Hinweis zu den Kosten:</b> Für Verbraucherinnen und Verbraucher ist die Erstberatung gemäß § 34 RVG auf 190 € zzgl. 19 % USt. (226,10 € brutto) begrenzt. Für Unternehmen gilt ein Festpreis nach Vereinbarung. Wird uns im Anschluss ein Mandat erteilt, rechnen wir die Gebühr an. Bei geringem Einkommen prüfen wir gern die Beratungs- oder Verfahrenskostenhilfe.</p>
+      <a class="btn btn-gold" href="#kontakt">Termin vereinbaren</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="stimmen">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="kicker">Mandantenstimmen</div>
+        <h2>Vertrauen, das weiterempfohlen wird.</h2>
+      </div>
+      <p>Die meisten unserer Mandate entstehen durch Empfehlung. Einige Mandantinnen und Mandanten haben uns erlaubt, ihre Worte zu teilen.</p>
+    </div>
+    <div class="quotes">
+      <figure class="quote reveal" style="margin:0">
+        <div class="mark" aria-hidden="true">„</div>
+        <p>Beim Verkauf unserer Anteile hat Dr. Velden nicht nur den Vertrag sauber verhandelt, sondern uns auch vor zwei teuren Fehlern bewahrt. Ruhig, präzise, immer erreichbar.</p>
+        <footer><b>Geschäftsführer, Maschinenbau</b>Mittelständisches Familienunternehmen, Kreis Viersen</footer>
+      </figure>
+      <figure class="quote reveal" style="margin:0">
+        <div class="mark" aria-hidden="true">„</div>
+        <p>In der schwersten Phase meines Lebens hatte ich mit Frau Dr. Roth jemanden an meiner Seite, der mir zugehört und zugleich klar gesagt hat, was realistisch ist. Die Einigung hat unseren Kindern viel erspart.</p>
+        <footer><b>Mandantin, Familienrecht</b>Krefeld</footer>
+      </figure>
+      <figure class="quote reveal" style="margin:0">
+        <div class="mark" aria-hidden="true">„</div>
+        <p>Herr Moers hat unsere Arbeitsverträge komplett neu aufgesetzt und uns bei einer schwierigen Trennung begleitet. Absolut verlässlich und erfreulich pragmatisch.</p>
+        <footer><b>Inhaberin, Logistikdienstleister</b>42 Mitarbeitende, Tönisvorst</footer>
+      </figure>
+    </div>
+    <p class="disclaimer">Stimmen anonymisiert und mit Einverständnis veröffentlicht. Frühere Erfolge sind keine Garantie für den Ausgang künftiger Verfahren.</p>
+    <div class="clients reveal" aria-label="Beispielhafte Mandanten (fiktive Wortmarken)">
+      <span class="lbl">Wir beraten u. a.</span>
+      <span>Hülskens &amp; Söhne</span>
+      <span class="sc">Niersmetall</span>
+      <span class="it">Gartenbau Terhorst</span>
+      <span class="sc">Kempen Logistik</span>
+      <span>Brauhaus am Markt</span>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="kontakt">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Kontakt</div>
+      <h2>Lassen Sie uns sprechen.</h2>
+      <p class="intro">Hinterlassen Sie uns Ihre Nummer und eine Wunschzeit – eine Anwältin oder ein Anwalt ruft Sie innerhalb eines Werktags vertraulich zurück.</p>
+      <div class="addr">
+        <div><span class="k">Anschrift</span><span>Velden &amp; Roth Rechtsanwälte<br>Hochstraße 27, 47918 Tönisvorst</span></div>
+        <div><span class="k">Telefon</span><span><a href="tel:+4921511234567">02151 123 45 67</a></span></div>
+        <div><span class="k">Telefax</span><span>02151 123 45 69</span></div>
+        <div><span class="k">E-Mail</span><span><a href="mailto:kanzlei@example.de">kanzlei@example.de</a></span></div>
+        <div><span class="k">Sprechzeiten</span><span>Mo – Do 8:30 – 18:00 Uhr<br>Fr 8:30 – 15:00 Uhr · Termine nach Vereinbarung</span></div>
+      </div>
+    </div>
+    <form class="callback reveal" onsubmit="event.preventDefault();document.getElementById('ok').classList.add('show');this.querySelector('button[type=submit]').disabled=true;">
+      <h3>Rückruf anfordern</h3>
+      <p class="sub">Ihre Angaben unterliegen der anwaltlichen Schweigepflicht.</p>
+      <div class="f"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+      <div class="f"><label for="tel">Telefon</label><input id="tel" name="telefon" type="tel" autocomplete="tel" required></div>
+      <div class="f"><label for="gebiet">Rechtsgebiet</label>
+        <select id="gebiet" name="rechtsgebiet">
+          <option>Gesellschaftsrecht</option><option>Handels- &amp; Vertragsrecht</option><option>Arbeitsrecht</option><option>Unternehmensnachfolge</option><option>Scheidung &amp; Trennung</option><option>Unterhalt</option><option>Sorge- &amp; Umgangsrecht</option><option>Eheverträge &amp; Erbrecht</option><option>Sonstiges</option>
+        </select>
+      </div>
+      <div class="f"><label for="zeit">Wunschzeit</label>
+        <select id="zeit" name="zeit"><option>Vormittags (8:30 – 12:00)</option><option>Mittags (12:00 – 14:00)</option><option>Nachmittags (14:00 – 18:00)</option></select>
+      </div>
+      <div class="f full"><label for="anliegen">Kurze Beschreibung (optional)</label><textarea id="anliegen" name="anliegen" placeholder="Bitte nennen Sie nur das Nötigste – Details besprechen wir persönlich."></textarea></div>
+      <label class="consent"><input type="checkbox" required><span>Ich habe die <a href="#">Datenschutzhinweise</a> zur Kenntnis genommen und bin mit einem Rückruf einverstanden.</span></label>
+      <div class="form-row">
+        <small>Noch kein Mandatsverhältnis, keine Kosten.</small>
+        <button type="submit" class="btn btn-navy">Rückruf anfordern</button>
+      </div>
+      <div class="ok" id="ok" role="status" aria-live="polite">Vielen Dank. Wir melden uns innerhalb eines Werktags bei Ihnen. (Demo – es wurden keine Daten übermittelt.)</div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="#top"><span class="mono" aria-hidden="true">V&amp;R</span><span><b>Velden &amp; Roth</b><small>Rechtsanwälte</small></span></a>
+        <p>Kanzlei für Wirtschafts- und Familienrecht am Niederrhein. Partnerschaftsgesellschaft mbB.</p>
+      </div>
+      <div>
+        <h4>Rechtsgebiete</h4>
+        <ul><li><a href="#rechtsgebiete">Wirtschaftsrecht</a></li><li><a href="#rechtsgebiete">Familienrecht</a></li><li><a href="#rechtsgebiete">Arbeitsrecht</a></li><li><a href="#rechtsgebiete">Erbrecht</a></li></ul>
+      </div>
+      <div>
+        <h4>Kanzlei</h4>
+        <ul><li><a href="#kanzlei">Philosophie</a></li><li><a href="#anwaelte">Anwälte</a></li><li><a href="#erstberatung">Erstberatung</a></li><li><a href="#stimmen">Mandantenstimmen</a></li></ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul><li>Hochstraße 27<br>47918 Tönisvorst</li><li><a href="tel:+4921511234567">02151 123 45 67</a></li><li><a href="mailto:kanzlei@example.de">kanzlei@example.de</a></li></ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Velden &amp; Roth Rechtsanwälte PartG mbB</span>
+      <nav aria-label="Rechtliches"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Berufsrechtliche Hinweise</a></nav>
+      <span>Fiktives Beispielunternehmen – Design &amp; Umsetzung: meuser.biz</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.setAttribute('aria-expanded','false');});});
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

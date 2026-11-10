@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PULSE Athletics – Functional Training &amp; Premium-Fitness in Kempen</title>
+<meta name="description" content="PULSE Athletics in Kempen: Functional Training, Strength, HYROX-Prep und Small-Group-Coaching mit erfahrenen Coaches. Jetzt kostenloses Probetraining buchen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0a; --bg2:#121212; --bg3:#1a1a1a; --line:#2a2a2a;
+  --lime:#c6ff3d; --lime-d:#a8e01f; --text:#f2f2ee; --muted:#a3a3a0; --dim:#6f6f6c;
+  --display:'Anton', 'Impact', sans-serif; --sans:'Inter', system-ui, -apple-system, sans-serif;
+  --max:1280px; --gut:clamp(20px,4vw,48px); --skew:clamp(40px,6vw,96px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.display{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:.92;margin:0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--lime);margin:0 0 20px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--lime)}
+.lime{color:var(--lime)}
+.outline{color:transparent;-webkit-text-stroke:1.5px var(--text)}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:17px 28px;font:800 14px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;border:2px solid var(--lime);background:var(--lime);color:#0a0a0a;cursor:pointer;transition:transform .25s, background .25s, color .25s;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%)}
+.btn:hover{transform:translateY(-2px);background:#d8ff74}
+.btn svg{width:18px;height:18px;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.btn--ghost{background:transparent;color:var(--text);border-color:rgba(255,255,255,.35)}
+.btn--ghost:hover{background:rgba(255,255,255,.06);border-color:var(--text)}
+.ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Badge */
+.mz-badge{position:fixed;left:16px;bottom:16px;z-index:9999;background:#0a0a0a;color:var(--text);border:1px solid var(--lime);padding:10px 14px;font:600 12px/1.3 var(--sans);letter-spacing:.02em;box-shadow:0 8px 30px rgba(0,0,0,.5);max-width:calc(100vw - 32px)}
+.mz-badge:hover{background:var(--lime);color:#0a0a0a}
+
+/* Header */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .3s, border-color .3s;border-bottom:1px solid transparent}
+.hdr.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(10px);border-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:26px;letter-spacing:.04em;text-transform:uppercase}
+.logo svg{width:34px;height:34px}
+.logo small{font:700 10px/1 var(--sans);letter-spacing:.3em;color:var(--muted);display:block;margin-top:3px}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{font:600 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.nav a:hover{color:var(--text)}
+.nav .btn{padding:13px 20px;font-size:12px;color:#0a0a0a}
+.burger{display:none;width:46px;height:46px;background:none;border:1px solid var(--line);cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:var(--text);position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-7px}.burger span::after{top:7px}
+.menu-open .burger span{background:transparent}
+.menu-open .burger span::before{top:0;transform:rotate(45deg)}
+.menu-open .burger span::after{top:0;transform:rotate(-45deg)}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;padding:140px 0 calc(var(--skew) + 70px);clip-path:polygon(0 0,100% 0,100% calc(100% - var(--skew)),0 100%);background:#000;overflow:hidden}
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;opacity:.75;transform:scale(1.06);animation:heroZoom 14s ease-out forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.55) 50%,rgba(10,10,10,.15) 100%),linear-gradient(0deg,rgba(10,10,10,.9) 0%,transparent 45%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero h1{font-size:clamp(64px,12.5vw,196px);max-width:12ch}
+.hero h1 .row{display:block}
+.hero__sub{max-width:520px;font-size:clamp(17px,1.5vw,19px);color:#d6d6d2;margin:32px 0 40px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero__meta{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:56px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14);max-width:720px}
+.hero__meta div{font-size:13px;color:var(--muted);line-height:1.4}
+.hero__meta strong{display:block;color:var(--text);font:700 15px/1.3 var(--sans)}
+.pulse-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lime);margin-right:8px;box-shadow:0 0 0 0 rgba(198,255,61,.7);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(198,255,61,0)}100%{box-shadow:0 0 0 0 rgba(198,255,61,0)}}
+.hero__side{position:absolute;right:var(--gut);top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:right center;z-index:2;font:700 11px/1 var(--sans);letter-spacing:.4em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
+
+/* Marquee */
+.marquee{position:relative;z-index:5;width:110%;margin-left:-5%;margin-top:calc(var(--skew) * -.55);transform:rotate(-2.5deg);background:var(--lime);color:#0a0a0a;overflow:hidden;padding:18px 0;border-top:2px solid #0a0a0a;border-bottom:2px solid #0a0a0a}
+.marquee__track{display:flex;width:max-content;animation:marq 32s linear infinite}
+.marquee__track span{font-family:var(--display);font-size:clamp(28px,4vw,48px);text-transform:uppercase;letter-spacing:.02em;padding:0 26px;display:flex;align-items:center;gap:52px;white-space:nowrap}
+.marquee__track span::after{content:"";width:22px;height:22px;background:#0a0a0a;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.marquee--dark{background:transparent;color:var(--text);transform:none;margin:0;width:100%;border:0;padding:0}
+.marquee--dark .marquee__track{animation-duration:46s;animation-direction:reverse}
+.marquee--dark .marquee__track span{font-size:clamp(60px,10vw,150px);color:transparent;-webkit-text-stroke:1.5px #3a3a3a}
+.marquee--dark .marquee__track span::after{background:var(--lime);width:30px;height:30px}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* Sections */
+section{position:relative}
+.sec{padding:clamp(90px,11vw,150px) 0}
+.sec-head{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:64px}
+.sec-head h2{font-size:clamp(48px,7vw,104px)}
+.sec-head p{color:var(--muted);max-width:460px;margin:0;justify-self:end}
+
+/* Kurse */
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.course{position:relative;background:var(--bg2);overflow:hidden;min-height:460px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;border:1px solid var(--line)}
+.course img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:grayscale(.35) contrast(1.05);transition:transform .7s cubic-bezier(.2,.7,.2,1), filter .5s}
+.course::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,10,10,.05) 20%,rgba(10,10,10,.95) 82%)}
+.course:hover img{transform:scale(1.07);filter:grayscale(0) contrast(1.05)}
+.course__body{padding:28px}
+.course__num{position:absolute;top:22px;left:28px;font-family:var(--display);font-size:20px;color:var(--lime)}
+.course__tag{position:absolute;top:20px;right:20px;font:700 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;background:rgba(10,10,10,.75);border:1px solid rgba(255,255,255,.18);padding:8px 10px}
+.course h3{font-family:var(--display);font-weight:400;font-size:clamp(32px,3vw,42px);text-transform:uppercase;line-height:1;margin:0 0 12px}
+.course p{color:#c9c9c5;font-size:15px;margin:0 0 20px}
+.course__foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-size:13px;color:var(--muted)}
+.intensity{display:flex;gap:4px;align-items:center}
+.intensity i{width:16px;height:6px;background:#3a3a3a;transform:skewX(-20deg)}
+.intensity i.on{background:var(--lime)}
+
+/* Stats */
+.stats{background:var(--lime);color:#0a0a0a;clip-path:polygon(0 var(--skew),100% 0,100% calc(100% - var(--skew)),0 100%);padding:calc(var(--skew) + 70px) 0}
+.stats__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat{border-left:2px solid #0a0a0a;padding-left:22px}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(56px,7vw,108px);line-height:1}
+.stat span{display:block;font:700 13px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-top:10px;max-width:22ch}
+.stats__intro{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:60px;flex-wrap:wrap}
+.stats__intro h2{font-size:clamp(40px,5.5vw,76px);max-width:14ch}
+.stats__intro p{max-width:400px;margin:0;font-weight:500}
+
+/* Studio */
+.studio{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+.studio__media{position:relative}
+.studio__media img{width:100%;aspect-ratio:4/5;object-fit:cover;clip-path:polygon(0 0,100% 6%,100% 100%,0 94%)}
+.studio__media .small{position:absolute;right:-30px;bottom:-40px;width:46%;aspect-ratio:1;object-fit:cover;border:8px solid var(--bg);clip-path:none}
+.studio__media .label{position:absolute;left:-12px;top:40px;background:var(--lime);color:#0a0a0a;font-family:var(--display);font-size:22px;text-transform:uppercase;padding:10px 16px;transform:rotate(-4deg)}
+.studio h2{font-size:clamp(44px,5.6vw,84px);margin-bottom:28px}
+.studio p{color:#c4c4c0;max-width:520px}
+.feat{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:26px 30px}
+.feat li{display:flex;gap:14px;align-items:flex-start}
+.feat .ico{flex:none;color:var(--lime);width:28px;height:28px}
+.feat strong{display:block;font-size:15px;margin-bottom:2px}
+.feat span{font-size:14px;color:var(--muted);line-height:1.5}
+
+/* Kursplan */
+.plan{background:var(--bg2);clip-path:polygon(0 0,100% var(--skew),100% 100%,0 100%);padding-top:calc(var(--skew) + 90px)}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none;margin-bottom:8px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1 0 auto;min-width:92px;background:none;border:0;padding:18px 16px;cursor:pointer;text-align:left;color:var(--dim);position:relative;transition:color .2s}
+.tab b{display:block;font-family:var(--display);font-weight:400;font-size:30px;line-height:1;text-transform:uppercase}
+.tab small{font:600 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.tab[aria-selected="true"]{color:var(--text)}
+.tab[aria-selected="true"]::after{transform:scaleX(1)}
+.tab:hover{color:var(--text)}
+.day{display:none}
+.day.active{display:block;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.slot{display:grid;grid-template-columns:140px 1.4fr 1fr 110px 150px;gap:20px;align-items:center;padding:22px 4px;border-bottom:1px solid var(--line);transition:background .2s}
+.slot:hover{background:rgba(198,255,61,.04)}
+.slot time{font-family:var(--display);font-size:28px;line-height:1}
+.slot time small{display:block;font:500 12px/1.4 var(--sans);color:var(--dim);letter-spacing:.04em;margin-top:4px}
+.slot h4{margin:0;font-size:18px;font-weight:700}
+.slot h4 span{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-top:2px}
+.slot .coach{font-size:14px;color:#cfcfcb}
+.lvl{font:700 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border:1px solid #3a3a3a;justify-self:start}
+.lvl.all{border-color:var(--lime);color:var(--lime)}
+.spots{font-size:13px;color:var(--muted)}
+.spots .bar{display:block;height:4px;background:#2a2a2a;margin-top:8px;position:relative;overflow:hidden}
+.spots .bar i{position:absolute;inset:0 auto 0 0;background:var(--lime)}
+.spots.full{color:#ff7a59}.spots.full .bar i{background:#ff7a59}
+.plan__note{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;margin-top:36px;color:var(--muted);font-size:14px}
+.plan__note a{color:var(--lime);font-weight:600;border-bottom:1px solid currentColor}
+
+/* Coaches */
+.coaches{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.coach-card{position:relative}
+.coach-card figure{margin:0;position:relative;overflow:hidden;aspect-ratio:3/4;background:var(--bg3)}
+.coach-card img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);transition:filter .5s, transform .7s}
+.coach-card:hover img{filter:grayscale(0);transform:scale(1.04)}
+.coach-card figure::after{content:"";position:absolute;inset:auto 0 0 0;height:6px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.coach-card:hover figure::after{transform:scaleX(1)}
+.coach-card h3{font-family:var(--display);font-weight:400;font-size:30px;text-transform:uppercase;margin:20px 0 4px;line-height:1}
+.coach-card .role{font:700 12px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.coach-card p{font-size:14px;color:var(--muted);margin:12px 0 0}
+.coach-card ul{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+.coach-card li{font-size:11px;font-weight:600;letter-spacing:.06em;padding:5px 8px;border:1px solid var(--line);color:#cfcfcb}
+
+/* Pricing */
+.pricing{background:var(--bg2);clip-path:polygon(0 var(--skew),100% 0,100% 100%,0 100%);padding-top:calc(var(--skew) + 90px)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.tier{background:var(--bg);border:1px solid var(--line);padding:40px 34px;display:flex;flex-direction:column;position:relative;transition:transform .3s, border-color .3s}
+.tier:hover{transform:translateY(-4px);border-color:#444}
+.tier h3{font-family:var(--display);font-weight:400;font-size:36px;text-transform:uppercase;margin:0;line-height:1}
+.tier .for{color:var(--muted);font-size:14px;margin:10px 0 28px;min-height:44px}
+.price{display:flex;align-items:flex-start;gap:6px;margin-bottom:6px}
+.price b{font-family:var(--display);font-weight:400;font-size:84px;line-height:.9}
+.price sup{font:700 20px/1 var(--sans);margin-top:8px}
+.price-note{font-size:13px;color:var(--dim);margin-bottom:28px}
+.tier ul{list-style:none;padding:28px 0 0;margin:0 0 34px;border-top:1px solid var(--line);display:grid;gap:14px;flex:1}
+.tier li{display:flex;gap:12px;font-size:15px;line-height:1.45}
+.tier li svg{flex:none;width:20px;height:20px;color:var(--lime);margin-top:1px}
+.tier li.no{color:var(--dim)}
+.tier li.no svg{color:var(--dim)}
+.tier .btn{justify-content:center}
+.tier--hot{background:var(--lime);color:#0a0a0a;border-color:var(--lime);transform:scale(1.04);box-shadow:0 30px 80px rgba(198,255,61,.18);z-index:2}
+.tier--hot:hover{transform:scale(1.04) translateY(-4px);border-color:var(--lime)}
+.tier--hot .for,.tier--hot .price-note{color:#2c3a0a}
+.tier--hot ul{border-color:rgba(10,10,10,.2)}
+.tier--hot li svg{color:#0a0a0a}
+.tier--hot .btn{background:#0a0a0a;color:var(--lime);border-color:#0a0a0a}
+.tier--hot .btn:hover{background:#222}
+.ribbon{position:absolute;top:-14px;left:34px;background:#0a0a0a;color:var(--lime);font:800 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:9px 12px}
+.pricing__foot{text-align:center;color:var(--muted);font-size:14px;margin-top:44px}
+
+/* Testimonials */
+.quotes{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px}
+.quote{border:1px solid var(--line);padding:36px;display:flex;flex-direction:column;justify-content:space-between;gap:30px;background:var(--bg)}
+.quote blockquote{margin:0;font-size:17px;line-height:1.6;color:#deded9}
+.quote--big blockquote{font-family:var(--display);font-size:clamp(28px,2.8vw,40px);line-height:1.1;text-transform:uppercase;color:var(--text)}
+.quote .result{display:inline-block;font:800 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#0a0a0a;background:var(--lime);padding:7px 10px;margin-bottom:18px}
+.quote footer{display:flex;align-items:center;gap:14px;font-size:14px}
+.quote .av{width:46px;height:46px;border-radius:50%;background:var(--bg3);border:1px solid var(--lime);display:grid;place-items:center;font-family:var(--display);font-size:18px;color:var(--lime);flex:none}
+.quote footer span{display:block;color:var(--muted);font-size:13px}
+.stars{display:flex;gap:3px;color:var(--lime)}
+.stars svg{width:16px;height:16px;fill:currentColor}
+
+/* Trial */
+.trial{position:relative;padding:calc(var(--skew) + 100px) 0 clamp(90px,10vw,140px);clip-path:polygon(0 var(--skew),100% 0,100% 100%,0 100%);overflow:hidden;background:#000}
+.trial__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;filter:grayscale(1)}
+.trial::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.95) 30%,rgba(10,10,10,.6));z-index:1}
+.trial .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start}
+.trial h2{font-size:clamp(52px,7vw,110px);margin-bottom:28px}
+.trial .lead{color:#d0d0cc;max-width:460px;font-size:17px}
+.steps{list-style:none;padding:0;margin:40px 0 0;counter-reset:s;display:grid;gap:22px}
+.steps li{counter-increment:s;display:flex;gap:18px;align-items:flex-start;max-width:460px}
+.steps li::before{content:"0" counter(s);font-family:var(--display);font-size:26px;color:var(--lime);line-height:1;min-width:38px}
+.steps strong{display:block}
+.steps span{color:var(--muted);font-size:14px}
+.form{background:rgba(18,18,18,.92);border:1px solid var(--line);padding:clamp(26px,3.5vw,44px);backdrop-filter:blur(6px)}
+.form h3{font-family:var(--display);font-weight:400;font-size:34px;text-transform:uppercase;margin:0 0 6px}
+.form > p{color:var(--muted);font-size:14px;margin:0 0 28px}
+.field{margin-bottom:18px}
+.field label,.field legend{display:block;font:700 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+.field input,.field select,.field textarea{width:100%;background:#0a0a0a;border:1px solid #333;padding:14px 16px;font-size:15px;transition:border-color .2s;border-radius:0;appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23c6ff3d' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--lime)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+fieldset{border:0;padding:0;margin:0 0 18px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{cursor:pointer;margin:0}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-block;padding:10px 14px;border:1px solid #333;font-size:13px;font-weight:600;transition:.2s}
+.chips input:checked + span{background:var(--lime);border-color:var(--lime);color:#0a0a0a}
+.chips input:focus-visible + span{outline:3px solid var(--lime);outline-offset:2px}
+.consent{display:flex;gap:10px;font-size:12px;color:var(--muted);margin:6px 0 22px;align-items:flex-start}
+.consent input{accent-color:var(--lime);margin-top:3px;flex:none}
+.form .btn{width:100%;justify-content:center}
+.ok{display:none;margin-top:18px;padding:16px;border:1px solid var(--lime);color:var(--lime);font-weight:600;font-size:14px}
+.ok.show{display:block}
+
+/* Footer */
+.ftr{border-top:1px solid var(--line);padding:80px 0 40px;background:var(--bg)}
+.ftr__top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.ftr h4{font:700 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin:0 0 20px}
+.ftr p,.ftr li{font-size:14px;color:var(--muted);margin:0}
+.ftr ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.ftr a:hover{color:var(--text)}
+.hours li{display:flex;justify-content:space-between;gap:12px}
+.hours b{color:var(--text);font-weight:600}
+.ftr__big{font-family:var(--display);font-size:clamp(70px,17vw,260px);line-height:.8;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px #2c2c2c;margin:70px 0 30px;white-space:nowrap;overflow:hidden}
+.ftr__bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:12px;color:var(--dim);padding-top:26px;border-top:1px solid var(--line)}
+.social{display:flex;gap:10px;margin-top:22px}
+.social a{width:42px;height:42px;border:1px solid var(--line);display:grid;place-items:center;transition:.2s}
+.social a:hover{border-color:var(--lime);color:var(--lime)}
+.social svg{width:18px;height:18px}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+/* Responsive */
+@media (max-width:1100px){
+  .courses{grid-template-columns:repeat(2,1fr)}
+  .coaches{grid-template-columns:repeat(2,1fr)}
+  .stats__grid{grid-template-columns:repeat(2,1fr);row-gap:44px}
+  .quotes{grid-template-columns:1fr 1fr}
+  .quote--big{grid-column:1/-1}
+  .slot{grid-template-columns:110px 1.4fr 1fr 130px}
+  .slot .lvl{display:none}
+  .ftr__top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .nav{position:fixed;inset:78px 0 0 0;background:#0a0a0a;flex-direction:column;align-items:flex-start;padding:40px var(--gut);gap:26px;transform:translateX(100%);transition:transform .35s;overflow-y:auto}
+  .nav a{font-size:18px;color:var(--text)}
+  .nav .btn{font-size:14px;padding:16px 24px}
+  .menu-open .nav{transform:none}
+  .burger{display:flex}
+  .menu-open .hdr{background:#0a0a0a}
+  .sec-head{grid-template-columns:1fr;gap:20px}
+  .sec-head p{justify-self:start}
+  .studio{grid-template-columns:1fr}
+  .studio__media .small{right:0}
+  .tiers{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .tier--hot{transform:none}
+  .tier--hot:hover{transform:translateY(-4px)}
+  .trial .wrap{grid-template-columns:1fr}
+  .hero__side{display:none}
+}
+@media (max-width:640px){
+  body{font-size:15px}
+  .courses,.coaches,.quotes{grid-template-columns:1fr}
+  .course{min-height:400px}
+  .coaches{grid-template-columns:1fr 1fr;gap:14px}
+  .coach-card h3{font-size:24px}
+  .coach-card p,.coach-card ul{display:none}
+  .feat{grid-template-columns:1fr}
+  .stats__grid{grid-template-columns:1fr 1fr;gap:34px 18px}
+  .stat{padding-left:14px}
+  .slot{grid-template-columns:78px 1fr;gap:6px 16px;padding:18px 0}
+  .slot time{font-size:24px;grid-row:span 3}
+  .slot .coach{font-size:13px}
+  .spots{grid-column:2}
+  .row2{grid-template-columns:1fr}
+  .ftr__top{grid-template-columns:1fr}
+  .hero__meta{gap:16px 28px}
+  .hero h1{font-size:clamp(56px,17vw,96px)}
+  .btn{padding:16px 22px}
+  .studio__media .small{display:none}
+  .mz-badge{font-size:11px;padding:8px 11px;left:10px;bottom:10px}
+  .tab{min-width:74px;padding:16px 10px}
+  .tab b{font-size:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .rv{opacity:1;transform:none}
+  .marquee__track{animation:none !important}
+}
+</style>
+</head>
+<body>
+
+<a class="mz-badge" href="../beispiele.html">← Beispielseite von meuser.biz · Zur Übersicht</a>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="PULSE Athletics – Startseite">
+      <svg viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" fill="#c6ff3d"/><path d="M5 18h6l3-8 5 15 3-9h7" fill="none" stroke="#0a0a0a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square"/></svg>
+      <span>Pulse<small>Athletics</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <a href="#kurse">Kurse</a>
+      <a href="#kursplan">Kursplan</a>
+      <a href="#coaches">Coaches</a>
+      <a href="#preise">Mitgliedschaft</a>
+      <a href="#probetraining" class="btn">Probetraining</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <img class="hero__img" src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=1600&q=80&auto=format&fit=crop" alt="Athlet konzentriert sich vor einem schweren Kreuzheben im dunklen Studio" fetchpriority="high">
+  <div class="wrap">
+    <p class="eyebrow">Functional Training · Kempen</p>
+    <h1 class="display" id="hero-title"><span class="row">Stärker.</span><span class="row lime">Schneller.</span><span class="row outline">Gemeinsam.</span></h1>
+    <p class="hero__sub">Coaching in kleinen Gruppen, ehrliche Programmierung und ein Team, das dich jedes Mal ein Stück weiter bringt. Kein Massenbetrieb – max. 12 Athlet:innen pro Kurs.</p>
+    <div class="hero__cta">
+      <a href="#probetraining" class="btn">Kostenloses Probetraining <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#kursplan" class="btn btn--ghost">Kursplan ansehen</a>
+    </div>
+    <div class="hero__meta">
+      <div><strong><span class="pulse-dot" aria-hidden="true"></span>Heute geöffnet</strong>06:00 – 22:30 Uhr</div>
+      <div><strong>62 Kurse / Woche</strong>von Strength bis Mobility</div>
+      <div><strong>1.100 m² Studio</strong>Industriestraße 48, Kempen</div>
+    </div>
+  </div>
+  <div class="hero__side" aria-hidden="true">Est. 2017 — Train with purpose</div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Functional Training</span><span>Strength &amp; Conditioning</span><span>HYROX Prep</span><span>Pulse HIIT</span><span>Olympic Lifting</span><span>Mobility Flow</span>
+    <span>Functional Training</span><span>Strength &amp; Conditioning</span><span>HYROX Prep</span><span>Pulse HIIT</span><span>Olympic Lifting</span><span>Mobility Flow</span>
+  </div>
+</div>
+
+<!-- KURSE -->
+<section class="sec" id="kurse" aria-labelledby="kurse-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow rv">Unser Kursangebot</p>
+        <h2 class="display rv d1" id="kurse-title">Sechs Formate.<br><span class="lime">Ein Ziel.</span></h2>
+      </div>
+      <p class="rv d2">Jedes Format folgt einem 12-Wochen-Zyklus mit klarer Progression. Du trainierst nicht einfach – du wirst messbar besser. Alle Kurse sind skalierbar, vom ersten Tag bis zum Wettkampf.</p>
+    </div>
+    <div class="courses">
+      <article class="course rv">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=1600&q=80&auto=format&fit=crop" alt="Athletin beim Kreuzheben mit Langhantel auf Gummiboden" loading="lazy">
+        <span class="course__num">01</span><span class="course__tag">60 Min</span>
+        <div class="course__body">
+          <h3>Strength Lab</h3>
+          <p>Kniebeuge, Kreuzheben, Drücken. Saubere Technik und periodisierte Lasten für echten Kraftzuwachs.</p>
+          <div class="course__foot"><span>Intensität</span><span class="intensity" aria-label="Intensität 4 von 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+        </div>
+      </article>
+      <article class="course rv d1">
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=1600&q=80&auto=format&fit=crop" alt="Athlet trainiert mit Battle Ropes in einer Halle" loading="lazy">
+        <span class="course__num">02</span><span class="course__tag">45 Min</span>
+        <div class="course__body">
+          <h3>Pulse HIIT</h3>
+          <p>Intervalle mit Ropes, Bikes und Sleds. Maximaler Puls in kurzer Zeit – herzfrequenzgesteuert auf unserem Screen.</p>
+          <div class="course__foot"><span>Intensität</span><span class="intensity" aria-label="Intensität 5 von 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+        </div>
+      </article>
+      <article class="course rv d2">
+        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=1600&q=80&auto=format&fit=crop" alt="Athletin drückt eine Langhantel über Kopf vor einem Rack" loading="lazy">
+        <span class="course__num">03</span><span class="course__tag">60 Min</span>
+        <div class="course__body">
+          <h3>Functional Core</h3>
+          <p>Unser Herzstück: Kraft, Ausdauer und Koordination in einem Workout. Ideal für den Einstieg.</p>
+          <div class="course__foot"><span>Intensität</span><span class="intensity" aria-label="Intensität 3 von 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+        </div>
+      </article>
+      <article class="course rv">
+        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=1600&q=80&auto=format&fit=crop" alt="Athletin mit Langhantel auf den Schultern, Schwarz-Weiß-Aufnahme" loading="lazy">
+        <span class="course__num">04</span><span class="course__tag">75 Min</span>
+        <div class="course__body">
+          <h3>HYROX Prep</h3>
+          <p>8 × 1 km Laufen plus Stationen. Wettkampfspezifisches Training mit Zeitmessung und Rennplan.</p>
+          <div class="course__foot"><span>Intensität</span><span class="intensity" aria-label="Intensität 5 von 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+        </div>
+      </article>
+      <article class="course rv d1">
+        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1600&q=80&auto=format&fit=crop" alt="Athlet bei Klimmzügen an der Stange, Schwarz-Weiß" loading="lazy">
+        <span class="course__num">05</span><span class="course__tag">60 Min</span>
+        <div class="course__body">
+          <h3>Gymnastics</h3>
+          <p>Klimmzüge, Handstand, Muscle-ups. Körpergewichtskontrolle in strukturierten Skill-Progressionen.</p>
+          <div class="course__foot"><span>Intensität</span><span class="intensity" aria-label="Intensität 3 von 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+        </div>
+      </article>
+      <article class="course rv d2">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80&auto=format&fit=crop" alt="Sportlerin bei Bauchübungen auf der Matte im hellen Raum" loading="lazy">
+        <span class="course__num">06</span><span class="course__tag">45 Min</span>
+        <div class="course__body">
+          <h3>Mobility Flow</h3>
+          <p>Beweglichkeit, Atmung und Regeneration. Der perfekte Ausgleich nach harten Einheiten.</p>
+          <div class="course__foot"><span>Intensität</span><span class="intensity" aria-label="Intensität 1 von 5"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-labelledby="stats-title">
+  <div class="wrap">
+    <div class="stats__intro">
+      <h2 class="display rv" id="stats-title">Zahlen, die für sich sprechen.</h2>
+      <p class="rv d1">Seit 2017 trainieren Menschen aus Kempen, Krefeld und dem ganzen Kreis Viersen bei uns – vom Wiedereinsteiger bis zur HYROX-Elite.</p>
+    </div>
+    <div class="stats__grid">
+      <div class="stat rv"><b data-count="840">840</b><span>aktive Mitglieder</span></div>
+      <div class="stat rv d1"><b data-count="12">12</b><span>lizenzierte Coaches</span></div>
+      <div class="stat rv d2"><b data-count="94" data-suffix="%">94%</b><span>bleiben länger als ein Jahr</span></div>
+      <div class="stat rv d3"><b data-count="4.9" data-dec="1">4,9</b><span>Sterne aus 312 Bewertungen</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section class="sec" id="studio" aria-labelledby="studio-title">
+  <div class="wrap studio">
+    <div class="studio__media rv">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80&auto=format&fit=crop" alt="Lange Reihe Kurzhanteln im hellen Trainingsbereich" loading="lazy">
+      <img class="small" src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=1600&q=80&auto=format&fit=crop" alt="Athlet beim Training im Gerätebereich" loading="lazy">
+      <span class="label">1.100 m² Box</span>
+    </div>
+    <div>
+      <p class="eyebrow rv">Das Studio</p>
+      <h2 class="display rv d1" id="studio-title">Gebaut für <span class="lime">echtes</span> Training.</h2>
+      <p class="rv d2">In einer ehemaligen Lagerhalle im Gewerbegebiet Kempen haben wir eine Trainingsumgebung geschaffen, die keine Kompromisse macht: Wettkampf-Equipment, eine 40-Meter-Sprintbahn und eine Open-Gym-Fläche, die dir außerhalb der Kurse jederzeit offensteht.</p>
+      <ul class="feat">
+        <li class="rv"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h3M19 12h3M5 8v8M19 8v8M8 6v12M16 6v12M8 12h8"/></svg><div><strong>Wettkampf-Equipment</strong><span>14 Racks, Bumper Plates, Ski- &amp; Rudergeräte</span></div></li>
+        <li class="rv d1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20l3-9 4 3 3-7 4 13"/></svg><div><strong>40 m Sprint- &amp; Sledbahn</strong><span>Kunstrasen für Pushes, Pulls und Sprints</span></div></li>
+        <li class="rv"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></svg><div><strong>Herzfrequenz-Tracking</strong><span>Live-Werte auf dem Screen, Auswertung in der App</span></div></li>
+        <li class="rv d1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10c0-4 3.6-6 8-6s8 2 8 6"/><path d="M4 10h16v3a8 8 0 0 1-16 0z"/><path d="M9 21h6"/></svg><div><strong>Recovery-Zone</strong><span>Sauna, Kältebecken und Duschen mit Handtuchservice</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- KURSPLAN -->
+<section class="sec plan" id="kursplan" aria-labelledby="plan-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow rv">Wochen-Kursplan</p>
+        <h2 class="display rv d1" id="plan-title">Dein Plan.<br><span class="outline">Deine Woche.</span></h2>
+      </div>
+      <p class="rv d2">Plätze buchst du in der PULSE-App bis zu 7 Tage im Voraus. Stornierung kostenfrei bis 2 Stunden vor Kursbeginn.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Wochentage" id="tabs"></div>
+    <div id="days"></div>
+
+    <div class="plan__note">
+      <span>Open Gym: Mo–Fr 06:00–22:30 · Sa/So 08:00–18:00 Uhr</span>
+      <span>Kursplan als PDF: <a href="#kursplan">Herunterladen (Stand KW 46)</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- COACHES -->
+<section class="sec" id="coaches" aria-labelledby="coaches-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow rv">Das Team</p>
+        <h2 class="display rv d1" id="coaches-title">Coaches, die<br><span class="lime">mitziehen.</span></h2>
+      </div>
+      <p class="rv d2">Alle Coaches sind lizenziert, bilden sich jedes Jahr fort und kennen dich nach der zweiten Einheit beim Namen. Versprochen.</p>
+    </div>
+    <div class="coaches">
+      <article class="coach-card rv">
+        <figure><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=1600&q=80&auto=format&fit=crop" alt="Coach Jonas Brenner beim Bizepstraining mit SZ-Stange" loading="lazy"></figure>
+        <h3>Jonas Brenner</h3>
+        <div class="role">Head Coach · Gründer</div>
+        <p>Ex-Leichtathlet, Sportwissenschaftler (M.Sc.). Programmiert alle Zyklen bei PULSE.</p>
+        <ul><li>Strength</li><li>Olympic Lifting</li></ul>
+      </article>
+      <article class="coach-card rv d1">
+        <figure><img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=1600&q=80&auto=format&fit=crop" alt="Coach Mara Kessler konzentriert vor dem Training" loading="lazy"></figure>
+        <h3>Mara Kessler</h3>
+        <div class="role">HYROX &amp; Conditioning</div>
+        <p>Dreifache HYROX-Finisherin in der Pro-Division, B-Lizenz Fitnesstrainerin.</p>
+        <ul><li>HYROX</li><li>HIIT</li><li>Laufen</li></ul>
+      </article>
+      <article class="coach-card rv d2">
+        <figure><img src="https://images.unsplash.com/photo-1567598508481-65985588e295?w=1600&q=80&auto=format&fit=crop" alt="Coach Lea Wiegand bei Step-ups mit Kurzhanteln" loading="lazy"></figure>
+        <h3>Lea Wiegand</h3>
+        <div class="role">Functional &amp; Mobility</div>
+        <p>Physiotherapeutin und Yogalehrerin. Spezialisiert auf Rückkehr nach Verletzungen.</p>
+        <ul><li>Mobility</li><li>Reha</li></ul>
+      </article>
+      <article class="coach-card rv d3">
+        <figure><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1600&q=80&auto=format&fit=crop" alt="Coach Deniz Arslan greift Kurzhanteln aus dem Ständer" loading="lazy"></figure>
+        <h3>Deniz Arslan</h3>
+        <div class="role">Gymnastics &amp; Kids</div>
+        <p>Ehemaliger Kunstturner, betreut die Teens-Gruppe und unsere Skill-Workshops.</p>
+        <ul><li>Gymnastics</li><li>Teens</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="marquee marquee--dark" aria-hidden="true">
+  <div class="marquee__track">
+    <span>No Excuses</span><span>Train with purpose</span><span>Feel the pulse</span>
+    <span>No Excuses</span><span>Train with purpose</span><span>Feel the pulse</span>
+  </div>
+</div>
+
+<!-- PREISE -->
+<section class="sec pricing" id="preise" aria-labelledby="preise-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow rv">Mitgliedschaften</p>
+        <h2 class="display rv d1" id="preise-title">Wähle dein<br><span class="lime">Level.</span></h2>
+      </div>
+      <p class="rv d2">Faire Laufzeiten, keine versteckten Kosten. Einmalige Startgebühr 49 € inkl. Onboarding-Session und Körperanalyse – entfällt beim Abschluss nach dem Probetraining.</p>
+    </div>
+    <div class="tiers">
+      <article class="tier rv">
+        <h3>Basic</h3>
+        <p class="for">Für alle, die 1–2 × pro Woche gezielt trainieren möchten.</p>
+        <div class="price"><b>69</b><sup>€</sup></div>
+        <div class="price-note">pro Monat · 12 Monate Laufzeit</div>
+        <ul>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>8 Kurse pro Monat</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Open Gym zu allen Öffnungszeiten</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>PULSE-App mit Trainingslog</li>
+          <li class="no"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg>Recovery-Zone</li>
+          <li class="no"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg>Quartals-Check mit Coach</li>
+        </ul>
+        <a href="#probetraining" class="btn btn--ghost">Basic wählen</a>
+      </article>
+      <article class="tier tier--hot rv d1">
+        <span class="ribbon">Am beliebtesten</span>
+        <h3>Unlimited</h3>
+        <p class="for">Für alle, die es ernst meinen – so oft trainieren, wie du willst.</p>
+        <div class="price"><b>99</b><sup>€</sup></div>
+        <div class="price-note">pro Monat · 12 Monate Laufzeit</div>
+        <ul>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Unbegrenzt alle Kurse</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Open Gym zu allen Öffnungszeiten</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Recovery-Zone mit Sauna &amp; Kältebecken</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Quartals-Check mit Körperanalyse</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>1 Gast-Pass pro Monat</li>
+        </ul>
+        <a href="#probetraining" class="btn">Unlimited wählen <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="tier rv d2">
+        <h3>Performance</h3>
+        <p class="for">Für Wettkampf-Ambitionen mit persönlicher Betreuung.</p>
+        <div class="price"><b>179</b><sup>€</sup></div>
+        <div class="price-note">pro Monat · monatlich kündbar</div>
+        <ul>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Alles aus Unlimited</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>2 Personal-Trainings pro Monat</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Individueller Trainingsplan</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Ernährungscoaching (monatlich)</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Wettkampf-Begleitung</li>
+        </ul>
+        <a href="#probetraining" class="btn btn--ghost">Performance wählen</a>
+      </article>
+    </div>
+    <p class="pricing__foot">Studierende, Azubis und Schichtdienst: 15 % Rabatt auf alle Tarife. Firmenfitness über EGYM Wellpass und Urban Sports Club auf Anfrage.</p>
+  </div>
+</section>
+
+<!-- STIMMEN -->
+<section class="sec" id="stimmen" aria-labelledby="stimmen-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow rv">Mitglieder-Stimmen</p>
+        <h2 class="display rv d1" id="stimmen-title">Echte<br><span class="lime">Ergebnisse.</span></h2>
+      </div>
+      <p class="rv d2">4,9 von 5 Sternen aus 312 Bewertungen. Hier erzählen drei Mitglieder, was sich für sie verändert hat.</p>
+    </div>
+    <div class="quotes">
+      <figure class="quote quote--big rv">
+        <div>
+          <span class="result">−14 kg in 9 Monaten</span>
+          <blockquote>„Ich war nie der Sport-Typ. Bei PULSE habe ich zum ersten Mal Lust, morgens um sechs zu trainieren.“</blockquote>
+        </div>
+        <footer><span class="av" aria-hidden="true">TK</span><div><b>Thomas K.</b><span>Mitglied seit 2023 · Functional Core</span></div></footer>
+      </figure>
+      <figure class="quote rv d1">
+        <div>
+          <div class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg></div>
+          <blockquote style="margin-top:18px">„Mara hat mich in 16 Wochen auf meinen ersten HYROX vorbereitet. Ziel war unter 1:30 – geworden ist es 1:24:12.“</blockquote>
+        </div>
+        <footer><span class="av" aria-hidden="true">SH</span><div><b>Sandra H.</b><span>HYROX Prep · Krefeld</span></div></footer>
+      </figure>
+      <figure class="quote rv d2">
+        <div>
+          <div class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg></div>
+          <blockquote style="margin-top:18px">„Nach meinem Bandscheibenvorfall dachte ich, Langhanteltraining sei vorbei. Lea hat mich Schritt für Schritt zurückgebracht.“</blockquote>
+        </div>
+        <footer><span class="av" aria-hidden="true">MB</span><div><b>Michael B.</b><span>Strength Lab · Tönisvorst</span></div></footer>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROBETRAINING -->
+<section class="trial" id="probetraining" aria-labelledby="trial-title">
+  <img class="trial__bg" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1600&q=80&auto=format&fit=crop" alt="" loading="lazy">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow rv">Probetraining</p>
+      <h2 class="display rv d1" id="trial-title">Dein erstes<br>Training geht<br><span class="lime">auf uns.</span></h2>
+      <p class="lead rv d2">Komm vorbei, lerne Coaches und Community kennen und finde heraus, welches Format zu dir passt. Unverbindlich und kostenlos.</p>
+      <ol class="steps">
+        <li class="rv"><div><strong>Termin anfragen</strong><span>Formular ausfüllen – wir melden uns innerhalb von 24 Stunden.</span></div></li>
+        <li class="rv d1"><div><strong>Kennenlernen &amp; Movement-Check</strong><span>20 Minuten mit einem Coach: Ziele, Vorerfahrung, Beweglichkeit.</span></div></li>
+        <li class="rv d2"><div><strong>Mittrainieren</strong><span>Du nimmst an einem regulären Kurs teil – skaliert auf dein Level.</span></div></li>
+      </ol>
+    </div>
+    <form class="form rv" onsubmit="event.preventDefault();document.getElementById('ok').classList.add('show');this.querySelector('button').disabled=true;">
+      <h3>Probetraining buchen</h3>
+      <p>Bring Sportkleidung, Hallenschuhe und eine Trinkflasche mit. Handtücher haben wir.</p>
+      <div class="row2">
+        <div class="field"><label for="f-vn">Vorname</label><input id="f-vn" name="vorname" autocomplete="given-name" required></div>
+        <div class="field"><label for="f-nn">Nachname</label><input id="f-nn" name="nachname" autocomplete="family-name" required></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="f-em">E-Mail</label><input id="f-em" type="email" name="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-tel">Telefon</label><input id="f-tel" type="tel" name="telefon" autocomplete="tel"></div>
+      </div>
+      <fieldset class="field">
+        <legend>Was interessiert dich?</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="ziel" value="kraft" checked><span>Kraft aufbauen</span></label>
+          <label><input type="checkbox" name="ziel" value="abnehmen"><span>Abnehmen</span></label>
+          <label><input type="checkbox" name="ziel" value="hyrox"><span>HYROX</span></label>
+          <label><input type="checkbox" name="ziel" value="mobility"><span>Beweglichkeit</span></label>
+          <label><input type="checkbox" name="ziel" value="fit"><span>Einfach fitter werden</span></label>
+        </div>
+      </fieldset>
+      <div class="row2">
+        <div class="field"><label for="f-tag">Wunschtag</label>
+          <select id="f-tag" name="tag"><option>Montag</option><option>Dienstag</option><option>Mittwoch</option><option>Donnerstag</option><option>Freitag</option><option>Samstag</option></select></div>
+        <div class="field"><label for="f-zeit">Tageszeit</label>
+          <select id="f-zeit" name="zeit"><option>Früh (06–09 Uhr)</option><option>Mittags (11–14 Uhr)</option><option selected>Abends (17–21 Uhr)</option></select></div>
+      </div>
+      <label class="consent"><input type="checkbox" required> Ich bin einverstanden, dass PULSE Athletics mich zur Terminabstimmung kontaktiert. Hinweise in der Datenschutzerklärung.</label>
+      <button class="btn" type="submit">Termin anfragen <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="ok" id="ok" role="status">Danke! Wir melden uns innerhalb von 24 Stunden mit deinem Termin. (Demo – es wurden keine Daten gesendet.)</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__top">
+      <div>
+        <a href="#top" class="logo" aria-label="PULSE Athletics">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" fill="#c6ff3d"/><path d="M5 18h6l3-8 5 15 3-9h7" fill="none" stroke="#0a0a0a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square"/></svg>
+          <span>Pulse<small>Athletics</small></span>
+        </a>
+        <p style="margin-top:20px;max-width:300px">Premium Functional Training in Kempen. Small-Group-Coaching, Open Gym und Recovery unter einem Dach.</p>
+        <div class="social">
+          <a href="#top" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a href="#top" aria-label="YouTube"><svg class="ico" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></svg></a>
+          <a href="#top" aria-label="Podcast"><svg class="ico" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Industriestraße 48<br>47906 Kempen</li>
+          <li><a href="tel:+4921529876543">02152 987 65 43</a></li>
+          <li><a href="mailto:hallo@example.de">hallo@example.de</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <ul class="hours">
+          <li><span>Mo – Fr</span><b>06:00 – 22:30</b></li>
+          <li><span>Samstag</span><b>08:00 – 18:00</b></li>
+          <li><span>Sonntag</span><b>08:00 – 16:00</b></li>
+          <li><span>Feiertage</span><b>09:00 – 14:00</b></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#kurse">Kurse</a></li>
+          <li><a href="#kursplan">Kursplan</a></li>
+          <li><a href="#preise">Mitgliedschaft</a></li>
+          <li><a href="#probetraining">Probetraining</a></li>
+          <li><a href="#top">Impressum · Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__big" aria-hidden="true">Pulse Athletics</div>
+    <div class="ftr__bot">
+      <span>© 2026 PULSE Athletics GmbH · Kostenlose Parkplätze direkt am Studio</span>
+      <span>Fiktives Beispielunternehmen – Design &amp; Umsetzung: meuser.biz</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Header + burger
+  var hdr=document.getElementById('hdr'), burger=document.getElementById('burger'), nav=document.getElementById('nav');
+  function onScroll(){hdr.classList.toggle('scrolled', window.scrollY>40);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  burger.addEventListener('click',function(){
+    var open=document.body.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  });
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');});});
+
+  // Kursplan
+  var plan={
+    Mo:[["06:30","07:30","Functional Core","Früh-Session","Jonas B.","Alle",12,9],["09:00","10:00","Mobility Flow","Halle 2","Lea W.","Alle",14,6],["12:15","13:00","Pulse HIIT","Lunch-Express","Mara K.","Mittel",12,12],["17:30","18:30","Strength Lab","Squat-Zyklus","Jonas B.","Fortg.",10,8],["18:45","19:45","Functional Core","Halle 1","Deniz A.","Alle",12,11],["20:00","21:15","HYROX Prep","Race Simulation","Mara K.","Fortg.",14,10]],
+    Di:[["06:30","07:15","Pulse HIIT","Früh-Session","Mara K.","Mittel",12,7],["10:00","11:00","Functional Core","50+ Gruppe","Lea W.","Alle",10,6],["17:00","18:00","Gymnastics","Pull-up-Skills","Deniz A.","Mittel",10,7],["18:15","19:15","Strength Lab","Deadlift-Zyklus","Jonas B.","Fortg.",10,10],["19:30","20:15","Mobility Flow","Recovery","Lea W.","Alle",14,9]],
+    Mi:[["06:30","07:30","Functional Core","Früh-Session","Jonas B.","Alle",12,10],["12:15","13:00","Pulse HIIT","Lunch-Express","Mara K.","Mittel",12,9],["16:30","17:30","PULSE Teens","13–17 Jahre","Deniz A.","Alle",12,8],["18:00","19:00","Functional Core","Halle 1","Mara K.","Alle",12,12],["19:15","20:30","HYROX Prep","Stationstraining","Mara K.","Fortg.",14,11]],
+    Do:[["06:30","07:15","Pulse HIIT","Früh-Session","Deniz A.","Mittel",12,8],["09:00","10:00","Mobility Flow","Halle 2","Lea W.","Alle",14,5],["17:30","18:30","Strength Lab","Press-Zyklus","Jonas B.","Fortg.",10,7],["18:45","19:45","Gymnastics","Handstand-Lab","Deniz A.","Mittel",10,6],["20:00","21:00","Functional Core","Halle 1","Jonas B.","Alle",12,10]],
+    Fr:[["06:30","07:30","Functional Core","Früh-Session","Mara K.","Alle",12,9],["12:15","13:00","Pulse HIIT","Lunch-Express","Mara K.","Mittel",12,10],["17:00","18:15","Olympic Lifting","Snatch &amp; Clean","Jonas B.","Fortg.",8,8],["18:30","19:30","Friday Fight Club","Partner-WOD","Deniz A.","Alle",16,14]],
+    Sa:[["09:00","10:15","Team WOD","Community-Workout","Alle Coaches","Alle",24,21],["10:30","11:45","HYROX Prep","Long Run + Stationen","Mara K.","Fortg.",14,12],["12:00","13:00","Mobility Flow","Halle 2","Lea W.","Alle",14,8]],
+    So:[["10:00","11:00","Functional Core","Sunday Sweat","Deniz A.","Alle",12,9],["11:15","12:00","Mobility Flow","Stretch &amp; Breathe","Lea W.","Alle",14,10]]
+  };
+  var names={Mo:"Montag",Di:"Dienstag",Mi:"Mittwoch",Do:"Donnerstag",Fr:"Freitag",Sa:"Samstag",So:"Sonntag"};
+  var tabs=document.getElementById('tabs'), days=document.getElementById('days');
+  var keys=Object.keys(plan);
+  var today=(new Date().getDay()+6)%7;
+  keys.forEach(function(k,i){
+    var b=document.createElement('button');
+    b.className='tab';b.type='button';b.id='tab-'+k;b.setAttribute('role','tab');
+    b.setAttribute('aria-controls','day-'+k);b.setAttribute('aria-selected',i===today);b.tabIndex=i===today?0:-1;
+    b.innerHTML='<b>'+k+'</b><small>'+plan[k].length+' Kurse</small>';
+    tabs.appendChild(b);
+    var p=document.createElement('div');
+    p.className='day'+(i===today?' active':'');p.id='day-'+k;p.setAttribute('role','tabpanel');p.setAttribute('aria-labelledby','tab-'+k);p.tabIndex=0;
+    p.innerHTML='<h3 class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">'+names[k]+'</h3>'+plan[k].map(function(s){
+      var full=s[7]>=s[6], pct=Math.round(s[7]/s[6]*100);
+      return '<div class="slot"><time>'+s[0]+'<small>bis '+s[1]+' Uhr</small></time><h4>'+s[2]+'<span>'+s[3]+'</span></h4><div class="coach">Coach: '+s[4]+'</div><span class="lvl'+(s[5]==='Alle'?' all':'')+'">'+(s[5]==='Alle'?'Alle Level':s[5]==='Fortg.'?'Fortgeschritten':'Mittel')+'</span><div class="spots'+(full?' full':'')+'">'+(full?'Ausgebucht · Warteliste':(s[6]-s[7])+' von '+s[6]+' Plätzen frei')+'<span class="bar"><i style="width:'+pct+'%"></i></span></div></div>';
+    }).join('');
+    days.appendChild(p);
+  });
+  var tabEls=tabs.querySelectorAll('.tab');
+  function select(i){
+    tabEls.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;document.getElementById(t.getAttribute('aria-controls')).classList.toggle('active',on);});
+  }
+  tabEls.forEach(function(t,i){
+    t.addEventListener('click',function(){select(i);});
+    t.addEventListener('keydown',function(e){
+      var n=null;if(e.key==='ArrowRight')n=(i+1)%tabEls.length;if(e.key==='ArrowLeft')n=(i-1+tabEls.length)%tabEls.length;
+      if(n!==null){e.preventDefault();select(n);tabEls[n].focus();}
+    });
+  });
+
+  // Reveal + Counter
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el){
+    var end=parseFloat(el.dataset.count), dec=+(el.dataset.dec||0), suf=el.dataset.suffix||'', t0=null;
+    function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1400,1),v=end*(1-Math.pow(1-p,3));
+      el.textContent=v.toFixed(dec).replace('.',',')+suf;if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');var c=e.target.querySelector('[data-count]');if(c)count(c);io.unobserve(e.target);}});},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
+  }
+})();
+</script>
+</body>
+</html>

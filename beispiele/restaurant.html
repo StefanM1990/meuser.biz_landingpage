@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brasserie Lumen – Saisonale Küche in Tönisvorst</title>
+<meta name="description" content="Brasserie Lumen in Tönisvorst: saisonale Küche vom Niederrhein, siebengängiges Degustationsmenü, kuratierte Weinbegleitung. Jetzt Tisch reservieren.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141311; --bg-2:#1b1916; --bg-3:#23201c;
+    --line:rgba(198,164,106,.22); --line-soft:rgba(233,227,216,.09);
+    --gold:#c6a46a; --gold-2:#dcc08c;
+    --text:#ebe5da; --muted:#a8a092; --dim:#7d766b;
+    --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
+    --wrap:1240px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.7;overflow-x:hidden;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+  :focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+  .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 40px}
+  .eyebrow{font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:14px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:300;line-height:1.08;margin:0;letter-spacing:-.005em}
+  h2{font-size:clamp(40px,5.4vw,72px)}
+  h2 em,h1 em{font-style:italic;color:var(--gold-2)}
+  p{margin:0 0 1.1em}
+  .lead{font-family:var(--serif);font-size:clamp(22px,2.2vw,28px);line-height:1.45;font-weight:300;color:var(--text)}
+  .muted{color:var(--muted)}
+  section{position:relative}
+  .sec{padding:140px 0}
+  .ornament{display:block;margin:0 auto;color:var(--gold)}
+
+  /* Badge */
+  .meuser-badge{position:fixed;left:18px;bottom:18px;z-index:9999;background:rgba(20,19,17,.92);color:var(--text);border:1px solid var(--line);padding:9px 14px;font:400 12px/1.3 var(--sans);letter-spacing:.04em;text-decoration:none;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:border-color .3s,color .3s;max-width:calc(100vw - 36px)}
+  .meuser-badge:hover{border-color:var(--gold);color:var(--gold-2)}
+
+  /* Nav */
+  .nav{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .5s,border-color .5s,padding .5s;border-bottom:1px solid transparent;padding:26px 0}
+  .nav.scrolled{background:rgba(20,19,17,.94);border-color:var(--line-soft);padding:14px 0;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .nav.open{backdrop-filter:none;-webkit-backdrop-filter:none;background:#141311}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand-mark{width:34px;height:34px;color:var(--gold)}
+  .brand-name{font-family:var(--serif);font-size:24px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;line-height:1}
+  .brand-name small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.42em;color:var(--muted);margin-top:5px}
+  .nav ul{list-style:none;margin:0;padding:0;display:flex;gap:34px}
+  .nav ul a{text-decoration:none;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--text);opacity:.85;transition:color .3s,opacity .3s}
+  .nav ul a:hover{color:var(--gold-2);opacity:1}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:var(--sans);font-size:13px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:16px 30px;border:1px solid var(--gold);color:var(--gold-2);background:transparent;cursor:pointer;transition:background .35s,color .35s}
+  .btn:hover{background:var(--gold);color:#141311}
+  .btn-solid{background:var(--gold);color:#141311}
+  .btn-solid:hover{background:var(--gold-2)}
+  .nav .btn{padding:12px 22px;font-size:12px}
+  .burger{display:none;background:none;border:1px solid var(--line);width:46px;height:46px;cursor:pointer;color:var(--text);padding:0;align-items:center;justify-content:center}
+  .burger span,.burger span::before,.burger span::after{display:block;width:20px;height:1px;background:currentColor;position:relative;transition:transform .3s,background .3s}
+  .burger span::before,.burger span::after{content:"";position:absolute;left:0}
+  .burger span::before{top:-6px}.burger span::after{top:6px}
+  .nav.open .burger span{background:transparent}
+  .nav.open .burger span::before{transform:translateY(6px) rotate(45deg)}
+  .nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+
+  /* Hero */
+  .hero{min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;padding:150px 0 90px;overflow:hidden}
+  .hero-img{position:absolute;inset:0;z-index:0}
+  .hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:heroZoom 14s ease-out forwards}
+  .hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,19,17,.7) 0%,rgba(20,19,17,.5) 35%,rgba(20,19,17,.85) 78%,#141311 100%)}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero .wrap{position:relative;z-index:1}
+  .hero h1{font-size:clamp(56px,10vw,156px);line-height:.92;margin:26px 0 30px;font-weight:300}
+  .hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:end}
+  .hero-side{border-left:1px solid var(--line);padding-left:32px;max-width:400px;justify-self:end}
+  .hero-side p{color:var(--text);opacity:.9}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
+  .hero-meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:70px;padding-top:26px;border-top:1px solid var(--line-soft);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .hero-meta b{color:var(--gold-2);font-weight:400}
+
+  /* Intro */
+  .intro-grid{display:grid;grid-template-columns:5fr 6fr;gap:90px;align-items:center}
+  .intro-imgs{position:relative;padding-bottom:90px}
+  .intro-imgs .a{width:82%;aspect-ratio:4/5;object-fit:cover}
+  .intro-imgs .b{position:absolute;right:0;bottom:0;width:52%;aspect-ratio:1/1;object-fit:cover;border:10px solid var(--bg)}
+  .intro-text h2{margin:22px 0 34px}
+  .signature{display:flex;align-items:center;gap:22px;margin-top:40px;padding-top:30px;border-top:1px solid var(--line-soft)}
+  .signature .sig{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--gold-2);line-height:1}
+  .signature small{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:46px}
+  .facts div{border-top:1px solid var(--line);padding-top:18px}
+  .facts b{display:block;font-family:var(--serif);font-weight:300;font-size:46px;color:var(--gold-2);line-height:1}
+  .facts span{font-size:13px;color:var(--muted);letter-spacing:.06em}
+
+  /* Menu */
+  .menu{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .sec-head{text-align:center;max-width:720px;margin:0 auto 80px}
+  .sec-head h2{margin:22px 0 24px}
+  .sec-head .eyebrow::after{content:"";width:34px;height:1px;background:var(--gold)}
+  .menu-tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:0 auto 64px}
+  .menu-tabs button{background:none;border:0;border-bottom:1px solid transparent;color:var(--muted);font:400 13px var(--sans);letter-spacing:.22em;text-transform:uppercase;padding:10px 18px;cursor:pointer;transition:color .3s,border-color .3s}
+  .menu-tabs button[aria-selected="true"],.menu-tabs button:hover{color:var(--gold-2);border-color:var(--gold)}
+  .menu-panel{display:grid;grid-template-columns:1fr 1fr;gap:20px 90px;max-width:1060px;margin:0 auto}
+  .menu-panel[hidden]{display:none}
+  .dish{padding:22px 0;border-bottom:1px solid var(--line-soft)}
+  .dish-row{display:flex;align-items:baseline;gap:14px}
+  .dish-name{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.2;min-width:0}
+  .dish-dots{flex:1 1 30px;min-width:24px;border-bottom:1px dotted rgba(198,164,106,.55);transform:translateY(-6px)}
+  .dish-price{font-family:var(--serif);font-size:24px;color:var(--gold-2);white-space:nowrap}
+  .dish p{margin:6px 0 0;font-size:15px;color:var(--muted);max-width:44ch}
+  .tag{display:inline-block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:2px 8px;margin-left:8px;vertical-align:middle;font-family:var(--sans)}
+  .menu-note{text-align:center;margin-top:60px;font-size:14px;color:var(--dim);letter-spacing:.04em}
+
+  /* Degustation */
+  .degu-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+  .degu-img{position:relative;min-height:640px}
+  .degu-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .degu-img .price-card{position:absolute;left:40px;bottom:40px;background:rgba(20,19,17,.9);border:1px solid var(--line);padding:28px 32px;backdrop-filter:blur(4px)}
+  .price-card b{display:block;font-family:var(--serif);font-size:54px;font-weight:300;color:var(--gold-2);line-height:1}
+  .price-card span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .degu-body{padding:100px 80px;background:var(--bg-3)}
+  .degu-body h2{margin:22px 0 22px}
+  .courses{list-style:none;margin:44px 0 40px;padding:0;counter-reset:c}
+  .courses li{display:grid;grid-template-columns:54px 1fr;gap:10px;padding:16px 0;border-bottom:1px solid var(--line-soft);counter-increment:c}
+  .courses li::before{content:counter(c,upper-roman);font-family:var(--serif);font-size:20px;color:var(--gold);font-style:italic;padding-top:2px}
+  .courses h4{font-size:24px;font-weight:400}
+  .courses p{font-size:14.5px;color:var(--muted);margin:2px 0 0}
+  .degu-foot{display:flex;flex-wrap:wrap;gap:16px 34px;align-items:center;font-size:14px;color:var(--muted)}
+
+  /* Wine */
+  .wine-grid{display:grid;grid-template-columns:6fr 5fr;gap:90px;align-items:center}
+  .wine-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+  .wcard{border:1px solid var(--line);padding:30px 28px;transition:border-color .4s,background .4s}
+  .wcard:hover{border-color:var(--gold);background:rgba(198,164,106,.04)}
+  .wcard svg{width:34px;height:34px;color:var(--gold);margin-bottom:18px}
+  .wcard h3{font-size:28px;font-weight:400;margin-bottom:6px}
+  .wcard .p{font-family:var(--serif);font-size:22px;color:var(--gold-2);margin-bottom:12px;display:block}
+  .wcard p{font-size:15px;color:var(--muted);margin:0}
+  .wine-img{position:relative}
+  .wine-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .wine-img .frame{position:absolute;inset:-22px 22px 22px -22px;border:1px solid var(--line);z-index:-1}
+  .wine-quote{margin-top:30px;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--muted);line-height:1.5}
+
+  /* Gallery */
+  .gallery{padding:0 0 140px}
+  .gal{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:120px;gap:14px}
+  .gal figure{margin:0;overflow:hidden;position:relative}
+  .gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter 1s;filter:saturate(.9)}
+  .gal figure:hover img{transform:scale(1.05);filter:saturate(1.05)}
+  .gal figcaption{position:absolute;left:18px;bottom:14px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--text);opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+  .gal figure:hover figcaption,.gal figure:focus-within figcaption{opacity:1;transform:none}
+  .g1{grid-column:1/6;grid-row:span 4}
+  .g2{grid-column:6/10;grid-row:span 2}
+  .g3{grid-column:10/13;grid-row:span 3}
+  .g4{grid-column:6/10;grid-row:span 2}
+  .g5{grid-column:10/13;grid-row:span 3}
+  .g6{grid-column:1/4;grid-row:span 2}
+  .g7{grid-column:4/10;grid-row:span 2}
+
+  /* Press */
+  .press{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .press-logos{display:flex;justify-content:center;flex-wrap:wrap;gap:24px 60px;margin-bottom:80px;opacity:.75}
+  .press-logos span{font-family:var(--serif);font-size:24px;letter-spacing:.08em;color:var(--muted)}
+  .press-logos .l2{font-family:var(--sans);font-weight:500;font-size:14px;letter-spacing:.42em;text-transform:uppercase;padding-top:6px}
+  .press-logos .l3{font-style:italic;font-size:28px}
+  .press-logos .l4{font-family:var(--sans);font-weight:300;font-size:16px;letter-spacing:.2em;border:1px solid var(--dim);padding:2px 10px}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:50px}
+  .quote{text-align:center;padding:0 10px}
+  .quote .stars{color:var(--gold);letter-spacing:.3em;font-size:13px;margin-bottom:22px}
+  .quote blockquote{margin:0;font-family:var(--serif);font-size:26px;line-height:1.35;font-weight:300;font-style:italic}
+  .quote cite{display:block;margin-top:24px;font-style:normal;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+  .quote cite span{display:block;color:var(--dim);letter-spacing:.12em;margin-top:6px;text-transform:none;font-size:13px}
+
+  /* Reservation */
+  .reserve{overflow:hidden}
+  .reserve-bg{position:absolute;inset:0;z-index:0}
+  .reserve-bg img{width:100%;height:100%;object-fit:cover;opacity:.22}
+  .reserve-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#141311 0%,rgba(20,19,17,.86) 50%,rgba(20,19,17,.94) 100%)}
+  .reserve .wrap{position:relative;z-index:1}
+  .res-grid{display:grid;grid-template-columns:5fr 6fr;gap:90px;align-items:start}
+  .hours{margin:40px 0 0;padding:0;list-style:none}
+  .hours li{display:flex;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid var(--line-soft);font-size:16px}
+  .hours li span:first-child{min-width:0}
+  .hours .d{flex:1;border-bottom:1px dotted rgba(198,164,106,.4);transform:translateY(-5px);min-width:20px}
+  .hours .closed{color:var(--dim);font-style:italic;font-family:var(--serif);font-size:19px}
+  .contact-lines{margin-top:40px;display:grid;gap:16px}
+  .contact-lines div{display:flex;gap:16px;align-items:flex-start}
+  .contact-lines svg{width:22px;height:22px;color:var(--gold);flex:none;margin-top:3px}
+  .contact-lines a{text-decoration:none;border-bottom:1px solid var(--line)}
+  .contact-lines a:hover{color:var(--gold-2)}
+  form.res{background:rgba(27,25,22,.92);border:1px solid var(--line);padding:56px 54px}
+  form.res h3{font-size:38px;margin-bottom:8px}
+  form.res > p{color:var(--muted);font-size:15px;margin-bottom:34px}
+  .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .fgrid .full{grid-column:1/-1}
+  .fgrid .half{grid-column:span 1}
+  .f2{display:grid;grid-template-columns:1fr 1fr;gap:22px;grid-column:1/-1}
+  label{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(233,227,216,.25);color:var(--text);font:300 17px var(--sans);padding:10px 0 12px;border-radius:0;-webkit-appearance:none;appearance:none;transition:border-color .3s;color-scheme:dark}
+  select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23c6a46a' stroke-width='1.2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;padding-right:22px}
+  select option{background:#1b1916;color:var(--text)}
+  textarea{resize:vertical;min-height:90px}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+  input::placeholder,textarea::placeholder{color:var(--dim)}
+  .check{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted);grid-column:1/-1;text-transform:none;letter-spacing:0;margin:0}
+  .check input{width:16px;height:16px;flex:none;margin-top:4px;border:1px solid var(--gold);-webkit-appearance:auto;appearance:auto;accent-color:var(--gold)}
+  .form-foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:34px}
+  .form-foot small{color:var(--dim);font-size:13px;max-width:30ch}
+  .confirm{display:none;margin-top:26px;padding:18px 20px;border:1px solid var(--gold);color:var(--gold-2);font-family:var(--serif);font-size:21px}
+  .confirm.show{display:block}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line-soft);padding:90px 0 40px;background:#100f0d}
+  .f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px}
+  .f-grid h4{font-family:var(--sans);font-size:11.5px;font-weight:400;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+  .f-grid p,.f-grid li{font-size:15px;color:var(--muted)}
+  .f-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  .f-grid a{text-decoration:none}
+  .f-grid a:hover{color:var(--gold-2)}
+  .f-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:70px;padding-top:28px;border-top:1px solid var(--line-soft);font-size:13px;color:var(--dim)}
+  .f-bottom a{text-decoration:none}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+    .hero-img img{transform:none}
+  }
+
+  /* Responsive */
+  @media (max-width:1100px){
+    .nav ul{gap:22px}
+    .degu-body{padding:80px 50px}
+    .intro-grid,.wine-grid,.res-grid{gap:60px}
+  }
+  @media (max-width:1024px){
+    .wrap{padding:0 32px}
+    .sec{padding:110px 0}
+    .nav ul,.nav .nav-cta{display:none}
+    .burger{display:inline-flex}
+    .nav-panel{position:fixed;inset:0;background:#141311;z-index:-1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:30px;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+    .nav.open .nav-panel{opacity:1;visibility:visible}
+    .nav-panel ul{display:flex!important;flex-direction:column;align-items:center;gap:22px}
+    .nav-panel ul a{font-family:var(--serif);font-size:34px;letter-spacing:.04em;text-transform:none}
+    .nav-panel .nav-cta{display:inline-flex!important}
+    .hero-grid{grid-template-columns:1fr;gap:30px}
+    .hero-side{justify-self:start}
+    .intro-grid,.wine-grid,.res-grid{grid-template-columns:1fr}
+    .intro-imgs{max-width:620px}
+    .degu-grid{grid-template-columns:1fr}
+    .degu-img{min-height:480px}
+    .wine-img{max-width:520px;order:-1}
+    .quotes{grid-template-columns:1fr;gap:60px;max-width:640px;margin:0 auto}
+    .f-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (min-width:1025px){ .nav-panel{display:contents} }
+  @media (max-width:768px){
+    .menu-panel{grid-template-columns:1fr;gap:0}
+    .gal{grid-template-columns:repeat(6,1fr);grid-auto-rows:100px;gap:10px}
+    .g1{grid-column:1/-1;grid-row:span 4}
+    .g2,.g4{grid-column:1/4;grid-row:span 2}
+    .g3,.g5{grid-column:4/7;grid-row:span 2}
+    .g6{grid-column:1/3;grid-row:span 2}
+    .g7{grid-column:3/7;grid-row:span 2}
+    .fgrid{grid-template-columns:1fr 1fr}
+    .fgrid .half:last-of-type{grid-column:1/-1}
+    form.res{padding:40px 30px}
+    .wine-cards{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    body{font-size:16px}
+    .wrap{padding:0 20px}
+    .sec{padding:84px 0}
+    .gallery{padding-bottom:84px}
+    .brand-name{font-size:19px}
+    .brand-name small{display:none}
+    .hero{padding-bottom:70px}
+    .hero h1{margin:18px 0 22px}
+    .hero-side{padding-left:20px}
+    .hero-meta{gap:12px 24px;margin-top:44px;font-size:11.5px}
+    .hero-cta .btn{width:100%}
+    .facts{grid-template-columns:1fr 1fr 1fr;gap:16px}
+    .facts b{font-size:34px}
+    .facts span{font-size:12px}
+    .dish-name{font-size:22px}
+    .dish-price{font-size:21px}
+    .degu-body{padding:64px 22px}
+    .degu-img{min-height:380px}
+    .degu-img .price-card{left:20px;bottom:20px;right:20px;padding:20px 22px}
+    .courses li{grid-template-columns:42px 1fr}
+    .courses h4{font-size:21px}
+    .intro-imgs{padding-bottom:60px}
+    .wine-img .frame{display:none}
+    .intro-imgs .b{border-width:6px}
+    .gal{grid-auto-rows:80px}
+    .fgrid,.f2{grid-template-columns:1fr}
+    .fgrid .half:last-of-type{grid-column:auto}
+    form.res{padding:32px 20px}
+    form.res h3{font-size:31px}
+    .form-foot .btn{width:100%}
+    .f-grid{grid-template-columns:1fr;gap:36px}
+    .quote blockquote{font-size:23px}
+    .meuser-badge{left:10px;bottom:10px;font-size:11px;padding:8px 11px}
+    footer{padding-bottom:80px}
+  }
+</style>
+</head>
+<body>
+
+<a class="meuser-badge" href="../beispiele.html">← Beispielseite von meuser.biz · Zur Übersicht</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Brasserie Lumen – Startseite">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><circle cx="20" cy="20" r="18.5"/><circle cx="20" cy="20" r="6"/><path d="M20 2v8M20 30v8M2 20h8M30 20h8M7.3 7.3l5.6 5.6M27.1 27.1l5.6 5.6M7.3 32.7l5.6-5.6M27.1 12.9l5.6-5.6"/></svg>
+      <span class="brand-name">Lumen<small>Brasserie</small></span>
+    </a>
+    <div class="nav-panel" id="navPanel">
+      <ul>
+        <li><a href="#haus">Das Haus</a></li>
+        <li><a href="#karte">Karte</a></li>
+        <li><a href="#menu">Degustation</a></li>
+        <li><a href="#wein">Wein</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+      </ul>
+      <a href="#reservierung" class="btn nav-cta">Tisch reservieren</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navPanel"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80&auto=format&fit=crop" alt="Gedämpft beleuchteter Speisesaal mit dunklem Holz und gedeckten Tischen" fetchpriority="high">
+  </div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Saisonale Küche · Seit 2016</span>
+        <h1>Brasserie<br><em>Lumen</em></h1>
+      </div>
+      <div class="hero-side">
+        <p>Wir kochen, was der Niederrhein in dieser Woche hergibt – mit französischem Handwerk, viel Geduld und einer Weinkarte, die Geschichten erzählt.</p>
+        <div class="hero-cta">
+          <a href="#reservierung" class="btn btn-solid">Tisch reservieren</a>
+          <a href="#menu" class="btn">Zum Menü</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <span><b>Di – Sa</b> ab 18 Uhr</span>
+      <span><b>So</b> Mittagstisch 12 – 15 Uhr</span>
+      <span>Kirchplatz 4 · Tönisvorst</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="sec" id="haus">
+  <div class="wrap intro-grid">
+    <div class="intro-imgs reveal">
+      <img class="a" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=1600&q=80&auto=format&fit=crop" alt="Koch richtet unter kupfernen Lampen ein Gericht mit der Pinzette an" loading="lazy">
+      <img class="b" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=1600&q=80&auto=format&fit=crop" alt="Hände schneiden frisches Gemüse auf einem Holzbrett" loading="lazy">
+    </div>
+    <div class="intro-text reveal d1">
+      <span class="eyebrow">Das Haus</span>
+      <h2>Licht, Ruhe und<br><em>ehrliche</em> Produkte.</h2>
+      <p class="lead">In einem ehemaligen Kontorhaus von 1894 haben wir uns einen Ort geschaffen, an dem Zeit langsamer vergeht.</p>
+      <p class="muted">Unser Küchenchef Julien Varenne arbeitet mit rund zwanzig Höfen und Manufakturen aus einem Umkreis von sechzig Kilometern: Spargel aus Walbeck, Lamm von der Bislicher Insel, Forellen aus dem Schwalmtal. Die Karte wechselt alle drei bis vier Wochen – und manchmal auch, weil ein Lieferant morgens mit etwas Besonderem vor der Tür steht.</p>
+      <p class="muted">Zweiunddreißig Plätze, kein Zeitdruck, keine Hintergrundmusik in Clublautstärke. Nur ein gut gedeckter Tisch.</p>
+      <div class="facts">
+        <div><b>32</b><span>Plätze im Saal</span></div>
+        <div><b>21</b><span>Partnerhöfe</span></div>
+        <div><b>420</b><span>Positionen im Keller</span></div>
+      </div>
+      <div class="signature">
+        <div>
+          <span class="sig">Julien Varenne</span>
+          <small>Küchenchef &amp; Gastgeber</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="sec menu" id="karte">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Herbstkarte · November</span>
+      <h2>À la <em>carte</em></h2>
+      <p class="muted">Kleine Karte, große Sorgfalt. Alle Gerichte auch als halbe Portion – fragen Sie gern nach.</p>
+    </div>
+
+    <div class="menu-tabs" role="tablist" aria-label="Speisekarte">
+      <button role="tab" aria-selected="true" aria-controls="p-vor" id="t-vor">Zum Auftakt</button>
+      <button role="tab" aria-selected="false" aria-controls="p-haupt" id="t-haupt" tabindex="-1">Hauptgänge</button>
+      <button role="tab" aria-selected="false" aria-controls="p-des" id="t-des" tabindex="-1">Zum Abschluss</button>
+    </div>
+
+    <div class="menu-panel reveal" role="tabpanel" id="p-vor" aria-labelledby="t-vor">
+      <div class="dish"><div class="dish-row"><span class="dish-name">Tatar vom Weiderind</span><span class="dish-dots"></span><span class="dish-price">24</span></div><p>Eigelb-Creme, geröstete Haselnuss, eingelegte Schalotte, Brioche</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Kürbis &amp; Kastanie <span class="tag">vegetarisch</span></span><span class="dish-dots"></span><span class="dish-price">19</span></div><p>Hokkaido in drei Texturen, Maronen-Velouté, Salbei, brauner Butter</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Forelle aus dem Schwalmtal</span><span class="dish-dots"></span><span class="dish-price">22</span></div><p>Leicht geräuchert, Meerrettich, Apfel, Dill-Öl, Buchweizen-Crunch</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Jakobsmuschel</span><span class="dish-dots"></span><span class="dish-price">26</span></div><p>Blumenkohl, Beurre blanc mit Vin jaune, Kaviar von der Forelle</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Consommé vom Fasan</span><span class="dish-dots"></span><span class="dish-price">16</span></div><p>Wurzelgemüse, Trüffel-Ravioli, Liebstöckel</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Bete &amp; Ziegenkäse <span class="tag">vegetarisch</span></span><span class="dish-dots"></span><span class="dish-price">18</span></div><p>Gebackene Rote Bete, Ziegenfrischkäse vom Hof Lenders, Walnuss, Honig</p></div>
+    </div>
+
+    <div class="menu-panel" role="tabpanel" id="p-haupt" aria-labelledby="t-haupt" hidden>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Rücken vom Bislicher Lamm</span><span class="dish-dots"></span><span class="dish-price">42</span></div><p>Petersilienwurzel, Bohnenkerne, Rosmarin-Jus, geschmorte Schulter</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Steinbutt am Knochen</span><span class="dish-dots"></span><span class="dish-price">46</span></div><p>Lauch, Muscheln, Champagner-Sauce, Kartoffel-Mousseline</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Rehrücken aus heimischer Jagd</span><span class="dish-dots"></span><span class="dish-price">48</span></div><p>Rotkohl-Gel, Quitte, Pfifferlinge, Wacholder-Sauce</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Dry Aged Entrecôte, 300 g</span><span class="dish-dots"></span><span class="dish-price">52</span></div><p>32 Tage gereift, Sauce Béarnaise, Pommes Pont-Neuf, Brunnenkresse</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Wildkräuter-Risotto <span class="tag">vegan</span></span><span class="dish-dots"></span><span class="dish-price">29</span></div><p>Carnaroli, Waldpilze, Hafer-Parmesan, Kürbiskernöl</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Perlhuhn aus der Eifel</span><span class="dish-dots"></span><span class="dish-price">38</span></div><p>Brust und Keule, Schwarzwurzel, Morchelrahm, Spätzle</p></div>
+    </div>
+
+    <div class="menu-panel" role="tabpanel" id="p-des" aria-labelledby="t-des" hidden>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Tarte Tatin</span><span class="dish-dots"></span><span class="dish-price">14</span></div><p>Boskoop vom Obsthof, Crème fraîche, Calvados-Karamell</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Valrhona Guanaja 70 %</span><span class="dish-dots"></span><span class="dish-price">16</span></div><p>Ganache, Sauerkirsche, Tonkabohne, Kakao-Nib-Tuile</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Birne Helene, neu gedacht</span><span class="dish-dots"></span><span class="dish-price">13</span></div><p>Pochierte Williams, Vanille-Parfait, warme Schokolade</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Käse von Affineur Lambrecht</span><span class="dish-dots"></span><span class="dish-price">19</span></div><p>Fünf gereifte Rohmilchkäse, Feigensenf, Früchtebrot</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Hausgemachte Petits Fours</span><span class="dish-dots"></span><span class="dish-price">9</span></div><p>Zum Kaffee oder Digestif – eine kleine Auswahl der Patisserie</p></div>
+      <div class="dish"><div class="dish-row"><span class="dish-name">Sorbet der Saison <span class="tag">vegan</span></span><span class="dish-dots"></span><span class="dish-price">8</span></div><p>Quitte &amp; Rosmarin oder Holunder-Apfel, je Kugel</p></div>
+    </div>
+
+    <p class="menu-note">Preise in Euro inkl. MwSt. · Informationen zu Allergenen erhalten Sie von unserem Service.</p>
+  </div>
+</section>
+
+<!-- DEGUSTATION -->
+<section id="menu">
+  <div class="degu-grid">
+    <div class="degu-img">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80&auto=format&fit=crop" alt="Fein angerichteter Teller auf einem festlich gedeckten Tisch mit Weingläsern" loading="lazy">
+      <div class="price-card">
+        <b>145 €</b>
+        <span>Sieben Gänge · pro Person</span>
+      </div>
+    </div>
+    <div class="degu-body">
+      <span class="eyebrow reveal">Degustationsmenü</span>
+      <h2 class="reveal">„Spätherbst“<br><em>in sieben Gängen</em></h2>
+      <p class="muted reveal">Unser Menü erzählt eine Jahreszeit. Wir empfehlen, sich drei Stunden Zeit zu nehmen. Auf Wunsch servieren wir fünf Gänge für 115 €, eine vegetarische Variante bieten wir zum gleichen Preis an.</p>
+      <ol class="courses reveal">
+        <li><div><h4>Gruß aus der Küche</h4><p>Gougère, Kürbis-Tartelette, Rauchaal auf Pumpernickel</p></div></li>
+        <li><div><h4>Forelle · Apfel · Meerrettich</h4><p>Gebeizt und geflämmt, grüner Apfel, Dill-Buttermilch</p></div></li>
+        <li><div><h4>Sellerie · Trüffel · Nussbutter</h4><p>Im Salzteig gegart, Périgord-Trüffel, Haselnuss</p></div></li>
+        <li><div><h4>Jakobsmuschel · Vin jaune</h4><p>Blumenkohl, Beurre blanc, Forellenkaviar</p></div></li>
+        <li><div><h4>Reh · Quitte · Wacholder</h4><p>Rücken und Ragout, Rotkohl, Pfifferlinge</p></div></li>
+        <li><div><h4>Käse vom Affineur</h4><p>Ein gereifter Rohmilchkäse, Feige, Walnussbrot</p></div></li>
+        <li><div><h4>Schokolade · Sauerkirsche</h4><p>Guanaja 70 %, Tonkabohne, Kirsch-Sorbet</p></div></li>
+      </ol>
+      <div class="degu-foot reveal">
+        <a href="#reservierung" class="btn btn-solid">Menü reservieren</a>
+        <span>Weinbegleitung ab 79 €</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WINE -->
+<section class="sec" id="wein">
+  <div class="wrap wine-grid">
+    <div class="reveal">
+      <span class="eyebrow">Weinbegleitung</span>
+      <h2 style="margin:22px 0 28px">Aus dem <em>Gewölbe</em>.</h2>
+      <p class="lead">Unser Sommelier Mathis Engel führt einen Keller mit rund 420 Positionen – von kleinen Winzern an Mosel und Nahe bis zu gereiften Burgundern.</p>
+      <p class="muted">Zu jedem Gang schenkt er ein Glas ein, das den Teller ergänzt statt übertönt. Wer lieber ohne Alkohol genießt, bekommt eine eigene Begleitung aus Tees, Säften und Fermenten aus unserer Küche.</p>
+      <div class="wine-cards">
+        <div class="wcard">
+          <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M10 3h14c0 0 1 9-1.5 12.5S17 19 17 19s-3-0.2-5.5-3.5S10 3 10 3z"/><path d="M10.5 9h13"/><path d="M17 19v11M11.5 31h11"/></svg>
+          <h3>Klassisch</h3><span class="p">79 € · 6 Gläser</span>
+          <p>Riesling, Weißburgunder, Spätburgunder und ein edelsüßer Abschluss – präzise auf das Menü abgestimmt.</p>
+        </div>
+        <div class="wcard">
+          <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M13 3h8v6c3 1.5 4 4 4 7v15H9V16c0-3 1-5.5 4-7V3z"/><path d="M13 6h8"/><path d="M9 19h16M9 26h16"/></svg>
+          <h3>Grand Cru</h3><span class="p">139 € · 6 Gläser</span>
+          <p>Gereifte Raritäten aus Burgund, Wachau und Piemont, teils aus der Magnum, direkt am Tisch dekantiert.</p>
+        </div>
+        <div class="wcard">
+          <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M8 6h18l-2.5 24h-13z"/><path d="M9 13h16"/><path d="M15 3c0 3 4 3 4 6" /><circle cx="15" cy="21" r="1.2"/><circle cx="19.5" cy="24" r="1"/></svg>
+          <h3>Ohne Alkohol</h3><span class="p">55 € · 6 Gläser</span>
+          <p>Hausgemachte Kombuchas, kalt extrahierte Tees und Säfte von Streuobstwiesen am Niederrhein.</p>
+        </div>
+        <div class="wcard">
+          <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="5" y="5" width="24" height="24"/><path d="M5 13h24M5 21h24M13 5v24M21 5v24"/></svg>
+          <h3>Kellerführung</h3><span class="p">Für Gruppen ab 6</span>
+          <p>Vor dem Essen in das Gewölbe von 1894: Verkostung von drei Weinen mit unserem Sommelier, 35 € p. P.</p>
+        </div>
+      </div>
+    </div>
+    <div class="wine-img reveal d1">
+      <span class="frame" aria-hidden="true"></span>
+      <img src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=1600&q=80&auto=format&fit=crop" alt="Rotwein wird in ein Glas eingeschenkt" loading="lazy">
+      <p class="wine-quote">„Ein guter Wein macht aus einem Gang einen Moment.“</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="galerie">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:60px">
+      <span class="eyebrow">Galerie</span>
+      <h2>Ein Abend <em>bei uns</em></h2>
+    </div>
+    <div class="gal">
+      <figure class="g1 reveal"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1600&q=80&auto=format&fit=crop" alt="Bar mit warmem Licht, Holztheke und gefüllten Regalen" loading="lazy"><figcaption>Die Bar</figcaption></figure>
+      <figure class="g2 reveal d1"><img src="https://images.unsplash.com/photo-1546241072-48010ad2862c?w=1600&q=80&auto=format&fit=crop" alt="Brokkoli wird auf dunklem Grund mit Olivenöl beträufelt" loading="lazy"><figcaption>Vom Hof</figcaption></figure>
+      <figure class="g3 reveal d2"><img src="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=1600&q=80&auto=format&fit=crop" alt="Glas Rotwein neben blauen Trauben und Weinlaub" loading="lazy"><figcaption>Weinkeller</figcaption></figure>
+      <figure class="g4 reveal d1"><img src="https://images.unsplash.com/photo-1428515613728-6b4607e44363?w=1600&q=80&auto=format&fit=crop" alt="Köche arbeiten in einer Profiküche unter Hängeleuchten" loading="lazy"><figcaption>Die Küche</figcaption></figure>
+      <figure class="g5 reveal d2"><img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=1600&q=80&auto=format&fit=crop" alt="Aufgeschnittenes, rosa gebratenes Rindfleisch auf dunklem Holz" loading="lazy"><figcaption>Dry Aged</figcaption></figure>
+      <figure class="g6 reveal"><img src="https://images.unsplash.com/photo-1482275548304-a58859dc31b7?w=1600&q=80&auto=format&fit=crop" alt="Weinflasche und Gläser auf einem Tisch im Abendlicht" loading="lazy"><figcaption>Am Tisch</figcaption></figure>
+      <figure class="g7 reveal d1"><img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=1600&q=80&auto=format&fit=crop" alt="Weinglas vor Weinbergen und einem See" loading="lazy"><figcaption>Unsere Winzer</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="sec press" id="presse">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Stimmen aus der Presse</span>
+      <h2>Was man <em>über uns</em> schreibt</h2>
+    </div>
+    <div class="press-logos reveal" aria-label="Fiktive Publikationen">
+      <span>Tafelrunde</span>
+      <span class="l2">Genuss&nbsp;West</span>
+      <span class="l3">Le Petit Gourmand</span>
+      <span class="l4">RHEIN·KÜCHE</span>
+    </div>
+    <div class="quotes">
+      <figure class="quote reveal">
+        <div class="stars" aria-label="Bewertung: 17 von 20 Punkten">17 / 20 PUNKTE</div>
+        <blockquote>„Varenne kocht mit einer Selbstverständlichkeit, die man am Niederrhein lange gesucht hat. Der Rehrücken ist ein Ereignis.“</blockquote>
+        <cite>Tafelrunde<span>Restaurantführer 2026</span></cite>
+      </figure>
+      <figure class="quote reveal d1">
+        <div class="stars" aria-hidden="true">✦ ✦ ✦</div>
+        <blockquote>„Ein Raum wie ein langer Atemzug: warmes Licht, gedämpfte Stimmen, ein Service, der sieht, bevor man fragt.“</blockquote>
+        <cite>Genuss West<span>Ausgabe Oktober 2026</span></cite>
+      </figure>
+      <figure class="quote reveal d2">
+        <div class="stars" aria-hidden="true">✦ ✦ ✦</div>
+        <blockquote>„Die Weinbegleitung allein lohnt die Anreise. Selten wurde ein Riesling so klug neben eine Jakobsmuschel gestellt.“</blockquote>
+        <cite>Le Petit Gourmand<span>„Neue Adressen im Westen“</span></cite>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section class="sec reserve" id="reservierung">
+  <div class="reserve-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?w=1600&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+  <div class="wrap res-grid">
+    <div class="reveal">
+      <span class="eyebrow">Öffnungszeiten</span>
+      <h2 style="margin:22px 0 10px">Wir freuen uns<br>auf <em>Sie</em>.</h2>
+      <ul class="hours">
+        <li><span>Montag</span><span class="d"></span><span class="closed">Ruhetag</span></li>
+        <li><span>Dienstag – Donnerstag</span><span class="d"></span><span>18:00 – 23:00</span></li>
+        <li><span>Freitag &amp; Samstag</span><span class="d"></span><span>18:00 – 24:00</span></li>
+        <li><span>Sonntag Mittagstisch</span><span class="d"></span><span>12:00 – 15:00</span></li>
+        <li><span>Letzte Menübestellung</span><span class="d"></span><span>21:00</span></li>
+      </ul>
+      <div class="contact-lines">
+        <div><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M11 20s7-6.2 7-11.5A7 7 0 0 0 4 8.5C4 13.8 11 20 11 20z"/><circle cx="11" cy="8.5" r="2.5"/></svg><span>Brasserie Lumen · Kirchplatz 4<br>47918 Tönisvorst</span></div>
+        <div><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M5 2.5h3l1.5 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 4.5a2 2 0 0 1 2-2z"/></svg><a href="tel:+4921511234567">02151 123 45 67</a></div>
+        <div><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="4.5" width="17" height="13"/><path d="M2.5 5l8.5 7 8.5-7"/></svg><a href="mailto:reservierung@example.de">reservierung@example.de</a></div>
+      </div>
+      <p class="muted" style="margin-top:34px;font-size:15px">Für Gesellschaften ab neun Personen und exklusive Abende im Gewölbe (bis 18 Gäste) rufen Sie uns bitte an. Gutscheine erhalten Sie im Restaurant.</p>
+    </div>
+
+    <form class="res reveal d1" id="resForm" onsubmit="event.preventDefault(); handleRes(this);">
+      <h3>Tisch reservieren</h3>
+      <p>Wir bestätigen Ihre Anfrage innerhalb von 24 Stunden per E-Mail.</p>
+      <div class="fgrid">
+        <div class="half"><label for="r-date">Datum</label><input type="date" id="r-date" name="datum" required></div>
+        <div class="half"><label for="r-time">Uhrzeit</label>
+          <select id="r-time" name="uhrzeit" required>
+            <option value="">Bitte wählen</option>
+            <option>12:00</option><option>12:30</option><option>13:00</option>
+            <option>18:00</option><option>18:30</option><option selected>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option>
+          </select></div>
+        <div class="half"><label for="r-pers">Personen</label>
+          <select id="r-pers" name="personen" required>
+            <option>1 Person</option><option selected>2 Personen</option><option>3 Personen</option><option>4 Personen</option><option>5 Personen</option><option>6 Personen</option><option>7 Personen</option><option>8 Personen</option>
+          </select></div>
+        <div class="f2">
+          <div><label for="r-name">Name</label><input type="text" id="r-name" name="name" autocomplete="name" placeholder="Vor- und Nachname" required></div>
+          <div><label for="r-mail">E-Mail</label><input type="email" id="r-mail" name="email" autocomplete="email" placeholder="name@example.de" required></div>
+        </div>
+        <div class="f2">
+          <div><label for="r-tel">Telefon</label><input type="tel" id="r-tel" name="telefon" autocomplete="tel" placeholder="02151 …"></div>
+          <div><label for="r-art">Wunsch</label>
+            <select id="r-art" name="wunsch">
+              <option>À la carte</option><option>Degustation, 7 Gänge</option><option>Degustation, 5 Gänge</option><option>Mittagstisch</option>
+            </select></div>
+        </div>
+        <div class="full"><label for="r-note">Anmerkungen</label><textarea id="r-note" name="anmerkung" placeholder="Allergien, Anlass, Tischwunsch …"></textarea></div>
+        <label class="check"><input type="checkbox" required> <span>Ich habe die Datenschutzhinweise gelesen und bin mit der Verarbeitung meiner Angaben zur Reservierung einverstanden.</span></label>
+      </div>
+      <div class="form-foot">
+        <small>Bei Nichterscheinen ohne Absage berechnen wir für Menüreservierungen 50 € pro Person.</small>
+        <button type="submit" class="btn btn-solid">Anfrage senden</button>
+      </div>
+      <div class="confirm" id="resConfirm" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" aria-label="Brasserie Lumen">
+          <svg class="brand-mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><circle cx="20" cy="20" r="18.5"/><circle cx="20" cy="20" r="6"/><path d="M20 2v8M20 30v8M2 20h8M30 20h8M7.3 7.3l5.6 5.6M27.1 27.1l5.6 5.6M7.3 32.7l5.6-5.6M27.1 12.9l5.6-5.6"/></svg>
+          <span class="brand-name">Lumen<small>Brasserie</small></span>
+        </a>
+        <p style="margin-top:22px;max-width:32ch">Saisonale Küche mit französischem Handwerk, im alten Kontorhaus am Kirchplatz.</p>
+      </div>
+      <div>
+        <h4>Besuch</h4>
+        <ul><li>Kirchplatz 4</li><li>47918 Tönisvorst</li><li>Parkplätze im Hof</li></ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul><li><a href="tel:+4921511234567">02151 123 45 67</a></li><li><a href="mailto:reservierung@example.de">reservierung@example.de</a></li></ul>
+      </div>
+      <div>
+        <h4>Entdecken</h4>
+        <ul><li><a href="#karte">Speisekarte</a></li><li><a href="#menu">Degustationsmenü</a></li><li><a href="#wein">Weinbegleitung</a></li><li><a href="#reservierung">Reservierung</a></li></ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Brasserie Lumen · Impressum · Datenschutz</span>
+      <span>Fiktives Beispielunternehmen – Design &amp; Umsetzung: <a href="../beispiele.html">meuser.biz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'), burger=document.getElementById('burger');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>40); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  burger.addEventListener('click',function(){
+    var o=nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded',o); burger.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');
+    document.body.style.overflow=o?'hidden':'';
+  });
+  document.querySelectorAll('#navPanel a').forEach(function(a){ a.addEventListener('click',function(){
+    nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow='';
+  });});
+
+  // Tabs
+  var tabs=[].slice.call(document.querySelectorAll('.menu-tabs [role=tab]'));
+  function select(t){
+    tabs.forEach(function(x){ var on=x===t; x.setAttribute('aria-selected',on); x.tabIndex=on?0:-1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden=!on; });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){ select(t); });
+    t.addEventListener('keydown',function(e){
+      var n=null; if(e.key==='ArrowRight') n=tabs[(i+1)%tabs.length]; if(e.key==='ArrowLeft') n=tabs[(i-1+tabs.length)%tabs.length];
+      if(n){ e.preventDefault(); select(n); n.focus(); }
+    });
+  });
+
+  // Date min
+  var d=document.getElementById('r-date'); var t=new Date(); t.setDate(t.getDate()+1);
+  d.min=new Date().toISOString().split('T')[0]; d.value=t.toISOString().split('T')[0];
+
+  // Reveal
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+})();
+function handleRes(f){
+  var c=document.getElementById('resConfirm');
+  var date=f.datum.value ? new Date(f.datum.value+'T12:00').toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'}) : '';
+  c.textContent='Vielen Dank, '+(f.name.value.split(' ')[0]||'')+'. Ihre Anfrage für '+f.personen.value+' am '+date+' um '+f.uhrzeit.value+' Uhr ist bei uns eingegangen. (Demo – es wurde nichts gesendet.)';
+  c.classList.add('show');
+}
+</script>
+</body>
+</html>

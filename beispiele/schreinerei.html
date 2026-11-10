@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Holzwerk Brandt – Meister-Schreinerei für Möbel nach Maß, Küchen &amp; Innenausbau</title>
+<meta name="description" content="Holzwerk Brandt aus Tönisvorst: Meister-Schreinerei für Möbel nach Maß, Massivholzküchen und Innenausbau. Aufmaß, Entwurf, Fertigung und Montage aus einer Hand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f5f0e6; --paper-2:#ece4d5; --paper-3:#e3d8c4;
+    --walnut:#6b4429; --walnut-d:#4a2e1b; --walnut-l:#a87a52;
+    --fir:#1f3a2e; --fir-d:#162a21; --fir-l:#2f5444;
+    --ink:#1e1a15; --ink-2:#4d453b; --ink-3:#6f665a;
+    --line:rgba(30,26,21,.14);
+    --serif:"Fraunces", Georgia, serif;
+    --sans:"Work Sans", "Helvetica Neue", Arial, sans-serif;
+    --wrap:1320px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--walnut);outline-offset:3px}
+  .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 48px}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;margin:0;line-height:1.02;letter-spacing:-.02em;font-variation-settings:"SOFT" 30}
+  h2{font-size:clamp(40px,5.6vw,84px)}
+  h2 em,h1 em{font-style:italic;font-weight:300;color:var(--walnut)}
+  p{margin:0 0 1em}
+  .kicker{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--fir);display:inline-flex;gap:12px;align-items:center}
+  .kicker .n{font-family:var(--serif);font-style:italic;font-weight:500;font-size:15px;letter-spacing:0;text-transform:none;color:var(--walnut)}
+  .sec{padding:140px 0;position:relative}
+  .muted{color:var(--ink-2)}
+
+  /* Badge */
+  .meuser-badge{position:fixed;left:16px;bottom:16px;z-index:9999;background:var(--fir);color:#f5f0e6;padding:9px 14px;font:500 12.5px/1.3 var(--sans);text-decoration:none;border-radius:2px;box-shadow:0 6px 20px rgba(22,42,33,.25);transition:background .3s;max-width:calc(100vw - 32px)}
+  .meuser-badge:hover{background:var(--walnut-d)}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:12px;padding:17px 28px;font:600 14px var(--sans);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .3s}
+  .btn:hover{background:var(--walnut);border-color:var(--walnut)}
+  .btn svg{width:18px;height:18px;transition:transform .3s}
+  .btn:hover svg{transform:translateX(4px)}
+  .btn-ghost{background:transparent;color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .btn-light{background:var(--paper);color:var(--fir);border-color:var(--paper)}
+  .btn-light:hover{background:var(--walnut-l);border-color:var(--walnut-l);color:var(--ink)}
+
+  /* Nav */
+  .topbar{background:var(--fir);color:#dfe7e1;font-size:13px}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:20px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
+  .topbar a{text-decoration:none}
+  .nav{position:sticky;top:0;z-index:100;background:rgba(245,240,230,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav.open{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--paper)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:84px;gap:24px}
+  .logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+  .logo svg{width:44px;height:44px;flex:none}
+  .logo b{display:block;font-family:var(--serif);font-weight:900;font-size:24px;letter-spacing:-.02em;line-height:1}
+  .logo small{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-top:4px;font-weight:500}
+  .nav ul{list-style:none;display:flex;gap:36px;margin:0;padding:0}
+  .nav ul a{text-decoration:none;font-weight:500;font-size:15px;position:relative;padding:6px 0}
+  .nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--walnut);transition:right .35s}
+  .nav ul a:hover::after{right:0}
+  .nav .btn{padding:13px 20px;font-size:13px}
+  .burger{display:none;width:48px;height:48px;border:2px solid var(--ink);background:none;cursor:pointer;align-items:center;justify-content:center;padding:0;color:var(--ink)}
+  .burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:currentColor;position:relative;transition:transform .3s,background .3s}
+  .burger span::before,.burger span::after{content:"";position:absolute;left:0}
+  .burger span::before{top:-6px}.burger span::after{top:6px}
+  .nav.open .burger span{background:transparent}
+  .nav.open .burger span::before{transform:translateY(6px) rotate(45deg)}
+  .nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+
+  /* Hero */
+  .hero{padding:80px 0 120px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:start}
+  .hero-copy{grid-column:1/7;padding-top:40px;position:relative;z-index:2}
+  .hero h1{font-size:clamp(54px,7.6vw,124px);font-weight:500;line-height:.94;margin:26px 0 34px;letter-spacing:-.035em}
+  .hero h1 .u{position:relative;white-space:nowrap}
+  .hero h1 .u::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.12em;background:var(--walnut-l);opacity:.45;z-index:-1}
+  .hero-copy p{font-size:19px;max-width:46ch;color:var(--ink-2)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+  .hero-media{grid-column:7/13;position:relative}
+  .hero-media .main{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .hero-media .sub{position:absolute;left:-26%;bottom:-60px;width:46%;aspect-ratio:1/1;object-fit:cover;border:12px solid var(--paper)}
+  .stamp{position:absolute;right:-30px;top:-34px;width:150px;height:150px;color:var(--fir);animation:spin 40s linear infinite}
+  .stamp-wrap{position:absolute;right:-30px;top:-34px;width:150px;height:150px}
+  .stamp-wrap .stamp{position:static}
+  .stamp-c{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:var(--serif);color:var(--fir)}
+  .stamp-c b{font-size:30px;font-weight:900;line-height:1}
+  .stamp-c span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--sans);font-weight:600}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero-stats{grid-column:1/7;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:80px;padding-top:30px;border-top:2px solid var(--ink)}
+  .hero-stats b{display:block;font-family:var(--serif);font-size:44px;font-weight:500;line-height:1;letter-spacing:-.03em}
+  .hero-stats span{font-size:14px;color:var(--ink-3)}
+
+  /* Marquee */
+  .strip{background:var(--walnut-d);color:var(--paper-2);overflow:hidden;padding:22px 0;white-space:nowrap}
+  .strip-in{display:inline-flex;gap:48px;animation:marq 38s linear infinite;font-family:var(--serif);font-size:28px;font-style:italic;font-weight:300}
+  .strip-in span{display:inline-flex;align-items:center;gap:48px}
+  .strip-in span::after{content:"";width:10px;height:10px;background:var(--walnut-l);transform:rotate(45deg)}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  /* Leistungen */
+  .serv-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-bottom:80px;align-items:end}
+  .serv-head > div:first-child{grid-column:1/8}
+  .serv-head > p{grid-column:9/13;margin:0;color:var(--ink-2)}
+  .serv-head h2{margin-top:22px}
+  .serv{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+  .scard{position:relative;background:var(--paper-2);display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+  .scard:hover{transform:translateY(-6px)}
+  .scard .im{overflow:hidden}
+  .scard img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+  .scard:hover img{transform:scale(1.04)}
+  .scard .bd{padding:34px 34px 38px}
+  .scard .ic{width:44px;height:44px;color:var(--walnut);margin-bottom:20px}
+  .scard h3{font-size:34px;margin-bottom:14px}
+  .scard p{color:var(--ink-2);font-size:16px}
+  .scard ul{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .scard li{font-size:13px;font-weight:500;border:1px solid var(--line);padding:5px 12px;border-radius:30px;background:var(--paper)}
+  .scard .price{margin-top:auto;padding-top:22px;font-size:14px;color:var(--ink-3);border-top:1px solid var(--line);margin-left:34px;margin-right:34px;padding-bottom:30px}
+  .scard .price b{font-family:var(--serif);font-size:20px;color:var(--ink);font-weight:500}
+  .s1{grid-column:1/6}
+  .s1 .im{aspect-ratio:5/4}
+  .s2{grid-column:6/13;margin-top:120px;background:var(--fir);color:var(--paper)}
+  .s2 .im{aspect-ratio:16/9}
+  .s2 p,.s2 .price{color:#c5d2ca}
+  .s2 .ic{color:var(--walnut-l)}
+  .s2 li{background:transparent;border-color:rgba(245,240,230,.25);color:var(--paper)}
+  .s2 .price{border-color:rgba(245,240,230,.2)}
+  .s2 .price b{color:var(--paper)}
+  .s3{grid-column:2/8;margin-top:-60px}
+  .s3 .im{aspect-ratio:16/10}
+  .s4{grid-column:8/13;margin-top:40px;background:transparent;border:2px solid var(--ink);padding:0}
+  .s4 .bd{padding:40px}
+  .s4 .more{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:0}
+  .s4 .more li{border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;font-size:16px;padding:14px 0;display:flex;justify-content:space-between;gap:12px}
+  .s4 .more li span{color:var(--ink-3);font-size:14px;white-space:nowrap}
+
+  /* Projekte */
+  .projects{background:var(--paper-2)}
+  .proj-head{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap;margin-bottom:56px}
+  .proj-head h2{margin-top:22px}
+  .filters{display:flex;flex-wrap:wrap;gap:10px}
+  .filters button{font:500 14px var(--sans);border:2px solid var(--ink);background:transparent;color:var(--ink);padding:10px 20px;cursor:pointer;transition:background .25s,color .25s}
+  .filters button[aria-pressed="true"],.filters button:hover{background:var(--ink);color:var(--paper)}
+  .filters button sup{font-size:10px;margin-left:4px;opacity:.7}
+  .pgrid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-flow:dense;gap:24px}
+  .proj{position:relative;overflow:hidden;margin:0;background:var(--paper-3);transition:opacity .4s}
+  .proj img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .proj:hover img{transform:scale(1.04)}
+  .proj figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 26px 22px;background:linear-gradient(0deg,rgba(22,18,13,.82),rgba(22,18,13,0));color:var(--paper);display:flex;justify-content:space-between;align-items:end;gap:16px}
+  .proj figcaption b{display:block;font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.15}
+  .proj figcaption small{font-size:13px;opacity:.85}
+  .proj .cat{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:var(--paper);color:var(--ink);padding:5px 10px;white-space:nowrap}
+  .proj.hide{display:none}
+  .pgrid.filtered .proj{grid-column:span 6;aspect-ratio:4/3}
+  .p-xl{grid-column:span 7;aspect-ratio:7/5}
+  .p-t{grid-column:span 5;aspect-ratio:5/6}
+  .p-m{grid-column:span 4;aspect-ratio:1/1}
+  .p-w{grid-column:span 8;aspect-ratio:2/1}
+
+  /* Ablauf */
+  .steps-wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+  .steps-intro{grid-column:1/5;position:sticky;top:130px;align-self:start}
+  .steps-intro h2{margin:22px 0 26px}
+  .steps-intro img{margin-top:36px;width:100%;aspect-ratio:4/3;object-fit:cover}
+  .steps{grid-column:6/13;list-style:none;margin:0;padding:0}
+  .step{display:grid;grid-template-columns:120px 1fr;gap:30px;padding:44px 0;border-top:2px solid var(--ink)}
+  .step:last-child{border-bottom:2px solid var(--ink)}
+  .step-n{font-family:var(--serif);font-size:96px;font-weight:300;line-height:.8;color:var(--walnut);font-style:italic;letter-spacing:-.04em}
+  .step h3{font-size:38px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .step h3 svg{width:34px;height:34px;color:var(--fir);flex:none}
+  .step p{margin:14px 0 0;color:var(--ink-2);max-width:52ch}
+  .step .meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;font-size:14px;font-weight:500;color:var(--fir)}
+  .step .meta span::before{content:"→ ";color:var(--walnut)}
+
+  /* Holz */
+  .wood{background:var(--fir);color:var(--paper);overflow:hidden}
+  .wood .kicker{color:#b9cbbf}
+  .wood h2 em{color:var(--walnut-l)}
+  .wood-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:start}
+  .wood-intro{grid-column:1/6}
+  .wood-intro h2{margin:22px 0 26px}
+  .wood-intro p{color:#c5d2ca}
+  .wood-tex{grid-column:7/13;position:relative}
+  .wood-tex img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .wood-tex .note{position:absolute;left:-40px;bottom:-40px;background:var(--paper);color:var(--ink);padding:24px 28px;max-width:300px;font-family:var(--serif);font-size:19px;line-height:1.35;font-style:italic}
+  .wood-tex .note small{display:block;font-family:var(--sans);font-style:normal;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--walnut);margin-top:10px;font-weight:600}
+  .species{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:110px}
+  .sp{background:var(--fir-d);border:1px solid rgba(245,240,230,.1);transition:transform .4s}
+  .sp:hover{transform:translateY(-6px)}
+  .sw{height:170px;position:relative}
+  .sw::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(92deg,rgba(0,0,0,0) 0 7px,rgba(0,0,0,.09) 7px 8px,rgba(0,0,0,0) 8px 19px,rgba(255,255,255,.06) 19px 20px),radial-gradient(ellipse 40% 120% at 30% 50%,rgba(0,0,0,.14),transparent 70%)}
+  .sw-eiche{background:linear-gradient(95deg,#c49a63,#b8895a 30%,#cfa772 55%,#b48654)}
+  .sw-nuss{background:linear-gradient(95deg,#5c3b25,#4a2e1b 35%,#6d4830 60%,#4f321f)}
+  .sw-kirsch{background:linear-gradient(95deg,#a8603b,#97522f 35%,#b56d45 60%,#8f4c2c)}
+  .sw-esche{background:linear-gradient(95deg,#e4d3b4,#d8c49f 35%,#ecdcc0 60%,#d4bf98)}
+  .sw-raeuch{background:linear-gradient(95deg,#3d2c20,#2f2219 35%,#4a3627 60%,#34261c)}
+  .sp-bd{padding:22px 22px 26px}
+  .sp h3{font-size:26px;font-weight:500}
+  .sp i{font-family:var(--serif);font-size:14px;color:#a9bcb0;display:block;margin:2px 0 12px}
+  .sp p{font-size:14.5px;color:#c5d2ca;margin:0 0 14px}
+  .sp dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+  .sp dt{color:#a9bcb0}
+  .sp dd{margin:0;text-align:right}
+  .bar{display:inline-flex;gap:3px;vertical-align:middle}
+  .bar i{width:10px;height:6px;background:rgba(245,240,230,.2);margin:0;display:block}
+  .bar i.on{background:var(--walnut-l)}
+
+  /* Team */
+  .team-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:start}
+  .team-intro{grid-column:1/6}
+  .team-intro h2{margin:22px 0 26px}
+  .team-img{grid-column:7/13;position:relative}
+  .team-img img{width:100%;aspect-ratio:3/2;object-fit:cover}
+  .team-img .cap{position:absolute;right:0;bottom:-1px;background:var(--paper);padding:14px 0 0 20px;font-size:14px;color:var(--ink-3)}
+  .members{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:90px}
+  .m{border-top:2px solid var(--ink);padding-top:24px}
+  .m:nth-child(even){margin-top:50px}
+  .avatar{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:30px;font-weight:500;color:var(--paper);margin-bottom:22px;letter-spacing:-.02em}
+  .m:nth-child(1) .avatar{background:var(--walnut)}
+  .m:nth-child(2) .avatar{background:var(--fir)}
+  .m:nth-child(3) .avatar{background:var(--walnut-l)}
+  .m:nth-child(4) .avatar{background:var(--ink-2)}
+  .m h3{font-size:26px}
+  .m .role{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--walnut);margin:6px 0 12px;display:block}
+  .m p{font-size:15px;color:var(--ink-2)}
+  .badges{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:70px;padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);grid-column:1/-1;align-items:center;justify-content:space-between}
+  .badges div{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:500}
+  .badges svg{width:30px;height:30px;color:var(--fir);flex:none}
+
+  /* Stimmen */
+  .voices{background:var(--paper-2)}
+  .v-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:70px}
+  .v{background:var(--paper);padding:40px;position:relative}
+  .v svg.q{width:40px;height:40px;color:var(--walnut-l);margin-bottom:18px}
+  .v blockquote{margin:0;font-family:var(--serif);font-size:22px;line-height:1.4;font-weight:300}
+  .v footer{margin-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;border-top:1px solid var(--line);padding-top:18px}
+  .v footer b{font-weight:600}
+  .v footer span{color:var(--ink-3)}
+  .v1{grid-column:1/8}
+  .v1 blockquote{font-size:clamp(24px,2.4vw,32px)}
+  .v2{grid-column:8/13;margin-top:80px;background:var(--walnut-d);color:var(--paper)}
+  .v2 footer{border-color:rgba(245,240,230,.2)}
+  .v2 footer span{color:#d9c8b6}
+  .v3{grid-column:3/10;margin-top:-20px}
+  .rating{display:flex;gap:4px;margin-bottom:6px;color:var(--walnut)}
+  .v2 .rating{color:var(--walnut-l)}
+  .rating svg{width:16px;height:16px}
+
+  /* Anfrage */
+  .contact-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+  .c-info{grid-column:1/5}
+  .c-info h2{margin:22px 0 26px}
+  .c-list{margin-top:40px;display:grid;gap:22px}
+  .c-list div{display:grid;grid-template-columns:28px 1fr;gap:14px}
+  .c-list svg{width:24px;height:24px;color:var(--walnut);margin-top:2px}
+  .c-list b{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+  .c-list a{text-decoration:none;border-bottom:1px solid var(--walnut-l)}
+  form.inq{grid-column:6/13;background:var(--paper-2);padding:56px;border-top:6px solid var(--fir)}
+  .fg{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .fg .full{grid-column:1/-1}
+  label{display:block;font-size:13px;font-weight:600;margin-bottom:8px;color:var(--ink)}
+  input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;font:400 16px var(--sans);color:var(--ink);background:var(--paper);border:1px solid rgba(30,26,21,.25);padding:14px 16px;border-radius:0;-webkit-appearance:none;appearance:none;transition:border-color .25s,box-shadow .25s}
+  select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%231e1a15' stroke-width='1.6'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+  textarea{min-height:130px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--fir);box-shadow:0 0 0 3px rgba(31,58,46,.15)}
+  fieldset{border:0;margin:0;padding:0;grid-column:1/-1}
+  legend{font-size:13px;font-weight:600;margin-bottom:12px;padding:0}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chips label{margin:0;font-weight:500;font-size:14px;cursor:pointer}
+  .chips input{position:absolute;opacity:0;width:1px;height:1px}
+  .chips span{display:inline-block;padding:10px 16px;border:1px solid rgba(30,26,21,.3);background:var(--paper);transition:background .2s,color .2s,border-color .2s}
+  .chips input:checked + span{background:var(--fir);color:var(--paper);border-color:var(--fir)}
+  .chips input:focus-visible + span{outline:2px solid var(--walnut);outline-offset:2px}
+  .consent{display:flex;gap:12px;align-items:flex-start;font-size:14px;font-weight:400;color:var(--ink-2);grid-column:1/-1}
+  .consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--fir);flex:none}
+  .f-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:32px}
+  .f-foot small{color:var(--ink-3);font-size:13px;max-width:34ch}
+  .ok{display:none;margin-top:24px;padding:18px 20px;background:var(--fir);color:var(--paper);font-size:15px}
+  .ok.show{display:block}
+
+  /* Footer */
+  .site-foot{background:var(--ink);color:#cfc6b8;padding:100px 0 40px}
+  .ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+  .ft .big{font-family:var(--serif);font-size:clamp(34px,4vw,56px);color:var(--paper);line-height:1.05;font-weight:500;letter-spacing:-.03em}
+  .ft .big em{font-style:italic;font-weight:300;color:var(--walnut-l)}
+  .ft h4{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--walnut-l);margin-bottom:18px;font-weight:600}
+  .ft ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15px}
+  .ft a{text-decoration:none}
+  .ft a:hover{color:var(--paper)}
+  .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:80px;padding-top:26px;border-top:1px solid rgba(245,240,230,.12);font-size:13px;color:#958b7c}
+  .fb a{text-decoration:none}
+
+  /* Reveal */
+  .rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .rv{opacity:1;transform:none}
+  }
+
+  /* Responsive */
+  @media (max-width:1180px){
+    .nav ul{gap:24px}
+    .species{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:1024px){
+    .wrap{padding:0 32px}
+    .sec{padding:110px 0}
+    .nav ul,.nav .nav-btn{display:none}
+    .burger{display:inline-flex}
+    .nav-panel{position:fixed;left:0;right:0;top:84px;bottom:0;background:var(--paper);display:flex;flex-direction:column;padding:40px 32px;gap:30px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s,visibility .3s,transform .3s;overflow-y:auto}
+    .nav.open .nav-panel{opacity:1;visibility:visible;transform:none}
+    .nav-panel ul{display:flex!important;flex-direction:column;gap:6px}
+    .nav-panel ul a{font-family:var(--serif);font-size:40px;font-weight:500;letter-spacing:-.02em;display:block;padding:8px 0;border-bottom:1px solid var(--line)}
+    .nav-panel ul a::after{display:none}
+    .nav-panel .nav-btn{display:inline-flex!important;align-self:flex-start}
+    .hero-copy{grid-column:1/-1}
+    .hero-media{grid-column:2/-1;margin-top:40px}
+    .hero-media .sub{left:-14%}
+    .stamp-wrap{right:10px}
+    .hero-stats{grid-column:1/-1;margin-top:110px}
+    .serv-head > div:first-child,.serv-head > p{grid-column:1/-1}
+    .s1,.s2,.s3,.s4{grid-column:1/-1;margin-top:0}
+    .s1{grid-column:1/8}.s2{grid-column:8/13}
+    .s3{grid-column:1/8}.s4{grid-column:8/13}
+    .p-xl,.p-w{grid-column:span 12}
+    .p-t,.p-m{grid-column:span 6}
+    .p-t{aspect-ratio:4/5}
+    .steps-intro{grid-column:1/-1;position:static}
+    .steps-intro img{max-width:560px}
+    .steps{grid-column:1/-1;margin-top:60px}
+    .wood-intro,.wood-tex{grid-column:1/-1}
+    .wood-tex{margin-top:30px}
+    .wood-tex .note{left:20px}
+    .team-intro,.team-img{grid-column:1/-1}
+    .members{grid-template-columns:repeat(2,1fr)}
+    .m:nth-child(even){margin-top:0}
+    .v1,.v2,.v3{grid-column:1/-1;margin-top:0}
+    .c-info,form.inq{grid-column:1/-1}
+    form.inq{margin-top:50px}
+    .ft{grid-template-columns:1fr 1fr}
+    .ft > div:first-child{grid-column:1/-1}
+  }
+  @media (min-width:1025px){ .nav-panel{display:contents} }
+  @media (max-width:768px){
+    .s1,.s2,.s3,.s4{grid-column:1/-1}
+    .species{grid-template-columns:repeat(2,1fr)}
+    .step{grid-template-columns:80px 1fr;gap:20px}
+    .step-n{font-size:68px}
+    .step h3{font-size:30px}
+    .hero-media{grid-column:1/-1}
+    .hero-media .sub{display:none}
+    .stamp-wrap{right:16px;top:-50px;width:120px;height:120px}
+    .stamp-wrap .stamp{width:120px;height:120px}
+    .stamp-c b{font-size:24px}
+    .hero-stats{margin-top:60px}
+    .topbar .tb-hide{display:none}
+  }
+  @media (max-width:560px){
+    body{font-size:16px}
+    .wrap{padding:0 20px}
+    .sec{padding:84px 0}
+    .nav .wrap{height:72px}
+    .nav-panel{top:72px;padding:30px 20px}
+    .logo svg{width:38px;height:38px}
+    .logo b{font-size:20px}
+    .logo small{font-size:9.5px;letter-spacing:.14em}
+    .hero{padding:50px 0 84px}
+    .hero h1 .u{white-space:normal}
+    .hero-copy p{font-size:17px}
+    .hero-cta .btn{width:100%;justify-content:center}
+    .hero-stats{grid-template-columns:1fr 1fr 1fr;gap:14px}
+    .hero-stats b{font-size:28px}
+    .hero-stats span{font-size:12.5px}
+    .strip-in{font-size:22px}
+    .scard .bd,.s4 .bd{padding:26px 22px 30px}
+    .scard .price{margin-left:22px;margin-right:22px}
+    .scard h3{font-size:28px}
+    .p-t,.p-m{grid-column:span 12}
+    .p-xl,.p-w{aspect-ratio:4/3}
+    .pgrid.filtered .proj{grid-column:span 12}
+    .pgrid{gap:16px}
+    .proj figcaption{padding:50px 18px 16px;flex-direction:column;align-items:flex-start}
+    .step{grid-template-columns:1fr;gap:10px;padding:34px 0}
+    .step-n{font-size:58px}
+    .step h3{font-size:27px}
+    .wood-tex .note{position:relative;left:0;bottom:0;max-width:none;margin-top:-30px;margin-left:16px;margin-right:16px}
+    .species{grid-template-columns:1fr;margin-top:70px}
+    .sw{height:120px}
+    .members{grid-template-columns:1fr;margin-top:60px}
+    .team-img .cap{position:static;padding:12px 0 0}
+    .v{padding:30px 24px}
+    .v blockquote{font-size:20px}
+    form.inq{padding:32px 20px}
+    .fg{grid-template-columns:1fr}
+    .f-foot .btn{width:100%;justify-content:center}
+    .ft{grid-template-columns:1fr}
+    .meuser-badge{left:10px;bottom:10px;font-size:11.5px;padding:8px 11px}
+    .site-foot{padding-bottom:84px}
+  }
+</style>
+</head>
+<body>
+
+<a class="meuser-badge" href="../beispiele.html">← Beispielseite von meuser.biz · Zur Übersicht</a>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Meisterbetrieb · Mitglied der Tischler-Innung Niederrhein</span>
+    <span class="tb-hide">Werkstatt: Mo – Fr 7:30 – 17:00 · Ausstellung Sa 10 – 14 Uhr · <a href="tel:+4921511234567">02151 123 45 67</a></span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Holzwerk Brandt – Startseite">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" fill="#1f3a2e"/><g fill="none" stroke="#f5f0e6" stroke-width="1.6" stroke-linecap="round"><path d="M10 34V10M34 34V10M10 22h24"/><path d="M15 10c4 3 10 3 14 0M15 34c4-3 10-3 14 0" stroke="#a87a52"/></g></svg>
+      <span><b>Holzwerk Brandt</b><small>Schreinermeister seit 1987</small></span>
+    </a>
+    <div class="nav-panel" id="navPanel">
+      <ul>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#projekte">Projekte</a></li>
+        <li><a href="#ablauf">Ablauf</a></li>
+        <li><a href="#holz">Holzarten</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+      <a href="#anfrage" class="btn nav-btn">Projekt anfragen</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navPanel"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="kicker"><span class="n">Nr. 01</span> Möbel · Küchen · Innenausbau</span>
+      <h1>Gebaut für <span class="u">Generationen</span>, <em>nicht</em> für den Katalog.</h1>
+      <p>Wir planen und bauen Möbel, Küchen und Einbauten aus massivem Holz – millimetergenau für Ihren Raum, in unserer eigenen Werkstatt in Tönisvorst.</p>
+      <div class="hero-cta">
+        <a href="#anfrage" class="btn">Aufmaß vereinbaren <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5"/></svg></a>
+        <a href="#projekte" class="btn btn-ghost">Projekte ansehen</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img class="main" src="https://images.unsplash.com/photo-1611021061285-16c871740efa?w=1600&q=80&auto=format&fit=crop" alt="Hand arbeitet mit einem Stechbeitel an einem Holzstück, Späne fliegen" fetchpriority="high">
+      <img class="sub" src="https://images.unsplash.com/photo-1622372738946-62e02505feb3?w=1600&q=80&auto=format&fit=crop" alt="Küche mit Fronten aus dunklem Nussbaum und Kochinsel" loading="lazy">
+      <div class="stamp-wrap" aria-hidden="true">
+        <svg class="stamp" viewBox="0 0 150 150"><defs><path id="circ" d="M75 75m-58 0a58 58 0 1 1 116 0a58 58 0 1 1-116 0"/></defs><circle cx="75" cy="75" r="73" fill="#f5f0e6" stroke="currentColor" stroke-width="1.5"/><text font-family="Work Sans, sans-serif" font-size="12.5" font-weight="600" letter-spacing="3.2" fill="currentColor"><textPath href="#circ">MEISTERBETRIEB · HANDGEFERTIGT · TÖNISVORST ·</textPath></text></svg>
+        <div class="stamp-c"><span>seit</span><b>1987</b></div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div><b>38</b><span>Jahre Handwerk</span></div>
+      <div><b>1.400+</b><span>Projekte am Niederrhein</span></div>
+      <div><b>9</b><span>Schreiner:innen im Team</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip-in">
+    <span>Massivholz aus regionaler Forstwirtschaft</span><span>Eigene Werkstatt auf 1.200 m²</span><span>Planung in 3D</span><span>Montage durch eigene Meister</span><span>10 Jahre Garantie auf Verbindungen</span>
+    <span>Massivholz aus regionaler Forstwirtschaft</span><span>Eigene Werkstatt auf 1.200 m²</span><span>Planung in 3D</span><span>Montage durch eigene Meister</span><span>10 Jahre Garantie auf Verbindungen</span>
+  </div>
+</div>
+
+<!-- LEISTUNGEN -->
+<section class="sec" id="leistungen">
+  <div class="wrap">
+    <div class="serv-head">
+      <div class="rv">
+        <span class="kicker"><span class="n">Nr. 02</span> Leistungen</span>
+        <h2>Alles, was aus Holz <em>sein&nbsp;will</em>.</h2>
+      </div>
+      <p class="rv">Ob ein einzelnes Sideboard oder der komplette Innenausbau eines Altbaus: Wir übernehmen Planung, Fertigung und Montage selbst – ohne Subunternehmer, mit festem Ansprechpartner.</p>
+    </div>
+    <div class="serv">
+      <article class="scard s1 rv">
+        <div class="im"><img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1600&q=80&auto=format&fit=crop" alt="Esstisch mit grünen Polsterstühlen in einem hellen Raum" loading="lazy"></div>
+        <div class="bd">
+          <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16h34M8 16v20M36 16v20M8 26h28"/><path d="M14 16V9h16v7"/></svg>
+          <h3>Möbel nach Maß</h3>
+          <p>Esstische, Sideboards, Betten, Schreibtische – entworfen für Ihren Raum und Ihre Gewohnheiten, gefertigt mit klassischen Holzverbindungen.</p>
+          <ul><li>Esstische</li><li>Sideboards</li><li>Betten</li><li>Arbeitsplätze</li></ul>
+        </div>
+        <div class="price">Esstisch Eiche massiv ab <b>3.200 €</b></div>
+      </article>
+      <article class="scard s2 rv">
+        <div class="im"><img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=1600&q=80&auto=format&fit=crop" alt="Moderne Küche mit dunklen Fronten, Holzregalen und Kochinsel" loading="lazy"></div>
+        <div class="bd">
+          <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="18" width="34" height="20"/><path d="M5 26h34M22 18v20M13 22v1M31 22v1"/><path d="M12 6v8M18 6v8M12 10h6"/></svg>
+          <h3>Küchen aus Massivholz</h3>
+          <p>Unsere Küchen verbinden Massivholzfronten mit hochwertigen Beschlägen und Markengeräten. Jeder Korpus wird bei uns gefertigt – passgenau bis in die Dachschräge.</p>
+          <ul><li>Kochinseln</li><li>Grifflose Fronten</li><li>Hochschrankwände</li><li>Geräteintegration</li></ul>
+        </div>
+        <div class="price">Komplette Massivholzküche ab <b>24.000 €</b></div>
+      </article>
+      <article class="scard s3 rv">
+        <div class="im"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80&auto=format&fit=crop" alt="Wohnraum mit raumhoher Wandverkleidung aus Holz und Einbauten" loading="lazy"></div>
+        <div class="bd">
+          <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 38V6h32v32z"/><path d="M6 16h32M6 27h32M18 6v32"/></svg>
+          <h3>Innenausbau</h3>
+          <p>Einbauschränke, Wandverkleidungen, Bibliotheken und Ankleiden. Wir nutzen jede Nische – und sorgen dafür, dass das Ergebnis aussieht, als wäre es immer schon da gewesen.</p>
+          <ul><li>Einbauschränke</li><li>Ankleiden</li><li>Wandpaneele</li><li>Treppenverkleidung</li></ul>
+        </div>
+        <div class="price">Einbauschrank pro lfd. Meter ab <b>1.450 €</b></div>
+      </article>
+      <article class="scard s4 rv">
+        <div class="bd">
+          <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 36l18-18M26 18l4-10 6 6-10 4"/><path d="M8 36l-2 2M12 28l4 4"/></svg>
+          <h3>Außerdem in der Werkstatt</h3>
+          <ul class="more">
+            <li>Innentüren &amp; Schiebetüren <span>ab 890 €</span></li>
+            <li>Badmöbel aus Teak &amp; Eiche <span>ab 2.100 €</span></li>
+            <li>Ladenbau &amp; Praxisausbau <span>auf Anfrage</span></li>
+            <li>Restaurierung von Erbstücken <span>ab 68 €/Std.</span></li>
+            <li>Fensterbänke &amp; Treppenstufen <span>ab 240 €</span></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROJEKTE -->
+<section class="sec projects" id="projekte">
+  <div class="wrap">
+    <div class="proj-head">
+      <div class="rv">
+        <span class="kicker"><span class="n">Nr. 03</span> Projektgalerie</span>
+        <h2>Aus der <em>Werkstatt</em>.</h2>
+      </div>
+      <div class="filters rv" role="group" aria-label="Projekte filtern">
+        <button type="button" aria-pressed="true" data-f="alle">Alle<sup>8</sup></button>
+        <button type="button" aria-pressed="false" data-f="kueche">Küchen<sup>3</sup></button>
+        <button type="button" aria-pressed="false" data-f="moebel">Möbel<sup>3</sup></button>
+        <button type="button" aria-pressed="false" data-f="ausbau">Innenausbau<sup>2</sup></button>
+      </div>
+    </div>
+    <div class="pgrid" id="pgrid">
+      <figure class="proj p-xl rv" data-c="kueche"><img src="https://images.unsplash.com/photo-1622372738946-62e02505feb3?w=1600&q=80&auto=format&fit=crop" alt="Küche mit Nussbaumfronten, schwarzer Arbeitsfläche und Barhockern" loading="lazy"><figcaption><div><b>Küche Haus Lindemann</b><small>Amerikanischer Nussbaum, geölt · Kempen</small></div><span class="cat">Küche</span></figcaption></figure>
+      <figure class="proj p-t rv" data-c="ausbau"><img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1600&q=80&auto=format&fit=crop" alt="Raumhohes Einbauregal aus hellem Holz vor einer rosa Wand" loading="lazy"><figcaption><div><b>Regalwand im Altbau</b><small>Esche natur · Krefeld-Bockum</small></div><span class="cat">Innenausbau</span></figcaption></figure>
+      <figure class="proj p-m rv" data-c="moebel"><img src="https://images.unsplash.com/photo-1611486212557-88be5ff6f941?w=1600&q=80&auto=format&fit=crop" alt="Beistelltisch aus Holz mit Buchablage" loading="lazy"><figcaption><div><b>Beistelltisch „Lese“</b><small>Eiche, Kirsche · Kleinserie</small></div><span class="cat">Möbel</span></figcaption></figure>
+      <figure class="proj p-w rv" data-c="kueche"><img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=1600&q=80&auto=format&fit=crop" alt="Küche mit dunklen Fronten, Marmor-Insel und Holzboden" loading="lazy"><figcaption><div><b>Offene Wohnküche</b><small>Lackfronten, Eichenboden · Willich</small></div><span class="cat">Küche</span></figcaption></figure>
+      <figure class="proj p-w rv" data-c="moebel"><img src="https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?w=1600&q=80&auto=format&fit=crop" alt="Schlanker Schreibtisch aus Holz mit Stuhl vor heller Wand" loading="lazy"><figcaption><div><b>Schreibtisch für ein Homeoffice</b><small>Nussbaum, Schwalbenschwanz · Tönisvorst</small></div><span class="cat">Möbel</span></figcaption></figure>
+      <figure class="proj p-m rv" data-c="ausbau"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80&auto=format&fit=crop" alt="Wohnzimmer mit Holzwandverkleidung und Lowboard" loading="lazy"><figcaption><div><b>Medienwand mit Paneelen</b><small>Räuchereiche · Meerbusch</small></div><span class="cat">Innenausbau</span></figcaption></figure>
+      <figure class="proj p-t rv" data-c="moebel"><img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1600&q=80&auto=format&fit=crop" alt="Esstisch aus Holz mit grünen Samtstühlen" loading="lazy"><figcaption><div><b>Tafel für zwölf</b><small>Eiche, 3,20 m · Viersen</small></div><span class="cat">Möbel</span></figcaption></figure>
+      <figure class="proj p-xl rv" data-c="kueche"><img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=1600&q=80&auto=format&fit=crop" alt="Dunkle Küche mit offenen Holzregalen und Kochinsel" loading="lazy"><figcaption><div><b>Küche im Landhaus</b><small>Eiche, Fenix-Fronten · Grefrath</small></div><span class="cat">Küche</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section class="sec" id="ablauf">
+  <div class="wrap steps-wrap">
+    <div class="steps-intro rv">
+      <span class="kicker"><span class="n">Nr. 04</span> Ablauf</span>
+      <h2>In vier Schritten zum <em>Unikat</em>.</h2>
+      <p class="muted">Von der ersten Skizze bis zur letzten Schraube bleibt ein Meister Ihr Ansprechpartner. Typische Projektdauer: 8 bis 14 Wochen.</p>
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&auto=format&fit=crop" alt="Hände zeichnen einen Plan auf Papier am Werktisch" loading="lazy">
+    </div>
+    <ol class="steps">
+      <li class="step rv">
+        <span class="step-n">01</span>
+        <div>
+          <h3><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="12" width="28" height="10"/><path d="M8 12v4M13 12v6M18 12v4M23 12v6M28 12v4"/></svg>Aufmaß</h3>
+          <p>Wir kommen zu Ihnen, hören zu und messen mit dem Laser jeden Winkel aus – auch die schiefen Wände im Altbau. Dazu bringen wir Holzmuster mit, damit Sie Farbe und Haptik im eigenen Licht sehen.</p>
+          <div class="meta"><span>Kostenfrei im Umkreis von 30 km</span><span>ca. 90 Minuten</span></div>
+        </div>
+      </li>
+      <li class="step rv">
+        <span class="step-n">02</span>
+        <div>
+          <h3><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 29l3-9L23 5l6 6-15 15z"/><path d="M19 9l6 6M5 29l9-3"/></svg>Entwurf</h3>
+          <p>Innerhalb von zwei Wochen erhalten Sie Skizzen, eine fotorealistische 3D-Ansicht und ein transparentes Festpreisangebot. Änderungen besprechen wir so lange, bis alles stimmt.</p>
+          <div class="meta"><span>3D-Visualisierung</span><span>Festpreis</span></div>
+        </div>
+      </li>
+      <li class="step rv">
+        <span class="step-n">03</span>
+        <div>
+          <h3><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="17" r="11"/><circle cx="17" cy="17" r="3"/><path d="M17 3v4M17 27v4M3 17h4M27 17h4M7 7l3 3M24 24l3 3M7 27l3-3M24 10l3-3"/></svg>Fertigung</h3>
+          <p>Jedes Teil entsteht in unserer Werkstatt: Zuschnitt auf der CNC, Verbindungen, Schliff und Oberfläche von Hand. Sie sind herzlich eingeladen, Ihr Möbel vor der Auslieferung zu besuchen.</p>
+          <div class="meta"><span>Eigene Werkstatt</span><span>4 – 8 Wochen</span></div>
+        </div>
+      </li>
+      <li class="step rv">
+        <span class="step-n">04</span>
+        <div>
+          <h3><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 29h22M9 29V12l8-6 8 6v17"/><path d="M14 29v-8h6v8"/></svg>Montage</h3>
+          <p>Unsere eigenen Monteure bauen sauber und staubarm ein, schließen Geräte an und nehmen alles Verpackungsmaterial wieder mit. Zum Schluss gehen wir gemeinsam jedes Detail durch.</p>
+          <div class="meta"><span>Eigene Monteure</span><span>Abnahme vor Ort</span></div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- HOLZ -->
+<section class="sec wood" id="holz">
+  <div class="wrap wood-grid">
+    <div class="wood-intro rv">
+      <span class="kicker"><span class="n" style="color:#c9a27c">Nr. 05</span> Material</span>
+      <h2>Holz mit <em>Herkunft</em>.</h2>
+      <p>Wir kaufen Stammware bei zwei Sägewerken aus der Eifel und dem Sauerland, lassen sie bei uns im Lager nachtrocknen und verarbeiten sie bei 8 bis 10 % Holzfeuchte. Tropenholz verwenden wir nur mit FSC-Zertifikat – und nur, wenn es keine heimische Alternative gibt.</p>
+      <p>Für die Oberfläche setzen wir auf Hartwachsöle und wasserbasierte Lacke. Ihr Möbel bleibt atmungsaktiv, reparierbar und riecht nach Holz – nicht nach Chemie.</p>
+    </div>
+    <div class="wood-tex rv">
+      <img src="https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?w=1600&q=80&auto=format&fit=crop" alt="Nahaufnahme dunkler Holzbretter mit ausgeprägter Maserung" loading="lazy">
+      <div class="note">„Jedes Brett hat eine Richtung. Unsere Aufgabe ist, ihr zu folgen.“<small>Markus Brandt, Schreinermeister</small></div>
+    </div>
+
+    <div class="species">
+      <article class="sp rv">
+        <div class="sw sw-eiche" aria-hidden="true"></div>
+        <div class="sp-bd"><h3>Eiche</h3><i>Quercus robur</i>
+          <p>Unser Klassiker: robust, lebendig gemasert und wunderbar zu ölen.</p>
+          <dl><dt>Härte</dt><dd><span class="bar" aria-label="4 von 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></dd><dt>Preis</dt><dd>€€</dd><dt>Herkunft</dt><dd>Eifel</dd></dl></div>
+      </article>
+      <article class="sp rv">
+        <div class="sw sw-nuss" aria-hidden="true"></div>
+        <div class="sp-bd"><h3>Nussbaum</h3><i>Juglans regia / nigra</i>
+          <p>Schokoladenbraun, edel, mit feiner Struktur – ideal für Fronten.</p>
+          <dl><dt>Härte</dt><dd><span class="bar" aria-label="3 von 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></dd><dt>Preis</dt><dd>€€€€</dd><dt>Herkunft</dt><dd>EU / USA</dd></dl></div>
+      </article>
+      <article class="sp rv">
+        <div class="sw sw-kirsch" aria-hidden="true"></div>
+        <div class="sp-bd"><h3>Kirschbaum</h3><i>Prunus avium</i>
+          <p>Warmer Rotton, der mit den Jahren nachdunkelt und an Tiefe gewinnt.</p>
+          <dl><dt>Härte</dt><dd><span class="bar" aria-label="3 von 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></dd><dt>Preis</dt><dd>€€€</dd><dt>Herkunft</dt><dd>Sauerland</dd></dl></div>
+      </article>
+      <article class="sp rv">
+        <div class="sw sw-esche" aria-hidden="true"></div>
+        <div class="sp-bd"><h3>Esche</h3><i>Fraxinus excelsior</i>
+          <p>Hell, elastisch und zäh – perfekt für skandinavisch helle Räume.</p>
+          <dl><dt>Härte</dt><dd><span class="bar" aria-label="4 von 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></dd><dt>Preis</dt><dd>€€</dd><dt>Herkunft</dt><dd>Niederrhein</dd></dl></div>
+      </article>
+      <article class="sp rv">
+        <div class="sw sw-raeuch" aria-hidden="true"></div>
+        <div class="sp-bd"><h3>Räuchereiche</h3><i>Quercus, ammoniakbedampft</i>
+          <p>Durchgefärbt bis in den Kern, ruhig und elegant dunkel.</p>
+          <dl><dt>Härte</dt><dd><span class="bar" aria-label="4 von 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></dd><dt>Preis</dt><dd>€€€</dd><dt>Herkunft</dt><dd>Eifel</dd></dl></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec" id="team">
+  <div class="wrap team-grid">
+    <div class="team-intro rv">
+      <span class="kicker"><span class="n">Nr. 06</span> Meister-Team</span>
+      <h2>Drei Generationen <em>Hobelbank</em>.</h2>
+      <p class="muted">1987 gründete Heinz Brandt die Werkstatt in einer ehemaligen Scheune an der Krefelder Straße. Heute führen sein Sohn Markus und Meisterin Lena Kroll den Betrieb mit neun Schreinerinnen und Schreinern und zwei Auszubildenden.</p>
+      <p class="muted">Wir bilden jedes Jahr aus, weil gutes Handwerk weitergegeben werden muss – und weil frische Ideen jeder Werkstatt guttun.</p>
+    </div>
+    <div class="team-img rv">
+      <img src="https://images.unsplash.com/photo-1426927308491-6380b6a9936f?w=1600&q=80&auto=format&fit=crop" alt="Wand mit sauber aufgereihten Handwerkzeugen, Hobeln und Sägen in einer Werkstatt" loading="lazy">
+      <span class="cap">Unsere Werkzeugwand – manche Hobel sind älter als der Betrieb.</span>
+    </div>
+    <div class="members">
+      <div class="m rv"><div class="avatar" aria-hidden="true">MB</div><h3>Markus Brandt</h3><span class="role">Schreinermeister · Inhaber</span><p>Spezialisiert auf Küchen und komplexe Einbauten. Plant jedes Projekt persönlich mit.</p></div>
+      <div class="m rv"><div class="avatar" aria-hidden="true">LK</div><h3>Lena Kroll</h3><span class="role">Tischlermeisterin · Entwurf</span><p>Gestalterin für Holz und Form. Verantwortet Entwurf, 3D-Planung und Materialberatung.</p></div>
+      <div class="m rv"><div class="avatar" aria-hidden="true">TO</div><h3>Tobias Overbeck</h3><span class="role">Werkstattleitung</span><p>CNC, Massivholz und Oberflächen. Sorgt dafür, dass jede Fuge sitzt – auf den Zehntelmillimeter.</p></div>
+      <div class="m rv"><div class="avatar" aria-hidden="true">HB</div><h3>Heinz Brandt</h3><span class="role">Gründer · Restaurierung</span><p>Seit 1987 dabei, heute mit Herz bei Restaurierungen von Erbstücken und alten Treppen.</p></div>
+    </div>
+    <div class="badges rv">
+      <div><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="15" cy="12" r="8"/><path d="M10 18l-3 9 8-3 8 3-3-9"/></svg>Meisterbetrieb der Handwerkskammer</div>
+      <div><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M15 27V13M15 13c-6 0-9-4-9-9 5 0 9 3 9 9zM15 17c5 0 8-3 8-8-4 0-8 3-8 8z"/></svg>FSC®-zertifizierte Hölzer</div>
+      <div><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M15 3l10 4v8c0 6-4 10-10 12C9 25 5 21 5 15V7z"/><path d="M10 15l4 4 6-7"/></svg>10 Jahre Garantie</div>
+      <div><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 25V9l10-5 10 5v16"/><path d="M9 25V14h12v11M9 19h12"/></svg>Ausbildungsbetrieb</div>
+    </div>
+  </div>
+</section>
+
+<!-- STIMMEN -->
+<section class="sec voices" id="stimmen">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker"><span class="n">Nr. 07</span> Kundenstimmen</span>
+      <h2 style="margin-top:22px;max-width:14ch">Was bleibt, <em>wenn wir gehen</em>.</h2>
+    </div>
+    <div class="v-grid">
+      <figure class="v v1 rv" style="margin:0">
+        <svg class="q" viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><path d="M4 30c0-9 4-16 12-20l2 3c-4 2-6 5-6 9h5v8H4zm19 0c0-9 4-16 12-20l2 3c-4 2-6 5-6 9h5v8H23z"/></svg>
+        <blockquote>„Unsere Küche passt in eine Dachschräge, an der zwei Küchenstudios gescheitert sind. Herr Brandt hat dreimal nachgemessen und am Ende saß jede Front perfekt. Nach vier Jahren sieht sie besser aus als am ersten Tag.“</blockquote>
+        <footer><div><div class="rating" aria-label="5 von 5 Sternen"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg></div><b>Familie Lindemann</b></div><span>Massivholzküche, Kempen</span></footer>
+      </figure>
+      <figure class="v v2 rv" style="margin:0">
+        <svg class="q" viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><path d="M4 30c0-9 4-16 12-20l2 3c-4 2-6 5-6 9h5v8H4zm19 0c0-9 4-16 12-20l2 3c-4 2-6 5-6 9h5v8H23z"/></svg>
+        <blockquote>„Die 3D-Planung hat uns die Entscheidung leicht gemacht. Termin, Preis und Qualität – alles genau wie besprochen.“</blockquote>
+        <footer><div><div class="rating" aria-label="5 von 5 Sternen"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg></div><b>Dr. Anja Reuter</b></div><span>Praxisausbau, Krefeld</span></footer>
+      </figure>
+      <figure class="v v3 rv" style="margin:0">
+        <svg class="q" viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><path d="M4 30c0-9 4-16 12-20l2 3c-4 2-6 5-6 9h5v8H4zm19 0c0-9 4-16 12-20l2 3c-4 2-6 5-6 9h5v8H23z"/></svg>
+        <blockquote>„Der alte Esstisch meiner Großmutter war ein Fall für den Sperrmüll – dachten wir. Heinz Brandt hat ihn in drei Wochen gerettet. Jetzt sitzt die vierte Generation daran.“</blockquote>
+        <footer><div><div class="rating" aria-label="5 von 5 Sternen"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.1 4.6 5 .5-3.7 3.4 1 4.9L8 12l-4.4 2.4 1-4.9L.9 6.1l5-.5z"/></svg></div><b>Jonas Wefers</b></div><span>Restaurierung, Tönisvorst</span></footer>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ANFRAGE -->
+<section class="sec" id="anfrage">
+  <div class="wrap contact-grid">
+    <div class="c-info rv">
+      <span class="kicker"><span class="n">Nr. 08</span> Anfrage</span>
+      <h2>Erzählen Sie uns von Ihrem <em>Raum</em>.</h2>
+      <p class="muted">Eine grobe Idee reicht völlig. Wir melden uns innerhalb von zwei Werktagen und vereinbaren einen Termin für das kostenfreie Aufmaß.</p>
+      <div class="c-list">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s8-7 8-13a8 8 0 0 0-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg><div><b>Werkstatt &amp; Ausstellung</b>Krefelder Straße 118<br>47918 Tönisvorst</div></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><div><b>Telefon</b><a href="tel:+4921511234567">02151 123 45 67</a></div></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg><div><b>E-Mail</b><a href="mailto:werkstatt@example.de">werkstatt@example.de</a></div></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Öffnungszeiten</b>Mo – Fr 7:30 – 17:00 Uhr<br>Ausstellung Sa 10:00 – 14:00 Uhr</div></div>
+      </div>
+    </div>
+
+    <form class="inq rv" id="inq" onsubmit="event.preventDefault(); sendInq(this);">
+      <div class="fg">
+        <fieldset>
+          <legend>Worum geht es?</legend>
+          <div class="chips">
+            <label><input type="checkbox" name="art" value="Möbel"><span>Möbel nach Maß</span></label>
+            <label><input type="checkbox" name="art" value="Küche" checked><span>Küche</span></label>
+            <label><input type="checkbox" name="art" value="Innenausbau"><span>Innenausbau</span></label>
+            <label><input type="checkbox" name="art" value="Türen"><span>Türen</span></label>
+            <label><input type="checkbox" name="art" value="Restaurierung"><span>Restaurierung</span></label>
+          </div>
+        </fieldset>
+        <div><label for="i-name">Name</label><input type="text" id="i-name" name="name" autocomplete="name" required></div>
+        <div><label for="i-ort">Ort des Projekts</label><input type="text" id="i-ort" name="ort" placeholder="z. B. Tönisvorst" autocomplete="address-level2"></div>
+        <div><label for="i-mail">E-Mail</label><input type="email" id="i-mail" name="email" autocomplete="email" required></div>
+        <div><label for="i-tel">Telefon</label><input type="tel" id="i-tel" name="telefon" autocomplete="tel"></div>
+        <div><label for="i-budget">Budgetrahmen</label>
+          <select id="i-budget" name="budget"><option>Noch offen</option><option>bis 5.000 €</option><option>5.000 – 15.000 €</option><option>15.000 – 35.000 €</option><option>über 35.000 €</option></select></div>
+        <div><label for="i-zeit">Gewünschter Zeitraum</label>
+          <select id="i-zeit" name="zeitraum"><option>Flexibel</option><option>In den nächsten 3 Monaten</option><option>In 3 – 6 Monaten</option><option>Später als 6 Monate</option></select></div>
+        <div class="full"><label for="i-msg">Ihr Vorhaben</label><textarea id="i-msg" name="nachricht" placeholder="Raum, ungefähre Maße, Holzwunsch, Ideen …"></textarea></div>
+        <label class="consent"><input type="checkbox" required> <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage gespeichert werden.</span></label>
+      </div>
+      <div class="f-foot">
+        <small>Fotos oder Skizzen können Sie uns nach der ersten Rückmeldung einfach per E-Mail schicken.</small>
+        <button type="submit" class="btn">Anfrage senden <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5"/></svg></button>
+      </div>
+      <div class="ok" id="ok" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="ft">
+      <div><p class="big">Holz, das <em>bleibt</em>.<br>Seit 1987.</p></div>
+      <div><h4>Werkstatt</h4><ul><li>Holzwerk Brandt GmbH</li><li>Krefelder Straße 118</li><li>47918 Tönisvorst</li></ul></div>
+      <div><h4>Kontakt</h4><ul><li><a href="tel:+4921511234567">02151 123 45 67</a></li><li><a href="mailto:werkstatt@example.de">werkstatt@example.de</a></li><li>Mo – Fr 7:30 – 17:00</li></ul></div>
+      <div><h4>Seiten</h4><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#projekte">Projekte</a></li><li><a href="#ablauf">Ablauf</a></li><li><a href="#anfrage">Anfrage</a></li></ul></div>
+    </div>
+    <div class="fb">
+      <span>© 2026 Holzwerk Brandt · Impressum · Datenschutz</span>
+      <span>Fiktives Beispielunternehmen – Design &amp; Umsetzung: <a href="../beispiele.html">meuser.biz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'), b=document.getElementById('burger');
+  function close(){ nav.classList.remove('open'); b.setAttribute('aria-expanded','false'); b.setAttribute('aria-label','Menü öffnen'); document.body.style.overflow=''; }
+  b.addEventListener('click',function(){
+    document.getElementById('navPanel').style.top=nav.getBoundingClientRect().bottom+'px';
+    var o=nav.classList.toggle('open'); b.setAttribute('aria-expanded',o); b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');
+    document.body.style.overflow=o?'hidden':'';
+  });
+  document.querySelectorAll('#navPanel a').forEach(function(a){ a.addEventListener('click',close); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+
+  // Filter
+  var btns=document.querySelectorAll('.filters button'), items=document.querySelectorAll('#pgrid .proj');
+  btns.forEach(function(bt){ bt.addEventListener('click',function(){
+    var f=bt.dataset.f;
+    btns.forEach(function(x){ x.setAttribute('aria-pressed', x===bt); });
+    document.getElementById('pgrid').classList.toggle('filtered', f!=='alle');
+    items.forEach(function(it){ it.classList.toggle('hide', f!=='alle' && it.dataset.c!==f); });
+  });});
+
+  // Reveal
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+})();
+function sendInq(f){
+  var arts=[].slice.call(f.querySelectorAll('input[name=art]:checked')).map(function(i){return i.value;});
+  var ok=document.getElementById('ok');
+  ok.textContent='Danke, '+(f.name.value.split(' ')[0]||'')+'! Ihre Anfrage'+(arts.length?' ('+arts.join(', ')+')':'')+' ist angekommen. Wir melden uns innerhalb von zwei Werktagen. (Demo – es wurde nichts gesendet.)';
+  ok.classList.add('show');
+}
+</script>
+</body>
+</html>

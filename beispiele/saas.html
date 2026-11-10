@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flowgrid – Schicht- und Einsatzplanung für Teams, die nie stillstehen</title>
+<meta name="description" content="Flowgrid ist die Software für Schicht- und Einsatzplanung: Dienstpläne in Minuten, KI-Vorschläge, Arbeitszeitgesetz-Check, Mitarbeiter-App und Lohnexport. Gehostet in Deutschland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060A1C;
+  --bg-2:#0A1030;
+  --panel:rgba(255,255,255,.045);
+  --panel-2:rgba(255,255,255,.07);
+  --line:rgba(255,255,255,.09);
+  --line-2:rgba(255,255,255,.16);
+  --text:#E9ECF8;
+  --muted:#9CA6C9;
+  --violet:#8B6CFF;
+  --violet-2:#6A4DF5;
+  --cyan:#2ED8F0;
+  --pink:#F06BC8;
+  --green:#3BE0A1;
+  --amber:#FFC266;
+  --grad:linear-gradient(110deg,#8B6CFF 0%,#5C8DFF 45%,#2ED8F0 100%);
+  --display:"Space Grotesk", system-ui, sans-serif;
+  --sans:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r:18px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:1rem;line-height:1.6;overflow-x:hidden;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.08;letter-spacing:-.025em;margin:0 0 .5em}
+p{margin:0 0 1em}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem}
+.kicker::before{content:"";width:18px;height:2px;background:var(--grad);border-radius:2px}
+.section{padding:clamp(80px,11vw,140px) 0;position:relative}
+.s-head{max-width:720px;margin-bottom:clamp(40px,5vw,64px)}
+.s-head.center{text-align:center;margin-inline:auto}
+.s-head h2{font-size:clamp(2rem,4.6vw,3.4rem)}
+.s-head p{color:var(--muted);font-size:1.12rem;max-width:620px}
+.s-head.center p{margin-inline:auto}
+.glass{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:600 .97rem var(--sans);padding:.85em 1.35em;border-radius:12px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s, box-shadow .25s, background .25s, border-color .25s;white-space:nowrap}
+.btn svg{width:16px;height:16px}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 30px -8px rgba(110,90,255,.7), inset 0 1px 0 rgba(255,255,255,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px -8px rgba(80,160,255,.75), inset 0 1px 0 rgba(255,255,255,.3)}
+.btn-ghost{background:rgba(255,255,255,.05);border-color:var(--line-2);color:var(--text)}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* Badge */
+.meuser-badge{position:fixed;left:16px;bottom:16px;z-index:9999;font:600 .8rem/1.2 var(--sans);color:var(--text);text-decoration:none;padding:.7em 1.05em;border-radius:12px;background:rgba(10,16,48,.82);border:1px solid var(--line-2);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 30px -10px rgba(0,0,0,.6);max-width:calc(100% - 32px)}
+.meuser-badge:hover{border-color:var(--cyan)}
+
+/* Hintergrund */
+.aurora{position:absolute;inset:0 0 auto 0;height:1100px;overflow:hidden;pointer-events:none;z-index:0}
+.aurora::before,.aurora::after{content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.55}
+.aurora::before{width:720px;height:520px;left:50%;top:-140px;transform:translateX(-70%);background:radial-gradient(circle,#6A4DF5,transparent 65%)}
+.aurora::after{width:620px;height:480px;left:50%;top:0;transform:translateX(5%);background:radial-gradient(circle,#1BB7D6,transparent 65%);opacity:.4}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask:radial-gradient(ellipse 70% 55% at 50% 20%,#000 30%,transparent 75%);mask:radial-gradient(ellipse 70% 55% at 50% 20%,#000 30%,transparent 75%);opacity:.6}
+
+/* Header */
+.header{position:sticky;top:0;z-index:60;transition:background .3s, border-color .3s;border-bottom:1px solid transparent}
+.header.scrolled{background:rgba(6,10,28,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:-.03em}
+.logo svg{width:30px;height:30px}
+.nav{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+.nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem;padding:.5em .85em;border-radius:8px;transition:color .2s, background .2s}
+.nav a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.head-cta{display:flex;align-items:center;gap:10px}
+.head-cta .login{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem;padding:.5em .6em}
+.head-cta .login:hover{color:var(--text)}
+.head-cta .btn{padding:.65em 1.1em;font-size:.9rem}
+.burger{display:none;width:44px;height:44px;border-radius:10px;border:1px solid var(--line-2);background:rgba(255,255,255,.04);cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;position:relative;transition:transform .3s, background .3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* Hero */
+.hero{position:relative;padding:clamp(56px,8vw,96px) 0 clamp(60px,8vw,100px);text-align:center}
+.hero > .wrap{position:relative;z-index:1}
+.pill{display:inline-flex;align-items:center;gap:.6rem;padding:.35rem .9rem .35rem .4rem;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line-2);font-size:.86rem;color:var(--muted);text-decoration:none;margin-bottom:28px;transition:border-color .2s}
+.pill:hover{border-color:var(--violet)}
+.pill b{background:var(--grad);color:#fff;font-weight:600;font-size:.75rem;padding:.2rem .6rem;border-radius:999px}
+.hero h1{font-size:clamp(2.6rem,7.2vw,5.6rem);max-width:980px;margin:0 auto 24px;letter-spacing:-.045em}
+.hero-sub{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--muted);max-width:640px;margin:0 auto 36px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:22px}
+.hero-note{font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:center}
+.hero-note span{display:inline-flex;align-items:center;gap:.4rem}
+.hero-note svg{width:15px;height:15px;color:var(--green)}
+
+/* Dashboard */
+.dash-wrap{position:relative;margin-top:clamp(48px,7vw,80px);perspective:2000px}
+.dash-glow{position:absolute;inset:8% 6% -4%;background:var(--grad);filter:blur(80px);opacity:.35;border-radius:40px}
+.dash{position:relative;text-align:left;border-radius:20px;padding:10px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.03));border:1px solid var(--line-2);box-shadow:0 40px 120px -30px rgba(0,0,0,.8);transform:rotateX(8deg);transform-origin:50% 0;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.dash.flat{transform:none}
+.dash-inner{border-radius:12px;background:#0A0F2A;overflow:hidden;display:grid;grid-template-columns:210px 1fr;min-height:560px;font-size:.8rem}
+.chrome{display:flex;align-items:center;gap:6px;padding:4px 8px 12px}
+.chrome i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.18)}
+.chrome .url{margin-left:14px;flex:0 1 320px;height:22px;border-radius:6px;background:rgba(255,255,255,.06);font-size:.7rem;color:var(--muted);display:flex;align-items:center;padding:0 10px;gap:6px}
+.chrome .url svg{width:10px;height:10px}
+.side{border-right:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;gap:2px;background:rgba(255,255,255,.015)}
+.side-logo{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:.95rem;padding:4px 8px 16px}
+.side-logo svg{width:20px;height:20px}
+.side-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#6B7499;padding:14px 10px 6px}
+.side a{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;color:var(--muted);text-decoration:none;font-weight:500}
+.side a svg{width:16px;height:16px;flex:none}
+.side a.on{background:rgba(139,108,255,.16);color:#fff;box-shadow:inset 0 0 0 1px rgba(139,108,255,.35)}
+.side a .cnt{margin-left:auto;font-size:.65rem;background:var(--pink);color:#fff;border-radius:999px;padding:1px 6px}
+.side-team{margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.side-team span{font-size:.72rem;color:var(--muted);line-height:1.3}
+.side-team b{display:block;color:var(--text);font-size:.78rem}
+.main{padding:18px 20px 20px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar h3{font-size:1.1rem;margin:0;letter-spacing:-.01em}
+.topbar small{display:block;color:var(--muted);font-family:var(--sans);font-weight:400;font-size:.72rem;margin-top:2px}
+.tb-actions{display:flex;gap:8px;align-items:center}
+.seg{display:flex;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:8px;padding:2px}
+.seg span{padding:4px 10px;border-radius:6px;color:var(--muted);font-weight:500;font-size:.72rem}
+.seg span.on{background:rgba(255,255,255,.1);color:#fff}
+.mini-btn{padding:6px 12px;border-radius:8px;background:var(--grad);color:#fff;font-weight:600;font-size:.72rem;display:inline-flex;align-items:center;gap:6px}
+.mini-btn svg{width:12px;height:12px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.035);border:1px solid var(--line);min-width:0}
+.kpi span{color:var(--muted);font-size:.7rem;display:block}
+.kpi b{font-family:var(--display);font-size:1.35rem;font-weight:600;letter-spacing:-.02em;display:block;margin-top:2px}
+.kpi em{font-style:normal;font-size:.68rem;font-weight:600;color:var(--green)}
+.kpi em.warn{color:var(--amber)}
+.spark{display:flex;align-items:flex-end;gap:3px;height:22px;margin-top:6px}
+.spark i{flex:1;border-radius:2px;background:linear-gradient(180deg,var(--cyan),rgba(46,216,240,.15))}
+.board{display:grid;grid-template-columns:1fr 230px;gap:14px;min-width:0}
+.plan{border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0}
+.plan-row{display:grid;grid-template-columns:148px repeat(7,minmax(0,1fr));border-top:1px solid var(--line)}
+.plan-row:first-child{border-top:0}
+.plan-row.head{background:rgba(255,255,255,.03);color:var(--muted);font-weight:600;font-size:.7rem}
+.plan-row.head > div{padding:8px 6px;text-align:center}
+.plan-row.head > div:first-child{text-align:left;padding-left:12px}
+.plan-row.head .today{color:#fff}
+.plan-row.head .today b{display:inline-block;background:var(--violet);color:#fff;border-radius:6px;padding:0 5px;margin-left:3px}
+.who{display:flex;align-items:center;gap:8px;padding:7px 10px 7px 12px;min-width:0}
+.who i{width:24px;height:24px;border-radius:50%;flex:none;display:grid;place-items:center;font-style:normal;font-size:.62rem;font-weight:700;color:#0A0F2A}
+.who span{line-height:1.2;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.who span small{display:block;color:var(--muted);font-size:.64rem}
+.cell{padding:5px 3px;display:flex;align-items:center;border-left:1px solid rgba(255,255,255,.04)}
+.sh{width:100%;border-radius:6px;padding:4px 5px;font-size:.64rem;font-weight:600;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sh small{display:block;font-weight:500;opacity:.8;font-size:.6rem}
+.sh.f{background:rgba(46,216,240,.14);color:#8BEFFC;box-shadow:inset 2px 0 0 var(--cyan)}
+.sh.s{background:rgba(139,108,255,.18);color:#C6B8FF;box-shadow:inset 2px 0 0 var(--violet)}
+.sh.n{background:rgba(240,107,200,.15);color:#F9A9E0;box-shadow:inset 2px 0 0 var(--pink)}
+.sh.u{background:repeating-linear-gradient(135deg,rgba(255,194,102,.12) 0 6px,rgba(255,194,102,.04) 6px 12px);color:var(--amber)}
+.sh.o{background:transparent;border:1px dashed rgba(255,255,255,.25);color:var(--muted);text-align:center}
+.sh.x{color:#5C6589;text-align:center}
+.sh.drag{box-shadow:inset 2px 0 0 var(--cyan),0 8px 22px -6px rgba(46,216,240,.6);transform:rotate(-3deg) translateY(-2px);outline:1px solid var(--cyan)}
+.cards{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{border:1px solid var(--line);border-radius:12px;padding:14px;background:rgba(255,255,255,.03)}
+.card h4{font-family:var(--sans);font-size:.74rem;font-weight:600;color:var(--muted);margin:0 0 10px;letter-spacing:0;display:flex;justify-content:space-between}
+.ring{display:flex;align-items:center;gap:14px}
+.ring-c{width:74px;height:74px;border-radius:50%;background:conic-gradient(var(--cyan) 0 34%, var(--violet) 34% 72%, var(--pink) 72% 96%, rgba(255,255,255,.08) 96% 100%);display:grid;place-items:center;flex:none}
+.ring-c::after{content:"96%";width:54px;height:54px;border-radius:50%;background:#0C1233;display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:.9rem}
+.legend{display:grid;gap:4px;font-size:.68rem;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend span::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--c)}
+.bars{display:flex;align-items:flex-end;gap:7px;height:84px;padding-top:4px}
+.bars div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
+.bars i{width:100%;border-radius:4px 4px 2px 2px;background:linear-gradient(180deg,var(--violet),rgba(139,108,255,.25))}
+.bars div:nth-child(4) i{background:var(--grad)}
+.bars span{font-size:.6rem;color:var(--muted)}
+.ai-card{border-color:rgba(139,108,255,.4);background:linear-gradient(160deg,rgba(139,108,255,.18),rgba(46,216,240,.06))}
+.ai-card p{margin:0 0 10px;font-size:.72rem;color:#D6D2FF;line-height:1.45}
+.ai-card .acc{display:flex;gap:6px}
+.ai-card .acc span{font-size:.66rem;font-weight:600;padding:4px 9px;border-radius:6px;background:rgba(255,255,255,.12)}
+.ai-card .acc span:first-child{background:#fff;color:#0A0F2A}
+.toast{position:absolute;right:48px;bottom:-26px;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:rgba(14,22,58,.9);border:1px solid var(--line-2);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:.78rem;box-shadow:0 20px 40px -14px rgba(0,0,0,.7);animation:float 6s ease-in-out infinite}
+.toast i{width:28px;height:28px;border-radius:8px;background:rgba(59,224,161,.16);display:grid;place-items:center;color:var(--green);flex:none}
+.toast i svg{width:16px;height:16px}
+.toast small{display:block;color:var(--muted);font-size:.68rem}
+.toast.t2{left:48px;right:auto;bottom:-26px;animation-delay:-3s}
+.toast.t2 i{background:rgba(139,108,255,.2);color:#C6B8FF}
+@keyframes float{50%{transform:translateY(-8px)}}
+
+/* Logos */
+.logos{padding:40px 0 0;position:relative;z-index:1}
+.logos p{text-align:center;color:var(--muted);font-size:.88rem;margin-bottom:28px}
+.logo-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:22px clamp(28px,5vw,64px);opacity:.75}
+.wm{display:inline-flex;align-items:center;gap:8px;color:#C9CFE6;white-space:nowrap;transition:opacity .2s, color .2s}
+.wm:hover{color:#fff}
+.wm svg{width:22px;height:22px;flex:none}
+.wm-1{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:.12em}
+.wm-2{font-family:Georgia,serif;font-style:italic;font-size:1.35rem}
+.wm-3{font-family:var(--sans);font-weight:800;font-size:1.2rem;letter-spacing:-.05em;text-transform:lowercase}
+.wm-4{font-family:var(--display);font-weight:500;font-size:1.15rem;letter-spacing:.02em}
+.wm-4 b{font-weight:700}
+.wm-5{font-family:var(--sans);font-weight:600;font-size:.95rem;letter-spacing:.32em;text-transform:uppercase}
+.wm-6{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:-.04em}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat{padding:30px 28px;position:relative;overflow:hidden;transition:border-color .3s, transform .3s}
+.feat:hover{border-color:rgba(139,108,255,.45);transform:translateY(-4px)}
+.feat::before{content:"";position:absolute;inset:-1px;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(139,108,255,.16),transparent 45%);pointer-events:none;opacity:0;transition:opacity .3s}
+.feat:hover::before{opacity:1}
+.feat .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(140deg,rgba(139,108,255,.25),rgba(46,216,240,.12));border:1px solid rgba(139,108,255,.35);margin-bottom:22px}
+.feat .ico svg{width:22px;height:22px;color:#D8D0FF}
+.feat h3{font-size:1.25rem;margin-bottom:.45em}
+.feat p{color:var(--muted);margin:0;font-size:.97rem}
+.feat.wide{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.law{display:grid;gap:8px;font-size:.8rem}
+.law div{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.law svg{width:16px;height:16px;flex:none}
+.law .ok svg{color:var(--green)}
+.law .warn{border-color:rgba(255,194,102,.35);background:rgba(255,194,102,.06)}
+.law .warn svg{color:var(--amber)}
+.law b{margin-left:auto;font-weight:600;font-size:.72rem;color:var(--muted);white-space:nowrap}
+
+/* Branchen */
+.branchen{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.branche{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line);isolation:isolate}
+.branche img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:saturate(.7);transition:transform .8s}
+.branche::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,10,28,.1) 20%,rgba(6,10,28,.94) 85%)}
+.branche:hover img{transform:scale(1.05)}
+.branche-body{position:absolute;left:0;right:0;bottom:0;padding:26px}
+.branche-body .tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.3em .7em;border-radius:6px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);margin-bottom:12px}
+.branche-body h3{font-size:1.45rem;margin-bottom:.35em}
+.branche-body p{color:#C3CAE4;font-size:.93rem;margin:0}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:st;position:relative}
+.step{padding:30px 28px}
+.step .num{font-family:var(--display);font-size:.85rem;font-weight:600;color:var(--cyan);display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.step .num::before{counter-increment:st;content:"0" counter(st);width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:rgba(46,216,240,.1);border:1px solid rgba(46,216,240,.35);color:#fff}
+.step h3{font-size:1.3rem}
+.step p{color:var(--muted);font-size:.97rem}
+.step-vis{margin-top:22px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.2);padding:14px;font-size:.75rem}
+.upload{display:flex;align-items:center;gap:12px}
+.upload .file{width:36px;height:44px;border-radius:6px;background:rgba(59,224,161,.15);display:grid;place-items:center;color:var(--green);font-weight:700;font-size:.6rem;flex:none}
+.prog{flex:1;height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}
+.prog i{display:block;height:100%;width:82%;background:var(--grad);border-radius:6px}
+.rules{display:flex;flex-wrap:wrap;gap:6px}
+.rules span{padding:4px 9px;border-radius:6px;background:rgba(139,108,255,.14);border:1px solid rgba(139,108,255,.3);color:#D2C8FF}
+.phone-row{display:flex;align-items:center;gap:10px}
+.phone-row .ph{width:30px;height:48px;border-radius:7px;border:2px solid var(--line-2);position:relative;flex:none}
+.phone-row .ph::after{content:"";position:absolute;left:4px;right:4px;top:8px;height:10px;border-radius:3px;background:var(--grad)}
+.phone-row div small{display:block;color:var(--muted)}
+
+/* Integrationen */
+.integ-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,6vw,80px);align-items:center}
+.integ-wrap > *{min-width:0}
+.integ{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;position:relative}
+.int{min-width:0;overflow-wrap:anywhere;hyphens:auto;aspect-ratio:1;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:12px;font-size:.8rem;color:var(--muted);transition:border-color .3s, color .3s}
+.int:hover{border-color:rgba(46,216,240,.45);color:var(--text)}
+.int svg{width:30px;height:30px;color:var(--text)}
+.int.hub{background:var(--grad);border:0;color:#fff;font-family:var(--display);font-weight:700;font-size:1rem;box-shadow:0 20px 60px -20px rgba(110,90,255,.8)}
+.int.hub svg{width:36px;height:36px;color:#fff}
+.check-list{list-style:none;padding:0;margin:26px 0 30px;display:grid;gap:12px}
+.check-list li{display:flex;gap:12px;align-items:flex-start;color:#CBD1EA}
+.check-list svg{width:20px;height:20px;flex:none;color:var(--cyan);margin-top:2px}
+
+/* Zahlen */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-radius:24px;overflow:hidden}
+.stat{padding:clamp(28px,4vw,44px) clamp(20px,3vw,32px);border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font-family:var(--display);font-weight:600;font-size:clamp(2.4rem,4.6vw,3.6rem);letter-spacing:-.04em;line-height:1;margin-bottom:12px}
+.stat span{color:var(--muted);font-size:.95rem}
+.quote{margin:clamp(40px,6vw,64px) auto 0;max-width:880px;text-align:center}
+.quote blockquote{margin:0 0 28px;font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,2.6vw,2rem);line-height:1.3;letter-spacing:-.02em}
+.quote figcaption{display:inline-flex;align-items:center;gap:14px;text-align:left;font-size:.92rem}
+.quote figcaption i{width:46px;height:46px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-style:normal;font-weight:700;font-family:var(--display)}
+.quote figcaption small{display:block;color:var(--muted)}
+
+/* Preise */
+.toggle{display:inline-flex;align-items:center;gap:4px;padding:4px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--line-2);margin-top:8px}
+.toggle button{font:600 .92rem var(--sans);padding:.6em 1.2em;border-radius:9px;border:0;background:transparent;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+.toggle button[aria-pressed="true"]{background:#fff;color:#0A0F2A}
+.toggle .save{font-size:.7rem;padding:2px 7px;border-radius:999px;background:rgba(59,224,161,.18);color:var(--green)}
+.toggle button[aria-pressed="true"] .save{background:#0A0F2A;color:var(--green)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan-c{padding:34px 30px;display:flex;flex-direction:column;position:relative}
+.plan-c.pop{background:linear-gradient(180deg,rgba(139,108,255,.2),rgba(46,216,240,.05));border-color:rgba(139,108,255,.55);box-shadow:0 30px 80px -30px rgba(110,90,255,.6)}
+.plan-c .ribbon{position:absolute;top:-12px;left:30px;background:var(--grad);font-size:.72rem;font-weight:600;padding:.3em .8em;border-radius:999px}
+.plan-c h3{font-size:1.35rem;margin-bottom:.3em}
+.plan-c .desc{color:var(--muted);font-size:.93rem;min-height:3em}
+.price{display:flex;align-items:baseline;gap:8px;margin:12px 0 4px}
+.price b{font-family:var(--display);font-weight:600;font-size:3rem;letter-spacing:-.04em;line-height:1}
+.price span{color:var(--muted);font-size:.88rem}
+.billed{font-size:.8rem;color:var(--muted);min-height:1.4em;margin-bottom:22px}
+.plan-c ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:10px;font-size:.93rem;flex:1}
+.plan-c li{display:flex;gap:10px;align-items:flex-start;color:#CBD1EA}
+.plan-c li svg{width:18px;height:18px;flex:none;color:var(--cyan);margin-top:2px}
+.plan-c .btn{width:100%}
+.price-foot{text-align:center;color:var(--muted);font-size:.88rem;margin-top:28px}
+
+/* FAQ */
+.faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,80px);align-items:start}
+.faq{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;background:none;border:0;color:var(--text);font:600 1.08rem var(--display);letter-spacing:-.01em;padding:22px 0;cursor:pointer}
+.faq-q svg{width:22px;height:22px;flex:none;transition:transform .3s;color:var(--cyan)}
+.faq-q[aria-expanded="true"] svg{transform:rotate(45deg)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.faq-a > div{overflow:hidden}
+.faq-a p{color:var(--muted);margin:0;padding:0 40px 22px 0}
+.faq-q[aria-expanded="true"] + .faq-a{grid-template-rows:1fr}
+
+/* CTA */
+.cta{position:relative;border-radius:28px;overflow:hidden;padding:clamp(40px,7vw,80px);border:1px solid var(--line-2);background:radial-gradient(600px 300px at 15% 0%,rgba(139,108,255,.4),transparent 60%),radial-gradient(600px 300px at 90% 100%,rgba(46,216,240,.3),transparent 60%),#0B1236;display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,60px);align-items:center}
+.cta h2{font-size:clamp(2rem,4.4vw,3.2rem)}
+.cta p{color:#C3CAE4}
+.demo-form{padding:28px;display:grid;gap:14px}
+.demo-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.fld label{font-size:.8rem;font-weight:600;color:#C3CAE4}
+.fld input,.fld select{font:inherit;font-size:.95rem;color:var(--text);background:rgba(6,10,28,.6);border:1px solid var(--line-2);border-radius:10px;padding:.75em .9em;width:100%;min-width:0}
+.fld select option{background:#0B1236}
+.fld input::placeholder{color:#6F79A0}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(46,216,240,.18)}
+.demo-ok{display:none;padding:12px 14px;border-radius:10px;background:rgba(59,224,161,.12);border:1px solid rgba(59,224,161,.35);color:#9FF3CF;font-size:.9rem;margin:0}
+.demo-ok.show{display:block}
+.trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.trust span{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;padding:.4em .8em;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid var(--line)}
+.trust svg{width:14px;height:14px;color:var(--cyan)}
+
+/* Footer */
+.footer{border-top:1px solid var(--line);padding:70px 0 100px;margin-top:clamp(80px,10vw,120px);color:var(--muted);font-size:.92rem}
+.f-grid{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:32px}
+.f-grid h4{font-family:var(--sans);font-size:.8rem;font-weight:600;color:var(--text);margin-bottom:14px;letter-spacing:0}
+.f-grid ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.f-grid a{text-decoration:none}
+.f-grid a:hover{color:var(--text)}
+.status-pill{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:.4em .8em;border-radius:999px;border:1px solid var(--line);font-size:.8rem}
+.status-pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(59,224,161,.2)}
+.f-bottom{margin-top:50px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.84rem}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:1100px){
+  .dash-inner{grid-template-columns:64px 1fr}
+  .side a span,.side-label,.side-team span,.side-logo span,.side a .cnt{display:none}
+  .side a{justify-content:center;padding:10px}
+  .side-logo{justify-content:center;padding:4px 0 16px}
+  .side-team{justify-content:center;padding:8px}
+  .toast{display:none}
+}
+@media (max-width:1024px){
+  .nav{display:none}
+  .burger{display:inline-flex}
+  .head-cta .login{display:none}
+  .nav.open{display:flex;position:fixed;inset:72px 0 auto 0;flex-direction:column;align-items:stretch;padding:16px 24px 26px;background:rgba(6,10,28,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+  .nav.open a{padding:.85em .6em;font-size:1.05rem;color:var(--text)}
+  .features{grid-template-columns:1fr 1fr}
+  .feat.wide{grid-column:1/-1}
+  .board{grid-template-columns:1fr}
+  .cards{flex-direction:row;flex-wrap:wrap}
+  .cards .card{flex:1 1 200px}
+  .integ-wrap,.faq-wrap,.cta{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .plans{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .f-grid{grid-template-columns:1fr 1fr 1fr}
+  .f-grid > div:first-child{grid-column:1/-1}
+}
+@media (max-width:768px){
+  .kpis{grid-template-columns:1fr 1fr}
+  .branchen,.steps{grid-template-columns:1fr}
+  .branche{aspect-ratio:16/11}
+  .feat.wide{grid-template-columns:1fr}
+  .dash{transform:none}
+  .dash-inner{grid-template-columns:1fr;min-height:0}
+  .side{display:none}
+  .plan-row{grid-template-columns:108px repeat(4,minmax(0,1fr))}
+  .plan-row > :nth-child(n+6){display:none}
+}
+@media (max-width:560px){
+  .wrap{width:calc(100% - 32px)}
+  .features{grid-template-columns:1fr}
+  .head-cta .btn{display:none}
+  .chrome .url{display:none}
+  .main{padding:14px 12px}
+  .tb-actions .seg{display:none}
+  .plan-row{grid-template-columns:86px repeat(3,minmax(0,1fr))}
+  .plan-row > :nth-child(n+5){display:none}
+  .who i{display:none}
+  .integ{gap:8px}
+  .int{font-size:.7rem;padding:8px}
+  .int svg{width:24px;height:24px}
+  .stats{grid-template-columns:1fr}
+  .stat{border-left:0!important;border-top:1px solid var(--line)}
+  .stat:first-child{border-top:0}
+  .demo-form .row{grid-template-columns:1fr}
+  .demo-form{padding:20px}
+  .cta{padding:28px 20px}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .meuser-badge{font-size:.72rem;left:10px;bottom:10px}
+  .hero h1{letter-spacing:-.035em}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .dash{transform:none}
+}
+</style>
+</head>
+<body>
+
+<a class="meuser-badge" href="../beispiele.html">← Beispielseite von meuser.biz · Zur Übersicht</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g-logo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B6CFF"/><stop offset="1" stop-color="#2ED8F0"/></linearGradient>
+    <symbol id="logo-mark" viewBox="0 0 32 32"><rect x="2" y="2" width="12" height="12" rx="3.5" fill="url(#g-logo)"/><rect x="18" y="2" width="12" height="12" rx="3.5" fill="url(#g-logo)" opacity=".55"/><rect x="2" y="18" width="12" height="12" rx="3.5" fill="url(#g-logo)" opacity=".55"/><rect x="18" y="18" width="12" height="12" rx="6" fill="url(#g-logo)"/></symbol>
+    <symbol id="i-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="M6.5 10.2l2.4 2.3 4.6-4.8"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+  </defs>
+</svg>
+
+<div class="aurora" aria-hidden="true"><div class="grid-bg"></div></div>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Flowgrid – Startseite"><svg aria-hidden="true"><use href="#logo-mark"/></svg>Flowgrid</a>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <a href="#produkt">Produkt</a>
+      <a href="#branchen">Branchen</a>
+      <a href="#integrationen">Integrationen</a>
+      <a href="#preise">Preise</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="head-cta">
+      <a class="login" href="#top">Anmelden</a>
+      <a class="btn btn-primary" href="#demo">Demo anfragen</a>
+      <button class="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <a class="pill" href="#produkt"><b>Neu</b> KI-Schichtvorschläge sind live <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <h1>Dienstpläne, die sich <span class="grad-text">fast selbst schreiben.</span></h1>
+    <p class="hero-sub">Flowgrid plant Schichten für Pflege, Logistik, Gastronomie und Handel – rechtssicher nach Arbeitszeitgesetz, fair verteilt und in Minuten statt Tagen. Ihr Team tauscht, bestätigt und stempelt direkt in der App.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#demo">Kostenlose Demo anfragen <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-ghost" href="#so-gehts">So funktioniert’s</a>
+    </div>
+    <div class="hero-note">
+      <span><svg aria-hidden="true"><use href="#i-check"/></svg>14 Tage kostenlos testen</span>
+      <span><svg aria-hidden="true"><use href="#i-check"/></svg>Server in Frankfurt</span>
+      <span><svg aria-hidden="true"><use href="#i-check"/></svg>DSGVO-konform</span>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dash-wrap">
+      <div class="dash-glow" aria-hidden="true"></div>
+      <div class="dash" id="dash" role="img" aria-label="Produktansicht von Flowgrid: Wochenplan mit Früh-, Spät- und Nachtschichten für ein Pflegeteam, daneben Kennzahlen zu Besetzungsgrad und Überstunden.">
+        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="4.5" width="6" height="4.5" rx="1"/><path d="M3.5 4.5V3a1.5 1.5 0 0 1 3 0v1.5"/></svg>app.flowgrid.example/plan/station-3b</span></div>
+        <div class="dash-inner" aria-hidden="true">
+          <aside class="side">
+            <div class="side-logo"><svg><use href="#logo-mark"/></svg><span>Flowgrid</span></div>
+            <a class="on" href="#produkt" tabindex="-1"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3"/></svg><span>Dienstplan</span></a>
+            <a href="#produkt" tabindex="-1"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="5.5" r="2.5"/><path d="M1.5 14c.5-2.5 2.3-4 4.5-4s4 1.5 4.5 4M11 3.5a2.2 2.2 0 0 1 0 4.4M12.5 10c1 .6 1.8 1.9 2 4"/></svg><span>Team</span></a>
+            <a href="#produkt" tabindex="-1"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 6h10l-3-3M13 10H3l3 3"/></svg><span>Tauschbörse</span><b class="cnt">4</b></a>
+            <a href="#produkt" tabindex="-1"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/></svg><span>Zeiterfassung</span></a>
+            <a href="#produkt" tabindex="-1"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 13.5h11M4.5 11V7M8 11V3.5M11.5 11V8.5"/></svg><span>Auswertungen</span></a>
+            <div class="side-label">Standorte</div>
+            <a href="#produkt" tabindex="-1"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="3" fill="#2ED8F0"/></svg><span>Station 3B</span></a>
+            <a href="#produkt" tabindex="-1"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="3" fill="#8B6CFF"/></svg><span>Station 4A</span></a>
+            <a href="#produkt" tabindex="-1"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="3" fill="#F06BC8"/></svg><span>Notaufnahme</span></a>
+            <div class="side-team"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="13" fill="#3BE0A1"/><text x="13" y="17" text-anchor="middle" font-size="10" font-weight="700" fill="#0A0F2A" font-family="Inter,sans-serif">SK</text></svg><span><b>Sabine Krüger</b>Pflegedienstleitung</span></div>
+          </aside>
+          <div class="main">
+            <div class="topbar">
+              <h3>Station 3B · Innere Medizin<small>KW 46 · 9.–15. November 2026 · 18 Mitarbeitende</small></h3>
+              <div class="tb-actions">
+                <div class="seg"><span>Tag</span><span class="on">Woche</span><span>Monat</span></div>
+                <span class="mini-btn"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 1.5l1.2 2.8 2.8 1.2-2.8 1.2L6 9.5 4.8 6.7 2 5.5l2.8-1.2z"/></svg>Auto-Plan</span>
+              </div>
+            </div>
+            <div class="kpis">
+              <div class="kpi"><span>Besetzung</span><b>96 %</b><em>+4,2 % ggü. Vorwoche</em></div>
+              <div class="kpi"><span>Geplante Stunden</span><b>612 h</b><div class="spark"><i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:85%"></i><i style="height:76%"></i></div></div>
+              <div class="kpi"><span>Offene Schichten</span><b>3</b><em class="warn">2 davon Nacht</em></div>
+              <div class="kpi"><span>Regelverstöße</span><b>0</b><em>ArbZG geprüft</em></div>
+            </div>
+            <div class="board">
+              <div class="plan">
+                <div class="plan-row head"><div>Mitarbeitende</div><div>Mo 9.</div><div class="today">Di<b>10</b></div><div>Mi 11.</div><div>Do 12.</div><div>Fr 13.</div><div>Sa 14.</div><div>So 15.</div></div>
+                <div class="plan-row"><div class="who"><i style="background:#2ED8F0">AM</i><span>Anna Meyer<small>Pflegefachkraft</small></span></div><div class="cell"><div class="sh f">Früh<small>06–14</small></div></div><div class="cell"><div class="sh f">Früh<small>06–14</small></div></div><div class="cell"><div class="sh s">Spät<small>14–22</small></div></div><div class="cell"><div class="sh x">frei</div></div><div class="cell"><div class="sh x">frei</div></div><div class="cell"><div class="sh n">Nacht<small>22–06</small></div></div><div class="cell"><div class="sh n">Nacht<small>22–06</small></div></div></div>
+                <div class="plan-row"><div class="who"><i style="background:#8B6CFF">JK</i><span>Jonas Kühn<small>Pflegefachkraft</small></span></div><div class="cell"><div class="sh s">Spät<small>14–22</small></div></div><div class="cell"><div class="sh s">Spät<small>14–22</small></div></div><div class="cell"><div class="sh x">frei</div></div><div class="cell"><div class="sh f drag">Früh<small>06–14</small></div></div><div class="cell"><div class="sh f">Früh<small>06–14</small></div></div><div class="cell"><div class="sh x">frei</div></div><div class="cell"><div class="sh s">Spät<small>14–22</small></div></div></div>
+                <div class="plan-row"><div class="who"><i style="background:#F06BC8">LÖ</i><span>Leyla Öztürk<small>Stationsleitung</small></span></div><div class="cell"><div class="sh f">Früh<small>06–14</small></div></div><div class="cell"><div class="sh f">Früh<small>06–14</small></div></div><div class="cell"><div class="sh f">Früh<small>06–14</small></div></div><div class="cell"><div class="sh f">Früh<small>06–14</small></div></div><div class="cell"><div class="sh f">Früh<small>06–12</small></div></div><div class="cell"><div class="sh x">frei</div></div><div class="cell"><div class="sh x">frei</div></div></div>
+                <div class="plan-row"><div class="who"><i style="background:#FFC266">TB</i><span>Tim Becker<small>Pflegehelfer</small></span></div><div class="cell"><div class="sh u">Urlaub</div></div><div class="cell"><div class="sh u">Urlaub</div></div><div class="cell"><div class="sh u">Urlaub</div></div><div class="cell"><div class="sh u">Urlaub</div></div><div class="cell"><div class="sh u">Urlaub</div></div><div class="cell"><div class="sh x">frei</div></div><div class="cell"><div class="sh x">frei</div></div></div>
+                <div class="plan-row"><div class="who"><i style="background:#3BE0A1">MW</i><span>Marie Wolf<small>Pflegefachkraft</small></span></div><div class="cell"><div class="sh n">Nacht<small>22–06</small></div></div><div class="cell"><div class="sh n">Nacht<small>22–06</small></div></div><div class="cell"><div class="sh n">Nacht<small>22–06</small></div></div><div class="cell"><div class="sh x">frei</div></div><div class="cell"><div class="sh x">frei</div></div><div class="cell"><div class="sh s">Spät<small>14–22</small></div></div><div class="cell"><div class="sh f">Früh<small>06–14</small></div></div></div>
+                <div class="plan-row"><div class="who"><i style="background:#9CA6C9">DS</i><span>David Schulz<small>Azubi, 2. Jahr</small></span></div><div class="cell"><div class="sh f">Früh<small>06–14</small></div></div><div class="cell"><div class="sh x">Schule</div></div><div class="cell"><div class="sh x">Schule</div></div><div class="cell"><div class="sh s">Spät<small>14–22</small></div></div><div class="cell"><div class="sh s">Spät<small>14–22</small></div></div><div class="cell"><div class="sh x">frei</div></div><div class="cell"><div class="sh x">frei</div></div></div>
+                <div class="plan-row"><div class="who"><i style="background:rgba(255,255,255,.12);color:#fff">+</i><span>Offen<small>3 Schichten</small></span></div><div class="cell"><div class="sh x">–</div></div><div class="cell"><div class="sh x">–</div></div><div class="cell"><div class="sh o">+ Spät</div></div><div class="cell"><div class="sh o">+ Nacht</div></div><div class="cell"><div class="sh x">–</div></div><div class="cell"><div class="sh x">–</div></div><div class="cell"><div class="sh o">+ Nacht</div></div></div>
+              </div>
+              <div class="cards">
+                <div class="card"><h4>Schichtverteilung <span>KW 46</span></h4>
+                  <div class="ring"><div class="ring-c"></div><div class="legend"><span style="--c:var(--cyan)">Früh · 34 %</span><span style="--c:var(--violet)">Spät · 38 %</span><span style="--c:var(--pink)">Nacht · 24 %</span></div></div>
+                </div>
+                <div class="card"><h4>Überstunden je Woche <span>Std.</span></h4>
+                  <div class="bars"><div><i style="height:62%"></i><span>43</span></div><div><i style="height:48%"></i><span>44</span></div><div><i style="height:40%"></i><span>45</span></div><div><i style="height:22%"></i><span>46</span></div><div><i style="height:16%"></i><span>47</span></div></div>
+                </div>
+                <div class="card ai-card"><h4 style="color:#D6D2FF">✦ Vorschlag</h4>
+                  <p>Marie Wolf hat am Mi Nacht → Do frei. Sie kann die offene Do-Nacht nicht übernehmen (11 h Ruhezeit). Vorschlag: Anna Meyer, 0 Überstunden.</p>
+                  <div class="acc"><span>Übernehmen</span><span>Andere zeigen</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="toast" aria-hidden="true"><i><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></i><div>Tausch bestätigt<small>Jonas ↔ Anna · Do Früh</small></div></div>
+      <div class="toast t2" aria-hidden="true"><i><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1.5l1.6 3.6 3.9.4-2.9 2.6.8 3.9L8 10 4.6 12l.8-3.9L2.5 5.5l3.9-.4z"/></svg></i><div>Plan für KW 47 fertig<small>in 38 Sekunden erstellt</small></div></div>
+    </div>
+  </div>
+
+  <div class="logos wrap">
+    <p>Über 1.200 Betriebe in Deutschland, Österreich und der Schweiz planen mit Flowgrid</p>
+    <div class="logo-row" aria-label="Kundenlogos (fiktiv)">
+      <span class="wm wm-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>LINDENHAUS</span>
+      <span class="wm wm-2">Brauweiler &amp; Söhne</span>
+      <span class="wm wm-3"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h7l9 16h-7z" opacity=".6"/><path d="M4 20l6-10 3 5-3 5z"/></svg>kranwerk</span>
+      <span class="wm wm-4"><span><b>Nord</b>stern Logistik</span></span>
+      <span class="wm wm-5">Velora</span>
+      <span class="wm wm-6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 16c3-8 13-8 16 0"/><path d="M8 16c1.5-3.5 6.5-3.5 8 0"/></svg>halbmond.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="produkt" aria-labelledby="feat-titel">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="kicker">Produkt</span>
+      <h2 id="feat-titel">Alles, was ein guter Dienstplan braucht. <span class="grad-text">Nichts, was nervt.</span></h2>
+      <p>Von der ersten Bedarfsplanung bis zum Lohnexport: Flowgrid ersetzt Excel-Listen, Whiteboards und WhatsApp-Gruppen durch einen einzigen, verlässlichen Ort.</p>
+    </div>
+    <div class="features">
+      <article class="feat glass reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M9 9v11"/><path d="M13 13h4M13 16h2"/></svg></div>
+        <h3>Drag-&amp;-Drop-Planer</h3>
+        <p>Schichten ziehen, kopieren, Vorlagen anwenden. Wochen- und Monatsansicht für beliebig viele Standorte und Abteilungen.</p>
+      </article>
+      <article class="feat glass reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/><path d="M19 15l.8 2 2 .8-2 .8L19 21l-.8-2.4-2-.8 2-.8z"/></svg></div>
+        <h3>KI-Schichtvorschläge</h3>
+        <p>Flowgrid erstellt einen vollständigen Planentwurf aus Bedarf, Qualifikationen, Wünschen und Stundenkonten – Sie geben nur noch frei.</p>
+      </article>
+      <article class="feat glass reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/><path d="M9 8h6M9 11.5h4"/></svg></div>
+        <h3>Mitarbeiter-App</h3>
+        <p>Dienstplan, Urlaubsanträge, Verfügbarkeiten und Push-Benachrichtigungen. Für iOS und Android, in 14 Sprachen.</p>
+      </article>
+      <article class="feat glass wide reveal">
+        <div>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg></div>
+          <h3>Rechtssicher ab dem ersten Klick</h3>
+          <p>Ruhezeiten, Höchstarbeitszeiten, Jugendarbeitsschutz, Pausenregeln und Ihre Tarif- oder Betriebsvereinbarung werden live geprüft. Verstöße sehen Sie, bevor der Plan veröffentlicht wird.</p>
+        </div>
+        <div class="law" aria-label="Beispiel einer Regelprüfung">
+          <div class="ok"><svg><use href="#i-check"/></svg>Ruhezeit 11 h zwischen Schichten<b>erfüllt</b></div>
+          <div class="ok"><svg><use href="#i-check"/></svg>Max. 10 h Arbeitszeit pro Tag<b>erfüllt</b></div>
+          <div class="warn"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 3l8 14H2z"/><path d="M10 8v4M10 14.5v.5"/></svg>Max. 5 Nachtschichten in Folge – M. Wolf<b>Hinweis</b></div>
+          <div class="ok"><svg><use href="#i-check"/></svg>Tarifvertrag TVöD-P · Zuschläge<b>berechnet</b></div>
+        </div>
+      </article>
+      <article class="feat glass reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></div>
+        <h3>Schicht-Tauschbörse</h3>
+        <p>Mitarbeitende bieten Schichten an, Kolleg:innen übernehmen – nur wenn Qualifikation und Regeln passen. Die Leitung bestätigt mit einem Tipp.</p>
+      </article>
+      <article class="feat glass reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9.5 2.5h5"/></svg></div>
+        <h3>Zeiterfassung &amp; Lohnexport</h3>
+        <p>Stempeln per App, Terminal oder QR-Code. Zuschläge werden automatisch berechnet und als fertige Lohndatei exportiert.</p>
+      </article>
+      <article class="feat glass reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>Auswertungen in Echtzeit</h3>
+        <p>Personalkosten, Überstunden, Krankheitsquote und Besetzungsgrad je Standort – als Dashboard oder monatlicher Report per Mail.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BRANCHEN -->
+<section class="section" id="branchen" aria-labelledby="branchen-titel" style="padding-top:0">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="kicker">Branchen</span>
+      <h2 id="branchen-titel">Gebaut für Teams, die rund um die Uhr arbeiten</h2>
+    </div>
+    <div class="branchen">
+      <article class="branche reveal">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80&auto=format&fit=crop" alt="Arzt im weißen Kittel mit Stethoskop schaut auf sein Smartphone" loading="lazy" width="600" height="750">
+        <div class="branche-body"><span class="tag">Pflege &amp; Klinik</span><h3>Stationen sicher besetzen</h3><p>Qualifikationsmatrix, Dienstübergaben, Bereitschaftsdienste und TVöD-Zuschläge – vom Pflegeheim bis zum Klinikverbund.</p></div>
+      </article>
+      <article class="branche reveal">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80&auto=format&fit=crop" alt="Große Lagerhalle mit Hochregalen und vielen Paketen" loading="lazy" width="600" height="750">
+        <div class="branche-body"><span class="tag">Logistik &amp; Lager</span><h3>Peaks planbar machen</h3><p>Bedarfsprognose aus Sendungsvolumen, Leiharbeit und Staplerscheine im Blick – auch im Drei-Schicht-Betrieb.</p></div>
+      </article>
+      <article class="branche reveal">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1600&q=80&auto=format&fit=crop" alt="Café mit Theke, Holztischen und Pflanzen" loading="lazy" width="600" height="750">
+        <div class="branche-body"><span class="tag">Gastro &amp; Handel</span><h3>Minijobs ohne Chaos</h3><p>Verdienstgrenzen, Aushilfen und spontane Ausfälle – Flowgrid findet in Sekunden passenden Ersatz.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SO GEHT'S -->
+<section class="section" id="so-gehts" aria-labelledby="steps-titel" style="padding-top:0">
+  <div class="wrap">
+    <div class="s-head center reveal">
+      <span class="kicker">So funktioniert’s</span>
+      <h2 id="steps-titel">In drei Schritten zum ersten Plan</h2>
+      <p>Die meisten Teams veröffentlichen ihren ersten Dienstplan noch am Tag der Einrichtung. Unser Onboarding-Team begleitet Sie persönlich.</p>
+    </div>
+    <div class="steps">
+      <article class="step glass reveal">
+        <div class="num">Import</div>
+        <h3>Team &amp; Regeln einspielen</h3>
+        <p>Mitarbeitende per CSV oder Schnittstelle importieren, Qualifikationen und Verträge zuordnen.</p>
+        <div class="step-vis" aria-hidden="true"><div class="upload"><span class="file">CSV</span><div style="flex:1"><div style="margin-bottom:6px">mitarbeitende_3b.csv · 18 Einträge</div><div class="prog"><i></i></div></div></div></div>
+      </article>
+      <article class="step glass reveal">
+        <div class="num">Planen</div>
+        <h3>Plan automatisch erstellen</h3>
+        <p>Bedarf festlegen, auf „Auto-Plan“ klicken, prüfen. Feinschliff per Drag &amp; Drop.</p>
+        <div class="step-vis" aria-hidden="true"><div class="rules"><span>11 h Ruhezeit</span><span>Wunschfrei</span><span>max. 39 h/Woche</span><span>Fachkraftquote 50 %</span></div></div>
+      </article>
+      <article class="step glass reveal">
+        <div class="num">Teilen</div>
+        <h3>Veröffentlichen &amp; loslegen</h3>
+        <p>Ein Klick, und alle haben ihren Plan in der App. Änderungen kommen als Push-Nachricht.</p>
+        <div class="step-vis" aria-hidden="true"><div class="phone-row"><span class="ph"></span><div><b>Dein Plan für KW 47 ist da</b><small>Mo Früh · Di Früh · Do Spät · Fr Spät</small></div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATIONEN -->
+<section class="section" id="integrationen" aria-labelledby="int-titel" style="padding-top:0">
+  <div class="wrap integ-wrap">
+    <div class="reveal">
+      <span class="kicker">Integrationen</span>
+      <h2 id="int-titel" style="font-size:clamp(2rem,4.4vw,3.2rem)">Passt in Ihre bestehende Systemlandschaft</h2>
+      <p style="color:var(--muted);font-size:1.1rem">Flowgrid spricht mit Lohnbuchhaltung, HR-Software, Zeiterfassungsterminals und Kalendern. Und wenn nicht: Unsere offene REST-API macht den Rest.</p>
+      <ul class="check-list">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Lohnexport in allen gängigen Formaten der deutschen Lohnbuchhaltung</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Single Sign-on via SAML 2.0 und OpenID Connect</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Webhooks für jede Planänderung, dokumentierte API mit Sandbox</li>
+      </ul>
+      <a class="btn btn-ghost" href="#demo">Alle Integrationen ansehen <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="integ reveal" aria-label="Integrationsübersicht">
+      <div class="int glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="22" height="24" rx="3"/><path d="M10 10h12M10 15h12M10 20h7"/><path d="M20 23l2 2 4-4"/></svg>Lohnbuchhaltung</div>
+      <div class="int glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.2-5 5.2-8 10-8s8.8 3 10 8"/></svg>HR-Software</div>
+      <div class="int glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="6" width="24" height="22" rx="3"/><path d="M4 12h24M10 3v6M22 3v6"/><circle cx="16" cy="20" r="2.5" fill="currentColor"/></svg>Kalender (iCal)</div>
+      <div class="int glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h22v14H14l-6 5v-5H5z"/><path d="M10 13h12M10 17h7"/></svg>Team-Chat</div>
+      <div class="int hub"><svg aria-hidden="true"><use href="#logo-mark"/></svg>Flowgrid</div>
+      <div class="int glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="8" y="4" width="16" height="24" rx="3"/><circle cx="16" cy="13" r="4"/><path d="M12 23h8"/></svg>Stempel­terminals</div>
+      <div class="int glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="14" width="18" height="13" rx="3"/><path d="M11 14v-4a5 5 0 0 1 10 0v4"/><circle cx="16" cy="20.5" r="2"/></svg>SSO / SAML</div>
+      <div class="int glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 9l-6 7 6 7M21 9l6 7-6 7M18 6l-4 20"/></svg>REST-API</div>
+      <div class="int glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="24" height="17" rx="3"/><path d="M4 13h24M9 20h5"/></svg>Kassensysteme</div>
+    </div>
+  </div>
+</section>
+
+<!-- ZAHLEN -->
+<section class="section" aria-labelledby="zahlen-titel" style="padding-top:0">
+  <div class="wrap">
+    <h2 id="zahlen-titel" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Flowgrid in Zahlen</h2>
+    <div class="stats glass reveal">
+      <div class="stat"><b class="grad-text" data-count="72" data-prefix="−" data-suffix=" %">−72 %</b><span>weniger Zeitaufwand für die Dienstplanung</span></div>
+      <div class="stat"><b class="grad-text" data-count="1200" data-suffix="+">1.200+</b><span>Betriebe in DACH vertrauen auf Flowgrid</span></div>
+      <div class="stat"><b class="grad-text" data-count="98.6" data-decimals="1" data-suffix=" %">98,6 %</b><span>durchschnittliche Schichtbesetzung</span></div>
+      <div class="stat"><b class="grad-text" data-count="4.8" data-decimals="1" data-suffix=" / 5">4,8 / 5</b><span>Bewertung durch Mitarbeitende in der App</span></div>
+    </div>
+    <figure class="quote reveal">
+      <blockquote>„Früher saß ich jeden Monat zwei volle Tage am Dienstplan für unsere drei Stationen. Heute sind es zwei Stunden – und die Wunschfrei-Quote ist von 60 auf 91 Prozent gestiegen.“</blockquote>
+      <figcaption><i>SK</i><div><b>Sabine Krüger</b><small>Pflegedienstleitung, Lindenhaus Kliniken</small></div></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- PREISE -->
+<section class="section" id="preise" aria-labelledby="preise-titel" style="padding-top:0">
+  <div class="wrap">
+    <div class="s-head center reveal">
+      <span class="kicker">Preise</span>
+      <h2 id="preise-titel">Faire Preise pro aktivem Mitarbeitenden</h2>
+      <p>Keine Einrichtungsgebühr, keine Mindestlaufzeit im Monatstarif. Sie zahlen nur für Personen, die im jeweiligen Monat eingeplant sind.</p>
+      <div class="toggle" role="group" aria-label="Abrechnungszeitraum">
+        <button type="button" aria-pressed="false" data-billing="monat">Monatlich</button>
+        <button type="button" aria-pressed="true" data-billing="jahr">Jährlich <span class="save">−20 %</span></button>
+      </div>
+    </div>
+    <div class="plans">
+      <article class="plan-c glass reveal">
+        <h3>Starter</h3>
+        <p class="desc">Für kleine Teams und einzelne Standorte.</p>
+        <div class="price"><b data-monat="4,00 €" data-jahr="3,20 €">3,20 €</b><span>/ Mitarbeitende:r · Monat</span></div>
+        <p class="billed" data-monat="monatlich kündbar" data-jahr="jährliche Abrechnung · 38,40 € pro Person/Jahr">jährliche Abrechnung · 38,40 € pro Person/Jahr</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Bis 50 Mitarbeitende, 1 Standort</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Drag-&amp;-Drop-Planer &amp; Vorlagen</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Mitarbeiter-App &amp; Tauschbörse</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>ArbZG-Prüfung</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>E-Mail-Support</li>
+        </ul>
+        <a class="btn btn-ghost" href="#demo">14 Tage testen</a>
+      </article>
+      <article class="plan-c glass pop reveal">
+        <span class="ribbon">Am beliebtesten</span>
+        <h3>Business</h3>
+        <p class="desc">Für wachsende Betriebe mit mehreren Standorten.</p>
+        <div class="price"><b data-monat="7,00 €" data-jahr="5,60 €">5,60 €</b><span>/ Mitarbeitende:r · Monat</span></div>
+        <p class="billed" data-monat="monatlich kündbar" data-jahr="jährliche Abrechnung · 67,20 € pro Person/Jahr">jährliche Abrechnung · 67,20 € pro Person/Jahr</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Alles aus Starter, unbegrenzte Standorte</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>KI-Schichtvorschläge &amp; Auto-Plan</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Zeiterfassung &amp; Lohnexport</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tarifregeln &amp; Zuschläge</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Telefon- &amp; Chat-Support</li>
+        </ul>
+        <a class="btn btn-primary" href="#demo">Demo anfragen</a>
+      </article>
+      <article class="plan-c glass reveal">
+        <h3>Enterprise</h3>
+        <p class="desc">Für Klinikverbünde, Konzerne und besondere Anforderungen.</p>
+        <div class="price"><b data-monat="Individuell" data-jahr="Individuell">Individuell</b></div>
+        <p class="billed" data-monat="ab 250 Mitarbeitenden" data-jahr="ab 250 Mitarbeitenden">ab 250 Mitarbeitenden</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Alles aus Business</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>SSO, SCIM &amp; Rollenmodelle</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Eigene Integrationen &amp; API-Limits</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>AV-Vertrag, Audit-Log, 99,9 % SLA</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Persönliche:r Customer Success Manager:in</li>
+        </ul>
+        <a class="btn btn-ghost" href="#demo">Vertrieb kontaktieren</a>
+      </article>
+    </div>
+    <p class="price-foot">Alle Preise zzgl. MwSt. · Gemeinnützige Einrichtungen erhalten 25 % Rabatt.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" aria-labelledby="faq-titel" style="padding-top:0">
+  <div class="wrap faq-wrap">
+    <div class="reveal">
+      <span class="kicker">FAQ</span>
+      <h2 id="faq-titel" style="font-size:clamp(2rem,4.4vw,3.2rem)">Häufige Fragen</h2>
+      <p style="color:var(--muted)">Ihre Frage ist nicht dabei? Schreiben Sie uns an <a href="mailto:hallo@example.de" style="color:var(--cyan)">hallo@example.de</a> oder rufen Sie an: 02151 123 45 67.</p>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item"><button class="faq-q" aria-expanded="true" aria-controls="fa1" id="fq1">Wie lange dauert die Einführung?<svg aria-hidden="true"><use href="#i-plus"/></svg></button><div class="faq-a" id="fa1" role="region" aria-labelledby="fq1"><div><p>Kleine Teams sind meist am selben Tag startklar. Für Betriebe mit mehreren Standorten planen wir zwei bis vier Wochen inklusive Import, Regelwerk und Schulung der Planer:innen ein.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" aria-controls="fa2" id="fq2">Wo werden unsere Daten gespeichert?<svg aria-hidden="true"><use href="#i-plus"/></svg></button><div class="faq-a" id="fa2" role="region" aria-labelledby="fq2"><div><p>Ausschließlich in ISO-27001-zertifizierten Rechenzentren in Frankfurt am Main. Wir schließen mit jedem Kunden einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" aria-controls="fa3" id="fq3">Brauchen alle Mitarbeitenden ein Smartphone?<svg aria-hidden="true"><use href="#i-plus"/></svg></button><div class="faq-a" id="fa3" role="region" aria-labelledby="fq3"><div><p>Nein. Der Plan lässt sich auch im Browser abrufen, ausdrucken oder als Aushang-PDF erzeugen. Gestempelt werden kann zusätzlich am Terminal oder Tablet vor Ort.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" aria-controls="fa4" id="fq4">Wird der Betriebsrat eingebunden?<svg aria-hidden="true"><use href="#i-plus"/></svg></button><div class="faq-a" id="fa4" role="region" aria-labelledby="fq4"><div><p>Ja. Wir stellen eine Mustervorlage für eine Betriebsvereinbarung bereit, und Leserechte für den Betriebsrat sind in allen Tarifen inklusive. Leistungs- oder Verhaltenskontrollen sind bewusst nicht vorgesehen.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" aria-controls="fa5" id="fq5">Kann ich jederzeit kündigen?<svg aria-hidden="true"><use href="#i-plus"/></svg></button><div class="faq-a" id="fa5" role="region" aria-labelledby="fq5"><div><p>Im Monatstarif jederzeit zum Monatsende. Jahresverträge verlängern sich nur, wenn Sie nicht bis vier Wochen vor Ablauf kündigen. Ihre Daten exportieren Sie jederzeit vollständig.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="demo" aria-labelledby="demo-titel">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div>
+        <span class="kicker">Demo</span>
+        <h2 id="demo-titel">Sehen Sie Ihren eigenen Dienstplan in Flowgrid.</h2>
+        <p>In 30 Minuten zeigen wir Ihnen live, wie Flowgrid mit Ihren Schichtmodellen und Regeln arbeitet. Unverbindlich, ohne Verkaufsdruck – versprochen.</p>
+        <div class="trust">
+          <span><svg aria-hidden="true"><use href="#i-check"/></svg>Hosting in Deutschland</span>
+          <span><svg aria-hidden="true"><use href="#i-check"/></svg>ISO 27001</span>
+          <span><svg aria-hidden="true"><use href="#i-check"/></svg>AV-Vertrag inklusive</span>
+        </div>
+      </div>
+      <form class="demo-form glass" onsubmit="event.preventDefault(); this.querySelector('.demo-ok').classList.add('show');">
+        <div class="row">
+          <div class="fld"><label for="d-name">Name</label><input id="d-name" autocomplete="name" placeholder="Vor- und Nachname" required></div>
+          <div class="fld"><label for="d-firma">Unternehmen</label><input id="d-firma" autocomplete="organization" placeholder="Firma / Einrichtung" required></div>
+        </div>
+        <div class="fld"><label for="d-mail">Geschäftliche E-Mail</label><input id="d-mail" type="email" autocomplete="email" placeholder="name@example.de" required></div>
+        <div class="row">
+          <div class="fld"><label for="d-ma">Mitarbeitende</label><select id="d-ma"><option>1–25</option><option selected>26–100</option><option>101–250</option><option>250+</option></select></div>
+          <div class="fld"><label for="d-branche">Branche</label><select id="d-branche"><option>Pflege &amp; Klinik</option><option>Logistik</option><option>Gastronomie</option><option>Einzelhandel</option><option>Sicherheit</option><option>Andere</option></select></div>
+        </div>
+        <button class="btn btn-primary" type="submit">Demo-Termin anfragen <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <p class="demo-ok" role="status">Danke! Wir melden uns innerhalb von 24 Stunden mit Terminvorschlägen. (Beispielformular – es wurde nichts gesendet.)</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a class="logo" href="#top" aria-label="Flowgrid – nach oben" style="color:var(--text)"><svg aria-hidden="true"><use href="#logo-mark"/></svg>Flowgrid</a>
+        <p style="margin-top:14px;max-width:300px">Flowgrid GmbH · Musterstraße 12 · 47918 Tönisvorst<br><a href="tel:+4921511234567">02151 123 45 67</a> · <a href="mailto:hallo@example.de">hallo@example.de</a></p>
+        <span class="status-pill">Alle Systeme laufen</span>
+      </div>
+      <div><h4>Produkt</h4><ul><li><a href="#produkt">Funktionen</a></li><li><a href="#integrationen">Integrationen</a></li><li><a href="#preise">Preise</a></li><li><a href="#top">Changelog</a></li></ul></div>
+      <div><h4>Branchen</h4><ul><li><a href="#branchen">Pflege &amp; Klinik</a></li><li><a href="#branchen">Logistik</a></li><li><a href="#branchen">Gastronomie</a></li><li><a href="#branchen">Handel</a></li></ul></div>
+      <div><h4>Unternehmen</h4><ul><li><a href="#top">Über uns</a></li><li><a href="#top">Karriere <span style="color:var(--cyan)">· 6 offen</span></a></li><li><a href="#top">Presse</a></li></ul></div>
+      <div><h4>Rechtliches</h4><ul><li><a href="#top">Impressum</a></li><li><a href="#top">Datenschutz</a></li><li><a href="#top">AGB</a></li><li><a href="#top">Sicherheit</a></li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Flowgrid GmbH. Alle Rechte vorbehalten.</span>
+      <span>Fiktives Beispielunternehmen – Design &amp; Umsetzung: meuser.biz</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var header=document.querySelector('.header');
+  function onScroll(){header.classList.toggle('scrolled',window.scrollY>10);}
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  var burger=document.querySelector('.burger'),nav=document.getElementById('nav');
+  function setNav(open){nav.classList.toggle('open',open);burger.setAttribute('aria-expanded',String(open));burger.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');}
+  burger.addEventListener('click',function(){setNav(!nav.classList.contains('open'));});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setNav(false);});});
+
+  // Dashboard flach legen
+  var dash=document.getElementById('dash');
+  if(!reduce){setTimeout(function(){dash.classList.add('flat');},350);} else {dash.classList.add('flat');}
+
+  // Preise
+  var btns=document.querySelectorAll('[data-billing]');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var mode=b.dataset.billing;
+    btns.forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
+    document.querySelectorAll('.price b[data-monat], .billed[data-monat]').forEach(function(el){el.textContent=el.dataset[mode];});
+  });});
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){
+    var open=q.getAttribute('aria-expanded')==='true';
+    q.setAttribute('aria-expanded',String(!open));
+  });});
+
+  // Hover-Licht auf Features
+  document.querySelectorAll('.feat').forEach(function(f){f.addEventListener('pointermove',function(e){
+    var r=f.getBoundingClientRect();f.style.setProperty('--mx',(e.clientX-r.left)+'px');f.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });});
+
+  // Zähler
+  function fmt(n,d){return n.toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d});}
+  function count(el){
+    var to=parseFloat(el.dataset.count),d=parseInt(el.dataset.decimals||'0',10),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',t0=null;
+    function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1400,1),e=1-Math.pow(1-p,3);el.textContent=pre+fmt(to*e,d)+suf;if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(count);io.unobserve(e.target);}
+    });},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el);});
+  } else {els.forEach(function(el){el.classList.add('in');});}
+})();
+</script>
+</body>
+</html>

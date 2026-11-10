@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Mara Lenz – Portrait-, Hochzeits- &amp; Businessfotografie am Niederrhein</title>
+<meta name="description" content="Studio Mara Lenz in Tönisvorst: ehrliche Portraits, ruhige Hochzeitsreportagen und Businessfotografie mit Haltung. Pakete ab 290 €, Termine 2027 jetzt anfragen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b0b0b;
+    --paper:#ffffff;
+    --grey:#6b6b6b;
+    --line:#e4e4e4;
+    --accent:#c4471d;
+    --serif:"Instrument Serif", "Times New Roman", serif;
+    --sans:"Inter Tight", system-ui, -apple-system, sans-serif;
+    --gut:clamp(20px, 4vw, 56px);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+  button{font:inherit;color:inherit}
+  ::selection{background:var(--accent);color:#fff}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .wrap{padding-left:var(--gut);padding-right:var(--gut);max-width:1600px;margin:0 auto}
+  .label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .muted{color:var(--grey)}
+  .dot{display:inline-block;width:.5em;height:.5em;border-radius:50%;background:var(--accent);vertical-align:.12em;margin-right:.5em}
+  .serif{font-family:var(--serif);font-weight:400}
+  em{font-style:italic}
+
+  /* Badge */
+  .meuser-badge{position:fixed;left:16px;bottom:16px;z-index:9999;background:var(--ink);color:#fff;text-decoration:none;font-size:12.5px;letter-spacing:.02em;padding:9px 14px;border-radius:999px;box-shadow:0 6px 24px rgba(0,0,0,.18);transition:background .25s}
+  .meuser-badge:hover{background:var(--accent)}
+
+  /* Header */
+  .site-head{position:fixed;inset:0 0 auto 0;z-index:50;mix-blend-mode:difference;color:#fff}
+  .site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .brand{font-family:var(--serif);font-size:26px;text-decoration:none;letter-spacing:-.01em}
+  .brand i{font-style:italic}
+  .nav{display:flex;gap:clamp(18px,2.4vw,40px)}
+  .nav a{text-decoration:none;font-size:14px;position:relative}
+  .nav a sup{font-size:9px;margin-right:4px;opacity:.7}
+  .nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+  .nav a:hover::after{transform:scaleX(1)}
+  .burger{display:none;background:none;border:0;cursor:pointer;padding:10px;margin-right:-10px}
+  .burger span{display:block;width:26px;height:1.5px;background:#fff;margin:6px 0;transition:transform .3s}
+  .mobile-menu{position:fixed;inset:0;background:var(--ink);color:#fff;z-index:60;display:flex;flex-direction:column;justify-content:center;padding:var(--gut);transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1);visibility:hidden}
+  .mobile-menu.open{transform:none;visibility:visible}
+  .mobile-menu a{font-family:var(--serif);font-size:clamp(44px,13vw,80px);line-height:1.05;text-decoration:none}
+  .mobile-menu a:hover{color:var(--accent)}
+  .mobile-menu .close{position:absolute;top:20px;right:var(--gut);background:none;border:0;color:#fff;font-size:14px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;padding:10px}
+  .mobile-menu .small{margin-top:40px;font-size:14px;color:#aaa}
+
+  /* Hero */
+  .hero{min-height:100vh;min-height:100svh;padding-top:110px;padding-bottom:84px;display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:auto 1fr auto;column-gap:20px;position:relative}
+  .hero-meta{grid-column:1 / -1;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--ink);padding-top:14px}
+  .hero-title{grid-column:1 / -1;grid-row:2;align-self:end;margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(84px,21vw,360px);line-height:.8;letter-spacing:-.045em;position:relative;z-index:2}
+  .hero-title .l2{display:block;padding-left:22%;font-style:italic}
+  .hero-title .acc{color:var(--accent)}
+  .hero-img{grid-column:8 / 12;grid-row:2;align-self:start;margin:36px 0 0;position:relative;z-index:1}
+  .hero-img img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+  .hero-img figcaption{font-size:12px;margin-top:8px;color:var(--grey)}
+  .hero-foot{grid-column:1 / -1;display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;margin-top:40px;align-items:end}
+  .hero-foot p{grid-column:1 / 6;margin:0;font-size:clamp(17px,1.5vw,21px);line-height:1.45;max-width:34ch}
+  .hero-foot .cta{grid-column:9 / -1;justify-self:end}
+  .btn{display:inline-flex;align-items:center;gap:14px;text-decoration:none;font-size:15px;border:1px solid var(--ink);border-radius:999px;padding:14px 26px;background:transparent;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+  .btn:hover{background:var(--ink);color:#fff}
+  .btn.fill{background:var(--ink);color:#fff}
+  .btn.fill:hover{background:var(--accent);border-color:var(--accent)}
+  .btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+  /* Ticker */
+  .ticker{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);overflow:hidden;white-space:nowrap;padding:18px 0}
+  .ticker-track{display:inline-flex;animation:tick 38s linear infinite}
+  .ticker span{font-family:var(--serif);font-size:clamp(28px,4vw,56px);line-height:1;padding-right:.6em}
+  .ticker span i{color:var(--accent)}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  /* Sections */
+  section{position:relative}
+  .sec{padding-top:clamp(90px,12vw,180px)}
+  .sec-head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;align-items:end;margin-bottom:clamp(40px,6vw,80px)}
+  .sec-num{grid-column:1 / 3;font-size:13px;align-self:start;padding-top:1.1em}
+  .sec-title{grid-column:3 / 11;margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(52px,9vw,150px);line-height:.88;letter-spacing:-.035em;overflow-wrap:break-word}
+  .sec-title i{color:var(--accent)}
+
+  /* Gallery */
+  .filters{display:flex;flex-wrap:wrap;gap:8px 26px;margin-bottom:36px;border-bottom:1px solid var(--line);padding-bottom:18px}
+  .filters button{background:none;border:0;padding:4px 0;cursor:pointer;font-size:clamp(18px,2vw,24px);font-family:var(--serif);color:var(--grey);transition:color .25s}
+  .filters button sup{font-family:var(--sans);font-size:11px;margin-left:3px}
+  .filters button[aria-pressed="true"]{color:var(--ink)}
+  .filters button[aria-pressed="true"]::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:.18em}
+  .filters button:hover{color:var(--ink)}
+  .masonry{columns:3;column-gap:clamp(12px,1.6vw,24px)}
+  .tile{break-inside:avoid;margin:0 0 clamp(12px,1.6vw,24px);position:relative;cursor:zoom-in;transition:opacity .4s ease, transform .4s ease}
+  .tile button{all:unset;display:block;width:100%;cursor:zoom-in;position:relative;overflow:hidden}
+  .tile button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .tile img{width:100%;filter:grayscale(1);transition:filter .6s ease, transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .tile:hover img,.tile button:focus-visible img{filter:grayscale(0);transform:scale(1.03)}
+  .tile figcaption{display:flex;justify-content:space-between;font-size:12px;padding-top:8px;color:var(--grey)}
+  .tile figcaption b{font-weight:500;color:var(--ink)}
+  .tile.wide img{aspect-ratio:4/3;object-fit:cover}
+  .tile.tall img{aspect-ratio:3/4;object-fit:cover}
+  .tile.sq img{aspect-ratio:1;object-fit:cover}
+  .tile.hide{display:none}
+  .tile.note{cursor:default;padding:28px 0}
+  .tile.note p{font-family:var(--serif);font-size:clamp(26px,2.6vw,38px);line-height:1.1;margin:0}
+
+  /* Lightbox */
+  .lb{position:fixed;inset:0;z-index:200;background:rgba(255,255,255,.97);display:none;grid-template-rows:auto 1fr auto;padding:18px var(--gut)}
+  .lb.open{display:grid}
+  .lb-top,.lb-bot{display:flex;justify-content:space-between;align-items:center;font-size:13px;gap:16px}
+  .lb-stage{display:flex;align-items:center;justify-content:center;min-height:0;padding:16px 0}
+  .lb-stage img{max-height:100%;max-width:100%;width:auto;object-fit:contain}
+  .lb button{background:none;border:0;cursor:pointer;padding:10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  .lb button:hover{color:var(--accent)}
+  .lb-cap{font-family:var(--serif);font-size:22px}
+
+  /* Services */
+  .svc{border-top:1px solid var(--ink)}
+  .svc-row{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;padding:clamp(28px,3.4vw,48px) 0;border-bottom:1px solid var(--line);align-items:start;transition:background .3s}
+  .svc-row:hover .svc-name{color:var(--accent)}
+  .svc-idx{grid-column:1 / 2;font-size:13px;padding-top:.8em}
+  .svc-name{grid-column:2 / 6;margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.4vw,68px);line-height:.95;letter-spacing:-.02em;transition:color .3s}
+  .svc-desc{grid-column:6 / 10;margin:0;max-width:44ch}
+  .svc-desc ul{list-style:none;padding:0;margin:16px 0 0;font-size:14px;color:var(--grey)}
+  .svc-desc li{padding:4px 0}
+  .svc-desc li::before{content:"— "}
+  .svc-price{grid-column:10 / -1;text-align:right}
+  .svc-price small{display:block;font-size:12px;color:var(--grey);letter-spacing:.1em;text-transform:uppercase}
+  .svc-price strong{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.6vw,56px);line-height:1}
+  .svc-price span{font-size:13px;color:var(--grey)}
+  .svc-foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:22px;font-size:14px;color:var(--grey)}
+
+  /* About */
+  .about{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;row-gap:40px}
+  .about-img{grid-column:1 / 6;margin:0;position:relative}
+  .about-img img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1)}
+  .about-img .sig{position:absolute;right:-8%;bottom:6%;font-family:var(--serif);font-style:italic;font-size:clamp(48px,6vw,96px);color:var(--accent);line-height:1}
+  .about-txt{grid-column:7 / -1;align-self:center}
+  .about-txt .lead{font-family:var(--serif);font-size:clamp(30px,3.4vw,52px);line-height:1.08;letter-spacing:-.015em;margin:0 0 36px}
+  .about-txt p{max-width:52ch}
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--ink)}
+  .facts div{padding:18px 16px 0 0}
+  .facts strong{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(44px,5vw,80px);line-height:1}
+  .facts span{font-size:13px;color:var(--grey)}
+  .press{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;font-size:13px;color:var(--grey)}
+  .press b{color:var(--ink);font-weight:500}
+  .press .wm{color:var(--ink)}
+  .wm-a{font-family:var(--serif);font-style:italic;font-size:22px}
+  .wm-b{font-weight:600;letter-spacing:.32em;font-size:12px}
+  .wm-c{font-family:var(--serif);font-size:20px;text-transform:uppercase;letter-spacing:.06em}
+
+  /* Process */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+  .step{padding:22px 24px 10px 0;border-right:1px solid var(--line)}
+  .step:last-child{border-right:0}
+  .step + .step{padding-left:24px}
+  .step-n{font-family:var(--serif);font-size:clamp(80px,9vw,150px);line-height:.85;letter-spacing:-.04em;display:block;margin-bottom:28px}
+  .step:nth-child(2) .step-n{font-style:italic}
+  .step:last-child .step-n{color:var(--accent)}
+  .step h3{margin:0 0 10px;font-size:18px;font-weight:500}
+  .step p{margin:0;font-size:15px;color:#333}
+  .step .when{display:block;margin-top:14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+
+  /* Quotes */
+  .quotes{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;row-gap:clamp(50px,7vw,100px)}
+  .q{margin:0}
+  .q blockquote{margin:0;font-family:var(--serif);line-height:1.08;letter-spacing:-.015em}
+  .q figcaption{margin-top:20px;font-size:13px}
+  .q figcaption span{color:var(--grey)}
+  .q1{grid-column:1 / 10}
+  .q1 blockquote{font-size:clamp(36px,5.2vw,84px)}
+  .q1 blockquote::before{content:"„";color:var(--accent)}
+  .q2{grid-column:2 / 7}
+  .q3{grid-column:8 / -1;margin-top:clamp(0px,8vw,120px)}
+  .q2 blockquote,.q3 blockquote{font-size:clamp(24px,2.4vw,36px)}
+
+  /* Contact */
+  .contact{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;row-gap:50px}
+  .contact-side{grid-column:1 / 5}
+  .contact-side p{max-width:36ch}
+  .contact-side dl{margin:36px 0 0;font-size:15px}
+  .contact-side dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin-top:18px}
+  .contact-side dd{margin:4px 0 0}
+  .contact-side a{text-decoration:none;border-bottom:1px solid var(--line)}
+  .contact-side a:hover{border-color:var(--accent)}
+  form{grid-column:6 / -1}
+  fieldset{border:0;margin:0 0 28px;padding:0}
+  legend{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin-bottom:12px;padding:0}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chips label{position:relative}
+  .chips input{position:absolute;opacity:0;inset:0;cursor:pointer}
+  .chips span{display:inline-block;border:1px solid var(--ink);border-radius:999px;padding:10px 20px;font-size:15px;transition:background .25s,color .25s}
+  .chips input:checked + span{background:var(--ink);color:#fff}
+  .chips input:focus-visible + span{outline:2px solid var(--accent);outline-offset:3px}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+  .field{position:relative;margin-bottom:26px}
+  .field.full{grid-column:1 / -1}
+  .field label{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin-bottom:6px}
+  .field input,.field textarea,.field select{width:100%;border:0;border-bottom:1px solid var(--ink);background:transparent;padding:10px 0 12px;font:inherit;font-size:clamp(18px,1.6vw,22px);border-radius:0;color:var(--ink);-webkit-appearance:none;appearance:none}
+  .field textarea{resize:vertical;min-height:110px}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-bottom-color:var(--accent);box-shadow:0 1px 0 var(--accent)}
+  .consent{display:flex;gap:12px;font-size:13px;color:var(--grey);margin:6px 0 30px;align-items:flex-start}
+  .consent input{margin-top:3px;accent-color:var(--accent)}
+  .ok{display:none;margin-top:22px;font-family:var(--serif);font-size:clamp(26px,2.6vw,36px);line-height:1.15}
+  .ok.show{display:block}
+
+  /* Footer */
+  footer{margin-top:clamp(100px,12vw,180px);background:var(--ink);color:#fff;padding-top:clamp(60px,8vw,120px);padding-bottom:90px}
+  .f-big{font-family:var(--serif);font-size:clamp(64px,15vw,260px);line-height:.85;letter-spacing:-.045em;margin:0;text-decoration:none;display:inline-block;overflow-wrap:anywhere}
+  .f-big i{color:var(--accent)}
+  .f-big:hover i{color:#fff}
+  .f-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:clamp(50px,7vw,100px);padding-top:24px;border-top:1px solid #333;font-size:14px;color:#bdbdbd}
+  .f-grid b{display:block;color:#fff;font-weight:500;margin-bottom:8px}
+  .f-grid a{text-decoration:none}
+  .f-grid a:hover{color:#fff}
+  .f-legal{margin-top:50px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#8f8f8f}
+
+  /* Reveal */
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  @media (max-width:1024px){
+    .masonry{columns:2}
+    .hero-img{grid-column:7 / -1}
+    .svc-name{grid-column:2 / 7}
+    .svc-desc{grid-column:7 / -1}
+    .svc-price{grid-column:7 / -1;text-align:left;margin-top:20px}
+    .steps{grid-template-columns:1fr 1fr}
+    .step:nth-child(2){border-right:0}
+    .step:nth-child(3){padding-left:0}
+    .step:nth-child(n+3){border-top:1px solid var(--line);margin-top:20px}
+    .about-txt{grid-column:6 / -1}
+    .about-img{grid-column:1 / 6}
+    .contact-side{grid-column:1 / -1}
+    form{grid-column:1 / -1}
+    .f-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:768px){
+    .nav{display:none}
+    .burger{display:block}
+    .hero{grid-template-rows:auto auto auto auto;padding-top:96px}
+    .hero-img{grid-column:3 / -1;grid-row:2;margin-top:30px}
+    .hero-title{grid-row:3;margin-top:-0.3em}
+    .hero-img figcaption{display:none}
+    .hero-title .l2{padding-left:12%}
+    .hero-foot{grid-row:4}
+    .hero-foot p{grid-column:1 / -1}
+    .hero-foot .cta{grid-column:1 / -1;justify-self:start;margin-top:26px}
+    .sec-num{grid-column:1 / -1;padding:0 0 14px}
+    .sec-title{grid-column:1 / -1}
+    .svc-idx{grid-column:1 / -1;padding:0 0 8px}
+    .svc-name,.svc-desc,.svc-price{grid-column:1 / -1}
+    .svc-desc{margin-top:14px}
+    .about-img,.about-txt{grid-column:1 / -1}
+    .about-img{max-width:440px}
+    .about-img .sig{right:4%}
+    .q1,.q2,.q3{grid-column:1 / -1;margin-top:0}
+  }
+  @media (max-width:560px){
+    .masonry{columns:1}
+    .steps{grid-template-columns:1fr}
+    .step,.step + .step{padding-left:0;border-right:0}
+    .step + .step{border-top:1px solid var(--line);margin-top:20px}
+    .cols2,.fgrid{grid-template-columns:1fr}
+    .facts{grid-template-columns:1fr 1fr 1fr}
+    .facts strong{font-size:40px}
+    .f-grid{grid-template-columns:1fr}
+    .hero-meta .hide-s{display:none}
+    .meuser-badge{font-size:11.5px;padding:8px 12px;left:10px;bottom:10px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .rv{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<a class="meuser-badge" href="../beispiele.html">← Beispielseite von meuser.biz · Zur Übersicht</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Studio Mara Lenz – zum Seitenanfang">Mara <i>Lenz</i></a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#arbeiten"><sup>01</sup>Arbeiten</a>
+      <a href="#leistungen"><sup>02</sup>Leistungen</a>
+      <a href="#ueber"><sup>03</sup>Über mich</a>
+      <a href="#ablauf"><sup>04</sup>Ablauf</a>
+      <a href="#anfrage"><sup>05</sup>Anfrage</a>
+    </nav>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mmenu"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mmenu" aria-hidden="true">
+  <button class="close" type="button">Schließen</button>
+  <a href="#arbeiten">Arbeiten</a>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#ueber">Über mich</a>
+  <a href="#ablauf">Ablauf</a>
+  <a href="#anfrage"><i>Anfrage</i></a>
+  <p class="small">hallo@example.de · 02151 123 45 67</p>
+</div>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="wrap hero" aria-labelledby="hero-title">
+    <div class="hero-meta label">
+      <span><span class="dot" aria-hidden="true"></span>Termine 2027 offen</span>
+      <span class="hide-s">Portrait · Hochzeit · Business</span>
+      <span>Tönisvorst / Niederrhein</span>
+    </div>
+    <figure class="hero-img rv">
+      <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1600&q=80&auto=format&fit=crop" alt="Schwarzweiß-Portrait einer jungen Frau mit ruhigem, direktem Blick in die Kamera" width="1600" height="2000" fetchpriority="high">
+      <figcaption>Nr. 114 — Portrait, Studio Hochstraße, Oktober 2026</figcaption>
+    </figure>
+    <h1 class="hero-title" id="hero-title">Mara<span class="l2">Lenz<span class="acc">.</span></span></h1>
+    <div class="hero-foot">
+      <p>Fotografin für Menschen, die nicht gern fotografiert werden. Portraits, Hochzeiten und Businessbilder – leise, ehrlich, ohne gestellte Posen.</p>
+      <div class="cta"><a class="btn fill" href="#anfrage">Shooting anfragen <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Portrait <i>✶</i></span><span>Hochzeit <i>✶</i></span><span>Business <i>✶</i></span><span>Paare <i>✶</i></span><span>Personal Branding <i>✶</i></span><span>Standesamt <i>✶</i></span>
+      <span>Portrait <i>✶</i></span><span>Hochzeit <i>✶</i></span><span>Business <i>✶</i></span><span>Paare <i>✶</i></span><span>Personal Branding <i>✶</i></span><span>Standesamt <i>✶</i></span>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="wrap sec" id="arbeiten" aria-labelledby="t-arbeiten">
+    <div class="sec-head">
+      <span class="sec-num label">(01) Arbeiten</span>
+      <h2 class="sec-title" id="t-arbeiten">Ausgewählte <i>Bilder</i></h2>
+    </div>
+
+    <div class="filters" role="group" aria-label="Galerie nach Kategorie filtern">
+      <button type="button" data-filter="alle" aria-pressed="true">Alle<sup>16</sup></button>
+      <button type="button" data-filter="portrait" aria-pressed="false">Portrait<sup>6</sup></button>
+      <button type="button" data-filter="hochzeit" aria-pressed="false">Hochzeit<sup>5</sup></button>
+      <button type="button" data-filter="business" aria-pressed="false">Business<sup>5</sup></button>
+    </div>
+
+    <div class="masonry" id="gallery">
+      <figure class="tile tall" data-cat="portrait"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1600&q=80&auto=format&fit=crop" alt="Portrait einer Frau mit kinnlangem rotem Haar vor einem See" width="1600" height="2133"></button><figcaption><b>Johanna, 29</b><span>Portrait</span></figcaption></figure>
+      <figure class="tile wide" data-cat="hochzeit"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1600&q=80&auto=format&fit=crop" alt="Brautpaar geht lachend Hand in Hand unter Palmen" width="1600" height="1200"></button><figcaption><b>Lea &amp; Tobias</b><span>Hochzeit</span></figcaption></figure>
+      <figure class="tile" data-cat="business"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1600&q=80&auto=format&fit=crop" alt="Geschäftsfrau im grauen Blazer sitzt lächelnd vor einer Fensterfront" width="1600" height="2400"></button><figcaption><b>Kanzlei Brettschneider</b><span>Business</span></figcaption></figure>
+      <figure class="tile note" data-cat="alle"><p>„Ich fotografiere nicht, wie jemand aussieht – sondern wie es sich anfühlt, neben ihm zu sitzen.“</p></figure>
+      <figure class="tile sq" data-cat="portrait"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1600&q=80&auto=format&fit=crop" alt="Mann mit Bart und Strickpullover vor schwarzem Hintergrund" width="1600" height="1600"></button><figcaption><b>Henrik, 41</b><span>Portrait</span></figcaption></figure>
+      <figure class="tile tall" data-cat="hochzeit"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80&auto=format&fit=crop" alt="Brautstrauß im Gegenlicht, dunkle Stimmung" width="1600" height="2133"></button><figcaption><b>Clara &amp; Ben</b><span>Hochzeit</span></figcaption></figure>
+      <figure class="tile" data-cat="business"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1557862921-37829c790f19?w=1600&q=80&auto=format&fit=crop" alt="Mann mit Brille und verschränkten Armen vor weißem Hintergrund" width="1600" height="2000"></button><figcaption><b>Studio Fenk Architektur</b><span>Business</span></figcaption></figure>
+      <figure class="tile wide" data-cat="portrait"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1600&q=80&auto=format&fit=crop" alt="Junge Frau im kühlen Studiolicht mit nach hinten gebundenem Haar" width="1600" height="1200"></button><figcaption><b>Mira, 24</b><span>Portrait</span></figcaption></figure>
+      <figure class="tile" data-cat="hochzeit"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1600&q=80&auto=format&fit=crop" alt="Brautpaar küsst sich, Gäste werfen Blütenblätter" width="1600" height="2133"></button><figcaption><b>Sophie &amp; Malte</b><span>Hochzeit</span></figcaption></figure>
+      <figure class="tile tall" data-cat="business"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1600&q=80&auto=format&fit=crop" alt="Mann im dunklen Anzug mit roter Krawatte, Hände ineinander" width="1600" height="2133"></button><figcaption><b>Vermögensberatung Hollmann</b><span>Business</span></figcaption></figure>
+      <figure class="tile" data-cat="portrait"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1600&q=80&auto=format&fit=crop" alt="Portrait einer jungen Frau mit voluminösem Afro vor hellem Hintergrund" width="1600" height="2000"></button><figcaption><b>Amara, 19</b><span>Portrait</span></figcaption></figure>
+      <figure class="tile sq" data-cat="hochzeit"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1600&q=80&auto=format&fit=crop" alt="Nahaufnahme ineinandergelegter Hände mit Eheringen und Blumen" width="1600" height="1600"></button><figcaption><b>Detail, Schloss Rheinwiese</b><span>Hochzeit</span></figcaption></figure>
+      <figure class="tile" data-cat="business"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1600&q=80&auto=format&fit=crop" alt="Geschäftsmann mit Brille im dunklen Sakko vor heller Wand" width="1600" height="2000"></button><figcaption><b>Dr. Wienands, Geschäftsführer</b><span>Business</span></figcaption></figure>
+      <figure class="tile tall" data-cat="portrait"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&q=80&auto=format&fit=crop" alt="Junge Frau in gestreifter Bluse im Abendlicht" width="1600" height="2133"></button><figcaption><b>Nele, 33</b><span>Portrait</span></figcaption></figure>
+      <figure class="tile wide" data-cat="hochzeit"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1600&q=80&auto=format&fit=crop" alt="Brautpaar am Wasser, Gäste lassen rote Luftballons steigen" width="1600" height="1200"></button><figcaption><b>Anna &amp; Jonas</b><span>Hochzeit</span></figcaption></figure>
+      <figure class="tile" data-cat="business"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1600&q=80&auto=format&fit=crop" alt="Portrait eines Mannes mit Hemd und grauem Pullover, freundlicher Blick" width="1600" height="2000"></button><figcaption><b>Felix Ortmann, Gründer</b><span>Business</span></figcaption></figure>
+      <figure class="tile sq" data-cat="portrait"><button type="button"><img loading="lazy" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1600&q=80&auto=format&fit=crop" alt="Frau mit langen rotbraunen Haaren schaut zur Seite" width="1600" height="1600"></button><figcaption><b>Ronja, 27</b><span>Portrait</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="wrap sec" id="leistungen" aria-labelledby="t-leistungen">
+    <div class="sec-head">
+      <span class="sec-num label">(02) Leistungen</span>
+      <h2 class="sec-title" id="t-leistungen">Vier Wege, <i>ein</i> Blick</h2>
+    </div>
+    <div class="svc">
+      <article class="svc-row rv">
+        <span class="svc-idx label">A</span>
+        <h3 class="svc-name">Portrait</h3>
+        <div class="svc-desc">
+          <p>Eine Stunde im Tageslichtstudio oder draußen am Niers-Ufer. Für Sie selbst, als Geschenk oder für die Bewerbung.</p>
+          <ul><li>60 Minuten Shooting, ein Outfitwechsel</li><li>8 fertig bearbeitete Bilder, Farbe &amp; S/W</li><li>Online-Galerie zur Auswahl</li></ul>
+        </div>
+        <div class="svc-price"><small>ab</small><strong>290 €</strong><span>inkl. MwSt.</span></div>
+      </article>
+      <article class="svc-row rv">
+        <span class="svc-idx label">B</span>
+        <h3 class="svc-name">Business &amp; <i>Team</i></h3>
+        <div class="svc-desc">
+          <p>Personal Branding, Website-Portraits und Teamfotos – bei Ihnen vor Ort, mit mobilem Licht und klarem Bildkonzept.</p>
+          <ul><li>Halbtag vor Ort, bis 6 Personen</li><li>2 Motive pro Person, Retusche inklusive</li><li>Nutzungsrechte für Web &amp; Print</li></ul>
+        </div>
+        <div class="svc-price"><small>ab</small><strong>490 €</strong><span>zzgl. MwSt., je weitere Person 65 €</span></div>
+      </article>
+      <article class="svc-row rv">
+        <span class="svc-idx label">C</span>
+        <h3 class="svc-name">Standesamt <i>kompakt</i></h3>
+        <div class="svc-desc">
+          <p>Die Trauung, der Sektempfang und ein ruhiges Paarshooting im Anschluss. Für kleine Hochzeiten mit großen Momenten.</p>
+          <ul><li>3 Stunden Begleitung</li><li>ca. 200 bearbeitete Bilder</li><li>Vorgespräch und Location-Check</li></ul>
+        </div>
+        <div class="svc-price"><small>ab</small><strong>890 €</strong><span>inkl. MwSt.</span></div>
+      </article>
+      <article class="svc-row rv">
+        <span class="svc-idx label">D</span>
+        <h3 class="svc-name">Der ganze <i>Tag</i></h3>
+        <div class="svc-desc">
+          <p>Vom Getting Ready bis zum ersten Tanz. Unaufdringliche Reportage, kein Abhaken einer Shotlist.</p>
+          <ul><li>Bis 10 Stunden, zweite Fotografin optional</li><li>ca. 600 Bilder, handverlesen</li><li>Leinengebundenes Fotobuch, 30 × 30 cm</li></ul>
+        </div>
+        <div class="svc-price"><small>ab</small><strong>2.400 €</strong><span>inkl. MwSt.</span></div>
+      </article>
+    </div>
+    <div class="svc-foot">
+      <span>Anfahrt bis 40 km um Tönisvorst inklusive. Gutscheine für Portraits erhältlich.</span>
+      <a href="#anfrage">Individuelles Angebot anfragen →</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="wrap sec" id="ueber" aria-labelledby="t-ueber">
+    <div class="sec-head">
+      <span class="sec-num label">(03) Über mich</span>
+      <h2 class="sec-title" id="t-ueber">Hallo, ich <i>bin</i> Mara</h2>
+    </div>
+    <div class="about">
+      <figure class="about-img rv">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=1600&q=80&auto=format&fit=crop" alt="Fotografin Mara Lenz lächelt, Haare locker hochgesteckt, heller Hintergrund" width="1600" height="2133">
+        <span class="sig" aria-hidden="true">Mara</span>
+      </figure>
+      <div class="about-txt rv">
+        <p class="lead">Ich mag die Sekunde <i>nach</i> dem Lächeln. Wenn die Schultern sinken und jemand vergisst, dass eine Kamera im Raum ist.</p>
+        <div class="cols2">
+          <p>Aufgewachsen in Kempen, Fotodesign studiert in Dortmund, danach vier Jahre Assistenz in Hamburger Werbestudios. 2014 bin ich zurück an den Niederrhein – und habe in einer alten Druckerei an der Hochstraße mein Studio eröffnet.</p>
+          <p>Ich arbeite fast ausschließlich mit natürlichem Licht, einer einzigen Festbrennweite und viel Zeit für Gespräche. Gute Bilder entstehen nicht durch Anweisungen, sondern durch Vertrauen.</p>
+        </div>
+        <div class="facts">
+          <div><strong>12</strong><span>Jahre selbstständig</span></div>
+          <div><strong>240+</strong><span>begleitete Hochzeiten</span></div>
+          <div><strong>1</strong><span>Objektiv, 50 mm</span></div>
+        </div>
+        <div class="press">
+          <b>Veröffentlicht in</b>
+          <span class="wm wm-a">Weißband Magazin</span>
+          <span class="wm wm-b">LICHTWERK</span>
+          <span class="wm wm-c">Niederrhein Journal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="wrap sec" id="ablauf" aria-labelledby="t-ablauf">
+    <div class="sec-head">
+      <span class="sec-num label">(04) Ablauf</span>
+      <h2 class="sec-title" id="t-ablauf">So <i>entsteht</i> ein Bild</h2>
+    </div>
+    <ol class="steps" style="list-style:none;margin:0;padding:0">
+      <li class="step rv">
+        <span class="step-n">01</span>
+        <h3>Kennenlernen</h3>
+        <p>Ein Telefonat oder ein Kaffee im Studio. Wir sprechen über Anlass, Stil, Ort und darüber, was Sie auf keinen Fall möchten.</p>
+        <span class="when">ca. 30 Minuten · kostenlos</span>
+      </li>
+      <li class="step rv">
+        <span class="step-n">02</span>
+        <h3>Vorbereitung</h3>
+        <p>Sie erhalten einen kurzen Leitfaden zu Kleidung und Farben. Bei Hochzeiten planen wir gemeinsam den Zeitablauf und besichtigen die Location.</p>
+        <span class="when">2–8 Wochen vorher</span>
+      </li>
+      <li class="step rv">
+        <span class="step-n">03</span>
+        <h3>Das Shooting</h3>
+        <p>Keine starren Posen, sondern Bewegung, Gespräch und kleine Aufgaben. Die meisten sagen hinterher: „Das ging ja schnell.“</p>
+        <span class="when">1 Stunde bis ganzer Tag</span>
+      </li>
+      <li class="step rv">
+        <span class="step-n">04</span>
+        <h3>Ihre Bilder</h3>
+        <p>Nach zwei Wochen öffnen Sie Ihre private Online-Galerie. Jedes Bild ist von Hand bearbeitet – Hochzeiten erhalten zusätzlich das Fotobuch.</p>
+        <span class="when">Portrait 10 Tage · Hochzeit 6 Wochen</span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- QUOTES -->
+  <section class="wrap sec" id="stimmen" aria-labelledby="t-stimmen">
+    <div class="sec-head">
+      <span class="sec-num label">(05) Stimmen</span>
+      <h2 class="sec-title" id="t-stimmen">Was <i>bleibt</i></h2>
+    </div>
+    <div class="quotes">
+      <figure class="q q1 rv">
+        <blockquote>Wir haben uns auf keinem Bild gestellt gefühlt. Mara war den ganzen Tag da – und trotzdem nie im Weg.“</blockquote>
+        <figcaption><b>Lea &amp; Tobias Kremer</b> <span>· Hochzeit auf Gut Hagedorn, Juni 2026</span></figcaption>
+      </figure>
+      <figure class="q q2 rv">
+        <blockquote>Ich hasse Fotos von mir. Diese hier hängen jetzt im Flur.</blockquote>
+        <figcaption><b>Henrik Aldenhoven</b> <span>· Portrait-Shooting</span></figcaption>
+      </figure>
+      <figure class="q q3 rv">
+        <blockquote>Unsere neuen Teamfotos haben die Bewerbungen auf der Karriereseite spürbar verändert. Endlich sehen wir aus wie wir.</blockquote>
+        <figcaption><b>Katrin Brettschneider</b> <span>· Kanzlei Brettschneider &amp; Partner</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="wrap sec" id="anfrage" aria-labelledby="t-anfrage">
+    <div class="sec-head">
+      <span class="sec-num label">(06) Anfrage</span>
+      <h2 class="sec-title" id="t-anfrage">Erzählen Sie <i>mir</i> davon</h2>
+    </div>
+    <div class="contact">
+      <div class="contact-side">
+        <p>Ich antworte innerhalb von zwei Werktagen persönlich. Für Hochzeiten 2027 sind noch 9 Samstage frei – frühe Anfragen lohnen sich.</p>
+        <dl>
+          <dt>Studio</dt><dd>Hochstraße 18<br>47918 Tönisvorst</dd>
+          <dt>Telefon</dt><dd><a href="tel:+4921511234567">02151 123 45 67</a></dd>
+          <dt>E-Mail</dt><dd><a href="mailto:hallo@example.de">hallo@example.de</a></dd>
+          <dt>Studiozeiten</dt><dd>Di–Fr 10–18 Uhr, Sa nach Vereinbarung</dd>
+        </dl>
+      </div>
+      <form id="form" onsubmit="event.preventDefault()" novalidate>
+        <fieldset>
+          <legend>Worum geht es?</legend>
+          <div class="chips">
+            <label><input type="radio" name="art" value="portrait" checked><span>Portrait</span></label>
+            <label><input type="radio" name="art" value="hochzeit"><span>Hochzeit</span></label>
+            <label><input type="radio" name="art" value="business"><span>Business / Team</span></label>
+            <label><input type="radio" name="art" value="anderes"><span>Etwas anderes</span></label>
+          </div>
+        </fieldset>
+        <div class="fgrid">
+          <div class="field"><label for="f-name">Ihr Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-mail">E-Mail</label><input id="f-mail" name="mail" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-date">Wunschtermin</label><input id="f-date" name="datum" type="text" placeholder="z. B. 12. Juni 2027"></div>
+          <div class="field"><label for="f-ort">Ort</label><input id="f-ort" name="ort" type="text" placeholder="Studio, Location, Firma …"></div>
+          <div class="field full"><label for="f-msg">Ein paar Sätze zu Ihnen</label><textarea id="f-msg" name="nachricht" rows="4"></textarea></div>
+        </div>
+        <label class="consent"><input type="checkbox" required> <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage gespeichert werden.</span></label>
+        <button class="btn fill" type="submit">Anfrage senden <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="ok" id="ok" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="f-big" href="mailto:hallo@example.de">hallo<i>@</i>example.de</a>
+    <div class="f-grid">
+      <div><b>Studio Mara Lenz</b>Hochstraße 18<br>47918 Tönisvorst</div>
+      <div><b>Kontakt</b><a href="tel:+4921511234567">02151 123 45 67</a><br><a href="mailto:hallo@example.de">hallo@example.de</a></div>
+      <div><b>Folgen</b>@studio.maralenz<br>Newsletter, viermal im Jahr</div>
+      <div><b>Rechtliches</b><a href="#top">Impressum</a><br><a href="#top">Datenschutz</a></div>
+    </div>
+    <div class="f-legal">
+      <span>© 2026 Studio Mara Lenz</span>
+      <span>Fiktives Beispielunternehmen – Design &amp; Umsetzung: meuser.biz</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Bildansicht" aria-hidden="true">
+  <div class="lb-top"><span class="label" id="lb-count">01 / 16</span><button type="button" id="lb-close">Schließen ✕</button></div>
+  <div class="lb-stage"><img id="lb-img" src="" alt=""></div>
+  <div class="lb-bot"><button type="button" id="lb-prev">← Zurück</button><span class="lb-cap" id="lb-cap"></span><button type="button" id="lb-next">Weiter →</button></div>
+</div>
+
+<script>
+(function(){
+  // Mobile menu
+  var burger=document.querySelector('.burger'),menu=document.getElementById('mmenu');
+  function setMenu(o){menu.classList.toggle('open',o);menu.setAttribute('aria-hidden',!o);burger.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';}
+  burger.addEventListener('click',function(){setMenu(true)});
+  menu.querySelector('.close').addEventListener('click',function(){setMenu(false)});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+
+  // Filter
+  var btns=document.querySelectorAll('.filters button'),tiles=[].slice.call(document.querySelectorAll('#gallery .tile'));
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.dataset.filter;
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    tiles.forEach(function(t){var c=t.dataset.cat;t.classList.toggle('hide',!(f==='alle'||c===f||c==='alle'&&f==='alle'));});
+  })});
+
+  // Lightbox
+  var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap'),cnt=document.getElementById('lb-count'),cur=0,list=[],last=null;
+  function visible(){return tiles.filter(function(t){return !t.classList.contains('hide')&&t.querySelector('img')})}
+  function show(i){list=visible();cur=(i+list.length)%list.length;var t=list[cur],im=t.querySelector('img');img.src=im.src;img.alt=im.alt;cap.textContent=t.querySelector('figcaption b').textContent;cnt.textContent=String(cur+1).padStart(2,'0')+' / '+String(list.length).padStart(2,'0');}
+  function open(t){last=document.activeElement;show(visible().indexOf(t));lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('lb-close').focus();}
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';if(last)last.focus();}
+  tiles.forEach(function(t){var b=t.querySelector('button');if(b)b.addEventListener('click',function(){open(t)})});
+  document.getElementById('lb-close').addEventListener('click',close);
+  document.getElementById('lb-prev').addEventListener('click',function(){show(cur-1)});
+  document.getElementById('lb-next').addEventListener('click',function(){show(cur+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-stage'))close()});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&menu.classList.contains('open'))setMenu(false);
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1);
+  });
+
+  // Form
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();var n=document.getElementById('f-name').value.trim();
+    var ok=document.getElementById('ok');ok.textContent='Danke'+(n?', '+n.split(' ')[0]:'')+'. Ihre Anfrage ist angekommen – ich melde mich innerhalb von zwei Werktagen. (Beispielseite: es wurde nichts gesendet.)';ok.classList.add('show');
+  });
+
+  // Reveal
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    rv.forEach(function(el){io.observe(el)});
+  } else rv.forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>

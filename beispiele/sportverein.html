@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SV Grünfeld 1921 e. V. – Fußball, Badminton, Turnen, Leichtathletik &amp; Tennis</title>
+<meta name="description" content="Der SV Grünfeld 1921 e. V. in Tönisvorst: 1.240 Mitglieder, fünf Abteilungen, Trainingszeiten, Spielplan, Beiträge und Vereinsheim. Probetraining jederzeit möglich.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --g:#0a6b3b;
+    --g-d:#06512c;
+    --g-dd:#03351c;
+    --g-l:#e8f3ec;
+    --y:#ffd21f;
+    --y-d:#e6b800;
+    --ink:#0f1d15;
+    --txt:#2b3a31;
+    --mut:#5c6b62;
+    --line:#d9e4dc;
+    --bg:#f6f8f5;
+    --cond:"Barlow Condensed", "Arial Narrow", sans-serif;
+    --sans:"Barlow", system-ui, sans-serif;
+    --r:6px;
+    --max:1280px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.55;color:var(--txt);background:#fff;overflow-x:hidden}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+  button{font:inherit;color:inherit}
+  h1,h2,h3,h4{font-family:var(--cond);color:var(--ink);line-height:.95;margin:0;text-transform:uppercase;letter-spacing:.005em;overflow-wrap:break-word;hyphens:manual}
+  :focus-visible{outline:3px solid var(--y);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+  .kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--g)}
+  .kicker::before{content:"";width:28px;height:4px;background:var(--y);transform:skewX(-20deg)}
+  .h2{font-size:clamp(44px,6.4vw,88px);font-weight:800;margin-top:12px}
+  .h2 em{font-style:italic;color:var(--g)}
+  .lead{font-size:clamp(17px,1.4vw,19px);max-width:58ch;color:var(--txt);margin:18px 0 0}
+  .sec{padding:clamp(72px,9vw,120px) 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,52px)}
+  .ico{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--cond);font-weight:700;font-size:19px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:14px 26px;border:0;border-radius:var(--r);cursor:pointer;transition:transform .2s, background .2s, box-shadow .2s}
+  .btn-y{background:var(--y);color:var(--ink);box-shadow:0 4px 0 var(--y-d)}
+  .btn-y:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--y-d)}
+  .btn-o{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.7)}
+  .btn-o:hover{background:#fff;color:var(--g-d)}
+  .btn-g{background:var(--g);color:#fff;box-shadow:0 4px 0 var(--g-dd)}
+  .btn-g:hover{transform:translateY(-2px);background:var(--g-d)}
+  .link{font-family:var(--cond);font-weight:700;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--g);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+  .link:hover{color:var(--g-dd)}
+  .link .ico{width:18px;height:18px;transition:transform .2s}
+  .link:hover .ico{transform:translateX(4px)}
+
+  /* Badge */
+  .meuser-badge{position:fixed;left:14px;bottom:14px;z-index:9999;background:var(--ink);color:#fff;text-decoration:none;font-size:13px;font-weight:500;padding:9px 14px;border-radius:6px;border-left:4px solid var(--y);box-shadow:0 8px 24px rgba(0,0,0,.22)}
+  .meuser-badge:hover{background:var(--g-dd)}
+
+  /* Top bar + header */
+  .topbar{background:var(--g-dd);color:#cfe3d6;font-size:14px}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:40px}
+  .topbar b{color:var(--y);font-family:var(--cond);letter-spacing:.08em;text-transform:uppercase;font-size:15px}
+  .topbar a{text-decoration:none}
+  .topbar a:hover{color:#fff}
+  .tb-right{display:flex;gap:22px}
+  header.site{position:sticky;top:0;z-index:60;background:var(--g);color:#fff;box-shadow:0 2px 0 rgba(0,0,0,.08)}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+  .logo svg{width:46px;height:54px;flex:none}
+  .logo b{display:block;font-family:var(--cond);font-weight:800;font-size:24px;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+  .logo small{display:block;font-family:var(--cond);font-weight:600;font-size:13px;letter-spacing:.2em;color:var(--y);text-transform:uppercase}
+  .nav{display:flex;align-items:center;gap:4px}
+  .nav a{font-family:var(--cond);font-weight:600;font-size:18px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:8px 12px;border-radius:4px;transition:background .2s}
+  .nav a:hover{background:rgba(255,255,255,.12)}
+  .nav .btn{margin-left:10px;padding:10px 18px;font-size:17px}
+  .burger{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px;align-items:center;gap:8px;font-family:var(--cond);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .burger svg{width:28px;height:28px}
+
+  /* Hero */
+  .hero{position:relative;background:var(--g-d);color:#fff;overflow:hidden;isolation:isolate}
+  .hero-bg{position:absolute;inset:0;z-index:-2}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(3,53,28,.96) 0%,rgba(6,81,44,.9) 38%,rgba(10,107,59,.35) 70%,rgba(10,107,59,.15) 100%)}
+  .hero-stripes{position:absolute;right:-6%;top:0;bottom:0;width:44%;z-index:-1;pointer-events:none;background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(255,210,31,.85) 46px 58px,transparent 58px 130px);mask-image:linear-gradient(90deg,transparent,#000 50%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 50%,transparent);opacity:.55}
+  .hero .wrap{min-height:min(84vh,760px);display:flex;flex-direction:column;justify-content:center;padding-top:70px;padding-bottom:150px}
+  .hero-tag{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;background:var(--y);color:var(--ink);font-family:var(--cond);font-weight:700;font-size:16px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;transform:skewX(-12deg)}
+  .hero-tag span{transform:skewX(12deg)}
+  .hero h1{color:#fff;font-weight:800;font-size:clamp(64px,11vw,160px);line-height:.84;margin:22px 0 0;letter-spacing:-.005em}
+  .hero h1 em{display:block;font-style:italic;color:var(--y)}
+  .hero p{font-size:clamp(18px,1.6vw,21px);max-width:44ch;margin:26px 0 34px;color:#e2efe6}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .stats{position:relative;margin-top:-78px;z-index:3}
+  .stats-in{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:10px;box-shadow:0 20px 50px rgba(3,53,28,.18);overflow:hidden}
+  .stat{padding:24px 28px;border-right:1px solid var(--line);position:relative}
+  .stat:last-child{border-right:0}
+  .stat strong{display:block;font-family:var(--cond);font-weight:800;font-size:clamp(40px,4.4vw,60px);line-height:1;color:var(--g)}
+  .stat span{font-size:15px;color:var(--mut)}
+  .stat.next{background:var(--y)}
+  .stat.next strong{color:var(--ink);font-size:clamp(28px,2.6vw,36px);line-height:1.05}
+  .stat.next span{color:var(--ink)}
+  .stat.next .cd{display:flex;gap:10px;margin-top:6px;font-family:var(--cond);font-weight:700;font-size:20px;color:var(--ink)}
+  .stat.next .cd i{font-style:normal;font-size:13px;letter-spacing:.08em;margin-left:2px}
+
+  /* News */
+  .news-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:auto auto;gap:22px}
+  .card{background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s, box-shadow .25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(3,53,28,.12)}
+  .card-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--g-l)}
+  .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .card:hover .card-img img{transform:scale(1.05)}
+  .tag{position:absolute;left:14px;top:14px;background:var(--y);color:var(--ink);font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:3px}
+  .tag.g{background:var(--g);color:#fff}
+  .card-body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .card time{font-size:14px;color:var(--mut);font-weight:500}
+  .card h3{font-size:clamp(26px,2.2vw,30px);font-weight:700;margin:8px 0 10px}
+  .card h3 a{text-decoration:none}
+  .card h3 a::after{content:"";position:absolute;inset:0}
+  .card{position:relative}
+  .card p{margin:0 0 16px;font-size:16px}
+  .card .more{margin-top:auto;font-family:var(--cond);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--g);font-size:16px}
+  .card.big{grid-row:span 2}
+  .card.big .card-img{aspect-ratio:auto;flex:1;min-height:300px}
+  .card.big h3{font-size:clamp(32px,3.2vw,44px)}
+  .card.plain{background:var(--g);border-color:var(--g);color:#e2efe6}
+  .card.plain h3,.card.plain .more{color:#fff}
+  .card.plain time{color:var(--y)}
+  .card.plain .card-body{justify-content:center}
+  .score{display:flex;align-items:center;gap:16px;font-family:var(--cond);font-weight:800;font-size:58px;color:var(--y);line-height:1;margin:6px 0 10px}
+  .score small{font-size:16px;color:#cfe3d6;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
+  /* Departments */
+  .depts{background:var(--bg)}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+  .tabs button{display:flex;align-items:center;gap:10px;background:#fff;border:2px solid var(--line);border-radius:var(--r);padding:12px 18px;font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;color:var(--ink);transition:all .2s}
+  .tabs button:hover{border-color:var(--g)}
+  .tabs button[aria-selected="true"]{background:var(--g);border-color:var(--g);color:#fff}
+  .tabs button[aria-selected="true"] .ico{color:var(--y)}
+  .panel{display:grid;grid-template-columns:5fr 7fr;gap:0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(3,53,28,.08)}
+  .panel[hidden]{display:none}
+  .panel-img{position:relative;min-height:340px}
+  .panel-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .panel-img .badge{position:absolute;left:0;bottom:24px;background:var(--y);color:var(--ink);font-family:var(--cond);font-weight:800;font-size:22px;text-transform:uppercase;padding:8px 18px 8px 22px;clip-path:polygon(0 0,100% 0,92% 100%,0 100%)}
+  .panel-body{padding:clamp(24px,3.4vw,44px)}
+  .panel-body h3{font-size:clamp(36px,3.6vw,52px);font-weight:800}
+  .panel-body > p{margin:12px 0 22px;max-width:56ch}
+  .tt{width:100%;border-collapse:collapse;font-size:16px}
+  .tt caption{text-align:left;font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);padding-bottom:8px}
+  .tt th,.tt td{text-align:left;padding:11px 10px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .tt thead th{font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);border-bottom:2px solid var(--g)}
+  .tt tbody th{font-weight:600;color:var(--ink)}
+  .tt td:nth-child(3){font-variant-numeric:tabular-nums;white-space:nowrap}
+  .contact-line{display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px dashed var(--line);font-size:15px;flex-wrap:wrap}
+  .avatar{width:46px;height:46px;border-radius:50%;background:var(--g);color:var(--y);display:grid;place-items:center;font-family:var(--cond);font-weight:800;font-size:19px;flex:none}
+  .contact-line a{color:var(--g);font-weight:600}
+
+  /* Games */
+  .games{display:grid;grid-template-columns:7fr 5fr;gap:28px}
+  .gfilter{display:flex;gap:6px;background:var(--bg);padding:5px;border-radius:8px}
+  .gfilter button{border:0;background:transparent;padding:8px 14px;border-radius:5px;font-family:var(--cond);font-weight:700;font-size:16px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;color:var(--mut)}
+  .gfilter button[aria-pressed="true"]{background:#fff;color:var(--g);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+  .match{display:grid;grid-template-columns:86px 1fr auto;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .match[hidden]{display:none}
+  .date{background:var(--g);color:#fff;border-radius:6px;text-align:center;padding:8px 4px;font-family:var(--cond);line-height:1}
+  .date b{display:block;font-size:30px;font-weight:800}
+  .date span{font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--y)}
+  .match.away .date{background:var(--ink)}
+  .m-league{font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+  .m-teams{font-family:var(--cond);font-weight:700;font-size:clamp(20px,2vw,25px);color:var(--ink);text-transform:uppercase;line-height:1.1;margin-top:2px}
+  .m-teams .us{color:var(--g)}
+  .m-teams .vs{color:var(--mut);font-weight:500;margin:0 6px}
+  .m-meta{font-size:15px;color:var(--mut);margin-top:2px}
+  .m-time{font-family:var(--cond);font-weight:800;font-size:28px;color:var(--ink);text-align:right;line-height:1}
+  .m-time small{display:block;font-size:13px;letter-spacing:.1em;font-weight:700;color:var(--g);margin-top:4px}
+  .match.away .m-time small{color:var(--mut)}
+  .events{background:var(--g-dd);color:#cfe3d6;border-radius:12px;padding:clamp(24px,3vw,36px);position:relative;overflow:hidden}
+  .events::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border:28px solid rgba(255,210,31,.14);border-radius:50%}
+  .events h3{color:#fff;font-size:36px;font-weight:800;margin-bottom:10px}
+  .ev{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .ev:last-of-type{border-bottom:0}
+  .ev-d{font-family:var(--cond);font-weight:800;font-size:22px;color:var(--y);min-width:64px;line-height:1.1}
+  .ev b{display:block;color:#fff;font-weight:600}
+  .ev span{font-size:15px}
+
+  /* Membership */
+  .member{background:var(--g);color:#e2efe6;position:relative;overflow:hidden}
+  .member::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-65deg,rgba(255,255,255,.035) 0 2px,transparent 2px 22px);pointer-events:none}
+  .member .kicker{color:var(--y)}
+  .member .h2{color:#fff}
+  .member .h2 em{color:var(--y)}
+  .member .lead{color:#e2efe6}
+  .m-grid{display:grid;grid-template-columns:7fr 5fr;gap:40px;align-items:start;position:relative}
+  .fees{background:#fff;border-radius:12px;padding:clamp(20px,3vw,34px);color:var(--txt);margin-top:34px;overflow-x:auto}
+  .fees table{width:100%;border-collapse:collapse;min-width:0}
+  .fees th,.fees td{padding:14px 10px 14px 0;border-bottom:1px solid var(--line);text-align:left}
+  .fees thead th{font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);border-bottom:2px solid var(--g)}
+  .fees tbody th{font-weight:600;color:var(--ink)}
+  .fees tbody th small{display:block;font-weight:400;color:var(--mut);font-size:14px}
+  .fees .num{text-align:right;font-family:var(--cond);font-weight:700;font-size:24px;color:var(--ink);white-space:nowrap}
+  .fees .num.m{color:var(--g)}
+  .fees tr.hl{background:linear-gradient(90deg,rgba(255,210,31,.25),transparent)}
+  .fees tr.hl th::after{content:"Beliebt";display:inline-block;margin-left:8px;background:var(--y);color:var(--ink);font-family:var(--cond);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;vertical-align:2px}
+  .fees-note{font-size:14px;color:var(--mut);margin:16px 0 0}
+  .m-side{background:var(--g-dd);border-radius:12px;overflow:hidden}
+  .m-side img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .m-side-body{padding:26px 28px 30px}
+  .m-side h3{color:#fff;font-size:34px;font-weight:800;margin-bottom:16px}
+  .steps{list-style:none;margin:0 0 26px;padding:0;counter-reset:s}
+  .steps li{counter-increment:s;display:flex;gap:14px;padding:9px 0;align-items:flex-start}
+  .steps li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--y);color:var(--ink);font-family:var(--cond);font-weight:800;font-size:18px;display:grid;place-items:center}
+  .steps b{color:#fff}
+
+  /* Board */
+  .board{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .person{background:var(--bg);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:4px;border-top:4px solid var(--g)}
+  .person.lead1{border-top-color:var(--y)}
+  .person .avatar{width:64px;height:64px;font-size:26px;margin-bottom:12px}
+  .person.lead1 .avatar{background:var(--y);color:var(--ink)}
+  .role{font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--g)}
+  .person h3{font-size:26px;font-weight:700;text-transform:none}
+  .person a{font-size:15px;color:var(--txt);text-decoration:none;overflow-wrap:anywhere}
+  .person a:hover{color:var(--g);text-decoration:underline}
+  .person p{margin:4px 0 0;font-size:15px;color:var(--mut)}
+
+  /* Sponsors */
+  .sponsors{background:var(--bg);padding:clamp(56px,7vw,90px) 0}
+  .sp-head{text-align:center;margin-bottom:36px}
+  .sp-head .h2{font-size:clamp(34px,4vw,52px)}
+  .sp-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+  .sp{background:#fff;border-radius:8px;min-height:112px;display:grid;place-items:center;padding:18px;text-align:center;color:#4a564f;filter:grayscale(1);opacity:.82;transition:all .25s;border:1px solid var(--line)}
+  .sp:hover{filter:none;opacity:1;transform:translateY(-3px)}
+  .sp1{font-family:Georgia,serif;font-style:italic;font-size:26px;color:#8a4b1c}
+  .sp1 small{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#6b5a4c}
+  .sp2{font-family:var(--sans);font-weight:700;font-size:22px;letter-spacing:-.02em;color:#0d5aa7}
+  .sp2 span{display:inline-block;width:14px;height:14px;background:#f2a900;border-radius:50%;margin-right:6px;vertical-align:-1px}
+  .sp3{font-family:var(--cond);font-weight:800;font-size:28px;letter-spacing:.14em;color:#b31b1b}
+  .sp4{font-family:var(--sans);font-weight:500;font-size:20px;color:#2f6b2a}
+  .sp4 b{font-weight:700}
+  .sp5{font-family:var(--cond);font-weight:600;font-size:24px;text-transform:uppercase;letter-spacing:.04em;color:#222;border-bottom:3px solid #e2241b;padding-bottom:2px}
+  .sp6{font-family:Georgia,serif;font-size:22px;color:#123b5c}
+  .sp6 small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+  .sp7{font-family:var(--sans);font-weight:700;font-size:20px;text-transform:lowercase;color:#6d2e8a}
+  .sp7 i{font-style:normal;color:#e7a1d4}
+  .sp8{font-family:var(--cond);font-style:italic;font-weight:800;font-size:26px;color:#1f1f1f;text-transform:uppercase}
+  .sp8 span{color:#f39200}
+  .sp-cta{text-align:center;margin-top:26px;font-size:16px}
+
+  /* Clubhouse */
+  .house{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start}
+  .house-media{display:grid;gap:18px}
+  .house-media img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px}
+  .map{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#eef3ee}
+  .map svg{display:block;width:100%;height:auto}
+  .hours{display:grid;grid-template-columns:auto 1fr;gap:8px 24px;margin:24px 0;font-size:16px}
+  .hours dt{font-weight:600;color:var(--ink)}
+  .hours dd{margin:0;font-variant-numeric:tabular-nums}
+  .route{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+  .route li{display:flex;gap:14px;align-items:flex-start;background:var(--bg);padding:14px 16px;border-radius:8px}
+  .route .ico{color:var(--g);margin-top:2px}
+  .route b{color:var(--ink)}
+
+  /* Contact */
+  .contact{background:var(--g-dd);color:#cfe3d6}
+  .contact .kicker{color:var(--y)}
+  .contact .h2{color:#fff}
+  .contact .h2 em{color:var(--y)}
+  .contact .lead{color:#cfe3d6}
+  .c-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,70px)}
+  .c-list{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:18px}
+  .c-list li{display:flex;gap:14px}
+  .c-list .ico{color:var(--y);margin-top:3px}
+  .c-list b{display:block;color:#fff;font-family:var(--cond);font-size:20px;letter-spacing:.04em;text-transform:uppercase}
+  .c-list a{color:#fff}
+  form.c-form{background:#fff;border-radius:12px;padding:clamp(22px,3vw,38px);color:var(--txt)}
+  .f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .f{margin-bottom:16px}
+  .f label{display:block;font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:6px}
+  .f input,.f select,.f textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:2px solid var(--line);border-radius:6px;background:#fff;color:var(--ink)}
+  .f textarea{min-height:120px;resize:vertical}
+  .f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--g);box-shadow:0 0 0 3px rgba(10,107,59,.15)}
+  .chk{display:flex;gap:10px;font-size:14px;color:var(--mut);margin:4px 0 20px;align-items:flex-start}
+  .chk input{margin-top:4px;accent-color:var(--g)}
+  .ok{display:none;margin:18px 0 0;padding:14px 16px;background:var(--g-l);border-left:4px solid var(--g);border-radius:4px;color:var(--ink);font-weight:500}
+  .ok.show{display:block}
+
+  /* Footer */
+  footer{background:#021f11;color:#9fb8a8;padding:56px 0 90px;font-size:15px}
+  .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
+  .f-grid h4{color:#fff;font-size:20px;font-weight:700;margin-bottom:12px}
+  .f-grid ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .f-grid a{text-decoration:none}
+  .f-grid a:hover{color:var(--y)}
+  .f-brand{display:flex;gap:14px;align-items:flex-start}
+  .f-brand svg{width:56px;height:66px;flex:none}
+  .f-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+
+  /* Reveal */
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+
+  @media (max-width:1100px){
+    .nav{display:none}
+    .burger{display:flex}
+    .nav.open{display:flex;position:absolute;left:0;right:0;top:78px;flex-direction:column;align-items:stretch;background:var(--g-d);padding:14px clamp(18px,4vw,40px) 24px;gap:2px;box-shadow:0 20px 30px rgba(0,0,0,.2)}
+    .nav.open a{font-size:22px;padding:12px 8px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .nav.open .btn{margin:14px 0 0;justify-content:center;border-bottom:0}
+  }
+  @media (max-width:1024px){
+    .news-grid{grid-template-columns:1fr 1fr}
+    .card.big{grid-column:1 / -1;grid-row:auto}
+    .card.big .card-img{aspect-ratio:16/8;flex:none;min-height:0}
+    .stats-in{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .games,.m-grid{grid-template-columns:1fr}
+    .board{grid-template-columns:repeat(3,1fr)}
+    .f-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:768px){
+    .tb-right .hide-m{display:none}
+    .panel{grid-template-columns:1fr}
+    .panel-img{min-height:220px}
+    .house,.c-grid{grid-template-columns:1fr}
+    .board{grid-template-columns:1fr 1fr}
+    .sp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .sp{padding:14px 10px;min-height:96px}
+    .sp1,.sp3,.sp8{font-size:21px}.sp2,.sp4,.sp6,.sp7,.sp5{font-size:18px}
+    .hero .wrap{padding-bottom:130px}
+  }
+  @media (max-width:560px){
+    body{font-size:16px}
+    .topbar .tb-right{display:none}
+    .topbar .wrap{justify-content:center;text-align:center;font-size:13px;padding-top:6px;padding-bottom:6px}
+    .logo b{font-size:20px}
+    .logo small{font-size:12px}
+    .burger span{display:none}
+    .news-grid{grid-template-columns:1fr}
+    .stats-in{grid-template-columns:1fr 1fr}
+    .stat{padding:18px}
+    .stat.next{grid-column:1 / -1;border-right:0}
+    .stat:nth-child(3){border-right:1px solid var(--line)}
+    .stat:nth-child(3),.stat:nth-child(4){border-bottom:1px solid var(--line)}
+    .tabs button{padding:10px 12px;font-size:17px;flex:1 1 calc(50% - 8px);justify-content:center}
+    .tt thead{display:none}
+    .tt,.tt tbody,.tt tr,.tt th,.tt td{display:block;width:100%}
+    .tt tr{padding:10px 0;border-bottom:1px solid var(--line)}
+    .tt th,.tt td{border:0;padding:1px 0}
+    .tt td:nth-child(3){white-space:normal}
+    .match{grid-template-columns:64px 1fr;gap:14px}
+    .m-time{grid-column:2;text-align:left;font-size:22px;display:flex;gap:10px;align-items:baseline}
+    .m-time small{margin:0}
+    .date b{font-size:24px}
+    .board{grid-template-columns:1fr}
+    .f-row{grid-template-columns:1fr}
+    .f-grid{grid-template-columns:1fr}
+    .fees th,.fees td{padding-right:6px}
+    .fees .num{font-size:20px}
+    .fees tr.hl th::after{display:block;width:max-content;margin:4px 0 0}
+    .meuser-badge{font-size:12px;padding:8px 11px;left:8px;bottom:8px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition:none!important;animation:none!important}
+    .rv{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<a class="meuser-badge" href="../beispiele.html">← Beispielseite von meuser.biz · Zur Übersicht</a>
+
+<!-- Wappen (Symbol) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="shieldClip"><path d="M60 6 L112 18 V66 C112 102 90 124 60 134 C30 124 8 102 8 66 V18 Z"/></clipPath>
+  </defs>
+  <symbol id="crest" viewBox="0 0 120 140">
+    <path d="M60 2 L116 15 V66 C116 106 92 128 60 139 C28 128 4 106 4 66 V15 Z" fill="#ffd21f"/>
+    <path d="M60 6 L112 18 V66 C112 102 90 124 60 134 C30 124 8 102 8 66 V18 Z" fill="#0a6b3b"/>
+    <g clip-path="url(#shieldClip)">
+      <path d="M0 98 L120 62 V78 L0 114 Z" fill="#ffd21f"/>
+      <path d="M0 40 H120 V46 H0 Z" fill="#06512c"/>
+    </g>
+    <g fill="#ffd21f">
+      <path d="M30 24 l1.8 3.7 4.1.6-3 2.9.7 4.1-3.6-1.9-3.6 1.9.7-4.1-3-2.9 4.1-.6z"/>
+      <path d="M45 21 l1.8 3.7 4.1.6-3 2.9.7 4.1-3.6-1.9-3.6 1.9.7-4.1-3-2.9 4.1-.6z"/>
+      <path d="M60 19 l1.8 3.7 4.1.6-3 2.9.7 4.1-3.6-1.9-3.6 1.9.7-4.1-3-2.9 4.1-.6z"/>
+      <path d="M75 21 l1.8 3.7 4.1.6-3 2.9.7 4.1-3.6-1.9-3.6 1.9.7-4.1-3-2.9 4.1-.6z"/>
+      <path d="M90 24 l1.8 3.7 4.1.6-3 2.9.7 4.1-3.6-1.9-3.6 1.9.7-4.1-3-2.9 4.1-.6z"/>
+    </g>
+    <text x="60" y="86" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="800" font-style="italic" font-size="40" fill="#ffffff" letter-spacing="1">SVG</text>
+    <text x="60" y="120" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="800" font-size="17" fill="#03351c" letter-spacing="2" transform="rotate(-16 60 112)">1921</text>
+  </symbol>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><b>Heimspiel</b> · So, 15.11. · 15:00 Uhr · 1. Herren gegen VfR Niersbruch 08</span>
+    <div class="tb-right">
+      <a href="#kontakt" class="hide-m">Geschäftsstelle: Di &amp; Do 17–19 Uhr</a>
+      <a href="tel:+4921511234567">02151 123 45 67</a>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="SV Grünfeld 1921 e. V. – Startseite">
+      <svg role="img" aria-label="Vereinswappen SV Grünfeld"><use href="#crest"/></svg>
+      <span><b>SV Grünfeld</b><small>seit 1921 e. V.</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <a href="#aktuelles">Aktuelles</a>
+      <a href="#abteilungen">Abteilungen</a>
+      <a href="#spiele">Spiele</a>
+      <a href="#vorstand">Verein</a>
+      <a href="#vereinsheim">Vereinsheim</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="btn btn-y" href="#mitglied">Mitglied werden</a>
+    </nav>
+    <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Menü öffnen">
+      <span>Menü</span>
+      <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="hero-bg"><img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=1600&q=80&auto=format&fit=crop" alt="Fußball liegt auf frisch gemähtem Rasen in der Abendsonne" width="1600" height="1067" fetchpriority="high"></div>
+    <div class="hero-stripes" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="hero-tag"><span>105 Jahre Vereinsleben in Tönisvorst</span></span>
+      <h1 id="hero-h">Ein Verein.<em>Fünf Sportarten.</em></h1>
+      <p>Vom Bambini-Training bis zum Lauftreff ab 60: Beim SV Grünfeld findet jede und jeder seinen Platz – auf dem Rasen, in der Halle, auf der Bahn und auf dem Sandplatz.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-y" href="#mitglied">Mitglied werden
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-o" href="#abteilungen">Probetraining finden</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap stats">
+    <div class="stats-in rv">
+      <div class="stat"><strong>1.240</strong><span>Mitglieder, davon 610 Kinder &amp; Jugendliche</span></div>
+      <div class="stat"><strong>34</strong><span>Mannschaften &amp; Trainingsgruppen</span></div>
+      <div class="stat"><strong>86</strong><span>ehrenamtliche Trainer:innen</span></div>
+      <div class="stat next">
+        <span>Nächstes Heimspiel · Sportpark</span>
+        <strong>Grünfeld – Niersbruch</strong>
+        <div class="cd" id="countdown" aria-live="off"><span><b data-cd="d">–</b><i>Tg</i></span><span><b data-cd="h">–</b><i>Std</i></span><span><b data-cd="m">–</b><i>Min</i></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <section class="sec" id="aktuelles" aria-labelledby="h-news">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="kicker">Aktuelles</span><h2 class="h2" id="h-news">Neues vom <em>Platz</em></h2></div>
+        <a class="link" href="#aktuelles">Alle Meldungen <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="news-grid">
+        <article class="card big rv">
+          <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=1600&q=80&auto=format&fit=crop" alt="Jugendtrainer bespricht mit einer Gruppe Kinder in roten Trikots das Training" width="1600" height="1067"><span class="tag">Jugend</span></div>
+          <div class="card-body">
+            <time datetime="2026-11-06">6. November 2026</time>
+            <h3><a href="#aktuelles">Neuer Kunstrasen: 140 Kinder trainieren ab März unter Flutlicht</a></h3>
+            <p>Die Bauarbeiten auf Platz 2 liegen im Zeitplan. Ab Frühjahr 2027 kann die gesamte Fußballjugend ganzjährig draußen trainieren – möglich gemacht durch Stadt, Förderverein und 214 Spender:innen.</p>
+            <span class="more">Weiterlesen →</span>
+          </div>
+        </article>
+        <article class="card plain rv">
+          <div class="card-body">
+            <time datetime="2026-11-08">Sonntag, 8. November 2026</time>
+            <div class="score">3:1 <small>bei SpVg<br>Kempenrath</small></div>
+            <h3><a href="#aktuelles">Erste übernimmt die Tabellenspitze</a></h3>
+            <p>Doppelpack von Kapitän Lukas Verhoeven, dazu ein Freistoßtor in der Nachspielzeit.</p>
+            <span class="more">Spielbericht →</span>
+          </div>
+        </article>
+        <article class="card rv">
+          <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1599474924187-334a4ae5bd3c?w=1600&q=80&auto=format&fit=crop" alt="Badmintonspieler in blauem Shirt beim Schlag in der Sporthalle" width="1600" height="1067"><span class="tag g">Badminton</span></div>
+          <div class="card-body">
+            <time datetime="2026-10-27">27. Oktober 2026</time>
+            <h3><a href="#aktuelles">Drei Kreismeistertitel für unsere Jugend</a></h3>
+            <span class="more">Weiterlesen →</span>
+          </div>
+        </article>
+        <article class="card rv">
+          <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1600&q=80&auto=format&fit=crop" alt="Silhouetten von Läufern im Gegenlicht vor blauem Himmel" width="1600" height="1067"><span class="tag g">Leichtathletik</span></div>
+          <div class="card-body">
+            <time datetime="2026-10-22">22. Oktober 2026</time>
+            <h3><a href="#aktuelles">Silvesterlauf: Anmeldung geöffnet</a></h3>
+            <span class="more">Weiterlesen →</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPARTMENTS -->
+  <section class="sec depts" id="abteilungen" aria-labelledby="h-dept">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="kicker">Abteilungen &amp; Trainingszeiten</span><h2 class="h2" id="h-dept">Finde <em>deinen</em> Sport</h2>
+        <p class="lead">Probetraining ist in allen Abteilungen kostenlos – dreimal, ganz ohne Anmeldung. Einfach Sportsachen mitbringen und vorbeikommen.</p></div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Abteilungen">
+        <button role="tab" id="tab-fb" aria-controls="p-fb" aria-selected="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7l4 3-1.5 4.5h-5L8 10z"/><path d="M12 7V3.5M16 10l3.5-1M14.5 14.5l2 3.5M9.5 14.5l-2 3.5M8 10L4.5 9"/></svg>Fußball</button>
+        <button role="tab" id="tab-bm" aria-controls="p-bm" aria-selected="false" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 15l-5 5"/><path d="M9 15c-1.5-3 0-8 4-10l6 6c-2 4-7 5.5-10 4z"/><path d="M11 9l4 4M13 7l4 4"/></svg>Badminton</button>
+        <button role="tab" id="tab-tu" aria-controls="p-tu" aria-selected="false" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="2"/><path d="M4 9l8 2 8-2"/><path d="M12 11v4l-4 6M12 15l4 6"/></svg>Turnen</button>
+        <button role="tab" id="tab-la" aria-controls="p-la" aria-selected="false" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="15" cy="4.5" r="2"/><path d="M8 21l3-6 3 2v4"/><path d="M11 15l1-5 4 2 3-1"/><path d="M12 10L8 9l-3 3"/></svg>Leichtathletik</button>
+        <button role="tab" id="tab-te" aria-controls="p-te" aria-selected="false" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6c3.2 3.2 3.2 9.6 0 12.8M18.4 5.6c-3.2 3.2-3.2 9.6 0 12.8"/></svg>Tennis</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-fb" aria-labelledby="tab-fb">
+        <div class="panel-img"><img loading="lazy" src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=1600&q=80&auto=format&fit=crop" alt="Fußballer schießt den Ball auf einem Rasenplatz vor einem Tor" width="1600" height="1067"><span class="badge">19 Teams</span></div>
+        <div class="panel-body">
+          <h3>Fußball</h3>
+          <p>Unsere größte Abteilung: 1. Herren in der Bezirksliga, eine starke Damenmannschaft und Jugendteams von den Bambini bis zur A-Jugend. Trainiert wird auf Natur- und Kunstrasen im Sportpark.</p>
+          <table class="tt">
+            <caption>Trainingszeiten Saison 2026/27</caption>
+            <thead><tr><th scope="col">Gruppe</th><th scope="col">Tage</th><th scope="col">Uhrzeit</th><th scope="col">Ort</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Bambini (U7)</th><td>Fr</td><td>16:30–17:30</td><td>Kunstrasen</td></tr>
+              <tr><th scope="row">F- &amp; E-Jugend</th><td>Di, Do</td><td>17:00–18:30</td><td>Kunstrasen</td></tr>
+              <tr><th scope="row">D- bis A-Jugend</th><td>Mo, Mi, Fr</td><td>18:00–19:30</td><td>Platz 1 &amp; 2</td></tr>
+              <tr><th scope="row">Damen</th><td>Di, Do</td><td>19:00–20:30</td><td>Platz 1</td></tr>
+              <tr><th scope="row">1. &amp; 2. Herren</th><td>Di, Do, Fr</td><td>19:30–21:00</td><td>Platz 1</td></tr>
+              <tr><th scope="row">Alte Herren Ü40</th><td>Fr</td><td>19:00–20:30</td><td>Kunstrasen</td></tr>
+            </tbody>
+          </table>
+          <div class="contact-line"><span class="avatar" aria-hidden="true">RD</span><span><b>Ralf Dercks</b>, Abteilungsleitung · <a href="mailto:fussball@example.de">fussball@example.de</a></span></div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-bm" aria-labelledby="tab-bm" hidden>
+        <div class="panel-img"><img loading="lazy" src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=1600&q=80&auto=format&fit=crop" alt="Badmintonspieler beim Sprungschmetterball in einer Halle" width="1600" height="1067"><span class="badge">4 Teams</span></div>
+        <div class="panel-body">
+          <h3>Badminton</h3>
+          <p>Schnell, technisch und gesellig. Vier Mannschaften im Spielbetrieb, ein offener Hobbytreff am Samstag und eine Jugend, die regelmäßig auf Kreisebene Titel holt.</p>
+          <table class="tt">
+            <caption>Trainingszeiten · Sporthalle Gesamtschule</caption>
+            <thead><tr><th scope="col">Gruppe</th><th scope="col">Tage</th><th scope="col">Uhrzeit</th><th scope="col">Ort</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Jugend 8–12 Jahre</th><td>Mo</td><td>17:00–18:30</td><td>Halle 1–3</td></tr>
+              <tr><th scope="row">Jugend 13–18 Jahre</th><td>Mo, Do</td><td>18:00–19:30</td><td>Halle 1–3</td></tr>
+              <tr><th scope="row">Mannschaften</th><td>Mo, Do</td><td>19:30–22:00</td><td>Halle 1–3</td></tr>
+              <tr><th scope="row">Hobby &amp; Einsteiger</th><td>Sa</td><td>10:00–12:00</td><td>Halle 2</td></tr>
+            </tbody>
+          </table>
+          <div class="contact-line"><span class="avatar" aria-hidden="true">MN</span><span><b>Mai Nguyen-Stappen</b>, Abteilungsleitung · <a href="mailto:badminton@example.de">badminton@example.de</a></span></div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-tu" aria-labelledby="tab-tu" hidden>
+        <div class="panel-img"><img loading="lazy" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600&q=80&auto=format&fit=crop" alt="Zwei Frauen trainieren Kräftigungsübungen auf Gymnastikmatten" width="1600" height="1067"><span class="badge">11 Gruppen</span></div>
+        <div class="panel-body">
+          <h3>Turnen &amp; Fitness</h3>
+          <p>Von den ersten Purzelbäumen im Eltern-Kind-Turnen über Geräteturnen bis zu Pilates und „Fit ab 60“. Qualifizierte Übungsleiter:innen mit Lizenz des Landesturnverbands.</p>
+          <table class="tt">
+            <caption>Trainingszeiten · Turnhalle Grünfelder Straße</caption>
+            <thead><tr><th scope="col">Gruppe</th><th scope="col">Tage</th><th scope="col">Uhrzeit</th><th scope="col">Ort</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Eltern-Kind (1–3 J.)</th><td>Di</td><td>09:30–10:30</td><td>Turnhalle</td></tr>
+              <tr><th scope="row">Kinderturnen (4–6 J.)</th><td>Mi</td><td>15:30–16:30</td><td>Turnhalle</td></tr>
+              <tr><th scope="row">Geräteturnen (7–14 J.)</th><td>Mo, Do</td><td>16:30–18:00</td><td>Turnhalle</td></tr>
+              <tr><th scope="row">Fit ab 60</th><td>Do</td><td>10:00–11:00</td><td>Gymnastikraum</td></tr>
+              <tr><th scope="row">Pilates &amp; Rücken</th><td>Mi</td><td>19:00–20:00</td><td>Gymnastikraum</td></tr>
+            </tbody>
+          </table>
+          <div class="contact-line"><span class="avatar" aria-hidden="true">UH</span><span><b>Ute Heyer</b>, Abteilungsleitung · <a href="mailto:turnen@example.de">turnen@example.de</a></span></div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-la" aria-labelledby="tab-la" hidden>
+        <div class="panel-img"><img loading="lazy" src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1600&q=80&auto=format&fit=crop" alt="Läufer in Startposition auf der roten Tartanbahn mit Staffelstab" width="1600" height="1067"><span class="badge">400-m-Bahn</span></div>
+        <div class="panel-body">
+          <h3>Leichtathletik</h3>
+          <p>Laufen, Springen, Werfen auf unserer 400-m-Kunststoffbahn. Dazu der beliebte Lauftreff für alle Tempos und die Abnahme des Deutschen Sportabzeichens von Mai bis September.</p>
+          <table class="tt">
+            <caption>Trainingszeiten · Sportpark</caption>
+            <thead><tr><th scope="col">Gruppe</th><th scope="col">Tage</th><th scope="col">Uhrzeit</th><th scope="col">Ort</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Kinderleichtathletik U8–U12</th><td>Di</td><td>16:30–18:00</td><td>Bahn / Halle*</td></tr>
+              <tr><th scope="row">Jugend U14–U18</th><td>Di, Do</td><td>18:00–19:30</td><td>Bahn</td></tr>
+              <tr><th scope="row">Lauftreff (alle Tempos)</th><td>Mi · So</td><td>18:30 · 09:00</td><td>ab Vereinsheim</td></tr>
+              <tr><th scope="row">Sportabzeichen</th><td>Sa (Mai–Sep)</td><td>10:00–12:00</td><td>Bahn</td></tr>
+            </tbody>
+          </table>
+          <div class="contact-line"><span class="avatar" aria-hidden="true">DO</span><span><b>Daniel Ophoven</b>, Abteilungsleitung · <a href="mailto:leichtathletik@example.de">leichtathletik@example.de</a> · *im Winter Turnhalle</span></div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-te" aria-labelledby="tab-te" hidden>
+        <div class="panel-img"><img loading="lazy" src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=1600&q=80&auto=format&fit=crop" alt="Tennisspieler in orangefarbenem Shirt holt zur Vorhand aus" width="1600" height="1067"><span class="badge">6 Sandplätze</span></div>
+        <div class="panel-body">
+          <h3>Tennis</h3>
+          <p>Sechs Sandplätze mit Blick ins Grüne und im Winter zwei Plätze in der Traglufthalle. Medenspiele für Jugend, Damen und Herren 30/50 – und jeden Samstag Schnuppertennis mit Leihschlägern.</p>
+          <table class="tt">
+            <caption>Trainingszeiten · Tennisanlage am Sportpark</caption>
+            <thead><tr><th scope="col">Gruppe</th><th scope="col">Tage</th><th scope="col">Uhrzeit</th><th scope="col">Ort</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Kids-Tennis (5–9 J.)</th><td>Mi</td><td>15:00–16:00</td><td>Halle / Platz 6</td></tr>
+              <tr><th scope="row">Jugendtraining</th><td>Mo–Fr</td><td>nach Gruppenplan</td><td>Platz 1–4</td></tr>
+              <tr><th scope="row">Mannschaften</th><td>Di, Do</td><td>18:00–21:00</td><td>Platz 1–6</td></tr>
+              <tr><th scope="row">Schnuppertennis</th><td>Sa</td><td>11:00–12:30</td><td>Platz 5</td></tr>
+            </tbody>
+          </table>
+          <div class="contact-line"><span class="avatar" aria-hidden="true">CE</span><span><b>Claudia Esser</b>, Abteilungsleitung · <a href="mailto:tennis@example.de">tennis@example.de</a></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAMES & EVENTS -->
+  <section class="sec" id="spiele" aria-labelledby="h-games">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="kicker">Spielplan &amp; Termine</span><h2 class="h2" id="h-games">Komm <em>vorbei</em></h2></div>
+        <div class="gfilter" role="group" aria-label="Spiele filtern">
+          <button type="button" data-g="all" aria-pressed="true">Alle</button>
+          <button type="button" data-g="home" aria-pressed="false">Heim</button>
+          <button type="button" data-g="away" aria-pressed="false">Auswärts</button>
+        </div>
+      </div>
+      <div class="games">
+        <div>
+          <article class="match home rv">
+            <div class="date"><b>14</b><span>Sa · Nov</span></div>
+            <div><div class="m-league">Badminton · Landesliga</div><div class="m-teams"><span class="us">SV Grünfeld I</span><span class="vs">vs</span>BC Hülserberg</div><div class="m-meta">Sporthalle Gesamtschule</div></div>
+            <div class="m-time">14:00<small>HEIM</small></div>
+          </article>
+          <article class="match home rv">
+            <div class="date"><b>15</b><span>So · Nov</span></div>
+            <div><div class="m-league">Fußball · Bezirksliga · 13. Spieltag</div><div class="m-teams"><span class="us">SV Grünfeld</span><span class="vs">vs</span>VfR Niersbruch 08</div><div class="m-meta">Sportpark, Platz 1 · Eintritt 5 €, Jugend frei</div></div>
+            <div class="m-time">15:00<small>HEIM</small></div>
+          </article>
+          <article class="match away rv">
+            <div class="date"><b>15</b><span>So · Nov</span></div>
+            <div><div class="m-league">Fußball · Kreisliga B</div><div class="m-teams">DJK Lindenhof II<span class="vs">vs</span><span class="us">SV Grünfeld II</span></div><div class="m-meta">Sportanlage Lindenhof</div></div>
+            <div class="m-time">13:00<small>AUSWÄRTS</small></div>
+          </article>
+          <article class="match home rv">
+            <div class="date"><b>21</b><span>Sa · Nov</span></div>
+            <div><div class="m-league">Fußball · D-Jugend Leistungsklasse</div><div class="m-teams"><span class="us">SV Grünfeld U13</span><span class="vs">vs</span>SpVg Kempenrath</div><div class="m-meta">Sportpark, Kunstrasen</div></div>
+            <div class="m-time">11:00<small>HEIM</small></div>
+          </article>
+          <article class="match away rv">
+            <div class="date"><b>22</b><span>So · Nov</span></div>
+            <div><div class="m-league">Fußball · Damen Kreisliga</div><div class="m-teams">TuS Oedtfeld<span class="vs">vs</span><span class="us">SV Grünfeld</span></div><div class="m-meta">Waldstadion Oedtfeld</div></div>
+            <div class="m-time">14:30<small>AUSWÄRTS</small></div>
+          </article>
+          <article class="match away rv">
+            <div class="date"><b>29</b><span>So · Nov</span></div>
+            <div><div class="m-league">Fußball · Bezirksliga · 14. Spieltag</div><div class="m-teams">SC Rheinwiese<span class="vs">vs</span><span class="us">SV Grünfeld</span></div><div class="m-meta">Fanbus ab Vereinsheim 13:15 Uhr</div></div>
+            <div class="m-time">15:00<small>AUSWÄRTS</small></div>
+          </article>
+        </div>
+        <aside class="events rv" aria-labelledby="h-events">
+          <h3 id="h-events">Vereinstermine</h3>
+          <div class="ev"><span class="ev-d">20.11.</span><div><b>Jahreshauptversammlung Fußball</b><span>Fr, 19:30 Uhr · Vereinsheim, Saal</span></div></div>
+          <div class="ev"><span class="ev-d">28.11.</span><div><b>Hallensportfest Kinderleichtathletik</b><span>Sa, 10:00 Uhr · Turnhalle Grünfelder Straße</span></div></div>
+          <div class="ev"><span class="ev-d">06.12.</span><div><b>Nikolausturnen</b><span>So, 10:30 Uhr · alle Kindergruppen zeigen ihr Programm</span></div></div>
+          <div class="ev"><span class="ev-d">12.12.</span><div><b>Glühweinabend am Vereinsheim</b><span>Sa, ab 17:00 Uhr · mit Tombola für die Jugend</span></div></div>
+          <div class="ev"><span class="ev-d">31.12.</span><div><b>26. Grünfelder Silvesterlauf</b><span>Do, 11:00 Uhr · 5 km &amp; 10 km, Startgeld 10 €</span></div></div>
+          <div class="ev"><span class="ev-d">16.01.</span><div><b>Grünfeld-Cup 2027</b><span>Sa &amp; So · Hallenturnier für E- bis C-Jugend</span></div></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="sec member" id="mitglied" aria-labelledby="h-member">
+    <div class="wrap">
+      <div class="m-grid">
+        <div>
+          <span class="kicker">Mitglied werden</span>
+          <h2 class="h2" id="h-member">Einmal zahlen. <em>Alles</em> spielen.</h2>
+          <p class="lead">Mit einer Mitgliedschaft kannst du in allen Abteilungen trainieren – nur für Tennis gibt es wegen der Platzpflege einen kleinen Zusatzbeitrag.</p>
+          <div class="fees rv">
+            <table>
+              <caption style="text-align:left;padding-bottom:12px;font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--g)">Beiträge ab 1. Januar 2027</caption>
+              <thead><tr><th scope="col">Mitgliedschaft</th><th scope="col" style="text-align:right">Monat</th><th scope="col" style="text-align:right">Jahr</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Kinder<small>bis 13 Jahre</small></th><td class="num m">9 €</td><td class="num">108 €</td></tr>
+                <tr><th scope="row">Jugendliche<small>14 bis 17 Jahre</small></th><td class="num m">11 €</td><td class="num">132 €</td></tr>
+                <tr><th scope="row">Erwachsene<small>ab 18 Jahren</small></th><td class="num m">16 €</td><td class="num">192 €</td></tr>
+                <tr><th scope="row">Ermäßigt<small>Schüler:innen, Studierende, Azubis</small></th><td class="num m">11 €</td><td class="num">132 €</td></tr>
+                <tr class="hl"><th scope="row">Familie<small>2 Erwachsene + alle Kinder unter 18</small></th><td class="num m">32 €</td><td class="num">384 €</td></tr>
+                <tr><th scope="row">Fördermitglied<small>passiv, ohne Trainingsbetrieb</small></th><td class="num m">5 €</td><td class="num">60 €</td></tr>
+              </tbody>
+            </table>
+            <p class="fees-note">Einmalige Aufnahmegebühr 15 € (Familien 25 €). Tennis-Zusatzbeitrag 8 € im Monat. Inhaber:innen des Tönisvorster Familienpasses zahlen die Hälfte. Kündigung jeweils zum Quartalsende.</p>
+          </div>
+        </div>
+        <aside class="m-side rv">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1600&q=80&auto=format&fit=crop" alt="Fußballschuh auf einem Ball auf dem Rasen" width="1600" height="1067">
+          <div class="m-side-body">
+            <h3>In 3 Schritten dabei</h3>
+            <ol class="steps">
+              <li><span><b>Probetraining</b> – dreimal kostenlos in jeder Abteilung.</span></li>
+              <li><span><b>Aufnahmeantrag</b> ausfüllen – online oder beim Training.</span></li>
+              <li><span><b>Willkommenspaket</b> mit Vereinsshirt und Mitgliedsausweis abholen.</span></li>
+            </ol>
+            <a class="btn btn-y" href="#kontakt">Aufnahmeantrag anfordern</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOARD -->
+  <section class="sec" id="vorstand" aria-labelledby="h-board">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="kicker">Vorstand &amp; Ansprechpartner</span><h2 class="h2" id="h-board">Die Menschen <em>dahinter</em></h2>
+        <p class="lead">Alle Ämter im SV Grünfeld sind Ehrenamt. Sprich uns an – beim Training, im Vereinsheim oder per Mail.</p></div>
+      </div>
+      <div class="board">
+        <div class="person lead1 rv"><span class="avatar" aria-hidden="true">BH</span><span class="role">1. Vorsitzende</span><h3>Birgit Hennes</h3><a href="mailto:vorstand@example.de">vorstand@example.de</a><p>Seit 2019 im Amt, früher Leichtathletin</p></div>
+        <div class="person rv"><span class="avatar" aria-hidden="true">MT</span><span class="role">2. Vorsitzender</span><h3>Markus Theelen</h3><a href="mailto:vorstand@example.de">vorstand@example.de</a><p>Zuständig für Sportstätten &amp; Bau</p></div>
+        <div class="person rv"><span class="avatar" aria-hidden="true">HW</span><span class="role">Schatzmeister</span><h3>Holger Wefers</h3><a href="mailto:kasse@example.de">kasse@example.de</a><p>Beiträge, Lastschrift, Spendenquittungen</p></div>
+        <div class="person rv"><span class="avatar" aria-hidden="true">SK</span><span class="role">Geschäftsstelle</span><h3>Sandra Koppers</h3><a href="mailto:info@example.de">info@example.de</a><p>Di &amp; Do 17–19 Uhr im Vereinsheim</p></div>
+        <div class="person rv"><span class="avatar" aria-hidden="true">JB</span><span class="role">Jugendleitung</span><h3>Jannik Brüggen</h3><a href="mailto:jugend@example.de">jugend@example.de</a><p>Ferienfreizeit, Jugendvorstand</p></div>
+        <div class="person rv"><span class="avatar" aria-hidden="true">AK</span><span class="role">Kinderschutz</span><h3>Aylin Kaya</h3><a href="mailto:kinderschutz@example.de">kinderschutz@example.de</a><p>Vertrauensperson, vertraulich erreichbar</p></div>
+        <div class="person rv"><span class="avatar" aria-hidden="true">PS</span><span class="role">Presse &amp; Social Media</span><h3>Paul Schürmanns</h3><a href="mailto:presse@example.de">presse@example.de</a><p>Spielberichte, Fotos, Vereinsheft</p></div>
+        <div class="person rv"><span class="avatar" aria-hidden="true">GV</span><span class="role">Ehrenvorsitzender</span><h3>Gerd Vennekel</h3><a href="mailto:vorstand@example.de">vorstand@example.de</a><p>62 Jahre Mitglied, 24 davon Vorsitz</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPONSORS -->
+  <section class="sponsors" aria-labelledby="h-sp">
+    <div class="wrap">
+      <div class="sp-head"><span class="kicker">Partner &amp; Sponsoren</span><h2 class="h2" id="h-sp">Stark mit <em>Partnern</em> aus der Region</h2></div>
+      <div class="sp-grid">
+        <div class="sp"><span class="sp1">Kranenbroek<small>Bäckerei seit 1958</small></span></div>
+        <div class="sp"><span class="sp2"><span aria-hidden="true"></span>niersland energie</span></div>
+        <div class="sp"><span class="sp3">PELZER AUTO</span></div>
+        <div class="sp"><span class="sp4"><b>Terhoeven</b> Gartenbau</span></div>
+        <div class="sp"><span class="sp5">Elektro Kühnen</span></div>
+        <div class="sp"><span class="sp6">Hendricks &amp; Söhne<small>Dachdeckermeister</small></span></div>
+        <div class="sp"><span class="sp7">physio<i>·</i>punkt</span></div>
+        <div class="sp"><span class="sp8">Getränke <span>Maas</span></span></div>
+      </div>
+      <p class="sp-cta">Bandenwerbung, Trikotsponsoring oder Förderkreis? <a class="link" href="#kontakt">Partner werden →</a></p>
+    </div>
+  </section>
+
+  <!-- CLUBHOUSE -->
+  <section class="sec" id="vereinsheim" aria-labelledby="h-house">
+    <div class="wrap house">
+      <div>
+        <span class="kicker">Vereinsheim &amp; Anfahrt</span>
+        <h2 class="h2" id="h-house">Treffpunkt <em>„Grüne Elf“</em></h2>
+        <p class="lead">Nach dem Training ein Kaltgetränk, sonntags Kuchen von der Jugendabteilung und bei Heimspielen Bratwurst vom Grill. Unseren Saal mit 80 Plätzen können Mitglieder für Feiern mieten.</p>
+        <dl class="hours">
+          <dt>Di – Fr</dt><dd>17:00 – 23:00 Uhr</dd>
+          <dt>Samstag</dt><dd>14:00 – 23:00 Uhr</dd>
+          <dt>Sonntag</dt><dd>10:00 – 20:00 Uhr · Heimspieltage ab 11:00</dd>
+          <dt>Montag</dt><dd>Ruhetag</dd>
+        </dl>
+        <ul class="route">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><b>Am Sportpark 7, 47918 Tönisvorst</b><br>Eingang über den Parkplatz an der Grünfelder Straße</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="15" rx="2"/><path d="M5 12h14M8 21v-3M16 21v-3"/><circle cx="8.5" cy="15" r=".6"/><circle cx="15.5" cy="15" r=".6"/></svg><span><b>Bus 064 &amp; 069</b>, Haltestelle „Sportpark“ – 2 Minuten Fußweg</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg><span><b>120 kostenlose Parkplätze</b>, an Spieltagen bitte Fahrgemeinschaften bilden</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l4-7h6l2 7M10 9L8.5 6H7M13 9l-3 7"/></svg><span><b>Fahrrad:</b> überdachte Stellplätze direkt am Vereinsheim</span></li>
+        </ul>
+      </div>
+      <div class="house-media">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1611916656173-875e4277bea6?w=1600&q=80&auto=format&fit=crop" alt="Tasse Cappuccino und ein Dessert auf einem Bistrotisch" width="1600" height="1000">
+        <div class="map rv">
+          <svg viewBox="0 0 600 360" role="img" aria-labelledby="map-t">
+            <title id="map-t">Lageplan: Vereinsheim am Sportpark zwischen Grünfelder Straße und Niersweg, Bushaltestelle und Parkplatz nördlich</title>
+            <rect width="600" height="360" fill="#eef3ee"/>
+            <path d="M0 70 H600" stroke="#fff" stroke-width="22"/>
+            <path d="M0 70 H600" stroke="#d9e4dc" stroke-width="1" stroke-dasharray="10 10"/>
+            <path d="M470 0 V360" stroke="#fff" stroke-width="18"/>
+            <path d="M0 300 C150 280 260 330 470 300" stroke="#cfe0f0" stroke-width="16" fill="none"/>
+            <rect x="60" y="110" width="200" height="130" rx="4" fill="#0a6b3b"/>
+            <rect x="72" y="122" width="176" height="106" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/>
+            <path d="M160 122 V228" stroke="#fff" stroke-width="2" opacity=".8"/>
+            <circle cx="160" cy="175" r="16" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/>
+            <rect x="280" y="110" width="150" height="100" rx="4" fill="#2f8a57"/>
+            <rect x="290" y="120" width="130" height="80" fill="none" stroke="#fff" stroke-width="2" opacity=".7"/>
+            <rect x="280" y="222" width="60" height="44" rx="3" fill="#c96f3a"/>
+            <rect x="350" y="222" width="60" height="44" rx="3" fill="#c96f3a"/>
+            <rect x="420" y="222" width="10" height="44" fill="#c96f3a"/>
+            <rect x="60" y="90" width="120" height="12" rx="2" fill="#cdd6cf"/>
+            <rect x="350" y="84" width="96" height="18" rx="2" fill="#cdd6cf"/>
+            <text x="398" y="97" text-anchor="middle" font-family="Barlow, sans-serif" font-size="11" font-weight="600" fill="#5c6b62">PARKPLATZ</text>
+            <circle cx="500" cy="50" r="12" fill="#03351c"/><text x="500" y="54" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="12" font-weight="800" fill="#ffd21f">H</text>
+            <text x="10" y="56" font-family="Barlow Condensed, sans-serif" font-size="14" font-weight="700" fill="#5c6b62" letter-spacing="1">GRÜNFELDER STRASSE</text>
+            <text x="484" y="200" font-family="Barlow Condensed, sans-serif" font-size="14" font-weight="700" fill="#5c6b62" letter-spacing="1" transform="rotate(90 484 200)">NIERSWEG</text>
+            <text x="160" y="258" text-anchor="middle" font-family="Barlow, sans-serif" font-size="12" font-weight="600" fill="#0a6b3b">Platz 1</text>
+            <text x="355" y="282" text-anchor="middle" font-family="Barlow, sans-serif" font-size="12" font-weight="600" fill="#a65a2e">Tennis</text>
+            <text x="355" y="166" text-anchor="middle" font-family="Barlow, sans-serif" font-size="12" font-weight="600" fill="#fff">Kunstrasen</text>
+            <g transform="translate(272 70)">
+              <rect x="-26" y="10" width="52" height="30" rx="3" fill="#ffd21f" stroke="#03351c" stroke-width="2"/>
+              <path d="M0 -30 C-14 -30 -22 -20 -22 -10 C-22 4 0 22 0 22 C0 22 22 4 22 -10 C22 -20 14 -30 0 -30Z" fill="#03351c"/>
+              <circle cx="0" cy="-11" r="7" fill="#ffd21f"/>
+            </g>
+            <text x="300" y="104" font-family="Barlow Condensed, sans-serif" font-size="15" font-weight="800" fill="#03351c">VEREINSHEIM</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec contact" id="kontakt" aria-labelledby="h-contact">
+    <div class="wrap c-grid">
+      <div>
+        <span class="kicker">Kontakt</span>
+        <h2 class="h2" id="h-contact">Schreib <em>uns</em></h2>
+        <p class="lead">Fragen zum Probetraining, zur Mitgliedschaft oder zur Saalmiete? Die Geschäftsstelle antwortet in der Regel innerhalb von drei Tagen.</p>
+        <ul class="c-list">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><b>Geschäftsstelle</b>Am Sportpark 7, 47918 Tönisvorst<br>Di &amp; Do 17:00–19:00 Uhr</div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><b>Telefon</b><a href="tel:+4921511234567">02151 123 45 67</a></div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><div><b>E-Mail</b><a href="mailto:info@example.de">info@example.de</a></div></li>
+        </ul>
+      </div>
+      <form class="c-form" id="cform" onsubmit="event.preventDefault()">
+        <div class="f-row">
+          <div class="f"><label for="c-name">Name</label><input id="c-name" autocomplete="name" required></div>
+          <div class="f"><label for="c-mail">E-Mail</label><input id="c-mail" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="f-row">
+          <div class="f"><label for="c-topic">Anliegen</label>
+            <select id="c-topic"><option>Probetraining</option><option>Mitgliedschaft / Aufnahmeantrag</option><option>Saalmiete Vereinsheim</option><option>Sponsoring</option><option>Sonstiges</option></select></div>
+          <div class="f"><label for="c-dept">Abteilung</label>
+            <select id="c-dept"><option>Fußball</option><option>Badminton</option><option>Turnen &amp; Fitness</option><option>Leichtathletik</option><option>Tennis</option><option>Weiß ich noch nicht</option></select></div>
+        </div>
+        <div class="f"><label for="c-msg">Nachricht</label><textarea id="c-msg" placeholder="z. B. Mein Sohn ist 8 und möchte gern Fußball spielen …"></textarea></div>
+        <label class="chk"><input type="checkbox" required> <span>Ich stimme zu, dass meine Angaben zur Beantwortung meiner Anfrage verwendet werden.</span></label>
+        <button class="btn btn-g" type="submit">Nachricht senden <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="ok" id="cok" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <svg role="img" aria-label="Vereinswappen SV Grünfeld"><use href="#crest"/></svg>
+        <div><h4>SV Grünfeld 1921 e. V.</h4>Am Sportpark 7<br>47918 Tönisvorst<br>Vereinsregister Krefeld VR 1921</div>
+      </div>
+      <div><h4>Sport</h4><ul><li><a href="#abteilungen">Fußball</a></li><li><a href="#abteilungen">Badminton</a></li><li><a href="#abteilungen">Turnen &amp; Fitness</a></li><li><a href="#abteilungen">Leichtathletik</a></li><li><a href="#abteilungen">Tennis</a></li></ul></div>
+      <div><h4>Verein</h4><ul><li><a href="#mitglied">Mitglied werden</a></li><li><a href="#vorstand">Vorstand</a></li><li><a href="#vereinsheim">Vereinsheim</a></li><li><a href="#spiele">Termine</a></li></ul></div>
+      <div><h4>Service</h4><ul><li><a href="#kontakt">Kontakt</a></li><li><a href="#top">Satzung</a></li><li><a href="#top">Impressum</a></li><li><a href="#top">Datenschutz</a></li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 SV Grünfeld 1921 e. V. · Gemeinsam seit 105 Jahren</span>
+      <span>Fiktives Beispielunternehmen – Design &amp; Umsetzung: meuser.biz</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Burger
+  var b=document.querySelector('.burger'),nav=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');b.setAttribute('aria-expanded','false')})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus();}});
+
+  // Tabs
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function sel(t,focus){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});if(focus)t.focus();}
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(t)});
+    t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];if(e.key==='Home')n=tabs[0];if(e.key==='End')n=tabs[tabs.length-1];if(n){e.preventDefault();sel(n,true);}});
+  });
+
+  // Game filter
+  var gb=document.querySelectorAll('.gfilter button'),ms=document.querySelectorAll('.match');
+  gb.forEach(function(btn){btn.addEventListener('click',function(){var g=btn.dataset.g;gb.forEach(function(x){x.setAttribute('aria-pressed',x===btn)});ms.forEach(function(m){m.hidden=!(g==='all'||m.classList.contains(g));});});});
+
+  // Countdown
+  var target=new Date('2026-11-15T15:00:00+01:00').getTime(),cd=document.getElementById('countdown');
+  function tick(){var d=target-Date.now();if(d<=0){cd.innerHTML='<span>Anpfiff erfolgt – Ergebnis folgt</span>';return;}
+    var s=Math.floor(d/1000),dd=Math.floor(s/86400),hh=Math.floor(s%86400/3600),mm=Math.floor(s%3600/60);
+    cd.querySelector('[data-cd="d"]').textContent=dd;cd.querySelector('[data-cd="h"]').textContent=hh;cd.querySelector('[data-cd="m"]').textContent=mm;setTimeout(tick,30000);}
+  tick();
+
+  // Form
+  document.getElementById('cform').addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('c-name').value.trim();var ok=document.getElementById('cok');ok.textContent='Danke'+(n?', '+n.split(' ')[0]:'')+'! Deine Nachricht ist bei der Geschäftsstelle angekommen. (Beispielseite – es wurde nichts gesendet.)';ok.classList.add('show');});
+
+  // Reveal
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(el){io.observe(el)});
+  } else rv.forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>

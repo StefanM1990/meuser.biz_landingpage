@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nordlicht Immobilien – Ihr Makler für Wohnimmobilien am Niederrhein</title>
+<meta name="description" content="Nordlicht Immobilien in Tönisvorst: Verkauf und Vermietung von Häusern und Wohnungen am Niederrhein. Kostenlose Immobilienbewertung, persönliche Beratung, regionale Marktkenntnis seit 2004.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#ffffff; --paper:#fbf9f5; --sand:#f1ebe1; --sand2:#e5dac8; --sand3:#cdbb9f;
+  --slate:#2e3a44; --slate2:#45525d; --slate-l:#6b7680; --line:#e4ddd1; --brass:#9a7650;
+  --serif:'Playfair Display', Georgia, serif; --sans:'Manrope', system-ui, -apple-system, sans-serif;
+  --max:1320px; --gut:clamp(20px,4.5vw,56px); --r:4px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{margin:0;background:var(--white);color:var(--slate);font:400 16px/1.7 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08;margin:0;color:var(--slate)}
+h2{font-size:clamp(36px,4.6vw,62px)}
+h2 em,h1 em{font-style:italic;color:var(--brass)}
+.kicker{display:block;font:600 12px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin-bottom:22px}
+.lead{font-size:clamp(16px,1.3vw,18px);color:var(--slate2);max-width:560px}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 28px;background:var(--slate);color:var(--white);border:1px solid var(--slate);border-radius:var(--r);font:600 14px/1 var(--sans);letter-spacing:.04em;cursor:pointer;transition:background .25s, color .25s, transform .25s}
+.btn:hover{background:#1f2830}
+.btn--line{background:transparent;color:var(--slate);border-color:var(--sand3)}
+.btn--line:hover{background:var(--sand);color:var(--slate)}
+.btn--sand{background:var(--sand);color:var(--slate);border-color:var(--sand)}
+.btn--sand:hover{background:var(--sand2)}
+.btn .ico{width:18px;height:18px;transition:transform .25s}
+.btn:hover .ico{transform:translateX(3px)}
+.link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;border-bottom:1px solid var(--sand3);padding-bottom:3px;transition:border-color .2s}
+.link:hover{border-color:var(--slate)}
+
+.mz-badge{position:fixed;left:16px;bottom:16px;z-index:9999;background:var(--white);color:var(--slate);border:1px solid var(--sand3);border-radius:999px;padding:10px 16px;font:600 12px/1.3 var(--sans);box-shadow:0 10px 30px rgba(46,58,68,.14);max-width:calc(100vw - 32px)}
+.mz-badge:hover{background:var(--slate);color:var(--white);border-color:var(--slate)}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.hdr.scrolled{border-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:86px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:38px;height:38px}
+.logo b{display:block;font:500 22px/1 var(--serif);letter-spacing:.01em}
+.logo small{display:block;font:600 9.5px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--slate-l);margin-top:6px}
+.nav{display:flex;align-items:center;gap:36px}
+.nav a{font-size:14px;font-weight:500;color:var(--slate2);position:relative}
+.nav a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--brass);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.nav a:not(.btn):hover::after{transform:scaleX(1)}
+.nav .btn{padding:13px 20px;font-size:13px;color:var(--white)}
+.nav .tel{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--slate)}
+.burger{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:var(--r);background:var(--white);cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:1.5px;background:var(--slate);position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.menu-open .burger span{background:transparent}
+.menu-open .burger span::before{top:0;transform:rotate(45deg)}
+.menu-open .burger span::after{top:0;transform:rotate(-45deg)}
+
+/* Hero */
+.hero{position:relative;padding:clamp(40px,5vw,72px) 0 0;background:linear-gradient(180deg,var(--white) 0%,var(--white) 62%,var(--sand) 62%)}
+.hero__grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(32px,5vw,80px);align-items:end}
+.hero__text{padding-bottom:clamp(120px,12vw,170px)}
+.hero h1{font-size:clamp(46px,5.8vw,88px);line-height:1.02;margin-bottom:30px}
+.hero__media{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:5/4.4}
+.hero__media img{width:100%;height:100%;object-fit:cover}
+.hero__media .tag{position:absolute;left:20px;bottom:20px;background:rgba(255,255,255,.94);border-radius:var(--r);padding:14px 18px;font-size:13px;line-height:1.45;max-width:280px}
+.hero__media .tag b{display:block;font:500 17px/1.3 var(--serif)}
+.hero__trust{display:flex;align-items:center;gap:16px;margin-top:38px;font-size:14px;color:var(--slate2)}
+.hero__trust .avs{display:flex}
+.hero__trust .avs img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--white);margin-left:-10px}
+.hero__trust .avs img:first-child{margin-left:0}
+.hero__trust b{color:var(--slate)}
+
+/* Search */
+.search{position:relative;z-index:3;margin-top:-64px;background:var(--white);border-radius:var(--r);box-shadow:0 30px 70px rgba(46,58,68,.13);padding:10px;display:grid;grid-template-columns:auto 1.4fr 1fr 1fr auto;align-items:stretch}
+.seg{display:flex;background:var(--sand);border-radius:var(--r);padding:4px;align-self:center;margin:0 10px 0 4px}
+.seg button{border:0;background:none;padding:12px 20px;border-radius:3px;font-weight:600;font-size:14px;cursor:pointer;color:var(--slate-l);transition:.25s}
+.seg button[aria-pressed="true"]{background:var(--white);color:var(--slate);box-shadow:0 2px 8px rgba(46,58,68,.1)}
+.sfield{padding:12px 22px;border-left:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;min-width:0}
+.sfield label{font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--slate-l);margin-bottom:7px}
+.sfield input,.sfield select{border:0;background:transparent;padding:2px 0;font-size:16px;font-weight:500;width:100%;appearance:none;outline:none;min-width:0}
+.sfield select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%232e3a44' stroke-width='1.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;padding-right:18px;cursor:pointer}
+.sfield:focus-within{background:var(--paper)}
+.search .btn{margin-left:6px;padding:0 30px}
+
+/* Kennzahlen */
+.facts{background:var(--sand);padding:clamp(60px,7vw,90px) 0 clamp(70px,8vw,110px)}
+.facts__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.fact{border-top:1px solid var(--sand3);padding-top:24px}
+.fact b{display:block;font:400 clamp(40px,4.2vw,58px)/1 var(--serif);color:var(--slate)}
+.fact span{display:block;margin-top:10px;font-size:14px;color:var(--slate2);max-width:24ch}
+
+/* Objekte */
+.sec{padding:clamp(90px,10vw,150px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:46px;flex-wrap:wrap}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.chip{border:1px solid var(--line);background:var(--white);border-radius:999px;padding:10px 18px;font-size:14px;font-weight:600;cursor:pointer;color:var(--slate2);transition:.2s;display:inline-flex;align-items:center;gap:8px}
+.chip:hover{border-color:var(--sand3)}
+.chip[aria-pressed="true"]{background:var(--slate);color:var(--white);border-color:var(--slate)}
+.chip .n{font-size:12px;opacity:.65}
+.objects{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.4vw,34px)}
+.obj{display:flex;flex-direction:column;transition:opacity .35s, transform .35s}
+.obj.hide{display:none}
+.obj figure{margin:0;position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:var(--sand)}
+.obj figure img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.obj:hover figure img{transform:scale(1.05)}
+.badge{position:absolute;top:16px;left:16px;font:700 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:8px 11px;border-radius:2px;background:var(--white);color:var(--slate)}
+.badge--neu{background:var(--slate);color:var(--white)}
+.badge--res{background:var(--sand2);color:var(--slate)}
+.type{position:absolute;top:16px;right:16px;font:600 12px/1 var(--sans);padding:8px 11px;border-radius:2px;background:rgba(255,255,255,.9)}
+.fav{position:absolute;right:16px;bottom:16px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);border:0;display:grid;place-items:center;cursor:pointer;transition:.2s}
+.fav:hover{background:var(--white)}
+.fav[aria-pressed="true"] svg{fill:var(--brass);stroke:var(--brass)}
+.fav svg{width:18px;height:18px}
+.obj__body{padding:22px 2px 0}
+.obj__loc{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--slate-l);margin-bottom:6px}
+.obj__loc .ico{width:15px;height:15px}
+.obj h3{font-size:24px;line-height:1.2;margin-bottom:16px}
+.obj h3 a:hover{color:var(--brass)}
+.obj__specs{display:flex;flex-wrap:wrap;gap:8px 22px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px;color:var(--slate2)}
+.obj__specs span{display:inline-flex;align-items:center;gap:7px}
+.obj__specs .ico{width:17px;height:17px;color:var(--brass)}
+.obj__price{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:14px}
+.obj__price b{font:500 24px/1 var(--serif)}
+.obj__price small{font-size:13px;color:var(--slate-l)}
+.obj.res figure img{filter:saturate(.6)}
+.empty{display:none;grid-column:1/-1;text-align:center;padding:60px 20px;background:var(--paper);border-radius:var(--r);color:var(--slate2)}
+.empty.show{display:block}
+.objects-foot{display:flex;justify-content:center;margin-top:56px}
+
+/* Bewertung */
+.valuation{background:var(--slate);color:#e9ecee;position:relative;overflow:hidden}
+.valuation h2{color:var(--white)}
+.valuation .kicker{color:var(--sand3)}
+.val__grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,6vw,96px);align-items:center}
+.val__grid .lead{color:#c5ccd2}
+.val__list{list-style:none;padding:0;margin:36px 0 0;display:grid;gap:16px}
+.val__list li{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:#dde2e6}
+.val__list .ico{color:var(--sand3);margin-top:2px}
+.val__img{margin-top:44px;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9}
+.val__img img{width:100%;height:100%;object-fit:cover;opacity:.92}
+.wizard{background:var(--white);color:var(--slate);border-radius:var(--r);padding:clamp(26px,3.6vw,48px);box-shadow:0 40px 80px rgba(0,0,0,.25)}
+.wiz__top{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--slate-l);margin-bottom:14px}
+.wiz__top b{color:var(--slate);font-weight:600}
+.progress{height:3px;background:var(--sand);border-radius:2px;overflow:hidden;margin-bottom:34px}
+.progress i{display:block;height:100%;width:25%;background:var(--brass);transition:width .45s cubic-bezier(.2,.7,.2,1)}
+.step{display:none;border:0;padding:0;margin:0;min-width:0}
+.step.active{display:block;animation:fade .45s ease}
+@keyframes fade{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.step legend{font:400 clamp(24px,2.4vw,32px)/1.2 var(--serif);margin-bottom:8px;padding:0}
+.step .hint{color:var(--slate-l);font-size:14px;margin:0 0 26px}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.opt{position:relative;cursor:pointer}
+.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.opt span{display:flex;flex-direction:column;gap:12px;padding:20px;border:1px solid var(--line);border-radius:var(--r);transition:.2s;font-weight:600;font-size:15px;height:100%}
+.opt span small{font-weight:400;font-size:13px;color:var(--slate-l);margin-top:-8px}
+.opt .ico{width:30px;height:30px;color:var(--brass)}
+.opt:hover span{border-color:var(--sand3)}
+.opt input:checked + span{border-color:var(--slate);background:var(--paper);box-shadow:inset 0 0 0 1px var(--slate)}
+.opt input:focus-visible + span{outline:2px solid var(--brass);outline-offset:2px}
+.f{margin-bottom:16px}
+.f label{display:block;font:600 12px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--slate-l);margin-bottom:9px}
+.f input,.f select,.f textarea{width:100%;border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;font-size:15px;background:var(--white);transition:border-color .2s;appearance:none}
+.f select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%232e3a44' stroke-width='1.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--slate)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.range-out{float:right;font-weight:700;color:var(--slate);letter-spacing:0;text-transform:none;font-size:14px}
+input[type=range]{padding:0;border:0;height:28px;accent-color:var(--slate);background:none}
+.wiz__nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:30px}
+.wiz__nav .back{background:none;border:0;cursor:pointer;font-weight:600;font-size:14px;color:var(--slate-l);padding:10px 0;display:inline-flex;align-items:center;gap:8px}
+.wiz__nav .back:hover{color:var(--slate)}
+.wiz__nav .back[hidden]{display:none}
+.wiz__nav .spacer{flex:1}
+.consent{display:flex;gap:10px;font-size:12.5px;color:var(--slate-l);align-items:flex-start;line-height:1.5}
+.consent input{margin-top:3px;accent-color:var(--slate);flex:none}
+.done{text-align:center;padding:20px 0}
+.done .ring{width:72px;height:72px;border-radius:50%;background:var(--sand);display:grid;place-items:center;margin:0 auto 22px;color:var(--brass)}
+.done .ring .ico{width:34px;height:34px}
+.done h3{font-size:30px;margin-bottom:12px}
+.done p{color:var(--slate2);max-width:380px;margin:0 auto}
+.err{color:#a4442f;font-size:13px;margin-top:12px;min-height:1em}
+
+/* Prozess */
+.process__head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:70px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:st;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--line)}
+.pstep{position:relative;padding-right:28px}
+.pstep .num{width:56px;height:56px;border-radius:50%;background:var(--white);border:1px solid var(--sand3);display:grid;place-items:center;font:400 20px/1 var(--serif);color:var(--slate);position:relative;margin-bottom:28px;transition:.3s}
+.pstep:hover .num{background:var(--slate);color:var(--white);border-color:var(--slate)}
+.pstep h3{font-size:22px;margin-bottom:10px}
+.pstep p{font-size:14.5px;color:var(--slate2);margin:0}
+.pstep .dur{display:inline-block;margin-top:14px;font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+
+/* Über uns */
+.about{background:var(--paper)}
+.about__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
+.about__media{position:relative;display:grid;grid-template-columns:1fr .7fr;gap:16px;align-items:end}
+.about__media img{border-radius:var(--r);width:100%;object-fit:cover}
+.about__media img:first-child{aspect-ratio:3/4}
+.about__media img:last-child{aspect-ratio:3/4;margin-bottom:60px}
+.about__quote{font:italic 400 clamp(21px,1.9vw,26px)/1.45 var(--serif);color:var(--slate);border-left:2px solid var(--brass);padding-left:24px;margin:34px 0}
+.about__sig{font-size:14px;color:var(--slate-l)}
+.about__sig b{color:var(--slate);display:block;font-size:15px}
+.seals{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.seal{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--white);border-radius:var(--r);padding:12px 16px;font-size:13px;font-weight:600;color:var(--slate2)}
+.seal .ico{color:var(--brass)}
+
+/* Team */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2.4vw,32px)}
+.member figure{margin:0 0 20px;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--sand)}
+.member img{width:100%;height:100%;object-fit:cover;filter:saturate(.85);transition:transform .8s, filter .5s}
+.member:hover img{transform:scale(1.04);filter:saturate(1)}
+.member h3{font-size:22px;margin-bottom:4px}
+.member .role{font-size:13px;color:var(--brass);font-weight:600;letter-spacing:.02em}
+.member p{font-size:14px;color:var(--slate2);margin:10px 0 0}
+.member a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;margin-top:12px;color:var(--slate)}
+.member a .ico{width:15px;height:15px}
+
+/* Stimmen */
+.voices{background:var(--sand)}
+.voices__grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(20px,2.4vw,32px);margin-top:56px}
+.voice{background:var(--white);border-radius:var(--r);padding:clamp(28px,3vw,42px);display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.voice svg.q{width:34px;height:34px;color:var(--sand3)}
+.voice blockquote{margin:18px 0 0;font:400 18px/1.6 var(--serif);color:var(--slate)}
+.voice--lg blockquote{font-size:clamp(21px,2vw,26px);line-height:1.45}
+.voice footer{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;border-top:1px solid var(--line);padding-top:20px;font-size:14px}
+.voice footer b{display:block}
+.voice footer span{color:var(--slate-l);font-size:13px}
+.voice .meta{font:600 11px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-align:right}
+.rating{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--slate2)}
+.rating .st{display:flex;gap:3px;color:var(--brass)}
+.rating .st svg{width:17px;height:17px;fill:currentColor}
+
+/* Kontakt */
+.contact__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,6vw,100px)}
+.cinfo{list-style:none;padding:0;margin:40px 0 0;display:grid;gap:0}
+.cinfo li{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+.cinfo li:last-child{border-bottom:1px solid var(--line)}
+.cinfo .ico{color:var(--brass);margin-top:3px}
+.cinfo b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-l);font-weight:600;margin-bottom:4px}
+.cinfo a:hover{color:var(--brass)}
+.map{margin-top:30px;border-radius:var(--r);overflow:hidden;background:var(--sand);aspect-ratio:16/8;position:relative}
+.map svg{width:100%;height:100%;display:block}
+.cform{background:var(--paper);border-radius:var(--r);padding:clamp(26px,3.6vw,48px);border:1px solid var(--line)}
+.cform h3{font-size:30px;margin-bottom:8px}
+.cform > p{color:var(--slate2);font-size:15px;margin:0 0 28px}
+.cform .btn{width:100%;margin-top:8px}
+.ok{display:none;margin-top:16px;padding:14px 16px;background:var(--sand);border-radius:var(--r);font-size:14px;font-weight:600}
+.ok.show{display:block}
+
+/* Footer */
+.ftr{background:var(--slate);color:#c3cad0;padding:90px 0 40px}
+.ftr__top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.12)}
+.ftr .logo b{color:var(--white)}
+.ftr .logo small{color:#98a3ac}
+.ftr h4{font:600 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--sand3);margin:0 0 20px}
+.ftr ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:14px}
+.ftr a:hover{color:var(--white)}
+.ftr p{font-size:14px;margin:20px 0 0;max-width:320px}
+.ftr__bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-top:30px;font-size:12.5px;color:#98a3ac}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* Responsive */
+@media (max-width:1180px){
+  .search{grid-template-columns:1fr 1fr 1fr;row-gap:6px}
+  .seg{grid-column:1/-1;justify-self:start;margin:4px}
+  .sfield:nth-of-type(2){border-left:0}
+  .search .btn{grid-column:1/-1;margin:6px 0 0;padding:18px}
+  .steps{grid-template-columns:repeat(3,1fr);row-gap:50px}
+  .steps::before{display:none}
+}
+@media (max-width:1024px){
+  .nav{position:fixed;inset:86px 0 0 0;background:var(--white);flex-direction:column;align-items:flex-start;padding:40px var(--gut);gap:26px;transform:translateX(100%);transition:transform .35s;overflow-y:auto}
+  .nav a{font-size:20px;font-family:var(--serif)}
+  .nav .tel{font-family:var(--sans);font-size:16px}
+  .menu-open .nav{transform:none}
+  .burger{display:flex}
+  .hero{background:linear-gradient(180deg,var(--white) 0%,var(--white) 75%,var(--sand) 75%)}
+  .hero__grid{grid-template-columns:1fr}
+  .hero__text{padding-bottom:0}
+  .hero__media{aspect-ratio:16/10}
+  .search{margin-top:-40px;margin-left:var(--gut);margin-right:var(--gut)}
+  .hero .wrap.s-wrap{padding:0}
+  .objects{grid-template-columns:repeat(2,1fr)}
+  .val__grid,.about__grid,.contact__grid,.process__head{grid-template-columns:1fr}
+  .team{grid-template-columns:repeat(2,1fr)}
+  .voices__grid{grid-template-columns:1fr 1fr}
+  .voice--lg{grid-column:1/-1}
+  .facts__grid{grid-template-columns:repeat(2,1fr)}
+  .ftr__top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  body{font-size:15px}
+  .hdr .wrap{height:72px}
+  .nav{inset:72px 0 0 0}
+  .logo b{font-size:19px}
+  .logo svg{width:34px;height:34px}
+  .search{grid-template-columns:1fr;padding:8px}
+  .sfield{border-left:0;border-top:1px solid var(--line);padding:12px 14px}
+  .sfield:nth-of-type(1){border-top:0}
+  .seg{width:calc(100% - 8px)}
+  .seg button{flex:1}
+  .objects,.team,.voices__grid,.opts{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr 1fr;gap:16px}
+  .member h3{font-size:18px}
+  .member p{display:none}
+  .steps{grid-template-columns:1fr;row-gap:34px}
+  .pstep{display:grid;grid-template-columns:56px 1fr;column-gap:20px;padding:0}
+  .pstep .num{margin:0;grid-row:span 3}
+  .f2{grid-template-columns:1fr}
+  .facts__grid{gap:24px 18px}
+  .about__media img:last-child{margin-bottom:30px}
+  .ftr__top{grid-template-columns:1fr}
+  .voice footer{flex-direction:column;align-items:flex-start}
+  .voice .meta{text-align:left}
+  .mz-badge{font-size:11px;padding:8px 12px;left:10px;bottom:10px}
+  .hero__trust{flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<a class="mz-badge" href="../beispiele.html">← Beispielseite von meuser.biz · Zur Übersicht</a>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Nordlicht Immobilien – Startseite">
+      <svg viewBox="0 0 38 38" aria-hidden="true"><rect x=".75" y=".75" width="36.5" height="36.5" rx="3" fill="none" stroke="#2e3a44" stroke-width="1.5"/><path d="M9 28V17l10-7 10 7v11" fill="none" stroke="#2e3a44" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 4.5v3M27.5 7.5l-1.8 2.2M10.5 7.5l1.8 2.2" stroke="#9a7650" stroke-width="1.5" stroke-linecap="round"/><path d="M16 28v-6h6v6" fill="none" stroke="#9a7650" stroke-width="1.5"/></svg>
+      <span><b>Nordlicht</b><small>Immobilien</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <a href="#objekte">Objekte</a>
+      <a href="#bewertung">Bewertung</a>
+      <a href="#ablauf">Verkaufen</a>
+      <a href="#team">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="tel:+4921511234567" class="tel"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>02151 123 45 67</a>
+      <a href="#bewertung" class="btn">Kostenlos bewerten</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div class="hero__text">
+        <span class="kicker rv">Wohnimmobilien am Niederrhein · seit 2004</span>
+        <h1 class="rv d1" id="hero-title">Ein Zuhause findet man <em>nicht</em> im Vorbeigehen.</h1>
+        <p class="lead rv d2">Wir begleiten Sie beim Kaufen, Verkaufen und Vermieten von Häusern und Wohnungen zwischen Krefeld, Kempen und Kevelaer – mit Ruhe, Erfahrung und echter Ortskenntnis.</p>
+        <div class="hero__trust rv d3">
+          <div class="avs">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=1600&q=80&auto=format&fit=crop" alt="" width="40" height="40">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1600&q=80&auto=format&fit=crop" alt="" width="40" height="40">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1600&q=80&auto=format&fit=crop" alt="" width="40" height="40">
+          </div>
+          <span><b>4,9 / 5</b> aus 187 Bewertungen<br>von Verkäufern und Käufern</span>
+        </div>
+      </div>
+      <div class="hero__media rv d2">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80&auto=format&fit=crop" alt="Modernes Einfamilienhaus mit großen Glasflächen und altem Baumbestand in der Abenddämmerung" fetchpriority="high">
+        <div class="tag"><b>Architektenhaus in Meerbusch</b>Exklusiv bei Nordlicht · 214 m² · 6 Zimmer</div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap s-wrap">
+    <form class="search rv d3" role="search" aria-label="Immobiliensuche" onsubmit="event.preventDefault();document.getElementById('objekte').scrollIntoView();">
+      <div class="seg" role="group" aria-label="Vermarktungsart">
+        <button type="button" aria-pressed="true">Kaufen</button>
+        <button type="button" aria-pressed="false">Mieten</button>
+      </div>
+      <div class="sfield">
+        <label for="s-ort">Ort oder PLZ</label>
+        <input id="s-ort" type="text" placeholder="z. B. Tönisvorst, 47918">
+      </div>
+      <div class="sfield">
+        <label for="s-zi">Zimmer</label>
+        <select id="s-zi"><option>Beliebig</option><option>ab 2</option><option>ab 3</option><option>ab 4</option><option>ab 5</option></select>
+      </div>
+      <div class="sfield">
+        <label for="s-pr">Preis bis</label>
+        <select id="s-pr"><option>Beliebig</option><option>300.000 €</option><option>450.000 €</option><option>600.000 €</option><option>800.000 €</option><option>1.000.000 €</option></select>
+      </div>
+      <button class="btn" type="submit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Suchen</button>
+    </form>
+  </div>
+</section>
+
+<!-- FAKTEN -->
+<section class="facts" aria-label="Nordlicht in Zahlen">
+  <div class="wrap facts__grid">
+    <div class="fact rv"><b>20+</b><span>Jahre Erfahrung am regionalen Immobilienmarkt</span></div>
+    <div class="fact rv d1"><b>640</b><span>erfolgreich vermittelte Häuser und Wohnungen</span></div>
+    <div class="fact rv d2"><b>38 Tage</b><span>durchschnittliche Vermarktungsdauer bis zum Notartermin</span></div>
+    <div class="fact rv d3"><b>98,6 %</b><span>des Angebotspreises im Schnitt erzielt (2025)</span></div>
+  </div>
+</section>
+
+<!-- OBJEKTE -->
+<section class="sec" id="objekte" aria-labelledby="obj-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker rv">Aktuelle Objekte</span>
+        <h2 class="rv d1" id="obj-title">Ausgewählte Häuser<br>und <em>Wohnungen</em></h2>
+      </div>
+      <p class="lead rv d2" style="max-width:420px;margin:0">Viele unserer Objekte vermitteln wir diskret, bevor sie online erscheinen. Tragen Sie sich in unsere Suchkartei ein, um früher informiert zu werden.</p>
+    </div>
+
+    <div class="chips rv" role="group" aria-label="Objekte filtern" id="chips">
+      <button class="chip" type="button" data-f="all" aria-pressed="true">Alle <span class="n"></span></button>
+      <button class="chip" type="button" data-f="kauf" aria-pressed="false">Kaufen <span class="n"></span></button>
+      <button class="chip" type="button" data-f="miete" aria-pressed="false">Mieten <span class="n"></span></button>
+      <button class="chip" type="button" data-f="haus" aria-pressed="false">Häuser <span class="n"></span></button>
+      <button class="chip" type="button" data-f="wohnung" aria-pressed="false">Wohnungen <span class="n"></span></button>
+      <button class="chip" type="button" data-f="neu" aria-pressed="false">Neu im Angebot <span class="n"></span></button>
+    </div>
+
+    <div class="objects" id="objects" aria-live="polite">
+      <article class="obj" data-tags="kauf haus neu">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=80&auto=format&fit=crop" alt="Modernes Einfamilienhaus mit Holzfassade und Einfahrt" loading="lazy">
+          <span class="badge badge--neu">Neu</span><span class="type">Kauf</span>
+          <button class="fav" type="button" aria-pressed="false" aria-label="Objekt merken"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+        </figure>
+        <div class="obj__body">
+          <div class="obj__loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Kempen · St. Hubert</div>
+          <h3><a href="#kontakt">Architektenhaus mit Lärchenfassade und Südgarten</a></h3>
+          <div class="obj__specs">
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h7v8M14 4v6h6"/></svg>186 m²</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V6h12v4"/></svg>6 Zimmer</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V9l7-5 7 5v11"/></svg>620 m² Grund</span>
+          </div>
+          <div class="obj__price"><b>789.000 €</b><small>Baujahr 2019 · A+</small></div>
+        </div>
+      </article>
+
+      <article class="obj" data-tags="kauf haus">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1600&q=80&auto=format&fit=crop" alt="Klinker-Einfamilienhaus mit Doppelgarage" loading="lazy">
+          <span class="type">Kauf</span>
+          <button class="fav" type="button" aria-pressed="false" aria-label="Objekt merken"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+        </figure>
+        <div class="obj__body">
+          <div class="obj__loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Tönisvorst · Vorst</div>
+          <h3><a href="#kontakt">Klinkerhaus mit Doppelgarage in ruhiger Spielstraße</a></h3>
+          <div class="obj__specs">
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h7v8M14 4v6h6"/></svg>164 m²</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V6h12v4"/></svg>5 Zimmer</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V9l7-5 7 5v11"/></svg>540 m² Grund</span>
+          </div>
+          <div class="obj__price"><b>549.000 €</b><small>Baujahr 1998 · C</small></div>
+        </div>
+      </article>
+
+      <article class="obj" data-tags="miete wohnung neu">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1600&q=80&auto=format&fit=crop" alt="Helles Wohnzimmer mit Fischgrätparkett und hohen Fenstern" loading="lazy">
+          <span class="badge badge--neu">Neu</span><span class="type">Miete</span>
+          <button class="fav" type="button" aria-pressed="false" aria-label="Objekt merken"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+        </figure>
+        <div class="obj__body">
+          <div class="obj__loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Krefeld · Bockum</div>
+          <h3><a href="#kontakt">Altbauwohnung mit Fischgrätparkett nahe Stadtwald</a></h3>
+          <div class="obj__specs">
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h7v8M14 4v6h6"/></svg>98 m²</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V6h12v4"/></svg>3 Zimmer</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13M9 21v-6h6v6"/></svg>2. OG · Balkon</span>
+          </div>
+          <div class="obj__price"><b>1.290 € <small style="font-family:var(--sans)">kalt</small></b><small>frei ab 01.01.2027</small></div>
+        </div>
+      </article>
+
+      <article class="obj res" data-tags="kauf haus">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&q=80&auto=format&fit=crop" alt="Weißes Landhaus mit umlaufender Veranda und großem Rasen" loading="lazy">
+          <span class="badge badge--res">Reserviert</span><span class="type">Kauf</span>
+          <button class="fav" type="button" aria-pressed="false" aria-label="Objekt merken"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+        </figure>
+        <div class="obj__body">
+          <div class="obj__loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Meerbusch · Osterath</div>
+          <h3><a href="#kontakt">Landhaus mit Veranda und parkähnlichem Grundstück</a></h3>
+          <div class="obj__specs">
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h7v8M14 4v6h6"/></svg>238 m²</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V6h12v4"/></svg>7 Zimmer</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V9l7-5 7 5v11"/></svg>1.150 m² Grund</span>
+          </div>
+          <div class="obj__price"><b>1.180.000 €</b><small>Baujahr 2006 · B</small></div>
+        </div>
+      </article>
+
+      <article class="obj" data-tags="kauf wohnung">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80&auto=format&fit=crop" alt="Offener Wohnbereich mit Holzwand, Sofa und Küche im Hintergrund" loading="lazy">
+          <span class="type">Kauf</span>
+          <button class="fav" type="button" aria-pressed="false" aria-label="Objekt merken"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+        </figure>
+        <div class="obj__body">
+          <div class="obj__loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Willich · Neersen</div>
+          <h3><a href="#kontakt">Penthouse mit Dachterrasse und Blick ins Grüne</a></h3>
+          <div class="obj__specs">
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h7v8M14 4v6h6"/></svg>132 m²</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V6h12v4"/></svg>4 Zimmer</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13M9 21v-6h6v6"/></svg>DG · Aufzug</span>
+          </div>
+          <div class="obj__price"><b>495.000 €</b><small>Baujahr 2021 · A</small></div>
+        </div>
+      </article>
+
+      <article class="obj" data-tags="miete haus neu">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80&auto=format&fit=crop" alt="Einfamilienhaus mit Satteldach und beleuchteten Fenstern am Abend" loading="lazy">
+          <span class="badge badge--neu">Neu</span><span class="type">Miete</span>
+          <button class="fav" type="button" aria-pressed="false" aria-label="Objekt merken"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+        </figure>
+        <div class="obj__body">
+          <div class="obj__loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Grefrath · Oedt</div>
+          <h3><a href="#kontakt">Familienhaus mit Kamin und Garten am Niersufer</a></h3>
+          <div class="obj__specs">
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h7v8M14 4v6h6"/></svg>148 m²</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V6h12v4"/></svg>5 Zimmer</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V9l7-5 7 5v11"/></svg>480 m² Grund</span>
+          </div>
+          <div class="obj__price"><b>1.950 € <small style="font-family:var(--sans)">kalt</small></b><small>frei ab 01.02.2027</small></div>
+        </div>
+      </article>
+
+      <article class="obj res" data-tags="miete wohnung">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&q=80&auto=format&fit=crop" alt="Helle Wohnung mit Essbereich, rotem Sessel und großen Fenstern" loading="lazy">
+          <span class="badge badge--res">Reserviert</span><span class="type">Miete</span>
+          <button class="fav" type="button" aria-pressed="false" aria-label="Objekt merken"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+        </figure>
+        <div class="obj__body">
+          <div class="obj__loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Viersen · Süchteln</div>
+          <h3><a href="#kontakt">2-Zimmer-Wohnung mit Einbauküche im Ortskern</a></h3>
+          <div class="obj__specs">
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h7v8M14 4v6h6"/></svg>64 m²</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V6h12v4"/></svg>2 Zimmer</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13M9 21v-6h6v6"/></svg>1. OG · EBK</span>
+          </div>
+          <div class="obj__price"><b>690 € <small style="font-family:var(--sans)">kalt</small></b><small>frei ab sofort</small></div>
+        </div>
+      </article>
+
+      <article class="obj" data-tags="kauf haus neu">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1600&q=80&auto=format&fit=crop" alt="Moderne Stadtvilla mit kupferfarbener Fassade und Vorgarten" loading="lazy">
+          <span class="badge badge--neu">Neu</span><span class="type">Kauf</span>
+          <button class="fav" type="button" aria-pressed="false" aria-label="Objekt merken"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+        </figure>
+        <div class="obj__body">
+          <div class="obj__loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Krefeld · Hüls</div>
+          <h3><a href="#kontakt">Neubau-Stadtvilla, KfW 40, schlüsselfertig 2027</a></h3>
+          <div class="obj__specs">
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h7v8M14 4v6h6"/></svg>172 m²</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V6h12v4"/></svg>5 Zimmer</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V9l7-5 7 5v11"/></svg>410 m² Grund</span>
+          </div>
+          <div class="obj__price"><b>865.000 €</b><small>Neubau · A+</small></div>
+        </div>
+      </article>
+
+      <article class="obj" data-tags="kauf wohnung">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&q=80&auto=format&fit=crop" alt="Gemütliches Wohnzimmer mit Bücherregal, Sofa und vielen Pflanzen" loading="lazy">
+          <span class="type">Kauf</span>
+          <button class="fav" type="button" aria-pressed="false" aria-label="Objekt merken"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+        </figure>
+        <div class="obj__body">
+          <div class="obj__loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Tönisvorst · St. Tönis</div>
+          <h3><a href="#kontakt">Gartenwohnung mit Terrasse, ideal für Paare</a></h3>
+          <div class="obj__specs">
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h7v8M14 4v6h6"/></svg>82 m²</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V6h12v4"/></svg>3 Zimmer</span>
+            <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13M9 21v-6h6v6"/></svg>EG · Garten</span>
+          </div>
+          <div class="obj__price"><b>329.000 €</b><small>Baujahr 2012 · B</small></div>
+        </div>
+      </article>
+
+      <p class="empty" id="empty">Aktuell keine passenden Objekte – gerne nehmen wir Ihr Suchprofil auf: <a class="link" href="#kontakt">Suchauftrag anlegen</a></p>
+    </div>
+    <div class="objects-foot"><a href="#kontakt" class="btn btn--line">In die Suchkartei eintragen <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- BEWERTUNG -->
+<section class="sec valuation" id="bewertung" aria-labelledby="val-title">
+  <div class="wrap val__grid">
+    <div>
+      <span class="kicker rv">Kostenlose Immobilienbewertung</span>
+      <h2 class="rv d1" id="val-title">Was ist Ihr Zuhause <em style="color:var(--sand3)">heute</em> wert?</h2>
+      <p class="lead rv d2" style="margin-top:24px">Keine Online-Schätzung aus dem Algorithmus, sondern eine fundierte Einschätzung durch zertifizierte Sachverständige – auf Basis von über 600 eigenen Verkäufen in der Region.</p>
+      <ul class="val__list">
+        <li class="rv"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Erste Werteinschätzung innerhalb von 48 Stunden</li>
+        <li class="rv d1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Vor-Ort-Termin mit schriftlichem Marktwertgutachten</li>
+        <li class="rv d2"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>100 % kostenfrei und ohne Verkaufsverpflichtung</li>
+      </ul>
+      <div class="val__img rv d2"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&q=80&auto=format&fit=crop" alt="Helle, moderne Küche mit Kochinsel und Pendelleuchten" loading="lazy"></div>
+    </div>
+
+    <form class="wizard rv d1" id="wizard" novalidate onsubmit="event.preventDefault()">
+      <div class="wiz__top"><span>Schritt <b id="wiz-n">1</b> von 4</span><span id="wiz-label">Objektart</span></div>
+      <div class="progress" aria-hidden="true"><i id="wiz-bar"></i></div>
+
+      <fieldset class="step active" data-label="Objektart">
+        <legend>Welche Immobilie möchten Sie bewerten lassen?</legend>
+        <p class="hint">Wählen Sie die passende Objektart.</p>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="art" value="efh" required><span><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 27V14l11-8 11 8v13zM13 27v-8h6v8"/></svg>Einfamilienhaus<small>freistehend</small></span></label>
+          <label class="opt"><input type="radio" name="art" value="dhh"><span><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 27V15l8-6 8 6M13 27V15l8-6 8 6v12zM3 27h26"/></svg>Doppel- / Reihenhaus<small>DHH, RMH, REH</small></span></label>
+          <label class="opt"><input type="radio" name="art" value="etw"><span><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 28V5h18v23zM11 9h3M18 9h3M11 14h3M18 14h3M11 19h3M18 19h3M14 28v-4h4v4"/></svg>Eigentumswohnung<small>inkl. Penthouse</small></span></label>
+          <label class="opt"><input type="radio" name="art" value="mfh"><span><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 28V10l7-5 7 5v18M18 28V14h10v14M4 28h24M8 14h2M8 19h2M14 14h0M22 18h2M22 23h2"/></svg>Mehrfamilienhaus<small>ab 3 Einheiten</small></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="step" data-label="Lage & Größe">
+        <legend>Wo liegt die Immobilie und wie groß ist sie?</legend>
+        <p class="hint">Grobe Angaben genügen für die erste Einschätzung.</p>
+        <div class="f2">
+          <div class="f"><label for="w-plz">PLZ</label><input id="w-plz" inputmode="numeric" maxlength="5" placeholder="47918" required></div>
+          <div class="f"><label for="w-ort">Ort</label><input id="w-ort" placeholder="Tönisvorst" required></div>
+        </div>
+        <div class="f"><label for="w-wfl">Wohnfläche <output class="range-out" id="w-wfl-out">140 m²</output></label><input id="w-wfl" type="range" min="30" max="400" step="5" value="140"></div>
+        <div class="f2">
+          <div class="f"><label for="w-zi">Zimmer</label><select id="w-zi"><option>1–2</option><option>3</option><option selected>4</option><option>5</option><option>6+</option></select></div>
+          <div class="f"><label for="w-bj">Baujahr</label><select id="w-bj"><option>vor 1950</option><option>1950–1979</option><option selected>1980–1999</option><option>2000–2015</option><option>nach 2015</option></select></div>
+        </div>
+      </fieldset>
+
+      <fieldset class="step" data-label="Zustand & Anlass">
+        <legend>Wie ist der Zustand und was haben Sie vor?</legend>
+        <p class="hint">Das hilft uns, die Einschätzung passend aufzubereiten.</p>
+        <div class="f"><label for="w-zu">Zustand</label><select id="w-zu"><option>Neuwertig / kernsaniert</option><option selected>Gepflegt</option><option>Renovierungsbedürftig</option><option>Sanierungsbedürftig</option></select></div>
+        <div class="opts" style="margin-top:6px">
+          <label class="opt"><input type="radio" name="anlass" value="verkauf" checked><span>Verkauf geplant<small>in den nächsten 12 Monaten</small></span></label>
+          <label class="opt"><input type="radio" name="anlass" value="info"><span>Nur Information<small>z. B. Erbe, Scheidung, Finanzierung</small></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="step" data-label="Kontakt">
+        <legend>Wohin dürfen wir Ihre Bewertung senden?</legend>
+        <p class="hint">Ihre Daten behandeln wir vertraulich und geben sie nicht weiter.</p>
+        <div class="f2">
+          <div class="f"><label for="w-name">Name</label><input id="w-name" autocomplete="name" required></div>
+          <div class="f"><label for="w-tel">Telefon</label><input id="w-tel" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="f"><label for="w-mail">E-Mail</label><input id="w-mail" type="email" autocomplete="email" required></div>
+        <label class="consent"><input type="checkbox" id="w-ok" required> Ich stimme der Verarbeitung meiner Angaben zur Erstellung der Bewertung gemäß Datenschutzerklärung zu.</label>
+      </fieldset>
+
+      <div class="step" data-label="Fertig" id="wiz-done">
+        <div class="done" role="status">
+          <div class="ring"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></div>
+          <h3>Vielen Dank!</h3>
+          <p>Wir melden uns innerhalb von 48 Stunden mit Ihrer ersten Werteinschätzung. (Demo – es wurden keine Daten gesendet.)</p>
+        </div>
+      </div>
+
+      <p class="err" id="wiz-err" role="alert"></p>
+      <div class="wiz__nav" id="wiz-nav">
+        <button type="button" class="back" id="wiz-back" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Zurück</button>
+        <span class="spacer"></span>
+        <button type="button" class="btn" id="wiz-next">Weiter <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section class="sec" id="ablauf" aria-labelledby="ablauf-title">
+  <div class="wrap">
+    <div class="process__head">
+      <div>
+        <span class="kicker rv">Ihr Verkauf mit Nordlicht</span>
+        <h2 class="rv d1" id="ablauf-title">Fünf Schritte bis<br>zur <em>Schlüsselübergabe</em></h2>
+      </div>
+      <p class="lead rv d2">Ein Immobilienverkauf ist selten Routine – für Sie. Für uns ist er Handwerk. Sie haben von Anfang an eine feste Ansprechperson, die jeden Schritt transparent mit Ihnen abstimmt.</p>
+    </div>
+    <ol class="steps" style="list-style:none;padding:0;margin:0">
+      <li class="pstep rv"><span class="num">1</span><h3>Bewertung</h3><p>Besichtigung vor Ort, Analyse von Lage, Zustand und aktuellen Vergleichsverkäufen.</p><span class="dur">Woche 1</span></li>
+      <li class="pstep rv d1"><span class="num">2</span><h3>Unterlagen</h3><p>Wir beschaffen Grundbuchauszug, Energieausweis, Baupläne und Teilungserklärung.</p><span class="dur">Woche 1–2</span></li>
+      <li class="pstep rv d2"><span class="num">3</span><h3>Inszenierung</h3><p>Architekturfotografie, Drohnenaufnahmen, 360°-Rundgang und ein hochwertiges Exposé.</p><span class="dur">Woche 2–3</span></li>
+      <li class="pstep rv d3"><span class="num">4</span><h3>Besichtigungen</h3><p>Nur geprüfte Interessenten mit Finanzierungsnachweis – in Einzelterminen, nicht im Pulk.</p><span class="dur">Woche 3–6</span></li>
+      <li class="pstep rv d4"><span class="num">5</span><h3>Notar &amp; Übergabe</h3><p>Kaufvertragsentwurf, Notartermin und protokollierte Übergabe inklusive Zählerstände.</p><span class="dur">Woche 6–10</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ÜBER UNS -->
+<section class="sec about" aria-labelledby="about-title">
+  <div class="wrap about__grid">
+    <div class="about__media rv">
+      <img src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=1600&q=80&auto=format&fit=crop" alt="Weißes Holzhaus mit rotem Dach und bepflanztem Vorgarten" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1600&q=80&auto=format&fit=crop" alt="Marmor-Arbeitsplatte in einer hellen Küche mit frischen Zitronen" loading="lazy">
+    </div>
+    <div>
+      <span class="kicker rv">Über Nordlicht</span>
+      <h2 class="rv d1" id="about-title">Inhabergeführt.<br>Regional. <em>Persönlich.</em></h2>
+      <p class="lead rv d2" style="margin-top:24px">Seit 2004 vermitteln wir Wohnimmobilien am Niederrhein. Wir kennen die Straßen, die Schulen, die Bodenrichtwerte – und oft auch die Nachbarn. Diese Nähe ist unser größter Vorteil für Sie.</p>
+      <p class="about__quote rv d2">„Wir verkaufen nicht jedes Haus. Aber jedes Haus, das wir verkaufen, verkaufen wir so, als wäre es unser eigenes.“</p>
+      <div class="about__sig rv"><b>Heiner Vossen</b>Gründer &amp; Geschäftsführer</div>
+      <div class="seals rv d1">
+        <span class="seal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg>Zertifizierte Sachverständige (DIN EN ISO/IEC 17024)</span>
+        <span class="seal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Vermögensschadenhaftpflicht</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec" id="team" aria-labelledby="team-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker rv">Das Team</span>
+        <h2 class="rv d1" id="team-title">Menschen, die <em>zuhören</em></h2>
+      </div>
+      <p class="lead rv d2" style="max-width:420px;margin:0">Acht Kolleginnen und Kollegen in unserem Büro in Tönisvorst – vier davon stellen wir Ihnen hier vor.</p>
+    </div>
+    <div class="team">
+      <article class="member rv">
+        <figure><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=1600&q=80&auto=format&fit=crop" alt="Porträt Heiner Vossen" loading="lazy"></figure>
+        <h3>Heiner Vossen</h3><div class="role">Gründer · Immobilienökonom (IREBS)</div>
+        <p>Über 25 Jahre am Markt, Schwerpunkt Einfamilienhäuser und Nachlassimmobilien.</p>
+        <a href="mailto:vossen@example.de"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>vossen@example.de</a>
+      </article>
+      <article class="member rv d1">
+        <figure><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1600&q=80&auto=format&fit=crop" alt="Porträt Katharina Esser" loading="lazy"></figure>
+        <h3>Katharina Esser</h3><div class="role">Sachverständige · Prokuristin</div>
+        <p>Erstellt unsere Marktwertgutachten und verantwortet den Bereich Bewertung.</p>
+        <a href="mailto:esser@example.de"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>esser@example.de</a>
+      </article>
+      <article class="member rv d2">
+        <figure><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1600&q=80&auto=format&fit=crop" alt="Porträt Martin Lenzen" loading="lazy"></figure>
+        <h3>Martin Lenzen</h3><div class="role">Makler · Krefeld &amp; Meerbusch</div>
+        <p>Spezialist für Eigentumswohnungen, Neubauprojekte und Kapitalanlagen.</p>
+        <a href="mailto:lenzen@example.de"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>lenzen@example.de</a>
+      </article>
+      <article class="member rv d3">
+        <figure><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=1600&q=80&auto=format&fit=crop" alt="Porträt Julia Terhoeven" loading="lazy"></figure>
+        <h3>Julia Terhoeven</h3><div class="role">Vermietung &amp; Kundenservice</div>
+        <p>Ihre erste Ansprechpartnerin für Mietobjekte und Besichtigungstermine.</p>
+        <a href="mailto:terhoeven@example.de"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>terhoeven@example.de</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- STIMMEN -->
+<section class="sec voices" aria-labelledby="voices-title">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:0">
+      <div>
+        <span class="kicker rv">Kundenstimmen</span>
+        <h2 class="rv d1" id="voices-title">Was unsere Kunden <em>sagen</em></h2>
+      </div>
+      <div class="rating rv d2"><span class="st" aria-label="4,9 von 5 Sternen"><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6L18.4 21 12 17.3 5.6 21l1.7-6.8L2 9.6 9 9z"/></svg></span><span><b>4,9</b> aus 187 Bewertungen</span></div>
+    </div>
+    <div class="voices__grid">
+      <figure class="voice voice--lg rv">
+        <div>
+          <svg class="q" viewBox="0 0 34 34" aria-hidden="true"><path d="M4 26V17c0-6 3-10 9-11v4c-3 1-4.5 3-4.5 6H13v10zM20 26V17c0-6 3-10 9-11v4c-3 1-4.5 3-4.5 6H29v10z" fill="currentColor"/></svg>
+          <blockquote>Nach dem Tod meiner Mutter mussten wir ihr Haus in Vorst verkaufen. Herr Vossen hat sich nicht nur um alles gekümmert, sondern uns auch Zeit gelassen. Verkauft nach fünf Wochen – zu einem Preis, den wir nicht erwartet hatten.</blockquote>
+        </div>
+        <footer><div><b>Familie Hermes</b><span>Verkauf Einfamilienhaus, Tönisvorst</span></div><span class="meta">Verkauft<br>in 36 Tagen</span></footer>
+      </figure>
+      <figure class="voice rv d1">
+        <div>
+          <svg class="q" viewBox="0 0 34 34" aria-hidden="true"><path d="M4 26V17c0-6 3-10 9-11v4c-3 1-4.5 3-4.5 6H13v10zM20 26V17c0-6 3-10 9-11v4c-3 1-4.5 3-4.5 6H29v10z" fill="currentColor"/></svg>
+          <blockquote>Das Exposé war so gut, dass wir uns schon vor der Besichtigung verliebt hatten. Ehrliche Beratung, auch zu den Schwachstellen.</blockquote>
+        </div>
+        <footer><div><b>Anna &amp; Tim R.</b><span>Kauf Wohnung, Krefeld</span></div><span class="meta">Käufer</span></footer>
+      </figure>
+      <figure class="voice rv d2">
+        <div>
+          <svg class="q" viewBox="0 0 34 34" aria-hidden="true"><path d="M4 26V17c0-6 3-10 9-11v4c-3 1-4.5 3-4.5 6H13v10zM20 26V17c0-6 3-10 9-11v4c-3 1-4.5 3-4.5 6H29v10z" fill="currentColor"/></svg>
+          <blockquote>Frau Terhoeven hat für unsere Wohnung zuverlässige Mieter gefunden – mit Bonitätsprüfung und sauberem Übergabeprotokoll.</blockquote>
+        </div>
+        <footer><div><b>Dr. Jürgen P.</b><span>Vermietung, Kempen</span></div><span class="meta">Vermieter</span></footer>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="sec" id="kontakt" aria-labelledby="kontakt-title">
+  <div class="wrap contact__grid">
+    <div>
+      <span class="kicker rv">Kontakt</span>
+      <h2 class="rv d1" id="kontakt-title">Besuchen Sie uns<br>in <em>Tönisvorst</em></h2>
+      <p class="lead rv d2" style="margin-top:22px">Ob erstes Kennenlernen, Bewertung oder Besichtigung: Wir nehmen uns Zeit. Parkplätze finden Sie direkt vor dem Büro.</p>
+      <ul class="cinfo rv d2">
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><b>Büro</b>Hochstraße 27 · 47918 Tönisvorst</div></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><b>Telefon</b><a href="tel:+4921511234567">02151 123 45 67</a></div></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><div><b>E-Mail</b><a href="mailto:info@example.de">info@example.de</a></div></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Öffnungszeiten</b>Mo – Fr 9:00 – 18:00 Uhr · Sa 10:00 – 13:00 Uhr<br>Termine außerhalb nach Vereinbarung</div></li>
+      </ul>
+      <div class="map rv" role="img" aria-label="Schematische Karte: Büro in Tönisvorst zwischen Krefeld und Kempen">
+        <svg viewBox="0 0 640 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="640" height="320" fill="#f1ebe1"/>
+          <path d="M0 250 C120 230 180 270 300 240 S520 200 640 230" fill="none" stroke="#d9cdb8" stroke-width="22"/>
+          <path d="M-10 90 L650 150" stroke="#fff" stroke-width="10"/>
+          <path d="M210 -10 L260 330" stroke="#fff" stroke-width="7"/>
+          <path d="M420 -10 C400 120 450 200 430 330" stroke="#fff" stroke-width="7"/>
+          <path d="M0 40 L640 300" stroke="#fff" stroke-width="4" stroke-dasharray="1 0"/>
+          <g fill="#e5dac8"><rect x="60" y="150" width="70" height="50" rx="3"/><rect x="300" y="40" width="80" height="60" rx="3"/><rect x="480" y="60" width="90" height="50" rx="3"/><rect x="280" y="170" width="60" height="40" rx="3"/></g>
+          <g font-family="Manrope, sans-serif" font-size="13" fill="#6b7680" font-weight="600" letter-spacing="1.5"><text x="40" y="60">KEMPEN</text><text x="520" y="290">KREFELD</text><text x="470" y="40">WILLICH</text></g>
+          <circle cx="320" cy="135" r="34" fill="#2e3a44" opacity=".08"/>
+          <path d="M320 100c-12 0-21 9-21 20 0 15 21 34 21 34s21-19 21-34c0-11-9-20-21-20z" fill="#2e3a44"/>
+          <circle cx="320" cy="120" r="7" fill="#f1ebe1"/>
+          <text x="350" y="128" font-family="Playfair Display, serif" font-size="18" fill="#2e3a44">Nordlicht · Tönisvorst</text>
+        </svg>
+      </div>
+    </div>
+    <form class="cform rv d1" onsubmit="event.preventDefault();document.getElementById('c-ok').classList.add('show');">
+      <h3>Schreiben Sie uns</h3>
+      <p>Wir antworten in der Regel am selben Werktag.</p>
+      <div class="f"><label for="c-anl">Ihr Anliegen</label>
+        <select id="c-anl"><option>Ich möchte verkaufen</option><option>Ich suche eine Immobilie</option><option>Ich möchte vermieten</option><option>Frage zu einem Objekt</option><option>Sonstiges</option></select></div>
+      <div class="f2">
+        <div class="f"><label for="c-name">Name</label><input id="c-name" autocomplete="name" required></div>
+        <div class="f"><label for="c-tel">Telefon</label><input id="c-tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="f"><label for="c-mail">E-Mail</label><input id="c-mail" type="email" autocomplete="email" required></div>
+      <div class="f"><label for="c-msg">Nachricht</label><textarea id="c-msg" rows="5" placeholder="Erzählen Sie uns kurz von Ihrem Vorhaben …"></textarea></div>
+      <label class="consent"><input type="checkbox" required> Ich habe die Datenschutzhinweise gelesen und bin mit der Kontaktaufnahme einverstanden.</label>
+      <button class="btn" type="submit">Nachricht senden <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="ok" id="c-ok" role="status">Vielen Dank – wir melden uns zeitnah bei Ihnen. (Demo – es wurde nichts gesendet.)</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__top">
+      <div>
+        <a href="#top" class="logo" aria-label="Nordlicht Immobilien">
+          <svg viewBox="0 0 38 38" aria-hidden="true"><rect x=".75" y=".75" width="36.5" height="36.5" rx="3" fill="none" stroke="#e5dac8" stroke-width="1.5"/><path d="M9 28V17l10-7 10 7v11" fill="none" stroke="#e5dac8" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 4.5v3M27.5 7.5l-1.8 2.2M10.5 7.5l1.8 2.2" stroke="#cdbb9f" stroke-width="1.5" stroke-linecap="round"/><path d="M16 28v-6h6v6" fill="none" stroke="#cdbb9f" stroke-width="1.5"/></svg>
+          <span><b>Nordlicht</b><small>Immobilien</small></span>
+        </a>
+        <p>Ihr inhabergeführtes Maklerbüro für Wohnimmobilien in Tönisvorst, Kempen, Krefeld, Willich, Meerbusch und Viersen.</p>
+      </div>
+      <div>
+        <h4>Angebot</h4>
+        <ul><li><a href="#objekte">Kaufen</a></li><li><a href="#objekte">Mieten</a></li><li><a href="#ablauf">Verkaufen</a></li><li><a href="#bewertung">Immobilienbewertung</a></li></ul>
+      </div>
+      <div>
+        <h4>Regionen</h4>
+        <ul><li>Tönisvorst &amp; Kempen</li><li>Krefeld &amp; Meerbusch</li><li>Willich &amp; Viersen</li><li>Grefrath &amp; Kevelaer</li></ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul><li>Hochstraße 27<br>47918 Tönisvorst</li><li><a href="tel:+4921511234567">02151 123 45 67</a></li><li><a href="mailto:info@example.de">info@example.de</a></li></ul>
+      </div>
+    </div>
+    <div class="ftr__bot">
+      <span>© 2026 Nordlicht Immobilien GmbH · Impressum · Datenschutz · Widerrufsbelehrung</span>
+      <span>Fiktives Beispielunternehmen – Design &amp; Umsetzung: meuser.biz</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr'),burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  function onScroll(){hdr.classList.toggle('scrolled',window.scrollY>10);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  burger.addEventListener('click',function(){var o=document.body.classList.toggle('menu-open');burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');});});
+
+  // Kaufen/Mieten toggle (optisch)
+  var seg=document.querySelectorAll('.seg button');
+  seg.forEach(function(b){b.addEventListener('click',function(){seg.forEach(function(x){x.setAttribute('aria-pressed',x===b);});});});
+
+  // Favoriten
+  document.querySelectorAll('.fav').forEach(function(f){f.addEventListener('click',function(){var on=f.getAttribute('aria-pressed')!=='true';f.setAttribute('aria-pressed',on);f.setAttribute('aria-label',on?'Gemerkt':'Objekt merken');});});
+
+  // Filter
+  var chips=document.querySelectorAll('#chips .chip'),objs=document.querySelectorAll('.obj'),empty=document.getElementById('empty');
+  chips.forEach(function(c){
+    var f=c.dataset.f,n=0;objs.forEach(function(o){if(f==='all'||o.dataset.tags.split(' ').indexOf(f)>-1)n++;});
+    c.querySelector('.n').textContent=n;
+    c.addEventListener('click',function(){
+      chips.forEach(function(x){x.setAttribute('aria-pressed',x===c);});
+      var shown=0;
+      objs.forEach(function(o){var ok=f==='all'||o.dataset.tags.split(' ').indexOf(f)>-1;o.classList.toggle('hide',!ok);if(ok){shown++;o.classList.add('in');}});
+      empty.classList.toggle('show',shown===0);
+    });
+  });
+
+  // Bewertungs-Wizard
+  var steps=document.querySelectorAll('#wizard .step'),cur=0,last=steps.length-1;
+  var nEl=document.getElementById('wiz-n'),lab=document.getElementById('wiz-label'),bar=document.getElementById('wiz-bar');
+  var back=document.getElementById('wiz-back'),next=document.getElementById('wiz-next'),err=document.getElementById('wiz-err'),navW=document.getElementById('wiz-nav');
+  var rng=document.getElementById('w-wfl'),out=document.getElementById('w-wfl-out');
+  rng.addEventListener('input',function(){out.textContent=rng.value+(rng.value==='400'?'+':'')+' m²';});
+  function show(i){
+    steps.forEach(function(s,j){s.classList.toggle('active',j===i);});
+    cur=i;err.textContent='';
+    nEl.textContent=Math.min(i+1,4);lab.textContent=steps[i].dataset.label;
+    bar.style.width=((i+1)/4*100)+'%';
+    back.hidden=(i===0||i===last);
+    next.innerHTML=(i===last-1?'Bewertung anfordern':'Weiter')+' <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+    if(i===last){navW.style.display='none';document.querySelector('.wiz__top').style.visibility='hidden';}
+  }
+  function valid(i){
+    var s=steps[i],req=s.querySelectorAll('[required]'),ok=true;
+    if(s.querySelector('input[type=radio][required]')){var name=s.querySelector('input[type=radio][required]').name;if(!s.querySelector('input[name="'+name+'"]:checked')){err.textContent='Bitte wählen Sie eine Objektart aus.';return false;}}
+    req.forEach(function(r){if(r.type==='radio')return;if(!r.checkValidity()){ok=false;}});
+    if(!ok){err.textContent='Bitte füllen Sie die markierten Pflichtfelder aus.';var bad=s.querySelector(':invalid:not([type=radio])');if(bad)bad.focus();}
+    return ok;
+  }
+  next.addEventListener('click',function(){if(!valid(cur))return;show(cur+1);});
+  back.addEventListener('click',function(){show(cur-1);});
+  steps[0].querySelectorAll('input[type=radio]').forEach(function(r){r.addEventListener('change',function(){err.textContent='';});});
+
+  // Reveal
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+    // Objektkarten ebenfalls einblenden
+    objs.forEach(function(o,i){o.classList.add('rv');o.style.transitionDelay=(i%3*0.08)+'s';io.observe(o);});
+  } else {
+    document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
+  }
+})();
+</script>
+</body>
+</html>
