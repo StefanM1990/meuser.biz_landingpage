@@ -83,10 +83,10 @@
   /* ---------- Kennzahlen */
   .stats { max-width:1400px; margin:0 auto; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); }
   .stat { padding:34px 28px; border-left:1px solid rgba(255,255,255,0.08); }
-  .stat:first-child { border-left:none; }
+  .stat:first-child { border-left:none; padding-left:0; }
   .stat-num { font-family:'Bricolage Grotesque','Inter',sans-serif; font-size:clamp(34px,3.6vw,48px); font-weight:800; letter-spacing:-1px; line-height:1; background:linear-gradient(120deg,#fff 20%,#5FA8FF); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .stat-label { margin-top:10px; color:#94A3B8; font-size:14.5px; line-height:1.5; }
-  @media (max-width:900px) { .stats { grid-template-columns:repeat(2, minmax(0,1fr)); } .stat:nth-child(3) { border-left:none; } .stat:nth-child(n+3) { border-top:1px solid rgba(255,255,255,0.08); } }
+  @media (max-width:900px) { .stats { grid-template-columns:repeat(2, minmax(0,1fr)); } .stat:nth-child(3) { border-left:none; padding-left:0; } .stat:nth-child(n+3) { border-top:1px solid rgba(255,255,255,0.08); } }
   @media (max-width:420px) { .stat { padding:26px 16px; } }
 
   /* ---------- Leistungen (Bento) */
@@ -200,7 +200,7 @@
 
   <!-- NAV -->
   <header style="{{ navStyle }}">
-    <div style="max-width:1400px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 5%; gap:16px;">
+    <div style="width:90%; max-width:1400px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:16px;">
       <a href="#start" aria-label="meuser.biz – zum Seitenanfang" style="display:flex; align-items:center;">
         <img src="./assets/meuser-logo.png" alt="meuser.biz Logo" style="height:{{ logoHeight }}px; width:auto; display:block;">
       </a>
@@ -237,7 +237,7 @@
     <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px); background-size:64px 64px; -webkit-mask-image:radial-gradient(ellipse 80% 70% at 70% 40%, #000 30%, transparent 75%); mask-image:radial-gradient(ellipse 80% 70% at 70% 40%, #000 30%, transparent 75%); pointer-events:none;"></div>
     <div style="position:absolute; top:-220px; right:-120px; width:760px; height:760px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.32), transparent 65%); pointer-events:none; animation:blobFloat 14s ease-in-out infinite;"></div>
     <div style="position:absolute; bottom:-260px; left:-200px; width:640px; height:640px; border-radius:50%; background:radial-gradient(circle, rgba(95,168,255,0.14), transparent 65%); pointer-events:none;"></div>
-    <div class="hero-grid" style="position:relative; z-index:2; max-width:1400px; margin:0 auto; padding:clamp(64px,8vw,112px) 5% clamp(64px,7vw,96px);">
+    <div class="hero-grid" style="position:relative; z-index:2; width:90%; max-width:1400px; margin:0 auto; padding:clamp(64px,8vw,112px) 0 clamp(64px,7vw,96px);">
       <div style="animation:fadeInUp 0.9s ease both;">
         <div class="eyebrow-pill"><span class="live-dot"></span>Webdesign &amp; Web-Entwicklung</div>
         <h1 style="font-size:clamp(36px,3.7vw,56px); line-height:1.04; font-weight:800; margin:26px 0 26px; letter-spacing:-1.8px; color:#fff;">Websites, die wirken.<br><span style="background:linear-gradient(90deg,#fff,#5FA8FF 45%,#B9D8FF); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:gradientShift 8s ease infinite;"><span style="white-space:nowrap;">Web-Apps,</span> die entlasten.</span></h1>
@@ -464,7 +464,7 @@
   <!-- ABLAUF -->
   <section id="ablauf" style="background:#F8FAFC; padding:110px 5%; border-top:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; position:relative; overflow:hidden;">
     <div style="position:absolute; top:-120px; left:-80px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.12), transparent 70%); pointer-events:none;"></div>
-    <div style="max-width:1300px; margin:0 auto; position:relative; z-index:1;">
+    <div style="max-width:1400px; margin:0 auto; position:relative; z-index:1;">
       <div data-reveal="true" style="text-align:center; margin-bottom:72px; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
         <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">UNSER ABLAUF</div>
         <h2 style="font-size:clamp(32px,4vw,46px); line-height:1.1; font-weight:800; margin:0; letter-spacing:-1px;">In vier Schritten zur neuen Website.</h2>
@@ -493,7 +493,7 @@
   </section>
 
   <!-- UEBER UNS -->
-  <section id="ueber-uns" style="max-width:1400px; margin:0 auto; padding:100px 5%; display:grid; grid-template-columns:{{ ueberUnsGridCols }}; gap:56px; align-items:center; position:relative;">
+  <section id="ueber-uns" style="width:90%; max-width:1400px; margin:0 auto; padding:100px 0; display:grid; grid-template-columns:{{ ueberUnsGridCols }}; gap:56px; align-items:center; position:relative;">
     <div style="position:absolute; top:10%; left:-10%; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.14), transparent 70%); pointer-events:none; z-index:0;"></div>
     <div data-reveal="true" style="border-radius:16px; overflow:hidden; border:1px solid #E2E8F0; box-shadow:0 24px 50px -20px rgba(15,23,42,0.25); opacity:0; transform:translateX(-30px) rotate(-0.4deg); transition:opacity 0.8s ease, transform 0.8s ease;">
       <img src="./assets/img/arbeitsplatz.jpg" alt="Arbeitsplatz mit Laptop und Programmcode" loading="lazy" width="1200" height="800" style="width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block;">
@@ -615,7 +615,7 @@
 
   <!-- FAQ -->
   <section id="faq" style="background:#fff; padding:100px 5%; border-bottom:1px solid #E2E8F0;">
-    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:{{ faqGridCols }}; gap:56px; align-items:start;">
+    <div style="max-width:1400px; margin:0 auto; display:grid; grid-template-columns:{{ faqGridCols }}; gap:56px; align-items:start;">
       <div data-reveal="true" style="opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
         <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">FAQ</div>
         <h2 style="font-size:clamp(30px,4vw,38px); line-height:1.15; font-weight:800; margin:0 0 18px; letter-spacing:-0.5px;">Häufige Fragen</h2>
@@ -718,8 +718,8 @@
     <div style="max-width:1400px; margin:0 auto; position:relative; z-index:1;">
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:48px; padding-bottom:50px; border-bottom:1px solid #1E293B;">
         <div>
-          <div style="font-size:22px; font-weight:800; color:#fff; margin-bottom:16px;">meuser<span style="color:#007BFF;">.biz</span></div>
-          <p style="color:#94A3BB; font-size:14px; line-height:1.7; max-width:280px;">Modern Webservices – Homepages &amp; Web-Apps.</p>
+          <a href="#start" aria-label="meuser.biz – zum Seitenanfang" style="display:inline-block; margin-bottom:14px;"><img src="./assets/meuser-logo-hell.png" alt="meuser.biz – Modern Webservices" width="180" height="60" loading="lazy" style="height:60px; width:auto; display:block;"></a>
+          <p style="color:#94A3BB; font-size:14px; line-height:1.7; max-width:280px; margin:0;">Modern Webservices – Homepages &amp; Web-Apps.</p>
         </div>
         <div>
           <div style="color:#fff; font-weight:700; font-size:14px; margin-bottom:16px;">Kontakt</div>
