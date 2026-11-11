@@ -43,8 +43,8 @@
       <div style="display:flex; align-items:center;">
         <img src="./assets/meuser-logo.png" alt="meuser.biz Logo" style="height:{{ logoHeight }}px; width:auto; display:block;">
       </div>
-      <div style="display:{{ desktopNavDisplay }}; align-items:center; gap:12px; flex-wrap:wrap;">
-      <nav style="display:flex; align-items:center; gap:4px; flex-wrap:wrap; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); padding:6px; border-radius:999px; border:1px solid rgba(255,255,255,0.6); box-shadow:0 10px 30px -10px rgba(15,23,42,0.2);">
+      <div style="display:{{ desktopNavDisplay }}; align-items:center; gap:12px; flex-wrap:nowrap;">
+      <nav style="display:flex; align-items:center; gap:4px; flex-wrap:nowrap; white-space:nowrap; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); padding:6px; border-radius:999px; border:1px solid rgba(255,255,255,0.6); box-shadow:0 10px 30px -10px rgba(15,23,42,0.2);">
         <a href="#start" style="{{ navStart }}" style-hover="color:#fff; background:linear-gradient(135deg,#0F172A,#1e293b);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v9h13v-9"></path></svg>Start</a>
         <a href="#leistungen" style="{{ navLeistungen }}" style-hover="color:#0F172A; background:rgba(255,255,255,0.7);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-3 11.2c.4.25.6.7.6 1.15V16h4.8v-.65c0-.45.2-.9.6-1.15A6 6 0 0 0 12 3Z"></path><path d="M9 18h6M10 21h4"></path></svg>Leistungen</a>
         <a href="#ueber-uns" style="{{ navUeberUns }}" style-hover="color:#0F172A; background:rgba(255,255,255,0.7);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"></path></svg>Über uns</a>
@@ -540,7 +540,7 @@ class Component extends DCLogic {
       if (s !== this.state.scrolled) this.setState({ scrolled: s });
     };
     this._onResize = () => {
-      const m = window.innerWidth < 1180;
+      const m = window.innerWidth < 1280;
       if (m !== this.state.isMobile) this.setState({ isMobile: m, mobileMenuOpen: m ? this.state.mobileMenuOpen : false });
     };
     window.addEventListener('scroll', this._onScroll);
