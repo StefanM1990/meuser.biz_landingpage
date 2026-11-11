@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team – Bausteine – meuser.biz</title>
+<meta name="description" content="Team: 8 Gestaltungsvarianten, wie meuser.biz sie für Websites umsetzt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Shell-Schrift (Inter) bleibt; weitere Schriften der Varianten in DIESEN einen Link mit aufnehmen -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Caveat:wght@600&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================================
+     SHELL – nicht verändern. Gilt für alle Kategorieseiten gleich.
+     ===================================================================== */
+  :root { --ink:#0F172A; --muted:#64748B; --body:#475569; --line:#E2E8F0; --soft:#F8FAFC; --blue:#007BFF; --blue-l:#5FA8FF; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 150px; }
+  body.shell { margin:0; font-family:'Inter',sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; }
+  .shell a { color:inherit; text-decoration:none; }
+  .sh-header { position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.9); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+  .sh-bar { max-width:1400px; margin:0 auto; padding:12px 5%; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .sh-bar img { height:44px; width:auto; display:block; }
+  .sh-actions { display:flex; gap:8px; }
+  .sh-btn { display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font:600 14px 'Inter',sans-serif; white-space:nowrap; transition:.25s; }
+  .sh-btn.ghost { background:rgba(15,23,42,.05); } .sh-btn.ghost:hover { background:rgba(15,23,42,.1); }
+  .sh-btn.blue { background:linear-gradient(135deg,#007BFF,#0062cc); color:#fff !important; box-shadow:0 6px 16px -4px rgba(0,123,255,.6); }
+  .sh-cats { max-width:1400px; margin:0 auto; padding:0 5% 12px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; }
+  .sh-cats::-webkit-scrollbar { display:none; }
+  .sh-cats a { flex-shrink:0; font:600 13px 'Inter',sans-serif; color:var(--body); padding:7px 13px; border-radius:999px; border:1px solid var(--line); background:#fff; transition:.2s; }
+  .sh-cats a:hover { border-color:var(--ink); color:var(--ink); }
+  .sh-cats a[aria-current="page"] { background:var(--ink); border-color:var(--ink); color:#fff; }
+  .sh-hero { background:linear-gradient(120deg,#0F172A,#132238,#0F172A); color:#fff; padding:72px 5% 64px; position:relative; overflow:hidden; }
+  .sh-hero::after { content:""; position:absolute; top:-160px; right:-120px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle,rgba(0,123,255,.35),transparent 70%); pointer-events:none; }
+  .sh-hero-in { max-width:1400px; margin:0 auto; position:relative; z-index:1; }
+  .sh-eyebrow { color:var(--blue-l); font:700 13px 'Inter',sans-serif; letter-spacing:2px; margin-bottom:14px; }
+  .sh-hero h1 { font:800 clamp(32px,5vw,52px)/1.08 'Inter',sans-serif; letter-spacing:-1px; margin:0 0 16px; }
+  .sh-hero p { font:400 clamp(16px,2vw,18px)/1.6 'Inter',sans-serif; color:#CBD5E1; max-width:680px; margin:0; }
+  .sh-index { max-width:1400px; margin:0 auto; padding:32px 5% 0; display:flex; flex-wrap:wrap; gap:8px; }
+  .sh-index a { font:600 13px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:7px 12px; border-radius:8px; transition:.2s; }
+  .sh-index a:hover { color:var(--blue); border-color:var(--blue); }
+  .sh-index a b { color:var(--blue); margin-right:6px; }
+  .sh-main { max-width:1400px; margin:0 auto; padding:24px 5% 96px; }
+  .variant { padding:56px 0 0; }
+  .v-head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:20px; }
+  .v-num { font:700 12px 'Inter',sans-serif; letter-spacing:1.5px; color:var(--blue); margin-bottom:6px; }
+  .v-head h2 { font:800 24px/1.2 'Inter',sans-serif; letter-spacing:-.3px; margin:0 0 6px; }
+  .v-head p { font:400 15px/1.6 'Inter',sans-serif; color:var(--body); margin:0; max-width:720px; }
+  .v-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; padding:0; list-style:none; }
+  .v-tags li { font:600 12px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:4px 10px; border-radius:999px; }
+  .v-switch { display:inline-flex; background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:4px; gap:2px; }
+  .v-switch button { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font:600 13px 'Inter',sans-serif; color:var(--muted); padding:7px 12px; border-radius:7px; transition:.2s; }
+  .v-switch button:hover { color:var(--ink); }
+  .v-switch button[aria-pressed="true"] { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(15,23,42,.15); }
+  .v-switch button:focus-visible { outline:2px solid var(--blue); }
+  .stage { background:#EEF2F6; background-image:radial-gradient(rgba(15,23,42,.08) 1px, transparent 1px); background-size:18px 18px; border:1px solid var(--line); border-radius:16px; padding:28px; overflow:hidden; }
+  .frame { /* Jede Variante lebt in diesem Rahmen */
+    container: demo / inline-size;
+    position:relative; contain:layout paint; /* position:fixed in Varianten bleibt im Rahmen */
+    width:var(--w,100%); max-width:100%; min-height:var(--h,auto);
+    margin:0 auto; background:#fff; border-radius:10px; overflow:hidden;
+    box-shadow:0 1px 2px rgba(15,23,42,.06), 0 18px 40px -20px rgba(15,23,42,.35);
+    transition:width .45s cubic-bezier(.2,.8,.2,1);
+  }
+  .sh-cta { background:var(--soft); border-top:1px solid var(--line); padding:80px 5%; text-align:center; }
+  .sh-cta h2 { font:800 clamp(26px,4vw,36px) 'Inter',sans-serif; letter-spacing:-.5px; margin:0 0 12px; }
+  .sh-cta p { font:400 16px/1.6 'Inter',sans-serif; color:var(--muted); max-width:560px; margin:0 auto 26px; }
+  .sh-cta .sh-btn { border-radius:8px; padding:14px 28px; font-size:15px; }
+  .sh-footer { background:var(--ink); color:#94A3B8; font:400 14px 'Inter',sans-serif; padding:28px 5%; text-align:center; }
+  .sh-footer a { color:#fff; }
+  @media (max-width:640px) {
+    .sh-bar img { height:36px; } .sh-btn .long { display:none; }
+    .stage { padding:12px; border-radius:12px; }
+    .v-switch { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .frame { transition:none; } }
+
+  /* =====================================================================
+     VARIANTEN – CSS jeder Variante NUR unter ihrer ID (#v01, #v02 …).
+     Responsiv ausschließlich mit @container demo (…) – NICHT @media.
+     ===================================================================== */
+
+  /* ---------- v01 · Foto-Raster mit Hover-Info (Architektur) ---------- */
+  #v01 { --ink:#121212; --mut:#5C5C5C; background:#fff; color:var(--ink); font-family:'Manrope',sans-serif; padding:clamp(28px,5cqi,72px) clamp(18px,5cqi,72px); }
+  #v01 .hd { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:end; margin-bottom:clamp(24px,4cqi,44px); }
+  #v01 .eyebrow { font:700 12px 'Manrope',sans-serif; letter-spacing:.22em; text-transform:uppercase; color:var(--mut); }
+  #v01 h3 { font:800 clamp(38px,6.4cqi,82px)/.92 'Manrope',sans-serif; letter-spacing:-.05em; margin:10px 0 0; }
+  #v01 .hd p { margin:0; justify-self:end; max-width:42ch; color:var(--mut); font-size:16px; line-height:1.6; }
+  #v01 .grid { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(10px,1.4cqi,18px); }
+  #v01 .p { position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:4px; background:#E7E5E1; }
+  #v01 .p img { width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.05); transition:filter .5s, transform .9s cubic-bezier(.2,.8,.2,1); }
+  #v01 .p:hover img, #v01 .p:focus-within img { filter:none; transform:scale(1.045); }
+  #v01 .info { position:absolute; left:0; right:0; bottom:0; padding:48px 16px 16px; color:#fff; background:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.82)); }
+  #v01 .info b { display:block; font:700 17px/1.2 'Manrope',sans-serif; }
+  #v01 .info .r { display:block; font-size:13px; color:#E5E5E5; margin-top:3px; }
+  #v01 .more { display:grid; grid-template-rows:0fr; transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1); }
+  #v01 .more > div { overflow:hidden; }
+  #v01 .p:hover .more, #v01 .p:focus-within .more { grid-template-rows:1fr; }
+  #v01 .more dl { margin:12px 0 10px; display:grid; grid-template-columns:auto 1fr; gap:4px 10px; font-size:13px; }
+  #v01 .more dt { color:#BDBDBD; }
+  #v01 .more dd { margin:0; }
+  #v01 .lk { display:inline-flex; align-items:center; gap:6px; font:700 13px 'Manrope',sans-serif; border-bottom:1px solid #fff; padding-bottom:2px; }
+  #v01 .lk:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+  #v01 .hire { aspect-ratio:3/4; border-radius:4px; background:var(--ink); color:#fff; padding:22px; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; }
+  #v01 .hire::after { content:""; position:absolute; right:-40%; bottom:-30%; width:110%; aspect-ratio:1; border-radius:50%; border:1px solid rgba(255,255,255,.14); box-shadow:0 0 0 40px rgba(255,255,255,.03); pointer-events:none; }
+  #v01 .plus { width:52px; height:52px; border-radius:50%; border:1.5px dashed rgba(255,255,255,.6); display:grid; place-items:center; }
+  #v01 .plus svg { width:22px; height:22px; stroke:#fff; stroke-width:1.6; }
+  #v01 .hire small { font:700 11px 'Manrope',sans-serif; letter-spacing:.2em; text-transform:uppercase; color:#F2B8A2; }
+  #v01 .hire h4 { font:800 clamp(19px,2cqi,24px)/1.15 'Manrope',sans-serif; letter-spacing:-.02em; margin:8px 0 6px; }
+  #v01 .hire p { margin:0; font-size:13px; color:#C9C9C9; }
+  #v01 .hb { position:relative; z-index:1; align-self:flex-start; margin-top:14px; display:inline-flex; gap:8px; align-items:center; background:#fff; color:var(--ink); font:700 13px 'Manrope',sans-serif; padding:10px 16px; border-radius:999px; transition:transform .2s; }
+  #v01 .hb:hover { transform:translateX(3px); }
+  #v01 .hb:focus-visible { outline:2px solid #F2B8A2; outline-offset:3px; }
+  @container demo (max-width:600px) {
+    #v01 .grid { grid-template-columns:repeat(2,1fr); }
+    #v01 .hd { grid-template-columns:1fr; }
+    #v01 .hd p { justify-self:start; }
+    #v01 .info { padding:36px 12px 12px; }
+    #v01 .info b { font-size:15px; }
+    #v01 .info .r { font-size:12px; }
+    #v01 .hire { padding:16px; }
+    #v01 .plus { width:40px; height:40px; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v01 .p img, #v01 .more { transition:none; } }
+
+  /* ---------- v02 · Editorial-Portraits (Kreativagentur) ---------- */
+  #v02 { --bg:#0E0E0E; --ink:#F2EFEA; --mut:#A8A29A; --acc:#EE6A43;
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(32px,6cqi,88px) clamp(20px,5cqi,72px) clamp(40px,7cqi,104px); }
+  #v02 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:clamp(32px,5cqi,64px); }
+  #v02 .eyebrow { font:600 12px 'Inter',sans-serif; letter-spacing:.2em; text-transform:uppercase; color:var(--acc); }
+  #v02 h3 { font:400 clamp(42px,7.4cqi,100px)/.92 'Fraunces',serif; letter-spacing:-.04em; margin:14px 0 0; }
+  #v02 h3 em { font-style:italic; color:var(--acc); }
+  #v02 .hd p { margin:0; max-width:34ch; color:var(--mut); font-size:15px; line-height:1.6; }
+  #v02 .row { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,3cqi,44px); }
+  #v02 .row > li:nth-child(2) { margin-top:clamp(0px,7cqi,96px); }
+  #v02 .row > li:nth-child(3) { margin-top:clamp(0px,2.5cqi,32px); }
+  #v02 .ph { position:relative; aspect-ratio:3/4; overflow:hidden; }
+  #v02 .ph img { width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(.25) contrast(1.06); transition:transform 1s cubic-bezier(.2,.8,.2,1), filter .6s; }
+  #v02 li:hover .ph img { transform:scale(1.04); filter:none; }
+  #v02 .no { position:absolute; top:14px; left:16px; font:italic 400 15px 'Fraunces',serif; color:#fff; text-shadow:0 1px 8px rgba(0,0,0,.5); }
+  #v02 h4 { font:400 clamp(30px,3.7cqi,48px)/1 'Fraunces',serif; letter-spacing:-.025em; margin:20px 0 8px; }
+  #v02 h4 i { color:var(--acc); }
+  #v02 .rl { font:600 12px 'Inter',sans-serif; letter-spacing:.16em; text-transform:uppercase; color:var(--mut); }
+  #v02 .row p { margin:14px 0 0; font-size:15px; line-height:1.6; color:#D6D1C9; max-width:36ch; }
+  @container demo (max-width:700px) {
+    #v02 .row { grid-template-columns:1fr; gap:40px; }
+    #v02 .row > li:nth-child(n) { margin-top:0; }
+    #v02 .ph { aspect-ratio:1/1; }
+    #v02 .ph img { object-position:50% 25%; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v02 .ph img { transition:none; } }
+
+  /* ---------- v03 · Karten mit Kontakt-Icons (Kanzlei) ---------- */
+  #v03 { --bg:#F8F6F1; --ink:#1D2A24; --mut:#56605B; --acc:#1F4D3A; --line:#E3DED3;
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(32px,5cqi,72px) clamp(18px,5cqi,72px); }
+  #v03 .hd { text-align:center; max-width:640px; margin:0 auto clamp(28px,4cqi,48px); }
+  #v03 .eyebrow { font:600 12px 'Inter',sans-serif; letter-spacing:.24em; text-transform:uppercase; color:var(--acc); }
+  #v03 h3 { font:600 clamp(32px,4.4cqi,52px)/1.08 'Cormorant Garamond',serif; margin:10px 0 10px; }
+  #v03 .hd p { margin:0; color:var(--mut); font-size:15.5px; line-height:1.6; }
+  #v03 .grid { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  #v03 .cd { background:#fff; border:1px solid var(--line); display:flex; flex-direction:column; transition:box-shadow .3s, transform .3s; }
+  #v03 .cd:hover { box-shadow:0 22px 40px -28px rgba(29,42,36,.5); transform:translateY(-3px); }
+  #v03 .ph { aspect-ratio:4/5; overflow:hidden; background:#E9E5DC; }
+  #v03 .ph img { width:100%; height:100%; object-fit:cover; display:block; }
+  #v03 .bd { padding:20px 20px 0; flex:1; }
+  #v03 h4 { font:600 25px/1.1 'Cormorant Garamond',serif; margin:0 0 6px; }
+  #v03 .tt { font-size:13.5px; line-height:1.45; color:var(--mut); margin:0; }
+  #v03 .fg { list-style:none; margin:14px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:6px; }
+  #v03 .fg li { font:500 11.5px 'Inter',sans-serif; color:var(--acc); border:1px solid rgba(31,77,58,.35); padding:3px 9px; border-radius:999px; }
+  #v03 .ct { display:flex; gap:8px; padding:16px 20px 20px; margin-top:16px; border-top:1px solid var(--line); }
+  #v03 .ct a { width:40px; height:40px; border-radius:50%; border:1px solid var(--line); display:grid; place-items:center; color:var(--acc); transition:.2s; }
+  #v03 .ct a:hover { background:var(--acc); border-color:var(--acc); color:#fff; }
+  #v03 .ct a:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  #v03 .ct svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+  @container demo (max-width:1000px) { #v03 .grid { grid-template-columns:repeat(2,1fr); } }
+  @container demo (max-width:540px) {
+    #v03 .grid { grid-template-columns:1fr; gap:14px; }
+    #v03 .cd { display:grid; grid-template-columns:112px 1fr; }
+    #v03 .ph { aspect-ratio:auto; grid-row:span 2; }
+    #v03 .bd { padding:14px 14px 0; }
+    #v03 h4 { font-size:22px; }
+    #v03 .fg { display:none; }
+    #v03 .ct { padding:10px 14px 14px; margin-top:8px; border-top:0; gap:6px; }
+    #v03 .ct a { width:36px; height:36px; }
+  }
+
+  /* ---------- v04 · Organigramm Vorstand (Verein) ---------- */
+  #v04 { --g:#0B6E4F; --ink:#10231C; --mut:#4C6158; --line:#A9CBBE;
+    background:#F1F7F4; color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(28px,5cqi,64px) clamp(16px,4cqi,56px); }
+  #v04 .hd { display:flex; align-items:center; gap:18px; margin-bottom:clamp(28px,4cqi,44px); }
+  #v04 .crest { width:58px; height:66px; flex-shrink:0; }
+  #v04 .eyebrow { font:700 12px 'Space Grotesk',sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--g); }
+  #v04 h3 { font:700 clamp(26px,3.6cqi,40px)/1.1 'Space Grotesk',sans-serif; letter-spacing:-.025em; margin:4px 0 4px; }
+  #v04 .hd p { margin:0; color:var(--mut); font-size:14.5px; }
+  #v04 .lvl { list-style:none; margin:0; padding:0; display:flex; justify-content:center; position:relative; }
+  #v04 .lvl + .lvl { padding-top:56px; }
+  #v04 .lvl + .lvl::before { content:""; position:absolute; top:28px; left:calc(50% / var(--n)); right:calc(50% / var(--n)); border-top:2px solid var(--line); }
+  #v04 .lvl + .lvl::after { content:""; position:absolute; top:0; left:50%; height:28px; border-left:2px solid var(--line); }
+  #v04 .lvl > li { flex:1 1 0; min-width:0; position:relative; display:flex; justify-content:center; }
+  #v04 .lvl + .lvl > li::before { content:""; position:absolute; top:-28px; left:50%; height:28px; border-left:2px solid var(--line); }
+  #v04 .nd { all:unset; box-sizing:border-box; cursor:pointer; display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px; padding:12px 10px; border-radius:14px; width:100%; max-width:220px; transition:background .2s, box-shadow .2s; }
+  #v04 .nd:hover { background:#fff; }
+  #v04 .nd[aria-pressed="true"] { background:#fff; box-shadow:0 0 0 2px var(--g), 0 14px 28px -18px rgba(11,110,79,.55); }
+  #v04 .nd:focus-visible { outline:3px solid var(--g); outline-offset:2px; }
+  #v04 .av { width:64px; height:64px; border-radius:50%; background:var(--c); color:#fff; display:grid; place-items:center; font:700 18px 'Space Grotesk',sans-serif; box-shadow:0 0 0 4px #F1F7F4, 0 0 0 6px var(--line); flex-shrink:0; }
+  #v04 .lvl:first-child .av { width:80px; height:80px; font-size:22px; }
+  #v04 .tx2 { display:flex; flex-direction:column; gap:2px; }
+  #v04 .nd b { font:700 15px/1.25 'Space Grotesk',sans-serif; }
+  #v04 .nd span.r { font-size:13px; color:var(--mut); line-height:1.35; }
+  #v04 .det { margin:clamp(28px,4cqi,44px) auto 0; max-width:720px; background:#fff; border:1px solid #D5E6DE; border-radius:18px; padding:20px 22px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  #v04 .det .av { box-shadow:none; }
+  #v04 .det .tx { flex:1; min-width:200px; }
+  #v04 .det b { display:block; font:700 18px 'Space Grotesk',sans-serif; }
+  #v04 .det .rl { font-size:14px; color:var(--g); font-weight:600; }
+  #v04 .det p { margin:6px 0 0; font-size:14px; color:var(--mut); line-height:1.5; }
+  #v04 .det .ac { display:flex; gap:8px; flex-wrap:wrap; }
+  #v04 .det .ac a { display:inline-flex; align-items:center; gap:8px; font:600 14px 'Inter',sans-serif; padding:10px 14px; border-radius:10px; background:var(--g); color:#fff; }
+  #v04 .det .ac a + a { background:#E3EFEA; color:var(--ink); }
+  #v04 .det .ac a:focus-visible { outline:3px solid var(--ink); outline-offset:2px; }
+  #v04 .det .ac svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  @container demo (max-width:680px) {
+    #v04 .tree { border-left:2px solid var(--line); margin-left:30px; padding-left:0; }
+    #v04 .lvl, #v04 .lvl + .lvl { flex-direction:column; padding-top:6px; }
+    #v04 .lvl + .lvl::before, #v04 .lvl + .lvl::after, #v04 .lvl + .lvl > li::before { display:none; }
+    #v04 .lvl > li { max-width:none; justify-content:flex-start; }
+    #v04 .lvl > li::after { content:""; position:absolute; left:0; top:50%; width:14px; border-top:2px solid var(--line); }
+    #v04 .nd { flex-direction:row; text-align:left; max-width:none; margin-left:14px; gap:12px; padding:8px 10px; }
+    #v04 .nd .tx2 { display:flex; flex-direction:column; }
+    #v04 .av, #v04 .lvl:first-child .av { width:48px; height:48px; font-size:15px; }
+    #v04 .hd { align-items:flex-start; }
+    #v04 .crest { width:44px; height:50px; }
+  }
+
+  /* ---------- v05 · Team-Karussell (Hotel) ---------- */
+  #v05 { --bg:#1E2B24; --ink:#F3EEE4; --mut:#BFC8BF; --br:#D9AE7E;
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(32px,5cqi,72px) 0 clamp(32px,5cqi,64px) clamp(20px,5cqi,72px); overflow:hidden; }
+  #v05 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; padding-right:clamp(20px,5cqi,72px); margin-bottom:28px; }
+  #v05 .eyebrow { font:600 12px 'Inter',sans-serif; letter-spacing:.2em; text-transform:uppercase; color:var(--br); }
+  #v05 h3 { font:400 clamp(30px,4.4cqi,54px)/1.04 'Fraunces',serif; letter-spacing:-.025em; margin:12px 0 0; max-width:16ch; }
+  #v05 h3 em { font-style:italic; color:var(--br); }
+  #v05 .ctl { display:flex; gap:10px; }
+  #v05 .ctl button { all:unset; cursor:pointer; width:50px; height:50px; border-radius:50%; border:1px solid rgba(243,238,228,.35); display:grid; place-items:center; transition:.25s; }
+  #v05 .ctl button:hover:not(:disabled) { background:var(--br); border-color:var(--br); color:var(--bg); }
+  #v05 .ctl button:disabled { opacity:.35; cursor:default; }
+  #v05 .ctl button:focus-visible { outline:2px solid var(--br); outline-offset:3px; }
+  #v05 .ctl svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+  #v05 .sc { list-style:none; margin:0; padding:0 clamp(20px,5cqi,72px) 6px 0; display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; overscroll-behavior-x:contain; }
+  #v05 .sc::-webkit-scrollbar { display:none; }
+  #v05 .sc:focus-visible { outline:2px solid var(--br); outline-offset:4px; }
+  #v05 .cd { flex:0 0 clamp(228px,25cqi,290px); scroll-snap-align:start; }
+  #v05 .ph { aspect-ratio:4/5; border-radius:14px; overflow:hidden; background:#2C3B33; }
+  #v05 .ph img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s cubic-bezier(.2,.8,.2,1); }
+  #v05 .cd:hover .ph img { transform:scale(1.05); }
+  #v05 .rl { display:block; margin-top:16px; font:600 11.5px 'Inter',sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--br); }
+  #v05 h4 { font:400 23px/1.15 'Fraunces',serif; margin:6px 0 8px; }
+  #v05 .cd p { margin:0; font-size:14px; line-height:1.55; color:var(--mut); }
+  #v05 .cd p b { color:var(--ink); font-weight:600; }
+  #v05 .pg { height:2px; background:rgba(243,238,228,.16); margin:28px clamp(20px,5cqi,72px) 0 0; border-radius:2px; overflow:hidden; }
+  #v05 .pg i { display:block; height:100%; width:30%; background:var(--br); transition:width .3s, margin-left .3s; }
+  @container demo (max-width:520px) { #v05 .ctl button { width:44px; height:44px; } #v05 .cd { flex-basis:76%; } }
+  @media (prefers-reduced-motion:reduce) { #v05 .ph img, #v05 .pg i { transition:none; } }
+
+  /* ---------- v06 · Runde Avatare mit Rollen (Arztpraxis) ---------- */
+  #v06 { --bg:#F3F8FB; --ink:#0D2436; --mut:#4A6072; --acc:#0E6BA8;
+    background:var(--bg); color:var(--ink); font-family:'Manrope',sans-serif; padding:clamp(32px,5cqi,72px) clamp(18px,5cqi,64px); }
+  #v06 .hd { text-align:center; margin-bottom:clamp(26px,4cqi,40px); }
+  #v06 .eyebrow { font:700 12px 'Manrope',sans-serif; letter-spacing:.16em; text-transform:uppercase; color:var(--acc); }
+  #v06 h3 { font:800 clamp(28px,3.8cqi,44px)/1.1 'Manrope',sans-serif; letter-spacing:-.03em; margin:8px 0 18px; }
+  #v06 .tabs { display:inline-flex; gap:4px; background:#fff; padding:5px; border-radius:999px; box-shadow:0 1px 2px rgba(13,36,54,.08); flex-wrap:wrap; justify-content:center; }
+  #v06 .tabs button { all:unset; cursor:pointer; font:700 14px 'Manrope',sans-serif; color:var(--mut); padding:9px 16px; border-radius:999px; transition:.2s; }
+  #v06 .tabs button[aria-pressed="true"] { background:var(--acc); color:#fff; }
+  #v06 .tabs button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  #v06 .grid { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(5,1fr); gap:clamp(18px,3cqi,32px) 16px; }
+  #v06 .grid li { text-align:center; animation:v06-in .45s ease both; }
+  #v06 .grid li[hidden] { display:none; }
+  #v06 .av { width:clamp(104px,11cqi,140px); aspect-ratio:1; margin:0 auto 14px; border-radius:50%; overflow:hidden; box-shadow:0 0 0 5px #fff, 0 0 0 7px transparent; transition:box-shadow .3s; }
+  #v06 .grid li:hover .av { box-shadow:0 0 0 5px #fff, 0 0 0 7px var(--acc); }
+  #v06 .av img { width:100%; height:100%; object-fit:cover; display:block; }
+  #v06 h4 { font:700 16px/1.3 'Manrope',sans-serif; margin:0; }
+  #v06 .rl { display:block; font-size:13.5px; color:var(--acc); font-weight:600; margin-top:3px; }
+  #v06 .lg { display:inline-block; margin-top:8px; font-size:12px; color:var(--mut); background:#fff; border:1px solid #DCE7EF; padding:3px 9px; border-radius:999px; }
+  #v06 .note { margin:clamp(28px,4cqi,44px) auto 0; max-width:640px; display:flex; gap:12px; align-items:center; justify-content:center; text-align:left; background:#fff; border-radius:14px; padding:14px 18px; font-size:14px; color:var(--mut); }
+  #v06 .note svg { width:22px; height:22px; flex-shrink:0; fill:none; stroke:var(--acc); stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  #v06 .note b { color:var(--ink); }
+  @keyframes v06-in { from { opacity:0; transform:translateY(8px); } }
+  @container demo (max-width:900px) { #v06 .grid { grid-template-columns:repeat(3,1fr); } }
+  @container demo (max-width:520px) { #v06 .grid { grid-template-columns:repeat(2,1fr); } #v06 h4 { font-size:15px; } }
+  @media (prefers-reduced-motion:reduce) { #v06 .grid li { animation:none; } }
+
+  /* ---------- v07 · Gründer-Spotlight (Kaffeerösterei) ---------- */
+  #v07 { --bg:#EFE5D6; --ink:#24180F; --mut:#5E4C3D; --acc:#9A3F16;
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(32px,6cqi,88px) clamp(20px,6cqi,88px); }
+  #v07 .lay { display:grid; grid-template-columns:5fr 7fr; gap:clamp(28px,6cqi,88px); align-items:center; }
+  #v07 .ph { position:relative; }
+  #v07 .ph img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; border-radius:2px; filter:sepia(.18) contrast(1.04); }
+  #v07 .stamp { position:absolute; right:-28px; top:-28px; width:112px; height:112px; animation:v07-spin 28s linear infinite; }
+  #v07 .stamp text { font:600 10.5px 'Inter',sans-serif; letter-spacing:.24em; fill:var(--ink); }
+  #v07 .stamp .c { fill:var(--bg); }
+  #v07 .cap { position:absolute; left:-12px; bottom:22px; background:var(--ink); color:var(--bg); font:600 12px 'Inter',sans-serif; letter-spacing:.06em; padding:8px 12px; }
+  #v07 .eyebrow { font:600 12px 'Inter',sans-serif; letter-spacing:.2em; text-transform:uppercase; color:var(--acc); }
+  #v07 blockquote { margin:18px 0 0; }
+  #v07 blockquote p { margin:0; font:400 clamp(26px,3.5cqi,46px)/1.14 'Fraunces',serif; letter-spacing:-.02em; }
+  #v07 blockquote em { font-style:italic; color:var(--acc); }
+  #v07 .bio { margin:20px 0 0; font-size:16px; line-height:1.65; color:var(--mut); max-width:56ch; }
+  #v07 .sig { display:block; margin-top:14px; font:600 44px/1 'Caveat',cursive; color:var(--ink); transform:rotate(-3deg); transform-origin:left; }
+  #v07 .facts { margin:28px 0 0; padding:20px 0 0; border-top:1px solid rgba(36,24,15,.18); display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  #v07 .facts div { display:flex; flex-direction:column-reverse; justify-content:flex-end; gap:4px; }
+  #v07 .facts dt { font-size:13px; color:var(--mut); }
+  #v07 .facts dd { margin:0; font:600 30px/1 'Fraunces',serif; }
+  #v07 .co { display:flex; align-items:center; gap:14px; margin-top:24px; background:rgba(255,255,255,.5); border-radius:999px; padding:6px 18px 6px 6px; width:max-content; max-width:100%; }
+  #v07 .co img { width:52px; height:52px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  #v07 .co b { display:block; font-size:14px; }
+  #v07 .co span { font-size:13px; color:var(--mut); }
+  @keyframes v07-spin { to { transform:rotate(360deg); } }
+  @container demo (max-width:760px) {
+    #v07 .lay { grid-template-columns:1fr; }
+    #v07 .ph { max-width:420px; }
+    #v07 .stamp { right:-8px; top:-18px; width:92px; height:92px; }
+    #v07 .cap { left:0; }
+  }
+  @container demo (max-width:440px) { #v07 .facts dd { font-size:24px; } #v07 .co { border-radius:16px; } }
+  @media (prefers-reduced-motion:reduce) { #v07 .stamp { animation:none; } }
+
+  /* ---------- v08 · Team-Liste zum Ausklappen (Ingenieurbüro) ---------- */
+  #v08 { --ink:#0A0A0A; --mut:#595959; --line:#E4E4E4; --acc:#C2410C;
+    background:#fff; color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(28px,5cqi,72px) clamp(18px,5cqi,72px); }
+  #v08 .hd { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:end; margin-bottom:clamp(24px,4cqi,40px); }
+  #v08 .mono { font:500 12px 'IBM Plex Mono',monospace; color:var(--mut); letter-spacing:.04em; }
+  #v08 h3 { font:700 clamp(30px,4.4cqi,54px)/1 'Space Grotesk',sans-serif; letter-spacing:-.04em; margin:10px 0 0; }
+  #v08 .hd p { margin:0; color:var(--mut); font-size:15px; line-height:1.6; max-width:44ch; justify-self:end; }
+  #v08 .list { list-style:none; margin:0; padding:0; border-top:1.5px solid var(--ink); }
+  #v08 .list > li { border-bottom:1px solid var(--line); }
+  #v08 .row { all:unset; box-sizing:border-box; cursor:pointer; width:100%; display:grid; grid-template-columns:56px 1.4fr 1.2fr 1fr 36px; gap:12px; align-items:center; padding:20px 6px; transition:background .2s; }
+  #v08 .row:hover { background:#FAFAF9; }
+  #v08 .row:focus-visible { outline:2px solid var(--acc); outline-offset:-2px; }
+  #v08 .no, #v08 .lc { font:500 13px 'IBM Plex Mono',monospace; color:var(--mut); }
+  #v08 .nm b { display:block; font:600 clamp(17px,1.8cqi,21px)/1.25 'Space Grotesk',sans-serif; letter-spacing:-.01em; transition:color .2s; }
+  #v08 .row:hover .nm b, #v08 .row[aria-expanded="true"] .nm b { color:var(--acc); }
+  #v08 .nm .rs { display:none; font-size:13.5px; color:var(--mut); margin-top:2px; }
+  #v08 .rl { font-size:15px; color:var(--mut); }
+  #v08 .ic { width:32px; height:32px; border-radius:50%; border:1px solid var(--ink); position:relative; justify-self:end; transition:background .25s, transform .35s; }
+  #v08 .ic::before, #v08 .ic::after { content:""; position:absolute; left:50%; top:50%; width:12px; height:1.5px; background:var(--ink); transform:translate(-50%,-50%); transition:background .25s; }
+  #v08 .ic::after { transform:translate(-50%,-50%) rotate(90deg); }
+  #v08 .row[aria-expanded="true"] .ic { background:var(--ink); transform:rotate(45deg); }
+  #v08 .row[aria-expanded="true"] .ic::before, #v08 .row[aria-expanded="true"] .ic::after { background:#fff; }
+  #v08 .pn { display:grid; grid-template-rows:0fr; visibility:hidden; transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1), visibility 0s linear .45s; }
+  #v08 .pn.open { grid-template-rows:1fr; visibility:visible; transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1), visibility 0s; }
+  #v08 .pn > div { overflow:hidden; }
+  #v08 .in { display:grid; grid-template-columns:120px 1.4fr 1fr; gap:24px; padding:4px 6px 28px 74px; }
+  #v08 .in img { width:120px; aspect-ratio:1; object-fit:cover; display:block; filter:grayscale(1); }
+  #v08 .in p { margin:0; font-size:15px; line-height:1.65; color:#2B2B2B; }
+  #v08 .in dl { margin:0; display:grid; grid-template-columns:auto 1fr; gap:6px 14px; font:400 13px 'IBM Plex Mono',monospace; align-content:start; }
+  #v08 .in dt { color:var(--mut); }
+  #v08 .in dd { margin:0; }
+  #v08 .in a { color:var(--acc); border-bottom:1px solid currentColor; }
+  #v08 .in a:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  @container demo (max-width:760px) {
+    #v08 .hd { grid-template-columns:1fr; }
+    #v08 .hd p { justify-self:start; }
+    #v08 .row { grid-template-columns:36px 1fr 32px; padding:16px 2px; }
+    #v08 .rl, #v08 .lc { display:none; }
+    #v08 .nm .rs { display:block; }
+    #v08 .in { grid-template-columns:88px 1fr; padding:0 2px 22px 48px; gap:16px; }
+    #v08 .in img { width:88px; }
+    #v08 .in dl { grid-column:1 / -1; }
+  }
+  @container demo (max-width:420px) { #v08 .in { padding-left:2px; } }
+  @media (prefers-reduced-motion:reduce) { #v08 .pn, #v08 .pn.open, #v08 .ic { transition:none; } }
+
+</style>
+</head>
+<body class="shell">
+
+<header class="sh-header">
+  <div class="sh-bar">
+    <a href="../../Meuster%20Landing%20Page.dc.html" aria-label="meuser.biz Startseite"><img src="../../assets/meuser-logo.png" alt="meuser.biz – Modern Webservices"></a>
+    <div class="sh-actions">
+      <a class="sh-btn ghost" href="../../beispiele.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>Alle<span class="long"> Beispiele</span></span></a>
+      <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Anfrage</a>
+    </div>
+  </div>
+  <nav class="sh-cats" aria-label="Kategorien">
+    <a href="../../beispiele.html#websites">Komplette Websites</a>
+    <a href="navigation.html">Navigation &amp; Menüs</a>
+    <a href="header.html">Header &amp; Hero</a>
+    <a href="footer.html">Footer</a>
+    <a href="leistungen.html">Leistungen &amp; Features</a>
+    <a href="preise.html">Preistabellen</a>
+    <a href="stimmen.html">Kundenstimmen</a>
+    <a href="team.html">Team</a>
+    <a href="galerie.html">Galerien</a>
+    <a href="kontakt.html">Kontakt &amp; Formulare</a>
+    <a href="faq.html">FAQ</a>
+    <a href="cta.html">Call-to-Action</a>
+    <a href="kennzahlen.html">Kennzahlen &amp; Abläufe</a>
+  </nav>
+</header>
+
+<section class="sh-hero">
+  <div class="sh-hero-in">
+    <div class="sh-eyebrow">BAUSTEINE · 8 VARIANTEN</div>
+    <h1>Team</h1>
+    <p>Menschen schaffen Vertrauen. Acht Wege, Ihr Team sympathisch, kompetent und passend zu Ihrer Branche vorzustellen – vom Foto-Raster bis zum Organigramm.</p>
+  </div>
+</section>
+
+<nav class="sh-index" aria-label="Varianten auf dieser Seite">
+  <!-- je Variante: <a href="#v01-wrap"><b>01</b>Name</a> -->
+  <a href="#v01-wrap"><b>01</b>Foto-Raster mit Hover-Info</a>
+  <a href="#v02-wrap"><b>02</b>Editorial-Portraits</a>
+  <a href="#v03-wrap"><b>03</b>Karten mit Kontakt-Icons</a>
+  <a href="#v04-wrap"><b>04</b>Organigramm Vorstand</a>
+  <a href="#v05-wrap"><b>05</b>Team-Karussell</a>
+  <a href="#v06-wrap"><b>06</b>Runde Avatare mit Rollen</a>
+  <a href="#v07-wrap"><b>07</b>Gründer-Spotlight mit Zitat</a>
+  <a href="#v08-wrap"><b>08</b>Minimale Team-Liste zum Ausklappen</a>
+</nav>
+
+<main class="sh-main">
+
+  <!-- ===== VARIANTE (Muster, für jede Variante wiederholen) =====
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Name der Variante</h2>
+        <p>Ein bis zwei Sätze: Wie wirkt sie, wofür eignet sie sich?</p>
+        <ul class="v-tags"><li>Restaurant</li><li>Hotel</li><li>mit Dropdown</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame" style="--h:420px">
+        <div id="v01"> … Baustein … </div>
+      </div>
+    </div>
+  </section>
+  ============================================================== -->
+
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Foto-Raster mit Hover-Info</h2>
+        <p>Schwarzweiß-Portraits im ruhigen Raster; beim Darüberfahren oder Fokussieren werden die Bilder farbig und zeigen Schwerpunkt und Profil-Link. Inklusive „Wir stellen ein“-Karte.</p>
+        <ul class="v-tags"><li>Architektur</li><li>Planungsbüro</li><li>Agentur</li><li>mit Stellenkarte</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v01">
+          <div class="hd">
+            <div><span class="eyebrow">Studio Kerkhoff Architekten · Krefeld</span><h3>Das Büro.</h3></div>
+            <p>Sieben Menschen, ein gemeinsamer Anspruch: Häuser, die gut altern. Wir planen Wohnhäuser, Umbauten und Gewerbebauten am Niederrhein.</p>
+          </div>
+          <ul class="grid">
+            <li class="p"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Jonas Kerkhoff" loading="lazy">
+              <div class="info"><b>Jonas Kerkhoff</b><span class="r">Gründer · Architekt BDA</span><div class="more"><div><dl><dt>Fokus</dt><dd>Wohnhäuser, Entwurf</dd><dt>Seit</dt><dd>2009</dd></dl><a class="lk" href="#" onclick="return false">Profil ansehen →</a></div></div></div></li>
+            <li class="p"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Clara Wenning" loading="lazy">
+              <div class="info"><b>Clara Wenning</b><span class="r">Partnerin · Innenarchitektin</span><div class="more"><div><dl><dt>Fokus</dt><dd>Interior, Material</dd><dt>Seit</dt><dd>2013</dd></dl><a class="lk" href="#" onclick="return false">Profil ansehen →</a></div></div></div></li>
+            <li class="p"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Herbert Lohmann" loading="lazy">
+              <div class="info"><b>Herbert Lohmann</b><span class="r">Bauleitung</span><div class="more"><div><dl><dt>Fokus</dt><dd>Ausschreibung, Baustelle</dd><dt>Seit</dt><dd>2011</dd></dl><a class="lk" href="#" onclick="return false">Profil ansehen →</a></div></div></div></li>
+            <li class="p"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Mira Sander" loading="lazy">
+              <div class="info"><b>Mira Sander</b><span class="r">Visualisierung · 3D</span><div class="more"><div><dl><dt>Fokus</dt><dd>Renderings, Modellbau</dd><dt>Seit</dt><dd>2020</dd></dl><a class="lk" href="#" onclick="return false">Profil ansehen →</a></div></div></div></li>
+            <li class="p"><img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Felix Haas" loading="lazy">
+              <div class="info"><b>Felix Haas</b><span class="r">Architekt</span><div class="more"><div><dl><dt>Fokus</dt><dd>Gewerbebau, Holzbau</dd><dt>Seit</dt><dd>2017</dd></dl><a class="lk" href="#" onclick="return false">Profil ansehen →</a></div></div></div></li>
+            <li class="p"><img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Nora Petzold" loading="lazy">
+              <div class="info"><b>Nora Petzold</b><span class="r">Projektleitung</span><div class="more"><div><dl><dt>Fokus</dt><dd>Umbau im Bestand</dd><dt>Seit</dt><dd>2016</dd></dl><a class="lk" href="#" onclick="return false">Profil ansehen →</a></div></div></div></li>
+            <li class="p"><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Paul Vierhaus" loading="lazy">
+              <div class="info"><b>Paul Vierhaus</b><span class="r">Architekt · Energieberater</span><div class="more"><div><dl><dt>Fokus</dt><dd>Sanierung, KfW</dd><dt>Seit</dt><dd>2022</dd></dl><a class="lk" href="#" onclick="return false">Profil ansehen →</a></div></div></div></li>
+            <li class="hire">
+              <span class="plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+              <div><small>Wir stellen ein</small><h4>Architekt:in (m/w/d) Wohnungsbau</h4><p>Vollzeit oder 32 Std. · Krefeld</p><a class="hb" href="#" onclick="return false">Zur Stelle →</a></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v02-wrap" aria-labelledby="v02-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 02</div>
+        <h2 id="v02-title">Editorial-Portraits</h2>
+        <p>Große, versetzt angeordnete Portraits mit Namen in ausdrucksstarker Serifenschrift – wie eine Magazinstrecke. Für Teams, die Persönlichkeit zeigen wollen.</p>
+        <ul class="v-tags"><li>Kreativagentur</li><li>Mode</li><li>Fotografie</li><li>dunkel</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v02">
+          <div class="hd">
+            <div><span class="eyebrow">Fischer Lenz Studio · Die Köpfe</span><h3>Klein. Eigensinnig. <em>Gut.</em></h3></div>
+            <p>Drei Disziplinen, ein Tisch: Strategie, Gestaltung und Typografie für Marken, die nicht nach Vorlage aussehen wollen.</p>
+          </div>
+          <ul class="row">
+            <li><div class="ph"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Lena Fischer" loading="lazy"><span class="no">N° 01</span></div>
+              <h4>Lena <i>Fischer</i></h4><span class="rl">Gründerin · Strategie</span><p>Stellt die Frage, die sonst keiner stellt – meistens in der ersten Viertelstunde.</p></li>
+            <li><div class="ph"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Jonah Lenz" loading="lazy"><span class="no">N° 02</span></div>
+              <h4>Jonah <i>Lenz</i></h4><span class="rl">Gründer · Creative Director</span><p>Zeichnet erst mit Bleistift, dann am Bildschirm. Hat noch nie ein Template benutzt.</p></li>
+            <li><div class="ph"><img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Malte Reuter" loading="lazy"><span class="no">N° 03</span></div>
+              <h4>Malte <i>Reuter</i></h4><span class="rl">Art Director · Typografie</span><p>Kann jede Schrift am Kerning erkennen und findet, dass das völlig normal ist.</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v03-wrap" aria-labelledby="v03-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 03</div>
+        <h2 id="v03-title">Karten mit Kontakt-Icons</h2>
+        <p>Seriöse Profilkarten mit Titel, Fachgebieten und direkten Kontaktwegen: Anruf, E-Mail, Visitenkarte, Termin. Auf dem Smartphone kompakt als Liste.</p>
+        <ul class="v-tags"><li>Kanzlei</li><li>Steuerberatung</li><li>Versicherung</li><li>Kontakt-Icons</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v03">
+          <div class="hd"><span class="eyebrow">Rösner · Kamps · Partner</span><h3>Ihre Ansprechpartner</h3><p>Rechtsanwälte und Steuerberater unter einem Dach – persönlich erreichbar, ohne Umweg über die Zentrale.</p></div>
+          <ul class="grid">
+            <li class="cd"><div class="ph"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Dr. Frederik Rösner" loading="lazy"></div>
+              <div class="bd"><h4>Dr. Frederik Rösner</h4><p class="tt">Rechtsanwalt · Fachanwalt für Handels- und Gesellschaftsrecht</p><ul class="fg"><li>GmbH-Recht</li><li>Nachfolge</li></ul></div>
+              <div class="ct">
+                <a href="#" onclick="return false" aria-label="Dr. Frederik Rösner anrufen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+                <a href="#" onclick="return false" aria-label="E-Mail an Dr. Frederik Rösner"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+                <a href="#" onclick="return false" aria-label="Visitenkarte von Dr. Frederik Rösner herunterladen"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 1.7-2.4 3-2.4s2.4.8 3 2.4M15 10h3M15 13h3"/></svg></a>
+                <a href="#" onclick="return false" aria-label="Termin mit Dr. Frederik Rösner vereinbaren"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></a>
+              </div></li>
+            <li class="cd"><div class="ph"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Melanie Kamps" loading="lazy"></div>
+              <div class="bd"><h4>Melanie Kamps</h4><p class="tt">Rechtsanwältin · Fachanwältin für Familienrecht</p><ul class="fg"><li>Scheidung</li><li>Unterhalt</li><li>Mediation</li></ul></div>
+              <div class="ct">
+                <a href="#" onclick="return false" aria-label="Melanie Kamps anrufen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+                <a href="#" onclick="return false" aria-label="E-Mail an Melanie Kamps"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+                <a href="#" onclick="return false" aria-label="Visitenkarte von Melanie Kamps herunterladen"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 1.7-2.4 3-2.4s2.4.8 3 2.4M15 10h3M15 13h3"/></svg></a>
+                <a href="#" onclick="return false" aria-label="Termin mit Melanie Kamps vereinbaren"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></a>
+              </div></li>
+            <li class="cd"><div class="ph"><img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Wolfgang Peerenboom" loading="lazy"></div>
+              <div class="bd"><h4>Wolfgang Peerenboom</h4><p class="tt">Steuerberater · Landwirtschaftliche Buchstelle</p><ul class="fg"><li>Agrar</li><li>Hofübergabe</li></ul></div>
+              <div class="ct">
+                <a href="#" onclick="return false" aria-label="Wolfgang Peerenboom anrufen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+                <a href="#" onclick="return false" aria-label="E-Mail an Wolfgang Peerenboom"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+                <a href="#" onclick="return false" aria-label="Visitenkarte von Wolfgang Peerenboom herunterladen"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 1.7-2.4 3-2.4s2.4.8 3 2.4M15 10h3M15 13h3"/></svg></a>
+                <a href="#" onclick="return false" aria-label="Termin mit Wolfgang Peerenboom vereinbaren"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></a>
+              </div></li>
+            <li class="cd"><div class="ph"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Leyla Brauers" loading="lazy"></div>
+              <div class="bd"><h4>Leyla Brauers</h4><p class="tt">Rechtsanwältin · Arbeitsrecht</p><ul class="fg"><li>Kündigungsschutz</li><li>Betriebsrat</li></ul></div>
+              <div class="ct">
+                <a href="#" onclick="return false" aria-label="Leyla Brauers anrufen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+                <a href="#" onclick="return false" aria-label="E-Mail an Leyla Brauers"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+                <a href="#" onclick="return false" aria-label="Visitenkarte von Leyla Brauers herunterladen"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 1.7-2.4 3-2.4s2.4.8 3 2.4M15 10h3M15 13h3"/></svg></a>
+                <a href="#" onclick="return false" aria-label="Termin mit Leyla Brauers vereinbaren"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></a>
+              </div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v04-wrap" aria-labelledby="v04-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 04</div>
+        <h2 id="v04-title">Organigramm Vorstand</h2>
+        <p>Vorstand und Abteilungsleitungen als klares Organigramm mit Verbindungslinien. Ein Klick auf eine Person zeigt Zuständigkeit und Kontakt; auf dem Smartphone wird daraus eine Liste.</p>
+        <ul class="v-tags"><li>Verein</li><li>Verband</li><li>Schule &amp; Kita</li><li>interaktiv</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v04">
+          <div class="hd">
+            <svg class="crest" viewBox="0 0 58 66" aria-hidden="true"><path d="M29 2l25 8v20c0 17-11 28-25 34C15 58 4 47 4 30V10z" fill="#0B6E4F"/><path d="M29 8l19 6v16c0 13-8 22-19 27-11-5-19-14-19-27V14z" fill="none" stroke="#fff" stroke-width="1.5"/><text x="29" y="36" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="13" fill="#fff">TVN</text><text x="29" y="48" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="7" fill="#fff">1908</text></svg>
+            <div><span class="eyebrow">TV Niersbruch 1908 e. V.</span><h3>Vorstand &amp; Ansprechpartner</h3><p>Tippen Sie auf eine Person, um Zuständigkeit und Kontakt zu sehen.</p></div>
+          </div>
+          <div class="tree">
+            <ul class="lvl" style="--n:1">
+              <li><button class="nd" type="button" aria-pressed="true" aria-controls="v04-det" data-i="BS" data-c="#0B6E4F" data-n="Birgit Schoofs" data-r="1. Vorsitzende" data-t="Vertretung des Vereins, Kontakt zu Stadt und Sportbund, Ehrungen."><span class="av" style="--c:#0B6E4F" aria-hidden="true">BS</span><span class="tx2"><b>Birgit Schoofs</b><span class="r">1. Vorsitzende</span></span></button></li>
+            </ul>
+            <ul class="lvl" style="--n:3">
+              <li><button class="nd" type="button" aria-pressed="false" aria-controls="v04-det" data-i="AD" data-c="#14532D" data-n="Ahmet Demir" data-r="2. Vorsitzender" data-t="Sportstätten, Hallenzeiten und Vertretung der 1. Vorsitzenden."><span class="av" style="--c:#14532D" aria-hidden="true">AD</span><span class="tx2"><b>Ahmet Demir</b><span class="r">2. Vorsitzender</span></span></button></li>
+              <li><button class="nd" type="button" aria-pressed="false" aria-controls="v04-det" data-i="UK" data-c="#166534" data-n="Ute Kremers" data-r="Kassiererin" data-t="Mitgliedsbeiträge, SEPA-Lastschriften, Spendenquittungen."><span class="av" style="--c:#166534" aria-hidden="true">UK</span><span class="tx2"><b>Ute Kremers</b><span class="r">Kassiererin</span></span></button></li>
+              <li><button class="nd" type="button" aria-pressed="false" aria-controls="v04-det" data-i="LW" data-c="#155E75" data-n="Lars Wienen" data-r="Geschäftsführer" data-t="Mitgliederverwaltung, An- und Abmeldungen, Vereinsheim."><span class="av" style="--c:#155E75" aria-hidden="true">LW</span><span class="tx2"><b>Lars Wienen</b><span class="r">Geschäftsführer</span></span></button></li>
+            </ul>
+            <ul class="lvl" style="--n:4">
+              <li><button class="nd" type="button" aria-pressed="false" aria-controls="v04-det" data-i="JM" data-c="#B45309" data-n="Jens Mertens" data-r="Abteilungsleiter Fußball" data-t="Senioren, Alte Herren und Spielbetrieb auf der Anlage am Kamp."><span class="av" style="--c:#B45309" aria-hidden="true">JM</span><span class="tx2"><b>Jens Mertens</b><span class="r">Fußball</span></span></button></li>
+              <li><button class="nd" type="button" aria-pressed="false" aria-controls="v04-det" data-i="PN" data-c="#9D174D" data-n="Petra Nießen" data-r="Abteilungsleiterin Turnen &amp; Gesundheitssport" data-t="Eltern-Kind-Turnen, Rückenfit, Reha-Sport und Übungsleitungen."><span class="av" style="--c:#9D174D" aria-hidden="true">PN</span><span class="tx2"><b>Petra Nießen</b><span class="r">Turnen &amp; Gesundheit</span></span></button></li>
+              <li><button class="nd" type="button" aria-pressed="false" aria-controls="v04-det" data-i="RJ" data-c="#1D4ED8" data-n="Ralf Janssen" data-r="Abteilungsleiter Tischtennis" data-t="Mannschaftsmeldungen, Training dienstags und freitags."><span class="av" style="--c:#1D4ED8" aria-hidden="true">RJ</span><span class="tx2"><b>Ralf Janssen</b><span class="r">Tischtennis</span></span></button></li>
+              <li><button class="nd" type="button" aria-pressed="false" aria-controls="v04-det" data-i="SH" data-c="#6D28D9" data-n="Sophie Hamm" data-r="Jugendwartin" data-t="Jugendfreizeiten, Kinderschutz und Ansprechperson für Eltern."><span class="av" style="--c:#6D28D9" aria-hidden="true">SH</span><span class="tx2"><b>Sophie Hamm</b><span class="r">Jugend</span></span></button></li>
+            </ul>
+          </div>
+          <div class="det" id="v04-det" aria-live="polite">
+            <span class="av" style="--c:#0B6E4F" aria-hidden="true">BS</span>
+            <div class="tx"><b>Birgit Schoofs</b><span class="rl">1. Vorsitzende</span><p>Vertretung des Vereins, Kontakt zu Stadt und Sportbund, Ehrungen.</p></div>
+            <div class="ac"><a href="#" onclick="return false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>E-Mail</a><a href="#" onclick="return false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>02151 123 45 67</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v05-wrap" aria-labelledby="v05-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 05</div>
+        <h2 id="v05-title">Team-Karussell</h2>
+        <p>Das Team als horizontal wischbare Reihe mit Pfeilen und Fortschrittsbalken. Jede Person mit persönlichem Gäste-Tipp – herzlich und einladend.</p>
+        <ul class="v-tags"><li>Hotel</li><li>Restaurant</li><li>Tourismus</li><li>wischbar</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v05">
+          <div class="hd">
+            <div><span class="eyebrow">Hotel Gut Heidenhof · Kempen</span><h3>Die Gesichter hinter Ihrem <em>Aufenthalt</em></h3></div>
+            <div class="ctl"><button class="prev" type="button" aria-label="Zurück"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6"/></svg></button><button class="next" type="button" aria-label="Weiter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button></div>
+          </div>
+          <ul class="sc" tabindex="0" aria-label="Teammitglieder, horizontal scrollbar">
+            <li class="cd"><div class="ph"><img src="https://images.unsplash.com/photo-1563237023-b1e970526dcb?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Niklas Heuser" loading="lazy"></div><span class="rl">Gastgeber · Direktion</span><h4>Niklas Heuser</h4><p><b>Tipp:</b> Sonntags früh mit dem Rad zur Burg Kempen – bevor die Stadt aufwacht.</p></li>
+            <li class="cd"><div class="ph"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Hannah Kleinen" loading="lazy"></div><span class="rl">Empfang</span><h4>Hannah Kleinen</h4><p><b>Tipp:</b> Fragen Sie nach Zimmer 12 – der Blick über die Pferdekoppel ist unschlagbar.</p></li>
+            <li class="cd"><div class="ph"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Luca Ferraro" loading="lazy"></div><span class="rl">Küchenchef</span><h4>Luca Ferraro</h4><p><b>Tipp:</b> Das Spargelrisotto im Mai. Der Spargel kommt vom Hof nebenan.</p></li>
+            <li class="cd"><div class="ph"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Amara Diallo" loading="lazy"></div><span class="rl">Spa &amp; Wellness</span><h4>Amara Diallo</h4><p><b>Tipp:</b> Die Heubad-Anwendung am Abend – danach schlafen Sie wie nie.</p></li>
+            <li class="cd"><div class="ph"><img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Yusuf Kaya" loading="lazy"></div><span class="rl">Sommelier</span><h4>Yusuf Kaya</h4><p><b>Tipp:</b> Unser Riesling von der Mosel passt erstaunlich gut zu Reibekuchen.</p></li>
+            <li class="cd"><div class="ph"><img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Jule Pesch" loading="lazy"></div><span class="rl">Frühstück &amp; Patisserie</span><h4>Jule Pesch</h4><p><b>Tipp:</b> Die Zimtschnecken sind um 8:30 Uhr warm. Um 9:15 Uhr sind sie weg.</p></li>
+            <li class="cd"><div class="ph"><img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Tim Reinders" loading="lazy"></div><span class="rl">Haustechnik &amp; Fahrräder</span><h4>Tim Reinders</h4><p><b>Tipp:</b> Die Niers-Route mit dem E-Bike – ich pumpe Ihnen vorher die Reifen auf.</p></li>
+          </ul>
+          <div class="pg" aria-hidden="true"><i></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v06-wrap" aria-labelledby="v06-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 06</div>
+        <h2 id="v06-title">Runde Avatare mit Rollen</h2>
+        <p>Freundliche, runde Portraits mit Rolle und Sprachen, filterbar nach Ärzten und Praxisteam. Hell, zugewandt und beruhigend – ideal für Praxen.</p>
+        <ul class="v-tags"><li>Arztpraxis</li><li>Physiotherapie</li><li>Apotheke</li><li>Filter</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v06">
+          <div class="hd">
+            <span class="eyebrow">Hausarztpraxis am Wasserturm · Willich</span>
+            <h3>Wer Sie bei uns betreut</h3>
+            <div class="tabs" role="group" aria-label="Team filtern"><button type="button" data-f="alle" aria-pressed="true">Alle</button><button type="button" data-f="arzt" aria-pressed="false">Ärztinnen &amp; Ärzte</button><button type="button" data-f="team" aria-pressed="false">Praxisteam</button></div>
+          </div>
+          <ul class="grid" aria-live="polite">
+            <li data-g="arzt"><div class="av"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Dr. med. Katrin Sommer" loading="lazy"></div><h4>Dr. med. Katrin Sommer</h4><span class="rl">Fachärztin für Allgemeinmedizin</span><span class="lg">Deutsch · Englisch</span></li>
+            <li data-g="arzt"><div class="av"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Dr. med. Arjun Mehta" loading="lazy"></div><h4>Dr. med. Arjun Mehta</h4><span class="rl">Facharzt für Innere Medizin</span><span class="lg">Deutsch · Englisch · Hindi</span></li>
+            <li data-g="team"><div class="av"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Dennis Albrecht" loading="lazy"></div><h4>Dennis Albrecht</h4><span class="rl">Praxismanagement</span><span class="lg">Deutsch · Englisch</span></li>
+            <li data-g="team"><div class="av"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Sarah Lennartz" loading="lazy"></div><h4>Sarah Lennartz</h4><span class="rl">MFA · Labor &amp; Impfungen</span><span class="lg">Deutsch · Türkisch</span></li>
+            <li data-g="team"><div class="av"><img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Mila Brandts" loading="lazy"></div><h4>Mila Brandts</h4><span class="rl">Auszubildende MFA</span><span class="lg">Deutsch · Polnisch</span></li>
+          </ul>
+          <p class="note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Neue Patientinnen und Patienten willkommen.</b> Termine unter 02151 123 45 67 oder online.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v07-wrap" aria-labelledby="v07-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 07</div>
+        <h2 id="v07-title">Gründer-Spotlight mit Zitat</h2>
+        <p>Eine Person im Mittelpunkt: großes Portrait mit Stempel-Siegel, persönliches Zitat, Unterschrift und Kennzahlen. Erzählt die Geschichte hinter dem Betrieb.</p>
+        <ul class="v-tags"><li>Manufaktur</li><li>Rösterei</li><li>Familienbetrieb</li><li>Unterschrift</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v07">
+          <div class="lay">
+            <div class="ph">
+              <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Schwarzweiß-Portrait von Mats Hendricks mit Vollbart" loading="lazy">
+              <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true"><circle class="c" cx="60" cy="60" r="58"/><circle cx="60" cy="60" r="56" fill="none" stroke="#24180F" stroke-width="1"/><defs><path id="v07-arc" d="M60 60m-42 0a42 42 0 1 1 84 0a42 42 0 1 1-84 0"/></defs><text><textPath href="#v07-arc">BOHNENKONTOR · SEIT 2014 · VORST · </textPath></text><path d="M60 48c-8 4-8 20 0 24 8-4 8-20 0-24zM60 48v24" fill="none" stroke="#9A3F16" stroke-width="2" stroke-linecap="round"/></svg>
+              <span class="cap">Mats Hendricks · Gründer &amp; Röstmeister</span>
+            </div>
+            <div>
+              <span class="eyebrow">Bohnenkontor Vorst · Kaffeerösterei</span>
+              <blockquote><p>„Ich röste nur Kaffee, den ich auch morgens um sechs trinken würde – <em>ohne Milch, ohne Ausrede.</em>“</p></blockquote>
+              <p class="bio">Gelernter Schreiner, dann zwei Jahre auf Farmen in Kolumbien und Äthiopien. 2014 kaufte Mats einen Trommelröster von 1962 und stellte ihn in die alte Remise seiner Großeltern.</p>
+              <span class="sig" aria-hidden="true">Mats Hendricks</span>
+              <dl class="facts"><div><dt>Herkünfte im Jahr</dt><dd>38</dd></div><div><dt>Röster, Baujahr</dt><dd>1962</dd></div><div><dt>Kilo pro Woche</dt><dd>420</dd></div></dl>
+              <div class="co"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"><div><b>Svenja Hendricks</b><span>Mitgründerin · Einkauf &amp; Direkthandel</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v08-wrap" aria-labelledby="v08-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 08</div>
+        <h2 id="v08-title">Minimale Team-Liste zum Ausklappen</h2>
+        <p>Eine typografische Liste ohne Bilderflut – ein Klick auf eine Zeile klappt Foto, Werdegang und Kontakt auf. Sachlich, präzise und platzsparend.</p>
+        <ul class="v-tags"><li>Ingenieurbüro</li><li>IT &amp; Beratung</li><li>Steuerbüro</li><li>Akkordeon</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v08">
+          <div class="hd">
+            <div><span class="mono">(05) Menschen · Brandt Ingenieure</span><h3>Wir rechnen, damit es hält.</h3></div>
+            <p>Tragwerksplanung, Bauphysik und Prüfung für Wohn-, Gewerbe- und Holzbauten. Klicken Sie auf einen Namen für Details.</p>
+          </div>
+          <ul class="list">
+            <li><button class="row" type="button" aria-expanded="false" aria-controls="v08-p1"><span class="no">01</span><span class="nm"><b>Dr.-Ing. Henrik Brandt</b><span class="rs">Inhaber · Prüfingenieur</span></span><span class="rl">Inhaber · Prüfingenieur</span><span class="lc">seit 2003</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="pn" id="v08-p1"><div><div class="in"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Dr.-Ing. Henrik Brandt" loading="lazy"><p>Promovierte in Aachen über Verbundbrücken und prüft heute Statik für Bauämter am ganzen Niederrhein. Hält jedes Jahr eine Vorlesung an der Hochschule in Krefeld.</p><dl><dt>Telefon</dt><dd>02151 123 45 67</dd><dt>E-Mail</dt><dd><a href="#" onclick="return false">brandt@example.de</a></dd><dt>Sprachen</dt><dd>DE, EN</dd></dl></div></div></div></li>
+            <li><button class="row" type="button" aria-expanded="false" aria-controls="v08-p2"><span class="no">02</span><span class="nm"><b>Miriam Faßbender</b><span class="rs">Tragwerksplanung Holzbau</span></span><span class="rl">Tragwerksplanung Holzbau</span><span class="lc">seit 2012</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="pn" id="v08-p2"><div><div class="in"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Miriam Faßbender" loading="lazy"><p>Plant mehrgeschossige Holzbauten und Aufstockungen. Ihr Lieblingsprojekt: die Kita aus Brettsperrholz in Viersen, gebaut in elf Wochen.</p><dl><dt>Telefon</dt><dd>02151 123 45 67</dd><dt>E-Mail</dt><dd><a href="#" onclick="return false">fassbender@example.de</a></dd><dt>Sprachen</dt><dd>DE, EN, FR</dd></dl></div></div></div></li>
+            <li><button class="row" type="button" aria-expanded="false" aria-controls="v08-p3"><span class="no">03</span><span class="nm"><b>Jonas Terstegen</b><span class="rs">Bauphysik &amp; Energie</span></span><span class="rl">Bauphysik &amp; Energie</span><span class="lc">seit 2016</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="pn" id="v08-p3"><div><div class="in"><img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Jonas Terstegen" loading="lazy"><p>Wärmeschutz, Schallschutz, Feuchte: Jonas rechnet nach, bevor es teuer wird. Zertifizierter Energieeffizienz-Experte für Förderprogramme.</p><dl><dt>Telefon</dt><dd>02151 123 45 67</dd><dt>E-Mail</dt><dd><a href="#" onclick="return false">terstegen@example.de</a></dd><dt>Sprachen</dt><dd>DE, EN, NL</dd></dl></div></div></div></li>
+            <li><button class="row" type="button" aria-expanded="false" aria-controls="v08-p4"><span class="no">04</span><span class="nm"><b>Anna-Lena Kox</b><span class="rs">BIM-Koordination</span></span><span class="rl">BIM-Koordination</span><span class="lc">seit 2019</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="pn" id="v08-p4"><div><div class="in"><img src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Anna-Lena Kox" loading="lazy"><p>Hält alle Modelle zusammen – von der Architektur bis zur Haustechnik. Sorgt dafür, dass Kollisionen auf dem Bildschirm passieren und nicht auf der Baustelle.</p><dl><dt>Telefon</dt><dd>02151 123 45 67</dd><dt>E-Mail</dt><dd><a href="#" onclick="return false">kox@example.de</a></dd><dt>Sprachen</dt><dd>DE, EN</dd></dl></div></div></div></li>
+            <li><button class="row" type="button" aria-expanded="false" aria-controls="v08-p5"><span class="no">05</span><span class="nm"><b>Kerem Aksoy</b><span class="rs">Bauleitung &amp; Bestand</span></span><span class="rl">Bauleitung &amp; Bestand</span><span class="lc">seit 2021</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="pn" id="v08-p5"><div><div class="in"><img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait Kerem Aksoy" loading="lazy"><p>Kümmert sich um Altbauten, Ertüchtigungen und alles, was beim Abriss einer Wand plötzlich anders aussieht als im Plan.</p><dl><dt>Telefon</dt><dd>02151 123 45 67</dd><dt>E-Mail</dt><dd><a href="#" onclick="return false">aksoy@example.de</a></dd><dt>Sprachen</dt><dd>DE, TR, EN</dd></dl></div></div></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="sh-cta">
+  <h2>Der passende Baustein für Ihre Website?</h2>
+  <p>Alle Varianten sind Ausgangspunkte. Wir kombinieren und gestalten sie individuell – passend zu Ihrer Marke.</p>
+  <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Projekt besprechen</a>
+</section>
+
+<footer class="sh-footer">
+  Alle gezeigten Marken und Inhalte sind fiktiv. Design &amp; Umsetzung: <a href="../../Meuster%20Landing%20Page.dc.html">meuser.biz</a> · © 2026
+</footer>
+
+<script>
+  /* SHELL-Skript – nicht verändern */
+  (function () {
+    var here = location.pathname.split('/').pop();
+    document.querySelectorAll('.sh-cats a').forEach(function (a) {
+      if (a.getAttribute('href') === here) { a.setAttribute('aria-current', 'page'); a.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+    });
+    document.querySelectorAll('.variant').forEach(function (v) {
+      var frame = v.querySelector('.frame');
+      v.querySelectorAll('.v-switch button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          v.querySelectorAll('.v-switch button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          frame.style.setProperty('--w', b.dataset.w);
+        });
+      });
+    });
+  })();
+</script>
+<!-- Varianten-Skripte hierunter, jedes in eigenem IIFE, nur auf die eigene #vNN zugreifen -->
+<script>
+/* v04 – Organigramm: Person auswählen */
+(function () {
+  var r = document.getElementById('v04'); if (!r) return;
+  var det = r.querySelector('.det'), av = det.querySelector('.av'), nm = det.querySelector('b'), rl = det.querySelector('.rl'), tx = det.querySelector('p');
+  var nodes = [].slice.call(r.querySelectorAll('.nd'));
+  nodes.forEach(function (b) {
+    b.addEventListener('click', function () {
+      nodes.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      av.textContent = b.dataset.i; av.style.setProperty('--c', b.dataset.c);
+      nm.textContent = b.dataset.n; rl.textContent = b.dataset.r; tx.textContent = b.dataset.t;
+    });
+  });
+})();
+
+/* v05 – Team-Karussell */
+(function () {
+  var r = document.getElementById('v05'); if (!r) return;
+  var sc = r.querySelector('.sc'), prev = r.querySelector('.prev'), next = r.querySelector('.next'), bar = r.querySelector('.pg i');
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function step() { var c = sc.querySelector('.cd'); return c ? c.getBoundingClientRect().width + 18 : 300; }
+  function upd() {
+    var max = sc.scrollWidth - sc.clientWidth;
+    prev.disabled = sc.scrollLeft <= 2; next.disabled = sc.scrollLeft >= max - 2;
+    var vis = sc.clientWidth / sc.scrollWidth;
+    bar.style.width = (vis * 100) + '%';
+    bar.style.marginLeft = (max > 0 ? (sc.scrollLeft / max) * (100 - vis * 100) : 0) + '%';
+  }
+  prev.addEventListener('click', function () { sc.scrollBy({ left: -step(), behavior: still ? 'auto' : 'smooth' }); });
+  next.addEventListener('click', function () { sc.scrollBy({ left: step(), behavior: still ? 'auto' : 'smooth' }); });
+  sc.addEventListener('scroll', upd, { passive: true });
+  if ('ResizeObserver' in window) new ResizeObserver(upd).observe(sc);
+  upd();
+})();
+
+/* v06 – Praxisteam filtern */
+(function () {
+  var r = document.getElementById('v06'); if (!r) return;
+  var tabs = [].slice.call(r.querySelectorAll('.tabs button')), items = [].slice.call(r.querySelectorAll('.grid li'));
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      tabs.forEach(function (x) { x.setAttribute('aria-pressed', String(x === t)); });
+      items.forEach(function (li) { li.hidden = !(t.dataset.f === 'alle' || li.dataset.g === t.dataset.f); });
+    });
+  });
+})();
+
+/* v08 – Liste ausklappen */
+(function () {
+  var r = document.getElementById('v08'); if (!r) return;
+  var rows = [].slice.call(r.querySelectorAll('.row'));
+  function set(b, open) { b.setAttribute('aria-expanded', String(open)); r.querySelector('#' + b.getAttribute('aria-controls')).classList.toggle('open', open); }
+  rows.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var open = b.getAttribute('aria-expanded') !== 'true';
+      rows.forEach(function (x) { if (x !== b) set(x, false); });
+      set(b, open);
+    });
+  });
+  r.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    rows.forEach(function (b) { if (b.getAttribute('aria-expanded') === 'true') { set(b, false); b.focus(); } });
+  });
+})();
+</script>
+</body>
+</html>

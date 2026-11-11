@@ -1,0 +1,1210 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kennzahlen &amp; Abläufe – Bausteine – meuser.biz</title>
+<meta name="description" content="Kennzahlen &amp; Abläufe: 10 Gestaltungsvarianten, wie meuser.biz sie für Websites umsetzt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Shell-Schrift (Inter) bleibt; weitere Schriften der Varianten in DIESEN einen Link mit aufnehmen -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Archivo:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Syne:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================================
+     SHELL – nicht verändern. Gilt für alle Kategorieseiten gleich.
+     ===================================================================== */
+  :root { --ink:#0F172A; --muted:#64748B; --body:#475569; --line:#E2E8F0; --soft:#F8FAFC; --blue:#007BFF; --blue-l:#5FA8FF; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 150px; }
+  body.shell { margin:0; font-family:'Inter',sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; }
+  .shell a { color:inherit; text-decoration:none; }
+  .sh-header { position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.9); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+  .sh-bar { max-width:1400px; margin:0 auto; padding:12px 5%; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .sh-bar img { height:44px; width:auto; display:block; }
+  .sh-actions { display:flex; gap:8px; }
+  .sh-btn { display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font:600 14px 'Inter',sans-serif; white-space:nowrap; transition:.25s; }
+  .sh-btn.ghost { background:rgba(15,23,42,.05); } .sh-btn.ghost:hover { background:rgba(15,23,42,.1); }
+  .sh-btn.blue { background:linear-gradient(135deg,#007BFF,#0062cc); color:#fff !important; box-shadow:0 6px 16px -4px rgba(0,123,255,.6); }
+  .sh-cats { max-width:1400px; margin:0 auto; padding:0 5% 12px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; }
+  .sh-cats::-webkit-scrollbar { display:none; }
+  .sh-cats a { flex-shrink:0; font:600 13px 'Inter',sans-serif; color:var(--body); padding:7px 13px; border-radius:999px; border:1px solid var(--line); background:#fff; transition:.2s; }
+  .sh-cats a:hover { border-color:var(--ink); color:var(--ink); }
+  .sh-cats a[aria-current="page"] { background:var(--ink); border-color:var(--ink); color:#fff; }
+  .sh-hero { background:linear-gradient(120deg,#0F172A,#132238,#0F172A); color:#fff; padding:72px 5% 64px; position:relative; overflow:hidden; }
+  .sh-hero::after { content:""; position:absolute; top:-160px; right:-120px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle,rgba(0,123,255,.35),transparent 70%); pointer-events:none; }
+  .sh-hero-in { max-width:1400px; margin:0 auto; position:relative; z-index:1; }
+  .sh-eyebrow { color:var(--blue-l); font:700 13px 'Inter',sans-serif; letter-spacing:2px; margin-bottom:14px; }
+  .sh-hero h1 { font:800 clamp(32px,5vw,52px)/1.08 'Inter',sans-serif; letter-spacing:-1px; margin:0 0 16px; }
+  .sh-hero p { font:400 clamp(16px,2vw,18px)/1.6 'Inter',sans-serif; color:#CBD5E1; max-width:680px; margin:0; }
+  .sh-index { max-width:1400px; margin:0 auto; padding:32px 5% 0; display:flex; flex-wrap:wrap; gap:8px; }
+  .sh-index a { font:600 13px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:7px 12px; border-radius:8px; transition:.2s; }
+  .sh-index a:hover { color:var(--blue); border-color:var(--blue); }
+  .sh-index a b { color:var(--blue); margin-right:6px; }
+  .sh-main { max-width:1400px; margin:0 auto; padding:24px 5% 96px; }
+  .variant { padding:56px 0 0; }
+  .v-head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:20px; }
+  .v-num { font:700 12px 'Inter',sans-serif; letter-spacing:1.5px; color:var(--blue); margin-bottom:6px; }
+  .v-head h2 { font:800 24px/1.2 'Inter',sans-serif; letter-spacing:-.3px; margin:0 0 6px; }
+  .v-head p { font:400 15px/1.6 'Inter',sans-serif; color:var(--body); margin:0; max-width:720px; }
+  .v-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; padding:0; list-style:none; }
+  .v-tags li { font:600 12px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:4px 10px; border-radius:999px; }
+  .v-switch { display:inline-flex; background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:4px; gap:2px; }
+  .v-switch button { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font:600 13px 'Inter',sans-serif; color:var(--muted); padding:7px 12px; border-radius:7px; transition:.2s; }
+  .v-switch button:hover { color:var(--ink); }
+  .v-switch button[aria-pressed="true"] { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(15,23,42,.15); }
+  .v-switch button:focus-visible { outline:2px solid var(--blue); }
+  .stage { background:#EEF2F6; background-image:radial-gradient(rgba(15,23,42,.08) 1px, transparent 1px); background-size:18px 18px; border:1px solid var(--line); border-radius:16px; padding:28px; overflow:hidden; }
+  .frame { /* Jede Variante lebt in diesem Rahmen */
+    container: demo / inline-size;
+    position:relative; contain:layout paint; /* position:fixed in Varianten bleibt im Rahmen */
+    width:var(--w,100%); max-width:100%; min-height:var(--h,auto);
+    margin:0 auto; background:#fff; border-radius:10px; overflow:hidden;
+    box-shadow:0 1px 2px rgba(15,23,42,.06), 0 18px 40px -20px rgba(15,23,42,.35);
+    transition:width .45s cubic-bezier(.2,.8,.2,1);
+  }
+  .sh-cta { background:var(--soft); border-top:1px solid var(--line); padding:80px 5%; text-align:center; }
+  .sh-cta h2 { font:800 clamp(26px,4vw,36px) 'Inter',sans-serif; letter-spacing:-.5px; margin:0 0 12px; }
+  .sh-cta p { font:400 16px/1.6 'Inter',sans-serif; color:var(--muted); max-width:560px; margin:0 auto 26px; }
+  .sh-cta .sh-btn { border-radius:8px; padding:14px 28px; font-size:15px; }
+  .sh-footer { background:var(--ink); color:#94A3B8; font:400 14px 'Inter',sans-serif; padding:28px 5%; text-align:center; }
+  .sh-footer a { color:#fff; }
+  @media (max-width:640px) {
+    .sh-bar img { height:36px; } .sh-btn .long { display:none; }
+    .stage { padding:12px; border-radius:12px; }
+    .v-switch { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .frame { transition:none; } }
+
+  /* =====================================================================
+     VARIANTEN – CSS jeder Variante NUR unter ihrer ID (#v01, #v02 …).
+     Responsiv ausschließlich mit @container demo (…) – NICHT @media.
+     ===================================================================== */
+
+  /* ---------- v01 · Zahlenleiste mit Count-up ---------- */
+  #v01 { --bg:#0E3B43; --ink:#F2F7F5; --mut:#A9C7C3; --acc:#F4B860; background:var(--bg); color:var(--ink); font-family:'Outfit',sans-serif; padding:64px 56px; position:relative; overflow:hidden; isolation:isolate; }
+  #v01::before { content:""; position:absolute; z-index:-1; right:-80px; top:-120px; width:380px; height:380px; border-radius:50%; border:70px solid rgba(244,184,96,.08); }
+  #v01 .top { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:44px; }
+  #v01 .eb { font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--acc); font-weight:600; margin-bottom:10px; }
+  #v01 h2 { font-size:clamp(26px,3.4cqw,38px); font-weight:500; line-height:1.15; letter-spacing:-.015em; margin:0; max-width:560px; }
+  #v01 .top a { color:var(--ink); font-size:15px; font-weight:500; border-bottom:1px solid var(--acc); padding-bottom:3px; }
+  #v01 .top a:focus-visible { outline:2px solid var(--acc); outline-offset:4px; }
+  #v01 dl { display:grid; grid-template-columns:repeat(4,1fr); margin:0; border-top:1px solid rgba(169,199,195,.3); }
+  #v01 dl > div { padding:28px 28px 4px 0; display:flex; flex-direction:column; }
+  #v01 dl > div + div { padding-left:28px; border-left:1px solid rgba(169,199,195,.3); }
+  #v01 dd { margin:0; order:-1; font-size:clamp(46px,6.2cqw,76px); font-weight:300; line-height:1; letter-spacing:-.04em; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  #v01 dd small { font-size:.45em; font-weight:400; color:var(--acc); margin-left:4px; letter-spacing:0; }
+  #v01 dt { margin-top:14px; font-size:15px; line-height:1.45; color:var(--mut); }
+  #v01 dt b { display:block; color:var(--ink); font-weight:600; font-size:16px; margin-bottom:2px; }
+  @container demo (max-width:900px) { #v01 { padding:52px 32px; } #v01 dl { grid-template-columns:1fr 1fr; } #v01 dl > div:nth-child(3) { padding-left:0; border-left:0; } #v01 dl > div:nth-child(n+3) { border-top:1px solid rgba(169,199,195,.3); margin-top:24px; } }
+  @container demo (max-width:520px) { #v01 { padding:44px 20px; } #v01 dl { grid-template-columns:1fr; } #v01 dl > div, #v01 dl > div + div { padding:22px 0 0; border-left:0; } #v01 dl > div + div { border-top:1px solid rgba(169,199,195,.3); margin-top:22px; } #v01 dd { font-size:56px; } }
+
+  /* ---------- v02 · Statistik-Kacheln mit Mini-Diagrammen ---------- */
+  #v02 { --ink:#1A2B22; --mut:#4F6157; --grn:#1F7A4D; --sun:#F2A41C; --line:#DDE6DF; background:#F5F7F2; color:var(--ink); font-family:'Archivo',sans-serif; padding:72px 56px; }
+  #v02 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:34px; }
+  #v02 .eb { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:var(--grn); margin-bottom:12px; }
+  #v02 .eb svg { width:18px; height:18px; fill:none; stroke:var(--sun); stroke-width:1.8; stroke-linecap:round; }
+  #v02 h2 { font-size:clamp(28px,3.8cqw,44px); font-weight:800; letter-spacing:-.03em; line-height:1.05; margin:0; font-stretch:95%; }
+  #v02 .yr { display:flex; gap:4px; background:#fff; border:1px solid var(--line); padding:4px; border-radius:10px; font-size:13px; font-weight:600; }
+  #v02 .yr span { padding:6px 12px; border-radius:7px; color:var(--mut); }
+  #v02 .yr span:last-child { background:var(--ink); color:#fff; }
+  #v02 .g { display:grid; grid-template-columns:1.3fr 1fr 1fr; grid-template-rows:auto auto; gap:14px; }
+  #v02 .k { background:#fff; border:1px solid var(--line); border-radius:18px; padding:24px; display:flex; flex-direction:column; min-width:0; }
+  #v02 .k h3 { margin:0; font-size:13.5px; font-weight:600; color:var(--mut); letter-spacing:.01em; display:flex; justify-content:space-between; gap:10px; }
+  #v02 .k h3 em { font-style:normal; font-size:12px; font-weight:700; color:var(--grn); background:#E5F2EA; padding:2px 8px; border-radius:999px; white-space:nowrap; }
+  #v02 .v { font-size:clamp(34px,3.8cqw,48px); font-weight:800; letter-spacing:-.04em; line-height:1; margin:14px 0 4px; font-variant-numeric:tabular-nums; }
+  #v02 .v small { font-size:.42em; font-weight:600; letter-spacing:0; color:var(--mut); margin-left:6px; }
+  #v02 .s { font-size:13.5px; color:var(--mut); line-height:1.5; margin:0; }
+  #v02 .big { grid-row:span 2; background:var(--ink); color:#fff; border-color:var(--ink); }
+  #v02 .big h3, #v02 .big .s, #v02 .big .v small { color:#B9CCC1; }
+  #v02 .big h3 em { background:rgba(242,164,28,.18); color:#FFD27A; }
+  #v02 .big .v { font-size:clamp(46px,5.6cqw,72px); }
+  #v02 .spark { margin-top:auto; padding-top:24px; flex:1; display:flex; flex-direction:column; }
+  #v02 .spark svg { width:100%; flex:1; min-height:140px; height:auto; display:block; overflow:visible; }
+  #v02 .spark .ax { display:flex; justify-content:space-between; font-size:11.5px; color:#8FA89A; margin-top:8px; }
+  #v02 .bars { margin-top:auto; padding-top:18px; display:flex; align-items:flex-end; gap:6px; height:92px; }
+  #v02 .bars i { flex:1; background:#CFE4D6; border-radius:4px 4px 0 0; height:var(--h); position:relative; }
+  #v02 .bars i:last-child { background:var(--grn); }
+  #v02 .ringw { margin-top:auto; padding-top:14px; display:flex; align-items:center; gap:16px; }
+  #v02 .ringw svg { width:84px; height:84px; flex-shrink:0; transform:rotate(-90deg); }
+  #v02 .ringw ul { list-style:none; margin:0; padding:0; font-size:12.5px; color:var(--mut); display:grid; gap:5px; }
+  #v02 .ringw li::before { content:""; display:inline-block; width:8px; height:8px; border-radius:2px; background:var(--c); margin-right:7px; }
+  #v02 .gauge { margin-top:auto; padding-top:10px; position:relative; }
+  #v02 .gauge svg { width:100%; max-width:200px; height:auto; display:block; margin:0 auto; }
+  #v02 .gauge b { position:absolute; left:0; right:0; bottom:2px; text-align:center; font-size:12px; color:var(--mut); font-weight:500; }
+  #v02 .waf { margin-top:auto; padding-top:16px; display:grid; grid-template-columns:repeat(20,1fr); gap:3px; }
+  #v02 .waf i { aspect-ratio:1; border-radius:2px; background:#E3EBE5; }
+  #v02 .waf i.on { background:var(--sun); }
+  #v02 .note { margin-top:16px; font-size:12.5px; color:var(--mut); }
+  @container demo (max-width:960px) { #v02 { padding:56px 28px; } #v02 .g { grid-template-columns:1fr 1fr; } #v02 .big { grid-column:span 2; grid-row:auto; } #v02 .spark svg { min-height:130px; flex:none; height:130px; } }
+  @container demo (max-width:560px) { #v02 { padding:44px 16px; } #v02 .g { grid-template-columns:1fr; } #v02 .big { grid-column:auto; } #v02 .yr { display:none; } }
+
+  /* ---------- v03 · Prozess in vier Schritten mit Verbindungslinie ---------- */
+  #v03 { --ink:#203026; --mut:#53645A; --grn:#3E6B48; --sage:#DCE7D6; --bg:#FBFAF5; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:80px 56px 76px; }
+  #v03 .hd { text-align:center; max-width:640px; margin:0 auto 60px; }
+  #v03 .eb { font-size:13px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--grn); margin-bottom:12px; }
+  #v03 h2 { font-family:'DM Serif Display',serif; font-weight:400; font-size:clamp(32px,4.4cqw,52px); line-height:1.05; margin:0 0 14px; letter-spacing:-.01em; }
+  #v03 .hd p { margin:0; font-size:16.5px; line-height:1.6; color:var(--mut); }
+  #v03 ol { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:28px; counter-reset:st; }
+  #v03 .steps { position:relative; }
+  #v03 .rail { position:absolute; left:12.5%; right:12.5%; top:35px; height:2px; background:repeating-linear-gradient(90deg,#BFD0BF 0 6px,transparent 6px 12px); }
+  #v03 .rail i { position:absolute; inset:0; background:var(--grn); transform:scaleX(0); transform-origin:left; transition:transform 2.2s cubic-bezier(.6,0,.2,1); }
+  #v03.on .rail i { transform:scaleX(1); }
+  #v03 li { position:relative; text-align:center; counter-increment:st; }
+  #v03 .dot { position:relative; z-index:1; width:72px; height:72px; margin:0 auto 24px; border-radius:50%; background:var(--bg); border:2px solid #BFD0BF; display:grid; place-items:center; color:var(--grn); transition:background .4s, border-color .4s, color .4s; }
+  #v03 .dot svg { width:30px; height:30px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+  #v03 .dot::after { content:counter(st); position:absolute; right:-4px; top:-4px; width:24px; height:24px; border-radius:50%; background:var(--ink); color:#fff; font-size:12px; font-weight:700; display:grid; place-items:center; }
+  #v03.on li .dot { background:var(--grn); border-color:var(--grn); color:#fff; }
+  #v03.on li:nth-child(1) .dot { transition-delay:0s; }
+  #v03.on li:nth-child(2) .dot { transition-delay:.7s; }
+  #v03.on li:nth-child(3) .dot { transition-delay:1.4s; }
+  #v03.on li:nth-child(4) .dot { transition-delay:2.1s; }
+  #v03 h3 { font-family:'DM Serif Display',serif; font-weight:400; font-size:24px; margin:0 0 8px; }
+  #v03 li p { margin:0 auto; font-size:15px; line-height:1.6; color:var(--mut); max-width:240px; }
+  #v03 .dur { display:inline-block; margin-top:14px; font-size:12.5px; font-weight:600; color:var(--grn); background:var(--sage); padding:5px 11px; border-radius:999px; }
+  #v03 .foot { margin-top:56px; display:flex; justify-content:center; align-items:center; gap:20px; flex-wrap:wrap; }
+  #v03 .foot a { background:var(--grn); color:#fff; font-weight:600; font-size:15px; padding:14px 24px; border-radius:999px; }
+  #v03 .foot a:hover { background:#325A3B; }
+  #v03 .foot a:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
+  #v03 .foot span { font-size:14.5px; color:var(--mut); }
+  @container demo (max-width:820px) {
+    #v03 { padding:60px 28px; }
+    #v03 ol { grid-template-columns:1fr; gap:34px; max-width:520px; margin:0 auto; }
+    #v03 .rail { left:35px; right:auto; top:36px; bottom:36px; width:2px; height:auto; background:repeating-linear-gradient(180deg,#BFD0BF 0 6px,transparent 6px 12px); }
+    #v03 .rail i { transform:scaleY(0); transform-origin:top; }
+    #v03.on .rail i { transform:scaleY(1); }
+    #v03 li { text-align:left; display:grid; grid-template-columns:72px 1fr; column-gap:22px; }
+    #v03 .dot { margin:0; grid-row:span 3; }
+    #v03 h3 { margin-top:8px; }
+    #v03 li p { margin:0; max-width:none; }
+    #v03 .dur { justify-self:start; }
+  }
+  @container demo (max-width:480px) { #v03 { padding:48px 18px; } #v03 h2 { font-size:32px; } }
+  @media (prefers-reduced-motion:reduce) { #v03 .rail i, #v03 .dot { transition:none !important; } }
+
+  /* ---------- v04 · Vertikale Zeitleiste der Firmengeschichte ---------- */
+  #v04 { --ink:#231A15; --mut:#5B4E45; --rust:#A4431D; --paper:#F6F1EA; --line:#D9CBBE; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; padding:80px 56px; }
+  #v04 .hd { text-align:center; margin:0 auto 56px; max-width:600px; }
+  #v04 .eb { font-size:12.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--rust); font-weight:600; margin-bottom:12px; }
+  #v04 h2 { font-family:'Playfair Display',serif; font-weight:600; font-size:clamp(32px,4.4cqw,52px); line-height:1.05; margin:0 0 14px; letter-spacing:-.01em; }
+  #v04 h2 i { font-weight:400; color:var(--rust); }
+  #v04 .hd p { margin:0; font-size:16px; line-height:1.65; color:var(--mut); }
+  #v04 ol { list-style:none; margin:0 auto; padding:0; max-width:1000px; position:relative; }
+  #v04 ol::before { content:""; position:absolute; left:50%; top:6px; bottom:6px; width:2px; margin-left:-1px; background:linear-gradient(var(--line),var(--rust) 50%,var(--line)); }
+  #v04 li { position:relative; width:50%; padding:0 52px 44px 0; text-align:right; }
+  #v04 li:nth-child(even) { margin-left:50%; padding:0 0 44px 52px; text-align:left; }
+  #v04 li::before { content:""; position:absolute; top:12px; right:-9px; width:14px; height:14px; border-radius:50%; background:var(--paper); border:2px solid var(--rust); z-index:1; }
+  #v04 li:nth-child(even)::before { right:auto; left:-9px; }
+  #v04 li.hi::before { background:var(--rust); box-shadow:0 0 0 6px rgba(164,67,29,.15); }
+  #v04 .y { font-family:'Playfair Display',serif; font-size:44px; font-weight:700; line-height:1; color:var(--rust); letter-spacing:-.01em; font-variant-numeric:oldstyle-nums; }
+  #v04 h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:600; margin:8px 0 8px; }
+  #v04 li p { margin:0; font-size:15px; line-height:1.65; color:var(--mut); }
+  #v04 li:nth-child(odd) p { margin-left:auto; }
+  #v04 li p { max-width:380px; }
+  #v04 figure { margin:16px 0 0; }
+  #v04 figure img { display:block; width:100%; max-width:380px; height:200px; object-fit:cover; border-radius:3px; margin-left:auto; filter:sepia(.15); }
+  #v04 li:nth-child(even) figure img { margin-left:0; }
+  #v04 figcaption { font-size:12.5px; color:var(--mut); font-style:italic; margin-top:8px; }
+  #v04 .now { display:inline-block; margin-top:12px; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; background:var(--ink); color:var(--paper); padding:6px 10px; }
+  #v04 li { opacity:1; transform:none; transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+  #v04.js li.wait { opacity:0; transform:translateY(24px); }
+  @container demo (max-width:720px) {
+    #v04 { padding:56px 22px; }
+    #v04 ol::before { left:7px; }
+    #v04 li, #v04 li:nth-child(even) { width:auto; margin-left:0; padding:0 0 36px 40px; text-align:left; }
+    #v04 li::before, #v04 li:nth-child(even)::before { left:0; right:auto; }
+    #v04 li:nth-child(odd) p { margin-left:0; }
+    #v04 figure img { margin-left:0; height:180px; }
+    #v04 .y { font-size:36px; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v04 li { transition:none; } #v04.js li.wait { opacity:1; transform:none; } }
+
+  /* ---------- v05 · Produkt-Roadmap ---------- */
+  #v05 { --bg:#0C0D10; --card:#15171C; --ink:#F1F2F4; --mut:#9DA3AE; --acc:#B6F35C; --blue:#7AA7FF; --line:#262932; background:var(--bg); color:var(--ink); font-family:'Syne',sans-serif; padding:76px 0 64px; }
+  #v05 .hd { padding:0 56px; display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:40px; }
+  #v05 .mono { font-family:'IBM Plex Mono',monospace; }
+  #v05 .eb { font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--acc); margin-bottom:14px; }
+  #v05 h2 { font-size:clamp(34px,5cqw,62px); font-weight:700; line-height:.98; letter-spacing:-.035em; margin:0; }
+  #v05 .lg { display:flex; gap:16px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--mut); }
+  #v05 .lg span { display:inline-flex; align-items:center; gap:7px; }
+  #v05 .lg i { width:9px; height:9px; border-radius:50%; }
+  #v05 .sc { overflow-x:auto; padding:0 56px 8px; scrollbar-width:thin; scrollbar-color:#333 transparent; }
+  #v05 .sc:focus-visible { outline:2px solid var(--acc); outline-offset:-2px; }
+  #v05 .rm { min-width:1080px; display:grid; grid-template-columns:repeat(5,1fr); gap:0 14px; position:relative; }
+  #v05 .band { grid-column:1 / -1; position:relative; height:4px; background:var(--line); border-radius:2px; margin:34px 0 26px; }
+  #v05 .band b { position:absolute; left:0; top:0; bottom:0; width:var(--p,0%); background:linear-gradient(90deg,#4F7D1E,var(--acc)); border-radius:2px; transition:width 1.6s cubic-bezier(.2,.8,.2,1); }
+  #v05 .today { position:absolute; top:-30px; left:var(--t); transform:translateX(-50%); font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--bg); background:var(--acc); padding:3px 7px; border-radius:4px; white-space:nowrap; }
+  #v05 .today::after { content:""; position:absolute; left:50%; bottom:-14px; width:2px; height:14px; margin-left:-1px; background:var(--acc); }
+  #v05 .q { grid-row:1; display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--line); padding-bottom:10px; }
+  #v05 .q b { font-size:20px; font-weight:700; }
+  #v05 .q span { font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--mut); }
+  #v05 .col { grid-row:3; display:grid; gap:10px; align-content:start; }
+  #v05 .c { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 16px 14px; transition:border-color .25s, transform .25s; }
+  #v05 .c:hover { border-color:#3A3F4B; transform:translateY(-2px); }
+  #v05 .c h3 { font-size:16px; font-weight:600; margin:0 0 6px; letter-spacing:-.01em; }
+  #v05 .c p { margin:0 0 12px; font-family:'IBM Plex Mono',monospace; font-size:12px; line-height:1.55; color:var(--mut); }
+  #v05 .st { display:inline-flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',monospace; font-size:11px; padding:3px 8px; border-radius:999px; }
+  #v05 .st.d { color:var(--acc); background:rgba(182,243,92,.1); }
+  #v05 .st.w { color:var(--blue); background:rgba(122,167,255,.12); }
+  #v05 .st.p { color:var(--mut); background:rgba(157,163,174,.1); }
+  #v05 .st.w::before { content:""; width:6px; height:6px; border-radius:50%; background:currentColor; animation:v05-bl 1.4s infinite; }
+  #v05 .c.dn h3 { color:#C9CDD3; }
+  #v05 .c.nx { border-style:dashed; background:transparent; }
+  #v05 .ft { padding:0 56px; margin-top:28px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--mut); }
+  #v05 .ft a { color:var(--acc); }
+  #v05 .ft a:focus-visible { outline:2px solid var(--acc); outline-offset:3px; }
+  @keyframes v05-bl { 50% { opacity:.25; } }
+  @container demo (max-width:700px) { #v05 { padding:56px 0 48px; } #v05 .hd, #v05 .sc, #v05 .ft { padding-left:20px; padding-right:20px; } #v05 .rm { min-width:1000px; } }
+  @media (prefers-reduced-motion:reduce) { #v05 .band b, #v05 .c { transition:none; } #v05 .st.w::before { animation:none; } }
+
+  /* ---------- v06 · Fortschrittsbalken &amp; Kompetenzen ---------- */
+  #v06 { --y:#FFE14D; --ink:#0D0D0D; --mut:#3A3720; background:var(--y); color:var(--ink); font-family:'Syne',sans-serif; padding:76px 56px; }
+  #v06 .g { display:grid; grid-template-columns:1fr 1.15fr; gap:64px; align-items:start; }
+  #v06 .eb { font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:500; margin-bottom:18px; display:flex; gap:10px; align-items:center; }
+  #v06 .eb::before { content:""; width:10px; height:10px; background:var(--ink); border-radius:50%; }
+  #v06 h2 { font-size:clamp(36px,5.4cqw,68px); font-weight:800; line-height:.95; letter-spacing:-.04em; margin:0 0 22px; }
+  #v06 .l p { font-size:16.5px; line-height:1.6; color:var(--mut); margin:0 0 30px; max-width:420px; font-family:'Inter',sans-serif; }
+  #v06 .big { display:flex; align-items:flex-end; gap:16px; border-top:3px solid var(--ink); padding-top:20px; }
+  #v06 .big b { font-size:clamp(72px,10cqw,128px); font-weight:800; line-height:.8; letter-spacing:-.06em; }
+  #v06 .big span { font-family:'IBM Plex Mono',monospace; font-size:13px; line-height:1.45; padding-bottom:6px; }
+  #v06 ul { list-style:none; margin:0; padding:0; display:grid; gap:26px; }
+  #v06 .top { display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:10px; }
+  #v06 .top h3 { margin:0; font-size:21px; font-weight:700; letter-spacing:-.02em; }
+  #v06 .top small { display:block; font-family:'Inter',sans-serif; font-size:13.5px; font-weight:400; color:var(--mut); margin-top:3px; letter-spacing:0; }
+  #v06 .pc { font-family:'IBM Plex Mono',monospace; font-size:15px; font-weight:500; font-variant-numeric:tabular-nums; }
+  #v06 .bar { height:22px; border:2px solid var(--ink); border-radius:999px; overflow:hidden; background:repeating-linear-gradient(-45deg,transparent 0 6px,rgba(13,13,13,.12) 6px 8px); }
+  #v06 .bar i { display:block; height:100%; width:var(--v); background:var(--ink); border-radius:999px; transition:width 1.4s cubic-bezier(.2,.8,.2,1); position:relative; }
+  #v06 .bar i::after { content:""; position:absolute; right:5px; top:50%; width:8px; height:8px; margin-top:-4px; border-radius:50%; background:var(--y); }
+  #v06.pre .bar i { width:0; }
+  #v06 li:nth-child(2) .bar i { transition-delay:.12s; }
+  #v06 li:nth-child(3) .bar i { transition-delay:.24s; }
+  #v06 li:nth-child(4) .bar i { transition-delay:.36s; }
+  #v06 li:nth-child(5) .bar i { transition-delay:.48s; }
+  #v06 .tools { margin-top:30px; display:flex; flex-wrap:wrap; gap:8px; }
+  #v06 .tools span { font-family:'IBM Plex Mono',monospace; font-size:12.5px; border:2px solid var(--ink); padding:5px 11px; border-radius:999px; }
+  @container demo (max-width:860px) { #v06 { padding:60px 32px; } #v06 .g { grid-template-columns:1fr; gap:44px; } }
+  @container demo (max-width:520px) { #v06 { padding:48px 20px; } #v06 h2 { font-size:38px; } #v06 .top h3 { font-size:18px; } }
+  @media (prefers-reduced-motion:reduce) { #v06 .bar i { transition:none; } }
+
+  /* ---------- v07 · Ablauf als Karten mit Pfeilen ---------- */
+  #v07 { --ink:#24211E; --mut:#5F5852; --terra:#B4532A; --stone:#EFECE8; --line:#DDD7D0; background:#fff; color:var(--ink); font-family:'Outfit',sans-serif; }
+  #v07 .ban { position:relative; height:250px; overflow:hidden; display:flex; align-items:flex-end; padding:34px 56px; color:#fff; isolation:isolate; }
+  #v07 .ban img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 60%; z-index:-2; }
+  #v07 .ban::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(20,18,16,.86) 0%,rgba(20,18,16,.55) 55%,rgba(20,18,16,.1)); }
+  #v07 .ban .eb { font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#F2C3A8; font-weight:600; margin-bottom:8px; }
+  #v07 h2 { font-size:clamp(30px,4.2cqw,48px); line-height:1.02; font-weight:700; letter-spacing:-.03em; margin:0; }
+  #v07 .ban .avg { margin-left:auto; text-align:right; font-size:14px; color:#E8E2DC; }
+  #v07 .ban .avg b { display:block; font-size:44px; color:#fff; font-weight:700; letter-spacing:-.03em; line-height:1; }
+  #v07 .body { padding:48px 56px 56px; background:var(--stone); }
+  #v07 .flow { display:grid; grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr 28px 1fr; align-items:stretch; list-style:none; margin:0; padding:0; }
+  #v07 .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px 20px 20px; display:flex; flex-direction:column; transition:transform .3s, box-shadow .3s, border-color .3s; }
+  #v07 .card:hover { transform:translateY(-4px); box-shadow:0 18px 34px -22px rgba(36,33,30,.45); border-color:var(--terra); }
+  #v07 .n { font-size:46px; font-weight:800; line-height:1; letter-spacing:-.04em; color:transparent; -webkit-text-stroke:1.5px var(--terra); margin-bottom:14px; }
+  #v07 .card h3 { font-size:18px; font-weight:700; margin:0 0 8px; letter-spacing:-.01em; }
+  #v07 .card p { font-size:14px; line-height:1.55; color:var(--mut); margin:0 0 16px; flex:1; }
+  #v07 .wk { align-self:flex-start; font-size:12.5px; font-weight:600; color:var(--terra); background:#F8E7DD; padding:4px 10px; border-radius:999px; }
+  #v07 .ar { display:grid; place-items:center; color:var(--terra); }
+  #v07 .ar svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  #v07 .axis { margin-top:30px; }
+  #v07 .axis .tr { display:flex; height:10px; border-radius:999px; overflow:hidden; gap:3px; }
+  #v07 .axis .tr i { height:100%; flex:var(--f); background:var(--c); }
+  #v07 .axis .lb { display:flex; justify-content:space-between; font-size:12.5px; color:var(--mut); margin-top:8px; }
+  #v07 .foot { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-top:30px; font-size:15px; color:var(--mut); }
+  #v07 .foot a { background:var(--ink); color:#fff; padding:13px 22px; border-radius:10px; font-weight:600; }
+  #v07 .foot a:focus-visible { outline:2px solid var(--terra); outline-offset:3px; }
+  @container demo (max-width:1000px) {
+    #v07 .ban { padding:28px 32px; height:230px; } #v07 .body { padding:40px 32px 48px; }
+    #v07 .flow { grid-template-columns:1fr; gap:0; max-width:560px; margin:0 auto; }
+    #v07 .card { display:grid; grid-template-columns:64px 1fr; column-gap:16px; padding:18px; }
+    #v07 .n { grid-row:span 3; margin:0; font-size:40px; }
+    #v07 .card p { margin-bottom:10px; }
+    #v07 .ar { height:30px; } #v07 .ar svg { transform:rotate(90deg); }
+    #v07 .axis { max-width:560px; margin-left:auto; margin-right:auto; }
+  }
+  @container demo (max-width:520px) { #v07 .ban { padding:22px 20px; flex-direction:column; align-items:flex-start; justify-content:flex-end; gap:18px; height:310px; } #v07 .ban .avg { margin-left:0; text-align:left; } #v07 .ban .avg b { font-size:34px; } #v07 .body { padding:32px 16px 40px; } #v07 h2 { font-size:30px; } #v07 .card { grid-template-columns:48px 1fr; } #v07 .n { font-size:32px; } }
+  @media (prefers-reduced-motion:reduce) { #v07 .card { transition:none; } }
+
+  /* ---------- v08 · Donut-Diagramme mit Legende ---------- */
+  #v08 { --ink:#11261C; --mut:#4C5F55; --grn:#0F6B3F; --line:#DCE6E0; background:#fff; color:var(--ink); font-family:'Outfit',sans-serif; padding:72px 56px; }
+  #v08 .hd { display:flex; align-items:center; gap:18px; margin-bottom:40px; flex-wrap:wrap; }
+  #v08 .crest { width:58px; height:66px; flex-shrink:0; }
+  #v08 .eb { font-size:13px; font-weight:600; color:var(--grn); letter-spacing:.06em; margin-bottom:4px; }
+  #v08 h2 { font-size:clamp(28px,3.8cqw,42px); font-weight:700; letter-spacing:-.025em; line-height:1.05; margin:0; }
+  #v08 .g { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  #v08 .p { border:1px solid var(--line); border-radius:22px; padding:28px; background:#FAFCFB; min-width:0; }
+  #v08 .p h3 { margin:0 0 4px; font-size:17px; font-weight:600; }
+  #v08 .p > p { margin:0 0 20px; font-size:14px; color:var(--mut); }
+  #v08 .main { display:flex; align-items:center; gap:32px; }
+  #v08 .dn { position:relative; width:230px; height:230px; flex-shrink:0; }
+  #v08 .dn svg { width:100%; height:100%; transform:rotate(-90deg); overflow:visible; }
+  #v08 .dn circle.s { fill:none; stroke-width:5.2; transition:stroke-width .25s, opacity .25s, stroke-dasharray 1.4s cubic-bezier(.2,.8,.2,1); }
+  #v08 .dn.hl circle.s { opacity:.25; }
+  #v08 .dn.hl circle.s.on { opacity:1; stroke-width:6.6; }
+  #v08 .dn .c { position:absolute; inset:0; display:grid; place-content:center; text-align:center; }
+  #v08 .dn .c b { font-size:44px; font-weight:800; letter-spacing:-.04em; line-height:1; }
+  #v08 .dn .c span { font-size:13px; color:var(--mut); margin-top:4px; }
+  #v08 .lg { list-style:none; margin:0; padding:0; display:grid; gap:4px; flex:1; min-width:0; }
+  #v08 .lg button { all:unset; box-sizing:border-box; cursor:pointer; width:100%; display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:10px; font-size:14.5px; }
+  #v08 .lg button:hover, #v08 .lg button:focus-visible { background:#EAF2ED; }
+  #v08 .lg button:focus-visible { outline:2px solid var(--grn); }
+  #v08 .lg i { width:12px; height:12px; border-radius:4px; background:var(--c); flex-shrink:0; }
+  #v08 .lg em { margin-left:auto; font-style:normal; font-weight:700; font-variant-numeric:tabular-nums; }
+  #v08 .minis { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:26px; }
+  #v08 .mi { text-align:center; }
+  #v08 .mi svg { width:86px; height:86px; transform:rotate(-90deg); }
+  #v08 .mi svg circle:last-child { transition:stroke-dasharray 1.4s cubic-bezier(.2,.8,.2,1); }
+  #v08 .mi b { display:block; font-size:22px; font-weight:800; margin-top:6px; }
+  #v08 .mi span { font-size:13px; color:var(--mut); }
+  #v08 .cols { display:flex; align-items:flex-end; gap:10px; height:130px; border-bottom:1px solid var(--line); padding-top:22px; }
+  #v08 .cols div { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; gap:6px; }
+  #v08 .cols i { width:100%; max-width:42px; height:var(--h); background:#BFD8C9; border-radius:6px 6px 0 0; transition:height 1.2s cubic-bezier(.2,.8,.2,1); }
+  #v08 .cols div:last-child i { background:var(--grn); }
+  #v08 .cols small { font-size:11.5px; font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums; }
+  #v08 .yrs { display:flex; gap:10px; margin-top:8px; }
+  #v08 .yrs span { flex:1; text-align:center; font-size:12px; color:var(--mut); }
+  #v08.pre .cols i { height:0; }
+  @container demo (max-width:1000px) { #v08 { padding:56px 28px; } #v08 .g { grid-template-columns:1fr; } }
+  @container demo (max-width:560px) { #v08 { padding:44px 16px; } #v08 .main { flex-direction:column; align-items:stretch; } #v08 .dn { margin:0 auto; width:210px; height:210px; } #v08 .p { padding:22px 18px; } #v08 .mi svg { width:72px; height:72px; } #v08 .cols small { font-size:10px; } }
+  @media (prefers-reduced-motion:reduce) { #v08 .dn circle.s, #v08 .mi svg circle, #v08 .cols i { transition:none; } }
+
+  /* ---------- v09 · „So funktioniert’s“ mit Telefon-Mockup ---------- */
+  #v09 { --ink:#1F1A2E; --mut:#5A5470; --acc:#FF6B3D; --grn:#2E8B57; --bg:#FFF4EC; background:radial-gradient(900px 500px at 85% 20%,#FFE1CF,transparent 60%),var(--bg); color:var(--ink); font-family:'Archivo',sans-serif; padding:72px 56px; }
+  #v09 .g { display:grid; grid-template-columns:1fr 360px; gap:56px; align-items:center; max-width:1080px; margin:0 auto; }
+  #v09 .eb { display:inline-block; font-size:13px; font-weight:700; color:var(--acc); background:#fff; padding:6px 12px; border-radius:999px; margin-bottom:16px; box-shadow:0 2px 8px rgba(255,107,61,.15); }
+  #v09 h2 { font-size:clamp(32px,4.4cqw,52px); font-weight:800; letter-spacing:-.035em; line-height:1; margin:0 0 30px; }
+  #v09 ol { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+  #v09 ol button { all:unset; box-sizing:border-box; cursor:pointer; width:100%; display:grid; grid-template-columns:44px 1fr; gap:16px; padding:16px 18px; border-radius:18px; position:relative; overflow:hidden; transition:background .3s; }
+  #v09 ol button:hover { background:rgba(255,255,255,.6); }
+  #v09 ol button[aria-current=step] { background:#fff; box-shadow:0 14px 34px -22px rgba(31,26,46,.5); }
+  #v09 ol button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  #v09 .num { width:44px; height:44px; border-radius:14px; display:grid; place-items:center; font-weight:800; font-size:17px; background:rgba(31,26,46,.07); color:var(--mut); transition:.3s; }
+  #v09 [aria-current=step] .num { background:var(--acc); color:#fff; }
+  #v09 ol .h { display:block; margin:2px 0 4px; font-size:18px; font-weight:700; }
+  #v09 ol .d { display:block; margin:0; font-size:14.5px; line-height:1.55; color:var(--mut); }
+  #v09 .pg { position:absolute; left:0; bottom:0; height:3px; width:0; background:var(--acc); }
+  #v09 [aria-current=step] .pg.run { animation:v09-pg 4.5s linear forwards; }
+  @keyframes v09-pg { to { width:100%; } }
+  #v09 .stores { display:flex; gap:10px; margin-top:26px; flex-wrap:wrap; }
+  #v09 .stores a { display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:#fff; padding:10px 16px; border-radius:12px; font-size:13px; font-weight:600; }
+  #v09 .stores a:focus-visible { outline:2px solid var(--acc); outline-offset:3px; }
+  #v09 .stores svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+  /* Telefon */
+  #v09 .ph { position:relative; width:300px; height:610px; margin:0 auto; border-radius:46px; background:#15121F; padding:12px; box-shadow:0 40px 80px -30px rgba(31,26,46,.55), inset 0 0 0 2px #2D2840; }
+  #v09 .ph::before { content:""; position:absolute; top:22px; left:50%; width:90px; height:26px; margin-left:-45px; border-radius:20px; background:#15121F; z-index:3; }
+  #v09 .scr { position:relative; height:100%; border-radius:36px; overflow:hidden; background:#FFFBF8; }
+  #v09 .sv { position:absolute; inset:0; padding:62px 16px 16px; opacity:0; transform:translateX(24px); transition:opacity .45s, transform .45s cubic-bezier(.2,.8,.2,1); font-size:12px; }
+  #v09 .sv.on { opacity:1; transform:none; }
+  #v09 .sb { position:absolute; top:18px; left:26px; right:26px; display:flex; justify-content:space-between; font-size:11px; font-weight:700; z-index:2; }
+  #v09 .tt { font-size:18px; font-weight:800; margin:0 0 10px; letter-spacing:-.02em; }
+  #v09 .srch { background:#F1ECE8; border-radius:12px; padding:9px 12px; color:#8A8396; margin-bottom:12px; }
+  #v09 .chips { display:flex; gap:6px; margin-bottom:12px; }
+  #v09 .chips span { padding:5px 9px; border-radius:999px; background:#F1ECE8; font-weight:600; font-size:11px; }
+  #v09 .chips span:first-child { background:var(--ink); color:#fff; }
+  #v09 .prods { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  #v09 .pr { background:#fff; border-radius:14px; padding:8px; box-shadow:0 2px 8px rgba(31,26,46,.06); }
+  #v09 .pr .im { height:70px; border-radius:10px; display:grid; place-items:center; margin-bottom:6px; }
+  #v09 .pr .im svg { width:40px; height:40px; }
+  #v09 .pr b { display:block; font-size:11.5px; }
+  #v09 .pr span { display:flex; justify-content:space-between; align-items:center; color:var(--mut); font-size:11px; margin-top:2px; }
+  #v09 .pr span i { width:20px; height:20px; border-radius:7px; background:var(--acc); color:#fff; display:grid; place-items:center; font-style:normal; font-weight:800; }
+  #v09 .row { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:9px; margin-bottom:7px; box-shadow:0 2px 8px rgba(31,26,46,.05); }
+  #v09 .row .sq { width:36px; height:36px; border-radius:9px; flex-shrink:0; }
+  #v09 .row b { display:block; font-size:12px; } #v09 .row small { color:var(--mut); }
+  #v09 .row em { margin-left:auto; font-style:normal; font-weight:700; white-space:nowrap; }
+  #v09 .tot { display:flex; justify-content:space-between; font-weight:800; font-size:14px; padding:12px 4px; border-top:1px dashed #DDD3CC; margin-top:8px; }
+  #v09 .btn { background:var(--acc); color:#fff; text-align:center; border-radius:14px; padding:12px; font-weight:800; font-size:13px; }
+  #v09 .slots { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin:10px 0 14px; }
+  #v09 .slots span { text-align:center; padding:9px 0; border-radius:10px; background:#fff; border:1px solid #EDE5DF; font-weight:600; }
+  #v09 .slots span.sel { background:var(--ink); color:#fff; border-color:var(--ink); }
+  #v09 .slots span.x { color:#BDB5C4; text-decoration:line-through; }
+  #v09 .days { display:flex; gap:6px; }
+  #v09 .days span { flex:1; text-align:center; padding:7px 0; border-radius:12px; background:#fff; border:1px solid #EDE5DF; line-height:1.3; }
+  #v09 .days span b { display:block; font-size:15px; }
+  #v09 .days span.sel { border-color:var(--acc); color:var(--acc); }
+  #v09 .map { height:270px; border-radius:18px; overflow:hidden; margin-bottom:10px; background:#E9F0E4; }
+  #v09 .map svg { width:100%; height:100%; display:block; }
+  #v09 .drv { display:flex; align-items:center; gap:10px; background:#fff; border-radius:14px; padding:10px; box-shadow:0 2px 8px rgba(31,26,46,.06); }
+  #v09 .drv .av { width:38px; height:38px; border-radius:50%; background:#FFD7C4; display:grid; place-items:center; font-weight:800; color:var(--acc); }
+  #v09 .eta { font-size:22px; font-weight:800; margin:4px 0 8px; }
+  @container demo (max-width:860px) { #v09 { padding:56px 28px; } #v09 .g { grid-template-columns:1fr; gap:40px; } #v09 .ph { order:-1; } }
+  @container demo (max-width:480px) { #v09 { padding:44px 16px; } #v09 .ph { width:270px; height:560px; } #v09 h2 { font-size:32px; } #v09 ol button { grid-template-columns:38px 1fr; gap:12px; padding:14px; } #v09 .num { width:38px; height:38px; } }
+  @media (prefers-reduced-motion:reduce) { #v09 .sv { transition:none; } #v09 [aria-current=step] .pg.run { animation:none; } }
+
+  /* ---------- v10 · Auszeichnungen &amp; Siegel mit Zahlen ---------- */
+  #v10 { --bg:#17322A; --ink:#F4EEDF; --mut:#BFC9BC; --gold:#D6B571; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:76px 56px 68px; position:relative; overflow:hidden; isolation:isolate; }
+  #v10::before { content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(700px 300px at 50% 0%,rgba(214,181,113,.16),transparent 70%); }
+  #v10 .hd { text-align:center; margin-bottom:44px; }
+  #v10 .eb { font-size:12.5px; letter-spacing:.28em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+  #v10 h2 { font-family:'DM Serif Display',serif; font-weight:400; font-size:clamp(32px,4.6cqw,54px); line-height:1.05; margin:0; }
+  #v10 h2 i { color:var(--gold); }
+  #v10 .nums { display:grid; grid-template-columns:repeat(3,1fr); max-width:900px; margin:0 auto 52px; text-align:center; }
+  #v10 .nums > div { padding:6px 18px; }
+  #v10 .nums > div + div { border-left:1px solid rgba(214,181,113,.3); }
+  #v10 .nums b { display:block; font-family:'DM Serif Display',serif; font-weight:400; font-size:clamp(40px,5cqw,58px); line-height:1; }
+  #v10 .nums .stars { display:inline-flex; gap:3px; margin:10px 0 6px; color:var(--gold); }
+  #v10 .nums .stars svg { width:15px; height:15px; fill:currentColor; }
+  #v10 .nums span { display:block; font-size:14px; color:var(--mut); line-height:1.5; margin-top:8px; }
+  #v10 .nums .stars + span { margin-top:0; }
+  #v10 .seals { list-style:none; margin:0; padding:30px 0 0; border-top:1px solid rgba(214,181,113,.25); display:flex; justify-content:center; flex-wrap:wrap; gap:22px 34px; }
+  #v10 .seals li { width:132px; text-align:center; }
+  #v10 .seals svg { width:120px; height:120px; display:block; margin:0 auto; transition:transform .6s cubic-bezier(.2,.8,.2,1); }
+  #v10 .seals li:hover svg { transform:rotate(-8deg) scale(1.04); }
+  #v10 .seals small { display:block; margin-top:10px; font-size:12.5px; line-height:1.4; color:var(--mut); }
+  #v10 .note { margin:30px 0 0; text-align:center; font-size:12px; color:#9FB0A3; }
+  @container demo (max-width:760px) { #v10 { padding:56px 24px; } #v10 .seals li { width:116px; } #v10 .seals svg { width:104px; height:104px; } }
+  @container demo (max-width:560px) { #v10 { padding:48px 16px; } #v10 .nums { grid-template-columns:1fr; gap:22px; } #v10 .nums > div + div { border-left:0; border-top:1px solid rgba(214,181,113,.3); padding-top:22px; } #v10 .seals { gap:18px 14px; } #v10 .seals li { width:42%; } }
+  @media (prefers-reduced-motion:reduce) { #v10 .seals svg { transition:none; } }
+
+</style>
+</head>
+<body class="shell">
+
+<header class="sh-header">
+  <div class="sh-bar">
+    <a href="../../Meuster%20Landing%20Page.dc.html" aria-label="meuser.biz Startseite"><img src="../../assets/meuser-logo.png" alt="meuser.biz – Modern Webservices"></a>
+    <div class="sh-actions">
+      <a class="sh-btn ghost" href="../../beispiele.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>Alle<span class="long"> Beispiele</span></span></a>
+      <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Anfrage</a>
+    </div>
+  </div>
+  <nav class="sh-cats" aria-label="Kategorien">
+    <a href="../../beispiele.html#websites">Komplette Websites</a>
+    <a href="navigation.html">Navigation &amp; Menüs</a>
+    <a href="header.html">Header &amp; Hero</a>
+    <a href="footer.html">Footer</a>
+    <a href="leistungen.html">Leistungen &amp; Features</a>
+    <a href="preise.html">Preistabellen</a>
+    <a href="stimmen.html">Kundenstimmen</a>
+    <a href="team.html">Team</a>
+    <a href="galerie.html">Galerien</a>
+    <a href="kontakt.html">Kontakt &amp; Formulare</a>
+    <a href="faq.html">FAQ</a>
+    <a href="cta.html">Call-to-Action</a>
+    <a href="kennzahlen.html">Kennzahlen &amp; Abläufe</a>
+  </nav>
+</header>
+
+<section class="sh-hero">
+  <div class="sh-hero-in">
+    <div class="sh-eyebrow">BAUSTEINE · 10 VARIANTEN</div>
+    <h1>Kennzahlen &amp; Abläufe</h1>
+    <p>Zahlen schaffen Vertrauen, klare Abläufe nehmen die Unsicherheit. Zehn Varianten für Statistiken, Prozesse und Zeitleisten – vom Count-up bis zur Produkt-Roadmap.</p>
+  </div>
+</section>
+
+<nav class="sh-index" aria-label="Varianten auf dieser Seite">
+  <a href="#v01-wrap"><b>01</b>Count-up-Leiste</a>
+  <a href="#v02-wrap"><b>02</b>Statistik-Kacheln</a>
+  <a href="#v03-wrap"><b>03</b>4-Schritte-Prozess</a>
+  <a href="#v04-wrap"><b>04</b>Firmengeschichte</a>
+  <a href="#v05-wrap"><b>05</b>Roadmap</a>
+  <a href="#v06-wrap"><b>06</b>Skill-Bars</a>
+  <a href="#v07-wrap"><b>07</b>Karten mit Pfeilen</a>
+  <a href="#v08-wrap"><b>08</b>Donut-Diagramme</a>
+  <a href="#v09-wrap"><b>09</b>App-Ablauf</a>
+  <a href="#v10-wrap"><b>10</b>Siegel-Leiste</a>
+</nav>
+
+<main class="sh-main">
+
+  <!-- ===== VARIANTE (Muster, für jede Variante wiederholen) =====
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Name der Variante</h2>
+        <p>Ein bis zwei Sätze: Wie wirkt sie, wofür eignet sie sich?</p>
+        <ul class="v-tags"><li>Restaurant</li><li>Hotel</li><li>mit Dropdown</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame" style="--h:420px">
+        <div id="v01"> … Baustein … </div>
+      </div>
+    </div>
+  </section>
+  ============================================================== -->
+
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Zahlenleiste mit Count-up</h2>
+        <p>Vier Kennzahlen, die beim Sichtbarwerden hochzählen – auf satter Markenfarbe mit feinen Trennlinien. Schnell erfasst und glaubwürdig, ideal direkt unter dem Header oder vor dem Kontaktbereich.</p>
+        <ul class="v-tags"><li>Handwerk &amp; Bau</li><li>Dienstleister</li><li>Count-up</li><li>Intersection Observer</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v01">
+<section aria-labelledby="v01-h">
+  <div class="top">
+    <div><div class="eb">Dachtechnik Hendricks</div><h2 id="v01-h">Seit drei Generationen halten wir Kempen trocken.</h2></div>
+    <a href="#" onclick="return false">Unsere Referenzen →</a>
+  </div>
+  <dl>
+    <div><dt><b>Jahre Erfahrung</b>Meisterbetrieb seit 1961</dt><dd><span class="cu" data-to="65">65</span></dd></div>
+    <div><dt><b>Dächer pro Jahr</b>neu gedeckt oder saniert</dt><dd><span class="cu" data-to="240">240</span><small>+</small></dd></div>
+    <div><dt><b>Weiterempfehlung</b>laut Kundenbefragung 2025</dt><dd><span class="cu" data-to="98">98</span><small>%</small></dd></div>
+    <div><dt><b>Reaktionszeit</b>bei Sturmschäden</dt><dd><small style="margin:0 6px 0 0">&lt;</small><span class="cu" data-to="24">24</span><small>Std.</small></dd></div>
+  </dl>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v02-wrap" aria-labelledby="v02-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 02</div>
+        <h2 id="v02-title">Statistik-Kacheln mit Mini-Diagrammen</h2>
+        <p>Jede Zahl bekommt ihr eigenes kleines Diagramm – Linie, Balken, Ring, Halbkreis oder Punktraster, alles in SVG und CSS. Wirkt wie ein Jahresbericht in kompakt und eignet sich für Genossenschaften, Stadtwerke und Unternehmen mit Bilanz.</p>
+        <ul class="v-tags"><li>Energie &amp; Stadtwerke</li><li>Genossenschaft</li><li>SVG-Diagramme</li><li>Jahresbericht</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v02">
+<section aria-labelledby="v02-h">
+  <div class="hd">
+    <div><div class="eb"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Bürgerenergie Willich eG · Jahresbilanz</div><h2 id="v02-h">Unser Jahr in Zahlen</h2></div>
+    <div class="yr" aria-hidden="true"><span>2023</span><span>2024</span><span>2025</span></div>
+  </div>
+  <div class="g">
+    <article class="k big">
+      <h3>Installierte Leistung <em>+38 % zum Vorjahr</em></h3>
+      <div class="v">4.860<small>kWp</small></div>
+      <p class="s">auf 61 Dächern von Schulen, Hallen und Höfen in Willich und Umgebung</p>
+      <div class="spark">
+        <svg viewBox="0 0 300 150" preserveAspectRatio="none" role="img" aria-label="Liniendiagramm: installierte Leistung steigt von 620 kWp im Jahr 2018 auf 4.860 kWp im Jahr 2025">
+          <defs><linearGradient id="v02a" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#F2A41C" stop-opacity=".45"/><stop offset="1" stop-color="#F2A41C" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0 50H300M0 100H300" stroke="rgba(185,204,193,.18)" stroke-width="1" vector-effect="non-scaling-stroke"/>
+          <path d="M0 137 L43 130 L86 121 L129 108 L171 92 L214 70 L257 48 L300 10 V150 H0Z" fill="url(#v02a)"/>
+          <path d="M0 137 L43 130 L86 121 L129 108 L171 92 L214 70 L257 48 L300 10" fill="none" stroke="#F2A41C" stroke-width="2.5" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+        </svg>
+        <div class="ax" aria-hidden="true"><span>2018</span><span>2020</span><span>2022</span><span>2025</span></div>
+      </div>
+    </article>
+    <article class="k">
+      <h3>CO₂ vermieden <em>pro Jahr</em></h3>
+      <div class="v">2.910<small>t</small></div>
+      <p class="s">entspricht rund 1.400 Pkw weniger auf der Straße</p>
+      <div class="bars" role="img" aria-label="Säulendiagramm: vermiedenes CO2 wächst jedes Jahr von 2018 bis 2025"><i style="--h:14%"></i><i style="--h:22%"></i><i style="--h:30%"></i><i style="--h:41%"></i><i style="--h:52%"></i><i style="--h:64%"></i><i style="--h:79%"></i><i style="--h:100%"></i></div>
+    </article>
+    <article class="k">
+      <h3>Mitglieder <em>+212</em></h3>
+      <div class="v">1.348</div>
+      <p class="s">Bürgerinnen, Bürger und Betriebe aus der Region</p>
+      <div class="ringw">
+        <svg viewBox="0 0 42 42" role="img" aria-label="Ringdiagramm: 71 Prozent Privatpersonen, 19 Prozent Betriebe, 10 Prozent Kommunen und Vereine"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#E3EBE5" stroke-width="6"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#1F7A4D" stroke-width="6" stroke-dasharray="71 29"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#F2A41C" stroke-width="6" stroke-dasharray="19 81" stroke-dashoffset="-71"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#7FB59A" stroke-width="6" stroke-dasharray="10 90" stroke-dashoffset="-90"/></svg>
+        <ul><li style="--c:#1F7A4D">71 % Privat</li><li style="--c:#F2A41C">19 % Betriebe</li><li style="--c:#7FB59A">10 % Kommunen</li></ul>
+      </div>
+    </article>
+    <article class="k">
+      <h3>Eigenverbrauch vor Ort</h3>
+      <div class="gauge">
+        <svg viewBox="0 0 200 112" role="img" aria-label="Halbkreis-Anzeige: 68 Prozent Eigenverbrauch"><path d="M16 100a84 84 0 0 1 168 0" fill="none" stroke="#E3EBE5" stroke-width="16" stroke-linecap="round"/><path d="M16 100a84 84 0 0 1 168 0" fill="none" stroke="#1F7A4D" stroke-width="16" stroke-linecap="round" pathLength="100" stroke-dasharray="68 100"/><text x="100" y="86" text-anchor="middle" font-family="Archivo, sans-serif" font-size="38" font-weight="800" fill="#1A2B22">68 %</text></svg>
+      </div>
+      <p class="s" style="text-align:center;margin-top:6px">Strom, der direkt in Schulen und Hallen genutzt wird</p>
+    </article>
+    <article class="k">
+      <h3>Haushalte versorgt <em>rechnerisch</em></h3>
+      <div class="v">1.620</div>
+      <div class="waf" role="img" aria-label="Punktraster: 81 von 100 Feldern markiert, entspricht 81 Prozent der Haushalte im Ortsteil Anrath"></div>
+      <p class="note">≈ 81 % aller Haushalte im Ortsteil Anrath</p>
+    </article>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v03-wrap" aria-labelledby="v03-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 03</div>
+        <h2 id="v03-title">Prozess in vier Schritten mit Verbindungslinie</h2>
+        <p>Ein horizontaler Ablauf, dessen Linie sich beim Sichtbarwerden von Schritt zu Schritt zeichnet. Auf dem Handy wird daraus eine senkrechte Liste. Nimmt die Unsicherheit vor dem ersten Anruf – für jede Dienstleistung mit klarem Ablauf.</p>
+        <ul class="v-tags"><li>Garten- &amp; Landschaftsbau</li><li>Dienstleistung</li><li>animierte Linie</li><li>horizontal → vertikal</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v03">
+<section aria-labelledby="v03-h">
+  <div class="hd">
+    <div class="eb">Gartenbau Lindenhof · Willich</div>
+    <h2 id="v03-h">Vom ersten Gespräch zum fertigen Garten</h2>
+    <p>Vier Schritte, feste Ansprechpartner und ein Preis, der hält. So arbeiten wir.</p>
+  </div>
+  <div class="steps">
+  <span class="rail" aria-hidden="true"><i></i></span>
+  <ol>
+    <li><span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg></span><h3>Kennenlernen</h3><p>Wir kommen vorbei, schauen uns Boden, Licht und Wünsche an.</p><span class="dur">kostenlos · 1 Std.</span></li>
+    <li><span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3V6z"/><path d="M9 3v15M15 6v15"/></svg></span><h3>Planung</h3><p>Sie erhalten einen Entwurf mit Pflanzplan und Festpreisangebot.</p><span class="dur">ca. 2 Wochen</span></li>
+    <li><span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 21h10M12 21V11"/><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7zM12 13c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5z"/></svg></span><h3>Umsetzung</h3><p>Unser Team pflanzt, pflastert und baut – sauber und termintreu.</p><span class="dur">1–4 Wochen</span></li>
+    <li><span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20c4 0 6-2 6-6V4"/><path d="M10 9c3 0 5 1 6 3M10 13c2.5 0 4.5.5 6 2"/><path d="M14 4h6v6"/><path d="M20 4l-6 6"/></svg></span><h3>Pflege</h3><p>Auf Wunsch kümmern wir uns ums ganze Jahr: Schnitt, Rasen, Laub.</p><span class="dur">optional · ab 49 €/Monat</span></li>
+  </ol>
+  </div>
+  <div class="foot"><a href="#" onclick="return false">Termin vereinbaren</a><span>oder anrufen: 02151 123 45 67</span></div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v04-wrap" aria-labelledby="v04-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 04</div>
+        <h2 id="v04-title">Vertikale Zeitleiste der Firmengeschichte</h2>
+        <p>Eine Mittellinie, abwechselnd links und rechts die Stationen, große Jahreszahlen in klassischer Serifenschrift und ein Foto als Höhepunkt. Erzählt Tradition, ohne angestaubt zu wirken – für Familienbetriebe mit Geschichte.</p>
+        <ul class="v-tags"><li>Familienbetrieb</li><li>Metallbau &amp; Handwerk</li><li>Zeitleiste</li><li>einblendende Stationen</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v04">
+<section aria-labelledby="v04-h">
+  <div class="hd">
+    <div class="eb">Metallbau Wienands · Tönisvorst</div>
+    <h2 id="v04-h">Drei Generationen, <i>ein Handwerk</i></h2>
+    <p>Was 1952 mit einer Schmiede im Hinterhof begann, ist heute ein Betrieb mit 34 Mitarbeitenden – und noch immer in Familienhand.</p>
+  </div>
+  <ol>
+    <li><div class="y">1952</div><h3>Die Schmiede am Ostwall</h3><p>Heinrich Wienands eröffnet seine Werkstatt: Hufbeschlag, Gartentore und Reparaturen für die Bauern der Umgebung.</p></li>
+    <li><div class="y">1974</div><h3>Umzug ins Gewerbegebiet</h3><p>Sohn Peter übernimmt, baut die erste Halle und spezialisiert sich auf Treppen, Geländer und Stahlkonstruktionen.</p></li>
+    <li class="hi"><div class="y">1998</div><h3>Zertifiziert nach EN 1090</h3><p>Mit der Zulassung für tragende Bauteile kommen erste Großprojekte: Hallen, Vordächer und Balkonanlagen.</p>
+      <figure><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80&auto=format&fit=crop" alt="Metallbauer mit Schutzhelm bei der Arbeit mit einem Brenner" loading="lazy"><figcaption>Schweißfachbetrieb seit 1998</figcaption></figure></li>
+    <li><div class="y">2011</div><h3>Laser und Ausbildung</h3><p>Eine eigene Laserschneidanlage hält die Fertigung im Haus. Seitdem bilden wir jedes Jahr mindestens zwei Lehrlinge aus.</p></li>
+    <li><div class="y">2024</div><h3>Die dritte Generation</h3><p>Lena Wienands, Meisterin und Ingenieurin, übernimmt die Geschäftsführung – und stellt die Halle auf Solarstrom um.</p><span class="now">Heute: 34 Mitarbeitende</span></li>
+  </ol>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v05-wrap" aria-labelledby="v05-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 05</div>
+        <h2 id="v05-title">Produkt-Roadmap</h2>
+        <p>Quartale als Spalten, ein Fortschrittsband mit „Heute“-Markierung und Karten mit Status-Chips: erledigt, in Arbeit, geplant. Transparent und zukunftsgerichtet – für Startups, Software und Investoren-Seiten.</p>
+        <ul class="v-tags"><li>Startup &amp; App</li><li>Software</li><li>Status-Chips</li><li>horizontal scrollbar</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v05">
+<section aria-labelledby="v05-h">
+  <div class="hd">
+    <div><div class="eb">// radhaus · roadmap 2026–27</div><h2 id="v05-h">Wohin wir<br>als Nächstes fahren.</h2></div>
+    <div class="lg" aria-hidden="true"><span><i style="background:#B6F35C"></i>erledigt</span><span><i style="background:#7AA7FF"></i>in Arbeit</span><span><i style="background:#9DA3AE"></i>geplant</span></div>
+  </div>
+  <div class="sc" tabindex="0" role="region" aria-label="Roadmap, horizontal scrollbar">
+    <div class="rm">
+      <div class="q"><b>Q1</b><span>Jan–Mär 26</span></div>
+      <div class="q"><b>Q2</b><span>Apr–Jun 26</span></div>
+      <div class="q"><b>Q3</b><span>Jul–Sep 26</span></div>
+      <div class="q"><b>Q4</b><span>Okt–Dez 26</span></div>
+      <div class="q"><b>2027</b><span>Ausblick</span></div>
+      <div class="band" style="--t:74%" aria-hidden="true"><b></b><span class="today">heute · Nov 26</span></div>
+      <div class="col"><div class="c dn"><h3>Launch Kempen</h3><p>40 E-Lastenräder an 8 Stationen</p><span class="st d">✓ erledigt</span></div><div class="c dn"><h3>App 1.0</h3><p>iOS &amp; Android, Buchen in 3 Taps</p><span class="st d">✓ erledigt</span></div></div>
+      <div class="col"><div class="c dn"><h3>Abo-Modell</h3><p>Flatrate ab 19 € im Monat</p><span class="st d">✓ erledigt</span></div><div class="c dn"><h3>Seed-Runde</h3><p>1,2 Mio. € mit Partnern aus der Region</p><span class="st d">✓ erledigt</span></div></div>
+      <div class="col"><div class="c dn"><h3>Tönisvorst &amp; Willich</h3><p>+22 Stationen, 130 Räder</p><span class="st d">✓ erledigt</span></div><div class="c"><h3>Firmenkonten</h3><p>Dienstrad-Flotten für Betriebe</p><span class="st w">in Arbeit</span></div></div>
+      <div class="col"><div class="c"><h3>Kindersitz-Modul</h3><p>2 Sitzplätze, Gurt, Regenverdeck</p><span class="st w">in Arbeit · 70 %</span></div><div class="c"><h3>Wetter-Pause</h3><p>Abo bei Glatteis automatisch pausieren</p><span class="st p">geplant</span></div></div>
+      <div class="col"><div class="c nx"><h3>Krefeld &amp; Viersen</h3><p>Ausbau auf 500 Räder</p><span class="st p">geplant</span></div><div class="c nx"><h3>Lieferdienst-Tarif</h3><p>für Bäckereien &amp; Apotheken</p><span class="st p">geplant</span></div></div>
+    </div>
+  </div>
+  <div class="ft"><span>zuletzt aktualisiert: 03.11.2026</span><a href="#" onclick="return false">Feature vorschlagen →</a></div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v06-wrap" aria-labelledby="v06-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 06</div>
+        <h2 id="v06-title">Fortschrittsbalken &amp; Kompetenzen</h2>
+        <p>Kräftiges Gelb, schwarze Balken, die beim Scrollen auf ihren Wert wachsen, und eine große Kennzahl als Anker. Selbstbewusst und plakativ – für Agenturen, Studios und Teams, die ihre Schwerpunkte zeigen wollen.</p>
+        <ul class="v-tags"><li>Agentur &amp; Kreative</li><li>Recruiting</li><li>animierte Balken</li><li>expressiv</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v06">
+<section aria-labelledby="v06-h">
+  <div class="g">
+    <div class="l">
+      <div class="eb">Hafenwerk Digital · Krefeld</div>
+      <h2 id="v06-h">Worin wir richtig gut sind.</h2>
+      <p>Ehrlich gezählt: In so vielen unserer Projekte seit 2018 steckte die jeweilige Disziplin – umgesetzt von einem festen Team aus 14 Leuten.</p>
+      <div class="big"><b>212</b><span>Projekte<br>live gegangen</span></div>
+    </div>
+    <div>
+      <ul>
+        <li><div class="top"><h3>Webdesign &amp; UX<small>Konzept, Wireframes, Prototypen</small></h3><span class="pc">94 %</span></div><div class="bar" role="img" aria-label="94 Prozent"><i style="--v:94%"></i></div></li>
+        <li><div class="top"><h3>Entwicklung<small>WordPress, Shopify, eigene Systeme</small></h3><span class="pc">88 %</span></div><div class="bar" role="img" aria-label="88 Prozent"><i style="--v:88%"></i></div></li>
+        <li><div class="top"><h3>Branding<small>Logo, Design-System, Guidelines</small></h3><span class="pc">76 %</span></div><div class="bar" role="img" aria-label="76 Prozent"><i style="--v:76%"></i></div></li>
+        <li><div class="top"><h3>SEO &amp; Content<small>Texte, Struktur, lokale Sichtbarkeit</small></h3><span class="pc">69 %</span></div><div class="bar" role="img" aria-label="69 Prozent"><i style="--v:69%"></i></div></li>
+        <li><div class="top"><h3>Bewegtbild<small>Erklärvideos, Social Clips</small></h3><span class="pc">42 %</span></div><div class="bar" role="img" aria-label="42 Prozent"><i style="--v:42%"></i></div></li>
+      </ul>
+      <div class="tools" aria-label="Werkzeuge"><span>Figma</span><span>WordPress</span><span>Shopify</span><span>Webflow</span><span>After Effects</span></div>
+    </div>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v07-wrap" aria-labelledby="v07-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 07</div>
+        <h2 id="v07-title">Ablauf als Karten mit Pfeilen</h2>
+        <p>Fünf Bauphasen als nummerierte Karten, verbunden durch Pfeile, mit Dauer je Phase und einer Zeitachse darunter. Gibt Bauherren Orientierung über Monate hinweg – für Hausbau, Sanierung und größere Projekte.</p>
+        <ul class="v-tags"><li>Hausbau &amp; Bauträger</li><li>Architektur</li><li>Phasen mit Dauer</li><li>Pfeil-Verbindungen</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v07">
+<section aria-labelledby="v07-h">
+  <div class="ban">
+    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy">
+    <div><div class="eb">Rheinhaus Massivbau · Meerbusch</div><h2 id="v07-h">In fünf Schritten<br>zum eigenen Haus</h2></div>
+    <div class="avg"><b>11 Monate</b>vom Vertrag bis zum Einzug (Ø 2025)</div>
+  </div>
+  <div class="body">
+    <ol class="flow">
+      <li class="card"><span class="n" aria-hidden="true">01</span><h3>Beratung &amp; Grundstück</h3><p>Budget, Wünsche und Bebauungsplan – wir prüfen Ihr Grundstück vor Ort.</p><span class="wk">2–4 Wochen</span></li>
+      <li class="ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></li>
+      <li class="card"><span class="n" aria-hidden="true">02</span><h3>Entwurf &amp; Festpreis</h3><p>Grundriss, Ansichten, Bemusterung – und ein Festpreis, der gilt.</p><span class="wk">6–8 Wochen</span></li>
+      <li class="ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></li>
+      <li class="card"><span class="n" aria-hidden="true">03</span><h3>Bauantrag</h3><p>Wir reichen alle Unterlagen ein und klären Rückfragen mit dem Bauamt.</p><span class="wk">8–12 Wochen</span></li>
+      <li class="ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></li>
+      <li class="card"><span class="n" aria-hidden="true">04</span><h3>Rohbau &amp; Ausbau</h3><p>Feste Bauleitung, wöchentliche Fotos und Begehungen mit Ihnen.</p><span class="wk">5–6 Monate</span></li>
+      <li class="ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></li>
+      <li class="card"><span class="n" aria-hidden="true">05</span><h3>Abnahme &amp; Einzug</h3><p>Gemeinsame Abnahme mit Gutachter, Schlüsselübergabe, 5 Jahre Gewährleistung.</p><span class="wk">1 Woche</span></li>
+    </ol>
+    <div class="axis" aria-hidden="true">
+      <div class="tr"><i style="--f:3;--c:#E6B79C"></i><i style="--f:7;--c:#D8946F"></i><i style="--f:10;--c:#C87347"></i><i style="--f:24;--c:#B4532A"></i><i style="--f:1.5;--c:#24211E"></i></div>
+      <div class="lb"><span>Monat 0</span><span>Monat 6</span><span>Monat 11</span></div>
+    </div>
+    <div class="foot"><span>Musterhaus in Meerbusch-Osterath: Sa &amp; So 11–17 Uhr</span><a href="#" onclick="return false">Beratungstermin buchen</a></div>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v08-wrap" aria-labelledby="v08-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 08</div>
+        <h2 id="v08-title">Donut-Diagramme mit Legende</h2>
+        <p>Ein großer Ring zeigt die Abteilungen, kleine Ringe die Anteile, Säulen die Entwicklung über die Jahre. Beim Überfahren der Legende hebt sich das passende Segment hervor. Lebendig und nahbar – für Vereine, Verbände und Schulen.</p>
+        <ul class="v-tags"><li>Verein &amp; Verband</li><li>Schule</li><li>SVG-Donuts</li><li>interaktive Legende</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v08">
+<section aria-labelledby="v08-h">
+  <div class="hd">
+    <svg class="crest" viewBox="0 0 58 66" aria-hidden="true"><path d="M3 4h52v28c0 16-12 26-26 31C15 58 3 48 3 32V4z" fill="#0F6B3F"/><path d="M3 4h52v10H3z" fill="#11261C"/><text x="29" y="12" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7.5" font-weight="700" fill="#fff" letter-spacing="1">TuS</text><text x="29" y="40" text-anchor="middle" font-family="Outfit,sans-serif" font-size="15" font-weight="800" fill="#fff">1911</text><path d="M14 47h30" stroke="#fff" stroke-width="2"/></svg>
+    <div><div class="eb">TuS Vorst 1911 e.V. · Jahreshauptversammlung 2025</div><h2 id="v08-h">So wächst unser Verein</h2></div>
+  </div>
+  <div class="g">
+    <div class="p">
+      <h3>Mitglieder nach Abteilung</h3><p>Stand 31.12.2025</p>
+      <div class="main">
+        <div class="dn" role="img" aria-label="Ringdiagramm der 1.284 Mitglieder: Fußball 38 Prozent, Turnen 22 Prozent, Tennis 16 Prozent, Leichtathletik 13 Prozent, Handball 11 Prozent">
+          <svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#EDF2EF" stroke-width="5.2"/></svg>
+          <div class="c"><b>1.284</b><span>Mitglieder</span></div>
+        </div>
+        <ul class="lg"></ul>
+      </div>
+    </div>
+    <div class="p">
+      <h3>Wer bei uns aktiv ist</h3><p>Anteile an allen Mitgliedern</p>
+      <div class="minis">
+        <div class="mi"><svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#EDF2EF" stroke-width="5"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#0F6B3F" stroke-width="5" stroke-linecap="round" data-v="41" stroke-dasharray="41 59"/></svg><b>41 %</b><span>unter 18</span></div>
+        <div class="mi"><svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#EDF2EF" stroke-width="5"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#E0A526" stroke-width="5" stroke-linecap="round" data-v="46" stroke-dasharray="46 54"/></svg><b>46 %</b><span>Frauen &amp; Mädchen</span></div>
+        <div class="mi"><svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#EDF2EF" stroke-width="5"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#3E8EB5" stroke-width="5" stroke-linecap="round" data-v="17" stroke-dasharray="17 83"/></svg><b>17 %</b><span>im Ehrenamt</span></div>
+      </div>
+      <h3>Mitgliederentwicklung</h3>
+      <div class="cols" role="img" aria-label="Säulendiagramm: 2019 930, 2020 880, 2021 905, 2022 1.010, 2023 1.105, 2024 1.190, 2025 1.284 Mitglieder">
+        <div><small>930</small><i style="--h:62%"></i></div><div><small>880</small><i style="--h:57%"></i></div><div><small>905</small><i style="--h:60%"></i></div><div><small>1.010</small><i style="--h:68%"></i></div><div><small>1.105</small><i style="--h:76%"></i></div><div><small>1.190</small><i style="--h:83%"></i></div><div><small>1.284</small><i style="--h:90%"></i></div>
+      </div>
+      <div class="yrs" aria-hidden="true"><span>’19</span><span>’20</span><span>’21</span><span>’22</span><span>’23</span><span>’24</span><span>’25</span></div>
+    </div>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v09-wrap" aria-labelledby="v09-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 09</div>
+        <h2 id="v09-title">„So funktioniert’s“ mit Telefon-Mockup</h2>
+        <p>Vier Schritte links, rechts ein in CSS gebautes Smartphone, dessen Bildschirm zum gewählten Schritt wechselt – automatisch oder per Klick. Erklärt eine App, ohne dass man sie installieren muss.</p>
+        <ul class="v-tags"><li>App &amp; Plattform</li><li>Lieferdienst</li><li>Telefon-Mockup in CSS</li><li>Auto-Wechsel</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v09">
+<section aria-labelledby="v09-h">
+  <div class="g">
+    <div>
+      <span class="eb">Kiezkorb – Hofladen per App</span>
+      <h2 id="v09-h">So funktioniert’s</h2>
+      <ol>
+        <li><button type="button" aria-current="step" data-i="0"><span class="num">1</span><span><b class="h">Hofladen wählen</b><span class="d">18 Höfe und Manufakturen zwischen Kempen und Krefeld – alles saisonal.</span></span><span class="pg run"></span></button></li>
+        <li><button type="button" data-i="1"><span class="num">2</span><span><b class="h">Korb füllen</b><span class="d">Gemüse, Eier, Käse, Brot: Sie sehen genau, von welchem Hof es kommt.</span></span><span class="pg"></span></button></li>
+        <li><button type="button" data-i="2"><span class="num">3</span><span><b class="h">Zeitfenster buchen</b><span class="d">Lieferung am nächsten Tag – im 2-Stunden-Fenster Ihrer Wahl.</span></span><span class="pg"></span></button></li>
+        <li><button type="button" data-i="3"><span class="num">4</span><span><b class="h">Live verfolgen</b><span class="d">Ihr Fahrer kommt mit dem E-Transporter. Pfand nehmen wir gleich mit.</span></span><span class="pg"></span></button></li>
+      </ol>
+      <div class="stores"><a href="#" onclick="return false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>Für iPhone laden</a><a href="#" onclick="return false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17l14-8.5L5 3.5z"/></svg>Für Android laden</a></div>
+    </div>
+    <div class="ph" role="img" aria-label="Smartphone zeigt den jeweils gewählten Schritt der Kiezkorb-App">
+      <div class="scr" aria-hidden="true">
+        <div class="sb"><span>9:41</span><span>●●● 5G</span></div>
+        <div class="sv on">
+          <p class="tt">Hallo Familie Peters!</p>
+          <div class="srch">Hof oder Produkt suchen …</div>
+          <div class="chips"><span>Alle</span><span>Gemüse</span><span>Käse</span><span>Brot</span></div>
+          <div class="prods">
+            <div class="pr"><div class="im" style="background:#FFE5D6"><svg viewBox="0 0 40 40"><path d="M20 12c6 0 11 5 11 12s-5 11-11 11-11-4-11-11 5-12 11-12z" fill="#FF6B3D"/><path d="M20 12c0-3 2-6 5-7M20 12c-2-3-5-4-8-3" stroke="#2E8B57" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div><b>Hof Brüggen</b><span>Tomaten · 1 kg<i>+</i></span></div>
+            <div class="pr"><div class="im" style="background:#FFF3C9"><svg viewBox="0 0 40 40"><ellipse cx="14" cy="23" rx="7" ry="9" fill="#F7E2B5" stroke="#D8B26A" stroke-width="1.5"/><ellipse cx="26" cy="22" rx="7" ry="9" fill="#FBEBC8" stroke="#D8B26A" stroke-width="1.5"/></svg></div><b>Hof Terheyden</b><span>Eier · 10 St.<i>+</i></span></div>
+            <div class="pr"><div class="im" style="background:#E3F1E6"><svg viewBox="0 0 40 40"><path d="M10 30c0-8 4-17 10-20 6 3 10 12 10 20H10z" fill="#3FA06A"/><path d="M20 10v20M14 20l6 4M26 20l-6 4" stroke="#1F6B43" stroke-width="1.5" fill="none"/></svg></div><b>Gärtnerei Kox</b><span>Salat-Mix<i>+</i></span></div>
+            <div class="pr"><div class="im" style="background:#F6E7D7"><svg viewBox="0 0 40 40"><path d="M7 26c0-8 6-13 13-13s13 5 13 13v3H7v-3z" fill="#C98B4A"/><path d="M13 19l2 4M20 17v5M27 19l-2 4" stroke="#8C5A28" stroke-width="1.6" stroke-linecap="round"/></svg></div><b>Backstube Elfers</b><span>Landbrot<i>+</i></span></div>
+          </div>
+        </div>
+        <div class="sv">
+          <p class="tt">Ihr Korb</p>
+          <div class="row"><span class="sq" style="background:#FFE5D6"></span><span><b>Tomaten, 1 kg</b><small>Hof Brüggen</small></span><em>3,90 €</em></div>
+          <div class="row"><span class="sq" style="background:#FFF3C9"></span><span><b>Freilandeier, 10 St.</b><small>Hof Terheyden</small></span><em>4,20 €</em></div>
+          <div class="row"><span class="sq" style="background:#E3F1E6"></span><span><b>Salat-Mix</b><small>Gärtnerei Kox</small></span><em>2,80 €</em></div>
+          <div class="row"><span class="sq" style="background:#F6E7D7"></span><span><b>Landbrot, 1 kg</b><small>Backstube Elfers</small></span><em>5,50 €</em></div>
+          <div class="row"><span class="sq" style="background:#EDE7F6"></span><span><b>Bergkäse, 250 g</b><small>Käserei Op de Hey</small></span><em>6,40 €</em></div>
+          <div class="tot"><span>Summe</span><span>22,80 €</span></div>
+          <div class="btn">Weiter zur Lieferung</div>
+        </div>
+        <div class="sv">
+          <p class="tt">Wann sollen wir kommen?</p>
+          <div class="days"><span>Mi<b>11</b></span><span class="sel">Do<b>12</b></span><span>Fr<b>13</b></span><span>Sa<b>14</b></span></div>
+          <div class="slots"><span class="x">8–10</span><span>10–12</span><span>12–14</span><span>14–16</span><span class="sel">16–18</span><span>18–20</span></div>
+          <div class="row"><span class="sq" style="background:#E3F1E6"></span><span><b>Lieferung</b><small>Rheinstraße 4, Kempen</small></span><em>2,90 €</em></div>
+          <div class="row"><span class="sq" style="background:#FFF3C9"></span><span><b>Pfandkiste</b><small>wird mitgenommen</small></span><em>✓</em></div>
+          <div class="btn" style="margin-top:12px">Für 25,70 € bestellen</div>
+        </div>
+        <div class="sv">
+          <div class="map"><svg viewBox="0 0 270 270"><path d="M0 70h270M0 170h270M80 0v270M190 0v270" stroke="#fff" stroke-width="14"/><path d="M0 120h270M135 0v270" stroke="#fff" stroke-width="7"/><rect x="92" y="82" width="34" height="28" rx="4" fill="#D5E3CC"/><rect x="200" y="182" width="56" height="40" rx="4" fill="#D5E3CC"/><path d="M40 230 V170 H135 V70 H215" fill="none" stroke="#FF6B3D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 9"/><path d="M40 230 V170 H105" fill="none" stroke="#FF6B3D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="105" cy="170" r="12" fill="#1F1A2E"/><path d="M99 170h12M105 164v12" stroke="#fff" stroke-width="0"/><rect x="99" y="166" width="12" height="8" rx="2" fill="#fff"/><circle cx="215" cy="70" r="13" fill="#FF6B3D"/><circle cx="215" cy="70" r="5" fill="#fff"/></svg></div>
+          <div class="eta">in 12 Minuten</div>
+          <div class="drv"><span class="av">JM</span><span><b>Jonas</b><br><small style="color:#5A5470">E-Transporter · KR-KK 214E</small></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v10-wrap" aria-labelledby="v10-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 10</div>
+        <h2 id="v10-title">Auszeichnungen &amp; Siegel mit Zahlen</h2>
+        <p>Eigens gezeichnete Siegel mit umlaufender Schrift, darüber drei ruhige Kennzahlen mit Bewertungssternen. Vermittelt Vertrauen auf einen Blick – für Hotels, Gastgeber, Kliniken und ausgezeichnete Betriebe.</p>
+        <ul class="v-tags"><li>Hotel &amp; Gastgeber</li><li>Tourismus</li><li>SVG-Siegel</li><li>Bewertungen</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v10">
+<section aria-labelledby="v10-h">
+  <div class="hd">
+    <div class="eb">Landhotel Haus Lindenau · Niederkrüchten</div>
+    <h2 id="v10-h">Ausgezeichnet <i>gastfreundlich</i></h2>
+  </div>
+  <div class="nums">
+    <div><b>9,6</b><span class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><span>aus 1.870 Gästebewertungen</span></div>
+    <div><b>62 %</b><span>unserer Gäste kommen<br>wieder – viele jedes Jahr</span></div>
+    <div><b>4</b><span>Generationen Gastgeber<br>seit 1908</span></div>
+  </div>
+  <ul class="seals">
+    <li><svg viewBox="0 0 120 120" role="img" aria-label="Siegel: Goldene Linde, Gastgeberpreis 2025"><defs><path id="v10c1" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><circle cx="60" cy="60" r="57" fill="none" stroke="#D6B571" stroke-width="1.5"/><circle cx="60" cy="60" r="52" fill="#D6B571"/><circle cx="60" cy="60" r="35" fill="#17322A"/><text font-family="Inter,sans-serif" font-size="8.6" font-weight="700" letter-spacing="2.4" fill="#17322A"><textPath href="#v10c1">GOLDENE LINDE · GASTGEBERPREIS ·</textPath></text><path d="M60 38c-8 6-11 13-8 20 2 4 6 5 8 5s6-1 8-5c3-7 0-14-8-20z" fill="#D6B571"/><path d="M60 46v24" stroke="#17322A" stroke-width="1.4"/><text x="60" y="84" text-anchor="middle" font-family="DM Serif Display,serif" font-size="12" fill="#F4EEDF">2025</text></svg><small>Gastgeberpreis<br>Goldene Linde</small></li>
+    <li><svg viewBox="0 0 120 120" role="img" aria-label="Siegel: Gästeliebling, 9,6 von 10"><defs><path id="v10c2" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><circle cx="60" cy="60" r="57" fill="#F4EEDF"/><circle cx="60" cy="60" r="38" fill="none" stroke="#17322A" stroke-width="1" stroke-dasharray="2 3"/><text font-family="Inter,sans-serif" font-size="8.4" font-weight="700" letter-spacing="2.6" fill="#17322A"><textPath href="#v10c2">GÄSTELIEBLING · GÄSTELIEBLING ·</textPath></text><text x="60" y="66" text-anchor="middle" font-family="DM Serif Display,serif" font-size="26" fill="#17322A">9,6</text><text x="60" y="80" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.5" fill="#7A5A22">VON 10</text></svg><small>Gästeliebling<br>2023–2025</small></li>
+    <li><svg viewBox="0 0 120 120" role="img" aria-label="Siegel: Klima-Gastgeber Gold"><defs><path id="v10c3" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><path d="M60.0 2.0 L67.0 7.0 L75.0 4.0 L80.5 10.6 L89.0 9.8 L92.6 17.6 L101.0 19.0 L102.4 27.4 L110.2 31.0 L109.4 39.5 L116.0 45.0 L113.0 53.0 L118.0 60.0 L113.0 67.0 L116.0 75.0 L109.4 80.5 L110.2 89.0 L102.4 92.6 L101.0 101.0 L92.6 102.4 L89.0 110.2 L80.5 109.4 L75.0 116.0 L67.0 113.0 L60.0 118.0 L53.0 113.0 L45.0 116.0 L39.5 109.4 L31.0 110.2 L27.4 102.4 L19.0 101.0 L17.6 92.6 L9.8 89.0 L10.6 80.5 L4.0 75.0 L7.0 67.0 L2.0 60.0 L7.0 53.0 L4.0 45.0 L10.6 39.5 L9.8 31.0 L17.6 27.4 L19.0 19.0 L27.4 17.6 L31.0 9.8 L39.5 10.6 L45.0 4.0 L53.0 7.0Z" fill="#2F5A47" stroke="#D6B571" stroke-width="1.2"/><text font-family="Inter,sans-serif" font-size="8" font-weight="700" letter-spacing="2.2" fill="#F4EEDF"><textPath href="#v10c3">KLIMA-GASTGEBER · GOLD · 100 % ÖKOSTROM ·</textPath></text><path d="M48 70c0-14 10-24 26-24 0 16-10 26-24 26" fill="none" stroke="#D6B571" stroke-width="2.2" stroke-linecap="round"/><path d="M50 72c4-8 10-14 18-18" stroke="#D6B571" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg><small>Klima-Gastgeber<br>Stufe Gold</small></li>
+    <li><svg viewBox="0 0 120 120" role="img" aria-label="Siegel: Regionale Küche, 80 Prozent vom Niederrhein"><circle cx="60" cy="60" r="56" fill="none" stroke="#D6B571" stroke-width="1.5"/><circle cx="60" cy="60" r="50" fill="none" stroke="#D6B571" stroke-width=".8"/><text x="60" y="40" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.6" font-weight="700" letter-spacing="2" fill="#D6B571">REGIONALE</text><text x="60" y="70" text-anchor="middle" font-family="DM Serif Display,serif" font-size="30" fill="#F4EEDF">80 %</text><text x="60" y="86" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.6" font-weight="700" letter-spacing="2" fill="#D6B571">KÜCHE</text><path d="M30 60h6M84 60h6" stroke="#D6B571" stroke-width="1.5"/></svg><small>Zutaten aus<br>max. 50 km</small></li>
+    <li><svg viewBox="0 0 120 120" role="img" aria-label="Siegel: Radgastgeber mit Werkstatt und Ladestation"><defs><path id="v10c5" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><circle cx="60" cy="60" r="57" fill="#D6B571"/><circle cx="60" cy="60" r="56" fill="none" stroke="#17322A" stroke-width=".8" stroke-dasharray="1 2.5"/><text font-family="Inter,sans-serif" font-size="8.4" font-weight="700" letter-spacing="2.4" fill="#17322A"><textPath href="#v10c5">RADGASTGEBER · WERKSTATT · LADEN ·</textPath></text><g fill="none" stroke="#17322A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="45" cy="68" r="9"/><circle cx="75" cy="68" r="9"/><path d="M45 68l8-14h14l8 14M53 54l7 14h-15M58 48h8"/></g></svg><small>Radgastgeber<br>mit Werkstatt</small></li>
+  </ul>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="sh-cta">
+  <h2>Der passende Baustein für Ihre Website?</h2>
+  <p>Alle Varianten sind Ausgangspunkte. Wir kombinieren und gestalten sie individuell – passend zu Ihrer Marke.</p>
+  <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Projekt besprechen</a>
+</section>
+
+<footer class="sh-footer">
+  Alle gezeigten Marken und Inhalte sind fiktiv. Design &amp; Umsetzung: <a href="../../Meuster%20Landing%20Page.dc.html">meuser.biz</a> · © 2026
+</footer>
+
+<script>
+  /* SHELL-Skript – nicht verändern */
+  (function () {
+    var here = location.pathname.split('/').pop();
+    document.querySelectorAll('.sh-cats a').forEach(function (a) {
+      if (a.getAttribute('href') === here) { a.setAttribute('aria-current', 'page'); a.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+    });
+    document.querySelectorAll('.variant').forEach(function (v) {
+      var frame = v.querySelector('.frame');
+      v.querySelectorAll('.v-switch button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          v.querySelectorAll('.v-switch button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          frame.style.setProperty('--w', b.dataset.w);
+        });
+      });
+    });
+  })();
+</script>
+<!-- Varianten-Skripte hierunter, jedes in eigenem IIFE, nur auf die eigene #vNN zugreifen -->
+<script>
+/* v01 · Zahlenleiste mit Count-up */
+(function () {
+  var R = document.getElementById('v01');
+  if (!R) return;
+  var els = R.querySelectorAll('.cu');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  els.forEach(function (el) { el.textContent = '0'; });
+  function run() {
+    var t0 = null, dur = 1800;
+    function f(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 4);
+      els.forEach(function (el) { el.textContent = Math.round(+el.dataset.to * e).toLocaleString('de-DE'); });
+      if (p < 1) requestAnimationFrame(f);
+    }
+    requestAnimationFrame(f);
+  }
+  var io = new IntersectionObserver(function (en) {
+    if (en[0].isIntersecting) { io.disconnect(); run(); }
+  }, { threshold: .4 });
+  io.observe(R);
+})();
+</script>
+<script>
+/* v02 · Statistik-Kacheln mit Mini-Diagrammen */
+(function () {
+  var R = document.getElementById('v02');
+  if (!R) return;
+  var w = R.querySelector('.waf'), h = '';
+  for (var i = 0; i < 100; i++) h += '<i' + (i < 81 ? ' class="on"' : '') + '></i>';
+  w.innerHTML = h;
+})();
+</script>
+<script>
+/* v03 · Prozess in vier Schritten mit Verbindungslinie */
+(function () {
+  var R = document.getElementById('v03');
+  if (!R) return;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) { R.classList.add('on'); return; }
+  var io = new IntersectionObserver(function (en) {
+    if (en[0].isIntersecting) { R.classList.add('on'); io.disconnect(); }
+  }, { threshold: .35 });
+  io.observe(R);
+})();
+</script>
+<script>
+/* v04 · Vertikale Zeitleiste der Firmengeschichte */
+(function () {
+  var R = document.getElementById('v04');
+  if (!R) return;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  R.classList.add('js');
+  var lis = R.querySelectorAll('li');
+  lis.forEach(function (l) { l.classList.add('wait'); });
+  var io = new IntersectionObserver(function (en) {
+    en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('wait'); io.unobserve(e.target); } });
+  }, { threshold: .2 });
+  lis.forEach(function (l) { io.observe(l); });
+})();
+</script>
+<script>
+/* v05 · Produkt-Roadmap */
+(function () {
+  var R = document.getElementById('v05');
+  if (!R) return;
+  var b = R.querySelector('.band');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) { b.style.setProperty('--p', '74%'); return; }
+  var io = new IntersectionObserver(function (en) {
+    if (en[0].isIntersecting) { b.style.setProperty('--p', '74%'); io.disconnect(); }
+  }, { threshold: .3 });
+  io.observe(R);
+})();
+</script>
+<script>
+/* v06 · Fortschrittsbalken &amp; Kompetenzen */
+(function () {
+  var R = document.getElementById('v06');
+  if (!R) return;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  R.classList.add('pre');
+  var io = new IntersectionObserver(function (en) {
+    if (en[0].isIntersecting) { requestAnimationFrame(function () { R.classList.remove('pre'); }); io.disconnect(); }
+  }, { threshold: .3 });
+  io.observe(R);
+})();
+</script>
+<script>
+/* v08 · Donut-Diagramme mit Legende */
+(function () {
+  var R = document.getElementById('v08');
+  if (!R) return;
+  var data = [['Fußball', 488, '#0F6B3F'], ['Turnen', 282, '#E0A526'], ['Tennis', 205, '#3E8EB5'], ['Leichtathletik', 167, '#8FBF9F'], ['Handball', 142, '#11261C']];
+  var NS = 'http://www.w3.org/2000/svg', svg = R.querySelector('.dn svg'), dn = R.querySelector('.dn'), lg = R.querySelector('.lg');
+  var off = 0, segs = [];
+  data.forEach(function (d) { d.push(d[1]); d[1] = d[1] / 12.84; });
+  data.forEach(function (d, i) {
+    var c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', 21); c.setAttribute('cy', 21); c.setAttribute('r', 15.9);
+    c.setAttribute('class', 's'); c.setAttribute('stroke', d[2]);
+    c.setAttribute('stroke-dashoffset', -off);
+    c.dataset.v = d[1] - 0.6;
+    c.style.strokeDasharray = (d[1] - 0.6) + ' ' + (100 - d[1] + 0.6);
+    off += d[1]; svg.appendChild(c); segs.push(c);
+    var li = document.createElement('li');
+    li.innerHTML = '<button type="button"><i style="--c:' + d[2] + '"></i>' + d[0] + '<em>' + d[3].toLocaleString('de-DE') + '</em></button>';
+    var b = li.firstChild;
+    function on() { dn.classList.add('hl'); segs.forEach(function (s, j) { s.classList.toggle('on', j === i); }); }
+    function off2() { dn.classList.remove('hl'); }
+    b.addEventListener('mouseenter', on); b.addEventListener('focus', on);
+    b.addEventListener('mouseleave', off2); b.addEventListener('blur', off2);
+    lg.appendChild(li);
+  });
+  var minis = R.querySelectorAll('.mi circle[data-v]');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  function set(z) {
+    segs.concat(Array.prototype.slice.call(minis)).forEach(function (c) { var v = z ? 0 : +c.dataset.v; c.style.strokeDasharray = v + ' ' + (100 - v); });
+  }
+  set(true); R.classList.add('pre');
+  var io = new IntersectionObserver(function (en) {
+    if (en[0].isIntersecting) { io.disconnect(); requestAnimationFrame(function () { requestAnimationFrame(function () { set(false); R.classList.remove('pre'); }); }); }
+  }, { threshold: .3 });
+  io.observe(R);
+})();
+</script>
+<script>
+/* v09 · „So funktioniert’s“ mit Telefon-Mockup */
+(function () {
+  var R = document.getElementById('v09');
+  if (!R) return;
+  var btns = R.querySelectorAll('ol button'), views = R.querySelectorAll('.sv'), cur = 0, timer = null, auto = true;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(i) {
+    cur = i;
+    btns.forEach(function (b, j) {
+      var pg = b.querySelector('.pg');
+      pg.classList.remove('run');
+      if (j === i) { b.setAttribute('aria-current', 'step'); if (auto && !reduce) { void pg.offsetWidth; pg.classList.add('run'); } }
+      else b.removeAttribute('aria-current');
+    });
+    views.forEach(function (v, j) { v.classList.toggle('on', j === i); });
+  }
+  function tick() { show((cur + 1) % btns.length); }
+  btns.forEach(function (b, i) {
+    b.addEventListener('click', function () { auto = false; clearInterval(timer); show(i); });
+  });
+  if (reduce) { btns[0].querySelector('.pg').classList.remove('run'); return; }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      if (!auto) return;
+      clearInterval(timer);
+      if (en[0].isIntersecting) { show(cur); timer = setInterval(tick, 4500); }
+    }, { threshold: .3 }).observe(R);
+  }
+})();
+</script>
+</body>
+</html>

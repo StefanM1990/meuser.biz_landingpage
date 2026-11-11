@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kundenstimmen – Bausteine – meuser.biz</title>
+<meta name="description" content="Kundenstimmen: 10 Gestaltungsvarianten, wie meuser.biz sie für Websites umsetzt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Shell-Schrift (Inter) bleibt; weitere Schriften der Varianten in DIESEN einen Link mit aufnehmen -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Grotesk:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================================
+     SHELL – nicht verändern. Gilt für alle Kategorieseiten gleich.
+     ===================================================================== */
+  :root { --ink:#0F172A; --muted:#64748B; --body:#475569; --line:#E2E8F0; --soft:#F8FAFC; --blue:#007BFF; --blue-l:#5FA8FF; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 150px; }
+  body.shell { margin:0; font-family:'Inter',sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; }
+  .shell a { color:inherit; text-decoration:none; }
+  .sh-header { position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.9); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+  .sh-bar { max-width:1400px; margin:0 auto; padding:12px 5%; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .sh-bar img { height:44px; width:auto; display:block; }
+  .sh-actions { display:flex; gap:8px; }
+  .sh-btn { display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font:600 14px 'Inter',sans-serif; white-space:nowrap; transition:.25s; }
+  .sh-btn.ghost { background:rgba(15,23,42,.05); } .sh-btn.ghost:hover { background:rgba(15,23,42,.1); }
+  .sh-btn.blue { background:linear-gradient(135deg,#007BFF,#0062cc); color:#fff !important; box-shadow:0 6px 16px -4px rgba(0,123,255,.6); }
+  .sh-cats { max-width:1400px; margin:0 auto; padding:0 5% 12px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; }
+  .sh-cats::-webkit-scrollbar { display:none; }
+  .sh-cats a { flex-shrink:0; font:600 13px 'Inter',sans-serif; color:var(--body); padding:7px 13px; border-radius:999px; border:1px solid var(--line); background:#fff; transition:.2s; }
+  .sh-cats a:hover { border-color:var(--ink); color:var(--ink); }
+  .sh-cats a[aria-current="page"] { background:var(--ink); border-color:var(--ink); color:#fff; }
+  .sh-hero { background:linear-gradient(120deg,#0F172A,#132238,#0F172A); color:#fff; padding:72px 5% 64px; position:relative; overflow:hidden; }
+  .sh-hero::after { content:""; position:absolute; top:-160px; right:-120px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle,rgba(0,123,255,.35),transparent 70%); pointer-events:none; }
+  .sh-hero-in { max-width:1400px; margin:0 auto; position:relative; z-index:1; }
+  .sh-eyebrow { color:var(--blue-l); font:700 13px 'Inter',sans-serif; letter-spacing:2px; margin-bottom:14px; }
+  .sh-hero h1 { font:800 clamp(32px,5vw,52px)/1.08 'Inter',sans-serif; letter-spacing:-1px; margin:0 0 16px; }
+  .sh-hero p { font:400 clamp(16px,2vw,18px)/1.6 'Inter',sans-serif; color:#CBD5E1; max-width:680px; margin:0; }
+  .sh-index { max-width:1400px; margin:0 auto; padding:32px 5% 0; display:flex; flex-wrap:wrap; gap:8px; }
+  .sh-index a { font:600 13px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:7px 12px; border-radius:8px; transition:.2s; }
+  .sh-index a:hover { color:var(--blue); border-color:var(--blue); }
+  .sh-index a b { color:var(--blue); margin-right:6px; }
+  .sh-main { max-width:1400px; margin:0 auto; padding:24px 5% 96px; }
+  .variant { padding:56px 0 0; }
+  .v-head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:20px; }
+  .v-num { font:700 12px 'Inter',sans-serif; letter-spacing:1.5px; color:var(--blue); margin-bottom:6px; }
+  .v-head h2 { font:800 24px/1.2 'Inter',sans-serif; letter-spacing:-.3px; margin:0 0 6px; }
+  .v-head p { font:400 15px/1.6 'Inter',sans-serif; color:var(--body); margin:0; max-width:720px; }
+  .v-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; padding:0; list-style:none; }
+  .v-tags li { font:600 12px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:4px 10px; border-radius:999px; }
+  .v-switch { display:inline-flex; background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:4px; gap:2px; }
+  .v-switch button { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font:600 13px 'Inter',sans-serif; color:var(--muted); padding:7px 12px; border-radius:7px; transition:.2s; }
+  .v-switch button:hover { color:var(--ink); }
+  .v-switch button[aria-pressed="true"] { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(15,23,42,.15); }
+  .v-switch button:focus-visible { outline:2px solid var(--blue); }
+  .stage { background:#EEF2F6; background-image:radial-gradient(rgba(15,23,42,.08) 1px, transparent 1px); background-size:18px 18px; border:1px solid var(--line); border-radius:16px; padding:28px; overflow:hidden; }
+  .frame { /* Jede Variante lebt in diesem Rahmen */
+    container: demo / inline-size;
+    position:relative; contain:layout paint; /* position:fixed in Varianten bleibt im Rahmen */
+    width:var(--w,100%); max-width:100%; min-height:var(--h,auto);
+    margin:0 auto; background:#fff; border-radius:10px; overflow:hidden;
+    box-shadow:0 1px 2px rgba(15,23,42,.06), 0 18px 40px -20px rgba(15,23,42,.35);
+    transition:width .45s cubic-bezier(.2,.8,.2,1);
+  }
+  .sh-cta { background:var(--soft); border-top:1px solid var(--line); padding:80px 5%; text-align:center; }
+  .sh-cta h2 { font:800 clamp(26px,4vw,36px) 'Inter',sans-serif; letter-spacing:-.5px; margin:0 0 12px; }
+  .sh-cta p { font:400 16px/1.6 'Inter',sans-serif; color:var(--muted); max-width:560px; margin:0 auto 26px; }
+  .sh-cta .sh-btn { border-radius:8px; padding:14px 28px; font-size:15px; }
+  .sh-footer { background:var(--ink); color:#94A3B8; font:400 14px 'Inter',sans-serif; padding:28px 5%; text-align:center; }
+  .sh-footer a { color:#fff; }
+  @media (max-width:640px) {
+    .sh-bar img { height:36px; } .sh-btn .long { display:none; }
+    .stage { padding:12px; border-radius:12px; }
+    .v-switch { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .frame { transition:none; } }
+
+  /* =====================================================================
+     VARIANTEN – CSS jeder Variante NUR unter ihrer ID (#v01, #v02 …).
+     Responsiv ausschließlich mit @container demo (…) – NICHT @media.
+     ===================================================================== */
+
+  /* ---------- v01 · Großes Zitat (Architektur) ---------- */
+  #v01 { --bg:#F3EDE3; --ink:#211C17; --mut:#665A4E; --acc:#9A4A2B; --line:rgba(33,28,23,.16);
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif;
+    padding:clamp(28px,6cqi,80px) clamp(22px,8cqi,120px) clamp(36px,6cqi,84px); }
+  #v01 .top { display:flex; justify-content:space-between; align-items:center; gap:16px; padding-bottom:20px; border-bottom:1px solid var(--line); margin-bottom:clamp(32px,6cqi,72px); }
+  #v01 .mark { font:600 13px 'Inter',sans-serif; letter-spacing:.32em; }
+  #v01 .mark span { font-weight:400; margin-left:.5em; color:var(--mut); }
+  #v01 .count { font:500 12px 'Inter',sans-serif; letter-spacing:.14em; color:var(--mut); text-transform:uppercase; }
+  #v01 figure { margin:0; display:grid; grid-template-columns:clamp(56px,9cqi,120px) 1fr; column-gap:clamp(16px,3cqi,40px); }
+  #v01 .q { width:100%; max-width:84px; fill:var(--acc); margin-top:.4em; }
+  #v01 blockquote { margin:0; }
+  #v01 blockquote p { font:italic 500 clamp(27px,4.3cqi,58px)/1.14 'Cormorant Garamond',serif; letter-spacing:-.01em; margin:0; max-width:980px; text-wrap:balance; }
+  #v01 blockquote em { color:var(--acc); background:linear-gradient(transparent 80%, rgba(154,74,43,.16) 0); }
+  #v01 figcaption { grid-column:2; display:flex; align-items:center; gap:16px; margin-top:clamp(28px,4cqi,48px); flex-wrap:wrap; }
+  #v01 .av { width:52px; height:52px; border-radius:50%; background:var(--ink); color:var(--bg); display:grid; place-items:center; font:600 15px 'Inter',sans-serif; letter-spacing:.06em; flex-shrink:0; }
+  #v01 .who { display:flex; flex-direction:column; gap:3px; font-size:14px; }
+  #v01 .who b { font-weight:600; font-size:15px; }
+  #v01 .who span { color:var(--mut); }
+  #v01 .more { margin-left:auto; display:inline-flex; align-items:center; gap:8px; font:600 14px 'Inter',sans-serif; color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:3px; }
+  #v01 .more svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.6; transition:transform .3s; }
+  #v01 .more:hover svg { transform:translateX(4px); }
+  #v01 .more:focus-visible { outline:2px solid var(--acc); outline-offset:4px; }
+  @container demo (max-width:640px) {
+    #v01 figure { grid-template-columns:1fr; }
+    #v01 .q { width:42px; margin:0 0 18px; }
+    #v01 figcaption { grid-column:1; }
+    #v01 .more { margin-left:0; }
+    #v01 .count { display:none; }
+  }
+
+  /* ---------- v02 · Karten-Raster mit Sternen (Handwerk) ---------- */
+  #v02 { --ink:#111827; --mut:#4B5563; --line:#E5E7EB; --star:#F59E0B;
+    background:#F5F6F8; color:var(--ink); font-family:'DM Sans',sans-serif; padding:clamp(28px,5cqi,64px) clamp(18px,5cqi,64px); }
+  #v02 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:32px; }
+  #v02 .eyebrow { font:700 13px 'DM Sans',sans-serif; color:#9A4A06; letter-spacing:.02em; }
+  #v02 h3 { font:700 clamp(26px,3.4cqi,38px)/1.15 'DM Sans',sans-serif; letter-spacing:-.02em; margin:8px 0 0; max-width:19ch; }
+  #v02 .score { display:flex; align-items:center; gap:14px; background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px 18px; }
+  #v02 .score > b { font:700 42px/1 'DM Sans',sans-serif; letter-spacing:-.03em; }
+  #v02 .score small { display:block; font-size:13px; color:var(--mut); margin-top:5px; }
+  #v02 .stars { display:inline-flex; gap:2px; }
+  #v02 .stars svg { width:16px; height:16px; fill:var(--star); }
+  #v02 .stars svg.off { fill:#D1D5DB; }
+  #v02 .grid { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  #v02 .card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:10px; transition:transform .3s, box-shadow .3s; }
+  #v02 .card:hover { transform:translateY(-3px); box-shadow:0 16px 30px -20px rgba(17,24,39,.4); }
+  #v02 h4 { font:700 17px/1.3 'DM Sans',sans-serif; margin:4px 0 0; }
+  #v02 .card p { font:400 15px/1.6 'DM Sans',sans-serif; color:var(--mut); margin:0; flex:1; }
+  #v02 .ft { display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px solid var(--line); margin-top:6px; flex-wrap:wrap; }
+  #v02 .av { width:38px; height:38px; border-radius:50%; background:var(--c); color:#fff; display:grid; place-items:center; font:700 13px 'DM Sans',sans-serif; flex-shrink:0; }
+  #v02 .who { display:flex; flex-direction:column; font-size:14px; line-height:1.35; min-width:0; }
+  #v02 .who span { font-size:12.5px; color:var(--mut); }
+  #v02 .ok { margin-left:auto; display:inline-flex; align-items:center; gap:4px; font:700 11.5px 'DM Sans',sans-serif; color:#065F46; background:#ECFDF5; padding:4px 9px; border-radius:999px; white-space:nowrap; }
+  #v02 .ok svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:2.4; }
+  #v02 .bt { display:flex; justify-content:center; gap:10px; margin-top:28px; flex-wrap:wrap; }
+  #v02 .btn { font:700 14px 'DM Sans',sans-serif; padding:12px 20px; border-radius:10px; border:1.5px solid var(--ink); color:var(--ink); transition:.2s; }
+  #v02 .btn.pri { background:var(--ink); color:#fff; }
+  #v02 .btn:hover { transform:translateY(-1px); }
+  #v02 .btn:focus-visible { outline:3px solid var(--star); outline-offset:2px; }
+  @container demo (max-width:980px) { #v02 .grid { grid-template-columns:repeat(2,1fr); } }
+  @container demo (max-width:600px) { #v02 .grid { grid-template-columns:1fr; } #v02 .ok { margin-left:48px; } }
+
+  /* ---------- v03 · Karussell (Kanzlei) ---------- */
+  #v03 { --bg:#0F1B2D; --ink:#EDE8DD; --mut:#AEB6C4; --gold:#C9A96E;
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(32px,6cqi,80px) clamp(20px,6cqi,88px); position:relative; overflow:hidden; }
+  #v03::before { content:""; position:absolute; right:-12%; bottom:-45%; width:60%; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,rgba(201,169,110,.13),transparent 65%); pointer-events:none; }
+  #v03 .hd { margin-bottom:clamp(28px,4cqi,48px); position:relative; }
+  #v03 .eyebrow { font:600 12px 'Inter',sans-serif; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); }
+  #v03 h3 { font:500 clamp(30px,4cqi,48px)/1.1 'Cormorant Garamond',serif; margin:10px 0 0; }
+  #v03 h3 em { color:var(--gold); }
+  #v03 .vp { overflow:hidden; position:relative; touch-action:pan-y; }
+  #v03 .track { list-style:none; margin:0; padding:0; display:flex; transition:transform .7s cubic-bezier(.2,.8,.2,1); }
+  #v03 .slide { flex:0 0 100%; min-width:0; padding:0 18px 18px 0; }
+  #v03 figure { margin:0; display:grid; grid-template-columns:minmax(190px,300px) 1fr; gap:clamp(28px,5cqi,80px); align-items:center; }
+  #v03 .ph { position:relative; aspect-ratio:4/5; }
+  #v03 .ph::after { content:""; position:absolute; inset:14px -14px -14px 14px; border:1px solid var(--gold); }
+  #v03 .ph img { position:relative; z-index:1; width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.75) contrast(1.02); }
+  #v03 .area { display:inline-block; font:600 11px 'Inter',sans-serif; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(201,169,110,.5); padding:6px 12px; border-radius:999px; }
+  #v03 blockquote { margin:20px 0 24px; }
+  #v03 blockquote p { font:500 clamp(22px,2.9cqi,35px)/1.28 'Cormorant Garamond',serif; margin:0; }
+  #v03 figcaption b { display:block; font:600 16px 'Inter',sans-serif; margin-bottom:3px; }
+  #v03 figcaption span { font-size:14px; color:var(--mut); }
+  #v03 .ctrl { display:flex; align-items:center; gap:12px; margin-top:clamp(24px,4cqi,44px); padding-top:24px; border-top:1px solid rgba(237,232,221,.14); position:relative; }
+  #v03 .nav { all:unset; cursor:pointer; width:48px; height:48px; border-radius:50%; border:1px solid rgba(237,232,221,.32); display:grid; place-items:center; color:var(--ink); transition:.25s; }
+  #v03 .nav:hover { background:var(--gold); border-color:var(--gold); color:var(--bg); }
+  #v03 .nav svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+  #v03 .nav:focus-visible, #v03 .dots button:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+  #v03 .dots { display:flex; gap:4px; margin-left:12px; }
+  #v03 .dots button { all:unset; cursor:pointer; width:28px; height:24px; display:grid; align-items:center; transition:width .3s; }
+  #v03 .dots button::before { content:""; height:2px; background:rgba(237,232,221,.3); transition:.3s; }
+  #v03 .dots button[aria-current="true"] { width:48px; }
+  #v03 .dots button[aria-current="true"]::before { background:var(--gold); height:3px; }
+  #v03 .cnt { margin-left:auto; font:500 14px 'Inter',sans-serif; color:var(--mut); font-variant-numeric:tabular-nums; }
+  #v03 .cnt b { color:var(--ink); font-weight:600; }
+  @container demo (max-width:680px) {
+    #v03 figure { grid-template-columns:1fr; gap:26px; }
+    #v03 .ph { width:140px; }
+    #v03 .ph::after { inset:8px -8px -8px 8px; }
+  }
+  @container demo (max-width:430px) { #v03 .cnt { display:none; } #v03 .dots { margin-left:auto; } }
+  @media (prefers-reduced-motion:reduce) { #v03 .track { transition:none; } }
+
+  /* ---------- v04 · Masonry-Wand (Software) ---------- */
+  #v04 { --ink:#18181B; --mut:#52525B; --lime:#D9F99D; --bg:#F7F7F2;
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(32px,6cqi,80px) clamp(18px,5cqi,64px) clamp(28px,4cqi,48px); }
+  #v04 .hd { text-align:center; max-width:760px; margin:0 auto clamp(28px,4cqi,44px); }
+  #v04 .pill { display:inline-flex; align-items:center; gap:8px; background:#fff; border:1px solid #E4E4E7; border-radius:999px; padding:6px 14px; font:600 13px 'Inter',sans-serif; }
+  #v04 .pill svg { width:14px; height:14px; fill:#CA8A04; }
+  #v04 h3 { font:700 clamp(32px,5.2cqi,62px)/1.02 'Space Grotesk',sans-serif; letter-spacing:-.04em; margin:18px 0 0; }
+  #v04 h3 span { background:var(--lime); padding:0 .12em; border-radius:.12em; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+  #v04 .hd p { color:var(--mut); font:400 16px/1.6 'Inter',sans-serif; margin:16px auto 0; max-width:52ch; }
+  #v04 .wall { position:relative; max-height:600px; overflow:hidden; transition:max-height .7s cubic-bezier(.2,.8,.2,1); }
+  #v04 .wall::after { content:""; position:absolute; left:0; right:0; bottom:0; height:170px; background:linear-gradient(rgba(247,247,242,0), var(--bg) 85%); pointer-events:none; transition:opacity .4s; }
+  #v04.open .wall { max-height:2600px; }
+  #v04.open .wall::after { opacity:0; }
+  #v04 .cols { columns:3; column-gap:16px; }
+  #v04 .c { break-inside:avoid; margin:0 0 16px; background:#fff; border:1px solid #E7E5DD; border-radius:18px; padding:22px; }
+  #v04 .c p { margin:0; font:500 15.5px/1.55 'Inter',sans-serif; }
+  #v04 .c.big p { font:500 23px/1.28 'Space Grotesk',sans-serif; letter-spacing:-.015em; }
+  #v04 .c.lime { background:var(--lime); border-color:transparent; }
+  #v04 .c.dark { background:var(--ink); color:#FAFAFA; border-color:transparent; }
+  #v04 .tag { display:inline-block; font:600 11px 'Inter',sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--mut); margin-bottom:12px; }
+  #v04 .c.dark .tag, #v04 .c.dark .who span { color:#B4B4BC; }
+  #v04 .who { display:flex; align-items:center; gap:10px; margin-top:18px; }
+  #v04 .who img, #v04 .ini { width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  #v04 .ini { display:grid; place-items:center; background:var(--ink); color:var(--lime); font:700 12px 'Space Grotesk',sans-serif; }
+  #v04 .c.dark .ini { background:var(--lime); color:var(--ink); }
+  #v04 .who b { display:block; font:600 14px 'Inter',sans-serif; }
+  #v04 .who span { font-size:13px; color:var(--mut); }
+  #v04 .mw { display:flex; justify-content:center; margin-top:12px; }
+  #v04 .more { all:unset; cursor:pointer; font:600 15px 'Inter',sans-serif; background:var(--ink); color:#fff; padding:13px 22px; border-radius:999px; display:inline-flex; gap:10px; align-items:center; transition:transform .2s; }
+  #v04 .more:hover { transform:translateY(-2px); }
+  #v04 .more:focus-visible { outline:3px solid #65A30D; outline-offset:3px; }
+  #v04 .more svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; transition:transform .3s; }
+  #v04.open .more svg { transform:rotate(180deg); }
+  @container demo (max-width:860px) { #v04 .cols { columns:2; } }
+  @container demo (max-width:540px) { #v04 .cols { columns:1; } #v04 .wall { max-height:680px; } #v04 .c.big p { font-size:20px; } }
+  @media (prefers-reduced-motion:reduce) { #v04 .wall { transition:none; } }
+
+  /* ---------- v05 · Laufband (Restaurant) ---------- */
+  #v05 { --bg:#16110D; --ink:#F4EADB; --mut:#BBAA94; --amb:#E3A857; --card:#221A14;
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(32px,6cqi,72px) 0; overflow:hidden; }
+  #v05 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; padding:0 clamp(20px,6cqi,72px); margin-bottom:clamp(28px,4cqi,44px); }
+  #v05 .eyebrow { font:600 12px 'Inter',sans-serif; letter-spacing:.2em; text-transform:uppercase; color:var(--amb); }
+  #v05 h3 { font:400 clamp(46px,8.5cqi,108px)/.95 'Fraunces',serif; letter-spacing:-.035em; margin:14px 0 0; }
+  #v05 h3 em { font-style:italic; color:var(--amb); }
+  #v05 .side { display:flex; flex-direction:column; align-items:flex-end; gap:14px; text-align:right; }
+  #v05 .side p { margin:0; color:var(--mut); font-size:14px; line-height:1.5; max-width:250px; }
+  #v05 .side b { font:600 30px 'Fraunces',serif; color:var(--ink); }
+  #v05 .pz { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:8px; font:600 13px 'Inter',sans-serif; border:1px solid rgba(244,234,219,.32); padding:8px 14px; border-radius:999px; transition:.2s; }
+  #v05 .pz:hover { background:rgba(244,234,219,.08); }
+  #v05 .pz:focus-visible { outline:2px solid var(--amb); outline-offset:3px; }
+  #v05 .pz svg { width:14px; height:14px; fill:currentColor; }
+  #v05 .pz .i-play, #v05.paused .pz .i-pause { display:none; }
+  #v05.paused .pz .i-play { display:block; }
+  #v05 .row { overflow:hidden; padding:6px 0; -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
+  #v05 .row + .row { margin-top:8px; }
+  #v05 .track { display:flex; width:max-content; animation:v05-mq 75s linear infinite; }
+  #v05 .rev .track { animation-direction:reverse; animation-duration:90s; }
+  #v05 .row:hover .track, #v05.paused .track { animation-play-state:paused; }
+  #v05 .set { display:flex; gap:14px; list-style:none; margin:0; padding:0 14px 0 0; }
+  #v05 .it { flex:0 0 auto; width:340px; background:var(--card); border:1px solid #3A2D22; border-radius:18px; padding:18px 20px; display:flex; flex-direction:column; gap:8px; }
+  #v05 .rev .it { background:transparent; border-color:#4A3A2C; }
+  #v05 .st { color:var(--amb); letter-spacing:2px; font-size:13px; }
+  #v05 .it q { font:400 18px/1.4 'Fraunces',serif; quotes:"„" "“"; }
+  #v05 .it .who { font-size:13px; color:var(--mut); margin-top:auto; }
+  @keyframes v05-mq { to { transform:translateX(-50%); } }
+  @container demo (max-width:640px) {
+    #v05 .side { align-items:flex-start; text-align:left; }
+    #v05 .it { width:270px; }
+    #v05 .it q { font-size:16.5px; }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    #v05 .track { animation:none; }
+    #v05 .set[aria-hidden="true"] { display:none; }
+    #v05 .row { overflow-x:auto; -webkit-mask-image:none; mask-image:none; padding:6px clamp(20px,6cqi,72px); }
+    #v05 .pz { display:none; }
+  }
+
+  /* ---------- v06 · Bewertungs-Übersicht (Zahnarztpraxis) ---------- */
+  #v06 { --ink:#0B2B2B; --mut:#476161; --teal:#0F766E; --line:#E0EBE9; --soft:#F1F7F6;
+    background:#fff; color:var(--ink); font-family:'DM Sans',sans-serif; padding:clamp(28px,5cqi,64px) clamp(18px,5cqi,64px); }
+  #v06 .lay { display:grid; grid-template-columns:minmax(260px,330px) 1fr; gap:clamp(24px,4.5cqi,64px); align-items:start; }
+  #v06 .sum { background:var(--soft); border-radius:20px; padding:26px; }
+  #v06 .eyebrow { font:700 12px 'DM Sans',sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); }
+  #v06 .big { display:flex; align-items:center; gap:16px; margin:14px 0 22px; }
+  #v06 .big > b { font:700 66px/1 'DM Sans',sans-serif; letter-spacing:-.04em; }
+  #v06 .big small { display:block; font-size:14px; color:var(--mut); margin-top:6px; }
+  #v06 .stars { display:inline-flex; gap:2px; }
+  #v06 .stars svg { width:16px; height:16px; fill:#E8A317; }
+  #v06 .stars svg.off { fill:#CBD9D7; }
+  #v06 .big .stars svg { width:20px; height:20px; }
+  #v06 .bars { display:flex; flex-direction:column; gap:2px; }
+  #v06 .bars button { all:unset; box-sizing:border-box; cursor:pointer; width:100%; display:grid; grid-template-columns:62px 1fr 34px; align-items:center; gap:10px; padding:7px 8px; border-radius:8px; font:500 14px 'DM Sans',sans-serif; transition:background .2s; }
+  #v06 .bars button:hover { background:#fff; }
+  #v06 .bars button[aria-pressed="true"] { background:#fff; box-shadow:inset 0 0 0 1.5px var(--teal); }
+  #v06 .bars button:focus-visible { outline:2px solid var(--teal); outline-offset:2px; }
+  #v06 .tr { height:8px; border-radius:99px; background:#D3E4E1; overflow:hidden; }
+  #v06 .tr i { display:block; height:100%; background:var(--teal); border-radius:99px; min-width:4px; }
+  #v06 .n { text-align:right; color:var(--mut); font-variant-numeric:tabular-nums; }
+  #v06 .sub { margin:20px 0 0; padding:18px 0 0; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:10px; }
+  #v06 .sub div { display:flex; justify-content:space-between; align-items:center; gap:10px; font-size:14px; }
+  #v06 .sub dt { color:var(--mut); }
+  #v06 .sub dd { margin:0; display:flex; align-items:center; gap:10px; font-weight:700; }
+  #v06 .m { width:72px; height:5px; border-radius:9px; background:#D3E4E1; overflow:hidden; }
+  #v06 .m i { display:block; height:100%; background:var(--ink); }
+  #v06 .note { font-size:12.5px; line-height:1.5; color:var(--mut); margin:18px 0 0; }
+  #v06 .lh { display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; }
+  #v06 h3 { font:700 clamp(24px,3cqi,32px)/1.2 'DM Sans',sans-serif; letter-spacing:-.02em; margin:0; }
+  #v06 .reset { all:unset; cursor:pointer; font:700 14px 'DM Sans',sans-serif; color:var(--teal); border-bottom:1.5px solid currentColor; }
+  #v06 .reset[hidden] { display:none; }
+  #v06 .reset:focus-visible { outline:2px solid var(--teal); outline-offset:3px; }
+  #v06 .status { font-size:14px; color:var(--mut); margin:6px 0 4px; }
+  #v06 .rv { list-style:none; margin:0; padding:0; }
+  #v06 .rv li { padding:20px 0; border-bottom:1px solid var(--line); }
+  #v06 .rv li[hidden] { display:none; }
+  #v06 .rh { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  #v06 .av { width:40px; height:40px; border-radius:50%; background:var(--c); color:#fff; display:grid; place-items:center; font:700 13px 'DM Sans',sans-serif; flex-shrink:0; }
+  #v06 .rh b { display:block; font-size:15px; }
+  #v06 .rh span.d { font-size:13px; color:var(--mut); }
+  #v06 .rh .stars { margin-left:auto; }
+  #v06 .rv p { margin:12px 0 0; font:400 15.5px/1.6 'DM Sans',sans-serif; }
+  #v06 .reply { margin-top:12px; background:var(--soft); border-left:3px solid var(--teal); padding:12px 14px; border-radius:0 10px 10px 0; font-size:14px; line-height:1.55; }
+  #v06 .reply b { color:var(--teal); display:block; margin-bottom:2px; font-size:13px; }
+  #v06 .empty { padding:28px; text-align:center; color:var(--mut); background:var(--soft); border-radius:14px; margin-top:16px; }
+  #v06 .empty[hidden] { display:none; }
+  @container demo (max-width:760px) { #v06 .lay { grid-template-columns:1fr; } }
+  @container demo (max-width:420px) { #v06 .rh .stars { margin-left:52px; } }
+
+  /* ---------- v07 · Video-Testimonial (Ladenbau / Café) ---------- */
+  #v07 { --bg:#15110E; --ink:#F6EFE4; --mut:#C2B29E; --acc:#F0B65A;
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(24px,5cqi,64px); }
+  #v07 .lay { display:grid; grid-template-columns:1.55fr 1fr; gap:clamp(24px,4cqi,56px); align-items:center; }
+  #v07 .player { position:relative; aspect-ratio:16/10; border-radius:18px; overflow:hidden; background:#2A211B; }
+  #v07 .player img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 6s ease; }
+  #v07 .player.playing img { transform:scale(1.06); }
+  #v07 .shade { position:absolute; inset:0; background:linear-gradient(180deg,rgba(21,17,14,.55) 0%,rgba(21,17,14,0) 30%,rgba(21,17,14,0) 55%,rgba(21,17,14,.85) 100%); }
+  #v07 .lbl { position:absolute; top:16px; left:18px; font:600 12px 'Inter',sans-serif; letter-spacing:.08em; text-transform:uppercase; background:rgba(21,17,14,.6); backdrop-filter:blur(6px); padding:7px 12px; border-radius:999px; }
+  #v07 .demo { position:absolute; top:16px; right:18px; font:600 12px 'Inter',sans-serif; background:var(--acc); color:#1B140E; padding:7px 12px; border-radius:999px; opacity:0; transition:opacity .3s; }
+  #v07 .player.playing .demo { opacity:1; }
+  #v07 .play { all:unset; cursor:pointer; position:absolute; left:22px; bottom:60px; width:84px; height:84px; border-radius:50%; background:rgba(246,239,228,.94); color:#15110E; display:grid; place-items:center; transition:transform .3s, opacity .3s; z-index:2; }
+  #v07 .play::before { content:""; position:absolute; inset:0; border-radius:50%; border:2px solid rgba(246,239,228,.8); animation:v07-pulse 2.4s ease-out infinite; }
+  #v07 .play:hover { transform:scale(1.07); }
+  #v07 .play:focus-visible { outline:3px solid var(--acc); outline-offset:4px; }
+  #v07 .play svg { width:30px; height:30px; fill:currentColor; }
+  #v07 .play .i-play { margin-left:5px; }
+  #v07 .play .i-pause, #v07 .playing .play .i-play { display:none; }
+  #v07 .playing .play .i-pause { display:block; }
+  #v07 .playing .play { opacity:0; }
+  #v07 .playing .play::before { animation:none; opacity:0; }
+  #v07 .player:hover .play, #v07 .play:focus-visible { opacity:1; }
+  #v07 .bar { position:absolute; left:0; right:0; bottom:0; display:flex; align-items:center; gap:14px; padding:16px 18px; font:500 13px 'Inter',sans-serif; font-variant-numeric:tabular-nums; }
+  #v07 .prog { flex:1; height:4px; border-radius:9px; background:rgba(246,239,228,.3); overflow:hidden; }
+  #v07 .prog i { display:block; height:100%; width:0; background:var(--acc); }
+  #v07 .cc { font:700 11px 'Inter',sans-serif; border:1.5px solid currentColor; border-radius:4px; padding:1px 5px; }
+  #v07 .eyebrow { font:600 12px 'Inter',sans-serif; letter-spacing:.18em; text-transform:uppercase; color:var(--acc); }
+  #v07 blockquote { margin:16px 0 18px; }
+  #v07 blockquote p { font:400 clamp(26px,3.1cqi,38px)/1.18 'Fraunces',serif; letter-spacing:-.015em; margin:0; }
+  #v07 .who { margin:0 0 24px; color:var(--mut); font-size:14px; }
+  #v07 .who b { color:var(--ink); font-weight:600; }
+  #v07 .ch { list-style:none; margin:0; padding:0; border-top:1px solid rgba(246,239,228,.14); }
+  #v07 .ch button { all:unset; box-sizing:border-box; cursor:pointer; width:100%; display:flex; gap:14px; align-items:baseline; padding:12px 2px; border-bottom:1px solid rgba(246,239,228,.14); font:500 15px 'Inter',sans-serif; transition:color .2s, padding .3s; }
+  #v07 .ch button span { font:600 13px 'Inter',sans-serif; color:var(--acc); min-width:36px; font-variant-numeric:tabular-nums; }
+  #v07 .ch button:hover, #v07 .ch button[aria-current="true"] { color:var(--acc); padding-left:8px; }
+  #v07 .ch button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  @keyframes v07-pulse { from { transform:scale(1); opacity:.8; } to { transform:scale(1.55); opacity:0; } }
+  @container demo (max-width:780px) { #v07 .lay { grid-template-columns:1fr; } }
+  @container demo (max-width:480px) {
+    #v07 .play { width:60px; height:60px; left:16px; bottom:54px; }
+    #v07 .play svg { width:24px; height:24px; }
+    #v07 .lbl { font-size:10.5px; }
+    #v07 .demo { top:auto; bottom:48px; right:14px; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v07 .play::before { animation:none; } #v07 .player img { transition:none; } }
+
+  /* ---------- v08 · Fallstudie mit Kennzahl (Agentur / Praxis) ---------- */
+  #v08 { --bg:#EFEEE9; --ink:#0E0E10; --mut:#55534C; --acc:#3730A3; --bar:#C9C6BC;
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(28px,5cqi,72px) clamp(20px,5cqi,72px); }
+  #v08 .top { display:flex; gap:12px; align-items:center; flex-wrap:wrap; font-size:14px; color:var(--mut); }
+  #v08 .tag { font:700 12px 'Space Grotesk',sans-serif; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:var(--acc); padding:5px 10px; border-radius:6px; }
+  #v08 .hero { display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(24px,5cqi,72px); align-items:end; margin:clamp(20px,3cqi,36px) 0 clamp(28px,4cqi,48px); }
+  #v08 .num { font:700 clamp(96px,17cqi,220px)/.82 'Space Grotesk',sans-serif; letter-spacing:-.065em; display:flex; align-items:flex-start; font-variant-numeric:tabular-nums; }
+  #v08 .num .pm, #v08 .num .pc { font-size:.42em; color:var(--acc); letter-spacing:0; margin-top:.12em; }
+  #v08 .num .pc { margin-left:.08em; }
+  #v08 .kpi p { font:500 clamp(17px,1.9cqi,21px)/1.45 'Inter',sans-serif; margin:22px 0 0; max-width:30ch; }
+  #v08 .chart { margin:0; }
+  #v08 .bars { display:flex; align-items:flex-end; gap:6px; height:220px; border-bottom:1.5px solid var(--ink); }
+  #v08 .b { flex:1; height:100%; display:flex; align-items:flex-end; position:relative; }
+  #v08 .b i { display:block; width:100%; height:calc(var(--v) * 100%); background:var(--bar); border-radius:5px 5px 0 0; transform:scaleY(0); transform-origin:bottom; transition:transform .9s cubic-bezier(.2,.8,.2,1); transition-delay:calc(var(--d) * 55ms); }
+  #v08 .b.after i { background:var(--acc); }
+  #v08.in .b i { transform:none; }
+  #v08 .lab { display:flex; gap:6px; margin-top:8px; }
+  #v08 .lab span { flex:1; text-align:center; font:500 11px 'Inter',sans-serif; color:var(--mut); }
+  #v08 figcaption { display:flex; gap:18px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--mut); }
+  #v08 figcaption span::before { content:""; display:inline-block; width:10px; height:10px; border-radius:3px; background:var(--bar); margin-right:7px; vertical-align:-1px; }
+  #v08 figcaption span.a::before { background:var(--acc); }
+  #v08 .row { display:grid; grid-template-columns:1fr 1.15fr; gap:16px; }
+  #v08 .stats { margin:0; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  #v08 .stats div { background:#fff; border-radius:16px; padding:20px; display:flex; flex-direction:column; justify-content:space-between; gap:18px; min-height:120px; }
+  #v08 .stats dt { font-size:13px; color:var(--mut); }
+  #v08 .stats dd { margin:0; font:700 clamp(26px,3cqi,36px)/1 'Space Grotesk',sans-serif; letter-spacing:-.03em; }
+  #v08 .qt { margin:0; background:var(--ink); color:#F4F4F0; border-radius:16px; padding:24px 26px; display:flex; flex-direction:column; justify-content:space-between; gap:18px; }
+  #v08 .qt p { margin:0; font:500 18px/1.5 'Inter',sans-serif; }
+  #v08 .qt footer { display:flex; align-items:center; gap:12px; font-size:13px; color:#B9B8B0; }
+  #v08 .qt footer img { width:44px; height:44px; border-radius:50%; object-fit:cover; }
+  #v08 .qt footer b { display:block; color:#fff; font-size:14px; }
+  #v08 .lk { display:inline-flex; align-items:center; gap:8px; margin-top:24px; font:700 15px 'Space Grotesk',sans-serif; color:var(--acc); border-bottom:2px solid currentColor; padding-bottom:2px; }
+  #v08 .lk:focus-visible { outline:2px solid var(--acc); outline-offset:4px; }
+  @container demo (max-width:900px) { #v08 .row { grid-template-columns:1fr; } }
+  @container demo (max-width:900px) { #v08 .hero { grid-template-columns:1fr; } }
+  @container demo (max-width:720px) { #v08 .bars { height:170px; } }
+  @container demo (max-width:480px) { #v08 .stats { gap:8px; } #v08 .stats div { padding:14px 12px; min-height:0; gap:10px; } #v08 .stats dd { font-size:22px; } #v08 .stats dt { font-size:12px; } #v08 .lab span:nth-child(even) { visibility:hidden; } }
+  @media (prefers-reduced-motion:reduce) { #v08 .b i { transition:none; transform:none; } }
+
+  /* ---------- v09 · Social-Post-Optik (Mode-Boutique) ---------- */
+  #v09 { --bg:#FBF1EC; --ink:#2A1F21; --mut:#6B575B; --rose:#B4234F;
+    background:var(--bg); color:var(--ink); font-family:'DM Sans',sans-serif; padding:clamp(28px,5cqi,72px) clamp(18px,5cqi,64px); }
+  #v09 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; margin-bottom:32px; }
+  #v09 h3 { font:700 clamp(30px,4.4cqi,52px)/1.05 'DM Sans',sans-serif; letter-spacing:-.035em; margin:0; }
+  #v09 h3 span { color:var(--rose); }
+  #v09 .hd p { margin:0; color:var(--mut); max-width:38ch; font-size:15px; line-height:1.55; }
+  #v09 .feed { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start; }
+  #v09 .post { background:#fff; border-radius:22px; padding:18px; box-shadow:0 1px 2px rgba(42,31,33,.06), 0 18px 36px -24px rgba(122,40,62,.35); }
+  #v09 .post:nth-child(2) { margin-top:44px; }
+  #v09 .post > header { display:flex; align-items:center; gap:11px; }
+  #v09 .post > header img { width:42px; height:42px; border-radius:50%; object-fit:cover; }
+  #v09 .post > header b { display:block; font-size:15px; }
+  #v09 .post > header span { font-size:13px; color:var(--mut); }
+  #v09 .post > header svg { margin-left:auto; width:20px; height:20px; fill:var(--mut); flex-shrink:0; }
+  #v09 .post > p { margin:14px 0; font-size:15.5px; line-height:1.55; }
+  #v09 .post > p a { color:var(--rose); font-weight:700; }
+  #v09 .post > p a:focus-visible { outline:2px solid var(--rose); outline-offset:2px; }
+  #v09 .pic { position:relative; height:190px; border-radius:16px; overflow:hidden; background-color:var(--k);
+    background-image:linear-gradient(135deg, rgba(0,0,0,.16) 25%, transparent 25%), linear-gradient(225deg, rgba(0,0,0,.16) 25%, transparent 25%), linear-gradient(45deg, rgba(255,255,255,.1) 25%, transparent 25%), linear-gradient(315deg, rgba(255,255,255,.1) 25%, transparent 25%);
+    background-position:-7px 0, -7px 0, 0 0, 0 0; background-size:14px 14px; }
+  #v09 .pic span { position:absolute; left:12px; bottom:12px; background:#fff; color:var(--ink); font:700 12.5px 'DM Sans',sans-serif; padding:6px 11px; border-radius:999px; }
+  #v09 .act { display:flex; align-items:center; gap:18px; margin-top:14px; font-size:14px; color:var(--mut); }
+  #v09 .act svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  #v09 .act > span { display:inline-flex; align-items:center; gap:6px; }
+  #v09 .act > span:last-child { margin-left:auto; }
+  #v09 .like { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font:700 14px 'DM Sans',sans-serif; color:var(--mut); padding:4px 8px 4px 4px; border-radius:999px; transition:color .2s, background .2s; }
+  #v09 .like:hover { background:#FCE7EE; }
+  #v09 .like:focus-visible { outline:2px solid var(--rose); outline-offset:2px; }
+  #v09 .like[aria-pressed="true"] { color:var(--rose); }
+  #v09 .like[aria-pressed="true"] svg { fill:var(--rose); stroke:var(--rose); animation:v09-pop .35s ease; }
+  @keyframes v09-pop { 50% { transform:scale(1.3); } }
+  @container demo (max-width:940px) { #v09 .feed { grid-template-columns:repeat(2,1fr); } #v09 .post:nth-child(2) { margin-top:0; } }
+  @container demo (max-width:600px) { #v09 .feed { grid-template-columns:1fr; } }
+  @media (prefers-reduced-motion:reduce) { #v09 .like[aria-pressed="true"] svg { animation:none; } }
+
+  /* ---------- v10 · Dankeskarten (Floristik / Café) ---------- */
+  #v10 { --ink:#2B2118; --pen:#1F3A5F;
+    background-color:#D8C4A2;
+    background-image:radial-gradient(rgba(90,60,30,.12) 1px, transparent 1.6px), radial-gradient(rgba(255,255,255,.2) 1px, transparent 1.6px);
+    background-size:7px 7px, 11px 11px; background-position:0 0, 3px 5px;
+    color:var(--ink); font-family:'Inter',sans-serif; padding:clamp(32px,6cqi,80px) clamp(20px,5cqi,72px) clamp(40px,6cqi,88px); }
+  #v10 .hd { text-align:center; margin-bottom:clamp(34px,5cqi,56px); }
+  #v10 .eyebrow { font:600 12px 'Inter',sans-serif; letter-spacing:.2em; text-transform:uppercase; color:#4F341C; }
+  #v10 h3 { font:400 clamp(30px,4.6cqi,54px)/1.08 'Fraunces',serif; letter-spacing:-.02em; margin:12px auto 0; max-width:18ch; }
+  #v10 h3 em { font-style:italic; color:#7A2E3A; }
+  #v10 .board { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(24px,3cqi,36px); align-items:start; }
+  #v10 .card { position:relative; background:var(--p); padding:36px 24px 20px; transform:rotate(var(--r)); transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s;
+    box-shadow:0 1px 1px rgba(0,0,0,.08), 0 16px 26px -16px rgba(60,40,20,.55); }
+  #v10 .card::before { content:""; position:absolute; top:-13px; left:50%; width:92px; height:26px; transform:translateX(-50%) rotate(-3deg); background:rgba(255,253,245,.55); box-shadow:0 1px 2px rgba(0,0,0,.08); }
+  #v10 .card:nth-child(even)::before { transform:translateX(-50%) rotate(4deg); }
+  #v10 .card:hover { transform:rotate(0) translateY(-6px); box-shadow:0 1px 1px rgba(0,0,0,.08), 0 26px 34px -18px rgba(60,40,20,.6); z-index:1; }
+  #v10 .doo { position:absolute; top:16px; right:16px; width:38px; height:38px; fill:none; stroke:#7A2E3A; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; opacity:.75; }
+  #v10 .card p { margin:0; font:500 23px/1.22 'Caveat',cursive; color:var(--pen); }
+  #v10 .card p + p { margin-top:10px; }
+  #v10 .card p:first-of-type { padding-right:34px; }
+  #v10 .card .sig { font:700 28px/1 'Caveat',cursive; text-align:right; margin-top:14px; color:#7A2E3A; }
+  #v10 .meta { display:block; margin-top:16px; padding-top:10px; border-top:1px dashed rgba(43,33,24,.25); font:500 12px/1.45 'Inter',sans-serif; color:#5A4D40; }
+  @container demo (max-width:1040px) { #v10 .board { grid-template-columns:repeat(2,1fr); max-width:680px; margin:0 auto; } }
+  @container demo (max-width:560px) { #v10 .board { grid-template-columns:1fr; max-width:360px; } }
+  @media (prefers-reduced-motion:reduce) { #v10 .card { transition:none; } }
+
+</style>
+</head>
+<body class="shell">
+
+<header class="sh-header">
+  <div class="sh-bar">
+    <a href="../../Meuster%20Landing%20Page.dc.html" aria-label="meuser.biz Startseite"><img src="../../assets/meuser-logo.png" alt="meuser.biz – Modern Webservices"></a>
+    <div class="sh-actions">
+      <a class="sh-btn ghost" href="../../beispiele.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>Alle<span class="long"> Beispiele</span></span></a>
+      <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Anfrage</a>
+    </div>
+  </div>
+  <nav class="sh-cats" aria-label="Kategorien">
+    <a href="../../beispiele.html#websites">Komplette Websites</a>
+    <a href="navigation.html">Navigation &amp; Menüs</a>
+    <a href="header.html">Header &amp; Hero</a>
+    <a href="footer.html">Footer</a>
+    <a href="leistungen.html">Leistungen &amp; Features</a>
+    <a href="preise.html">Preistabellen</a>
+    <a href="stimmen.html">Kundenstimmen</a>
+    <a href="team.html">Team</a>
+    <a href="galerie.html">Galerien</a>
+    <a href="kontakt.html">Kontakt &amp; Formulare</a>
+    <a href="faq.html">FAQ</a>
+    <a href="cta.html">Call-to-Action</a>
+    <a href="kennzahlen.html">Kennzahlen &amp; Abläufe</a>
+  </nav>
+</header>
+
+<section class="sh-hero">
+  <div class="sh-hero-in">
+    <div class="sh-eyebrow">BAUSTEINE · 10 VARIANTEN</div>
+    <h1>Kundenstimmen</h1>
+    <p>Echte Stimmen überzeugen mehr als jede Werbezeile. Hier sehen Sie zehn Wege, Bewertungen und Empfehlungen Ihrer Kunden glaubwürdig und passend zu Ihrer Marke zu zeigen.</p>
+  </div>
+</section>
+
+<nav class="sh-index" aria-label="Varianten auf dieser Seite">
+  <!-- je Variante: <a href="#v01-wrap"><b>01</b>Name</a> -->
+  <a href="#v01-wrap"><b>01</b>Großes Zitat</a>
+  <a href="#v02-wrap"><b>02</b>Karten-Raster mit Sternen</a>
+  <a href="#v03-wrap"><b>03</b>Karussell mit Pfeilen und Punkten</a>
+  <a href="#v04-wrap"><b>04</b>Masonry-Wand</a>
+  <a href="#v05-wrap"><b>05</b>Endloses Laufband</a>
+  <a href="#v06-wrap"><b>06</b>Bewertungs-Übersicht mit Verteilung</a>
+  <a href="#v07-wrap"><b>07</b>Video-Testimonial</a>
+  <a href="#v08-wrap"><b>08</b>Fallstudie mit Kennzahl</a>
+  <a href="#v09-wrap"><b>09</b>Social-Post-Optik</a>
+  <a href="#v10-wrap"><b>10</b>Handgeschriebene Dankeskarten</a>
+</nav>
+
+<main class="sh-main">
+
+  <!-- ===== VARIANTE (Muster, für jede Variante wiederholen) =====
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Name der Variante</h2>
+        <p>Ein bis zwei Sätze: Wie wirkt sie, wofür eignet sie sich?</p>
+        <ul class="v-tags"><li>Restaurant</li><li>Hotel</li><li>mit Dropdown</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame" style="--h:420px">
+        <div id="v01"> … Baustein … </div>
+      </div>
+    </div>
+  </section>
+  ============================================================== -->
+
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Großes Zitat</h2>
+        <p>Eine einzige Stimme, groß gesetzt in einer eleganten Serifenschrift. Ruhig, selbstbewusst und mit viel Weißraum – wirkt wie ein Satz aus einem Architekturmagazin.</p>
+        <ul class="v-tags"><li>Architektur</li><li>Hotel</li><li>Manufaktur</li><li>Serifenschrift</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v01">
+          <div class="top"><span class="mark">LINDGRAF<span>ARCHITEKTEN</span></span><span class="count">Stimme 04 / 12</span></div>
+          <figure>
+            <svg class="q" viewBox="0 0 64 48" aria-hidden="true"><path d="M0 48V28C0 12 8 2 26 0l2 6C18 9 14 15 14 22h12v26H0zm36 0V28c0-16 8-26 26-28l2 6c-10 3-14 9-14 16h12v26H36z"/></svg>
+            <div>
+              <blockquote><p>Wir wollten ein Haus, das zum Niederrhein passt – flach, hell, ehrlich. Bekommen haben wir mehr: Räume, in denen man <em>das Licht über den Tag wandern</em> sieht.</p></blockquote>
+            </div>
+            <figcaption>
+              <span class="av" aria-hidden="true">MD</span>
+              <span class="who"><b>Marion &amp; Klaus Derksen</b><span>Bauherren · Wohnhaus am Feldrand, Kempen</span></span>
+              <a class="more" href="#" onclick="return false">Zum Projekt <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v02-wrap" aria-labelledby="v02-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 02</div>
+        <h2 id="v02-title">Karten-Raster mit Sternen</h2>
+        <p>Sechs Bewertungen als klare Karten mit Sternen, Leistung und Ort – dazu ein Gesamtwert oben rechts. Sachlich, vertrauensbildend und schnell erfassbar.</p>
+        <ul class="v-tags"><li>Handwerk</li><li>Elektro &amp; SHK</li><li>Dienstleister</li><li>mit Sternen</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v02">
+          <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="v02-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol></svg>
+          <header class="hd">
+            <div><span class="eyebrow">Brücken Elektrotechnik · Willich</span><h3>Was unsere Kunden nach dem Auftrag sagen</h3></div>
+            <div class="score"><b>4,9</b><div><span class="stars" role="img" aria-label="5 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg></span><small>214 Bewertungen · 98 % empfehlen uns</small></div></div>
+          </header>
+          <ul class="grid">
+            <li class="card"><span class="stars" role="img" aria-label="5 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg></span><h4>Wallbox an einem Vormittag</h4><p>Termin innerhalb einer Woche, sauber gearbeitet und alles erklärt. Der Monteur hat sogar die Bohrlöcher vom alten Kasten verspachtelt.</p>
+              <div class="ft"><span class="av" style="--c:#1D4ED8" aria-hidden="true">SH</span><span class="who"><b>Stefan H.</b><span>Wallbox 11 kW · Anrath</span></span><span class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Auftrag geprüft</span></div></li>
+            <li class="card"><span class="stars" role="img" aria-label="5 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg></span><h4>Zählerschrank endlich auf Stand</h4><p>Altbau von 1962, Zählerschrank komplett erneuert. Der Festpreis wurde eingehalten, die Anmeldung beim Netzbetreiber lief komplett über Brücken.</p>
+              <div class="ft"><span class="av" style="--c:#B45309" aria-hidden="true">IW</span><span class="who"><b>Ingrid &amp; Paul W.</b><span>Zählerschrank · Tönisvorst</span></span><span class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Auftrag geprüft</span></div></li>
+            <li class="card"><span class="stars" role="img" aria-label="4 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="off" aria-hidden="true"><use href="#v02-star"/></svg></span><h4>Ehrliche Beratung statt Upselling</h4><p>Wir wollten ein Smart-Home-Komplettpaket. Herr Brücken hat zu einer kleineren Lösung geraten – die reicht völlig. Einziger Minuspunkt: Der Rückruf dauerte zwei Tage.</p>
+              <div class="ft"><span class="av" style="--c:#6D28D9" aria-hidden="true">MT</span><span class="who"><b>Melanie T.</b><span>Smart Home · Krefeld</span></span><span class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Auftrag geprüft</span></div></li>
+            <li class="card"><span class="stars" role="img" aria-label="5 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg></span><h4>Notdienst am Sonntagabend</h4><p>Die Sicherung flog immer wieder raus, die Kühltruhe war voll. Nach 40 Minuten war jemand da und hat den Fehler in der Außensteckdose gefunden.</p>
+              <div class="ft"><span class="av" style="--c:#047857" aria-hidden="true">JB</span><span class="who"><b>Jürgen B.</b><span>Notdienst · Meerbusch</span></span><span class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Auftrag geprüft</span></div></li>
+            <li class="card"><span class="stars" role="img" aria-label="5 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg></span><h4>Unser Salon hell wie nie</h4><p>Komplette LED-Umrüstung im Friseursalon – erledigt an einem Montag, als wir ohnehin geschlossen hatten. Kein einziger Tag Umsatzausfall.</p>
+              <div class="ft"><span class="av" style="--c:#BE123C" aria-hidden="true">AK</span><span class="who"><b>Aylin K.</b><span>LED-Umrüstung · Kempen</span></span><span class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Auftrag geprüft</span></div></li>
+            <li class="card"><span class="stars" role="img" aria-label="5 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg><svg class="on" aria-hidden="true"><use href="#v02-star"/></svg></span><h4>Photovoltaik ohne Papierkrieg</h4><p>Von der Planung bis zur Inbetriebnahme ein fester Ansprechpartner. Die App zeigt uns jetzt jeden Tag, was das Dach liefert.</p>
+              <div class="ft"><span class="av" style="--c:#0F766E" aria-hidden="true">RD</span><span class="who"><b>Ralf &amp; Nina D.</b><span>PV-Anlage 9,8 kWp · Viersen</span></span><span class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Auftrag geprüft</span></div></li>
+          </ul>
+          <div class="bt"><a class="btn pri" href="#" onclick="return false">Alle 214 Bewertungen lesen</a><a class="btn" href="#" onclick="return false">Bewertung schreiben</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v03-wrap" aria-labelledby="v03-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 03</div>
+        <h2 id="v03-title">Karussell mit Pfeilen und Punkten</h2>
+        <p>Eine Stimme nach der anderen, mit Portrait, Rechtsgebiet und Zitat. Steuerbar per Pfeiltasten, Punkten und Wischgeste – edel in Nachtblau und Gold.</p>
+        <ul class="v-tags"><li>Kanzlei</li><li>Steuerberatung</li><li>Beratung</li><li>JavaScript</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v03">
+          <div class="hd"><span class="eyebrow">Hollmann &amp; Steffens · Rechtsanwälte</span><h3>Vertrauen, das man <em>nachlesen</em> kann.</h3></div>
+          <div class="vp" role="region" aria-roledescription="Karussell" aria-label="Mandantenstimmen">
+            <ul class="track" aria-live="polite">
+              <li class="slide" role="group" aria-roledescription="Folie" aria-label="1 von 4">
+                <figure><div class="ph"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait einer Geschäftsfrau im Büro" loading="lazy"></div>
+                  <div><span class="area">Arbeitsrecht</span><blockquote><p>„Bei der Umstrukturierung unseres Lagers ging es um vierzig Arbeitsplätze. Frau Steffens hat uns jeden Schritt so erklärt, dass wir ihn auch der Belegschaft erklären konnten.“</p></blockquote>
+                  <figcaption><b>Dr. Annette Vossen</b><span>Geschäftsführerin, Vossen Logistik GmbH, Neuss</span></figcaption></div></figure>
+              </li>
+              <li class="slide" role="group" aria-roledescription="Folie" aria-label="2 von 4">
+                <figure><div class="ph"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait eines Unternehmers mit Brille und Sakko" loading="lazy"></div>
+                  <div><span class="area">Vertragsrecht</span><blockquote><p>„Ein Großkunde wollte nicht zahlen. Nach drei Wochen lag ein Vergleich auf dem Tisch – ohne dass die Geschäftsbeziehung daran zerbrochen ist.“</p></blockquote>
+                  <figcaption><b>Thomas Reckers</b><span>Inhaber, Reckers Fliesenhandel, Krefeld</span></figcaption></div></figure>
+              </li>
+              <li class="slide" role="group" aria-roledescription="Folie" aria-label="3 von 4">
+                <figure><div class="ph"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait einer lächelnden Frau mit Locken" loading="lazy"></div>
+                  <div><span class="area">Erbrecht</span><blockquote><p>„In einer Zeit, in der uns alles zu viel war, war die Kanzlei ruhig, klar und erreichbar. Der Nachlass ist geregelt – und die Familie spricht noch miteinander.“</p></blockquote>
+                  <figcaption><b>Sabine Heutgens</b><span>Privatmandantin, Mönchengladbach</span></figcaption></div></figure>
+              </li>
+              <li class="slide" role="group" aria-roledescription="Folie" aria-label="4 von 4">
+                <figure><div class="ph"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Portrait eines älteren Mannes mit Brille" loading="lazy"></div>
+                  <div><span class="area">Hofübergabe</span><blockquote><p>„Unser Hof ist seit 1874 in der Familie. Dass die Übergabe an meine Tochter rechtlich und steuerlich sauber lief, verdanke ich Herrn Hollmann.“</p></blockquote>
+                  <figcaption><b>Wilhelm Janßen</b><span>Landwirt, Grefrath</span></figcaption></div></figure>
+              </li>
+            </ul>
+          </div>
+          <div class="ctrl">
+            <button class="nav prev" type="button" aria-label="Vorherige Stimme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6"/></svg></button>
+            <button class="nav next" type="button" aria-label="Nächste Stimme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+            <div class="dots"></div>
+            <span class="cnt"><b>01</b> / 04</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v04-wrap" aria-labelledby="v04-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 04</div>
+        <h2 id="v04-title">Masonry-Wand</h2>
+        <p>Viele kurze Stimmen in unterschiedlich hohen Kacheln, einzelne farbig hervorgehoben. Wirkt lebendig und zeigt Masse – mit „Mehr anzeigen“ zum Aufklappen.</p>
+        <ul class="v-tags"><li>Software &amp; App</li><li>Startup</li><li>Franchise</li><li>aufklappbar</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v04">
+          <div class="hd">
+            <span class="pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg>4,8 von 5 · über 1.200 Teams</span>
+            <h3>Weniger Zettelwirtschaft. Mehr <span>Feierabend.</span></h3>
+            <p>Was Betriebe aus Gastronomie, Pflege und Handel über die Dienstplan-App Taktwerk sagen.</p>
+          </div>
+          <div class="wall" id="v04-wall">
+            <div class="cols">
+              <article class="c lime big"><p>Seit Taktwerk tauschen meine Leute ihre Schichten selbst. Ich habe sonntags wieder frei.</p><div class="who"><span class="ini" aria-hidden="true">CM</span><div><b>Carina Michels</b><span>Inhaberin, Bäckerei Heesen</span></div></div></article>
+              <article class="c"><span class="tag">Gastronomie</span><p>Einrichtung in einer Stunde. Ehrlich. Danach stand der Plan für den ganzen Monat.</p><div class="who"><img src="https://images.unsplash.com/photo-1557862921-37829c790f19?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"><div><b>Daniel Roth</b><span>Betriebsleiter, Brauhaus am Markt</span></div></div></article>
+              <article class="c dark"><span class="tag">Pflege</span><p>Die Stundenkonten stimmen endlich mit der Lohnabrechnung überein. Unser Steuerbüro hat sich ausdrücklich bedankt.</p><div class="who"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"><div><b>Sevgi Arslan</b><span>Pflegedienstleitung, Ambulanter Dienst Lindenhof</span></div></div></article>
+              <article class="c"><p>Urlaubsanträge per App statt per Zettel am Kühlschrank. Klingt banal, spart uns jede Woche zwei Stunden.</p><div class="who"><img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"><div><b>Marco Lenz</b><span>Geschäftsführer, Lenz Catering</span></div></div></article>
+              <article class="c big"><p>Der Support antwortet schneller als mein Koch.</p><div class="who"><span class="ini" aria-hidden="true">TW</span><div><b>Tobias Wefers</b><span>Küchenchef, Landgasthof Op de Hött</span></div></div></article>
+              <article class="c"><span class="tag">Handel</span><p>Drei Filialen, ein Plan. Wer wo fehlt, sehe ich auf einen Blick – auch unterwegs vom Handy.</p><div class="who"><img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"><div><b>Julia Brandt</b><span>Filialleitung, Modehaus Terlinden</span></div></div></article>
+              <article class="c lime"><p>Das beste Werkzeug, das wir in den letzten Jahren eingeführt haben. Punkt.</p><div class="who"><span class="ini" aria-hidden="true">KA</span><div><b>Kemal Aydın</b><span>Direktor, Hotel am Wall</span></div></div></article>
+              <article class="c"><p>Die Azubis haben es ohne Schulung verstanden. Die Chefin auch.</p><div class="who"><img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"><div><b>Jan Peters</b><span>Barista, Kaffeebar Ostwall</span></div></div></article>
+              <article class="c dark big"><p>Zeiterfassung per QR-Code am Eingang. Nachrechnen? Gibt es bei uns nicht mehr.</p><div class="who"><span class="ini" aria-hidden="true">RS</span><div><b>Rita Schmitz</b><span>Verwaltung, Seniorenresidenz Am Park</span></div></div></article>
+              <article class="c"><p>Ich sehe meine Schichten jetzt drei Wochen im Voraus. Mein Privatleben sagt danke.</p><div class="who"><img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"><div><b>Lea Hoffmann</b><span>Servicekraft, Bistro Rheinblick</span></div></div></article>
+              <article class="c"><span class="tag">Umstieg</span><p>Von Excel zu Taktwerk an einem Wochenende – inklusive Import aller 64 Mitarbeitenden.</p><div class="who"><span class="ini" aria-hidden="true">HV</span><div><b>Henrik Vogt</b><span>IT-Leitung, Getränke Eickes</span></div></div></article>
+              <article class="c lime"><p>Fairer Preis, keine versteckten Kosten, monatlich kündbar. So muss Software sein.</p><div class="who"><span class="ini" aria-hidden="true">FE</span><div><b>Frank Eickes</b><span>Inhaber, Getränke Eickes</span></div></div></article>
+            </div>
+          </div>
+          <div class="mw"><button class="more" type="button" aria-expanded="false" aria-controls="v04-wall"><span>Alle Stimmen anzeigen</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v05-wrap" aria-labelledby="v05-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 05</div>
+        <h2 id="v05-title">Endloses Laufband</h2>
+        <p>Zwei Reihen kurzer Gästestimmen laufen langsam gegeneinander – mit Pause-Knopf und Halt beim Darüberfahren. Atmosphärisch, warm und ideal als Zwischenabschnitt.</p>
+        <ul class="v-tags"><li>Restaurant</li><li>Biergarten</li><li>Eventlocation</li><li>Animation</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v05">
+          <div class="hd">
+            <div><span class="eyebrow">Haus Niers · Restaurant &amp; Biergarten · Grefrath</span><h3>Gäste <em>erzählen</em>.</h3></div>
+            <div class="side"><p><b>4,7</b> / 5 aus 860 Einträgen in unserem Gästebuch</p>
+              <button class="pz" type="button" aria-pressed="false"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg><span>Laufband anhalten</span></button></div>
+          </div>
+          <div class="row"><div class="track"><ul class="set">
+            <li class="it"><span class="st" aria-hidden="true">★★★★★</span><q>Der Zander auf Rahmsauerkraut war ein Gedicht.</q><span class="who">Heike &amp; Rolf · Sonntagsessen</span></li>
+            <li class="it"><span class="st" aria-hidden="true">★★★★★</span><q>Biergarten unter Kastanien, kühles Alt, herzlicher Service. Mehr braucht der Sommer nicht.</q><span class="who">Thomas K. · Radtour an der Niers</span></li>
+            <li class="it"><span class="st" aria-hidden="true">★★★★★</span><q>Unsere Hochzeit mit 80 Gästen lief wie ein Uhrwerk.</q><span class="who">Anna &amp; Felix · Hochzeit im Mai</span></li>
+            <li class="it"><span class="st" aria-hidden="true">★★★★★</span><q>Endlich ein Restaurant, das vegetarisch ernst nimmt.</q><span class="who">Merve S. · Abendessen</span></li>
+            <li class="it"><span class="st" aria-hidden="true">★★★★☆</span><q>Kinder willkommen, Wickeltisch vorhanden, Pommes selbst gemacht.</q><span class="who">Familie Gerards · Mittagstisch</span></li>
+            <li class="it"><span class="st" aria-hidden="true">★★★★★</span><q>Reibekuchen wie bei Oma – nur mit besserem Apfelkompott.</q><span class="who">Jupp W. · Stammgast seit 1998</span></li>
+          </ul></div></div>
+          <div class="row rev"><div class="track"><ul class="set">
+            <li class="it"><span class="st" aria-hidden="true">★★★★★</span><q>Weihnachtsfeier mit 35 Kollegen – alle satt und glücklich.</q><span class="who">Team Spedition Lohmann</span></li>
+            <li class="it"><span class="st" aria-hidden="true">★★★★★</span><q>Die Weinempfehlung zum Rehrücken war perfekt.</q><span class="who">Dr. Claudia B. · Geburtstag</span></li>
+            <li class="it"><span class="st" aria-hidden="true">★★★★★</span><q>Die Terrasse am Abend ist der schönste Platz in Grefrath.</q><span class="who">Sven &amp; Ole · Sommerabend</span></li>
+            <li class="it"><span class="st" aria-hidden="true">★★★★☆</span><q>Schnell, herzlich und trotzdem nie gehetzt.</q><span class="who">Margret H. · Mittagstisch</span></li>
+            <li class="it"><span class="st" aria-hidden="true">★★★★★</span><q>Spargelzeit im Haus Niers ist bei uns Familientradition.</q><span class="who">Familie Kox · seit 2009</span></li>
+            <li class="it"><span class="st" aria-hidden="true">★★★★★</span><q>Der Service hat sich beim zweiten Besuch an unsere Allergien erinnert!</q><span class="who">Lina R. · Abendessen</span></li>
+          </ul></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v06-wrap" aria-labelledby="v06-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 06</div>
+        <h2 id="v06-title">Bewertungs-Übersicht mit Verteilung</h2>
+        <p>Gesamtnote, Balkenverteilung und Teilnoten auf einen Blick – ein Klick auf einen Balken filtert die Bewertungen. Transparent, inklusive kritischer Stimme mit Antwort der Praxis.</p>
+        <ul class="v-tags"><li>Arztpraxis</li><li>Zahnarzt</li><li>Restaurant</li><li>Filter per Klick</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v06">
+          <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="v06-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol></svg>
+          <div class="lay">
+            <aside class="sum" aria-label="Zusammenfassung der Bewertungen">
+              <span class="eyebrow">Zahnärzte am Lindenplatz</span>
+              <div class="big"><b>4,8</b><div><span class="stars" role="img" aria-label="5 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg></span><small>aus 312 Bewertungen</small></div></div>
+              <div class="bars" role="group" aria-label="Bewertungen nach Sternen filtern">
+                <button type="button" data-f="5" aria-pressed="false"><span>5 Sterne</span><span class="tr"><i style="width:84%"></i></span><span class="n">262</span></button>
+                <button type="button" data-f="4" aria-pressed="false"><span>4 Sterne</span><span class="tr"><i style="width:12%"></i></span><span class="n">37</span></button>
+                <button type="button" data-f="3" aria-pressed="false"><span>3 Sterne</span><span class="tr"><i style="width:3%"></i></span><span class="n">9</span></button>
+                <button type="button" data-f="2" aria-pressed="false"><span>2 Sterne</span><span class="tr"><i style="width:1%"></i></span><span class="n">3</span></button>
+                <button type="button" data-f="1" aria-pressed="false"><span>1 Stern</span><span class="tr"><i style="width:.5%"></i></span><span class="n">1</span></button>
+              </div>
+              <dl class="sub">
+                <div><dt>Freundlichkeit</dt><dd><span class="m"><i style="width:98%"></i></span>4,9</dd></div>
+                <div><dt>Aufklärung</dt><dd><span class="m"><i style="width:96%"></i></span>4,8</dd></div>
+                <div><dt>Wartezeit</dt><dd><span class="m"><i style="width:88%"></i></span>4,4</dd></div>
+              </dl>
+              <p class="note">Gesammelt über unsere eigene Patientenbefragung nach dem Termin. Stand: Oktober 2026.</p>
+            </aside>
+            <section aria-labelledby="v06-h">
+              <div class="lh"><h3 id="v06-h">Neueste Bewertungen</h3><button class="reset" type="button" hidden>Filter zurücksetzen</button></div>
+              <p class="status" aria-live="polite">Alle Bewertungen · neueste zuerst</p>
+              <ul class="rv">
+                <li data-s="5"><div class="rh"><span class="av" style="--c:#0F766E" aria-hidden="true">PK</span><div><b>Petra K.</b><span class="d">14.10.2026 · Prophylaxe</span></div><span class="stars" role="img" aria-label="5 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg></span></div><p>Die professionelle Zahnreinigung war gründlich und überhaupt nicht unangenehm. Ich wurde vorher gefragt, wo es empfindlich ist – das erlebt man selten.</p></li>
+                <li data-s="5"><div class="rh"><span class="av" style="--c:#1E40AF" aria-hidden="true">MY</span><div><b>Mehmet Y.</b><span class="d">09.10.2026 · Angstpatient</span></div><span class="stars" role="img" aria-label="5 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg></span></div><p>Ich war zwölf Jahre nicht beim Zahnarzt. Dr. Lammers hat sich Zeit genommen, alles gezeigt und nichts gemacht, was ich nicht wollte. Danke!</p></li>
+                <li data-s="4"><div class="rh"><span class="av" style="--c:#9D174D" aria-hidden="true">JR</span><div><b>Johanna R.</b><span class="d">02.10.2026 · Kinderzahnheilkunde</span></div><span class="stars" role="img" aria-label="4 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="off" aria-hidden="true"><use href="#v06-star"/></svg></span></div><p>Unsere Tochter (5) wollte danach gar nicht mehr gehen. Einziger Punkt: Parkplätze direkt vor der Tür sind knapp.</p></li>
+                <li data-s="3"><div class="rh"><span class="av" style="--c:#92400E" aria-hidden="true">LM</span><div><b>Laura M.</b><span class="d">27.09.2026 · Kontrolle</span></div><span class="stars" role="img" aria-label="3 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="off" aria-hidden="true"><use href="#v06-star"/></svg><svg class="off" aria-hidden="true"><use href="#v06-star"/></svg></span></div><p>Die Behandlung selbst war gut, aber ich habe trotz Termin 35 Minuten gewartet.</p>
+                  <div class="reply"><b>Antwort der Praxis</b>Liebe Frau M., das tut uns leid – an dem Vormittag hatten wir zwei Notfälle. Seit November planen wir dafür feste Puffer ein.</div></li>
+                <li data-s="5"><div class="rh"><span class="av" style="--c:#4338CA" aria-hidden="true">BS</span><div><b>Bernd S.</b><span class="d">21.09.2026 · Implantat</span></div><span class="stars" role="img" aria-label="5 von 5 Sternen"><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg><svg class="on" aria-hidden="true"><use href="#v06-star"/></svg></span></div><p>Vom Beratungsgespräch bis zur fertigen Krone alles transparent. Der Kostenplan wurde auf den Euro eingehalten.</p></li>
+              </ul>
+              <p class="empty" hidden>Für diese Auswahl gibt es aktuell keine neuen Bewertungen mit Text.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v07-wrap" aria-labelledby="v07-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 07</div>
+        <h2 id="v07-title">Video-Testimonial</h2>
+        <p>Ein Kundenfilm als Herzstück: großes Standbild, Play-Button mit Puls, Kapitel zum Anspringen. Hier nur optisch – im echten Projekt mit eingebettetem Video.</p>
+        <ul class="v-tags"><li>Ladenbau</li><li>Gastronomie</li><li>Immobilien</li><li>Kundenfilm</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v07">
+          <div class="lay">
+            <div class="player">
+              <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Café-Inhaber im hellen Sakko sitzt lächelnd in seinem Café" loading="lazy">
+              <div class="shade"></div>
+              <span class="lbl">Kundenfilm · Café Kornblume</span>
+              <span class="demo" aria-hidden="true">Vorschau · ohne Ton</span>
+              <button class="play" type="button" aria-pressed="false" aria-label="Kundenfilm abspielen (Demo)"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5l15 8.5-15 8.5z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg></button>
+              <div class="bar"><span><span class="cur">0:00</span> / 2:48</span><div class="prog"><i></i></div><span class="cc" aria-hidden="true">UT</span></div>
+            </div>
+            <div>
+              <span class="eyebrow">Terhoeven Ladenbau · Kundenstimme</span>
+              <blockquote><p>„Ihr habt aus einer alten Schlosserei unser Wohnzimmer gemacht.“</p></blockquote>
+              <p class="who"><b>Jonas Brückmann</b> · Inhaber, Café Kornblume, Krefeld</p>
+              <ol class="ch" aria-label="Kapitel">
+                <li><button type="button" data-t="0"><span>0:00</span>Die Idee</button></li>
+                <li><button type="button" data-t="42"><span>0:42</span>Umbau in sechs Wochen</button></li>
+                <li><button type="button" data-t="95"><span>1:35</span>Der Tresen aus Eiche</button></li>
+                <li><button type="button" data-t="131"><span>2:11</span>Der Eröffnungstag</button></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v08-wrap" aria-labelledby="v08-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 08</div>
+        <h2 id="v08-title">Fallstudie mit Kennzahl</h2>
+        <p>Eine Kundenstimme, belegt mit Zahlen: große Kennzahl, Vorher-nachher-Diagramm und Zitat. Überzeugt vor allem Entscheider, die Ergebnisse sehen wollen.</p>
+        <ul class="v-tags"><li>Agentur</li><li>Beratung</li><li>B2B</li><li>animiertes Diagramm</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v08">
+          <div class="top"><span class="tag">Fallstudie</span><span>Physiotherapie Janßen, Meerbusch · Website-Relaunch 2026</span></div>
+          <div class="hero">
+            <div class="kpi">
+              <div class="num" role="img" aria-label="plus 42 Prozent"><span class="pm" aria-hidden="true">+</span><span class="v" aria-hidden="true">42</span><span class="pc" aria-hidden="true">%</span></div>
+              <p>mehr Terminanfragen über die Website – im Halbjahr nach dem Relaunch, verglichen mit den sechs Monaten davor.</p>
+            </div>
+            <figure class="chart">
+              <div class="bars" role="img" aria-label="Anfragen pro Monat: vorher durchschnittlich 31, nachher durchschnittlich 44">
+                <div class="b"><i style="--v:.58;--d:0"></i></div><div class="b"><i style="--v:.62;--d:1"></i></div><div class="b"><i style="--v:.66;--d:2"></i></div><div class="b"><i style="--v:.6;--d:3"></i></div><div class="b"><i style="--v:.56;--d:4"></i></div><div class="b"><i style="--v:.7;--d:5"></i></div>
+                <div class="b after"><i style="--v:.76;--d:6"></i></div><div class="b after"><i style="--v:.82;--d:7"></i></div><div class="b after"><i style="--v:.88;--d:8"></i></div><div class="b after"><i style="--v:.92;--d:9"></i></div><div class="b after"><i style="--v:.94;--d:10"></i></div><div class="b after"><i style="--v:.96;--d:11"></i></div>
+              </div>
+              <div class="lab" aria-hidden="true"><span>Nov</span><span>Dez</span><span>Jan</span><span>Feb</span><span>Mär</span><span>Apr</span><span>Mai</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Okt</span></div>
+              <figcaption><span>Vorher</span><span class="a">Mit neuer Website</span></figcaption>
+            </figure>
+          </div>
+          <div class="row">
+            <dl class="stats">
+              <div><dt>Absprungrate</dt><dd>−31 %</dd></div>
+              <div><dt>Ladezeit mobil</dt><dd>1,4 s</dd></div>
+              <div><dt>online gebucht</dt><dd>68 %</dd></div>
+            </dl>
+            <blockquote class="qt"><p>„Früher klingelte das Telefon mitten in der Behandlung. Heute buchen unsere Patienten abends online – und wir haben die Hände frei.“</p>
+              <footer><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"><span><b>Markus Janßen</b>Praxisinhaber</span></footer></blockquote>
+          </div>
+          <a class="lk" href="#" onclick="return false">Ganze Fallstudie lesen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v09-wrap" aria-labelledby="v09-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 09</div>
+        <h2 id="v09-title">Social-Post-Optik</h2>
+        <p>Kundenstimmen im Stil kurzer Beiträge mit Profilbild, Hashtags und Herz-Knopf – eine eigene, fiktive Gestaltung, die nahbar und jung wirkt.</p>
+        <ul class="v-tags"><li>Mode &amp; Boutique</li><li>Café</li><li>Kreativ-Workshop</li><li>interaktives Herz</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v09">
+          <div class="hd"><h3>Euer <span>#maschenwerk</span></h3><p>Was Kundinnen und Kunden über ihre Lieblingsstücke teilen – mit freundlicher Genehmigung. Maschenwerk · Strick &amp; Mode, Krefeld.</p></div>
+          <div class="feed">
+            <article class="post">
+              <header><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"><div><b>Lisa Marquardt</b><span>@lisa.strickt · vor 2 Tagen</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg></header>
+              <p>Zweiter Winter mit meiner Mütze vom <a href="#" onclick="return false">#maschenwerk</a> – kein Fussel, keine Delle. Und die Beratung zur Wolle war Gold wert! <a href="#" onclick="return false">#krefeld</a></p>
+              <div class="pic" style="--k:#A4472A" role="img" aria-label="Strickmuster in Rostrot"><span>Mütze „Niers“ · Merino, Rost</span></div>
+              <footer class="act"><button class="like" type="button" aria-pressed="false" aria-label="Gefällt mir, 128"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><span class="n">128</span></button><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg>14<span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> Kommentare</span></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg></span></footer>
+            </article>
+            <article class="post">
+              <header><img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"><div><b>Hanna Pütz</b><span>@hanna.puetz · vor 5 Tagen</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg></header>
+              <p>Im Workshop „Socken für Ungeduldige“ tatsächlich mein erstes Paar fertig bekommen. Tee, Kekse, tolle Gruppe – nächstes Mal ein Pullover? <a href="#" onclick="return false">#maschenwerk</a> <a href="#" onclick="return false">#strickcafé</a></p>
+              <div class="pic" style="--k:#6F8A6B" role="img" aria-label="Strickmuster in Salbeigrün"><span>Workshop-Socken · Schurwolle, Salbei</span></div>
+              <footer class="act"><button class="like" type="button" aria-pressed="false" aria-label="Gefällt mir, 203"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><span class="n">203</span></button><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg>31<span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> Kommentare</span></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg></span></footer>
+            </article>
+            <article class="post">
+              <header><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy"><div><b>Ben Albers</b><span>@ben.albers · vor 1 Woche</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg></header>
+              <p>Pullover nach einem Jahr zum Ausbessern gebracht – kostenlos repariert zurückbekommen, Ellenbogen wie neu. So geht Service. <a href="#" onclick="return false">#maschenwerk</a> <a href="#" onclick="return false">#reparierenstattwegwerfen</a></p>
+              <div class="pic" style="--k:#2E3E5C" role="img" aria-label="Strickmuster in Marineblau"><span>Pullover „Hafen“ · Lambswool, Marine</span></div>
+              <footer class="act"><button class="like" type="button" aria-pressed="false" aria-label="Gefällt mir, 96"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><span class="n">96</span></button><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg>9<span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> Kommentare</span></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg></span></footer>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v10-wrap" aria-labelledby="v10-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 10</div>
+        <h2 id="v10-title">Handgeschriebene Dankeskarten</h2>
+        <p>Echte Dankespost als Pinnwand: Karten in Papierfarben, leicht schräg mit Klebestreifen, in Handschrift. Persönlich, herzlich – perfekt für emotionale Branchen.</p>
+        <ul class="v-tags"><li>Hochzeit &amp; Floristik</li><li>Café</li><li>Fotografie</li><li>Handschrift</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v10">
+          <div class="hd"><span class="eyebrow">Blütenwerk · Hochzeitsfloristik · Tönisvorst</span><h3>Post, über die wir uns <em>jedes Mal</em> freuen</h3></div>
+          <ul class="board">
+            <li class="card" style="--p:#FFFDF6;--r:-2.5deg">
+              <svg class="doo" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 36V14M20 22c-6 0-9-4-9-9 5 0 9 3 9 9zM20 18c5 0 8-3 8-8-5 0-8 3-8 8zM20 28c-4 0-7-2-8-6 4 0 7 2 8 6z"/></svg>
+              <p>Liebe Frau Kessel,</p><p>der Brautstrauß war genau so, wie ich ihn mir erträumt (aber nie erklären konnte) habe. Die Pfingstrosen haben sogar bis zum Tanz durchgehalten!</p>
+              <p class="sig">Eure Lena &amp; Tim</p><span class="meta">Hochzeit im Juni 2026 · Brautstrauß &amp; Tischdeko</span>
+            </li>
+            <li class="card" style="--p:#F8E6E1;--r:2deg">
+              <svg class="doo" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 33s-12-7-12-15a6.5 6.5 0 0 1 12-3.5A6.5 6.5 0 0 1 32 18c0 8-12 15-12 15z"/></svg>
+              <p>Danke für die Blumen zu Omas 90. Geburtstag! Sie hat jeden Tisch einzeln bewundert und will ab jetzt nur noch Ranunkeln.</p>
+              <p class="sig">Familie Leuchtenberg</p><span class="meta">Geburtstagsfeier · Tischgestecke</span>
+            </li>
+            <li class="card" style="--p:#E9EEDF;--r:-1.2deg">
+              <svg class="doo" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="4"/><path d="M20 16c-2-6 2-10 0-12M24 20c6-2 10 2 12 0M20 24c2 6-2 10 0 12M16 20c-6 2-10-2-12 0"/></svg>
+              <p>Ihr habt aus der alten Scheune einen Märchenwald gemacht. Unsere Gäste fragen heute noch, wo die Hängekränze herkommen.</p>
+              <p class="sig">Sarah &amp; Malte</p><span class="meta">Scheunenhochzeit in St. Tönis · Hängedeko</span>
+            </li>
+            <li class="card" style="--p:#FFF5DD;--r:2.8deg">
+              <svg class="doo" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 16h20v8a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8zM28 18h3a3 3 0 0 1 0 6h-3M14 6c-2 3 2 4 0 7M20 6c-2 3 2 4 0 7"/></svg>
+              <p>Seit einem Jahr stehen eure Wochensträuße auf unseren Tischen. Die Gäste fotografieren sie öfter als den Kuchen – wir nehmen's sportlich.</p>
+              <p class="sig">Mia vom Café Feinsinn</p><span class="meta">Café-Abo · wöchentliche Sträuße</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="sh-cta">
+  <h2>Der passende Baustein für Ihre Website?</h2>
+  <p>Alle Varianten sind Ausgangspunkte. Wir kombinieren und gestalten sie individuell – passend zu Ihrer Marke.</p>
+  <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Projekt besprechen</a>
+</section>
+
+<footer class="sh-footer">
+  Alle gezeigten Marken und Inhalte sind fiktiv. Design &amp; Umsetzung: <a href="../../Meuster%20Landing%20Page.dc.html">meuser.biz</a> · © 2026
+</footer>
+
+<script>
+  /* SHELL-Skript – nicht verändern */
+  (function () {
+    var here = location.pathname.split('/').pop();
+    document.querySelectorAll('.sh-cats a').forEach(function (a) {
+      if (a.getAttribute('href') === here) { a.setAttribute('aria-current', 'page'); a.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+    });
+    document.querySelectorAll('.variant').forEach(function (v) {
+      var frame = v.querySelector('.frame');
+      v.querySelectorAll('.v-switch button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          v.querySelectorAll('.v-switch button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          frame.style.setProperty('--w', b.dataset.w);
+        });
+      });
+    });
+  })();
+</script>
+<!-- Varianten-Skripte hierunter, jedes in eigenem IIFE, nur auf die eigene #vNN zugreifen -->
+<script>
+/* v03 – Karussell */
+(function () {
+  var r = document.getElementById('v03'); if (!r) return;
+  var tr = r.querySelector('.track'), sl = [].slice.call(r.querySelectorAll('.slide')), dots = r.querySelector('.dots'), cnt = r.querySelector('.cnt b'), i = 0;
+  sl.forEach(function (s, k) {
+    var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Stimme ' + (k + 1) + ' anzeigen');
+    b.addEventListener('click', function () { go(k); }); dots.appendChild(b);
+  });
+  function go(n) {
+    i = (n + sl.length) % sl.length;
+    tr.style.transform = 'translateX(' + (-100 * i) + '%)';
+    sl.forEach(function (s, k) { s.setAttribute('aria-hidden', String(k !== i)); s.inert = k !== i; });
+    [].forEach.call(dots.children, function (d, k) { d.setAttribute('aria-current', String(k === i)); });
+    cnt.textContent = ('0' + (i + 1)).slice(-2);
+  }
+  r.querySelector('.prev').addEventListener('click', function () { go(i - 1); });
+  r.querySelector('.next').addEventListener('click', function () { go(i + 1); });
+  r.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { go(i - 1); e.preventDefault(); } else if (e.key === 'ArrowRight') { go(i + 1); e.preventDefault(); }
+  });
+  var vp = r.querySelector('.vp'), x0 = null;
+  vp.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
+  vp.addEventListener('pointerup', function (e) { if (x0 === null) return; var dx = e.clientX - x0; x0 = null; if (Math.abs(dx) > 50) go(dx < 0 ? i + 1 : i - 1); });
+  go(0);
+})();
+
+/* v04 – Masonry aufklappen */
+(function () {
+  var r = document.getElementById('v04'); if (!r) return;
+  var b = r.querySelector('.more'), t = b.querySelector('span');
+  b.addEventListener('click', function () {
+    var open = r.classList.toggle('open');
+    b.setAttribute('aria-expanded', String(open));
+    t.textContent = open ? 'Weniger anzeigen' : 'Alle Stimmen anzeigen';
+  });
+})();
+
+/* v05 – Laufband */
+(function () {
+  var r = document.getElementById('v05'); if (!r) return;
+  r.querySelectorAll('.track').forEach(function (t) {
+    var c = t.querySelector('.set').cloneNode(true); c.setAttribute('aria-hidden', 'true'); t.appendChild(c);
+  });
+  var b = r.querySelector('.pz'), l = b.querySelector('span');
+  b.addEventListener('click', function () {
+    var p = r.classList.toggle('paused');
+    b.setAttribute('aria-pressed', String(p));
+    l.textContent = p ? 'Laufband starten' : 'Laufband anhalten';
+  });
+})();
+
+/* v06 – Bewertungen filtern */
+(function () {
+  var r = document.getElementById('v06'); if (!r) return;
+  var btns = [].slice.call(r.querySelectorAll('.bars button')), items = [].slice.call(r.querySelectorAll('.rv li')),
+      reset = r.querySelector('.reset'), status = r.querySelector('.status'), empty = r.querySelector('.empty');
+  function apply(f) {
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.f === f)); });
+    var n = 0;
+    items.forEach(function (li) { var show = !f || li.dataset.s === f; li.hidden = !show; if (show) n++; });
+    reset.hidden = !f; empty.hidden = n > 0;
+    status.textContent = f ? (n + (n === 1 ? ' Bewertung' : ' Bewertungen') + ' mit ' + f + (f === '1' ? ' Stern' : ' Sternen')) : 'Alle Bewertungen · neueste zuerst';
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { apply(b.getAttribute('aria-pressed') === 'true' ? null : b.dataset.f); }); });
+  reset.addEventListener('click', function () { apply(null); });
+})();
+
+/* v07 – Video-Optik (Demo ohne echtes Video) */
+(function () {
+  var r = document.getElementById('v07'); if (!r) return;
+  var p = r.querySelector('.player'), b = r.querySelector('.play'), bar = r.querySelector('.prog i'), cur = r.querySelector('.cur'),
+      ch = [].slice.call(r.querySelectorAll('.ch button')), dur = 168, t = 0, timer = null;
+  function fmt(s) { s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+  function draw() {
+    bar.style.width = (t / dur * 100) + '%'; cur.textContent = fmt(t);
+    var a = 0; ch.forEach(function (c, k) { if (t >= +c.dataset.t) a = k; });
+    ch.forEach(function (c, k) { c.setAttribute('aria-current', String(k === a)); });
+  }
+  function set(play) {
+    p.classList.toggle('playing', play); b.setAttribute('aria-pressed', String(play));
+    b.setAttribute('aria-label', play ? 'Kundenfilm pausieren (Demo)' : 'Kundenfilm abspielen (Demo)');
+    clearInterval(timer);
+    if (play) timer = setInterval(function () { t += .25; if (t >= dur) { t = dur; set(false); } draw(); }, 250);
+  }
+  b.addEventListener('click', function () { if (t >= dur) t = 0; set(!p.classList.contains('playing')); });
+  ch.forEach(function (c) { c.addEventListener('click', function () { t = +c.dataset.t; draw(); set(true); }); });
+  draw();
+})();
+
+/* v08 – Kennzahl hochzählen + Balken einblenden */
+(function () {
+  var r = document.getElementById('v08'); if (!r) return;
+  var v = r.querySelector('.num .v'), to = 42;
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still || !('IntersectionObserver' in window)) { r.classList.add('in'); return; }
+  v.textContent = '0';
+  var io = new IntersectionObserver(function (es) {
+    if (!es[0].isIntersecting) return; io.disconnect(); r.classList.add('in');
+    var t0 = null;
+    function step(ts) { if (!t0) t0 = ts; var k = Math.min(1, (ts - t0) / 1400), e = 1 - Math.pow(1 - k, 3); v.textContent = Math.round(to * e); if (k < 1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }, { threshold: .35 });
+  io.observe(r);
+})();
+
+/* v09 – Herz-Knopf */
+(function () {
+  var r = document.getElementById('v09'); if (!r) return;
+  r.querySelectorAll('.like').forEach(function (b) {
+    var n = b.querySelector('.n');
+    b.addEventListener('click', function () {
+      var on = b.getAttribute('aria-pressed') !== 'true', c = +n.textContent + (on ? 1 : -1);
+      b.setAttribute('aria-pressed', String(on)); n.textContent = c; b.setAttribute('aria-label', 'Gefällt mir, ' + c);
+    });
+  });
+})();
+</script>
+</body>
+</html>

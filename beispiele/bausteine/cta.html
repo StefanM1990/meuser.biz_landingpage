@@ -1,0 +1,1271 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Call-to-Action – Bausteine – meuser.biz</title>
+<meta name="description" content="Call-to-Action: 12 Gestaltungsvarianten, wie meuser.biz sie für Websites umsetzt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Shell-Schrift (Inter) bleibt; weitere Schriften der Varianten in DIESEN einen Link mit aufnehmen -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================================
+     SHELL – nicht verändern. Gilt für alle Kategorieseiten gleich.
+     ===================================================================== */
+  :root { --ink:#0F172A; --muted:#64748B; --body:#475569; --line:#E2E8F0; --soft:#F8FAFC; --blue:#007BFF; --blue-l:#5FA8FF; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 150px; }
+  body.shell { margin:0; font-family:'Inter',sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; }
+  .shell a { color:inherit; text-decoration:none; }
+  .sh-header { position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.9); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+  .sh-bar { max-width:1400px; margin:0 auto; padding:12px 5%; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .sh-bar img { height:44px; width:auto; display:block; }
+  .sh-actions { display:flex; gap:8px; }
+  .sh-btn { display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font:600 14px 'Inter',sans-serif; white-space:nowrap; transition:.25s; }
+  .sh-btn.ghost { background:rgba(15,23,42,.05); } .sh-btn.ghost:hover { background:rgba(15,23,42,.1); }
+  .sh-btn.blue { background:linear-gradient(135deg,#007BFF,#0062cc); color:#fff !important; box-shadow:0 6px 16px -4px rgba(0,123,255,.6); }
+  .sh-cats { max-width:1400px; margin:0 auto; padding:0 5% 12px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; }
+  .sh-cats::-webkit-scrollbar { display:none; }
+  .sh-cats a { flex-shrink:0; font:600 13px 'Inter',sans-serif; color:var(--body); padding:7px 13px; border-radius:999px; border:1px solid var(--line); background:#fff; transition:.2s; }
+  .sh-cats a:hover { border-color:var(--ink); color:var(--ink); }
+  .sh-cats a[aria-current="page"] { background:var(--ink); border-color:var(--ink); color:#fff; }
+  .sh-hero { background:linear-gradient(120deg,#0F172A,#132238,#0F172A); color:#fff; padding:72px 5% 64px; position:relative; overflow:hidden; }
+  .sh-hero::after { content:""; position:absolute; top:-160px; right:-120px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle,rgba(0,123,255,.35),transparent 70%); pointer-events:none; }
+  .sh-hero-in { max-width:1400px; margin:0 auto; position:relative; z-index:1; }
+  .sh-eyebrow { color:var(--blue-l); font:700 13px 'Inter',sans-serif; letter-spacing:2px; margin-bottom:14px; }
+  .sh-hero h1 { font:800 clamp(32px,5vw,52px)/1.08 'Inter',sans-serif; letter-spacing:-1px; margin:0 0 16px; }
+  .sh-hero p { font:400 clamp(16px,2vw,18px)/1.6 'Inter',sans-serif; color:#CBD5E1; max-width:680px; margin:0; }
+  .sh-index { max-width:1400px; margin:0 auto; padding:32px 5% 0; display:flex; flex-wrap:wrap; gap:8px; }
+  .sh-index a { font:600 13px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:7px 12px; border-radius:8px; transition:.2s; }
+  .sh-index a:hover { color:var(--blue); border-color:var(--blue); }
+  .sh-index a b { color:var(--blue); margin-right:6px; }
+  .sh-main { max-width:1400px; margin:0 auto; padding:24px 5% 96px; }
+  .variant { padding:56px 0 0; }
+  .v-head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:20px; }
+  .v-num { font:700 12px 'Inter',sans-serif; letter-spacing:1.5px; color:var(--blue); margin-bottom:6px; }
+  .v-head h2 { font:800 24px/1.2 'Inter',sans-serif; letter-spacing:-.3px; margin:0 0 6px; }
+  .v-head p { font:400 15px/1.6 'Inter',sans-serif; color:var(--body); margin:0; max-width:720px; }
+  .v-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; padding:0; list-style:none; }
+  .v-tags li { font:600 12px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:4px 10px; border-radius:999px; }
+  .v-switch { display:inline-flex; background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:4px; gap:2px; }
+  .v-switch button { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font:600 13px 'Inter',sans-serif; color:var(--muted); padding:7px 12px; border-radius:7px; transition:.2s; }
+  .v-switch button:hover { color:var(--ink); }
+  .v-switch button[aria-pressed="true"] { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(15,23,42,.15); }
+  .v-switch button:focus-visible { outline:2px solid var(--blue); }
+  .stage { background:#EEF2F6; background-image:radial-gradient(rgba(15,23,42,.08) 1px, transparent 1px); background-size:18px 18px; border:1px solid var(--line); border-radius:16px; padding:28px; overflow:hidden; }
+  .frame { /* Jede Variante lebt in diesem Rahmen */
+    container: demo / inline-size;
+    position:relative; contain:layout paint; /* position:fixed in Varianten bleibt im Rahmen */
+    width:var(--w,100%); max-width:100%; min-height:var(--h,auto);
+    margin:0 auto; background:#fff; border-radius:10px; overflow:hidden;
+    box-shadow:0 1px 2px rgba(15,23,42,.06), 0 18px 40px -20px rgba(15,23,42,.35);
+    transition:width .45s cubic-bezier(.2,.8,.2,1);
+  }
+  .sh-cta { background:var(--soft); border-top:1px solid var(--line); padding:80px 5%; text-align:center; }
+  .sh-cta h2 { font:800 clamp(26px,4vw,36px) 'Inter',sans-serif; letter-spacing:-.5px; margin:0 0 12px; }
+  .sh-cta p { font:400 16px/1.6 'Inter',sans-serif; color:var(--muted); max-width:560px; margin:0 auto 26px; }
+  .sh-cta .sh-btn { border-radius:8px; padding:14px 28px; font-size:15px; }
+  .sh-footer { background:var(--ink); color:#94A3B8; font:400 14px 'Inter',sans-serif; padding:28px 5%; text-align:center; }
+  .sh-footer a { color:#fff; }
+  @media (max-width:640px) {
+    .sh-bar img { height:36px; } .sh-btn .long { display:none; }
+    .stage { padding:12px; border-radius:12px; }
+    .v-switch { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .frame { transition:none; } }
+
+  /* =====================================================================
+     VARIANTEN – CSS jeder Variante NUR unter ihrer ID (#v01, #v02 …).
+     Responsiv ausschließlich mit @container demo (…) – NICHT @media.
+     ===================================================================== */
+
+  /* --- V01 Vollbreites Farbband --- */
+#v01 { --green:#123B33; --mint:#B9E4C9; --paper:#F6F3EC; background:var(--paper); padding:56px 0; font-family:'Inter',sans-serif; }
+#v01 .band { position:relative; overflow:hidden; background:var(--green); color:#fff; padding:64px 56px; display:grid; grid-template-columns:1.3fr auto; gap:48px; align-items:center; }
+#v01 .band::before { content:""; position:absolute; right:-80px; top:-120px; width:380px; height:380px; border-radius:50%; border:1px solid rgba(185,228,201,.25); box-shadow:0 0 0 50px rgba(185,228,201,.04), 0 0 0 100px rgba(185,228,201,.03); pointer-events:none; }
+#v01 .k { font-size:12px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--mint); margin-bottom:14px; }
+#v01 h2 { font:400 clamp(30px,4.2cqi,50px)/1.08 'Instrument Serif',serif; margin:0 0 14px; letter-spacing:-.3px; }
+#v01 h2 em { color:var(--mint); }
+#v01 p { margin:0; font-size:16.5px; line-height:1.6; color:rgba(255,255,255,.82); max-width:560px; }
+#v01 .act { position:relative; display:flex; flex-direction:column; gap:12px; min-width:270px; }
+#v01 .btn { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:18px 22px; border-radius:6px; font-weight:600; font-size:15px; transition:background .2s, transform .2s; }
+#v01 .btn.pri { background:var(--mint); color:var(--green); }
+#v01 .btn.pri:hover { background:#fff; transform:translateX(4px); }
+#v01 .btn.sec { border:1px solid rgba(255,255,255,.35); color:#fff; }
+#v01 .btn.sec:hover { background:rgba(255,255,255,.08); }
+#v01 .btn svg { width:18px; height:18px; flex-shrink:0; }
+#v01 .btn span small { display:block; font-weight:400; font-size:12.5px; opacity:.8; margin-top:2px; }
+#v01 a:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+@container demo (max-width:760px) {
+  #v01 { padding:32px 0; }
+  #v01 .band { grid-template-columns:1fr; padding:44px 24px; gap:28px; }
+  #v01 .act { min-width:0; }
+  #v01 p { font-size:15.5px; }
+}
+
+  /* --- V02 Karte mit Bild --- */
+#v02 { --ink:#1C1A17; --org:#E8590C; --bg:#EDE7DF; background:var(--bg); padding:64px 48px; font-family:'Inter',sans-serif; color:var(--ink); }
+#v02 .card { max-width:1040px; margin:0 auto; display:grid; grid-template-columns:1fr 1.05fr; background:#fff; border-radius:24px; overflow:hidden; box-shadow:0 1px 0 rgba(28,26,23,.05), 0 40px 70px -40px rgba(28,26,23,.45); }
+#v02 .pic { position:relative; min-height:380px; }
+#v02 .pic img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+#v02 .pic span { position:absolute; left:18px; top:18px; background:#fff; font-size:12.5px; font-weight:700; padding:7px 12px; border-radius:999px; display:inline-flex; gap:7px; align-items:center; }
+#v02 .pic span i { width:7px; height:7px; border-radius:50%; background:var(--org); }
+#v02 .body { padding:44px 44px 40px; display:flex; flex-direction:column; }
+#v02 .k { font-size:13px; font-weight:600; color:#B2440A; margin-bottom:10px; }
+#v02 h2 { font:800 clamp(26px,3.2cqi,38px)/1.08 'Bricolage Grotesque',sans-serif; letter-spacing:-.8px; margin:0 0 14px; }
+#v02 p { margin:0 0 22px; font-size:15.5px; line-height:1.65; color:#55504A; }
+#v02 .meta { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:22px; }
+#v02 .meta div { display:flex; gap:10px; align-items:center; font-size:14px; background:#F7F3EE; border-radius:12px; padding:11px 12px; }
+#v02 .meta svg { width:18px; height:18px; color:#B2440A; flex-shrink:0; }
+#v02 .seats { font-size:13px; color:#55504A; margin-bottom:8px; display:flex; justify-content:space-between; }
+#v02 .seats b { color:var(--ink); }
+#v02 .bar { height:6px; border-radius:3px; background:#EFE9E2; overflow:hidden; margin-bottom:26px; }
+#v02 .bar i { display:block; height:100%; width:75%; background:linear-gradient(90deg,#F59F00,var(--org)); border-radius:3px; }
+#v02 .row { margin-top:auto; display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+#v02 .btn { display:inline-flex; align-items:center; gap:10px; background:var(--ink); color:#fff; font-weight:600; font-size:15px; padding:15px 22px; border-radius:12px; transition:background .2s; }
+#v02 .btn:hover { background:#B2440A; }
+#v02 .btn svg { width:17px; height:17px; transition:transform .2s; }
+#v02 .btn:hover svg { transform:translateX(3px); }
+#v02 .price { font-size:14px; color:#55504A; }
+#v02 .price b { font:800 22px 'Bricolage Grotesque',sans-serif; color:var(--ink); }
+#v02 a:focus-visible { outline:2px solid var(--org); outline-offset:3px; }
+@container demo (max-width:760px) {
+  #v02 { padding:20px 14px; }
+  #v02 .card { grid-template-columns:1fr; border-radius:18px; }
+  #v02 .pic { min-height:220px; }
+  #v02 .body { padding:26px 22px 26px; }
+  #v02 .meta { grid-template-columns:1fr; }
+  #v02 .btn { width:100%; justify-content:center; }
+}
+
+  /* --- V03 Newsletter-Box --- */
+#v03 { --wine:#5E1726; --paper:#FBF7F2; --line:#E9DED3; background:var(--paper); color:#2A1A1D; padding:64px 48px; font-family:'Inter',sans-serif; }
+#v03 .box { max-width:980px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); background:#fff; border-radius:4px; position:relative; }
+#v03 .box::before { content:""; position:absolute; inset:8px; border:1px solid var(--line); pointer-events:none; border-radius:2px; }
+#v03 .l { padding:48px 44px; border-right:1px solid var(--line); position:relative; }
+#v03 .l svg.glass { width:44px; height:60px; color:var(--wine); margin-bottom:18px; }
+#v03 h2 { font:400 clamp(28px,3.4cqi,40px)/1.1 'Fraunces',serif; letter-spacing:-.5px; margin:0 0 14px; }
+#v03 h2 em { color:var(--wine); }
+#v03 .l p { margin:0 0 20px; font-size:15.5px; line-height:1.65; color:#5C4A4D; }
+#v03 ul { list-style:none; margin:0; padding:0; display:grid; gap:10px; font-size:14.5px; }
+#v03 ul li { display:flex; gap:10px; align-items:flex-start; }
+#v03 ul svg { width:18px; height:18px; color:var(--wine); flex-shrink:0; margin-top:1px; }
+#v03 form { padding:48px 44px; display:flex; flex-direction:column; gap:16px; position:relative; }
+#v03 label.t { font-size:13px; font-weight:600; display:block; margin-bottom:6px; }
+#v03 input[type=email], #v03 input[type=text] { width:100%; font:400 15px 'Inter',sans-serif; color:#2A1A1D; padding:13px 14px; border:1px solid #D9CCC0; border-radius:4px; background:#fff; transition:border-color .2s, box-shadow .2s; }
+#v03 input[type=email]:focus, #v03 input[type=text]:focus { outline:none; border-color:var(--wine); box-shadow:0 0 0 3px rgba(94,23,38,.15); }
+#v03 fieldset { border:0; margin:0; padding:0; }
+#v03 legend { font-size:13px; font-weight:600; margin-bottom:8px; padding:0; }
+#v03 .chips { display:flex; gap:8px; flex-wrap:wrap; }
+#v03 .chips label { position:relative; cursor:pointer; }
+#v03 .chips input { position:absolute; opacity:0; width:1px; height:1px; }
+#v03 .chips span { display:inline-block; font-size:14px; padding:8px 14px; border:1px solid #D9CCC0; border-radius:999px; transition:all .2s; }
+#v03 .chips input:checked + span { background:var(--wine); border-color:var(--wine); color:#fff; }
+#v03 .chips input:focus-visible + span { outline:2px solid var(--wine); outline-offset:2px; }
+#v03 .consent { display:flex; gap:10px; align-items:flex-start; font-size:12.5px; line-height:1.5; color:#5C4A4D; cursor:pointer; }
+#v03 .consent input { margin-top:2px; accent-color:var(--wine); width:16px; height:16px; flex-shrink:0; }
+#v03 button { all:unset; cursor:pointer; text-align:center; background:var(--wine); color:#fff; font:600 15px 'Inter',sans-serif; padding:15px 20px; border-radius:4px; transition:background .2s; }
+#v03 button:hover { background:#7A2033; }
+#v03 button:focus-visible { outline:2px solid var(--wine); outline-offset:3px; }
+#v03 .done { display:none; padding:48px 44px; flex-direction:column; justify-content:center; gap:12px; }
+#v03 .done svg { width:52px; height:52px; color:var(--wine); }
+#v03 .done h3 { font:400 28px/1.15 'Fraunces',serif; margin:0; }
+#v03 .done p { margin:0; font-size:15px; line-height:1.6; color:#5C4A4D; }
+#v03 .box.sent form { display:none; }
+#v03 .box.sent .done { display:flex; }
+#v03 .err { font-size:13px; color:#A11B2B; min-height:0; margin:-6px 0 0; }
+@container demo (max-width:760px) {
+  #v03 { padding:24px 14px; }
+  #v03 .box { grid-template-columns:1fr; }
+  #v03 .l { border-right:0; border-bottom:1px solid var(--line); padding:36px 26px 28px; }
+  #v03 form, #v03 .done { padding:28px 26px 34px; }
+}
+
+  /* --- V04 Termin-Banner mit Telefon --- */
+#v04 { --yel:#FFD21F; --blk:#141414; background:#F2F0EA; padding:48px; font-family:'Inter',sans-serif; color:var(--blk); }
+#v04 .ban { position:relative; display:grid; grid-template-columns:1.25fr 1fr; background:var(--yel); border-radius:8px; overflow:hidden; min-height:380px; }
+#v04 .txt { position:relative; z-index:2; padding:48px 20px 44px 48px; }
+#v04 .tag { display:inline-flex; align-items:center; gap:8px; background:var(--blk); color:var(--yel); font-size:12.5px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:7px 12px; border-radius:4px; margin-bottom:20px; }
+#v04 .tag i { width:8px; height:8px; border-radius:50%; background:#3BE07A; animation:v04blink 1.6s infinite; }
+@keyframes v04blink { 50% { opacity:.3; } }
+#v04 h2 { font:800 clamp(32px,4.6cqi,54px)/1 'Space Grotesk',sans-serif; letter-spacing:-1.5px; margin:0 0 14px; text-transform:uppercase; }
+#v04 p { font-size:16px; line-height:1.6; margin:0 0 24px; max-width:440px; color:#2B2A26; }
+#v04 .tel { display:inline-flex; align-items:center; gap:14px; color:var(--blk); margin-bottom:22px; }
+#v04 .tel .ic { width:54px; height:54px; border-radius:50%; background:var(--blk); color:var(--yel); display:grid; place-items:center; transition:transform .25s; }
+#v04 .tel:hover .ic { transform:rotate(-14deg) scale(1.06); }
+#v04 .tel .ic svg { width:24px; height:24px; }
+#v04 .tel small { display:block; font-size:12.5px; font-weight:600; text-transform:uppercase; letter-spacing:1px; }
+#v04 .tel b { font:700 clamp(24px,3cqi,32px)/1.1 'Space Grotesk',sans-serif; letter-spacing:-.5px; }
+#v04 form { display:flex; gap:8px; max-width:440px; }
+#v04 input { flex:1; min-width:0; font:500 15px 'Inter',sans-serif; padding:14px 14px; border:2px solid var(--blk); border-radius:6px; background:#FFF8D6; color:var(--blk); }
+#v04 input::placeholder { color:#6B6450; }
+#v04 input:focus { outline:none; background:#fff; box-shadow:0 0 0 3px rgba(20,20,20,.2); }
+#v04 button { all:unset; cursor:pointer; background:var(--blk); color:#fff; font:600 15px 'Inter',sans-serif; padding:0 18px; border-radius:6px; white-space:nowrap; transition:background .2s; }
+#v04 button:hover { background:#333; }
+#v04 button:focus-visible, #v04 a:focus-visible { outline:3px solid var(--blk); outline-offset:3px; }
+#v04 .msg { font-size:14px; font-weight:600; margin-top:10px; min-height:20px; }
+#v04 .pic { position:relative; clip-path:polygon(18% 0,100% 0,100% 100%,0 100%); }
+#v04 .pic img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+#v04 .pic::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(20,20,20,.55),transparent 55%); }
+#v04 .list { position:absolute; z-index:2; right:22px; bottom:22px; display:flex; flex-direction:column; gap:6px; }
+#v04 .list span { background:rgba(20,20,20,.86); color:#fff; font-size:13px; font-weight:600; padding:8px 12px; border-radius:4px; display:flex; gap:8px; align-items:center; }
+#v04 .list svg { width:14px; height:14px; color:var(--yel); }
+@container demo (max-width:820px) {
+  #v04 { padding:20px 14px; }
+  #v04 .ban { grid-template-columns:1fr; }
+  #v04 .pic { height:220px; clip-path:polygon(0 14%,100% 0,100% 100%,0 100%); order:-1; }
+  #v04 .txt { padding:28px 22px 30px; }
+}
+@container demo (max-width:460px) {
+  #v04 form { flex-direction:column; }
+  #v04 button { padding:14px; text-align:center; }
+  #v04 .list { left:14px; right:auto; bottom:14px; }
+}
+@media (prefers-reduced-motion:reduce) { #v04 .tag i { animation:none; } }
+
+  /* --- V05 App-Download mit Telefon-Mockup --- */
+#v05 { --deep:#0F2A2E; --lime:#D7F36B; --sea:#2FB7A6; background:#E7EFEC; padding:56px 48px 0; font-family:'Inter',sans-serif; }
+#v05 .wrap { position:relative; max-width:1080px; margin:0 auto; background:radial-gradient(circle at 85% 20%,#1F5A57 0%,var(--deep) 60%); color:#fff; border-radius:28px 28px 0 0; display:grid; grid-template-columns:1.15fr .85fr; gap:24px; padding:56px 56px 0; overflow:hidden; }
+#v05 .txt { padding-bottom:56px; }
+#v05 .k { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:var(--lime); margin-bottom:16px; }
+#v05 .k svg { width:16px; height:16px; }
+#v05 h2 { font:700 clamp(30px,4.2cqi,50px)/1.04 'Space Grotesk',sans-serif; letter-spacing:-1.5px; margin:0 0 16px; }
+#v05 p { font-size:16.5px; line-height:1.6; color:rgba(255,255,255,.8); margin:0 0 28px; max-width:460px; }
+#v05 .stores { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+#v05 .store { display:inline-flex; align-items:center; gap:10px; background:#fff; color:var(--deep); padding:10px 18px 10px 14px; border-radius:12px; transition:transform .2s, box-shadow .2s; }
+#v05 .store:hover { transform:translateY(-2px); box-shadow:0 10px 24px -10px rgba(0,0,0,.6); }
+#v05 .store svg { width:26px; height:26px; }
+#v05 .store span { font-size:11px; line-height:1.2; }
+#v05 .store b { display:block; font-size:15px; }
+#v05 .store.alt { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.4); }
+#v05 .qr { display:flex; align-items:center; gap:12px; margin-top:26px; font-size:13px; color:rgba(255,255,255,.75); }
+#v05 .qr svg { width:64px; height:64px; background:#fff; border-radius:8px; padding:6px; }
+#v05 .rate { display:flex; gap:6px; align-items:center; margin-top:18px; font-size:13px; color:rgba(255,255,255,.75); }
+#v05 .rate svg { width:15px; height:15px; color:var(--lime); }
+#v05 a:focus-visible { outline:2px solid var(--lime); outline-offset:3px; }
+/* Telefon */
+#v05 .phone-col { position:relative; display:flex; justify-content:center; align-items:flex-end; }
+#v05 .phone-col::before { content:""; position:absolute; width:320px; height:320px; border-radius:50%; background:var(--sea); filter:blur(60px); opacity:.35; bottom:40px; }
+#v05 .phone { position:relative; width:270px; height:440px; background:#0B0F10; border-radius:42px 42px 0 0; padding:12px 12px 0; box-shadow:0 0 0 2px #2A3436, 0 -20px 60px -20px rgba(0,0,0,.6); transform:translateY(0); animation:v05up 1s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes v05up { from { transform:translateY(40px); opacity:0; } }
+#v05 .screen { position:relative; height:100%; background:#F4F7F5; border-radius:32px 32px 0 0; overflow:hidden; color:var(--deep); }
+#v05 .notch { position:absolute; left:50%; top:9px; transform:translateX(-50%); width:84px; height:24px; background:#0B0F10; border-radius:14px; z-index:3; }
+#v05 .status { display:flex; justify-content:space-between; padding:12px 20px 0; font-size:11px; font-weight:600; }
+#v05 .map { margin:18px 12px 0; height:190px; border-radius:18px; background:#DDEBE3; position:relative; overflow:hidden; }
+#v05 .map svg { position:absolute; inset:0; width:100%; height:100%; }
+#v05 .route { stroke-dasharray:420; stroke-dashoffset:420; animation:v05draw 2.4s .4s ease-out forwards; }
+@keyframes v05draw { to { stroke-dashoffset:0; } }
+#v05 .chip { position:absolute; left:10px; top:10px; background:#fff; font-size:10.5px; font-weight:700; padding:5px 8px; border-radius:8px; }
+#v05 .info { margin:12px 12px 0; background:#fff; border-radius:16px; padding:12px 14px; }
+#v05 .info b { font-size:14px; display:block; }
+#v05 .info small { font-size:11px; color:#4C5F5C; }
+#v05 .nums { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:10px; }
+#v05 .nums div { background:#F0F5F2; border-radius:10px; padding:7px 8px; font-size:10px; color:#4C5F5C; }
+#v05 .nums div strong { display:block; font-size:13px; color:var(--deep); white-space:nowrap; }
+#v05 .go { margin:10px 12px 0; background:var(--deep); color:var(--lime); text-align:center; font-size:13px; font-weight:700; padding:11px; border-radius:12px; }
+@container demo (max-width:820px) {
+  #v05 { padding:20px 14px 0; }
+  #v05 .wrap { grid-template-columns:1fr; padding:36px 24px 0; border-radius:20px 20px 0 0; }
+  #v05 .txt { padding-bottom:8px; }
+  #v05 .qr { display:none; }
+  #v05 .phone { width:250px; height:360px; }
+  #v05 .nums div { padding:7px 6px; }
+  #v05 .nums div strong { font-size:12px; }
+}
+@container demo (max-width:420px) {
+  #v05 .store { flex:1 1 100%; justify-content:center; }
+}
+@media (prefers-reduced-motion:reduce) { #v05 .phone, #v05 .route { animation:none; stroke-dashoffset:0; } }
+
+  /* --- V06 Aktion mit Ablaufdatum --- */
+#v06 { --red:#C2361B; --cream:#FFF6E8; --ink:#241510; overflow:hidden; background:var(--red); background-image:radial-gradient(rgba(255,255,255,.08) 1.5px,transparent 1.5px); background-size:22px 22px; padding:56px 40px; font-family:'Inter',sans-serif; color:var(--ink); }
+#v06 .ticket { max-width:960px; margin:0 auto; display:grid; grid-template-columns:auto 1fr; background:var(--cream); border-radius:18px; position:relative; filter:drop-shadow(0 30px 40px rgba(60,10,0,.35)); }
+#v06 .ticket::before, #v06 .ticket::after { content:""; position:absolute; left:250px; width:34px; height:34px; border-radius:50%; background:var(--red); transform:translateX(-50%); }
+#v06 .ticket::before { top:-17px; }
+#v06 .ticket::after { bottom:-17px; }
+#v06 .val { width:250px; padding:36px 28px; border-right:2px dashed rgba(36,21,16,.25); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+#v06 .val small { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#8A3A22; }
+#v06 .val b { white-space:nowrap; font:800 64px/1 'Bricolage Grotesque',sans-serif; letter-spacing:-3px; color:var(--red); margin:6px 0; }
+#v06 .val span { font-size:14px; font-weight:600; }
+#v06 .body { padding:36px 40px; }
+#v06 h2 { font:800 clamp(26px,3.4cqi,38px)/1.08 'Bricolage Grotesque',sans-serif; letter-spacing:-1px; margin:0 0 10px; }
+#v06 p { margin:0 0 20px; font-size:15.5px; line-height:1.6; color:#5A4038; }
+#v06 .cd { display:flex; gap:8px; align-items:center; margin-bottom:22px; flex-wrap:wrap; }
+#v06 .cd > span { font-size:13px; font-weight:600; margin-right:4px; }
+#v06 .cd div { background:var(--ink); color:#fff; border-radius:8px; padding:7px 10px; min-width:54px; text-align:center; }
+#v06 .cd div b { display:block; font:700 20px/1 'Bricolage Grotesque',sans-serif; font-variant-numeric:tabular-nums; }
+#v06 .cd div small { font-size:10px; letter-spacing:1px; text-transform:uppercase; opacity:.75; }
+#v06 .row { display:flex; gap:10px; flex-wrap:wrap; align-items:stretch; }
+#v06 .code { display:flex; align-items:center; border:2px dashed var(--ink); border-radius:10px; overflow:hidden; }
+#v06 .code span { font:700 17px 'Space Grotesk',monospace; letter-spacing:3px; padding:0 16px; }
+#v06 .code button { all:unset; cursor:pointer; align-self:stretch; display:flex; align-items:center; gap:6px; background:var(--ink); color:#fff; font:600 13px 'Inter',sans-serif; padding:0 14px; }
+#v06 .code button svg { width:15px; height:15px; }
+#v06 .btn { display:inline-flex; align-items:center; gap:8px; background:var(--red); color:#fff; font-weight:700; font-size:15px; padding:14px 22px; border-radius:10px; transition:background .2s, transform .2s; }
+#v06 .btn:hover { background:#A12A13; transform:translateY(-2px); }
+#v06 .fine { font-size:12px; color:#6E554C; margin-top:14px; }
+#v06 a:focus-visible, #v06 button:focus-visible { outline:3px solid var(--ink); outline-offset:2px; }
+@container demo (max-width:760px) {
+  #v06 { padding:28px 14px; }
+  #v06 .ticket { grid-template-columns:1fr; }
+  #v06 .ticket::before, #v06 .ticket::after { left:auto; top:auto; bottom:auto; transform:none; }
+  #v06 .ticket::before { left:-17px; top:158px; }
+  #v06 .ticket::after { right:-17px; top:158px; }
+  #v06 .val { width:auto; height:175px; border-right:0; border-bottom:2px dashed rgba(36,21,16,.25); padding:20px; }
+  #v06 .val b { font-size:60px; }
+  #v06 .body { padding:26px 22px 26px; }
+  #v06 .code { flex:1 1 100%; justify-content:space-between; min-height:48px; }
+  #v06 .btn { flex:1 1 100%; justify-content:center; }
+}
+
+  /* --- V07 Split-CTA für zwei Zielgruppen --- */
+#v07 { --sun:#FFE7A3; --navy:#0E1C36; --amber:#F2A900; font-family:'Inter',sans-serif; display:flex; min-height:420px; position:relative; }
+#v07 .half { flex:1; padding:56px 48px; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden; }
+#v07 .half::after { content:""; position:absolute; inset:0; background:currentColor; opacity:0; transition:opacity .3s; pointer-events:none; }
+#v07 .half:hover::after { opacity:.04; }
+#v07 .p { background:var(--sun); color:#2A2000; }
+#v07 .g { background:var(--navy); color:#fff; }
+#v07 .p::before { content:""; position:absolute; right:-70px; top:-70px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle,#FFD45C 0 40%,transparent 41%),repeating-conic-gradient(from 0deg,#FFD45C 0 6deg,transparent 6deg 18deg); opacity:.7; }
+#v07 .g::before { content:""; position:absolute; right:-40px; bottom:-40px; width:260px; height:180px; background:repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 2px,transparent 2px 40px),repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 2px,transparent 2px 30px); transform:skewX(-20deg); }
+#v07 .ic { position:relative; width:52px; height:52px; border-radius:14px; display:grid; place-items:center; margin-bottom:22px; }
+#v07 .p .ic { background:#2A2000; color:var(--sun); }
+#v07 .g .ic { background:var(--amber); color:var(--navy); }
+#v07 .ic svg { width:26px; height:26px; }
+#v07 small { position:relative; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; opacity:.8; }
+#v07 h2 { position:relative; font:700 clamp(26px,3.2cqi,36px)/1.1 'Space Grotesk',sans-serif; letter-spacing:-.8px; margin:8px 0 18px; max-width:400px; }
+#v07 ul { position:relative; list-style:none; margin:0 0 28px; padding:0; display:grid; gap:9px; font-size:15px; }
+#v07 li { display:flex; gap:10px; align-items:center; }
+#v07 li::before { content:""; width:18px; height:18px; flex-shrink:0; border-radius:50%; background:currentColor; -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm-1.6 17.2-5-5 1.7-1.7 3.3 3.3 7-7 1.7 1.7z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm-1.6 17.2-5-5 1.7-1.7 3.3 3.3 7-7 1.7 1.7z'/%3E%3C/svg%3E") center/contain no-repeat; }
+#v07 .g li::before { background:var(--amber); }
+#v07 .btn { position:relative; align-self:flex-start; display:inline-flex; align-items:center; gap:10px; font-weight:700; font-size:15px; padding:15px 24px; border-radius:999px; transition:gap .25s; }
+#v07 .btn:hover { gap:16px; }
+#v07 .btn svg { width:18px; height:18px; }
+#v07 .p .btn { background:#2A2000; color:var(--sun); }
+#v07 .g .btn { background:var(--amber); color:var(--navy); }
+#v07 .or { position:absolute; z-index:3; left:50%; top:50%; transform:translate(-50%,-50%); width:58px; height:58px; border-radius:50%; background:#fff; color:var(--navy); display:grid; place-items:center; font:700 14px 'Space Grotesk',sans-serif; box-shadow:0 10px 30px -10px rgba(14,28,54,.5); pointer-events:none; }
+#v07 a:focus-visible { outline:3px solid currentColor; outline-offset:3px; }
+@container demo (max-width:760px) {
+  #v07 { flex-direction:column; }
+  #v07 .half { padding:40px 24px; }
+  #v07 .or { position:relative; left:auto; top:auto; transform:none; align-self:center; margin:-29px 0; flex-shrink:0; }
+  #v07 .btn { align-self:stretch; justify-content:center; }
+}
+
+  /* --- V08 Schwebender Sticky-CTA --- */
+#v08 { --olive:#3F4A2A; --tomato:#C8442B; --cream:#FAF5EC; position:relative; height:500px; font-family:'Inter',sans-serif; color:#2A2620; background:var(--cream); }
+#v08 .scroll { height:100%; overflow-y:auto; scroll-behavior:smooth; }
+#v08 .scroll:focus-visible { outline:3px solid var(--tomato); outline-offset:-3px; }
+#v08 .top { display:flex; justify-content:space-between; align-items:center; padding:18px 32px; border-bottom:1px solid #E8DFCF; position:sticky; top:0; background:rgba(250,245,236,.94); backdrop-filter:blur(8px); z-index:2; }
+#v08 .top .logo { font:italic 400 26px/1 'Instrument Serif',serif; color:#2A2620; }
+#v08 .top span { font-size:13px; color:#6A6152; }
+#v08 .intro { padding:46px 32px 34px; text-align:center; }
+#v08 .intro small { font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--tomato); font-weight:600; }
+#v08 h2 { font:400 clamp(34px,5cqi,54px)/1.05 'Instrument Serif',serif; margin:10px 0 12px; }
+#v08 .intro p { max-width:520px; margin:0 auto; font-size:15.5px; line-height:1.65; color:#5D5446; }
+#v08 .hint { display:inline-flex; align-items:center; gap:8px; margin-top:22px; font-size:13px; color:#6A6152; }
+#v08 .hint svg { width:16px; height:16px; animation:v08nudge 1.6s ease-in-out infinite; }
+@keyframes v08nudge { 50% { transform:translateY(4px); } }
+#v08 .menu { max-width:720px; margin:0 auto; padding:0 32px 30px; }
+#v08 .menu h3 { font:400 26px 'Instrument Serif',serif; margin:26px 0 8px; padding-bottom:8px; border-bottom:1px solid #E8DFCF; }
+#v08 .dish { display:flex; justify-content:space-between; gap:20px; padding:12px 0; border-bottom:1px dashed #E3D8C5; font-size:15px; }
+#v08 .dish small { display:block; font-size:13px; color:#6A6152; margin-top:3px; }
+#v08 .dish b { white-space:nowrap; font-weight:600; }
+#v08 .bar { position:sticky; bottom:16px; z-index:3; margin:0 auto; width:min(640px,calc(100% - 32px)); display:flex; align-items:center; gap:12px; background:var(--olive); color:#fff; padding:10px 10px 10px 20px; border-radius:999px; box-shadow:0 20px 40px -14px rgba(30,35,15,.6); transform:translateY(140%); opacity:0; visibility:hidden; transition:transform .45s cubic-bezier(.2,.8,.2,1), opacity .3s, visibility .45s; }
+#v08 .bar.show { transform:none; opacity:1; visibility:visible; }
+#v08 .bar .t { flex:1; font-size:14px; line-height:1.3; }
+#v08 .bar .t b { display:block; font-size:15px; }
+#v08 .bar .tel { display:grid; place-items:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(255,255,255,.35); color:#fff; }
+#v08 .bar .tel svg { width:18px; height:18px; }
+#v08 .bar .res { background:var(--tomato); color:#fff; font-weight:600; font-size:14px; padding:12px 18px; border-radius:999px; white-space:nowrap; transition:background .2s; }
+#v08 .bar .res:hover { background:#A83620; }
+#v08 .bar .x { all:unset; cursor:pointer; width:30px; height:30px; display:grid; place-items:center; border-radius:50%; color:rgba(255,255,255,.75); }
+#v08 .bar .x:hover { background:rgba(255,255,255,.12); color:#fff; }
+#v08 .bar .x svg { width:14px; height:14px; }
+#v08 a:focus-visible, #v08 button:focus-visible { outline:2px solid #fff; outline-offset:2px; }
+#v08 .bar.gone { display:none; }
+@container demo (max-width:560px) {
+  #v08 .top { padding:14px 18px; }
+  #v08 .top span:not(.logo) { display:none; }
+  #v08 .intro { padding:34px 20px 24px; }
+  #v08 .menu { padding:0 20px 24px; }
+  #v08 .bar { border-radius:18px; padding:10px 10px 10px 14px; gap:8px; }
+  #v08 .bar .t { font-size:12.5px; }
+  #v08 .bar .t b { font-size:14px; }
+  #v08 .bar .tel { display:none; }
+  #v08 .bar .res { padding:11px 14px; }
+}
+@media (prefers-reduced-motion:reduce) { #v08 .scroll { scroll-behavior:auto; } #v08 .bar { transition:none; } #v08 .hint svg { animation:none; } }
+
+  /* --- V09 Zitat mit Handlungsaufforderung --- */
+#v09 { --plum:#2B1E2F; --peach:#FFB08A; --lav:#CDBFD6; background:var(--plum); color:#fff; font-family:'Inter',sans-serif; padding:64px 56px; position:relative; overflow:hidden; }
+#v09::before { content:"“"; position:absolute; left:28px; top:-60px; font:400 340px/1 'Fraunces',serif; color:rgba(255,176,138,.1); pointer-events:none; }
+#v09 .in { position:relative; max-width:1060px; margin:0 auto; display:grid; grid-template-columns:1.5fr 1fr; gap:56px; align-items:center; }
+#v09 blockquote { margin:0; }
+#v09 blockquote p { font:italic 400 clamp(24px,3cqi,34px)/1.35 'Fraunces',serif; margin:0 0 28px; letter-spacing:-.2px; }
+#v09 blockquote p mark { background:linear-gradient(transparent 62%,rgba(255,176,138,.35) 62%); color:inherit; }
+#v09 figcaption { display:flex; align-items:center; gap:14px; }
+#v09 figcaption img { width:58px; height:58px; border-radius:50%; object-fit:cover; object-position:50% 30%; border:2px solid var(--peach); }
+#v09 figcaption b { display:block; font-size:15px; }
+#v09 figcaption span { font-size:13.5px; color:var(--lav); }
+#v09 .stars { display:flex; gap:3px; margin-bottom:18px; color:var(--peach); }
+#v09 .stars svg { width:18px; height:18px; }
+#v09 .act { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:22px; padding:32px 30px; }
+#v09 .act h2 { font:600 22px/1.25 'Inter',sans-serif; letter-spacing:-.3px; margin:0 0 10px; }
+#v09 .act p { margin:0 0 22px; font-size:15px; line-height:1.6; color:var(--lav); }
+#v09 .btn { display:flex; justify-content:center; align-items:center; gap:10px; background:var(--peach); color:var(--plum); font-weight:700; font-size:15px; padding:16px 20px; border-radius:14px; transition:background .2s, transform .2s; }
+#v09 .btn:hover { background:#fff; transform:translateY(-2px); }
+#v09 .btn svg { width:18px; height:18px; }
+#v09 .sub { display:flex; justify-content:center; gap:6px; align-items:center; font-size:13px; color:var(--lav); margin-top:14px; }
+#v09 .sub svg { width:14px; height:14px; }
+#v09 a:focus-visible { outline:2px solid var(--peach); outline-offset:3px; }
+@container demo (max-width:820px) {
+  #v09 { padding:44px 22px; }
+  #v09 .in { grid-template-columns:1fr; gap:34px; }
+  #v09::before { font-size:220px; left:8px; top:-40px; }
+  #v09 .act { padding:26px 22px; }
+}
+
+  /* --- V10 Gradient-Glas-CTA --- */
+#v10 { --bg:#07060F; position:relative; overflow:hidden; background:var(--bg); padding:80px 32px; font-family:'Inter',sans-serif; color:#fff; }
+#v10 .orb { position:absolute; border-radius:50%; filter:blur(50px); opacity:.85; pointer-events:none; }
+#v10 .o1 { width:360px; height:360px; left:8%; top:-80px; background:#FF4FD8; animation:v10f1 12s ease-in-out infinite alternate; }
+#v10 .o2 { width:420px; height:420px; right:4%; bottom:-160px; background:#3D7BFF; animation:v10f2 14s ease-in-out infinite alternate; }
+#v10 .o3 { width:240px; height:240px; left:46%; top:40%; background:#FFB547; opacity:.55; animation:v10f1 10s ease-in-out infinite alternate-reverse; }
+@keyframes v10f1 { to { transform:translate(60px,40px) scale(1.1); } }
+@keyframes v10f2 { to { transform:translate(-80px,-30px) scale(.9); } }
+#v10 .card { --mx:50%; --my:0%; position:relative; z-index:2; max-width:640px; margin:0 auto; text-align:center; padding:44px 44px 36px; border-radius:28px; background:radial-gradient(400px circle at var(--mx) var(--my),rgba(255,255,255,.14),transparent 60%),rgba(18,15,34,.5); border:1px solid rgba(255,255,255,.18); backdrop-filter:blur(22px) saturate(140%); -webkit-backdrop-filter:blur(22px) saturate(140%); box-shadow:inset 0 1px 0 rgba(255,255,255,.25), 0 40px 80px -30px rgba(0,0,0,.7); }
+#v10 .pill { display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); margin-bottom:20px; }
+#v10 .pill i { width:7px; height:7px; border-radius:50%; background:#5CFFB1; box-shadow:0 0 10px #5CFFB1; }
+#v10 h2 { font:700 clamp(30px,4.4cqi,48px)/1.05 'Space Grotesk',sans-serif; letter-spacing:-1.5px; margin:0 0 14px; }
+#v10 h2 span { background:linear-gradient(90deg,#FF8BE6,#FFC27A,#8FB3FF); -webkit-background-clip:text; background-clip:text; color:transparent; }
+#v10 p { margin:0 auto 26px; font-size:16px; line-height:1.6; color:rgba(255,255,255,.78); max-width:470px; }
+#v10 form { display:flex; gap:8px; padding:6px; border-radius:16px; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.14); max-width:460px; margin:0 auto; }
+#v10 input { flex:1; min-width:0; background:transparent; border:0; color:#fff; font:400 15px 'Inter',sans-serif; padding:10px 12px; }
+#v10 input::placeholder { color:rgba(255,255,255,.55); }
+#v10 input:focus { outline:none; }
+#v10 form:focus-within { border-color:rgba(255,255,255,.45); }
+#v10 button { all:unset; cursor:pointer; background:#fff; color:var(--bg); font:700 14px 'Inter',sans-serif; padding:12px 18px; border-radius:11px; white-space:nowrap; transition:transform .2s, box-shadow .2s; }
+#v10 button:hover { transform:translateY(-1px); box-shadow:0 8px 24px -6px rgba(255,255,255,.45); }
+#v10 button:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+#v10 .msg { min-height:20px; margin-top:12px; font-size:14px; color:#9DFFCF; }
+#v10 .proof { display:flex; justify-content:center; align-items:center; gap:12px; margin-top:12px; font-size:13px; color:rgba(255,255,255,.7); }
+#v10 .av { display:flex; }
+#v10 .av i { width:28px; height:28px; border-radius:50%; border:2px solid #1A1726; margin-left:-8px; display:grid; place-items:center; font:700 10px 'Inter',sans-serif; font-style:normal; color:#1A1726; }
+#v10 .av i:first-child { margin-left:0; }
+@container demo (max-width:600px) {
+  #v10 { padding:48px 14px; }
+  #v10 .card { padding:32px 20px 26px; border-radius:22px; }
+  #v10 form { flex-direction:column; }
+  #v10 button { text-align:center; padding:14px; }
+  #v10 .proof { flex-direction:column; gap:8px; }
+  #v10 .o1 { left:-30%; } #v10 .o2 { right:-40%; }
+}
+@media (prefers-reduced-motion:reduce) { #v10 .orb { animation:none; } }
+
+  /* --- V11 Großer Text-Link --- */
+#v11 { --ink:#121212; --acc:#2747FF; background:#FAFAF8; color:var(--ink); padding:72px 56px 60px; font-family:'Inter',sans-serif; }
+#v11 .top { display:flex; justify-content:space-between; gap:20px; font-size:13px; color:#5C5C58; border-top:1px solid var(--ink); padding-top:16px; margin-bottom:46px; }
+#v11 .top span:first-child { font-weight:600; color:var(--ink); }
+#v11 .big { display:block; font:400 clamp(44px,8.6cqi,124px)/.98 'Bricolage Grotesque',sans-serif; letter-spacing:-.045em; color:transparent; background:linear-gradient(90deg,var(--acc) 0 50%,var(--ink) 50% 100%); background-size:200% 100%; background-position:100% 0; -webkit-background-clip:text; background-clip:text; transition:background-position .7s cubic-bezier(.6,0,.2,1); }
+#v11 .big em { font:italic 400 1.04em/1 'Instrument Serif',serif; letter-spacing:-.01em; }
+#v11 .big .arr { display:inline-block; width:.72em; height:.72em; vertical-align:-.04em; margin-left:.12em; color:var(--ink); transition:transform .5s cubic-bezier(.2,.8,.2,1), color .5s; }
+#v11 .big .arr svg { width:100%; height:100%; display:block; }
+#v11 .big:hover, #v11 .big:focus-visible { background-position:0 0; }
+#v11 .big:hover .arr, #v11 .big:focus-visible .arr { transform:translate(.14em,-.14em) rotate(0deg); color:var(--acc); }
+#v11 .big:focus-visible { outline:3px solid var(--acc); outline-offset:8px; }
+#v11 .foot { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-top:44px; flex-wrap:wrap; }
+#v11 .foot p { margin:0; font-size:15.5px; line-height:1.6; max-width:420px; color:#45453F; }
+#v11 .contact { display:flex; gap:28px; font-size:15px; }
+#v11 .contact a { color:var(--ink); background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat; padding-bottom:3px; transition:background-size .35s; }
+#v11 .contact a:hover, #v11 .contact a:focus-visible { background-size:100% 1px; }
+#v11 .contact a:focus-visible { outline:2px solid var(--acc); outline-offset:3px; }
+#v11 .contact small { display:block; font-size:11.5px; color:#6B6B65; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px; }
+@container demo (max-width:640px) {
+  #v11 { padding:44px 20px 40px; }
+  #v11 .top { margin-bottom:30px; }
+  #v11 .top span:last-child { display:none; }
+  #v11 .big { font-size:clamp(40px,13cqi,64px); }
+  #v11 .contact { flex-direction:column; gap:14px; }
+}
+@media (prefers-reduced-motion:reduce) { #v11 .big, #v11 .big .arr { transition:none; } }
+
+  /* --- V12 Button-Set im Überblick --- */
+#v12 { --brand:#4338CA; --brand-d:#3730A3; --ink:#18181B; --mut:#5B5B66; --line:#E4E4EA; background:#F5F5F8; padding:44px 40px; font-family:'Inter',sans-serif; color:var(--ink); }
+#v12 .grid { display:grid; grid-template-columns:repeat(3,1fr); grid-auto-flow:dense; gap:14px; }
+#v12 .cell { background:#fff; border:1px solid var(--line); border-radius:16px; padding:22px 22px 24px; }
+#v12 .cell.wide { grid-column:span 2; }
+#v12 .cell.dark { background:#141420; border-color:#141420; color:#fff; }
+#v12 h3 { margin:0 0 4px; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--brand); }
+#v12 .dark h3 { color:#A5B4FC; }
+#v12 .cell p { margin:0 0 16px; font-size:13px; color:var(--mut); }
+#v12 .dark p { color:#A1A1AA; }
+#v12 .row { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+#v12 .b { all:unset; box-sizing:border-box; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; font:600 14px/1 'Inter',sans-serif; padding:12px 18px; border-radius:10px; transition:background .2s, color .2s, box-shadow .2s, transform .2s, border-color .2s; position:relative; overflow:hidden; white-space:nowrap; }
+#v12 .b svg { width:16px; height:16px; flex-shrink:0; }
+#v12 .b:focus-visible { outline:2px solid var(--brand); outline-offset:3px; }
+#v12 .dark .b:focus-visible { outline-color:#A5B4FC; }
+#v12 .pri { background:var(--brand); color:#fff; }
+#v12 .pri:hover { background:var(--brand-d); }
+#v12 .sec { background:#EEF0FF; color:var(--brand-d); }
+#v12 .sec:hover { background:#E0E3FF; }
+#v12 .out { border:1.5px solid #C9C9D3; color:var(--ink); padding:10.5px 16.5px; }
+#v12 .out:hover { border-color:var(--ink); }
+#v12 .gh { color:var(--brand-d); }
+#v12 .gh:hover { background:#EEF0FF; }
+#v12 .dark .pri { background:#fff; color:#141420; }
+#v12 .dark .pri:hover { background:#E4E4F0; }
+#v12 .dark .out { border-color:rgba(255,255,255,.3); color:#fff; }
+#v12 .dark .out:hover { border-color:#fff; }
+#v12 .dark .gh { color:#C7D2FE; }
+#v12 .dark .gh:hover { background:rgba(255,255,255,.08); }
+#v12 .ico { width:44px; height:44px; padding:0; }
+#v12 .ico.round { border-radius:50%; }
+#v12 .pill { border-radius:999px; }
+#v12 .s { font-size:12.5px; padding:8px 12px; border-radius:8px; }
+#v12 .l { font-size:16.5px; padding:17px 28px; border-radius:12px; }
+#v12 .xl { font-size:18px; padding:20px 34px; border-radius:14px; }
+#v12 .pill.s { border-radius:999px; }
+#v12 .b[disabled] { cursor:not-allowed; background:#E9E9EE; color:#73737F; }
+/* Hover-Effekte */
+#v12 .fx-fill { border:1.5px solid var(--ink); color:var(--ink); z-index:0; padding:10.5px 16.5px; }
+#v12 .fx-fill::before { content:""; position:absolute; inset:0; background:var(--ink); transform:scaleX(0); transform-origin:right; transition:transform .35s cubic-bezier(.6,0,.2,1); z-index:-1; }
+#v12 .fx-fill:hover { color:#fff; }
+#v12 .fx-fill:hover::before { transform:scaleX(1); transform-origin:left; }
+#v12 .fx-arrow { background:var(--ink); color:#fff; }
+#v12 .fx-arrow svg { transition:transform .25s; }
+#v12 .fx-arrow:hover svg { transform:translateX(5px); }
+#v12 .fx-shine { background:linear-gradient(135deg,#7C3AED,#4338CA); color:#fff; }
+#v12 .fx-shine::after { content:""; position:absolute; top:0; bottom:0; left:-60%; width:40%; background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent); transform:skewX(-20deg); transition:left .6s; }
+#v12 .fx-shine:hover::after { left:130%; }
+#v12 .fx-lift { background:#fff; color:var(--ink); border:1px solid var(--line); box-shadow:0 1px 2px rgba(0,0,0,.06); }
+#v12 .fx-lift:hover { transform:translateY(-3px); box-shadow:0 14px 24px -12px rgba(67,56,202,.45); }
+#v12 .fx-press { background:#F59E0B; color:#1F1300; box-shadow:0 5px 0 #B45309; transform:translateY(-2px); }
+#v12 .fx-press:hover { box-shadow:0 7px 0 #B45309; transform:translateY(-4px); }
+#v12 .fx-press:active { box-shadow:0 1px 0 #B45309; transform:translateY(2px); }
+#v12 .fx-line { padding:12px 2px; color:var(--brand-d); border-radius:0; }
+#v12 .fx-line::after { content:""; position:absolute; left:2px; right:2px; bottom:6px; height:2px; background:currentColor; transform:scaleX(.25); transform-origin:left; transition:transform .3s; }
+#v12 .fx-line:hover::after { transform:scaleX(1); }
+#v12 .spin { width:16px; height:16px; border:2px solid rgba(255,255,255,.4); border-top-color:#fff; border-radius:50%; animation:v12spin .7s linear infinite; display:none; }
+#v12 .busy .spin { display:inline-block; }
+#v12 .busy .ok-ic { display:none; }
+@keyframes v12spin { to { transform:rotate(360deg); } }
+#v12 .b.done { background:#15803D; }
+@container demo (max-width:900px) {
+  #v12 .grid { grid-template-columns:1fr 1fr; }
+  #v12 .cell.wide, #v12 .cell.dark { grid-column:span 2; }
+}
+@container demo (max-width:600px) {
+  #v12 { padding:20px 14px; }
+  #v12 .grid { grid-template-columns:1fr; }
+  #v12 .cell.wide, #v12 .cell.dark { grid-column:auto; }
+  #v12 .xl { padding:18px 26px; font-size:17px; }
+}
+@media (prefers-reduced-motion:reduce) { #v12 .b, #v12 .b::before, #v12 .b::after, #v12 .b svg { transition:none; } #v12 .spin { animation-duration:2s; } }
+
+</style>
+</head>
+<body class="shell">
+
+<header class="sh-header">
+  <div class="sh-bar">
+    <a href="../../Meuster%20Landing%20Page.dc.html" aria-label="meuser.biz Startseite"><img src="../../assets/meuser-logo.png" alt="meuser.biz – Modern Webservices"></a>
+    <div class="sh-actions">
+      <a class="sh-btn ghost" href="../../beispiele.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>Alle<span class="long"> Beispiele</span></span></a>
+      <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Anfrage</a>
+    </div>
+  </div>
+  <nav class="sh-cats" aria-label="Kategorien">
+    <a href="../../beispiele.html#websites">Komplette Websites</a>
+    <a href="navigation.html">Navigation &amp; Menüs</a>
+    <a href="header.html">Header &amp; Hero</a>
+    <a href="footer.html">Footer</a>
+    <a href="leistungen.html">Leistungen &amp; Features</a>
+    <a href="preise.html">Preistabellen</a>
+    <a href="stimmen.html">Kundenstimmen</a>
+    <a href="team.html">Team</a>
+    <a href="galerie.html">Galerien</a>
+    <a href="kontakt.html">Kontakt &amp; Formulare</a>
+    <a href="faq.html">FAQ</a>
+    <a href="cta.html">Call-to-Action</a>
+    <a href="kennzahlen.html">Kennzahlen &amp; Abläufe</a>
+  </nav>
+</header>
+
+<section class="sh-hero">
+  <div class="sh-hero-in">
+    <div class="sh-eyebrow">BAUSTEINE · 12 VARIANTEN</div>
+    <h1>Call-to-Action</h1>
+    <p>Ein guter Call-to-Action macht aus Besuchern Anfragen: klar, sichtbar und zur richtigen Zeit. Diese Varianten zeigen, wie Banner, Aktionsflächen und Buttons zu Ihrer Marke passen können.</p>
+  </div>
+</section>
+
+<nav class="sh-index" aria-label="Varianten auf dieser Seite">
+  <!-- je Variante: <a href="#v01-wrap"><b>01</b>Name</a> -->
+  <a href="#v01-wrap"><b>01</b>Vollbreites Farbband</a>
+  <a href="#v02-wrap"><b>02</b>Karte mit Bild</a>
+  <a href="#v03-wrap"><b>03</b>Newsletter-Box</a>
+  <a href="#v04-wrap"><b>04</b>Termin-Banner mit Telefon</a>
+  <a href="#v05-wrap"><b>05</b>App-Download mit Telefon-Mockup</a>
+  <a href="#v06-wrap"><b>06</b>Aktion mit Ablaufdatum</a>
+  <a href="#v07-wrap"><b>07</b>Split-CTA für zwei Zielgruppen</a>
+  <a href="#v08-wrap"><b>08</b>Schwebender Sticky-CTA</a>
+  <a href="#v09-wrap"><b>09</b>Zitat mit Handlungsaufforderung</a>
+  <a href="#v10-wrap"><b>10</b>Gradient-Glas-CTA</a>
+  <a href="#v11-wrap"><b>11</b>Großer Text-Link</a>
+  <a href="#v12-wrap"><b>12</b>Button-Set im Überblick</a>
+</nav>
+
+<main class="sh-main">
+
+  <!-- ===== VARIANTE (Muster, für jede Variante wiederholen) =====
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Name der Variante</h2>
+        <p>Ein bis zwei Sätze: Wie wirkt sie, wofür eignet sie sich?</p>
+        <ul class="v-tags"><li>Restaurant</li><li>Hotel</li><li>mit Dropdown</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame" style="--h:420px">
+        <div id="v01"> … Baustein … </div>
+      </div>
+    </div>
+  </section>
+  ============================================================== -->
+
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Vollbreites Farbband</h2>
+        <p>Ein ruhiges, sattfarbiges Band über die ganze Breite – mit klarer Frage, kurzer Antwort und zwei Wegen zum Kontakt. Der Klassiker am Ende jeder Seite.</p>
+        <ul class="v-tags"><li>Kanzlei</li><li>Steuerberatung</li><li>Versicherung</li><li>zwei Kontaktwege</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v01">
+  <section class="band" aria-labelledby="v01-h">
+    <div>
+      <div class="k">Erstgespräch kostenlos</div>
+      <h2 id="v01-h">Steuern sind kompliziert. <em>Ihr Gespräch mit uns nicht.</em></h2>
+      <p>In 30 Minuten klären wir, wo Sie stehen und was sich für Sie lohnt – persönlich in Kempen oder per Video.</p>
+    </div>
+    <div class="act">
+      <a class="btn pri" href="#" onclick="return false"><span>Termin vereinbaren<small>Antwort innerhalb eines Werktags</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn sec" href="#" onclick="return false"><span>02151 123 45 67<small>Mo–Fr 8–17 Uhr</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+    </div>
+  </section>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v02-wrap" aria-labelledby="v02-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 02</div>
+        <h2 id="v02-title">Karte mit Bild</h2>
+        <p>Eine schwebende Karte verbindet Foto, Termindetails und freie Plätze. Konkret und greifbar – ideal für Kurse, Workshops und Veranstaltungen.</p>
+        <ul class="v-tags"><li>Coworking</li><li>Kurse</li><li>Workshops</li><li>Platzanzeige</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v02">
+  <article class="card" aria-labelledby="v02-h">
+    <div class="pic">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80&auto=format&fit=crop" alt="Teilnehmende eines Workshops in einem hellen Loft mit Backsteinwänden" loading="lazy">
+      <span><i></i>Nur noch 4 Plätze</span>
+    </div>
+    <div class="body">
+      <div class="k">Werkhalle 7 · Workshop</div>
+      <h2 id="v02-h">Ein Tag für Ihre Website: Texte, die verkaufen.</h2>
+      <p>Praxis-Workshop für Selbstständige: Wir überarbeiten gemeinsam Ihre Startseite – mit Mittagessen, Kaffee und Arbeitsplatz im Coworking.</p>
+      <div class="meta">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Sa, 13. März 2027</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Krefeld, Alte Weberei</div>
+      </div>
+      <div class="seats"><span>12 von 16 Plätzen vergeben</span><b>75 %</b></div>
+      <div class="bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Auslastung"><i></i></div>
+      <div class="row">
+        <a class="btn" href="#" onclick="return false">Platz sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <span class="price"><b>249 €</b> inkl. MwSt.</span>
+      </div>
+    </div>
+  </article>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v03-wrap" aria-labelledby="v03-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 03</div>
+        <h2 id="v03-title">Newsletter-Box</h2>
+        <p>Eine Anmeldebox mit Interessen-Auswahl und Einwilligung, die nach dem Absenden freundlich bestätigt. Persönlich statt aufdringlich.</p>
+        <ul class="v-tags"><li>Weinhandel</li><li>Feinkost</li><li>Buchhandlung</li><li>mit Formular</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v03">
+  <div class="box">
+    <div class="l">
+      <svg class="glass" viewBox="0 0 44 60" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 3h28c1 12-2 24-14 24S7 15 8 3z"/><path d="M9 13h26"/><path d="M22 27v26M12 57h20"/></svg>
+      <h2>Einmal im Monat: <em>unsere Entdeckungen</em> im Glas.</h2>
+      <p>Der Kellerbrief vom Weinkontor Kempen – mit neuen Winzern, Termine für Verkostungen und einem Rezept zum Wein des Monats.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Vorverkauf für Verkostungsabende</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>10 % auf Ihre nächste Bestellung</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Abmeldung jederzeit mit einem Klick</li>
+      </ul>
+    </div>
+    <form onsubmit="event.preventDefault()" novalidate>
+      <div><label class="t" for="v03-name">Vorname <span style="font-weight:400;color:#7A6669">(optional)</span></label><input id="v03-name" type="text" autocomplete="given-name" placeholder="Anna"></div>
+      <div><label class="t" for="v03-mail">E-Mail-Adresse</label><input id="v03-mail" type="email" autocomplete="email" placeholder="anna@example.de" required></div>
+      <fieldset>
+        <legend>Was trinken Sie am liebsten?</legend>
+        <div class="chips">
+          <label><input type="checkbox" checked><span>Rotwein</span></label>
+          <label><input type="checkbox"><span>Weißwein</span></label>
+          <label><input type="checkbox"><span>Schaumwein</span></label>
+          <label><input type="checkbox"><span>Alkoholfrei</span></label>
+        </div>
+      </fieldset>
+      <label class="consent"><input type="checkbox" required> <span>Ich möchte den Kellerbrief erhalten und habe die Datenschutzhinweise gelesen.</span></label>
+      <p class="err" role="alert"></p>
+      <button type="submit">Kellerbrief abonnieren</button>
+    </form>
+    <div class="done" role="status" tabindex="-1">
+      <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>
+      <h3>Fast geschafft – Prost!</h3>
+      <p>Wir haben Ihnen eine E-Mail geschickt. Bitte bestätigen Sie dort Ihre Anmeldung (Demo – es wurde nichts versendet).</p>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v04-wrap" aria-labelledby="v04-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 04</div>
+        <h2 id="v04-title">Termin-Banner mit Telefon</h2>
+        <p>Signalfarbe, große Telefonnummer und ein Rückruf-Feld: Wer ein akutes Problem hat, findet sofort den schnellsten Weg. Robust, direkt, handwerklich.</p>
+        <ul class="v-tags"><li>Handwerk</li><li>Elektriker</li><li>Sanitär</li><li>Rückruf-Formular</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v04">
+  <section class="ban" aria-labelledby="v04-h">
+    <div class="txt">
+      <span class="tag"><i></i>Notdienst 24/7 erreichbar</span>
+      <h2 id="v04-h">Strom weg? Wir sind in 60 Minuten da.</h2>
+      <p>Elektro Janssen ist Ihr Meisterbetrieb für Tönisvorst, Kempen und Krefeld – vom Sicherungsausfall bis zur neuen Wallbox.</p>
+      <a class="tel" href="#" onclick="return false"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span><small>Jetzt anrufen</small><b>02151 123 45 67</b></span></a>
+      <form onsubmit="event.preventDefault()" aria-label="Rückruf anfordern">
+        <label for="v04-tel" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Ihre Telefonnummer</label>
+        <input id="v04-tel" type="tel" inputmode="tel" placeholder="Ihre Nummer für den Rückruf" autocomplete="tel">
+        <button type="submit">Rückruf anfordern</button>
+      </form>
+      <div class="msg" role="status" aria-live="polite"></div>
+    </div>
+    <div class="pic">
+      <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=1200&q=80&auto=format&fit=crop" alt="Werkzeug-Bits in einer Ledertasche auf der Werkbank" loading="lazy">
+      <div class="list">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Festpreis vor Arbeitsbeginn</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Meisterbetrieb seit 1994</span>
+      </div>
+    </div>
+  </section>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v05-wrap" aria-labelledby="v05-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 05</div>
+        <h2 id="v05-title">App-Download mit Telefon-Mockup</h2>
+        <p>Ein in CSS gebautes Smartphone zeigt die App, daneben Download-Buttons und ein QR-Code. Macht den Nutzen sichtbar, bevor jemand installiert.</p>
+        <ul class="v-tags"><li>App</li><li>Tourismus</li><li>Verkehrsbetrieb</li><li>CSS-Mockup</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v05">
+  <section class="wrap" aria-labelledby="v05-h">
+    <div class="txt">
+      <div class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="17" r="3.5"/><circle cx="18" cy="17" r="3.5"/><path d="M6 17l4-8h6l2 8M10 9L8 5H6M14 9l-2 8"/></svg>Neu: Version 3.0 mit Offline-Karten</div>
+      <h2 id="v05-h">Jede Radtour am Niederrhein. In Ihrer Tasche.</h2>
+      <p>Pedalo plant Routen über Knotenpunkte, zeigt Hofcafés und Ladesäulen am Weg und funktioniert auch ohne Netz – kostenlos für iPhone und Android.</p>
+      <div class="stores">
+        <a class="store" href="#" onclick="return false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4M11 19h2"/></svg><span>Kostenlos laden<b>für iPhone</b></span></a>
+        <a class="store alt" href="#" onclick="return false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M6 6h12M6 18h12"/></svg><span>Kostenlos laden<b>für Android</b></span></a>
+      </div>
+      <div class="qr"><svg viewBox="0 0 21 21" aria-hidden="true" shape-rendering="crispEdges"><path fill="#0F2A2E" d="M0 0h7v7H0zM1 1v5h5V1zM2 2h3v3H2zM14 0h7v7h-7zM15 1v5h5V1zM16 2h3v3h-3zM0 14h7v7H0zM1 15v5h5v-5zM2 16h3v3H2zM8 0h2v2H8zM11 1h2v3h-2zM9 3h1v3H9zM8 8h3v2H8zM12 7h2v2h-2zM14 9h3v1h-3zM18 8h3v3h-3zM0 8h2v2H0zM3 9h3v2H3zM8 11h1v3H8zM10 12h3v2h-3zM14 12h2v3h-2zM17 13h4v2h-4zM8 16h2v2H8zM11 15h2v3h-2zM14 17h3v1h-3zM18 17h3v4h-3zM9 19h4v2H9zM14 19h2v2h-2z"/></svg><span>Mit der Kamera scannen<br>und direkt installieren</span></div>
+      <div class="rate"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>4,8 von 5 · über 12.000 Bewertungen</div>
+    </div>
+    <div class="phone-col" aria-hidden="true">
+      <div class="phone">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="status"><span>9:41</span><span>5G ▮▮▮</span></div>
+          <div class="map">
+            <svg viewBox="0 0 230 190" preserveAspectRatio="none"><path d="M0 120 C40 110 60 150 110 140 S190 100 230 110" stroke="#B8D3C6" stroke-width="16" fill="none"/><path d="M60 0 L80 190M160 0 L140 190" stroke="#fff" stroke-width="6"/><path d="M0 60 L230 70" stroke="#fff" stroke-width="4"/><circle cx="190" cy="40" r="22" fill="#C7E0D3"/><path class="route" d="M30 165 C60 150 70 110 100 100 S150 90 160 60 S190 30 205 28" stroke="#0F2A2E" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="30" cy="165" r="6" fill="#2FB7A6"/><circle cx="205" cy="28" r="7" fill="#0F2A2E"/><circle cx="205" cy="28" r="3" fill="#D7F36B"/></svg>
+            <span class="chip">Knotenpunkt 42 → 57</span>
+          </div>
+          <div class="info">
+            <b>Kopfweiden-Runde</b><small>Kempen · Grefrath · Niers</small>
+            <div class="nums"><div><strong>38 km</strong>Strecke</div><div><strong>2:15 h</strong>Fahrzeit</div><div><strong>3</strong>Hofcafés</div></div>
+          </div>
+          <div class="go">Tour starten</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v06-wrap" aria-labelledby="v06-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 06</div>
+        <h2 id="v06-title">Aktion mit Ablaufdatum</h2>
+        <p>Ein Gutschein mit Perforation, kopierbarem Code und laufendem Countdown. Erzeugt echte Dringlichkeit – ideal für saisonale Angebote.</p>
+        <ul class="v-tags"><li>Einzelhandel</li><li>Fahrradladen</li><li>Werkstatt</li><li>Gutscheincode</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v06">
+  <section class="ticket" aria-labelledby="v06-h">
+    <div class="val"><small>Herbst-Check</small><b>−20&nbsp;%</b><span>auf jede Inspektion</span></div>
+    <div class="body">
+      <h2 id="v06-h">Fit durch den Winter: Ihr Rad verdient eine Pause bei uns.</h2>
+      <p>Bremsen, Licht, Schaltung, Kette – Speiche &amp; Kette in Kempen bringt Fahrrad und E-Bike sicher durch die dunkle Jahreszeit. Abholservice im Stadtgebiet inklusive.</p>
+      <div class="cd" role="timer" aria-label="Aktion endet in">
+        <span>Endet in</span>
+        <div><b data-u="d">00</b><small>Tage</small></div>
+        <div><b data-u="h">00</b><small>Std</small></div>
+        <div><b data-u="m">00</b><small>Min</small></div>
+      </div>
+      <div class="row">
+        <div class="code"><span>HERBST20</span><button type="button" aria-label="Gutscheincode kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg><em style="font-style:normal">Kopieren</em></button></div>
+        <a class="btn" href="#" onclick="return false">Termin buchen</a>
+      </div>
+      <div class="fine">Gültig bis 30.11.2026 für Inspektionen ab 49 €. Nicht mit anderen Aktionen kombinierbar.</div>
+    </div>
+  </section>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v07-wrap" aria-labelledby="v07-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 07</div>
+        <h2 id="v07-title">Split-CTA für zwei Zielgruppen</h2>
+        <p>Zwei Hälften, zwei Wege: Privatkunden und Gewerbe finden jeweils ihr eigenes Angebot. Ein Kreis in der Mitte macht die Entscheidung spielerisch leicht.</p>
+        <ul class="v-tags"><li>Solar</li><li>Energie</li><li>Versicherung</li><li>Zielgruppen-Weiche</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v07">
+  <section class="half p" aria-labelledby="v07-h1">
+    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div>
+    <small>Für Privathaushalte</small>
+    <h2 id="v07-h1">Strom vom eigenen Dach – mit Speicher und Wallbox.</h2>
+    <ul><li>Kostenloser Solar-Check vor Ort</li><li>Montage in 6 Wochen</li><li>Förderung inklusive beantragt</li></ul>
+    <a class="btn" href="#" onclick="return false">Ertrag berechnen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </section>
+  <div class="or" aria-hidden="true">oder</div>
+  <section class="half g" aria-labelledby="v07-h2">
+    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l6 4V9l6 4V5h6v16z"/><path d="M7 17h2M13 17h2"/></svg></div>
+    <small>Für Gewerbe &amp; Landwirtschaft</small>
+    <h2 id="v07-h2">Hallendächer, die sich selbst bezahlen.</h2>
+    <ul><li>Anlagen von 30 bis 750 kWp</li><li>Wirtschaftlichkeitsanalyse in 48 h</li><li>Wartungsvertrag mit Ertragsgarantie</li></ul>
+    <a class="btn" href="#" onclick="return false">Projekt anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </section>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v08-wrap" aria-labelledby="v08-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 08</div>
+        <h2 id="v08-title">Schwebender Sticky-CTA</h2>
+        <p>Sobald Besucher scrollen, gleitet eine Leiste mit Reservierung und Telefon ins Bild und bleibt dort – schließbar, aber immer griffbereit. Scrollen Sie im Rahmen.</p>
+        <ul class="v-tags"><li>Restaurant</li><li>Arztpraxis</li><li>Onlineshop</li><li>Scroll-Effekt</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v08">
+  <div class="scroll" tabindex="0" role="region" aria-label="Beispielseite zum Scrollen">
+    <div class="top"><span class="logo">Trattoria Fiume</span><span>Kempen · Di–So ab 17:30 Uhr</span></div>
+    <div class="intro">
+      <small>Unsere Karte</small>
+      <h2>Handgemachte Pasta, Wein aus dem Piemont.</h2>
+      <p>Seit 2008 kochen wir in der Kempener Altstadt – saisonal, mit Gemüse vom Niederrhein und Olivenöl von einem kleinen Hof in Ligurien.</p>
+      <div class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Scrollen Sie im Rahmen nach unten</div>
+    </div>
+    <div class="menu">
+      <h3>Antipasti</h3>
+      <div class="dish"><span>Vitello tonnato<small>Kalbsrücken, Thunfischcreme, Kapernäpfel</small></span><b>14,50 €</b></div>
+      <div class="dish"><span>Burrata<small>Ofentomaten, Basilikumöl, Focaccia</small></span><b>12,00 €</b></div>
+      <h3>Primi</h3>
+      <div class="dish"><span>Tagliolini al limone<small>Zitrone, Parmigiano, schwarzer Pfeffer</small></span><b>16,50 €</b></div>
+      <div class="dish"><span>Ravioli di zucca<small>Kürbis, Salbeibutter, Amaretti</small></span><b>17,00 €</b></div>
+      <div class="dish"><span>Pappardelle al ragù<small>Sechs Stunden geschmort, Rind vom Hof Lingen</small></span><b>18,50 €</b></div>
+      <h3>Dolci</h3>
+      <div class="dish"><span>Tiramisù della casa<small>Nach dem Rezept von Nonna Rosa</small></span><b>8,50 €</b></div>
+      <div class="dish"><span>Panna cotta<small>Waldbeeren, Minze</small></span><b>7,50 €</b></div>
+    </div>
+    <div class="bar" role="complementary" aria-label="Reservierung">
+      <div class="t"><b>Heute noch Tische frei</b>Für 2–8 Personen ab 18:00 Uhr</div>
+      <a class="tel" href="#" onclick="return false" aria-label="Anrufen: 02151 123 45 67"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+      <a class="res" href="#" onclick="return false">Tisch reservieren</a>
+      <button class="x" type="button" aria-label="Leiste ausblenden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v09-wrap" aria-labelledby="v09-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 09</div>
+        <h2 id="v09-title">Zitat mit Handlungsaufforderung</h2>
+        <p>Eine echte Kundenstimme übernimmt die Überzeugungsarbeit, der Button folgt direkt darauf. Persönlich, glaubwürdig und warm.</p>
+        <ul class="v-tags"><li>Innenausbau</li><li>Coaching</li><li>Beratung</li><li>Kundenstimme</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v09">
+  <div class="in">
+    <figure style="margin:0">
+      <div class="stars" role="img" aria-label="5 von 5 Sternen"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg></div>
+      <blockquote><p>„Wir hatten Respekt vor dem Umbau unserer Altbauwohnung. Am Ende war es das <mark>entspannteste Projekt, das wir je hatten</mark> – pünktlich, sauber und schöner als geplant.“</p></blockquote>
+      <figcaption><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1200&q=80&auto=format&fit=crop" alt="Porträt von Johanna Peters" loading="lazy"><span><b>Johanna Peters</b>Altbausanierung in Krefeld-Cracau</span></figcaption>
+    </figure>
+    <section class="act" aria-labelledby="v09-h">
+      <h2 id="v09-h">Ihr Zuhause ist das nächste Projekt?</h2>
+      <p>Raumwerk Brandt plant und koordiniert Ihren Innenausbau – vom ersten Grundriss bis zur Schlüsselübergabe.</p>
+      <a class="btn" href="#" onclick="return false">Erstberatung vereinbaren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="sub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Kostenlos · 45 Minuten · vor Ort oder online</div>
+    </section>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v10-wrap" aria-labelledby="v10-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 10</div>
+        <h2 id="v10-title">Gradient-Glas-CTA</h2>
+        <p>Eine Glaskarte schwebt über leuchtenden Farbflächen, ein Lichtschein folgt dem Mauszeiger. Modern, technisch, verspielt – für Startups und Produkt-Launches.</p>
+        <ul class="v-tags"><li>Startup</li><li>Software</li><li>Produkt-Launch</li><li>Warteliste</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v10">
+  <div class="orb o1" aria-hidden="true"></div><div class="orb o2" aria-hidden="true"></div><div class="orb o3" aria-hidden="true"></div>
+  <section class="card" aria-labelledby="v10-h">
+    <div class="pill"><i></i>Beta startet im Februar 2027</div>
+    <h2 id="v10-h">Buchhaltung, die <span>sich selbst erledigt.</span></h2>
+    <p>Lumora liest Belege, ordnet Buchungen zu und bereitet die Umsatzsteuer vor – für Freelancer und kleine Teams. Sichern Sie sich einen frühen Zugang.</p>
+    <form onsubmit="event.preventDefault()" novalidate>
+      <label for="v10-mail" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">E-Mail-Adresse</label>
+      <input id="v10-mail" type="email" placeholder="ihre@example.de" autocomplete="email">
+      <button type="submit">Auf die Warteliste</button>
+    </form>
+    <div class="msg" role="status" aria-live="polite"></div>
+    <div class="proof"><span class="av" aria-hidden="true"><i style="background:#FF8BE6">LK</i><i style="background:#FFC27A">MS</i><i style="background:#8FB3FF">TJ</i><i style="background:#9DFFCF">+</i></span>Schon 2.400 Selbstständige warten mit Ihnen</div>
+  </section>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v11-wrap" aria-labelledby="v11-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 11</div>
+        <h2 id="v11-title">Großer Text-Link</h2>
+        <p>Kein Button, nur ein riesiger Satz als Link – beim Darüberfahren füllt er sich mit Farbe und der Pfeil schiebt nach. Reduziert und souverän.</p>
+        <ul class="v-tags"><li>Architektur</li><li>Fotografie</li><li>Designstudio</li><li>minimalistisch</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v11">
+  <div class="top"><span>Lindner Architekten</span><span>Nächstes Projekt · 2027</span></div>
+  <a class="big" href="#" onclick="return false">Lassen Sie uns <em>gemeinsam</em> bauen<span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M6 18L18 6M8 6h10v10"/></svg></span></a>
+  <div class="foot">
+    <p>Wohnhäuser, Umbauten im Bestand und Gewerbebauten am Niederrhein. Wir freuen uns auf Ihr Grundstück – oder Ihre Idee.</p>
+    <div class="contact">
+      <div><small>Schreiben</small><a href="#" onclick="return false">studio@example.de</a></div>
+      <div><small>Anrufen</small><a href="#" onclick="return false">02151 123 45 67</a></div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v12-wrap" aria-labelledby="v12-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 12</div>
+        <h2 id="v12-title">Button-Set im Überblick</h2>
+        <p>Alle Button-Stile einer Marke auf einen Blick: primär, sekundär, Ghost, mit Icon, als Pille, in drei Größen und mit sechs Hover-Effekten. Fahren Sie mit der Maus darüber oder klicken Sie „Senden“.</p>
+        <ul class="v-tags"><li>Designsystem</li><li>alle Branchen</li><li>Hover-Effekte</li><li>Zustände</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v12">
+  <div class="grid">
+    <div class="cell">
+      <h3>Grundtypen</h3><p>Hierarchie: eine Hauptaktion, der Rest tritt zurück.</p>
+      <div class="row"><button class="b pri" type="button">Primär</button><button class="b sec" type="button">Sekundär</button><button class="b out" type="button">Kontur</button><button class="b gh" type="button">Ghost</button></div>
+    </div>
+    <div class="cell">
+      <h3>Mit Icon</h3><p>Icons verdeutlichen die Richtung oder Aktion.</p>
+      <div class="row">
+        <button class="b pri" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Termin buchen</button>
+        <button class="b out" type="button">Download<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></button>
+        <button class="b sec ico" type="button" aria-label="Merken"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></button>
+        <button class="b pri ico round" type="button" aria-label="Anrufen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></button>
+      </div>
+    </div>
+    <div class="cell">
+      <h3>Pille</h3><p>Weiche Form für freundliche, moderne Marken.</p>
+      <div class="row"><button class="b pri pill" type="button">Jetzt starten</button><button class="b out pill" type="button">Mehr erfahren</button><button class="b sec pill s" type="button">Neu</button></div>
+    </div>
+    <div class="cell wide">
+      <h3>Größen</h3><p>Von der Tabellenzeile bis zum großen Startseiten-Einstieg.</p>
+      <div class="row"><button class="b pri s" type="button">Klein</button><button class="b pri" type="button">Standard</button><button class="b pri l" type="button">Groß</button><button class="b pri xl" type="button">Extra groß</button></div>
+    </div>
+    <div class="cell">
+      <h3>Zustände</h3><p>Deaktiviert und mit Ladeanzeige – klicken Sie „Senden“.</p>
+      <div class="row"><button class="b pri" type="button" disabled>Deaktiviert</button><button class="b pri send" type="button"><span class="spin" aria-hidden="true"></span><svg class="ok-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l16-8-6 16-3-6z"/></svg><span class="lbl">Senden</span></button></div>
+    </div>
+    <div class="cell wide">
+      <h3>Hover-Effekte</h3><p>Fahren Sie über die Buttons – jeder reagiert anders.</p>
+      <div class="row">
+        <button class="b fx-fill" type="button">Füllen</button>
+        <button class="b fx-arrow" type="button">Pfeil schiebt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button class="b fx-shine" type="button">Glanz</button>
+        <button class="b fx-lift" type="button">Anheben</button>
+        <button class="b fx-press" type="button">Drücken</button>
+        <button class="b fx-line" type="button">Unterstreichen</button>
+      </div>
+    </div>
+    <div class="cell dark">
+      <h3>Auf dunklem Grund</h3><p>Dieselbe Hierarchie, angepasste Kontraste.</p>
+      <div class="row"><button class="b pri" type="button">Primär</button><button class="b out" type="button">Kontur</button><button class="b gh" type="button">Ghost</button></div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="sh-cta">
+  <h2>Der passende Baustein für Ihre Website?</h2>
+  <p>Alle Varianten sind Ausgangspunkte. Wir kombinieren und gestalten sie individuell – passend zu Ihrer Marke.</p>
+  <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Projekt besprechen</a>
+</section>
+
+<footer class="sh-footer">
+  Alle gezeigten Marken und Inhalte sind fiktiv. Design &amp; Umsetzung: <a href="../../Meuster%20Landing%20Page.dc.html">meuser.biz</a> · © 2026
+</footer>
+
+<script>
+  /* SHELL-Skript – nicht verändern */
+  (function () {
+    var here = location.pathname.split('/').pop();
+    document.querySelectorAll('.sh-cats a').forEach(function (a) {
+      if (a.getAttribute('href') === here) { a.setAttribute('aria-current', 'page'); a.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+    });
+    document.querySelectorAll('.variant').forEach(function (v) {
+      var frame = v.querySelector('.frame');
+      v.querySelectorAll('.v-switch button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          v.querySelectorAll('.v-switch button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          frame.style.setProperty('--w', b.dataset.w);
+        });
+      });
+    });
+  })();
+</script>
+<!-- Varianten-Skripte hierunter, jedes in eigenem IIFE, nur auf die eigene #vNN zugreifen -->
+<script>
+/* V03 Newsletter-Box */
+(function () {
+var r = document.getElementById('v03'), f = r.querySelector('form'), err = r.querySelector('.err'), box = r.querySelector('.box');
+f.addEventListener('submit', function(){
+  var mail = r.querySelector('#v03-mail'), ok = r.querySelector('.consent input');
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail.value)) { err.textContent = 'Bitte geben Sie eine gültige E-Mail-Adresse ein.'; mail.focus(); return; }
+  if (!ok.checked) { err.textContent = 'Bitte bestätigen Sie die Einwilligung.'; ok.focus(); return; }
+  err.textContent = ''; box.classList.add('sent'); r.querySelector('.done').focus();
+});
+})();
+</script>
+<script>
+/* V04 Termin-Banner mit Telefon */
+(function () {
+var r = document.getElementById('v04'), f = r.querySelector('form'), m = r.querySelector('.msg'), i = r.querySelector('input');
+f.addEventListener('submit', function(){
+  var v = i.value.replace(/[^\d+]/g, '');
+  if (v.length < 6) { m.textContent = 'Bitte geben Sie eine Telefonnummer ein.'; i.focus(); return; }
+  m.textContent = '✓ Danke! Wir rufen Sie innerhalb von 15 Minuten zurück (Demo).'; i.value = '';
+});
+})();
+</script>
+<script>
+/* V06 Aktion mit Ablaufdatum */
+(function () {
+var r = document.getElementById('v06'), end = new Date('2026-11-30T23:59:59+01:00').getTime(), u = {};
+r.querySelectorAll('.cd b').forEach(function(b){ u[b.dataset.u] = b; });
+function p(n){ return (n < 10 ? '0' : '') + n; }
+function tick(){
+  var s = Math.max(0, Math.floor((end - Date.now()) / 1000));
+  u.d.textContent = p(Math.floor(s / 86400)); u.h.textContent = p(Math.floor(s % 86400 / 3600)); u.m.textContent = p(Math.floor(s % 3600 / 60));
+}
+tick(); setInterval(tick, 15000);
+var btn = r.querySelector('.code button'), lab = btn.querySelector('em');
+btn.addEventListener('click', function(){
+  function ok(){ lab.textContent = 'Kopiert ✓'; setTimeout(function(){ lab.textContent = 'Kopieren'; }, 2000); }
+  if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText('HERBST20').then(ok, ok); } else { ok(); }
+});
+})();
+</script>
+<script>
+/* V08 Schwebender Sticky-CTA */
+(function () {
+var r = document.getElementById('v08'), sc = r.querySelector('.scroll'), bar = r.querySelector('.bar');
+function upd(){ bar.classList.toggle('show', sc.scrollTop > 90); }
+sc.addEventListener('scroll', upd, { passive:true }); upd();
+r.querySelector('.bar .x').addEventListener('click', function(){ bar.classList.add('gone'); sc.focus(); });
+r.addEventListener('keydown', function(e){ if (e.key === 'Escape' && bar.classList.contains('show')) { bar.classList.add('gone'); sc.focus(); } });
+})();
+</script>
+<script>
+/* V10 Gradient-Glas-CTA */
+(function () {
+var r = document.getElementById('v10'), card = r.querySelector('.card'), f = r.querySelector('form'), m = r.querySelector('.msg'), i = r.querySelector('input');
+r.addEventListener('pointermove', function(e){
+  var b = card.getBoundingClientRect();
+  card.style.setProperty('--mx', (e.clientX - b.left) + 'px'); card.style.setProperty('--my', (e.clientY - b.top) + 'px');
+});
+f.addEventListener('submit', function(){
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i.value)) { m.style.color = '#FFB4B4'; m.textContent = 'Bitte geben Sie eine gültige E-Mail-Adresse ein.'; i.focus(); return; }
+  m.style.color = ''; m.textContent = '✓ Sie sind auf Platz 2.401 – wir melden uns (Demo).'; i.value = '';
+});
+})();
+</script>
+<script>
+/* V12 Button-Set im Überblick */
+(function () {
+var r = document.getElementById('v12'), s = r.querySelector('.send'), lbl = s.querySelector('.lbl');
+s.addEventListener('click', function(){
+  if (s.classList.contains('busy')) return;
+  s.classList.add('busy'); s.setAttribute('aria-busy', 'true'); lbl.textContent = 'Wird gesendet …';
+  setTimeout(function(){
+    s.classList.remove('busy'); s.removeAttribute('aria-busy'); s.classList.add('done'); lbl.textContent = 'Gesendet ✓';
+    setTimeout(function(){ s.classList.remove('done'); lbl.textContent = 'Senden'; }, 1800);
+  }, 1500);
+});
+})();
+</script>
+</body>
+</html>

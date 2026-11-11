@@ -1,0 +1,1152 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preistabellen – Bausteine – meuser.biz</title>
+<meta name="description" content="Preistabellen: 10 Gestaltungsvarianten, wie meuser.biz sie für Websites umsetzt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Shell-Schrift (Inter) bleibt; weitere Schriften der Varianten in DIESEN einen Link mit aufnehmen -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Syne:wght@600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================================
+     SHELL – nicht verändern. Gilt für alle Kategorieseiten gleich.
+     ===================================================================== */
+  :root { --ink:#0F172A; --muted:#64748B; --body:#475569; --line:#E2E8F0; --soft:#F8FAFC; --blue:#007BFF; --blue-l:#5FA8FF; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 150px; }
+  body.shell { margin:0; font-family:'Inter',sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; }
+  .shell a { color:inherit; text-decoration:none; }
+  .sh-header { position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.9); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+  .sh-bar { max-width:1400px; margin:0 auto; padding:12px 5%; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .sh-bar img { height:44px; width:auto; display:block; }
+  .sh-actions { display:flex; gap:8px; }
+  .sh-btn { display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font:600 14px 'Inter',sans-serif; white-space:nowrap; transition:.25s; }
+  .sh-btn.ghost { background:rgba(15,23,42,.05); } .sh-btn.ghost:hover { background:rgba(15,23,42,.1); }
+  .sh-btn.blue { background:linear-gradient(135deg,#007BFF,#0062cc); color:#fff !important; box-shadow:0 6px 16px -4px rgba(0,123,255,.6); }
+  .sh-cats { max-width:1400px; margin:0 auto; padding:0 5% 12px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; }
+  .sh-cats::-webkit-scrollbar { display:none; }
+  .sh-cats a { flex-shrink:0; font:600 13px 'Inter',sans-serif; color:var(--body); padding:7px 13px; border-radius:999px; border:1px solid var(--line); background:#fff; transition:.2s; }
+  .sh-cats a:hover { border-color:var(--ink); color:var(--ink); }
+  .sh-cats a[aria-current="page"] { background:var(--ink); border-color:var(--ink); color:#fff; }
+  .sh-hero { background:linear-gradient(120deg,#0F172A,#132238,#0F172A); color:#fff; padding:72px 5% 64px; position:relative; overflow:hidden; }
+  .sh-hero::after { content:""; position:absolute; top:-160px; right:-120px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle,rgba(0,123,255,.35),transparent 70%); pointer-events:none; }
+  .sh-hero-in { max-width:1400px; margin:0 auto; position:relative; z-index:1; }
+  .sh-eyebrow { color:var(--blue-l); font:700 13px 'Inter',sans-serif; letter-spacing:2px; margin-bottom:14px; }
+  .sh-hero h1 { font:800 clamp(32px,5vw,52px)/1.08 'Inter',sans-serif; letter-spacing:-1px; margin:0 0 16px; }
+  .sh-hero p { font:400 clamp(16px,2vw,18px)/1.6 'Inter',sans-serif; color:#CBD5E1; max-width:680px; margin:0; }
+  .sh-index { max-width:1400px; margin:0 auto; padding:32px 5% 0; display:flex; flex-wrap:wrap; gap:8px; }
+  .sh-index a { font:600 13px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:7px 12px; border-radius:8px; transition:.2s; }
+  .sh-index a:hover { color:var(--blue); border-color:var(--blue); }
+  .sh-index a b { color:var(--blue); margin-right:6px; }
+  .sh-main { max-width:1400px; margin:0 auto; padding:24px 5% 96px; }
+  .variant { padding:56px 0 0; }
+  .v-head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:20px; }
+  .v-num { font:700 12px 'Inter',sans-serif; letter-spacing:1.5px; color:var(--blue); margin-bottom:6px; }
+  .v-head h2 { font:800 24px/1.2 'Inter',sans-serif; letter-spacing:-.3px; margin:0 0 6px; }
+  .v-head p { font:400 15px/1.6 'Inter',sans-serif; color:var(--body); margin:0; max-width:720px; }
+  .v-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; padding:0; list-style:none; }
+  .v-tags li { font:600 12px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:4px 10px; border-radius:999px; }
+  .v-switch { display:inline-flex; background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:4px; gap:2px; }
+  .v-switch button { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font:600 13px 'Inter',sans-serif; color:var(--muted); padding:7px 12px; border-radius:7px; transition:.2s; }
+  .v-switch button:hover { color:var(--ink); }
+  .v-switch button[aria-pressed="true"] { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(15,23,42,.15); }
+  .v-switch button:focus-visible { outline:2px solid var(--blue); }
+  .stage { background:#EEF2F6; background-image:radial-gradient(rgba(15,23,42,.08) 1px, transparent 1px); background-size:18px 18px; border:1px solid var(--line); border-radius:16px; padding:28px; overflow:hidden; }
+  .frame { /* Jede Variante lebt in diesem Rahmen */
+    container: demo / inline-size;
+    position:relative; contain:layout paint; /* position:fixed in Varianten bleibt im Rahmen */
+    width:var(--w,100%); max-width:100%; min-height:var(--h,auto);
+    margin:0 auto; background:#fff; border-radius:10px; overflow:hidden;
+    box-shadow:0 1px 2px rgba(15,23,42,.06), 0 18px 40px -20px rgba(15,23,42,.35);
+    transition:width .45s cubic-bezier(.2,.8,.2,1);
+  }
+  .sh-cta { background:var(--soft); border-top:1px solid var(--line); padding:80px 5%; text-align:center; }
+  .sh-cta h2 { font:800 clamp(26px,4vw,36px) 'Inter',sans-serif; letter-spacing:-.5px; margin:0 0 12px; }
+  .sh-cta p { font:400 16px/1.6 'Inter',sans-serif; color:var(--muted); max-width:560px; margin:0 auto 26px; }
+  .sh-cta .sh-btn { border-radius:8px; padding:14px 28px; font-size:15px; }
+  .sh-footer { background:var(--ink); color:#94A3B8; font:400 14px 'Inter',sans-serif; padding:28px 5%; text-align:center; }
+  .sh-footer a { color:#fff; }
+  @media (max-width:640px) {
+    .sh-bar img { height:36px; } .sh-btn .long { display:none; }
+    .stage { padding:12px; border-radius:12px; }
+    .v-switch { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .frame { transition:none; } }
+
+  /* =====================================================================
+     VARIANTEN – CSS jeder Variante NUR unter ihrer ID (#v01, #v02 …).
+     Responsiv ausschließlich mit @container demo (…) – NICHT @media.
+     ===================================================================== */
+
+  /* ---------- v01 · Drei Tarife, Mitte betont ---------- */
+  #v01 { --ink:#14142B; --mut:#55556C; --acc:#5B3DF5; background:#F6F6FA; color:var(--ink); font-family:'Inter',sans-serif; padding:72px 48px 60px; }
+  #v01 .hd { text-align:center; max-width:640px; margin:0 auto 52px; }
+  #v01 .eb { display:inline-block; font:700 12px/1 'Inter',sans-serif; letter-spacing:.12em; text-transform:uppercase; color:#4A2EE0; background:#ECE8FE; padding:8px 13px; border-radius:999px; }
+  #v01 h3 { font:800 42px/1.08 'Inter',sans-serif; letter-spacing:-.035em; margin:18px 0 14px; }
+  #v01 .hd p { color:var(--mut); font-size:17px; line-height:1.6; margin:0; }
+  #v01 .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:1080px; margin:0 auto; align-items:center; }
+  #v01 .card { background:#fff; border:1px solid #E4E4EE; border-radius:20px; padding:32px 28px; display:flex; flex-direction:column; gap:22px; }
+  #v01 .card.pro { background:var(--ink); color:#fff; border-color:var(--ink); padding:46px 30px; position:relative; box-shadow:0 34px 60px -30px rgba(91,61,245,.6); }
+  #v01 .badge { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--acc); color:#fff; font:700 12px/1 'Inter',sans-serif; padding:8px 14px; border-radius:999px; white-space:nowrap; box-shadow:0 6px 14px -4px rgba(91,61,245,.7); }
+  #v01 .nm { font:700 18px/1.2 'Inter',sans-serif; margin:0; }
+  #v01 .ds { font-size:14px; line-height:1.5; color:var(--mut); margin:6px 0 0; }
+  #v01 .pro .ds, #v01 .pro .pr span { color:#BDBDD4; }
+  #v01 .pr { display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; }
+  #v01 .pr b { font:800 50px/1 'Inter',sans-serif; letter-spacing:-.045em; }
+  #v01 .pr span { font-size:14px; color:var(--mut); }
+  #v01 ul { list-style:none; margin:0; padding:0; display:grid; gap:12px; font-size:15px; line-height:1.4; }
+  #v01 li { display:flex; gap:10px; align-items:flex-start; }
+  #v01 li svg { flex:none; width:18px; height:18px; margin-top:1px; color:var(--acc); }
+  #v01 .pro li svg { color:#A99BFF; }
+  #v01 .btn { display:block; text-align:center; font:600 15px/1 'Inter',sans-serif; padding:15px 18px; border-radius:12px; border:1.5px solid #D4D4E2; color:var(--ink); text-decoration:none; transition:border-color .2s, background .2s; }
+  #v01 .btn:hover { border-color:var(--ink); }
+  #v01 .pro .btn { background:var(--acc); border-color:var(--acc); color:#fff; }
+  #v01 .pro .btn:hover { background:#4A2EE0; border-color:#4A2EE0; }
+  #v01 .note { text-align:center; color:var(--mut); font-size:14px; margin:40px 0 0; }
+  #v01 .note svg { width:16px; height:16px; vertical-align:-3px; margin-right:6px; color:var(--acc); }
+  #v01 a:focus-visible { outline:3px solid var(--acc); outline-offset:3px; }
+  @container demo (max-width:900px) { #v01 { padding:56px 28px 48px; } #v01 .grid { gap:14px; } #v01 .card { padding:28px 20px; } #v01 .card.pro { padding:40px 22px; } #v01 .pr b { font-size:42px; } }
+  @container demo (max-width:720px) { #v01 { padding:48px 20px 40px; } #v01 h3 { font-size:32px; } #v01 .grid { grid-template-columns:1fr; max-width:440px; gap:26px; } #v01 .card.pro { order:-1; } }
+
+  /* ---------- v02 · Monat oder Jahr – mit Umschalter ---------- */
+  #v02 { --ink:#1E1B16; --mut:#5E574B; --acc:#A8421F; --line:#D9D0BF; background:#F3EFE6; color:var(--ink); font-family:'Space Grotesk',sans-serif; padding:68px 56px 64px; }
+  #v02 .top { display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-bottom:48px; }
+  #v02 .kick { font:500 13px/1 'Space Grotesk',sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--acc); margin:0 0 14px; }
+  #v02 h3 { font:500 48px/1.02 'Space Grotesk',sans-serif; letter-spacing:-.035em; margin:0; max-width:560px; }
+  #v02 .tg { display:flex; align-items:center; gap:12px; font:500 15px 'Space Grotesk',sans-serif; color:var(--mut); }
+  #v02 .tg-l { cursor:pointer; transition:color .2s; }
+  #v02 .tg-l.on { color:var(--ink); }
+  #v02 .sw { all:unset; display:inline-block; cursor:pointer; position:relative; width:56px; height:32px; border-radius:999px; background:var(--ink); flex:none; }
+  #v02 .sw .knob { position:absolute; top:4px; left:4px; width:24px; height:24px; border-radius:50%; background:#F3EFE6; transition:transform .35s cubic-bezier(.3,1.4,.5,1); }
+  #v02 .sw[aria-checked="true"] .knob { transform:translateX(24px); }
+  #v02 .sw:focus-visible { outline:3px solid var(--acc); outline-offset:3px; }
+  #v02 .save { font:600 12px/1 'Space Grotesk',sans-serif; background:#E7DCC6; color:#6B3A12; padding:7px 10px; border-radius:999px; transition:background .3s, color .3s; }
+  #v02.is-y .save { background:var(--acc); color:#fff; }
+  #v02 .cols { display:grid; grid-template-columns:repeat(3,1fr); border-top:2px solid var(--ink); }
+  #v02 .col { padding:28px 28px 8px; border-right:1px solid var(--line); display:flex; flex-direction:column; }
+  #v02 .col:first-child { padding-left:0; } #v02 .col:last-child { border-right:0; padding-right:0; }
+  #v02 .nm { display:flex; justify-content:space-between; align-items:baseline; font:500 15px 'Space Grotesk',sans-serif; margin:0 0 26px; }
+  #v02 .nm span { color:var(--mut); font-size:13px; }
+  #v02 .price { display:flex; align-items:flex-start; gap:4px; font-variant-numeric:tabular-nums; }
+  #v02 .price b { font:500 76px/.9 'Space Grotesk',sans-serif; letter-spacing:-.05em; }
+  #v02 .price i { font:500 26px/1 'Space Grotesk',sans-serif; font-style:normal; margin-top:6px; }
+  #v02 .per { font-size:14px; color:var(--mut); margin:10px 0 0; min-height:20px; }
+  #v02 ul { list-style:none; padding:0; margin:28px 0; display:grid; gap:0; font-size:15px; }
+  #v02 li { padding:11px 0; border-top:1px solid var(--line); display:flex; gap:10px; }
+  #v02 li::before { content:"→"; color:var(--acc); }
+  #v02 .go { margin-top:auto; display:inline-flex; align-items:center; justify-content:space-between; font:600 15px 'Space Grotesk',sans-serif; color:var(--ink); text-decoration:none; padding:16px 0; border-top:2px solid var(--ink); transition:color .2s, padding .25s; }
+  #v02 .go:hover { color:var(--acc); padding-left:6px; }
+  #v02 .go:focus-visible { outline:3px solid var(--acc); outline-offset:2px; }
+  #v02 .col.hl .nm::after { content:"Beliebt"; font:600 11px/1 'Space Grotesk',sans-serif; letter-spacing:.08em; text-transform:uppercase; background:var(--ink); color:#F3EFE6; padding:5px 8px; border-radius:4px; }
+  @container demo (max-width:900px) { #v02 { padding:52px 28px; } #v02 h3 { font-size:38px; } #v02 .col { padding:24px 18px 6px; } #v02 .price b { font-size:58px; } }
+  @container demo (max-width:680px) { #v02 { padding:44px 20px; } #v02 h3 { font-size:32px; } #v02 .top { margin-bottom:32px; } #v02 .cols { grid-template-columns:1fr; } #v02 .col, #v02 .col:first-child, #v02 .col:last-child { padding:24px 0 4px; border-right:0; border-bottom:1px solid var(--line); } #v02 .col:last-child { border-bottom:0; } #v02 .tg { flex-wrap:wrap; } }
+  @media (prefers-reduced-motion:reduce) { #v02 .sw .knob { transition:none; } }
+
+  /* ---------- v03 · Vergleichstabelle mit Häkchen-Matrix ---------- */
+  #v03 { --ink:#0B2545; --mut:#4B5B73; --acc:#0F766E; --line:#E3E8EF; --tint:#EEF7F6; background:#fff; color:var(--ink); font-family:'Inter',sans-serif; padding:64px 48px; }
+  #v03 .hd { display:grid; grid-template-columns:1fr auto; gap:24px; align-items:end; max-width:1080px; margin:0 auto 36px; }
+  #v03 .logo { display:flex; align-items:center; gap:10px; font:700 15px 'Inter',sans-serif; color:var(--ink); margin-bottom:18px; }
+  #v03 .logo svg { width:28px; height:28px; }
+  #v03 h3 { font:700 36px/1.12 'Inter',sans-serif; letter-spacing:-.025em; margin:0 0 10px; }
+  #v03 .hd p { color:var(--mut); margin:0; font-size:16px; line-height:1.6; max-width:560px; }
+  #v03 .legend { display:flex; gap:16px; font-size:13px; color:var(--mut); }
+  #v03 .legend span { display:inline-flex; gap:6px; align-items:center; }
+  #v03 .scroll { max-width:1080px; margin:0 auto; overflow-x:auto; border:1px solid var(--line); border-radius:16px; }
+  #v03 .scroll:focus-visible { outline:3px solid var(--acc); outline-offset:3px; }
+  #v03 table { width:100%; min-width:640px; border-collapse:separate; border-spacing:0; font-size:15px; }
+  #v03 caption { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  #v03 th, #v03 td { padding:14px 18px; border-bottom:1px solid var(--line); text-align:center; }
+  #v03 tbody th { text-align:left; font-weight:500; color:var(--ink); position:sticky; left:0; background:#fff; z-index:1; }
+  #v03 thead th { vertical-align:bottom; padding:26px 18px 20px; background:#fff; }
+  #v03 thead th:first-child { text-align:left; position:sticky; left:0; z-index:2; font:600 13px 'Inter',sans-serif; color:var(--mut); }
+  #v03 .pk { font:700 17px 'Inter',sans-serif; display:block; }
+  #v03 .pp { display:block; font:800 30px/1.1 'Inter',sans-serif; letter-spacing:-.03em; margin:8px 0 2px; }
+  #v03 .pu { display:block; font:500 12px 'Inter',sans-serif; color:var(--mut); }
+  #v03 .hlc { background:var(--tint); }
+  #v03 thead .hlc { border-top:3px solid var(--acc); }
+  #v03 .tag { display:inline-block; margin-bottom:8px; font:700 11px/1 'Inter',sans-serif; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--acc); padding:5px 8px; border-radius:4px; }
+  #v03 .grp th { background:#F6F8FB; text-align:left; font:700 12px 'Inter',sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--mut); padding:12px 18px; }
+  #v03 .yes { display:inline-grid; place-items:center; width:24px; height:24px; border-radius:50%; background:var(--acc); color:#fff; }
+  #v03 .yes svg { width:14px; height:14px; }
+  #v03 .no { display:inline-block; width:14px; height:2px; background:#A3AFC0; border-radius:2px; vertical-align:middle; }
+  #v03 .vh { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  #v03 .val { font-weight:600; font-variant-numeric:tabular-nums; }
+  #v03 tfoot td, #v03 tfoot th { border-bottom:0; padding:20px 18px 24px; background:#fff; }
+  #v03 tfoot .hlc { background:var(--tint); }
+  #v03 .btn { display:inline-block; font:600 14px/1 'Inter',sans-serif; padding:12px 16px; border-radius:10px; border:1.5px solid var(--ink); color:var(--ink); text-decoration:none; white-space:nowrap; }
+  #v03 .btn.solid { background:var(--ink); color:#fff; }
+  #v03 .btn:focus-visible { outline:3px solid var(--acc); outline-offset:2px; }
+  #v03 .hint { display:none; font-size:13px; color:var(--mut); margin:12px 0 0; text-align:center; }
+  @container demo (max-width:760px) { #v03 { padding:44px 16px; } #v03 .hd { grid-template-columns:1fr; } #v03 h3 { font-size:28px; } #v03 th, #v03 td { padding:12px 12px; } #v03 tbody th { max-width:150px; font-size:14px; } #v03 .hint { display:block; } #v03 .legend { display:none; } }
+
+  /* ---------- v04 · Klassische Preisliste mit Punktlinien ---------- */
+  #v04 { --ink:#2A2420; --mut:#665A4F; --acc:#7A5A2E; --line:#CDBFA8; background:#F4EEE3; color:var(--ink); font-family:'Inter',sans-serif; padding:72px 56px; position:relative; }
+  #v04::before { content:""; position:absolute; inset:18px; border:1px solid var(--line); pointer-events:none; }
+  #v04 .hd { text-align:center; margin:0 auto 48px; max-width:560px; }
+  #v04 .mark { font:600 13px/1 'Inter',sans-serif; letter-spacing:.3em; text-transform:uppercase; color:var(--acc); }
+  #v04 h3 { font:500 60px/1 'Cormorant Garamond',serif; margin:14px 0 12px; letter-spacing:-.01em; }
+  #v04 h3 em { font-style:italic; }
+  #v04 .orn { display:flex; align-items:center; justify-content:center; gap:14px; color:var(--acc); }
+  #v04 .orn::before, #v04 .orn::after { content:""; width:64px; height:1px; background:currentColor; }
+  #v04 .orn svg { width:16px; height:16px; }
+  #v04 .cols { display:grid; grid-template-columns:1fr 1fr; gap:24px 72px; max-width:920px; margin:0 auto; }
+  #v04 h4 { font:600 italic 30px/1 'Cormorant Garamond',serif; margin:0 0 18px; padding-bottom:12px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:baseline; }
+  #v04 h4 small { font:600 11px 'Inter',sans-serif; font-style:normal; letter-spacing:.18em; text-transform:uppercase; color:var(--mut); }
+  #v04 dl { margin:0; display:grid; gap:16px; }
+  #v04 .row { display:flex; align-items:baseline; gap:10px; }
+  #v04 dt { font:600 21px/1.2 'Cormorant Garamond',serif; }
+  #v04 .ld { flex:1; min-width:20px; border-bottom:2px dotted var(--line); transform:translateY(-5px); }
+  #v04 dd.p { margin:0; font:600 21px/1.2 'Cormorant Garamond',serif; white-space:nowrap; font-variant-numeric:lining-nums; }
+  #v04 dd.p small { font:500 12px 'Inter',sans-serif; color:var(--mut); margin-right:4px; }
+  #v04 dd.d { margin:2px 0 0; font-size:13px; color:var(--mut); line-height:1.5; }
+  #v04 .full { grid-column:1 / -1; margin-top:20px; }
+  #v04 .full dl { grid-template-columns:1fr 1fr; gap:16px 72px; }
+  #v04 .foot { text-align:center; margin:44px auto 0; font-size:13px; color:var(--mut); line-height:1.7; max-width:620px; }
+  #v04 .foot a { color:var(--ink); font-weight:600; text-underline-offset:3px; }
+  #v04 .foot a:focus-visible { outline:2px solid var(--acc); outline-offset:3px; }
+  @container demo (max-width:760px) { #v04 { padding:56px 30px; } #v04::before { inset:10px; } #v04 h3 { font-size:46px; } #v04 .cols, #v04 .full dl { grid-template-columns:1fr; gap:16px; } #v04 .cols { gap:36px; } #v04 .full { margin-top:0; } #v04 dt, #v04 dd.p { font-size:19px; } }
+
+  /* ---------- v05 · Preisliste mit Kategorien-Tabs ---------- */
+  #v05 { --ink:#3B1F2B; --mut:#6E5560; --acc:#9C3D54; --bg:#F8EDEB; --line:#EBD6D3; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:68px 48px; }
+  #v05 .wrap { max-width:980px; margin:0 auto; }
+  #v05 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:32px; }
+  #v05 .brand { font:400 18px 'DM Serif Display',serif; color:var(--acc); margin:0 0 10px; }
+  #v05 h3 { font:400 50px/1.02 'DM Serif Display',serif; margin:0; letter-spacing:-.01em; }
+  #v05 h3 i { color:var(--acc); }
+  #v05 .hd p { margin:0; max-width:300px; font-size:14px; line-height:1.6; color:var(--mut); }
+  #v05 [role="tablist"] { display:flex; gap:6px; padding:6px; background:#fff; border-radius:999px; width:max-content; max-width:100%; overflow-x:auto; scrollbar-width:none; box-shadow:0 2px 10px -4px rgba(59,31,43,.15); }
+  #v05 [role="tab"] { all:unset; cursor:pointer; white-space:nowrap; font:600 14px 'Inter',sans-serif; color:var(--mut); padding:11px 18px; border-radius:999px; transition:background .25s, color .25s; }
+  #v05 [role="tab"]:hover { color:var(--ink); }
+  #v05 [role="tab"][aria-selected="true"] { background:var(--ink); color:#fff; }
+  #v05 [role="tab"]:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  #v05 [role="tabpanel"] { margin-top:28px; display:grid; grid-template-columns:1fr 1fr; gap:14px; min-height:270px; align-content:start; }
+  #v05 [role="tabpanel"][hidden] { display:none; }
+  #v05 [role="tabpanel"]:focus-visible { outline:2px solid var(--acc); outline-offset:6px; border-radius:12px; }
+  #v05 .it { background:#fff; border-radius:16px; padding:20px 22px; display:grid; grid-template-columns:1fr auto; gap:6px 16px; border:1px solid transparent; transition:border-color .25s, transform .25s; animation:v05-in .45s both; }
+  #v05 .it:hover { border-color:var(--line); transform:translateY(-2px); }
+  #v05 .it h4 { font:600 16px/1.3 'Inter',sans-serif; margin:0; }
+  #v05 .it p { grid-column:1; margin:0; font-size:13.5px; line-height:1.5; color:var(--mut); }
+  #v05 .it .pr { grid-row:1 / span 2; grid-column:2; text-align:right; font:400 28px/1 'DM Serif Display',serif; color:var(--ink); }
+  #v05 .du { display:inline-flex; align-items:center; gap:5px; margin-top:8px; font:600 12px 'Inter',sans-serif; color:var(--acc); background:#F8EDEB; padding:5px 9px; border-radius:999px; grid-column:1; justify-self:start; }
+  #v05 .du svg { width:13px; height:13px; }
+  #v05 .it:nth-child(2) { animation-delay:.05s; } #v05 .it:nth-child(3) { animation-delay:.1s; } #v05 .it:nth-child(4) { animation-delay:.15s; } #v05 .it:nth-child(5) { animation-delay:.2s; }
+  @keyframes v05-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  @container demo (max-width:720px) { #v05 { padding:48px 18px; } #v05 h3 { font-size:38px; } #v05 [role="tabpanel"] { grid-template-columns:1fr; } #v05 [role="tablist"] { width:auto; } }
+  @media (prefers-reduced-motion:reduce) { #v05 .it { animation:none; transition:none; } }
+
+  /* ---------- v06 · Pakete mit Bild ---------- */
+  #v06 { --ink:#1F1B16; --mut:#615A50; --acc:#B6542F; background:#FAF7F2; color:var(--ink); font-family:'Inter',sans-serif; padding:72px 48px 64px; }
+  #v06 .hd { display:grid; grid-template-columns:1.2fr 1fr; gap:32px; align-items:end; max-width:1120px; margin:0 auto 44px; }
+  #v06 .sig { font:italic 400 20px 'Fraunces',serif; color:var(--acc); margin:0 0 10px; }
+  #v06 h3 { font:400 54px/1 'Fraunces',serif; letter-spacing:-.025em; margin:0; }
+  #v06 .hd p { margin:0; color:var(--mut); line-height:1.65; font-size:15px; }
+  #v06 .row { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; max-width:1120px; margin:0 auto; }
+  #v06 .pk { display:flex; flex-direction:column; }
+  #v06 .ph { position:relative; aspect-ratio:4 / 5; border-radius:4px; margin-bottom:28px; }
+  #v06 .ph img { width:100%; height:100%; object-fit:cover; display:block; border-radius:4px; filter:saturate(.9); transition:filter .4s; }
+  #v06 .pk:hover .ph img { filter:saturate(1.05); }
+  #v06 .st { position:absolute; right:18px; bottom:-22px; width:96px; height:96px; border-radius:50%; background:var(--ink); color:#FAF7F2; display:grid; place-items:center; text-align:center; line-height:1; box-shadow:0 10px 24px -10px rgba(0,0,0,.5); transition:transform .5s cubic-bezier(.2,.8,.2,1); }
+  #v06 .pk:hover .st { transform:rotate(-8deg) scale(1.04); }
+  #v06 .st small { display:block; font:500 10px 'Inter',sans-serif; letter-spacing:.12em; text-transform:uppercase; opacity:.8; margin-bottom:4px; }
+  #v06 .st b { font:500 26px 'Fraunces',serif; letter-spacing:-.02em; }
+  #v06 .pk.hl .st { background:var(--acc); }
+  #v06 .lbl { font:600 11px 'Inter',sans-serif; letter-spacing:.16em; text-transform:uppercase; color:var(--mut); margin:0 0 6px; }
+  #v06 h4 { font:400 28px/1.1 'Fraunces',serif; margin:0 0 14px; letter-spacing:-.01em; }
+  #v06 ul { list-style:none; padding:0; margin:0 0 20px; font-size:14.5px; line-height:1.5; color:var(--mut); }
+  #v06 li { padding:8px 0; border-bottom:1px solid #E6DED2; }
+  #v06 .lk { margin-top:auto; align-self:flex-start; font:600 14px 'Inter',sans-serif; color:var(--ink); text-decoration:none; border-bottom:1.5px solid var(--acc); padding-bottom:3px; }
+  #v06 .lk:hover { color:#8F3E1F; }
+  #v06 .lk:focus-visible, #v06 .row:focus-visible { outline:2px solid var(--acc); outline-offset:4px; }
+  @container demo (max-width:900px) { #v06 { padding:56px 28px; } #v06 h3 { font-size:42px; } #v06 .row { gap:18px; } #v06 .st { width:80px; height:80px; right:12px; } #v06 .st b { font-size:21px; } }
+  @container demo (max-width:700px) {
+    #v06 { padding:48px 0 40px; }
+    #v06 .hd { grid-template-columns:1fr; gap:14px; padding:0 20px; margin-bottom:32px; }
+    #v06 h3 { font-size:38px; }
+    #v06 .row { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:16px; padding:0 20px 8px; scroll-padding:0 20px; scrollbar-width:none; }
+    #v06 .pk { flex:0 0 78%; scroll-snap-align:start; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v06 .st, #v06 .ph img { transition:none; } }
+
+  /* ---------- v07 · Mitgliedsbeiträge als Tickets ---------- */
+  #v07 { --g:#0E4D2C; --g2:#0A3B22; --lime:#D4F36B; --ink:#10261A; --mut:#4F6357; background:var(--g); color:#fff; font-family:'Inter',sans-serif; padding:64px 48px; position:relative; overflow:hidden; }
+  #v07 .field { position:absolute; inset:0; width:100%; height:100%; opacity:.12; pointer-events:none; }
+  #v07 .in { position:relative; max-width:1040px; margin:0 auto; display:grid; grid-template-columns:320px 1fr; gap:48px; align-items:start; }
+  #v07 .crest { display:flex; align-items:center; gap:12px; margin-bottom:26px; }
+  #v07 .crest svg { width:46px; height:52px; flex:none; }
+  #v07 .crest span { font:600 13px/1.3 'Inter',sans-serif; letter-spacing:.04em; }
+  #v07 h3 { font:700 64px/.9 'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:-.01em; margin:0 0 18px; }
+  #v07 h3 em { font-style:normal; color:var(--lime); }
+  #v07 .side p { color:#CFE3D6; font-size:15px; line-height:1.6; margin:0 0 22px; }
+  #v07 .facts { list-style:none; padding:0; margin:0 0 28px; display:grid; gap:10px; font-size:14px; color:#E4F0E8; }
+  #v07 .facts li { display:flex; gap:10px; align-items:flex-start; }
+  #v07 .facts svg { width:18px; height:18px; flex:none; color:var(--lime); margin-top:1px; }
+  #v07 .btn { display:inline-flex; align-items:center; gap:10px; background:var(--lime); color:var(--ink); font:700 15px 'Inter',sans-serif; padding:14px 20px; border-radius:6px; text-decoration:none; transition:transform .2s; }
+  #v07 .btn:hover { transform:translateY(-2px); }
+  #v07 .btn svg { width:18px; height:18px; }
+  #v07 a:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+  #v07 .tix { display:grid; gap:14px; }
+  #v07 .tk { display:grid; grid-template-columns:1fr 190px; background:#fff; color:var(--ink); border-radius:10px; transition:transform .25s; }
+  #v07 .tk:hover { transform:translateX(4px); }
+  #v07 .main { padding:20px 24px; display:flex; align-items:center; gap:18px; }
+  #v07 .ic { width:44px; height:44px; border-radius:50%; background:#E9F4EC; color:var(--g); display:grid; place-items:center; flex:none; }
+  #v07 .ic svg { width:22px; height:22px; }
+  #v07 .tk h4 { font:700 26px/1 'Barlow Condensed',sans-serif; text-transform:uppercase; margin:0 0 4px; letter-spacing:.01em; }
+  #v07 .tk p { margin:0; font-size:13.5px; color:var(--mut); }
+  #v07 .stub { position:relative; border-left:2px dashed #C7D8CD; padding:16px 20px; display:flex; flex-direction:column; justify-content:center; }
+  #v07 .stub::before, #v07 .stub::after { content:""; position:absolute; left:-11px; width:20px; height:20px; border-radius:50%; background:var(--g); }
+  #v07 .stub::before { top:-10px; } #v07 .stub::after { bottom:-10px; }
+  #v07 .stub b { font:700 34px/1 'Barlow Condensed',sans-serif; font-variant-numeric:tabular-nums; }
+  #v07 .stub b span { font-size:18px; color:var(--mut); font-weight:600; }
+  #v07 .stub small { font-size:12.5px; color:var(--mut); margin-top:4px; }
+  #v07 .tk.fam { background:var(--lime); }
+  #v07 .tk.fam .ic { background:#fff; }
+  #v07 .tk.fam .stub { border-left-color:#97B33A; }
+  #v07 .tk.fam p, #v07 .tk.fam .stub small, #v07 .tk.fam .stub b span { color:#2E4A1B; }
+  @container demo (max-width:900px) { #v07 { padding:52px 28px; } #v07 .in { grid-template-columns:1fr; gap:36px; } #v07 h3 { font-size:54px; } }
+  @container demo (max-width:560px) {
+    #v07 { padding:44px 18px; }
+    #v07 .tk { grid-template-columns:1fr; }
+    #v07 .main { padding:18px 18px 16px; }
+    #v07 .stub { border-left:0; border-top:2px dashed #C7D8CD; flex-direction:row; align-items:baseline; justify-content:space-between; padding:14px 18px; }
+    #v07 .tk.fam .stub { border-top-color:#97B33A; }
+    #v07 .stub::before, #v07 .stub::after { top:-11px; bottom:auto; }
+    #v07 .stub::before { left:-10px; } #v07 .stub::after { left:auto; right:-10px; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v07 .tk, #v07 .btn { transition:none; } }
+
+  /* ---------- v08 · Preisrechner mit Schieberegler ---------- */
+  #v08 { --ink:#0F2A2E; --mut:#4A6266; --acc:#0B7466; --soft:#EAF4F2; --line:#D5E3E1; background:#fff; color:var(--ink); font-family:'Inter',sans-serif; padding:64px 48px; }
+  #v08 .in { max-width:1080px; margin:0 auto; display:grid; grid-template-columns:1.25fr 1fr; gap:40px; align-items:start; }
+  #v08 .brand { display:flex; align-items:center; gap:10px; font:700 15px 'Inter',sans-serif; margin-bottom:18px; }
+  #v08 .brand svg { width:30px; height:30px; }
+  #v08 h3 { font:800 36px/1.1 'Inter',sans-serif; letter-spacing:-.03em; margin:0 0 10px; }
+  #v08 .lead { color:var(--mut); margin:0 0 30px; line-height:1.6; }
+  #v08 fieldset { border:0; padding:0; margin:0 0 26px; min-width:0; }
+  #v08 legend, #v08 .lab { font:700 13px 'Inter',sans-serif; letter-spacing:.06em; text-transform:uppercase; color:var(--mut); margin-bottom:12px; padding:0; display:flex; justify-content:space-between; width:100%; }
+  #v08 output { font:800 22px 'Inter',sans-serif; color:var(--ink); letter-spacing:-.02em; text-transform:none; font-variant-numeric:tabular-nums; }
+  #v08 input[type="range"] { -webkit-appearance:none; appearance:none; width:100%; height:8px; border-radius:999px; background:linear-gradient(90deg,var(--acc) var(--p,30%),var(--line) var(--p,30%)); outline:none; margin:6px 0 0; }
+  #v08 input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:26px; height:26px; border-radius:50%; background:#fff; border:3px solid var(--acc); box-shadow:0 2px 8px rgba(15,42,46,.25); cursor:grab; }
+  #v08 input[type="range"]::-moz-range-thumb { width:22px; height:22px; border-radius:50%; background:#fff; border:3px solid var(--acc); cursor:grab; }
+  #v08 input[type="range"]:focus-visible { box-shadow:0 0 0 4px rgba(11,116,102,.3); }
+  #v08 .scale { display:flex; justify-content:space-between; font-size:12px; color:var(--mut); margin-top:8px; }
+  #v08 .chips { display:flex; flex-wrap:wrap; gap:8px; }
+  #v08 .chips label { position:relative; cursor:pointer; }
+  #v08 .chips input { position:absolute; opacity:0; inset:0; margin:0; cursor:pointer; }
+  #v08 .chips span { display:inline-flex; align-items:center; gap:8px; padding:10px 15px; border:1.5px solid var(--line); border-radius:10px; font:600 14px 'Inter',sans-serif; transition:.2s; }
+  #v08 .chips input:checked + span { border-color:var(--acc); background:var(--soft); color:#08594E; }
+  #v08 .chips input:focus-visible + span { outline:3px solid rgba(11,116,102,.45); outline-offset:2px; }
+  #v08 .chips em { font-style:normal; font-weight:500; color:var(--mut); font-size:12.5px; }
+  #v08 .chips.x span::before { content:""; width:16px; height:16px; border-radius:4px; border:1.5px solid #9AB3B0; background:#fff center/12px no-repeat; transition:.2s; }
+  #v08 .chips.x input:checked + span::before { background-color:var(--acc); border-color:var(--acc); background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.5l2.5 2.5 4.5-5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+  #v08 .res { background:var(--ink); color:#fff; border-radius:20px; padding:32px 30px; position:sticky; top:20px; }
+  #v08 .res .k { font:600 12px 'Inter',sans-serif; letter-spacing:.1em; text-transform:uppercase; color:#9FC4BE; margin:0; }
+  #v08 .big { font:800 60px/1 'Inter',sans-serif; letter-spacing:-.045em; margin:12px 0 4px; font-variant-numeric:tabular-nums; }
+  #v08 .big small { font-size:18px; letter-spacing:0; font-weight:600; color:#BFD9D5; margin-left:6px; }
+  #v08 .mo { color:#BFD9D5; font-size:15px; margin:0 0 22px; min-height:22px; }
+  #v08 .mo b { color:#fff; }
+  #v08 .bd { list-style:none; padding:16px 0; margin:0 0 22px; border-top:1px solid rgba(255,255,255,.14); border-bottom:1px solid rgba(255,255,255,.14); display:grid; gap:9px; font-size:14px; color:#D6E7E4; }
+  #v08 .bd li { display:flex; justify-content:space-between; gap:12px; font-variant-numeric:tabular-nums; }
+  #v08 .send { all:unset; box-sizing:border-box; cursor:pointer; display:block; width:100%; text-align:center; background:#5EE0C6; color:var(--ink); font:700 15px 'Inter',sans-serif; padding:15px; border-radius:12px; transition:background .2s; }
+  #v08 .send:hover { background:#86EBD6; }
+  #v08 .send:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+  #v08 .fine { font-size:12px; color:#9FC4BE; margin:14px 0 0; line-height:1.5; }
+  #v08 .ok { font-size:14px; color:#5EE0C6; margin:12px 0 0; }
+  @container demo (max-width:820px) { #v08 { padding:48px 24px; } #v08 .in { grid-template-columns:1fr; gap:28px; } #v08 .res { position:static; } }
+  @container demo (max-width:480px) { #v08 { padding:40px 16px; } #v08 h3 { font-size:28px; } #v08 .big { font-size:48px; } #v08 .res { padding:26px 20px; } }
+
+  /* ---------- v09 · Dunkle Premium-Tarife mit Glow ---------- */
+  #v09 { --bg:#07070C; --tx:#EDEBFF; --mut:#A6A2C2; --a1:#8B5CF6; --a2:#22D3EE; background:var(--bg); color:var(--tx); font-family:'Inter',sans-serif; padding:80px 48px 72px; position:relative; overflow:hidden; isolation:isolate; }
+  #v09::before { content:""; position:absolute; z-index:-1; width:720px; height:420px; left:50%; top:-220px; transform:translateX(-50%); background:radial-gradient(closest-side,rgba(139,92,246,.35),transparent); filter:blur(10px); }
+  #v09 .hd { text-align:center; margin:0 auto 56px; max-width:640px; }
+  #v09 .lg { display:inline-flex; align-items:center; gap:10px; font:700 13px 'Syne',sans-serif; letter-spacing:.24em; text-transform:uppercase; color:var(--mut); }
+  #v09 .lg svg { width:22px; height:22px; }
+  #v09 h3 { font:700 54px/1 'Syne',sans-serif; letter-spacing:-.03em; margin:20px 0 16px; background:linear-gradient(180deg,#fff 30%,#A9A3D9); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  #v09 .hd p { color:var(--mut); margin:0; font-size:16px; line-height:1.6; }
+  #v09 .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:1100px; margin:0 auto; }
+  #v09 .c { --mx:50%; --my:0%; position:relative; border-radius:22px; padding:1px; background:linear-gradient(160deg,rgba(255,255,255,.18),rgba(255,255,255,.04) 40%,rgba(255,255,255,.08)); transition:transform .4s cubic-bezier(.2,.8,.2,1); }
+  #v09 .c.top { background:linear-gradient(160deg,var(--a1),rgba(139,92,246,.15) 45%,var(--a2)); box-shadow:0 30px 80px -30px rgba(139,92,246,.6); }
+  #v09 .c:hover { transform:translateY(-4px); }
+  #v09 .ci { position:relative; height:100%; border-radius:21px; background:#0D0D16; padding:34px 30px 30px; overflow:hidden; display:flex; flex-direction:column; }
+  #v09 .ci::before { content:""; position:absolute; inset:0; background:radial-gradient(380px circle at var(--mx) var(--my),rgba(139,92,246,.22),transparent 60%); opacity:0; transition:opacity .35s; pointer-events:none; }
+  #v09 .c:hover .ci::before, #v09 .c.top .ci::before { opacity:1; }
+  #v09 .nm { display:flex; justify-content:space-between; align-items:center; margin:0 0 6px; font:700 22px 'Syne',sans-serif; }
+  #v09 .pill { font:600 11px/1 'Inter',sans-serif; letter-spacing:.08em; text-transform:uppercase; padding:6px 9px; border-radius:999px; color:#0D0D16; background:linear-gradient(90deg,#C4B5FD,#67E8F9); }
+  #v09 .ds { color:var(--mut); font-size:14px; margin:0 0 26px; }
+  #v09 .pr { display:flex; align-items:baseline; gap:8px; margin-bottom:26px; padding-bottom:26px; border-bottom:1px solid rgba(255,255,255,.08); }
+  #v09 .pr b { font:700 52px/1 'Syne',sans-serif; letter-spacing:-.04em; white-space:nowrap; }
+  #v09 .pr span { color:var(--mut); font-size:14px; }
+  #v09 ul { list-style:none; padding:0; margin:0 0 30px; display:grid; gap:13px; font-size:15px; position:relative; }
+  #v09 li { display:flex; gap:12px; align-items:flex-start; color:#D7D4EE; }
+  #v09 li svg { width:18px; height:18px; flex:none; color:#C4B5FD; margin-top:1px; }
+  #v09 .btn { position:relative; margin-top:auto; display:block; text-align:center; padding:15px; border-radius:12px; font:600 15px 'Inter',sans-serif; text-decoration:none; color:var(--tx); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); transition:background .25s; }
+  #v09 .btn:hover { background:rgba(255,255,255,.12); }
+  #v09 .top .btn { background:linear-gradient(90deg,#7C3AED,#0891B2); border-color:transparent; color:#fff; }
+  #v09 .top .btn:hover { filter:brightness(1.12); }
+  #v09 .btn:focus-visible { outline:2px solid #67E8F9; outline-offset:3px; }
+  #v09 .ft { text-align:center; color:var(--mut); font-size:13px; margin:40px 0 0; }
+  @container demo (max-width:900px) { #v09 { padding:60px 24px; } #v09 h3 { font-size:42px; } #v09 .grid { gap:12px; } #v09 .ci { padding:28px 20px 22px; } #v09 .pr { flex-wrap:wrap; row-gap:4px; } #v09 .pr b { font-size:34px; white-space:nowrap; } }
+  @container demo (max-width:700px) { #v09 { padding:52px 18px; } #v09 h3 { font-size:36px; } #v09 .grid { grid-template-columns:1fr; max-width:420px; } #v09 .c.top { order:-1; } }
+  @media (prefers-reduced-motion:reduce) { #v09 .c, #v09 .ci::before { transition:none; } #v09 .c:hover { transform:none; } }
+
+  /* ---------- v10 · Minimalistische Einzelpreis-Karte ---------- */
+  #v10 { --ink:#111; --mut:#5C5C5C; --line:#E2E2DF; --dot:#E4572E; background:#F2F2EF; color:var(--ink); font-family:'Space Grotesk',sans-serif; padding:72px 40px; }
+  #v10 .card { max-width:880px; margin:0 auto; background:#fff; display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); }
+  #v10 .l { padding:44px 44px 40px; border-right:1px solid var(--line); display:flex; flex-direction:column; }
+  #v10 .r { padding:44px 44px 40px; display:flex; flex-direction:column; }
+  #v10 .mk { display:flex; align-items:center; gap:10px; font:500 13px 'Space Grotesk',sans-serif; letter-spacing:.04em; margin:0 0 54px; }
+  #v10 .mk i { width:10px; height:10px; background:var(--dot); border-radius:50%; }
+  #v10 .lb { font:500 13px 'Space Grotesk',sans-serif; color:var(--mut); letter-spacing:.08em; text-transform:uppercase; margin:0 0 10px; }
+  #v10 h3 { font:500 30px/1.15 'Space Grotesk',sans-serif; letter-spacing:-.02em; margin:0 0 auto; padding-bottom:36px; }
+  #v10 .pr { display:flex; align-items:flex-start; font-variant-numeric:tabular-nums; }
+  #v10 .pr b { font:300 128px/.82 'Space Grotesk',sans-serif; letter-spacing:-.06em; }
+  #v10 .pr span { font:400 30px/1 'Space Grotesk',sans-serif; margin-left:8px; }
+  #v10 .pn { color:var(--mut); font-size:14px; margin:18px 0 0; }
+  #v10 ol { list-style:none; counter-reset:i; padding:0; margin:0 0 36px; }
+  #v10 li { counter-increment:i; display:grid; grid-template-columns:36px 1fr; padding:14px 0; border-bottom:1px solid var(--line); font-size:15.5px; line-height:1.45; }
+  #v10 li:first-child { border-top:1px solid var(--ink); }
+  #v10 li::before { content:counter(i,decimal-leading-zero); font-size:12px; color:var(--mut); padding-top:3px; }
+  #v10 .cta { margin-top:auto; display:flex; justify-content:space-between; align-items:center; background:var(--ink); color:#fff; text-decoration:none; padding:18px 22px; font:500 15px 'Space Grotesk',sans-serif; transition:background .25s; }
+  #v10 .cta svg { width:20px; height:20px; transition:transform .3s; }
+  #v10 .cta:hover { background:#2A2A2A; } #v10 .cta:hover svg { transform:translateX(4px); }
+  #v10 .cta:focus-visible { outline:3px solid var(--dot); outline-offset:3px; }
+  #v10 .sm { font-size:13px; color:var(--mut); margin:14px 0 0; }
+  @container demo (max-width:760px) { #v10 { padding:40px 16px; } #v10 .card { grid-template-columns:1fr; } #v10 .l { border-right:0; border-bottom:1px solid var(--line); } #v10 .l, #v10 .r { padding:32px 24px; } #v10 .mk { margin-bottom:32px; } #v10 .pr b { font-size:96px; } #v10 h3 { font-size:26px; } }
+  @media (prefers-reduced-motion:reduce) { #v10 .cta svg { transition:none; } }
+
+</style>
+</head>
+<body class="shell">
+
+<header class="sh-header">
+  <div class="sh-bar">
+    <a href="../../Meuster%20Landing%20Page.dc.html" aria-label="meuser.biz Startseite"><img src="../../assets/meuser-logo.png" alt="meuser.biz – Modern Webservices"></a>
+    <div class="sh-actions">
+      <a class="sh-btn ghost" href="../../beispiele.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>Alle<span class="long"> Beispiele</span></span></a>
+      <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Anfrage</a>
+    </div>
+  </div>
+  <nav class="sh-cats" aria-label="Kategorien">
+    <a href="../../beispiele.html#websites">Komplette Websites</a>
+    <a href="navigation.html">Navigation &amp; Menüs</a>
+    <a href="header.html">Header &amp; Hero</a>
+    <a href="footer.html">Footer</a>
+    <a href="leistungen.html">Leistungen &amp; Features</a>
+    <a href="preise.html">Preistabellen</a>
+    <a href="stimmen.html">Kundenstimmen</a>
+    <a href="team.html">Team</a>
+    <a href="galerie.html">Galerien</a>
+    <a href="kontakt.html">Kontakt &amp; Formulare</a>
+    <a href="faq.html">FAQ</a>
+    <a href="cta.html">Call-to-Action</a>
+    <a href="kennzahlen.html">Kennzahlen &amp; Abläufe</a>
+  </nav>
+</header>
+
+<section class="sh-hero">
+  <div class="sh-hero-in">
+    <div class="sh-eyebrow">BAUSTEINE · 10 VARIANTEN</div>
+    <h1>Preistabellen</h1>
+    <p>Vom Software-Tarif bis zur Salon-Preisliste: So können Sie Preise auf Ihrer Website klar, vertrauenswürdig und passend zu Ihrer Branche zeigen. Einige Varianten rechnen live mit.</p>
+  </div>
+</section>
+
+<nav class="sh-index" aria-label="Varianten auf dieser Seite">
+  <!-- je Variante: <a href="#v01-wrap"><b>01</b>Name</a> -->
+  <a href="#v01-wrap"><b>01</b>Drei Tarife, Mitte betont</a>
+  <a href="#v02-wrap"><b>02</b>Monat oder Jahr – mit Umschalter</a>
+  <a href="#v03-wrap"><b>03</b>Vergleichstabelle mit Häkchen-Matrix</a>
+  <a href="#v04-wrap"><b>04</b>Klassische Preisliste mit Punktlinien</a>
+  <a href="#v05-wrap"><b>05</b>Preisliste mit Kategorien-Tabs</a>
+  <a href="#v06-wrap"><b>06</b>Pakete mit Bild</a>
+  <a href="#v07-wrap"><b>07</b>Mitgliedsbeiträge als Tickets</a>
+  <a href="#v08-wrap"><b>08</b>Preisrechner mit Schieberegler</a>
+  <a href="#v09-wrap"><b>09</b>Dunkle Premium-Tarife mit Glow</a>
+  <a href="#v10-wrap"><b>10</b>Minimalistische Einzelpreis-Karte</a>
+</nav>
+
+<main class="sh-main">
+
+  <!-- ===== VARIANTE (Muster, für jede Variante wiederholen) =====
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Name der Variante</h2>
+        <p>Ein bis zwei Sätze: Wie wirkt sie, wofür eignet sie sich?</p>
+        <ul class="v-tags"><li>Restaurant</li><li>Hotel</li><li>mit Dropdown</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame" style="--h:420px">
+        <div id="v01"> … Baustein … </div>
+      </div>
+    </div>
+  </section>
+  ============================================================== -->
+
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Drei Tarife, Mitte betont</h2>
+        <p>Der Klassiker für Software und Abo-Modelle: drei klare Pakete, der empfohlene Tarif dunkel abgesetzt und leicht erhöht. Lenkt den Blick, ohne aufdringlich zu sein.</p>
+        <ul class="v-tags"><li>Software &amp; SaaS</li><li>Agenturen</li><li>Abo-Modelle</li><li>Empfehlung hervorgehoben</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v01">
+  <div class="hd">
+    <span class="eb">Preise</span>
+    <h3>Ein Tarif für jede Praxisgröße</h3>
+    <p>Online-Terminbuchung, Erinnerungen und Kalender in einem. Wechseln Sie jederzeit den Tarif – ohne Mindestlaufzeit.</p>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div><h4 class="nm">Start</h4><p class="ds">Für Einzelpraxen und kleine Studios</p></div>
+      <div class="pr"><b>19 €</b><span>/ Monat zzgl. MwSt.</span></div>
+      <ul><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>1 Kalender, 1 Standort</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Online-Buchung über Ihre Website</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>E-Mail-Erinnerungen</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Support per E-Mail</li></ul>
+      <a class="btn" href="#" onclick="return false">30 Tage testen</a>
+    </article>
+    <article class="card pro">
+      <span class="badge">Am häufigsten gewählt</span>
+      <div><h4 class="nm">Praxis</h4><p class="ds">Für Teams bis 8 Personen</p></div>
+      <div class="pr"><b>49 €</b><span>/ Monat zzgl. MwSt.</span></div>
+      <ul><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Bis zu 8 Kalender</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>SMS- &amp; E-Mail-Erinnerungen</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Online-Anzahlung bei Buchung</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Warteliste &amp; Ausfallmanagement</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Telefon-Support werktags</li></ul>
+      <a class="btn" href="#" onclick="return false">30 Tage testen</a>
+    </article>
+    <article class="card">
+      <div><h4 class="nm">Zentrum</h4><p class="ds">Für mehrere Standorte</p></div>
+      <div class="pr"><b>119 €</b><span>/ Monat zzgl. MwSt.</span></div>
+      <ul><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Unbegrenzte Kalender</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Bis zu 5 Standorte</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Rollen &amp; Rechte</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Persönliche Einrichtung</li></ul>
+      <a class="btn" href="#" onclick="return false">Beratung vereinbaren</a>
+    </article>
+  </div>
+  <p class="note"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5l6 2.5v4.5c0 4-2.6 6.8-6 8-3.4-1.2-6-4-6-8V5z"/><path d="M7.5 10l2 2 3.5-4"/></svg>Server in Deutschland · DSGVO-konform · monatlich kündbar</p>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v02-wrap" aria-labelledby="v02-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 02</div>
+        <h2 id="v02-title">Monat oder Jahr – mit Umschalter</h2>
+        <p>Ein Schalter wechselt zwischen monatlicher und jährlicher Zahlung, die Preise zählen sichtbar mit. Warmes Spec-Sheet-Layout ohne Karten, nur Linien und große Zahlen.</p>
+        <ul class="v-tags"><li>Coworking</li><li>Studios &amp; Kurse</li><li>Mitgliedschaften</li><li>JavaScript-Umschalter</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v02">
+  <div class="top">
+    <div><p class="kick">Werkbank Coworking · Krefeld</p><h3>Arbeitsplätze, die mit Ihnen wachsen.</h3></div>
+    <div class="tg">
+      <span class="tg-l on" data-v="m" aria-hidden="true">Monatlich</span>
+      <button class="sw" type="button" role="switch" aria-checked="false" aria-labelledby="v02-yl"><span class="knob"></span></button>
+      <span class="tg-l" id="v02-yl" data-v="y">Jährlich zahlen</span>
+      <span class="save">2 Monate gratis</span>
+    </div>
+  </div>
+  <div class="cols">
+    <div class="col">
+      <h4 class="nm">Flex-Desk <span>10 Tage / Monat</span></h4>
+      <div class="price"><b data-m="149" data-y="124">149</b><i>€</i></div>
+      <p class="per" data-bill="1490">pro Monat · monatlich kündbar</p>
+      <ul><li>Freie Platzwahl im Open Space</li><li>Kaffee, Tee &amp; Wasser inklusive</li><li>2 Std. Besprechungsraum</li></ul>
+      <a class="go" href="#" onclick="return false">Probetag buchen <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="col hl">
+      <h4 class="nm">Fix-Desk <span>24/7 Zugang</span></h4>
+      <div class="price"><b data-m="289" data-y="241">289</b><i>€</i></div>
+      <p class="per" data-bill="2890">pro Monat · monatlich kündbar</p>
+      <ul><li>Eigener Schreibtisch mit Rollcontainer</li><li>Geschäftsadresse &amp; Postannahme</li><li>8 Std. Besprechungsraum</li></ul>
+      <a class="go" href="#" onclick="return false">Platz reservieren <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="col">
+      <h4 class="nm">Team-Büro <span>bis 4 Plätze</span></h4>
+      <div class="price"><b data-m="1190" data-y="992">1.190</b><i>€</i></div>
+      <p class="per" data-bill="11900">pro Monat · monatlich kündbar</p>
+      <ul><li>Abschließbares Büro mit Tageslicht</li><li>Eigenes Türschild &amp; Briefkasten</li><li>20 Std. Besprechungsraum</li></ul>
+      <a class="go" href="#" onclick="return false">Besichtigung anfragen <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v03-wrap" aria-labelledby="v03-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 03</div>
+        <h2 id="v03-title">Vergleichstabelle mit Häkchen-Matrix</h2>
+        <p>Für erklärungsbedürftige Leistungen: alle Pakete Zeile für Zeile vergleichbar, gruppiert nach Themen. Auf schmalen Bildschirmen wischbar mit fixierter erster Spalte.</p>
+        <ul class="v-tags"><li>IT-Dienstleister</li><li>Versicherungen</li><li>Hosting</li><li>Detailvergleich</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v03">
+  <div class="hd">
+    <div>
+      <div class="logo"><svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#0B2545"/><path d="M7 18c3-1 4-6 7-6s4 5 7 6" fill="none" stroke="#5FD3C6" stroke-width="2" stroke-linecap="round"/><path d="M7 21h14" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>Netzhafen IT</div>
+      <h3>IT-Betreuung im Vergleich</h3>
+      <p>Festpreis pro Arbeitsplatz für Kanzleien und Praxen am Niederrhein. Alle Pakete ohne Einrichtungsgebühr.</p>
+    </div>
+    <div class="legend"><span><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span>enthalten</span><span><span class="no"></span>nicht enthalten</span></div>
+  </div>
+  <div class="scroll" tabindex="0" role="region" aria-label="Tarifvergleich, horizontal scrollbar">
+    <table>
+      <caption>Vergleich der Pakete Basis, Komfort und Rundum</caption>
+      <thead><tr>
+        <th scope="col">Leistung</th>
+        <th scope="col"><span class="pk">Basis</span><span class="pp">29 €</span><span class="pu">pro Arbeitsplatz / Monat</span></th>
+        <th scope="col" class="hlc"><span class="tag">Empfohlen</span><span class="pk">Komfort</span><span class="pp">49 €</span><span class="pu">pro Arbeitsplatz / Monat</span></th>
+        <th scope="col"><span class="pk">Rundum</span><span class="pp">79 €</span><span class="pu">pro Arbeitsplatz / Monat</span></th>
+      </tr></thead>
+      <tbody>
+        <tr class="grp"><th colspan="4" scope="colgroup">Support</th></tr>
+        <tr><th scope="row">Fernwartung</th><td><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td><td class="hlc"><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td><td><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td></tr>
+        <tr><th scope="row">Reaktionszeit</th><td class="val">8 Std.</td><td class="hlc val">4 Std.</td><td class="val">1 Std.</td></tr>
+        <tr><th scope="row">Vor-Ort-Einsätze</th><td><span class="no"></span><span class="vh">nicht enthalten</span></td><td class="hlc val">4 / Jahr</td><td class="val">unbegrenzt</td></tr>
+        <tr><th scope="row">Notfall-Hotline 24/7</th><td><span class="no"></span><span class="vh">nicht enthalten</span></td><td class="hlc"><span class="no"></span><span class="vh">nicht enthalten</span></td><td><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Sicherheit</th></tr>
+        <tr><th scope="row">Virenschutz &amp; Updates</th><td><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td><td class="hlc"><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td><td><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td></tr>
+        <tr><th scope="row">Tägliches Backup</th><td><span class="no"></span><span class="vh">nicht enthalten</span></td><td class="hlc"><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td><td><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td></tr>
+        <tr><th scope="row">Wiederherstellungstest</th><td><span class="no"></span><span class="vh">nicht enthalten</span></td><td class="hlc val">jährlich</td><td class="val">quartalsweise</td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Verwaltung</th></tr>
+        <tr><th scope="row">Lizenzverwaltung</th><td><span class="no"></span><span class="vh">nicht enthalten</span></td><td class="hlc"><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td><td><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td></tr>
+        <tr><th scope="row">Feste Ansprechperson</th><td><span class="no"></span><span class="vh">nicht enthalten</span></td><td class="hlc"><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td><td><span class="yes"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></span><span class="vh">enthalten</span></td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row"></th><td><a class="btn" href="#" onclick="return false">Anfragen</a></td><td class="hlc"><a class="btn solid" href="#" onclick="return false">Anfragen</a></td><td><a class="btn" href="#" onclick="return false">Anfragen</a></td></tr></tfoot>
+    </table>
+  </div>
+  <p class="hint">← Tabelle seitlich wischen →</p>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v04-wrap" aria-labelledby="v04-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 04</div>
+        <h2 id="v04-title">Klassische Preisliste mit Punktlinien</h2>
+        <p>Wie eine gut gesetzte Karte im Salon: Serifenschrift, feine Punktlinien zwischen Leistung und Preis, ruhige Creme-Töne. Ideal für viele Einzelpositionen.</p>
+        <ul class="v-tags"><li>Friseur</li><li>Restaurant &amp; Café</li><li>Barbier</li><li>Druckbar als Karte</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v04">
+  <div class="hd">
+    <div class="mark">Salon Feingeist · Kempen</div>
+    <h3>Preis<em>liste</em></h3>
+    <div class="orn" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 1.5l1.8 4.7 4.7 1.8-4.7 1.8L8 14.5l-1.8-4.7L1.5 8l4.7-1.8z"/></svg></div>
+  </div>
+  <div class="cols">
+    <section>
+      <h4>Damen <small>Schnitt &amp; Styling</small></h4>
+      <dl>
+        <div><div class="row"><dt>Waschen, Schneiden, Föhnen</dt><span class="ld"></span><dd class="p"><small>ab</small>48 €</dd></div><dd class="d">inklusive Beratung und Kopfmassage</dd></div>
+        <div><div class="row"><dt>Spitzen schneiden</dt><span class="ld"></span><dd class="p">34 €</dd></div></div>
+        <div><div class="row"><dt>Föhnfrisur</dt><span class="ld"></span><dd class="p"><small>ab</small>29 €</dd></div></div>
+        <div><div class="row"><dt>Hochsteckfrisur</dt><span class="ld"></span><dd class="p"><small>ab</small>65 €</dd></div><dd class="d">Brautfrisur mit Probetermin auf Anfrage</dd></div>
+      </dl>
+    </section>
+    <section>
+      <h4>Herren <small>Schnitt &amp; Bart</small></h4>
+      <dl>
+        <div><div class="row"><dt>Waschen, Schneiden, Styling</dt><span class="ld"></span><dd class="p">32 €</dd></div></div>
+        <div><div class="row"><dt>Maschinenschnitt</dt><span class="ld"></span><dd class="p">19 €</dd></div></div>
+        <div><div class="row"><dt>Bart trimmen &amp; Konturen</dt><span class="ld"></span><dd class="p">16 €</dd></div><dd class="d">mit heißem Tuch und Pflegeöl</dd></div>
+        <div><div class="row"><dt>Kinder bis 12 Jahre</dt><span class="ld"></span><dd class="p">18 €</dd></div></div>
+      </dl>
+    </section>
+    <section class="full">
+      <h4>Farbe &amp; Pflege <small>zzgl. Schnitt</small></h4>
+      <dl>
+        <div><div class="row"><dt>Ansatzfarbe</dt><span class="ld"></span><dd class="p"><small>ab</small>42 €</dd></div></div>
+        <div><div class="row"><dt>Balayage</dt><span class="ld"></span><dd class="p"><small>ab</small>119 €</dd></div></div>
+        <div><div class="row"><dt>Glossing</dt><span class="ld"></span><dd class="p">28 €</dd></div></div>
+        <div><div class="row"><dt>Intensiv-Pflegekur</dt><span class="ld"></span><dd class="p">15 €</dd></div></div>
+      </dl>
+    </section>
+  </div>
+  <p class="foot">Alle Preise inkl. MwSt. · Langes Haar ab Schulterlänge zzgl. 8 €<br>Termine unter <a href="#" onclick="return false">02151 123 45 67</a> oder online</p>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v05-wrap" aria-labelledby="v05-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 05</div>
+        <h2 id="v05-title">Preisliste mit Kategorien-Tabs</h2>
+        <p>Viele Behandlungen, übersichtlich sortiert: Tabs teilen das Angebot in Kategorien, jede Leistung zeigt Dauer und Preis. Bedienbar mit Pfeiltasten.</p>
+        <ul class="v-tags"><li>Kosmetik</li><li>Wellness &amp; Spa</li><li>Physiotherapie</li><li>Tabs mit Tastatur</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v05">
+  <div class="wrap">
+    <div class="hd">
+      <div><p class="brand">Maëlle · Kosmetik &amp; Wohlbefinden</p><h3>Behandlungen <i>&amp;</i> Preise</h3></div>
+      <p>Jede Behandlung beginnt mit einer kurzen Hautanalyse. Für Erstkundinnen planen wir 15 Minuten mehr ein.</p>
+    </div>
+    <div role="tablist" aria-label="Behandlungskategorien">
+      <button role="tab" id="v05-t1" aria-controls="v05-p1" aria-selected="true">Gesicht</button>
+      <button role="tab" id="v05-t2" aria-controls="v05-p2" aria-selected="false" tabindex="-1">Wimpern &amp; Brauen</button>
+      <button role="tab" id="v05-t3" aria-controls="v05-p3" aria-selected="false" tabindex="-1">Hände &amp; Füße</button>
+      <button role="tab" id="v05-t4" aria-controls="v05-p4" aria-selected="false" tabindex="-1">Massage</button>
+    </div>
+    <div role="tabpanel" id="v05-p1" aria-labelledby="v05-t1" tabindex="0">
+      <div class="it"><h4>Klassische Gesichtsbehandlung</h4><p>Reinigung, Peeling, Ausreinigung, Maske</p><span class="pr">69 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>60 Min.</span></div>
+      <div class="it"><h4>Hydra-Intensiv</h4><p>Feuchtigkeitsboost mit Hyaluron-Ampulle</p><span class="pr">89 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>75 Min.</span></div>
+      <div class="it"><h4>Fruchtsäure-Peeling</h4><p>Verfeinert das Hautbild, inkl. Beruhigungsmaske</p><span class="pr">55 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>40 Min.</span></div>
+      <div class="it"><h4>Express-Glow</h4><p>Die Behandlung für die Mittagspause</p><span class="pr">39 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>30 Min.</span></div>
+    </div>
+    <div role="tabpanel" id="v05-p2" aria-labelledby="v05-t2" tabindex="0" hidden>
+      <div class="it"><h4>Wimpernlifting</h4><p>Inklusive Färben und Pflegeserum</p><span class="pr">59 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>50 Min.</span></div>
+      <div class="it"><h4>Brow Lamination</h4><p>Formen, Fixieren, Zupfen</p><span class="pr">49 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>45 Min.</span></div>
+      <div class="it"><h4>Augenbrauen zupfen</h4><p>Formkorrektur nach Ihrem Gesichtstyp</p><span class="pr">15 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>15 Min.</span></div>
+    </div>
+    <div role="tabpanel" id="v05-p3" aria-labelledby="v05-t3" tabindex="0" hidden>
+      <div class="it"><h4>Maniküre mit Lack</h4><p>Nagelform, Nagelhaut, Handmassage</p><span class="pr">35 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>45 Min.</span></div>
+      <div class="it"><h4>Shellac</h4><p>Hält bis zu drei Wochen, inkl. Ablösen</p><span class="pr">42 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>60 Min.</span></div>
+      <div class="it"><h4>Kosmetische Fußpflege</h4><p>Fußbad, Hornhaut, Nagelpflege</p><span class="pr">44 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>50 Min.</span></div>
+      <div class="it"><h4>Paraffin-Handbad</h4><p>Als Zusatz zu jeder Maniküre</p><span class="pr">12 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>15 Min.</span></div>
+    </div>
+    <div role="tabpanel" id="v05-p4" aria-labelledby="v05-t4" tabindex="0" hidden>
+      <div class="it"><h4>Rücken-Nacken-Massage</h4><p>Löst Verspannungen, mit warmem Öl</p><span class="pr">45 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>40 Min.</span></div>
+      <div class="it"><h4>Ganzkörper-Aromamassage</h4><p>Mit Duftöl nach Wahl</p><span class="pr">79 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>75 Min.</span></div>
+      <div class="it"><h4>Gesichtsmassage Kobido</h4><p>Japanische Lifting-Technik</p><span class="pr">65 €</span><span class="du"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3l2 1.5" stroke-linecap="round"/></svg>45 Min.</span></div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v06-wrap" aria-labelledby="v06-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 06</div>
+        <h2 id="v06-title">Pakete mit Bild</h2>
+        <p>Fotos verkaufen das Paket: Jede Leistung zeigt ein Motiv, der Preis sitzt als runder Stempel auf dem Bild. Auf dem Smartphone wischen Besucher durch die Pakete.</p>
+        <ul class="v-tags"><li>Fotografie</li><li>Events</li><li>Erlebnisangebote</li><li>Wischbar mobil</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v06">
+  <div class="hd">
+    <div><p class="sig">Atelier Weitblick</p><h3>Fotografie-Pakete</h3></div>
+    <p>Alle Pakete mit Vorgespräch, sorgfältiger Bildauswahl und Bearbeitung in unserem Studio in Viersen. Galerie online zum Herunterladen.</p>
+  </div>
+  <div class="row" tabindex="0" role="region" aria-label="Fotografie-Pakete">
+    <article class="pk">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&q=80&auto=format&fit=crop" alt="Studioporträt einer Frau vor farbigem Hintergrund" loading="lazy" width="600" height="750"><div class="st"><div><small>ab</small><b>290 €</b></div></div></div>
+      <p class="lbl">Studio</p><h4>Porträt</h4>
+      <ul><li>90 Minuten Shooting</li><li>2 Outfits, 1 Hintergrund</li><li>12 bearbeitete Bilder</li></ul>
+      <a class="lk" href="#" onclick="return false">Termin anfragen</a>
+    </article>
+    <article class="pk hl">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80&auto=format&fit=crop" alt="Brautpaar hält sich an den Händen, Eheringe und Brautstrauß im Vordergrund" loading="lazy" width="600" height="750"><div class="st"><div><small>ab</small><b>890 €</b></div></div></div>
+      <p class="lbl">Meistgebucht</p><h4>Standesamt</h4>
+      <ul><li>3 Stunden Begleitung</li><li>Trauung, Paarshooting, Sektempfang</li><li>150 bearbeitete Bilder</li></ul>
+      <a class="lk" href="#" onclick="return false">Datum prüfen</a>
+    </article>
+    <article class="pk">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80&auto=format&fit=crop" alt="Brautpaar feiert mit Gästen und Luftballons im Garten" loading="lazy" width="600" height="750"><div class="st"><div><small>ab</small><b>2.190 €</b></div></div></div>
+      <p class="lbl">Ganztags</p><h4>Hochzeitsreportage</h4>
+      <ul><li>Vom Getting Ready bis zum Tanz</li><li>Zweite Fotografin inklusive</li><li>Fotobuch 30 × 30 cm</li></ul>
+      <a class="lk" href="#" onclick="return false">Datum prüfen</a>
+    </article>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v07-wrap" aria-labelledby="v07-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 07</div>
+        <h2 id="v07-title">Mitgliedsbeiträge als Tickets</h2>
+        <p>Vereinsbeiträge als Eintrittskarten mit Abriss: sportlich, leicht verständlich, mit allen Hinweisen zu Aufnahmegebühr und Lastschrift auf einen Blick.</p>
+        <ul class="v-tags"><li>Sportverein</li><li>Musikschule</li><li>Förderverein</li><li>Jahres- &amp; Monatsbeitrag</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v07">
+  <svg class="field" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#fff" stroke-width="3"><rect x="40" y="40" width="1120" height="520"/><path d="M600 40v520"/><circle cx="600" cy="300" r="90"/><rect x="40" y="170" width="150" height="260"/><rect x="1010" y="170" width="150" height="260"/></svg>
+  <div class="in">
+    <div class="side">
+      <div class="crest"><svg viewBox="0 0 46 52" aria-hidden="true"><path d="M23 2l20 6v18c0 12-9 20-20 24C12 46 3 38 3 26V8z" fill="#D4F36B"/><path d="M23 8l14 4v14c0 8.5-6 14-14 17-8-3-14-8.5-14-17V12z" fill="#0E4D2C"/><text x="23" y="32" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="15" fill="#fff">1919</text></svg><span>TSV Niersaue 1919 e.V.<br>Fußball · Turnen · Leichtathletik</span></div>
+      <h3>Mitglied <em>werden</em></h3>
+      <p>Ein Beitrag, alle Abteilungen. Probetraining ist in jeder Gruppe dreimal kostenlos.</p>
+      <ul class="facts">
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 6v8M6 10h8"/></svg>Aufnahmegebühr einmalig 15 €</li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="2"/><path d="M2.5 8.5h15"/></svg>Einzug per SEPA-Lastschrift halbjährlich</li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Ermäßigung für Azubis &amp; Studierende</li>
+      </ul>
+      <a class="btn" href="#" onclick="return false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10M5.5 8.5L10 13l4.5-4.5M4 17h12"/></svg>Mitgliedsantrag (PDF)</a>
+    </div>
+    <div class="tix">
+      <div class="tk"><div class="main"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M7 21v-5a5 5 0 0110 0v5"/></svg></span><div><h4>Kinder</h4><p>bis 13 Jahre</p></div></div><div class="stub"><b>6 € <span>/ Monat</span></b><small>72 € im Jahr</small></div></div>
+      <div class="tk"><div class="main"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="6" r="3"/><path d="M6 22v-7a6 6 0 0112 0v7"/></svg></span><div><h4>Jugend</h4><p>14 bis 17 Jahre</p></div></div><div class="stub"><b>8 € <span>/ Monat</span></b><small>96 € im Jahr</small></div></div>
+      <div class="tk"><div class="main"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="5.5" r="3"/><path d="M5 22v-8a7 7 0 0114 0v8"/></svg></span><div><h4>Erwachsene</h4><p>ab 18 Jahre</p></div></div><div class="stub"><b>14 € <span>/ Monat</span></b><small>168 € im Jahr</small></div></div>
+      <div class="tk fam"><div class="main"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><circle cx="16" cy="6" r="2.5"/><circle cx="12" cy="13" r="2"/><path d="M3 20v-4a5 5 0 019-2.5M21 20v-4a5 5 0 00-9-2.5M9.5 21v-2a2.5 2.5 0 015 0v2"/></svg></span><div><h4>Familie</h4><p>2 Erwachsene + alle Kinder</p></div></div><div class="stub"><b>29 € <span>/ Monat</span></b><small>348 € im Jahr</small></div></div>
+      <div class="tk"><div class="main"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span><div><h4>Fördernd</h4><p>passiv, ohne Trainingsbetrieb</p></div></div><div class="stub"><b>4 € <span>/ Monat</span></b><small>48 € im Jahr</small></div></div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v08-wrap" aria-labelledby="v08-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 08</div>
+        <h2 id="v08-title">Preisrechner mit Schieberegler</h2>
+        <p>Besucher stellen Fläche, Objekt, Intervall und Extras selbst ein und sehen sofort einen Richtpreis. Senkt die Hemmschwelle zur Anfrage spürbar.</p>
+        <ul class="v-tags"><li>Gebäudereinigung</li><li>Handwerk</li><li>Umzug &amp; Entrümpelung</li><li>Live-Berechnung</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v08">
+  <form class="in" onsubmit="event.preventDefault()">
+    <div>
+      <div class="brand"><svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#0B7466"/><path d="M15 7l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#fff"/></svg>Glanzpunkt Gebäudereinigung</div>
+      <h3>Was kostet Ihre Reinigung?</h3>
+      <p class="lead">Richtpreis in 20 Sekunden – das verbindliche Angebot folgt nach kurzer Besichtigung.</p>
+      <fieldset>
+        <label class="lab" for="v08-area">Fläche <output id="v08-out" for="v08-area">250 m²</output></label>
+        <input type="range" id="v08-area" min="50" max="1500" step="10" value="250" aria-valuetext="250 Quadratmeter">
+        <div class="scale" aria-hidden="true"><span>50 m²</span><span>1.500 m²</span></div>
+      </fieldset>
+      <fieldset>
+        <legend>Objekt</legend>
+        <div class="chips">
+          <label><input type="radio" name="v08-o" value="0.42" checked><span>Büro</span></label>
+          <label><input type="radio" name="v08-o" value="0.55"><span>Arztpraxis</span></label>
+          <label><input type="radio" name="v08-o" value="0.38"><span>Treppenhaus</span></label>
+          <label><input type="radio" name="v08-o" value="0.48"><span>Ladenlokal</span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Intervall</legend>
+        <div class="chips">
+          <label><input type="radio" name="v08-f" value="1|1.25|einmalig"><span>Einmalig</span></label>
+          <label><input type="radio" name="v08-f" value="1|1|monatlich"><span>Monatlich</span></label>
+          <label><input type="radio" name="v08-f" value="2.17|0.95|14-tägig"><span>14-tägig</span></label>
+          <label><input type="radio" name="v08-f" value="4.33|0.9|wöchentlich" checked><span>Wöchentlich <em>−10 %</em></span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Extras pro Einsatz</legend>
+        <div class="chips x">
+          <label><input type="checkbox" value="45" data-n="Glasflächen innen"><span>Glasflächen innen <em>+45 €</em></span></label>
+          <label><input type="checkbox" value="15" data-n="Müllentsorgung"><span>Müllentsorgung <em>+15 €</em></span></label>
+          <label><input type="checkbox" value="m0.12" data-n="Desinfektion"><span>Desinfektion <em>+0,12 €/m²</em></span></label>
+        </div>
+      </fieldset>
+    </div>
+    <aside class="res" aria-labelledby="v08-rk">
+      <p class="k" id="v08-rk">Ihr Richtpreis pro Einsatz</p>
+      <div aria-live="polite" aria-atomic="true">
+        <div class="big"><span id="v08-sum">95 €</span><small>netto</small></div>
+        <p class="mo" id="v08-mo"></p>
+      </div>
+      <ul class="bd" id="v08-bd"></ul>
+      <button class="send" type="submit">Angebot anfordern</button>
+      <p class="ok" role="status" id="v08-ok"></p>
+      <p class="fine">Unverbindliche Schätzung, zzgl. 19 % MwSt. Mindestauftrag 59 € pro Einsatz.</p>
+    </aside>
+  </form>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v09-wrap" aria-labelledby="v09-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 09</div>
+        <h2 id="v09-title">Dunkle Premium-Tarife mit Glow</h2>
+        <p>Tiefschwarz, feine Verlaufskanten und ein Lichtschein, der dem Mauszeiger folgt. Wirkt exklusiv und technisch – für hochwertige Dienstleistungen und Kreativstudios.</p>
+        <ul class="v-tags"><li>Tonstudio</li><li>Kreativagentur</li><li>Tech-Produkte</li><li>Dunkles Design</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v09">
+  <div class="hd">
+    <span class="lg"><svg viewBox="0 0 22 22" fill="none" stroke="url(#v09-g)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><defs><linearGradient id="v09-g" x1="0" x2="1"><stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#67E8F9"/></linearGradient></defs><path d="M2 11h2M6 7v8M10 3v16M14 6v10M18 9v4"/></svg>Nachtwerk Audio</span>
+    <h3>Mixing &amp; Mastering</h3>
+    <p>Analoge Summierung, kalibrierter Abhörraum in Mönchengladbach, Ergebnisse in zehn Werktagen.</p>
+  </div>
+  <div class="grid">
+    <div class="c"><div class="ci">
+      <h4 class="nm">Single</h4><p class="ds">Ein Song, release-fertig</p>
+      <div class="pr"><b>190 €</b><span>pro Track</span></div>
+      <ul><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Mix bis 48 Spuren</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Master für Streaming</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>2 Korrekturschleifen</li></ul>
+      <a class="btn" href="#" onclick="return false">Track einreichen</a>
+    </div></div>
+    <div class="c top"><div class="ci">
+      <h4 class="nm">EP <span class="pill">Empfohlen</span></h4><p class="ds">Bis 5 Tracks, ein Klangbild</p>
+      <div class="pr"><b>790 €</b><span>pauschal</span></div>
+      <ul><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Mix bis 64 Spuren je Track</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Master für Streaming &amp; Vinyl</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Stems &amp; Instrumentals</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Live-Session zur Abnahme</li></ul>
+      <a class="btn" href="#" onclick="return false">Projekt starten</a>
+    </div></div>
+    <div class="c"><div class="ci">
+      <h4 class="nm">Album</h4><p class="ds">Bis 12 Tracks, alles aus einer Hand</p>
+      <div class="pr"><b>1.690 €</b><span>pauschal</span></div>
+      <ul><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Unbegrenzte Spuren</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Dolby-Atmos-Version</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>DDP-Image für Presswerk</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Persönlicher Engineer</li></ul>
+      <a class="btn" href="#" onclick="return false">Gespräch buchen</a>
+    </div></div>
+  </div>
+  <p class="ft">Alle Preise zzgl. MwSt. · 50 % Anzahlung bei Projektstart</p>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v10-wrap" aria-labelledby="v10-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 10</div>
+        <h2 id="v10-title">Minimalistische Einzelpreis-Karte</h2>
+        <p>Ein Angebot, ein Preis, keine Ablenkung. Große Ziffern, viel Weißraum und feine Linien – passt zu Beratung, Erstgespräch oder einem klar umrissenen Festpreisprodukt.</p>
+        <ul class="v-tags"><li>Architektur</li><li>Beratung</li><li>Festpreis-Angebote</li><li>Ruhig &amp; reduziert</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v10">
+  <div class="card">
+    <div class="l">
+      <p class="mk"><i aria-hidden="true"></i>Hartwig Architekten · Willich</p>
+      <p class="lb">Festpreis</p>
+      <h3>Erstberatung vor Ort für Ihr Bau- oder Umbauvorhaben</h3>
+      <div class="pr"><b>190</b><span>€</span></div>
+      <p class="pn">inkl. MwSt. · wird bei Beauftragung voll angerechnet</p>
+    </div>
+    <div class="r">
+      <p class="lb">Darin enthalten</p>
+      <ol>
+        <li>Zwei Stunden Termin bei Ihnen vor Ort</li>
+        <li>Einschätzung von Bestand, Baurecht und Potenzial</li>
+        <li>Grobe Kostenspanne und realistischer Zeitplan</li>
+        <li>Kurzprotokoll mit Skizzen per E-Mail</li>
+      </ol>
+      <a class="cta" href="#" onclick="return false">Termin vereinbaren <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h14M12 5l5 5-5 5"/></svg></a>
+      <p class="sm">Antwort innerhalb von 48 Stunden.</p>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="sh-cta">
+  <h2>Der passende Baustein für Ihre Website?</h2>
+  <p>Alle Varianten sind Ausgangspunkte. Wir kombinieren und gestalten sie individuell – passend zu Ihrer Marke.</p>
+  <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Projekt besprechen</a>
+</section>
+
+<footer class="sh-footer">
+  Alle gezeigten Marken und Inhalte sind fiktiv. Design &amp; Umsetzung: <a href="../../Meuster%20Landing%20Page.dc.html">meuser.biz</a> · © 2026
+</footer>
+
+<script>
+  /* SHELL-Skript – nicht verändern */
+  (function () {
+    var here = location.pathname.split('/').pop();
+    document.querySelectorAll('.sh-cats a').forEach(function (a) {
+      if (a.getAttribute('href') === here) { a.setAttribute('aria-current', 'page'); a.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+    });
+    document.querySelectorAll('.variant').forEach(function (v) {
+      var frame = v.querySelector('.frame');
+      v.querySelectorAll('.v-switch button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          v.querySelectorAll('.v-switch button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          frame.style.setProperty('--w', b.dataset.w);
+        });
+      });
+    });
+  })();
+</script>
+<!-- Varianten-Skripte hierunter, jedes in eigenem IIFE, nur auf die eigene #vNN zugreifen -->
+<script>
+/* v02 · Monat oder Jahr – mit Umschalter */
+(function () {
+  var r = document.getElementById('v02'); if (!r) return;
+  var sw = r.querySelector('.sw');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fmt(n) { return n.toLocaleString('de-DE'); }
+  function set(y) {
+    sw.setAttribute('aria-checked', String(y));
+    r.classList.toggle('is-y', y);
+    r.querySelectorAll('.tg-l').forEach(function (l) { l.classList.toggle('on', (l.dataset.v === 'y') === y); });
+    r.querySelectorAll('[data-m]').forEach(function (el) {
+      var to = +(y ? el.dataset.y : el.dataset.m), from = +(el.dataset.cur || el.dataset.m);
+      el.dataset.cur = to;
+      if (reduce) { el.textContent = fmt(to); return; }
+      var t0 = null, run = (el._run = (el._run || 0) + 1);
+      requestAnimationFrame(function step(t) {
+        if (run !== el._run) return;
+        if (t0 === null) t0 = t;
+        var k = Math.max(0, Math.min(1, (t - t0) / 500)), e = 1 - Math.pow(1 - k, 3);
+        el.textContent = fmt(Math.round(from + (to - from) * e));
+        if (k < 1) requestAnimationFrame(step);
+      });
+      setTimeout(function () { if (run === el._run) el.textContent = fmt(to); }, 650);
+    });
+    r.querySelectorAll('[data-bill]').forEach(function (el) {
+      el.textContent = y ? 'pro Monat · jährlich ' + fmt(+el.dataset.bill) + ' € abgerechnet' : 'pro Monat · monatlich kündbar';
+    });
+  }
+  sw.addEventListener('click', function () { set(sw.getAttribute('aria-checked') !== 'true'); });
+  r.querySelectorAll('.tg-l').forEach(function (l) { l.addEventListener('click', function () { set(l.dataset.v === 'y'); }); });
+})();
+</script>
+<script>
+/* v05 · Preisliste mit Kategorien-Tabs */
+(function () {
+  var r = document.getElementById('v05'); if (!r) return;
+  var tabs = [].slice.call(r.querySelectorAll('[role="tab"]'));
+  function sel(t, focus) {
+    tabs.forEach(function (x) {
+      var on = x === t;
+      x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1;
+      r.querySelector('#' + x.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) t.focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { sel(t); });
+    t.addEventListener('keydown', function (e) {
+      var n = null, L = tabs.length;
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % L];
+      else if (e.key === 'ArrowLeft') n = tabs[(i - 1 + L) % L];
+      else if (e.key === 'Home') n = tabs[0];
+      else if (e.key === 'End') n = tabs[L - 1];
+      if (n) { e.preventDefault(); sel(n, true); }
+    });
+  });
+})();
+</script>
+<script>
+/* v08 · Preisrechner mit Schieberegler */
+(function () {
+  var r = document.getElementById('v08'); if (!r) return;
+  var f = r.querySelector('form'), area = r.querySelector('#v08-area');
+  function eur(n) { return n.toLocaleString('de-DE', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + ' €'; }
+  function calc() {
+    var m2 = +area.value;
+    area.style.setProperty('--p', ((m2 - area.min) / (area.max - area.min) * 100) + '%');
+    area.setAttribute('aria-valuetext', m2.toLocaleString('de-DE') + ' Quadratmeter');
+    r.querySelector('#v08-out').textContent = m2.toLocaleString('de-DE') + ' m²';
+    var o = f.querySelector('[name="v08-o"]:checked'), rate = +o.value;
+    var fr = f.querySelector('[name="v08-f"]:checked').value.split('|');
+    var per = +fr[0], mult = +fr[1], lbl = fr[2];
+    var base = Math.max(59, m2 * rate * mult), extras = 0, lines = [];
+    lines.push(['Grundreinigung ' + o.nextElementSibling.textContent, base]);
+    f.querySelectorAll('.x input:checked').forEach(function (c) {
+      var v = c.value.charAt(0) === 'm' ? m2 * parseFloat(c.value.slice(1)) : +c.value;
+      extras += v; lines.push([c.dataset.n, v]);
+    });
+    var sum = base + extras;
+    r.querySelector('#v08-sum').textContent = eur(sum);
+    r.querySelector('#v08-mo').innerHTML = lbl === 'einmalig' ? 'Einmaliger Einsatz' : 'ca. <b>' + eur(sum * per) + '</b> im Monat · ' + lbl;
+    r.querySelector('#v08-bd').innerHTML = lines.map(function (l) { return '<li><span>' + l[0] + '</span><span>' + eur(l[1]) + '</span></li>'; }).join('');
+    r.querySelector('#v08-ok').textContent = '';
+  }
+  f.addEventListener('input', calc); f.addEventListener('change', calc);
+  f.addEventListener('submit', function () { r.querySelector('#v08-ok').textContent = 'Danke! Wir melden uns innerhalb eines Werktags.'; });
+  calc();
+})();
+</script>
+<script>
+/* v09 · Dunkle Premium-Tarife mit Glow */
+(function () {
+  var r = document.getElementById('v09'); if (!r) return;
+  r.querySelectorAll('.c').forEach(function (c) {
+    c.addEventListener('pointermove', function (e) {
+      var b = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - b.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - b.top) + 'px');
+    });
+  });
+})();
+</script>
+</body>
+</html>

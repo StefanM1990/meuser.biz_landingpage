@@ -1,0 +1,1158 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leistungen &amp; Features – Bausteine – meuser.biz</title>
+<meta name="description" content="Leistungen &amp; Features: 10 Gestaltungsvarianten, wie meuser.biz sie für Websites umsetzt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Shell-Schrift (Inter) bleibt; weitere Schriften der Varianten in DIESEN einen Link mit aufnehmen -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Instrument+Serif:ital@0;1&family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================================
+     SHELL – nicht verändern. Gilt für alle Kategorieseiten gleich.
+     ===================================================================== */
+  :root { --ink:#0F172A; --muted:#64748B; --body:#475569; --line:#E2E8F0; --soft:#F8FAFC; --blue:#007BFF; --blue-l:#5FA8FF; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 150px; }
+  body.shell { margin:0; font-family:'Inter',sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; }
+  .shell a { color:inherit; text-decoration:none; }
+  .sh-header { position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.9); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+  .sh-bar { max-width:1400px; margin:0 auto; padding:12px 5%; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .sh-bar img { height:44px; width:auto; display:block; }
+  .sh-actions { display:flex; gap:8px; }
+  .sh-btn { display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font:600 14px 'Inter',sans-serif; white-space:nowrap; transition:.25s; }
+  .sh-btn.ghost { background:rgba(15,23,42,.05); } .sh-btn.ghost:hover { background:rgba(15,23,42,.1); }
+  .sh-btn.blue { background:linear-gradient(135deg,#007BFF,#0062cc); color:#fff !important; box-shadow:0 6px 16px -4px rgba(0,123,255,.6); }
+  .sh-cats { max-width:1400px; margin:0 auto; padding:0 5% 12px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; }
+  .sh-cats::-webkit-scrollbar { display:none; }
+  .sh-cats a { flex-shrink:0; font:600 13px 'Inter',sans-serif; color:var(--body); padding:7px 13px; border-radius:999px; border:1px solid var(--line); background:#fff; transition:.2s; }
+  .sh-cats a:hover { border-color:var(--ink); color:var(--ink); }
+  .sh-cats a[aria-current="page"] { background:var(--ink); border-color:var(--ink); color:#fff; }
+  .sh-hero { background:linear-gradient(120deg,#0F172A,#132238,#0F172A); color:#fff; padding:72px 5% 64px; position:relative; overflow:hidden; }
+  .sh-hero::after { content:""; position:absolute; top:-160px; right:-120px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle,rgba(0,123,255,.35),transparent 70%); pointer-events:none; }
+  .sh-hero-in { max-width:1400px; margin:0 auto; position:relative; z-index:1; }
+  .sh-eyebrow { color:var(--blue-l); font:700 13px 'Inter',sans-serif; letter-spacing:2px; margin-bottom:14px; }
+  .sh-hero h1 { font:800 clamp(32px,5vw,52px)/1.08 'Inter',sans-serif; letter-spacing:-1px; margin:0 0 16px; }
+  .sh-hero p { font:400 clamp(16px,2vw,18px)/1.6 'Inter',sans-serif; color:#CBD5E1; max-width:680px; margin:0; }
+  .sh-index { max-width:1400px; margin:0 auto; padding:32px 5% 0; display:flex; flex-wrap:wrap; gap:8px; }
+  .sh-index a { font:600 13px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:7px 12px; border-radius:8px; transition:.2s; }
+  .sh-index a:hover { color:var(--blue); border-color:var(--blue); }
+  .sh-index a b { color:var(--blue); margin-right:6px; }
+  .sh-main { max-width:1400px; margin:0 auto; padding:24px 5% 96px; }
+  .variant { padding:56px 0 0; }
+  .v-head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:20px; }
+  .v-num { font:700 12px 'Inter',sans-serif; letter-spacing:1.5px; color:var(--blue); margin-bottom:6px; }
+  .v-head h2 { font:800 24px/1.2 'Inter',sans-serif; letter-spacing:-.3px; margin:0 0 6px; }
+  .v-head p { font:400 15px/1.6 'Inter',sans-serif; color:var(--body); margin:0; max-width:720px; }
+  .v-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; padding:0; list-style:none; }
+  .v-tags li { font:600 12px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:4px 10px; border-radius:999px; }
+  .v-switch { display:inline-flex; background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:4px; gap:2px; }
+  .v-switch button { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font:600 13px 'Inter',sans-serif; color:var(--muted); padding:7px 12px; border-radius:7px; transition:.2s; }
+  .v-switch button:hover { color:var(--ink); }
+  .v-switch button[aria-pressed="true"] { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(15,23,42,.15); }
+  .v-switch button:focus-visible { outline:2px solid var(--blue); }
+  .stage { background:#EEF2F6; background-image:radial-gradient(rgba(15,23,42,.08) 1px, transparent 1px); background-size:18px 18px; border:1px solid var(--line); border-radius:16px; padding:28px; overflow:hidden; }
+  .frame { /* Jede Variante lebt in diesem Rahmen */
+    container: demo / inline-size;
+    position:relative; contain:layout paint; /* position:fixed in Varianten bleibt im Rahmen */
+    width:var(--w,100%); max-width:100%; min-height:var(--h,auto);
+    margin:0 auto; background:#fff; border-radius:10px; overflow:hidden;
+    box-shadow:0 1px 2px rgba(15,23,42,.06), 0 18px 40px -20px rgba(15,23,42,.35);
+    transition:width .45s cubic-bezier(.2,.8,.2,1);
+  }
+  .sh-cta { background:var(--soft); border-top:1px solid var(--line); padding:80px 5%; text-align:center; }
+  .sh-cta h2 { font:800 clamp(26px,4vw,36px) 'Inter',sans-serif; letter-spacing:-.5px; margin:0 0 12px; }
+  .sh-cta p { font:400 16px/1.6 'Inter',sans-serif; color:var(--muted); max-width:560px; margin:0 auto 26px; }
+  .sh-cta .sh-btn { border-radius:8px; padding:14px 28px; font-size:15px; }
+  .sh-footer { background:var(--ink); color:#94A3B8; font:400 14px 'Inter',sans-serif; padding:28px 5%; text-align:center; }
+  .sh-footer a { color:#fff; }
+  @media (max-width:640px) {
+    .sh-bar img { height:36px; } .sh-btn .long { display:none; }
+    .stage { padding:12px; border-radius:12px; }
+    .v-switch { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .frame { transition:none; } }
+
+  /* =====================================================================
+     VARIANTEN – CSS jeder Variante NUR unter ihrer ID (#v01, #v02 …).
+     Responsiv ausschließlich mit @container demo (…) – NICHT @media.
+     ===================================================================== */
+
+  /* ---------- v01 · Icon-Karten-Raster ---------- */
+  #v01 { --ink:#1C1917; --mut:#57534E; --line:#E7E5E4; --acc:#FACC15; --acc-d:#A16207; background:#FAFAF7; color:var(--ink); font-family:'Manrope',sans-serif; padding:76px 56px 64px; }
+  #v01 .hd { display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:end; margin-bottom:44px; }
+  #v01 .eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:13px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--acc-d); margin-bottom:14px; }
+  #v01 .eyebrow::before { content:""; width:22px; height:3px; background:var(--acc); border-radius:2px; }
+  #v01 h2 { font-size:clamp(28px,4cqw,44px); line-height:1.08; letter-spacing:-.025em; font-weight:800; margin:0; }
+  #v01 .hd p { margin:0; font-size:16px; line-height:1.65; color:var(--mut); max-width:440px; }
+  #v01 .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; list-style:none; margin:0; padding:0; }
+  #v01 .card { position:relative; background:#fff; border:1px solid var(--line); border-radius:16px; padding:28px 26px 24px; display:flex; flex-direction:column; transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, border-color .35s; }
+  #v01 .card:hover, #v01 .card:focus-within { transform:translateY(-4px); border-color:#D6D3D1; box-shadow:0 22px 40px -24px rgba(28,25,23,.35); }
+  #v01 .ic { width:52px; height:52px; border-radius:14px; display:grid; place-items:center; background:#FEF9C3; color:var(--ink); margin-bottom:22px; transition:background .35s, transform .35s; }
+  #v01 .card:hover .ic, #v01 .card:focus-within .ic { background:var(--acc); transform:rotate(-6deg); }
+  #v01 .ic svg { width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+  #v01 .no { position:absolute; top:26px; right:26px; font-size:12px; font-weight:700; color:#A8A29E; letter-spacing:.06em; }
+  #v01 h3 { font-size:19px; font-weight:800; letter-spacing:-.01em; margin:0 0 8px; }
+  #v01 .card p { font-size:15px; line-height:1.6; color:var(--mut); margin:0 0 20px; flex:1; }
+  #v01 .more { display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--ink); border-radius:6px; }
+  #v01 .more svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; transition:transform .3s; }
+  #v01 .more:hover svg, #v01 .more:focus-visible svg { transform:translateX(4px); }
+  #v01 .more:focus-visible { outline:2px solid var(--ink); outline-offset:4px; }
+  #v01 .more::after { content:""; position:absolute; inset:0; border-radius:16px; }
+  #v01 .bar { margin-top:20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; background:var(--ink); color:#fff; border-radius:16px; padding:18px 22px 18px 26px; }
+  #v01 .bar .l { display:flex; align-items:center; gap:14px; font-size:15px; }
+  #v01 .pulse { width:10px; height:10px; border-radius:50%; background:#4ADE80; box-shadow:0 0 0 0 rgba(74,222,128,.6); animation:v01-pulse 2s infinite; flex-shrink:0; }
+  #v01 .bar strong { font-weight:800; }
+  #v01 .bar a { background:var(--acc); color:var(--ink); font-weight:800; font-size:15px; padding:11px 18px; border-radius:10px; white-space:nowrap; }
+  #v01 .bar a:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+  @keyframes v01-pulse { 70% { box-shadow:0 0 0 10px rgba(74,222,128,0); } 100% { box-shadow:0 0 0 0 rgba(74,222,128,0); } }
+  @container demo (max-width:900px) { #v01 { padding:56px 32px 48px; } #v01 .grid { grid-template-columns:repeat(2,1fr); } #v01 .hd { grid-template-columns:1fr; gap:16px; } }
+  @container demo (max-width:560px) { #v01 { padding:44px 20px 36px; } #v01 .grid { grid-template-columns:1fr; } #v01 h2 { font-size:30px; } #v01 .bar a { width:100%; text-align:center; } }
+  @media (prefers-reduced-motion:reduce) { #v01 .card, #v01 .ic, #v01 .more svg { transition:none; } #v01 .pulse { animation:none; } }
+
+  /* ---------- v02 · Bento-Grid mit Produkt-Kacheln ---------- */
+  #v02 { --ink:#17153B; --mut:#5A5880; --vio:#5B4CF0; --vio-l:#EEECFF; --line:#E6E4F5; background:#F7F6FC; color:var(--ink); font-family:'Inter',sans-serif; padding:80px 56px; }
+  #v02 .hd { text-align:center; max-width:640px; margin:0 auto 48px; }
+  #v02 .pill { display:inline-flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--line); padding:6px 14px 6px 6px; border-radius:999px; font-size:13px; font-weight:600; color:var(--mut); margin-bottom:18px; }
+  #v02 .pill b { background:var(--vio); color:#fff; font-size:11px; padding:3px 8px; border-radius:999px; letter-spacing:.04em; }
+  #v02 h2 { font-size:clamp(30px,4.4cqw,48px); line-height:1.05; letter-spacing:-.035em; font-weight:800; margin:0 0 14px; }
+  #v02 h2 span { background:linear-gradient(90deg,#5B4CF0,#C026D3); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  #v02 .hd p { font-size:17px; line-height:1.6; color:var(--mut); margin:0; }
+  #v02 .bento { display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:minmax(180px,auto); gap:14px; }
+  #v02 .t { background:#fff; border:1px solid var(--line); border-radius:22px; padding:26px; position:relative; overflow:hidden; display:flex; flex-direction:column; transition:box-shadow .3s, transform .3s; }
+  #v02 .t:hover { box-shadow:0 24px 50px -30px rgba(23,21,59,.45); transform:translateY(-2px); }
+  #v02 .t h3 { font-size:18px; font-weight:700; letter-spacing:-.015em; margin:0 0 6px; }
+  #v02 .t p { font-size:14.5px; line-height:1.55; color:var(--mut); margin:0; max-width:340px; }
+  #v02 .big { grid-column:span 2; grid-row:span 2; background:linear-gradient(160deg,#fff 40%,#F1EEFF); }
+  #v02 .wide { grid-column:span 4; }
+  #v02 .dark { background:var(--ink); border-color:var(--ink); color:#fff; }
+  #v02 .dark p { color:#C4C2E8; }
+  /* Beleg-Mockup */
+  #v02 .phone { margin:28px auto 0; width:min(250px,80%); flex:1; min-height:250px; background:var(--ink); border-radius:30px 30px 0 0; padding:12px 12px 0; position:relative; box-shadow:0 30px 60px -30px rgba(91,76,240,.6); }
+  #v02 .screen { background:#fff; border-radius:20px 20px 0 0; height:100%; padding:18px 16px; position:relative; overflow:hidden; }
+  #v02 .rcpt { background:#FAFAFA; border:1px dashed #D9D7EA; border-radius:10px; padding:14px; font-size:12px; color:var(--ink); }
+  #v02 .rcpt .s { font-weight:800; font-size:13px; margin-bottom:8px; }
+  #v02 .rcpt .r { display:flex; justify-content:space-between; padding:3px 0; color:var(--mut); }
+  #v02 .rcpt .sum { border-top:1px solid #E6E4F5; margin-top:6px; padding-top:7px; color:var(--ink); font-weight:800; }
+  #v02 .scan { position:absolute; left:16px; right:16px; height:2px; background:var(--vio); box-shadow:0 0 14px 3px rgba(91,76,240,.55); top:22px; animation:v02-scan 3.2s ease-in-out infinite; }
+  #v02 .ok { position:absolute; left:16px; right:16px; bottom:16px; display:flex; align-items:center; gap:10px; background:var(--vio-l); color:var(--vio); font-size:12.5px; font-weight:700; padding:10px 12px; border-radius:12px; }
+  #v02 .ok svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+  @keyframes v02-scan { 0%,100% { top:22px; } 50% { top:150px; } }
+  /* Bankabgleich */
+  #v02 .tx { margin-top:auto; padding-top:18px; display:grid; gap:7px; }
+  #v02 .tx div { display:flex; justify-content:space-between; align-items:center; font-size:12.5px; background:#F7F6FC; padding:8px 10px; border-radius:9px; }
+  #v02 .tx em { font-style:normal; font-weight:700; }
+  #v02 .tx .in { color:#047857; }
+  #v02 .tx i { width:7px; height:7px; border-radius:50%; background:#10B981; display:inline-block; margin-right:7px; }
+  /* Umsatz-Chart */
+  #v02 .chart { margin-top:auto; padding-top:16px; }
+  #v02 .chart .k { font-size:30px; font-weight:800; letter-spacing:-.03em; }
+  #v02 .chart .k small { font-size:13px; font-weight:700; color:#6EE7B7; margin-left:8px; letter-spacing:0; }
+  #v02 .chart svg { width:100%; height:70px; display:block; margin-top:6px; }
+  /* Export */
+  #v02 .exp { margin-top:auto; display:flex; gap:8px; flex-wrap:wrap; padding-top:16px; }
+  #v02 .exp span { font-size:12px; font-weight:700; border:1px solid var(--line); padding:6px 10px; border-radius:8px; background:#F7F6FC; }
+  /* Mahnwesen */
+  #v02 .tog { margin-top:auto; padding-top:16px; display:grid; gap:10px; }
+  #v02 .tog label { display:flex; align-items:center; justify-content:space-between; gap:10px; font-size:13.5px; font-weight:600; cursor:pointer; }
+  #v02 .tog input { appearance:none; -webkit-appearance:none; width:38px; height:22px; border-radius:999px; background:#D9D7EA; position:relative; cursor:pointer; transition:background .25s; flex-shrink:0; margin:0; }
+  #v02 .tog input::after { content:""; position:absolute; top:3px; left:3px; width:16px; height:16px; border-radius:50%; background:#fff; transition:transform .25s; box-shadow:0 1px 2px rgba(0,0,0,.2); }
+  #v02 .tog input:checked { background:var(--vio); }
+  #v02 .tog input:checked::after { transform:translateX(16px); }
+  #v02 .tog input:focus-visible { outline:2px solid var(--vio); outline-offset:2px; }
+  /* Steuerberater */
+  #v02 .wide { flex-direction:row; align-items:center; gap:24px; }
+  #v02 .wide > div:first-child { flex:1; }
+  #v02 .av { display:flex; }
+  #v02 .av span { width:44px; height:44px; border-radius:50%; border:3px solid #fff; margin-left:-12px; display:grid; place-items:center; font-size:13px; font-weight:800; color:#fff; }
+  #v02 .av span:first-child { margin-left:0; }
+  #v02 .badge { display:inline-flex; margin-top:12px; font-size:12px; font-weight:700; color:var(--vio); background:var(--vio-l); padding:5px 10px; border-radius:999px; }
+  @container demo (max-width:980px) { #v02 { padding:60px 28px; } #v02 .bento { grid-template-columns:repeat(2,1fr); } #v02 .wide { grid-column:span 2; } }
+  @container demo (max-width:600px) { #v02 { padding:48px 16px; } #v02 .bento { grid-template-columns:1fr; } #v02 .big, #v02 .wide { grid-column:auto; grid-row:auto; } #v02 .wide { flex-direction:column; align-items:flex-start; } #v02 h2 { font-size:31px; } }
+  @media (prefers-reduced-motion:reduce) { #v02 .scan { animation:none; top:90px; } #v02 .t { transition:none; } }
+
+  /* ---------- v03 · Abwechselnde Bild-Text-Zeilen ---------- */
+  #v03 { --ink:#2B2118; --mut:#5E5044; --wood:#C99A6B; --acc:#8A4F23; --paper:#F4EFE6; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; padding:84px 64px 72px; }
+  #v03 .hd { max-width:620px; margin-bottom:64px; }
+  #v03 .kick { font-family:'Fraunces',serif; font-style:italic; font-size:20px; color:var(--acc); margin-bottom:10px; }
+  #v03 h2 { font-family:'Fraunces',serif; font-weight:500; font-size:clamp(32px,4.6cqw,54px); line-height:1.04; letter-spacing:-.02em; margin:0; font-variation-settings:"SOFT" 50; }
+  #v03 .row { display:grid; grid-template-columns:1.05fr 1fr; gap:72px; align-items:center; }
+  #v03 .row + .row { margin-top:88px; }
+  #v03 .row:nth-child(even) .pic { order:2; }
+  #v03 .pic { position:relative; }
+  #v03 .pic::before { content:""; position:absolute; inset:28px -22px -22px 28px; background:var(--wood); border-radius:4px; background-image:repeating-linear-gradient(100deg,rgba(255,255,255,.08) 0 2px,transparent 2px 9px); }
+  #v03 .row:nth-child(even) .pic::before { inset:28px 28px -22px -22px; }
+  #v03 .pic img { position:relative; display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border-radius:4px; }
+  #v03 .stamp { position:absolute; z-index:1; right:-14px; top:-18px; width:104px; height:104px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; text-align:center; font-size:11px; line-height:1.25; letter-spacing:.08em; text-transform:uppercase; transform:rotate(8deg); }
+  #v03 .stamp b { display:block; font-family:'Fraunces',serif; font-size:30px; letter-spacing:0; font-weight:600; text-transform:none; }
+  #v03 .row:nth-child(even) .stamp { right:auto; left:-14px; transform:rotate(-8deg); }
+  #v03 .num { font-family:'Fraunces',serif; font-size:15px; color:var(--acc); letter-spacing:.1em; display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+  #v03 .num::after { content:""; width:48px; height:1px; background:currentColor; }
+  #v03 h3 { font-family:'Fraunces',serif; font-weight:500; font-size:clamp(26px,3cqw,36px); line-height:1.1; letter-spacing:-.015em; margin:0 0 14px; }
+  #v03 .txt p { font-size:16px; line-height:1.7; color:var(--mut); margin:0 0 22px; max-width:480px; }
+  #v03 ul { list-style:none; margin:0 0 26px; padding:0; display:grid; gap:10px; }
+  #v03 li { display:flex; gap:12px; font-size:15px; line-height:1.5; }
+  #v03 li svg { width:20px; height:20px; flex-shrink:0; margin-top:1px; fill:none; stroke:var(--acc); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+  #v03 .link { display:inline-flex; align-items:center; gap:10px; font-weight:600; font-size:15px; color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:4px; }
+  #v03 .link:hover { color:var(--acc); border-color:var(--acc); }
+  #v03 .link:focus-visible { outline:2px solid var(--acc); outline-offset:4px; }
+  @container demo (max-width:900px) { #v03 { padding:64px 36px; } #v03 .row { gap:48px; grid-template-columns:1fr 1fr; } #v03 .stamp { width:84px; height:84px; font-size:9.5px; } #v03 .stamp b { font-size:24px; } }
+  @container demo (max-width:680px) { #v03 { padding:52px 22px 56px; } #v03 .hd { margin-bottom:44px; } #v03 .row { grid-template-columns:1fr; gap:40px; } #v03 .row + .row { margin-top:64px; } #v03 .row:nth-child(even) .pic { order:0; } #v03 .pic { margin-right:18px; } #v03 .row:nth-child(even) .pic::before { inset:28px -22px -22px 28px; } #v03 .row:nth-child(even) .stamp { left:auto; right:-14px; } #v03 h2 { font-size:34px; } }
+
+  /* ---------- v04 · Tabs mit Inhalt je Leistung ---------- */
+  #v04 { --ink:#0B2A2A; --mut:#3F5C5B; --teal:#0F766E; --teal-l:#DDF0EC; --line:#D3E5E1; background:#F3F8F7; color:var(--ink); font-family:'Manrope',sans-serif; padding:72px 56px; }
+  #v04 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:36px; }
+  #v04 .eb { font-size:13px; font-weight:700; color:var(--teal); letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+  #v04 h2 { font-size:clamp(28px,3.8cqw,42px); font-weight:700; letter-spacing:-.025em; line-height:1.1; margin:0; }
+  #v04 .hd p { margin:0; color:var(--mut); font-size:15.5px; line-height:1.6; max-width:380px; }
+  #v04 .wrap { display:grid; grid-template-columns:280px 1fr; gap:28px; align-items:start; }
+  #v04 [role=tablist] { display:flex; flex-direction:column; gap:6px; }
+  #v04 [role=tab] { all:unset; box-sizing:border-box; cursor:pointer; display:flex; align-items:center; gap:14px; padding:14px 16px; border-radius:14px; font-size:15.5px; font-weight:600; color:var(--mut); transition:background .25s, color .25s; position:relative; }
+  #v04 [role=tab] svg { width:22px; height:22px; flex-shrink:0; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+  #v04 [role=tab]:hover { background:#E7F2EF; color:var(--ink); }
+  #v04 [role=tab][aria-selected=true] { background:#fff; color:var(--ink); box-shadow:0 1px 2px rgba(11,42,42,.06), 0 12px 28px -18px rgba(11,42,42,.35); }
+  #v04 [role=tab][aria-selected=true] svg { color:var(--teal); }
+  #v04 [role=tab][aria-selected=true]::after { content:""; position:absolute; right:16px; width:8px; height:8px; border-radius:50%; background:var(--teal); }
+  #v04 [role=tab]:focus-visible { outline:2px solid var(--teal); outline-offset:2px; }
+  #v04 .hint { margin-top:14px; padding:16px; border-radius:14px; border:1px dashed #A7CFC7; font-size:13.5px; line-height:1.55; color:var(--mut); }
+  #v04 .hint b { color:var(--ink); }
+  #v04 [role=tabpanel] { background:#fff; border-radius:22px; overflow:hidden; display:grid; grid-template-columns:1fr 1.05fr; min-height:420px; box-shadow:0 1px 2px rgba(11,42,42,.05), 0 30px 60px -40px rgba(11,42,42,.4); }
+  #v04 [role=tabpanel][hidden] { display:none; }
+  #v04 [role=tabpanel]:focus-visible { outline:2px solid var(--teal); outline-offset:3px; }
+  #v04 .ph { position:relative; min-height:260px; }
+  #v04 .ph img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  #v04 .bd { padding:36px 36px 32px; display:flex; flex-direction:column; animation:v04-in .45s cubic-bezier(.2,.8,.2,1); }
+  #v04 .bd h3 { font-size:26px; letter-spacing:-.02em; margin:0 0 10px; font-weight:700; }
+  #v04 .bd p { color:var(--mut); line-height:1.65; font-size:15.5px; margin:0 0 20px; }
+  #v04 .steps { list-style:none; counter-reset:s; padding:0; margin:0 0 24px; display:grid; gap:10px; }
+  #v04 .steps li { counter-increment:s; display:flex; gap:12px; align-items:baseline; font-size:14.5px; line-height:1.5; }
+  #v04 .steps li::before { content:counter(s); flex-shrink:0; width:24px; height:24px; border-radius:50%; background:var(--teal-l); color:var(--teal); font-size:12px; font-weight:800; display:grid; place-items:center; transform:translateY(-1px); }
+  #v04 dl { margin:auto 0 0; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  #v04 dl div { background:#F3F8F7; border-radius:12px; padding:12px 14px; }
+  #v04 dt { font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--mut); margin-bottom:4px; }
+  #v04 dd { margin:0; font-weight:700; font-size:15px; }
+  @keyframes v04-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  @container demo (max-width:980px) { #v04 { padding:56px 28px; } #v04 .wrap { grid-template-columns:minmax(0,1fr); } #v04 [role=tablist] { flex-direction:row; overflow-x:auto; scrollbar-width:none; padding:2px 2px 6px; } #v04 [role=tab] { flex-shrink:0; padding:11px 15px; font-size:14.5px; } #v04 [role=tab][aria-selected=true]::after { display:none; } #v04 .hint { display:none; } }
+  @container demo (max-width:640px) { #v04 { padding:44px 16px; } #v04 [role=tabpanel] { grid-template-columns:minmax(0,1fr); } #v04 .ph { min-height:200px; } #v04 .bd { padding:26px 22px; } #v04 dl { grid-template-columns:1fr 1fr; } #v04 h2 { font-size:30px; } }
+  @media (prefers-reduced-motion:reduce) { #v04 .bd { animation:none; } }
+
+  /* ---------- v05 · Akkordeon mit wechselndem Bild ---------- */
+  #v05 { --ink:#14213D; --mut:#4A5468; --gold:#7A5A22; --paper:#F7F5F0; --line:#DCD6C8; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; padding:80px 60px; }
+  #v05 .grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; align-items:stretch; }
+  #v05 .media { position:relative; border-radius:2px; overflow:hidden; min-height:520px; background:#1d2a47; }
+  #v05 .media img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.04); transition:opacity .7s ease, transform 1.2s ease; }
+  #v05 .media img.on { opacity:1; transform:none; }
+  #v05 .media::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 45%,rgba(20,33,61,.88)); }
+  #v05 .quote { position:absolute; left:28px; right:28px; bottom:26px; z-index:1; color:#fff; }
+  #v05 .quote p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:24px; line-height:1.25; margin:0 0 10px; }
+  #v05 .quote span { font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:#E8DCC2; }
+  #v05 .frame-l { position:absolute; inset:14px; border:1px solid rgba(255,255,255,.35); z-index:1; pointer-events:none; }
+  #v05 .eb { font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:14px; }
+  #v05 h2 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(34px,4.6cqw,54px); line-height:1.02; margin:0 0 18px; letter-spacing:-.01em; }
+  #v05 .lead { font-size:16px; line-height:1.7; color:var(--mut); margin:0 0 30px; max-width:520px; }
+  #v05 .acc { border-top:1px solid var(--line); }
+  #v05 .it { border-bottom:1px solid var(--line); }
+  #v05 .it h3 { margin:0; }
+  #v05 .it button { all:unset; box-sizing:border-box; width:100%; cursor:pointer; display:grid; grid-template-columns:44px 1fr 28px; align-items:center; padding:20px 0; font-family:'Cormorant Garamond',serif; font-size:27px; font-weight:500; color:var(--ink); transition:color .25s; }
+  #v05 .it button .n { font-family:'Inter',sans-serif; font-size:12px; letter-spacing:.1em; color:var(--gold); font-weight:600; }
+  #v05 .it button:hover { color:var(--gold); }
+  #v05 .it button:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+  #v05 .pm { position:relative; width:22px; height:22px; border:1px solid currentColor; border-radius:50%; justify-self:end; }
+  #v05 .pm::before, #v05 .pm::after { content:""; position:absolute; left:50%; top:50%; width:10px; height:1px; background:currentColor; transform:translate(-50%,-50%); transition:transform .35s; }
+  #v05 .pm::after { transform:translate(-50%,-50%) rotate(90deg); }
+  #v05 button[aria-expanded=true] .pm::after { transform:translate(-50%,-50%) rotate(0deg); }
+  #v05 .pnl { display:grid; grid-template-rows:0fr; transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1); }
+  #v05 .pnl > div { overflow:hidden; }
+  #v05 .it.open .pnl { grid-template-rows:1fr; }
+  #v05 .pnl .in { padding:0 0 24px 44px; }
+  #v05 .pnl p { margin:0 0 14px; font-size:15.5px; line-height:1.7; color:var(--mut); }
+  #v05 .pnl ul { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+  #v05 .pnl li { font-size:13px; padding:6px 12px; border:1px solid var(--line); border-radius:999px; background:#fff; color:var(--ink); }
+  #v05 .foot { margin-top:28px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; font-size:14.5px; color:var(--mut); }
+  #v05 .foot a { background:var(--ink); color:#fff; padding:13px 22px; font-weight:600; font-size:14.5px; letter-spacing:.02em; }
+  #v05 .foot a:hover { background:#22335A; }
+  #v05 .foot a:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+  @container demo (max-width:900px) { #v05 { padding:60px 32px; } #v05 .grid { grid-template-columns:1fr; gap:40px; } #v05 .media { min-height:320px; order:2; } }
+  @container demo (max-width:560px) { #v05 { padding:48px 20px; } #v05 .it button { font-size:23px; grid-template-columns:36px 1fr 26px; } #v05 .pnl .in { padding-left:0; } #v05 .media { min-height:260px; } #v05 .quote p { font-size:20px; } }
+  @media (prefers-reduced-motion:reduce) { #v05 .media img, #v05 .pnl, #v05 .pm::after { transition:none; } }
+
+  /* ---------- v06 · Editoriale Nummernliste ---------- */
+  #v06 { --ink:#111110; --mut:#55534E; --acc:#FF5A1F; --bg:#F1EFEA; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:72px 56px 80px; }
+  #v06 .top { display:grid; grid-template-columns:1fr auto; gap:32px; align-items:end; padding-bottom:28px; border-bottom:1px solid var(--ink); }
+  #v06 .meta { font-size:12px; letter-spacing:.14em; text-transform:uppercase; display:flex; gap:24px; margin-bottom:22px; color:var(--mut); }
+  #v06 .meta b { color:var(--ink); font-weight:600; }
+  #v06 h2 { font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(44px,8cqw,104px); line-height:.9; letter-spacing:-.03em; margin:0; }
+  #v06 h2 em { color:var(--acc); }
+  #v06 .top p { margin:0; max-width:280px; font-size:15px; line-height:1.6; color:var(--mut); }
+  #v06 ol { list-style:none; margin:0; padding:0; }
+  #v06 li { border-bottom:1px solid rgba(17,17,16,.25); }
+  #v06 li a { position:relative; display:grid; grid-template-columns:90px 1.1fr 1fr 56px; gap:24px; align-items:center; padding:30px 8px; overflow:hidden; isolation:isolate; }
+  #v06 li a::before { content:""; position:absolute; inset:0; background:var(--acc); transform:scaleY(0); transform-origin:bottom; transition:transform .5s cubic-bezier(.7,0,.2,1); z-index:-1; }
+  #v06 li a:hover::before, #v06 li a:focus-visible::before { transform:scaleY(1); }
+  #v06 li a:focus-visible { outline:none; }
+  #v06 .n { font-family:'Instrument Serif',serif; font-size:22px; color:var(--mut); transition:color .3s; }
+  #v06 h3 { font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.2cqw,54px); line-height:1; letter-spacing:-.02em; margin:0; transition:transform .5s cubic-bezier(.2,.8,.2,1); }
+  #v06 .d { font-size:15px; line-height:1.6; color:var(--mut); transition:color .3s; }
+  #v06 .d small { display:block; margin-top:8px; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink); }
+  #v06 .ar { width:52px; height:52px; border-radius:50%; border:1px solid var(--ink); display:grid; place-items:center; justify-self:end; transition:background .3s, transform .5s cubic-bezier(.2,.8,.2,1); }
+  #v06 .ar svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; transition:transform .5s; transform:rotate(-45deg); }
+  #v06 li a:hover h3, #v06 li a:focus-visible h3 { font-style:italic; transform:translateX(14px); }
+  #v06 li a:hover .n, #v06 li a:hover .d, #v06 li a:focus-visible .n, #v06 li a:focus-visible .d { color:var(--ink); }
+  #v06 li a:hover .ar, #v06 li a:focus-visible .ar { background:var(--ink); color:var(--acc); }
+  #v06 li a:hover .ar svg, #v06 li a:focus-visible .ar svg { transform:rotate(0); }
+  #v06 .end { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:28px; font-size:14px; color:var(--mut); }
+  #v06 .end a { color:var(--ink); border-bottom:1px solid var(--ink); }
+  #v06 .end a:focus-visible { outline:2px solid var(--acc); outline-offset:3px; }
+  @container demo (max-width:900px) { #v06 { padding:56px 32px 64px; } #v06 li a { grid-template-columns:60px 1fr 52px; } #v06 .d { grid-column:2 / 3; grid-row:2; } #v06 .ar { grid-row:1 / 3; grid-column:3; } #v06 .top { grid-template-columns:1fr; } }
+  @container demo (max-width:560px) { #v06 { padding:44px 18px 52px; } #v06 li a { grid-template-columns:1fr 44px; gap:10px 14px; padding:24px 4px; } #v06 .n { grid-column:1; grid-row:1; font-size:17px; } #v06 h3 { grid-column:1; grid-row:2; font-size:34px; } #v06 .d { grid-column:1 / 3; grid-row:3; } #v06 .ar { grid-column:2; grid-row:1 / 3; width:44px; height:44px; } #v06 .meta { flex-wrap:wrap; gap:8px 18px; } #v06 li a:hover h3, #v06 li a:focus-visible h3 { transform:none; } }
+  @media (prefers-reduced-motion:reduce) { #v06 li a::before, #v06 h3, #v06 .ar, #v06 .ar svg { transition:none; } }
+
+  /* ---------- v07 · Hover-Karten mit Bild-Reveal ---------- */
+  #v07 { --bg:#15110E; --ink:#F3EADB; --mut:#BFB2A0; --gold:#D9B47A; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:80px 52px 72px; }
+  #v07 .hd { text-align:center; margin-bottom:44px; }
+  #v07 .orn { display:inline-flex; align-items:center; gap:14px; color:var(--gold); font-size:12px; letter-spacing:.32em; text-transform:uppercase; margin-bottom:14px; }
+  #v07 .orn::before, #v07 .orn::after { content:""; width:36px; height:1px; background:currentColor; }
+  #v07 h2 { font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:clamp(34px,4.8cqw,58px); line-height:1.05; margin:0 0 12px; letter-spacing:-.01em; }
+  #v07 .hd p { color:var(--mut); font-size:16px; line-height:1.6; max-width:520px; margin:0 auto; }
+  #v07 .cards { display:flex; gap:12px; height:440px; }
+  #v07 .c { position:relative; flex:1; min-width:0; border:1px solid rgba(217,180,122,.28); border-radius:6px; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:26px 24px; transition:flex .7s cubic-bezier(.2,.8,.2,1), border-color .4s; isolation:isolate; }
+  #v07 .c img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; opacity:.28; filter:grayscale(1) contrast(1.1); transform:scale(1.12); transition:opacity .6s, transform 1.1s cubic-bezier(.2,.8,.2,1), filter .6s; }
+  #v07 .c::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(21,17,14,.1) 0%,rgba(21,17,14,.55) 45%,rgba(21,17,14,.95) 100%); opacity:.6; transition:opacity .6s; }
+  #v07 .no { position:absolute; top:22px; left:24px; font-family:'Fraunces',serif; font-size:15px; color:var(--gold); }
+  #v07 .ic { position:absolute; top:22px; right:22px; width:30px; height:30px; color:var(--gold); }
+  #v07 .ic svg { width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.2; stroke-linecap:round; stroke-linejoin:round; }
+  #v07 h3 { font-family:'Fraunces',serif; font-weight:400; font-size:30px; line-height:1.05; margin:0 0 10px; }
+  #v07 .time { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  #v07 .more { display:grid; grid-template-rows:0fr; transition:grid-template-rows .6s cubic-bezier(.2,.8,.2,1); }
+  #v07 .more > div { overflow:hidden; }
+  #v07 .more p { margin:14px 0 0; font-size:15px; line-height:1.6; color:#E6DCCB; max-width:340px; }
+  #v07 .more span { display:inline-flex; gap:8px; margin-top:14px; font-size:13px; font-weight:600; color:var(--gold); border-bottom:1px solid var(--gold); padding-bottom:3px; }
+  #v07 .c:hover, #v07 .c:focus-visible, #v07 .cards:not(:hover):not(:focus-within) .c:first-child { flex:2.4; border-color:var(--gold); }
+  #v07 .c:hover img, #v07 .c:focus-visible img, #v07 .cards:not(:hover):not(:focus-within) .c:first-child img { opacity:1; filter:none; transform:none; }
+  #v07 .c:hover::after, #v07 .c:focus-visible::after, #v07 .cards:not(:hover):not(:focus-within) .c:first-child::after { opacity:1; }
+  #v07 .c:hover .more, #v07 .c:focus-visible .more, #v07 .cards:not(:hover):not(:focus-within) .c:first-child .more { grid-template-rows:1fr; }
+  #v07 .c:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+  #v07 .info { margin-top:30px; display:flex; justify-content:center; gap:10px 34px; flex-wrap:wrap; font-size:14px; color:var(--mut); }
+  #v07 .info b { color:var(--ink); font-weight:600; }
+  @container demo (max-width:900px) { #v07 { padding:60px 28px; } #v07 .cards { flex-wrap:wrap; height:auto; } #v07 .c, #v07 .c:hover, #v07 .c:focus-visible, #v07 .cards:not(:hover):not(:focus-within) .c:first-child { flex:1 1 calc(50% - 6px); min-height:300px; } #v07 .c img { opacity:1; filter:none; transform:none; } #v07 .c::after { opacity:1; } #v07 .more { grid-template-rows:1fr; } }
+  @container demo (max-width:560px) { #v07 { padding:48px 16px; } #v07 .c, #v07 .c:hover, #v07 .c:focus-visible, #v07 .cards:not(:hover):not(:focus-within) .c:first-child { flex-basis:100%; min-height:280px; } #v07 h2 { font-size:36px; } }
+  @media (prefers-reduced-motion:reduce) { #v07 .c, #v07 .c img, #v07 .c::after, #v07 .more { transition:none; } }
+
+  /* ---------- v08 · Vorher-Nachher-Vergleich mit Schieberegler ---------- */
+  #v08 { --ink:#1E2A2A; --mut:#4B5B5A; --grn:#2F6F5E; --grn-l:#E3EFEA; --line:#DCE5E1; background:#fff; color:var(--ink); font-family:'Manrope',sans-serif; padding:72px 56px; }
+  #v08 .grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; align-items:center; }
+  #v08 .eb { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:var(--grn); background:var(--grn-l); padding:6px 12px; border-radius:999px; margin-bottom:18px; }
+  #v08 .eb svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  #v08 h2 { font-size:clamp(30px,4cqw,46px); line-height:1.05; letter-spacing:-.03em; font-weight:800; margin:0 0 16px; }
+  #v08 .lead { color:var(--mut); font-size:16px; line-height:1.65; margin:0 0 26px; }
+  #v08 .svc { list-style:none; margin:0 0 28px; padding:0; border-top:1px solid var(--line); }
+  #v08 .svc li { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:14px 0; border-bottom:1px solid var(--line); font-weight:700; font-size:15.5px; }
+  #v08 .svc li span { font-weight:500; color:var(--mut); font-size:14px; text-align:right; }
+  #v08 .sw { display:flex; gap:8px; }
+  #v08 .sw button { all:unset; cursor:pointer; font-size:14px; font-weight:700; padding:10px 16px; border-radius:10px; border:1px solid var(--line); color:var(--mut); transition:.2s; }
+  #v08 .sw button[aria-pressed=true] { background:var(--ink); color:#fff; border-color:var(--ink); }
+  #v08 .sw button:focus-visible { outline:2px solid var(--grn); outline-offset:2px; }
+  #v08 .ba { --pos:50%; position:relative; aspect-ratio:4/3; border-radius:18px; overflow:hidden; user-select:none; -webkit-user-select:none; touch-action:pan-y; background:#ddd; box-shadow:0 30px 60px -36px rgba(30,42,42,.55); }
+  #v08 .ba img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; }
+  #v08 .before { position:absolute; inset:0; clip-path:inset(0 calc(100% - var(--pos)) 0 0); }
+  #v08 .before img { filter:grayscale(.75) sepia(.35) brightness(.78) contrast(.82); }
+  #v08 .before::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 20%,rgba(120,100,70,.28),transparent 55%), radial-gradient(ellipse at 80% 70%,rgba(90,80,60,.25),transparent 50%); mix-blend-mode:multiply; }
+  #v08 .lbl { position:absolute; top:16px; font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:7px 11px; border-radius:8px; background:rgba(255,255,255,.92); color:var(--ink); pointer-events:none; }
+  #v08 .lbl.l { left:16px; } #v08 .lbl.r { right:16px; background:var(--grn); color:#fff; }
+  #v08 .line { position:absolute; top:0; bottom:0; left:var(--pos); width:2px; margin-left:-1px; background:#fff; pointer-events:none; box-shadow:0 0 12px rgba(0,0,0,.25); }
+  #v08 .knob { position:absolute; top:50%; left:var(--pos); width:52px; height:52px; margin:-26px 0 0 -26px; border-radius:50%; background:#fff; display:grid; place-items:center; box-shadow:0 8px 24px rgba(0,0,0,.25); pointer-events:none; transition:transform .2s; }
+  #v08 .knob svg { width:26px; height:26px; fill:none; stroke:var(--ink); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  #v08 .ba input { position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize; }
+  #v08 .ba:has(input:focus-visible) .knob { outline:3px solid var(--grn); outline-offset:3px; }
+  #v08 .ba:active .knob { transform:scale(1.08); }
+  #v08 .cap { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:14px; font-size:13.5px; color:var(--mut); }
+  #v08 .cap b { color:var(--ink); }
+  @container demo (max-width:900px) { #v08 { padding:56px 32px; } #v08 .grid { grid-template-columns:1fr; gap:36px; } #v08 .media { order:-1; } }
+  @container demo (max-width:560px) { #v08 { padding:44px 18px; } #v08 .ba { aspect-ratio:4/4.2; } #v08 h2 { font-size:30px; } #v08 .svc li { flex-direction:column; align-items:flex-start; gap:2px; } #v08 .svc li span { text-align:left; } }
+  @media (prefers-reduced-motion:reduce) { #v08 .knob { transition:none; } }
+
+  /* ---------- v09 · Leistungs-Karussell ---------- */
+  #v09 { --ink:#0F0F0F; --mut:#4D4D4D; --lime:#D7F23A; --bg:#EDEDE8; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:72px 0 64px; overflow:hidden; }
+  #v09 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; padding:0 56px; margin-bottom:34px; flex-wrap:wrap; }
+  #v09 .tag { display:inline-block; background:var(--ink); color:var(--lime); font-size:12px; font-weight:800; letter-spacing:.14em; padding:6px 10px; margin-bottom:14px; }
+  #v09 h2 { font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(52px,8.5cqw,112px); line-height:.86; letter-spacing:.005em; margin:0; }
+  #v09 h2 mark { background:var(--lime); color:var(--ink); padding:0 .08em; }
+  #v09 .nav { display:flex; gap:10px; align-items:center; }
+  #v09 .nav button { all:unset; cursor:pointer; width:56px; height:56px; border-radius:50%; border:2px solid var(--ink); display:grid; place-items:center; transition:background .2s, color .2s, opacity .2s; }
+  #v09 .nav button:hover { background:var(--ink); color:var(--lime); }
+  #v09 .nav button:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+  #v09 .nav button:disabled { opacity:.3; cursor:default; background:none; color:var(--ink); }
+  #v09 .nav svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+  #v09 .track { display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding:0 56px; padding:0 56px 8px; scrollbar-width:none; list-style:none; margin:0; scroll-behavior:smooth; }
+  #v09 .track::-webkit-scrollbar { display:none; }
+  #v09 .track:focus-visible { outline:3px solid var(--ink); outline-offset:-3px; }
+  #v09 .sl { flex:0 0 300px; scroll-snap-align:start; background:#fff; position:relative; display:flex; flex-direction:column; }
+  #v09 .sl .im { position:relative; aspect-ratio:4/4.6; overflow:hidden; background:#222; }
+  #v09 .sl img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s cubic-bezier(.2,.8,.2,1); filter:saturate(1.05); }
+  #v09 .sl:hover img { transform:scale(1.06); }
+  #v09 .lv { position:absolute; left:14px; top:14px; background:var(--lime); color:var(--ink); font-size:11px; font-weight:800; letter-spacing:.1em; padding:5px 8px; }
+  #v09 .bd { padding:20px 20px 22px; display:flex; flex-direction:column; flex:1; }
+  #v09 h3 { font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:38px; line-height:.95; margin:0 0 8px; letter-spacing:.01em; }
+  #v09 .bd p { margin:0 0 16px; font-size:14.5px; line-height:1.55; color:var(--mut); flex:1; }
+  #v09 .meta { display:flex; justify-content:space-between; align-items:center; border-top:2px solid var(--ink); padding-top:12px; font-size:13px; font-weight:700; }
+  #v09 .meta span:last-child { display:inline-flex; align-items:center; gap:6px; }
+  #v09 .meta svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; }
+  #v09 .sl.cta { background:var(--ink); color:#fff; justify-content:space-between; padding:26px 24px; }
+  #v09 .sl.cta h3 { font-size:56px; color:var(--lime); }
+  #v09 .sl.cta p { color:#C9C9C9; font-size:15px; line-height:1.55; margin:0; }
+  #v09 .sl.cta a { display:block; text-align:center; background:var(--lime); color:var(--ink); font-weight:800; padding:15px; font-size:15px; letter-spacing:.02em; }
+  #v09 .sl.cta a:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+  #v09 .prog { margin:26px 56px 0; height:4px; background:rgba(15,15,15,.12); position:relative; }
+  #v09 .prog i { position:absolute; left:0; top:0; bottom:0; width:20%; background:var(--ink); transition:left .3s, width .3s; }
+  @container demo (max-width:700px) { #v09 { padding:52px 0 48px; } #v09 .hd { padding:0 20px; } #v09 .track { padding:0 20px 8px; scroll-padding:0 20px; gap:12px; } #v09 .sl { flex-basis:78%; } #v09 .prog { margin:22px 20px 0; } #v09 .nav button { width:48px; height:48px; } }
+  @media (prefers-reduced-motion:reduce) { #v09 .track { scroll-behavior:auto; } #v09 .sl img, #v09 .prog i { transition:none; } }
+
+  /* ---------- v10 · Dunkle Feature-Liste mit Glow ---------- */
+  #v10 { --bg:#070B14; --ink:#E6EDF7; --mut:#93A3BA; --cy:#38E1FF; --vi:#8B5CF6; background:var(--bg); color:var(--ink); font-family:'Space Grotesk',sans-serif; padding:84px 56px 72px; position:relative; overflow:hidden; isolation:isolate; }
+  #v10::before { content:""; position:absolute; inset:0; z-index:-1; background-image:linear-gradient(rgba(148,163,184,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.07) 1px,transparent 1px); background-size:44px 44px; -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 30%,transparent 75%); mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 30%,transparent 75%); }
+  #v10::after { content:""; position:absolute; z-index:-1; width:620px; height:320px; left:50%; top:-160px; transform:translateX(-50%); background:radial-gradient(closest-side,rgba(56,225,255,.28),rgba(139,92,246,.14) 55%,transparent); filter:blur(10px); }
+  #v10 .hd { text-align:center; max-width:700px; margin:0 auto 52px; }
+  #v10 .chip { display:inline-flex; align-items:center; gap:10px; font-size:13px; color:var(--mut); border:1px solid rgba(148,163,184,.22); background:rgba(15,23,42,.6); padding:7px 14px; border-radius:999px; margin-bottom:22px; letter-spacing:.02em; }
+  #v10 .chip i { width:8px; height:8px; border-radius:50%; background:#34D399; box-shadow:0 0 10px #34D399; }
+  #v10 h2 { font-size:clamp(32px,4.8cqw,56px); line-height:1.02; letter-spacing:-.035em; font-weight:600; margin:0 0 16px; }
+  #v10 h2 span { background:linear-gradient(90deg,var(--cy),var(--vi)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  #v10 .hd p { color:var(--mut); font-size:17px; line-height:1.6; margin:0; }
+  #v10 .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; list-style:none; margin:0; padding:0; }
+  #v10 .f { --mx:50%; --my:-200px; position:relative; border-radius:18px; padding:1px; background:radial-gradient(260px circle at var(--mx) var(--my),rgba(56,225,255,.75),rgba(139,92,246,.35) 40%,rgba(148,163,184,.14) 70%); transition:transform .3s; }
+  #v10 .f > div { position:relative; height:100%; border-radius:17px; padding:28px 26px; background:radial-gradient(400px circle at var(--mx) var(--my),rgba(56,225,255,.08),transparent 60%), #0B1220; }
+  #v10 .f:hover { transform:translateY(-3px); }
+  #v10 .ic { width:46px; height:46px; border-radius:12px; display:grid; place-items:center; color:var(--cy); background:rgba(56,225,255,.08); border:1px solid rgba(56,225,255,.3); box-shadow:0 0 24px -6px rgba(56,225,255,.6), inset 0 0 12px rgba(56,225,255,.15); margin-bottom:22px; }
+  #v10 .ic svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+  #v10 h3 { font-size:19px; font-weight:600; letter-spacing:-.01em; margin:0 0 8px; }
+  #v10 .f p { color:var(--mut); font-size:15px; line-height:1.6; margin:0; }
+  #v10 .kv { display:flex; gap:8px; margin-top:18px; flex-wrap:wrap; }
+  #v10 .kv span { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; color:#BAE6FD; background:rgba(56,225,255,.07); border:1px solid rgba(56,225,255,.18); padding:4px 8px; border-radius:6px; }
+  #v10 .status { margin-top:22px; display:flex; flex-wrap:wrap; gap:10px 28px; justify-content:center; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13px; color:var(--mut); }
+  #v10 .status b { color:var(--ink); font-weight:500; }
+  #v10 .status em { font-style:normal; color:#34D399; }
+  #v10 .cta { display:flex; justify-content:center; gap:12px; margin-top:34px; flex-wrap:wrap; }
+  #v10 .cta a { font-weight:600; font-size:15px; padding:13px 22px; border-radius:12px; }
+  #v10 .cta .p { background:linear-gradient(135deg,var(--cy),#22D3EE 30%,var(--vi)); color:#04121A; box-shadow:0 10px 30px -10px rgba(56,225,255,.7); }
+  #v10 .cta .s { border:1px solid rgba(148,163,184,.3); color:var(--ink); }
+  #v10 .cta a:focus-visible { outline:2px solid var(--cy); outline-offset:3px; }
+  @container demo (max-width:960px) { #v10 { padding:64px 28px 56px; } #v10 .grid { grid-template-columns:repeat(2,1fr); } }
+  @container demo (max-width:600px) { #v10 { padding:52px 16px 48px; } #v10 .grid { grid-template-columns:1fr; } #v10 h2 { font-size:32px; } #v10 .f { --mx:20%; --my:0px; } }
+  @media (prefers-reduced-motion:reduce) { #v10 .f { transition:none; } }
+
+</style>
+</head>
+<body class="shell">
+
+<header class="sh-header">
+  <div class="sh-bar">
+    <a href="../../Meuster%20Landing%20Page.dc.html" aria-label="meuser.biz Startseite"><img src="../../assets/meuser-logo.png" alt="meuser.biz – Modern Webservices"></a>
+    <div class="sh-actions">
+      <a class="sh-btn ghost" href="../../beispiele.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>Alle<span class="long"> Beispiele</span></span></a>
+      <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Anfrage</a>
+    </div>
+  </div>
+  <nav class="sh-cats" aria-label="Kategorien">
+    <a href="../../beispiele.html#websites">Komplette Websites</a>
+    <a href="navigation.html">Navigation &amp; Menüs</a>
+    <a href="header.html">Header &amp; Hero</a>
+    <a href="footer.html">Footer</a>
+    <a href="leistungen.html">Leistungen &amp; Features</a>
+    <a href="preise.html">Preistabellen</a>
+    <a href="stimmen.html">Kundenstimmen</a>
+    <a href="team.html">Team</a>
+    <a href="galerie.html">Galerien</a>
+    <a href="kontakt.html">Kontakt &amp; Formulare</a>
+    <a href="faq.html">FAQ</a>
+    <a href="cta.html">Call-to-Action</a>
+    <a href="kennzahlen.html">Kennzahlen &amp; Abläufe</a>
+  </nav>
+</header>
+
+<section class="sh-hero">
+  <div class="sh-hero-in">
+    <div class="sh-eyebrow">BAUSTEINE · 10 VARIANTEN</div>
+    <h1>Leistungen &amp; Features</h1>
+    <p>Wie Sie Ihr Angebot zeigen, entscheidet, ob Besucher bleiben. Zehn Varianten für Leistungsbereiche – vom klaren Kartenraster bis zum interaktiven Vorher-Nachher-Vergleich.</p>
+  </div>
+</section>
+
+<nav class="sh-index" aria-label="Varianten auf dieser Seite">
+  <a href="#v01-wrap"><b>01</b>Icon-Karten</a>
+  <a href="#v02-wrap"><b>02</b>Bento-Grid</a>
+  <a href="#v03-wrap"><b>03</b>Bild-Text-Zeilen</a>
+  <a href="#v04-wrap"><b>04</b>Leistungs-Tabs</a>
+  <a href="#v05-wrap"><b>05</b>Akkordeon mit Bild</a>
+  <a href="#v06-wrap"><b>06</b>Editorial-Liste</a>
+  <a href="#v07-wrap"><b>07</b>Bild-Reveal-Karten</a>
+  <a href="#v08-wrap"><b>08</b>Vorher/Nachher</a>
+  <a href="#v09-wrap"><b>09</b>Karussell</a>
+  <a href="#v10-wrap"><b>10</b>Glow-Features</a>
+</nav>
+
+<main class="sh-main">
+
+  <!-- ===== VARIANTE (Muster, für jede Variante wiederholen) =====
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Name der Variante</h2>
+        <p>Ein bis zwei Sätze: Wie wirkt sie, wofür eignet sie sich?</p>
+        <ul class="v-tags"><li>Restaurant</li><li>Hotel</li><li>mit Dropdown</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame" style="--h:420px">
+        <div id="v01"> … Baustein … </div>
+      </div>
+    </div>
+  </section>
+  ============================================================== -->
+
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Icon-Karten-Raster</h2>
+        <p>Klar, aufgeräumt und sofort erfassbar: sechs Leistungen als Karten mit eigenem Linien-Icon, Hover-Akzent und Notdienst-Leiste. Der Klassiker für Handwerksbetriebe mit breitem Angebot.</p>
+        <ul class="v-tags"><li>Elektro &amp; Handwerk</li><li>Dienstleister</li><li>6 Karten</li><li>Notdienst-Leiste</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v01">
+<section aria-labelledby="v01-h">
+  <div class="hd">
+    <div>
+      <div class="eyebrow">Leistungen</div>
+      <h2 id="v01-h">Strom, Licht und Technik – alles aus einer Hand.</h2>
+    </div>
+    <p>Elektro Stappen plant und installiert seit 1987 in Kempen und Umgebung – vom Altbau bis zum Neubau, vom Sicherungskasten bis zur Solaranlage.</p>
+  </div>
+  <ul class="grid">
+    <li class="card"><span class="no">01</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2z"/></svg></span><h3>Elektroinstallation</h3><p>Neubau, Sanierung, Zählerschrank: normgerecht nach VDE und sauber dokumentiert.</p><a class="more" href="#" onclick="return false">Mehr erfahren<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+    <li class="card"><span class="no">02</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M9.5 15a3.5 3.5 0 0 1 5 0"/><path d="M12 17.8h.01"/></svg></span><h3>Smart Home</h3><p>Licht, Heizung und Rollläden per App oder Taster – herstellerunabhängig und erweiterbar.</p><a class="more" href="#" onclick="return false">Mehr erfahren<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+    <li class="card"><span class="no">03</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 6 12h12l2 8H4z"/><path d="M5 16h14M10.5 12l-.6 8M13.5 12l.6 8"/><circle cx="12" cy="5.5" r="2"/><path d="M12 1.5v.5M16 5.5h.5M7.5 5.5H8"/></svg></span><h3>Photovoltaik</h3><p>Planung, Montage und Speicher – inklusive Anmeldung beim Netzbetreiber.</p><a class="more" href="#" onclick="return false">Mehr erfahren<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+    <li class="card"><span class="no">04</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="10" height="18" rx="2"/><path d="M14 9h2a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V8l-2-2"/><path d="M9.5 8 7.5 12h4l-2 4"/></svg></span><h3>Wallbox &amp; E-Mobilität</h3><p>Ladepunkte für Garage und Firmenparkplatz, förderfähig und lastgesteuert.</p><a class="more" href="#" onclick="return false">Mehr erfahren<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+    <li class="card"><span class="no">05</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.1V16h5v-.1c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 3z"/></svg></span><h3>Licht &amp; Beleuchtung</h3><p>Lichtplanung für Wohnräume, Praxen und Läden – effizient, dimmbar, stimmungsvoll.</p><a class="more" href="#" onclick="return false">Mehr erfahren<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+    <li class="card"><span class="no">06</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span><h3>E-Check &amp; Prüfung</h3><p>Prüfung nach DGUV V3 für Betriebe und Vermieter – mit Prüfprotokoll und Plakette.</p><a class="more" href="#" onclick="return false">Mehr erfahren<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+  </ul>
+  <div class="bar">
+    <div class="l"><span class="pulse" aria-hidden="true"></span><span><strong>Notdienst rund um die Uhr</strong> – auch am Wochenende</span></div>
+    <a href="#" onclick="return false">02151 123 45 67</a>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v02-wrap" aria-labelledby="v02-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 02</div>
+        <h2 id="v02-title">Bento-Grid mit Produkt-Kacheln</h2>
+        <p>Unterschiedlich große Kacheln mit kleinen, in CSS gebauten Produktansichten zeigen Funktionen, statt sie nur zu beschreiben. Modern, verspielt und ideal für Software und digitale Produkte.</p>
+        <ul class="v-tags"><li>Software &amp; SaaS</li><li>Startup</li><li>Mini-UI in CSS</li><li>asymmetrisches Raster</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v02">
+<section aria-labelledby="v02-h">
+  <div class="hd">
+    <span class="pill"><b>NEU</b> Jetzt mit E-Rechnung ab 2025</span>
+    <h2 id="v02-h">Buchhaltung, die sich <span>von selbst erledigt.</span></h2>
+    <p>Ledgerly nimmt Selbstständigen am Niederrhein den Papierkram ab – vom Beleg bis zur Steuererklärung.</p>
+  </div>
+  <div class="bento">
+    <article class="t big">
+      <h3>Belege per Foto erfassen</h3>
+      <p>Kassenbon fotografieren, fertig. Betrag, Steuersatz und Kategorie erkennt Ledgerly automatisch.</p>
+      <div class="phone" aria-hidden="true"><div class="screen">
+        <div class="rcpt"><div class="s">Café Kornblume · Kempen</div><div class="r"><span>2× Cappuccino</span><span>7,80 €</span></div><div class="r"><span>Croissant</span><span>2,90 €</span></div><div class="r"><span>MwSt. 7 %</span><span>0,70 €</span></div><div class="r sum"><span>Summe</span><span>10,70 €</span></div></div>
+        <div class="scan"></div>
+        <div class="ok"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bewirtung · 10,70 € gebucht</div>
+      </div></div>
+    </article>
+    <article class="t">
+      <h3>Bankabgleich</h3>
+      <p>Zahlungen werden Rechnungen automatisch zugeordnet.</p>
+      <div class="tx" aria-hidden="true"><div><span><i></i>RE-2041</span><em class="in">+1.190,00 €</em></div><div><span><i></i>RE-2039</span><em class="in">+476,00 €</em></div></div>
+    </article>
+    <article class="t dark">
+      <h3>Umsatz live</h3>
+      <p>Ihr Monat auf einen Blick.</p>
+      <div class="chart" aria-hidden="true"><div class="k">18.420 €<small>▲ 12 %</small></div>
+        <svg viewBox="0 0 200 70" preserveAspectRatio="none"><defs><linearGradient id="v02g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8B7FFF" stop-opacity=".55"/><stop offset="1" stop-color="#8B7FFF" stop-opacity="0"/></linearGradient></defs><path d="M0 55 C20 50 30 58 50 44 S80 40 100 34 130 38 150 22 180 18 200 8 V70 H0Z" fill="url(#v02g)"/><path d="M0 55 C20 50 30 58 50 44 S80 40 100 34 130 38 150 22 180 18 200 8" fill="none" stroke="#A99FFF" stroke-width="2.5"/></svg>
+      </div>
+    </article>
+    <article class="t">
+      <h3>Export für alle</h3>
+      <p>Ein Klick – und Ihre Steuerkanzlei hat alles.</p>
+      <div class="exp" aria-hidden="true"><span>DATEV</span><span>CSV</span><span>XRechnung</span><span>ZUGFeRD</span></div>
+    </article>
+    <article class="t">
+      <h3>Mahnwesen</h3>
+      <p>Freundlich erinnern, ohne selbst daran zu denken.</p>
+      <div class="tog"><label>Zahlungserinnerung<input type="checkbox" checked></label><label>1. Mahnung nach 14 Tagen<input type="checkbox" checked></label><label>Kopie an mich<input type="checkbox"></label></div>
+    </article>
+    <article class="t wide">
+      <div><h3>Ihre Steuerkanzlei sitzt mit am Tisch</h3><p>Laden Sie Ihre Beraterin ein – sie sieht Belege in Echtzeit, Sie sparen Rückfragen und Ordner.</p><span class="badge">Kostenloser Berater-Zugang</span></div>
+      <div class="av" aria-hidden="true"><span style="background:#5B4CF0">AK</span><span style="background:#C026D3">MT</span><span style="background:#0E7490">JS</span><span style="background:#17153B">+4</span></div>
+    </article>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v03-wrap" aria-labelledby="v03-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 03</div>
+        <h2 id="v03-title">Abwechselnde Bild-Text-Zeilen</h2>
+        <p>Jede Leistung bekommt ihre eigene Bühne: großes Foto, versetzte Holzfläche, Häkchenliste und Kennzahl. Warm, handwerklich und ruhig erzählend – für Betriebe, deren Arbeit man sehen muss.</p>
+        <ul class="v-tags"><li>Schreinerei &amp; Handwerk</li><li>Innenausbau</li><li>Zickzack-Layout</li><li>mit Fotos</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v03">
+<section aria-labelledby="v03-h">
+  <div class="hd">
+    <div class="kick">Holzwerk Terlinden · seit 1964</div>
+    <h2 id="v03-h">Was wir aus Holz machen – und wie.</h2>
+  </div>
+  <div class="rows">
+    <div class="row">
+      <div class="pic"><img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1200&q=80&auto=format&fit=crop" alt="Schreiner bearbeitet Holzbalken in der Werkstatt" loading="lazy" width="1200" height="900"><div class="stamp"><span><b>100 %</b>eigene<br>Werkstatt</span></div></div>
+      <div class="txt">
+        <div class="num">01 — MÖBEL NACH MASS</div>
+        <h3>Einzelstücke, die genau in Ihre Nische passen.</h3>
+        <p>Vom Einbauschrank unter der Dachschräge bis zum Esstisch aus regionaler Eiche: Wir entwerfen, bauen und montieren – alles aus einer Hand in Vorst.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Aufmaß und 3D-Entwurf vor Ort</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Massivholz, Furnier oder Lack – Muster zum Anfassen</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Montage durch unser eigenes Team</li>
+        </ul>
+        <a class="link" href="#" onclick="return false">Beispiele ansehen →</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="pic"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=80&auto=format&fit=crop" alt="Helle, moderne Einbauküche mit Kochinsel" loading="lazy" width="1200" height="900"><div class="stamp"><span><b>6–8</b>Wochen<br>Lieferzeit</span></div></div>
+      <div class="txt">
+        <div class="num">02 — KÜCHEN</div>
+        <h3>Küchen, die zum Kochen gebaut sind.</h3>
+        <p>Wir planen mit Ihnen Laufwege, Stauraum und Licht. Fronten fertigen wir selbst, Geräte bauen wir markenunabhängig ein – auch in Altbauten mit schiefen Wänden.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Arbeitsplatten aus Holz, Stein oder Keramik</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Elektro- und Wasseranschluss mit Partnerbetrieben</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Fester Montagetermin, besenrein übergeben</li>
+        </ul>
+        <a class="link" href="#" onclick="return false">Küchenberatung buchen →</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="pic"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format&fit=crop" alt="Wohnraum mit raumhoher Holzwandverkleidung" loading="lazy" width="1200" height="900"><div class="stamp"><span><b>5</b>Jahre<br>Garantie</span></div></div>
+      <div class="txt">
+        <div class="num">03 — INNENAUSBAU</div>
+        <h3>Wände, Treppen und Türen mit Charakter.</h3>
+        <p>Akustikpaneele, Holzverkleidungen, Treppen und Innentüren – für Privathäuser genauso wie für Praxen, Büros und Läden am Niederrhein.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Brandschutz- und Schallschutztüren</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Trockenbau und Holzdecken</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Ausführung auch abends und am Wochenende</li>
+        </ul>
+        <a class="link" href="#" onclick="return false">Projekt anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v04-wrap" aria-labelledby="v04-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 04</div>
+        <h2 id="v04-title">Tabs mit Inhalt je Leistung</h2>
+        <p>Viele Behandlungen, wenig Platz: Ein Reiter je Leistung mit Foto, Ablauf und Eckdaten wie Dauer und Kostenübernahme. Ruhig und vertrauensvoll – vollständig per Tastatur bedienbar.</p>
+        <ul class="v-tags"><li>Praxis &amp; Therapie</li><li>Gesundheit</li><li>Tabs mit Pfeiltasten</li><li>Eckdaten je Leistung</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v04">
+<section aria-labelledby="v04-h">
+  <div class="hd">
+    <div><div class="eb">Physio am Markt · Kempen</div><h2 id="v04-h">Unsere Behandlungen</h2></div>
+    <p>Wir nehmen uns Zeit: Jede Behandlung beginnt mit einem ausführlichen Befund – und endet mit Übungen für zu Hause.</p>
+  </div>
+  <div class="wrap">
+    <div>
+      <div role="tablist" aria-label="Behandlungen" aria-orientation="vertical">
+        <button role="tab" id="v04-t1" aria-controls="v04-p1" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11V6.5a1.5 1.5 0 0 1 3 0V11M10 10V4.5a1.5 1.5 0 0 1 3 0V10M13 10V5.5a1.5 1.5 0 0 1 3 0V11M16 11V8a1.5 1.5 0 0 1 3 0v6a7 7 0 0 1-7 7h-.5a6.5 6.5 0 0 1-5.4-2.9L3.4 14a1.6 1.6 0 0 1 2.6-1.9L7 13.5"/></svg>Manuelle Therapie</button>
+        <button role="tab" id="v04-t2" aria-controls="v04-p2" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="15" cy="5" r="2"/><path d="M3 20h18M6 20l3-6 4 1 2-5 3 3"/><path d="M9 14 7 10l4-2"/></svg>Krankengymnastik</button>
+        <button role="tab" id="v04-t3" aria-controls="v04-p3" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg>Gerätetraining</button>
+        <button role="tab" id="v04-t4" aria-controls="v04-p4" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="17" rx="2"/><path d="M9 4V2.8h6V4M8 10h8M8 14h8M8 18h5"/></svg>Erstbefund</button>
+      </div>
+      <p class="hint"><b>Neu bei uns?</b> Bringen Sie Ihre Verordnung und vorhandene Befunde einfach zum ersten Termin mit.</p>
+    </div>
+    <div>
+      <div role="tabpanel" id="v04-p1" aria-labelledby="v04-t1" tabindex="0">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200&q=80&auto=format&fit=crop" alt="Therapeutin behandelt den Rücken einer Patientin mit den Händen" loading="lazy"></div>
+        <div class="bd"><h3>Manuelle Therapie</h3><p>Gezielte Handgriffe lösen Blockaden an Gelenken und Wirbelsäule – bei Rückenschmerzen, steifem Nacken oder nach Verletzungen.</p>
+          <ol class="steps"><li>Befund: Beweglichkeit und Schmerzpunkte testen</li><li>Mobilisation von Gelenk und Gewebe</li><li>Zwei bis drei Übungen für zu Hause</li></ol>
+          <dl><div><dt>Dauer</dt><dd>25 Min.</dd></div><div><dt>Kasse</dt><dd>mit Rezept</dd></div><div><dt>Privat</dt><dd>ab 42 €</dd></div></dl></div>
+      </div>
+      <div role="tabpanel" id="v04-p2" aria-labelledby="v04-t2" tabindex="0" hidden>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80&auto=format&fit=crop" alt="Frau macht Bauchmuskelübung auf einer Matte" loading="lazy"></div>
+        <div class="bd"><h3>Krankengymnastik</h3><p>Aktive Übungen stärken Muskulatur und Haltung – individuell angepasst an Ihre Beschwerden und Ihren Alltag.</p>
+          <ol class="steps"><li>Haltungs- und Bewegungsanalyse</li><li>Übungsprogramm mit steigender Belastung</li><li>Übungsplan als PDF für zu Hause</li></ol>
+          <dl><div><dt>Dauer</dt><dd>25 Min.</dd></div><div><dt>Kasse</dt><dd>mit Rezept</dd></div><div><dt>Privat</dt><dd>ab 38 €</dd></div></dl></div>
+      </div>
+      <div role="tabpanel" id="v04-p3" aria-labelledby="v04-t3" tabindex="0" hidden>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1200&q=80&auto=format&fit=crop" alt="Heller Trainingsraum mit Kraft- und Ausdauergeräten" loading="lazy"></div>
+        <div class="bd"><h3>Gerätegestützte KG</h3><p>Training an medizinischen Geräten unter Anleitung – ideal nach Operationen oder bei chronischen Rückenbeschwerden.</p>
+          <ol class="steps"><li>Einweisung an jedem Gerät</li><li>Trainingsplan mit Gewichten und Wiederholungen</li><li>Kontrolle der Fortschritte alle vier Wochen</li></ol>
+          <dl><div><dt>Dauer</dt><dd>60 Min.</dd></div><div><dt>Kasse</dt><dd>mit Rezept</dd></div><div><dt>Gruppe</dt><dd>max. 3</dd></div></dl></div>
+      </div>
+      <div role="tabpanel" id="v04-p4" aria-labelledby="v04-t4" tabindex="0" hidden>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=1200&q=80&auto=format&fit=crop" alt="Therapeut bespricht ein Röntgenbild mit einer Patientin am Bildschirm" loading="lazy"></div>
+        <div class="bd"><h3>Erstbefund &amp; Beratung</h3><p>Bevor wir behandeln, verstehen wir: Wir sichten Ihre Unterlagen, testen und erklären Ihnen verständlich, was wir vorhaben.</p>
+          <ol class="steps"><li>Gespräch über Beschwerden und Ziele</li><li>Funktionstests und Sichtung von Bildern</li><li>Behandlungsplan mit klaren Etappen</li></ol>
+          <dl><div><dt>Dauer</dt><dd>45 Min.</dd></div><div><dt>Kasse</dt><dd>inklusive</dd></div><div><dt>Privat</dt><dd>55 €</dd></div></dl></div>
+      </div>
+    </div>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v05-wrap" aria-labelledby="v05-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 05</div>
+        <h2 id="v05-title">Akkordeon mit wechselndem Bild</h2>
+        <p>Rechtsgebiete als ruhiges Akkordeon in klassischer Serifenschrift; zum geöffneten Punkt blendet links das passende Bild über. Seriös, gediegen und übersichtlich auch bei vielen Fachgebieten.</p>
+        <ul class="v-tags"><li>Kanzlei &amp; Beratung</li><li>Steuerbüro</li><li>Akkordeon</li><li>Bild-Überblendung</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v05">
+<section aria-labelledby="v05-h">
+  <div class="grid">
+    <div class="media">
+      <img class="on" data-k="0" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80&auto=format&fit=crop" alt="Hand unterschreibt ein Dokument" loading="lazy">
+      <img data-k="1" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=80&auto=format&fit=crop" alt="Justitia-Statue mit Waage" loading="lazy">
+      <img data-k="2" src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1200&q=80&auto=format&fit=crop" alt="Bibliothek mit alten Büchern und Büsten" loading="lazy">
+      <img data-k="3" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop" alt="Modernes Wohnhaus in der Abenddämmerung" loading="lazy">
+      <div class="frame-l" aria-hidden="true"></div>
+      <div class="quote"><p>„Gutes Recht beginnt mit einem Gespräch, in dem man sich verstanden fühlt.“</p><span>Dr. Hanna Dahmen, Fachanwältin</span></div>
+    </div>
+    <div>
+      <div class="eb">Dahmen &amp; Overbeck · Rechtsanwälte</div>
+      <h2 id="v05-h">Unsere Rechtsgebiete</h2>
+      <p class="lead">Seit über dreißig Jahren beraten und vertreten wir Privatpersonen und mittelständische Unternehmen in Krefeld und am gesamten Niederrhein.</p>
+      <div class="acc">
+        <div class="it open"><h3><button type="button" aria-expanded="true" aria-controls="v05-a0" id="v05-b0" data-k="0"><span class="n">I.</span>Arbeitsrecht<span class="pm" aria-hidden="true"></span></button></h3>
+          <div class="pnl" id="v05-a0" role="region" aria-labelledby="v05-b0"><div><div class="in"><p>Kündigung, Abfindung, Arbeitsvertrag: Wir vertreten Arbeitnehmer und Arbeitgeber – außergerichtlich und vor dem Arbeitsgericht.</p><ul><li>Kündigungsschutz</li><li>Aufhebungsverträge</li><li>Arbeitszeugnis</li></ul></div></div></div></div>
+        <div class="it"><h3><button type="button" aria-expanded="false" aria-controls="v05-a1" id="v05-b1" data-k="1"><span class="n">II.</span>Familienrecht<span class="pm" aria-hidden="true"></span></button></h3>
+          <div class="pnl" id="v05-a1" role="region" aria-labelledby="v05-b1"><div><div class="in"><p>Trennung und Scheidung sind belastend genug. Wir regeln Unterhalt, Sorgerecht und Vermögen mit Augenmaß – und im Interesse der Kinder.</p><ul><li>Scheidung</li><li>Unterhalt</li><li>Sorge- und Umgangsrecht</li></ul></div></div></div></div>
+        <div class="it"><h3><button type="button" aria-expanded="false" aria-controls="v05-a2" id="v05-b2" data-k="2"><span class="n">III.</span>Erbrecht<span class="pm" aria-hidden="true"></span></button></h3>
+          <div class="pnl" id="v05-a2" role="region" aria-labelledby="v05-b2"><div><div class="in"><p>Wir gestalten Testamente, die Streit vermeiden, und begleiten Erbengemeinschaften bis zur fairen Auseinandersetzung.</p><ul><li>Testament &amp; Erbvertrag</li><li>Pflichtteil</li><li>Unternehmensnachfolge</li></ul></div></div></div></div>
+        <div class="it"><h3><button type="button" aria-expanded="false" aria-controls="v05-a3" id="v05-b3" data-k="3"><span class="n">IV.</span>Miet- &amp; Immobilienrecht<span class="pm" aria-hidden="true"></span></button></h3>
+          <div class="pnl" id="v05-a3" role="region" aria-labelledby="v05-b3"><div><div class="in"><p>Ob Eigenbedarf, Nebenkosten oder Bauvertrag: Wir prüfen Verträge vor der Unterschrift und setzen Ansprüche konsequent durch.</p><ul><li>Mietverträge</li><li>Nebenkosten</li><li>Kaufverträge</li></ul></div></div></div></div>
+      </div>
+      <div class="foot"><a href="#" onclick="return false">Erstberatung vereinbaren</a><span>oder 02151 123 45 67</span></div>
+    </div>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v06-wrap" aria-labelledby="v06-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 06</div>
+        <h2 id="v06-title">Editoriale Nummernliste</h2>
+        <p>Große Ziffern, feine Linien, eine elegante Serifenschrift: Beim Überfahren füllt sich die Zeile mit Farbe und der Titel kippt kursiv. Wirkt wie ein Magazin – für Agenturen, Studios und Kreative.</p>
+        <ul class="v-tags"><li>Agentur &amp; Studio</li><li>Architektur</li><li>Typografie-getrieben</li><li>Hover-Füllung</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v06">
+<section aria-labelledby="v06-h">
+  <div class="top">
+    <div>
+      <div class="meta"><span><b>Studio Kranich</b></span><span>Krefeld</span><span>Est. 2011</span></div>
+      <h2 id="v06-h">Was wir <em>gut</em> können.</h2>
+    </div>
+    <p>Vier Disziplinen, ein Team. Wir arbeiten für Marken, die lieber unverwechselbar sind als laut.</p>
+  </div>
+  <ol>
+    <li><a href="#" onclick="return false"><span class="n">(01)</span><h3>Markenstrategie</h3><span class="d">Positionierung, Namen, Tonalität – die Grundlage, auf der alles andere aufbaut.<small>Workshops · Research · Naming</small></span><span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+    <li><a href="#" onclick="return false"><span class="n">(02)</span><h3>Corporate Design</h3><span class="d">Logo, Schrift, Farbe und ein System, das auch in fünf Jahren noch trägt.<small>Logo · Typografie · Guidelines</small></span><span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+    <li><a href="#" onclick="return false"><span class="n">(03)</span><h3>Websites</h3><span class="d">Schnelle, barrierearme Seiten mit einem CMS, das Ihr Team wirklich gern benutzt.<small>UX · Design · Entwicklung</small></span><span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+    <li><a href="#" onclick="return false"><span class="n">(04)</span><h3>Kampagnen</h3><span class="d">Ideen für Plakat, Social und Print – vom ersten Scribble bis zur Druckfreigabe.<small>Konzept · Text · Produktion</small></span><span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+  </ol>
+  <div class="end"><span>Projekte ab 8.000 € · Start meist innerhalb von 4 Wochen</span><a href="#" onclick="return false">kranich@example.de</a></div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v07-wrap" aria-labelledby="v07-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 07</div>
+        <h2 id="v07-title">Hover-Karten mit Bild-Reveal</h2>
+        <p>Vier schmale, typografische Säulen auf dunklem Grund – bei Hover oder Fokus wächst die Karte und gibt ein stimmungsvolles Foto frei. Auf dem Handy sind die Bilder direkt sichtbar. Für Gastronomie mit Atmosphäre.</p>
+        <ul class="v-tags"><li>Restaurant &amp; Bar</li><li>Catering</li><li>Hover &amp; Fokus</li><li>dunkel &amp; edel</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v07">
+<section aria-labelledby="v07-h">
+  <div class="hd">
+    <div class="orn">Brasserie Lindgrün</div>
+    <h2 id="v07-h">Vier Arten, bei uns zu Gast zu sein</h2>
+    <p>Saisonale Küche vom Niederrhein – mittags schnell, abends mit Muße, und für Ihr Fest auch gern bei Ihnen zu Hause.</p>
+  </div>
+  <div class="cards">
+    <a class="c" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy"><span class="no">I</span><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M6 4v9a4 4 0 0 0 8 0V4M10 4v24M24 28V4c-3 0-5 4-5 10h5"/></svg></span><h3>Abendmenü</h3><span class="time">Mi–Sa · ab 18 Uhr</span><div class="more"><div><p>Fünf Gänge, die sich mit den Jahreszeiten ändern – dazu Weine von kleinen Winzern.</p><span>Menü ansehen →</span></div></div></a>
+    <a class="c" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy"><span class="no">II</span><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="17" r="9"/><circle cx="16" cy="17" r="5"/><path d="M3 4v10M3 9h2M29 4c-2 0-3 3-3 7h3v17"/></svg></span><h3>Mittagstisch</h3><span class="time">Di–Fr · 12–14 Uhr</span><div class="more"><div><p>Zwei Gerichte zur Wahl, frisch gekocht und in einer halben Stunde serviert.</p><span>Wochenkarte →</span></div></div></a>
+    <a class="c" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy"><span class="no">III</span><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 12 16 5l12 7H4zM16 12v16M9 28h14M7 12v4M25 12v4"/></svg></span><h3>Terrasse &amp; Feiern</h3><span class="time">bis 60 Gäste</span><div class="more"><div><p>Hochzeiten, Geburtstage, Firmenabende – auf unserer Terrasse mit Blick ins Grüne.</p><span>Anfrage stellen →</span></div></div></a>
+    <a class="c" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy"><span class="no">IV</span><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M6 12h17v7a8 8 0 0 1-8 8h-1a8 8 0 0 1-8-8v-7z"/><path d="M23 14h2a3 3 0 0 1 0 6h-2.5M11 4c-1 2 1 3 0 5M16 4c-1 2 1 3 0 5"/></svg></span><h3>Catering</h3><span class="time">ab 20 Personen</span><div class="more"><div><p>Fingerfood, Buffet oder gesetztes Menü – wir bringen Küche, Geschirr und Service mit.</p><span>Angebot anfordern →</span></div></div></a>
+  </div>
+  <div class="info"><span><b>Brasserie Lindgrün</b> · Hochstraße 12, 47906 Kempen</span><span>Reservierung: 02151 123 45 67</span></div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v08-wrap" aria-labelledby="v08-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 08</div>
+        <h2 id="v08-title">Vorher-Nachher-Vergleich mit Schieberegler</h2>
+        <p>Ein Regler zum Ziehen macht den Unterschied greifbar – per Maus, Finger oder Pfeiltasten. Daneben die Leistungen als kompakte Liste. Überzeugt dort, wo das Ergebnis für sich spricht: Maler, Renovierung, Reinigung.</p>
+        <ul class="v-tags"><li>Maler &amp; Renovierung</li><li>Gebäudereinigung</li><li>interaktiver Regler</li><li>Raumwechsel</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v08">
+<section aria-labelledby="v08-h">
+  <div class="grid">
+    <div>
+      <span class="eb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="15" height="6" rx="1.5"/><path d="M18 6h2.5v5H11v3"/><rect x="9.5" y="14" width="3" height="7" rx="1"/></svg>Malerwerkstatt Peters</span>
+      <h2 id="v08-h">Ziehen Sie mal am Regler.</h2>
+      <p class="lead">So sieht ein Raum nach zwei Tagen mit uns aus: neue Farbe, frische Decke, saubere Kanten – und keine Spur von Staub, wenn wir gehen.</p>
+      <ul class="svc">
+        <li>Innenanstrich &amp; Tapezieren<span>ab 2 Tagen</span></li>
+        <li>Fassadenanstrich<span>inkl. Gerüst</span></li>
+        <li>Lack- &amp; Spachteltechnik<span>Kalk, Beton-Optik</span></li>
+        <li>Bodenbeläge<span>Vinyl, Teppich, Laminat</span></li>
+      </ul>
+      <div class="sw" role="group" aria-label="Raum wählen">
+        <button type="button" aria-pressed="true" data-i="0">Wohnzimmer</button>
+        <button type="button" aria-pressed="false" data-i="1">Wohn-Essbereich</button>
+      </div>
+    </div>
+    <div class="media">
+      <div class="ba">
+        <img class="after" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80&auto=format&fit=crop" alt="Nachher: frisch gestrichenes, helles Wohnzimmer mit gelbem Sessel">
+        <div class="before" aria-hidden="true"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80&auto=format&fit=crop" alt=""></div>
+        <span class="lbl l">Vorher</span><span class="lbl r">Nachher</span>
+        <div class="line"></div>
+        <div class="knob"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></svg></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Vorher-Nachher-Vergleich: Anteil Vorher-Ansicht in Prozent">
+      </div>
+      <div class="cap"><span><b>Projekt:</b> <span class="pn">Altbauwohnung in St. Tönis, 32 m²</span></span><span>Farbe: Kalkweiß &amp; Salbei</span></div>
+    </div>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v09-wrap" aria-labelledby="v09-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 09</div>
+        <h2 id="v09-title">Leistungs-Karussell</h2>
+        <p>Kräftige Versalien, Fotos im Hochformat und ein wischbares Karussell mit Pfeiltasten und Fortschrittsbalken. Energiegeladen und mobil perfekt bedienbar – für Studios, Sportvereine und Kursanbieter.</p>
+        <ul class="v-tags"><li>Fitness &amp; Sport</li><li>Kursanbieter</li><li>Scroll-Snap-Karussell</li><li>Touch &amp; Tastatur</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v09">
+<section aria-labelledby="v09-h" aria-roledescription="Karussell">
+  <div class="hd">
+    <div><span class="tag">KRAFTWERK GYM · ST. TÖNIS</span><h2 id="v09-h">Dein Training.<br><mark>Deine Regeln.</mark></h2></div>
+    <div class="nav"><button type="button" class="prev" aria-label="Vorherige Leistung"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="next" aria-label="Nächste Leistung"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div>
+  </div>
+  <ul class="track" tabindex="0" aria-label="Leistungen, horizontal scrollbar">
+    <li class="sl"><div class="im"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&q=80&auto=format&fit=crop" alt="Athlet hebt eine Langhantel vom Boden" loading="lazy"><span class="lv">ALLE LEVEL</span></div><div class="bd"><h3>Krafttraining</h3><p>Freihantelzone mit sechs Racks, Plattformen und Coaches, die Technik ernst nehmen.</p><div class="meta"><span>24/7 geöffnet</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>flexibel</span></div></div></li>
+    <li class="sl"><div class="im"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&q=80&auto=format&fit=crop" alt="Trainerin korrigiert einen Mann beim Liegestütz" loading="lazy"><span class="lv">1:1</span></div><div class="bd"><h3>Personal Training</h3><p>Ein Plan nur für dich – mit Körperanalyse, Ernährungstipps und festen Terminen.</p><div class="meta"><span>ab 59 € / Std.</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>60 Min.</span></div></div></li>
+    <li class="sl"><div class="im"><img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=1200&q=80&auto=format&fit=crop" alt="Sportler trainiert mit Battle Ropes" loading="lazy"><span class="lv">INTENSIV</span></div><div class="bd"><h3>Functional &amp; HIIT</h3><p>Kurze, harte Einheiten mit Ropes, Sled und Kettlebells – in der Gruppe macht's mehr Spaß.</p><div class="meta"><span>12 Kurse / Woche</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>45 Min.</span></div></div></li>
+    <li class="sl"><div class="im"><img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1200&q=80&auto=format&fit=crop" alt="Gruppe beim Yoga-Kurs in einem Studio" loading="lazy"><span class="lv">KURS</span></div><div class="bd"><h3>Yoga &amp; Mobility</h3><p>Beweglich bleiben, Rücken entlasten, runterkommen – morgens und abends im Kursraum.</p><div class="meta"><span>9 Kurse / Woche</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>60 Min.</span></div></div></li>
+    <li class="sl"><div class="im"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80&auto=format&fit=crop" alt="Reihe von Kurzhanteln im Trainingsbereich" loading="lazy"><span class="lv">START</span></div><div class="bd"><h3>Einsteiger-Programm</h3><p>Vier Wochen begleitet: Einweisung, Trainingsplan und zwei Check-ins mit deinem Coach.</p><div class="meta"><span>inklusive</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>4 Wochen</span></div></div></li>
+    <li class="sl cta"><h3>Probe&shy;training?</h3><p>Einmal kostenlos testen – mit Einweisung und Getränk an der Bar.</p><a href="#" onclick="return false">Termin sichern</a></li>
+  </ul>
+  <div class="prog" aria-hidden="true"><i></i></div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v10-wrap" aria-labelledby="v10-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 10</div>
+        <h2 id="v10-title">Dunkle Feature-Liste mit Glow</h2>
+        <p>Nachtblaue Fläche, feines Raster und Karten, deren Rand dem Mauszeiger mit einem Lichtschein folgt. Technisch, präzise und hochwertig – für IT-Dienstleister, Software und Ingenieurbüros.</p>
+        <ul class="v-tags"><li>IT &amp; Tech</li><li>Cloud &amp; Security</li><li>Maus-Glow</li><li>dunkles Design</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v10">
+<section aria-labelledby="v10-h">
+  <div class="hd">
+    <span class="chip"><i aria-hidden="true"></i>Alle Systeme betriebsbereit</span>
+    <h2 id="v10-h">IT, die einfach läuft – <span>damit Sie es auch tun.</span></h2>
+    <p>Kernfeld betreut die IT von 140 mittelständischen Betrieben am Niederrhein: sicher, überwacht und mit Ansprechpartnern, die Sie beim Namen kennen.</p>
+  </div>
+  <ul class="grid">
+    <li class="f"><div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><rect x="9" y="11" width="6" height="5" rx="1"/><path d="M10 11V9.5a2 2 0 0 1 4 0V11"/></svg></span><h3>Managed Security</h3><p>Firewall, Virenschutz und Phishing-Training – zentral verwaltet und rund um die Uhr überwacht.</p><div class="kv"><span>24/7 SOC</span><span>NIS2-ready</span></div></div></li>
+    <li class="f"><div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4.5 4.5 0 0 1-.7-8.95A6 6 0 0 1 17.8 8.5 4.75 4.75 0 0 1 17.5 18H7z"/><path d="M12 11v5M9.5 13.5 12 11l2.5 2.5"/></svg></span><h3>Cloud &amp; Hosting</h3><p>Server und Daten in deutschen Rechenzentren – skalierbar, verschlüsselt und DSGVO-konform.</p><div class="kv"><span>99,95 % SLA</span><span>RZ Frankfurt</span></div></div></li>
+    <li class="f"><div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v5c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5"/></svg></span><h3>Backup &amp; Recovery</h3><p>Tägliche, unveränderliche Sicherungen. Im Ernstfall sind Sie in Stunden wieder arbeitsfähig.</p><div class="kv"><span>RTO &lt; 4 h</span><span>3-2-1-Regel</span></div></div></li>
+    <li class="f"><div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 12l3-3 2 2 4-4"/></svg></span><h3>Monitoring</h3><p>Wir sehen Festplatten, Lizenzen und Updates, bevor sie zum Problem werden.</p><div class="kv"><span>1.800 Geräte</span><span>Live-Dashboard</span></div></div></li>
+    <li class="f"><div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></svg></span><h3>Helpdesk</h3><p>Ein Anruf, ein Ansprechpartner. 82 % aller Anfragen lösen wir noch im ersten Gespräch.</p><div class="kv"><span>Ø 9 Min.</span><span>Mo–Fr 7–19 Uhr</span></div></div></li>
+    <li class="f"><div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></span><h3>Modern Workplace</h3><p>Microsoft 365, Teams und sichere Geräte für Büro und Homeoffice – eingerichtet in einem Tag.</p><div class="kv"><span>Zero-Touch</span><span>MDM</span></div></div></li>
+  </ul>
+  <div class="status" aria-label="Aktueller Status"><span>uptime_30d: <b>99,98 %</b></span><span>tickets_offen: <b>7</b></span><span>bedrohungen_heute: <em>0 erfolgreich</em></span></div>
+  <div class="cta"><a class="p" href="#" onclick="return false">IT-Check anfragen</a><a class="s" href="#" onclick="return false">02151 123 45 67</a></div>
+</section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="sh-cta">
+  <h2>Der passende Baustein für Ihre Website?</h2>
+  <p>Alle Varianten sind Ausgangspunkte. Wir kombinieren und gestalten sie individuell – passend zu Ihrer Marke.</p>
+  <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Projekt besprechen</a>
+</section>
+
+<footer class="sh-footer">
+  Alle gezeigten Marken und Inhalte sind fiktiv. Design &amp; Umsetzung: <a href="../../Meuster%20Landing%20Page.dc.html">meuser.biz</a> · © 2026
+</footer>
+
+<script>
+  /* SHELL-Skript – nicht verändern */
+  (function () {
+    var here = location.pathname.split('/').pop();
+    document.querySelectorAll('.sh-cats a').forEach(function (a) {
+      if (a.getAttribute('href') === here) { a.setAttribute('aria-current', 'page'); a.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+    });
+    document.querySelectorAll('.variant').forEach(function (v) {
+      var frame = v.querySelector('.frame');
+      v.querySelectorAll('.v-switch button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          v.querySelectorAll('.v-switch button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          frame.style.setProperty('--w', b.dataset.w);
+        });
+      });
+    });
+  })();
+</script>
+<!-- Varianten-Skripte hierunter, jedes in eigenem IIFE, nur auf die eigene #vNN zugreifen -->
+<script>
+/* v04 · Tabs mit Inhalt je Leistung */
+(function () {
+  var R = document.getElementById('v04');
+  if (!R) return;
+  var tabs = Array.prototype.slice.call(R.querySelectorAll('[role=tab]'));
+  function sel(t, focus) {
+    tabs.forEach(function (x) {
+      var on = x === t;
+      x.setAttribute('aria-selected', String(on));
+      x.tabIndex = on ? 0 : -1;
+      R.querySelector('#' + x.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) t.focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { sel(t); });
+    t.addEventListener('keydown', function (e) {
+      var k = e.key, n = null;
+      if (k === 'ArrowDown' || k === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      else if (k === 'ArrowUp' || k === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (k === 'Home') n = tabs[0];
+      else if (k === 'End') n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); sel(n, true); }
+    });
+  });
+})();
+</script>
+<script>
+/* v05 · Akkordeon mit wechselndem Bild */
+(function () {
+  var R = document.getElementById('v05');
+  if (!R) return;
+  var items = R.querySelectorAll('.it'), imgs = R.querySelectorAll('.media img');
+  R.querySelectorAll('.it button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var it = b.closest('.it'), was = it.classList.contains('open');
+      items.forEach(function (x) { x.classList.remove('open'); x.querySelector('button').setAttribute('aria-expanded', 'false'); });
+      if (!was) {
+        it.classList.add('open'); b.setAttribute('aria-expanded', 'true');
+        imgs.forEach(function (im) { im.classList.toggle('on', im.dataset.k === b.dataset.k); });
+      }
+    });
+  });
+})();
+</script>
+<script>
+/* v08 · Vorher-Nachher-Vergleich mit Schieberegler */
+(function () {
+  var R = document.getElementById('v08');
+  if (!R) return;
+  var ba = R.querySelector('.ba'), rng = R.querySelector('.ba input');
+  var imgs = R.querySelectorAll('.ba img'), pn = R.querySelector('.pn');
+  var scenes = [
+    { src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80&auto=format&fit=crop', alt: 'Nachher: frisch gestrichenes, helles Wohnzimmer mit gelbem Sessel', p: 'Altbauwohnung in St. Tönis, 32 m²' },
+    { src: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80&auto=format&fit=crop', alt: 'Nachher: renovierter Wohn- und Essbereich mit hellen Wänden', p: 'Reihenhaus in Kempen, 48 m²' }
+  ];
+  function set(v) { ba.style.setProperty('--pos', v + '%'); }
+  rng.addEventListener('input', function () { set(rng.value); });
+  R.querySelectorAll('.sw button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      R.querySelectorAll('.sw button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      var s = scenes[+b.dataset.i];
+      imgs.forEach(function (im) { im.src = s.src; });
+      imgs[0].alt = s.alt; pn.textContent = s.p;
+      rng.value = 50; set(50);
+    });
+  });
+})();
+</script>
+<script>
+/* v09 · Leistungs-Karussell */
+(function () {
+  var R = document.getElementById('v09');
+  if (!R) return;
+  var tr = R.querySelector('.track'), pv = R.querySelector('.prev'), nx = R.querySelector('.next'), bar = R.querySelector('.prog i');
+  function step() { var s = tr.querySelector('.sl'); return s ? s.getBoundingClientRect().width + 16 : 300; }
+  function upd() {
+    var max = tr.scrollWidth - tr.clientWidth, x = tr.scrollLeft;
+    pv.disabled = x <= 4; nx.disabled = x >= max - 4;
+    var w = Math.max(tr.clientWidth / tr.scrollWidth, .12) * 100;
+    bar.style.width = w + '%';
+    bar.style.left = (max > 0 ? x / max : 0) * (100 - w) + '%';
+  }
+  pv.addEventListener('click', function () { tr.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  nx.addEventListener('click', function () { tr.scrollBy({ left: step(), behavior: 'smooth' }); });
+  tr.addEventListener('scroll', upd, { passive: true });
+  if (window.ResizeObserver) new ResizeObserver(upd).observe(tr);
+  upd();
+})();
+</script>
+<script>
+/* v10 · Dunkle Feature-Liste mit Glow */
+(function () {
+  var R = document.getElementById('v10');
+  if (!R) return;
+  var cards = R.querySelectorAll('.f');
+  R.querySelector('.grid').addEventListener('pointermove', function (e) {
+    cards.forEach(function (c) {
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+  R.querySelector('.grid').addEventListener('pointerleave', function () {
+    cards.forEach(function (c) { c.style.setProperty('--my', '-200px'); });
+  });
+})();
+</script>
+</body>
+</html>

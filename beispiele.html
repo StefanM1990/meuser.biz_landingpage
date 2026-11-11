@@ -70,6 +70,45 @@
   .card:hover .meta .go { color: var(--blue); }
   .card:hover .meta .go svg { transform: translateX(4px); }
 
+  /* Kategorien-Leiste */
+  html { scroll-behavior: smooth; scroll-padding-top: 150px; }
+  .cats { position: sticky; top: 81px; z-index: 40; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+  .cats-in { max-width: 1400px; margin: 0 auto; padding: 12px 5%; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+  .cats-in::-webkit-scrollbar { display: none; }
+  .cats a { flex-shrink: 0; display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 600; color: var(--body); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; transition: 0.2s; }
+  .cats a:hover { border-color: var(--ink); color: var(--ink); }
+  .cats a.primary { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .cats a small { font-size: 11.5px; font-weight: 700; color: var(--muted); }
+  .cats a.primary small { color: var(--blue-light); }
+  @media (max-width: 560px) { .cats { top: 69px; } }
+
+  /* Abschnitts-Köpfe */
+  .sec-head { max-width: 1400px; margin: 0 auto; padding: 72px 5% 0; }
+  .sec-eyebrow { color: var(--blue); font-weight: 700; font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; }
+  .sec-head h2 { font-size: clamp(28px, 4vw, 38px); font-weight: 800; letter-spacing: -0.5px; margin: 0 0 12px; }
+  .sec-head p { font-size: 16px; line-height: 1.6; color: var(--muted); max-width: 640px; margin: 0; }
+  .filters { padding-top: 28px; }
+
+  /* Bausteine */
+  .blocks { background: var(--soft); border-top: 1px solid var(--line); }
+  .bgrid { max-width: 1400px; margin: 0 auto; padding: 36px 5% 100px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  @media (max-width: 1080px) { .bgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .bgrid { grid-template-columns: 1fr; } }
+  .bcard { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+  .bcard:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -18px rgba(15,23,42,0.25); border-color: var(--blue); }
+  .bart { aspect-ratio: 16 / 9; background: linear-gradient(160deg, #F1F5F9, #E2E8F0); border-bottom: 1px solid var(--line); display: block; }
+  .bart svg { width: 100%; height: 100%; display: block; }
+  .bart .acc { transition: fill 0.3s; }
+  .bcard:hover .bart .acc { fill: #007BFF; }
+  .bmeta { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .bmeta .count { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--blue); }
+  .bmeta h3 { font-size: 19px; font-weight: 800; letter-spacing: -0.2px; margin: 0; }
+  .bmeta p { font-size: 14.5px; line-height: 1.55; color: var(--body); margin: 0; }
+  .bmeta .go { margin-top: auto; padding-top: 10px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; }
+  .bcard:hover .bmeta .go { color: var(--blue); }
+  .bmeta .go svg { transition: transform 0.25s; }
+  .bcard:hover .bmeta .go svg { transform: translateX(4px); }
+
   /* CTA */
   .cta { background: var(--soft); border-top: 1px solid var(--line); padding: 88px 5%; text-align: center; }
   .cta h2 { font-size: clamp(28px, 4vw, 38px); font-weight: 800; letter-spacing: -0.5px; margin: 0 0 14px; }
@@ -102,9 +141,19 @@
   <div class="hero-inner">
     <div class="eyebrow">BEISPIELE</div>
     <h1>So könnte <span>Ihre neue Website</span> aussehen.</h1>
-    <p>Zehn Beispiel-Homepages aus ganz unterschiedlichen Branchen – jede mit eigener Designsprache, individuellen Inhalten und voll responsiv. Klicken Sie auf eine Vorschau, um die komplette Seite live zu erleben.</p>
+    <p>Komplette Beispiel-Homepages aus ganz unterschiedlichen Branchen – und über 100 einzelne Bausteine wie Menüs, Header oder Footer, aus denen wir Ihre Seite individuell zusammenstellen. Alles live und voll responsiv.</p>
   </div>
 </section>
+
+<nav class="cats" aria-label="Kategorien">
+  <div class="cats-in" id="cats"></div>
+</nav>
+
+<div class="sec-head" id="websites">
+  <div class="sec-eyebrow">KOMPLETTE WEBSITES</div>
+  <h2>Zehn Branchen, zehn Handschriften.</h2>
+  <p>Jede Seite ist eine vollständige Homepage eines fiktiven Unternehmens. Klicken Sie auf eine Vorschau, um sie live zu erleben.</p>
+</div>
 
 <div class="filters" role="group" aria-label="Nach Branche filtern">
   <button class="chip" aria-pressed="true" data-filter="alle">Alle</button>
@@ -116,6 +165,15 @@
 </div>
 
 <main class="grid" id="grid"></main>
+
+<section class="blocks" id="bausteine">
+  <div class="sec-head">
+    <div class="sec-eyebrow">BAUSTEINE</div>
+    <h2>Jedes Detail, viele Möglichkeiten.</h2>
+    <p>Wie könnte Ihr Menü aussehen, Ihr Footer, Ihre Preistabelle? Hier finden Sie je Kategorie zahlreiche Varianten – jede live in Desktop-, Tablet- und Handy-Ansicht.</p>
+  </div>
+  <div class="bgrid" id="bgrid"></div>
+</section>
 
 <section class="cta">
   <h2>Ihre Website als Nächstes?</h2>
@@ -159,6 +217,76 @@
         <span class="go">Live ansehen ${arrow}</span>
       </div>
     </a>`).join('');
+
+  // ---------- Bausteine ----------
+  // Farben der Wireframes: d = dunkel, m = mittel, l = hell, a = Akzent (färbt sich beim Hover blau)
+  const D = '#0F172A', M = '#94A3B8', L = '#CBD5E1', W = '#FFFFFF';
+  const win = (inner) => `<svg viewBox="0 0 320 180" aria-hidden="true">
+    <rect x="40" y="22" width="240" height="140" rx="8" fill="${W}" stroke="${L}"/>
+    <path d="M40 30a8 8 0 0 1 8-8h224a8 8 0 0 1 8 8v8H40z" fill="#F1F5F9"/>
+    <circle cx="52" cy="30" r="2.5" fill="${L}"/><circle cx="60" cy="30" r="2.5" fill="${L}"/><circle cx="68" cy="30" r="2.5" fill="${L}"/>
+    ${inner}</svg>`;
+  const bar = (x, y, w, h = 5, c = L, r = 2.5) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${c}"/>`;
+  const art = {
+    navigation: win(`${bar(52,48,26,8,D,2)}${bar(150,50,18,4,M)}${bar(174,50,18,4,M)}${bar(198,50,18,4,M)}<rect class="acc" x="226" y="46" width="42" height="12" rx="6" fill="${D}"/>
+      <rect x="150" y="62" width="88" height="56" rx="5" fill="${W}" stroke="${L}"/>${bar(158,72,40)}${bar(158,82,56)}${bar(158,92,34)}${bar(158,102,48)}
+      ${bar(52,128,120,6)}${bar(52,140,90,6)}`),
+    header: win(`<rect x="40" y="38" width="240" height="124" fill="${D}"/>${bar(56,52,22,6,'#334155',2)}${bar(200,53,14,4,'#475569')}${bar(220,53,14,4,'#475569')}${bar(240,53,24,4,'#475569')}
+      ${bar(56,80,130,12,W,3)}${bar(56,98,100,12,W,3)}${bar(56,120,120,4,'#64748B')}${bar(56,128,90,4,'#64748B')}<rect class="acc" x="56" y="140" width="48" height="12" rx="6" fill="#5FA8FF"/>
+      <circle cx="232" cy="110" r="30" fill="#1E293B"/><circle cx="232" cy="110" r="18" fill="#334155"/>`),
+    footer: win(`${bar(52,48,216,6)}${bar(52,60,170,6)}<rect x="40" y="88" width="240" height="74" fill="${D}"/>
+      ${bar(54,100,30,7,W,2)}${bar(54,114,50,3,'#475569')}${bar(54,121,40,3,'#475569')}
+      ${[0,1,2].map(i=>`${bar(126+i*48,100,26,4,'#64748B')}${bar(126+i*48,110,34,3,'#475569')}${bar(126+i*48,117,28,3,'#475569')}${bar(126+i*48,124,32,3,'#475569')}`).join('')}
+      <rect x="54" y="142" width="212" height="1" fill="#334155"/>${bar(54,149,60,3,'#475569')}<rect class="acc" x="236" y="146" width="30" height="8" rx="4" fill="#475569"/>`),
+    leistungen: win(`${bar(120,48,80,7,D,2)}${bar(100,60,120,4)}
+      ${[0,1,2].map(i=>`<rect x="${56+i*72}" y="76" width="64" height="74" rx="6" fill="#F8FAFC" stroke="${L}"/><rect ${i===1?'class="acc"':''} x="${64+i*72}" y="84" width="14" height="14" rx="4" fill="${i===1?D:M}"/>${bar(64+i*72,106,40,5,D,2)}${bar(64+i*72,116,48,3)}${bar(64+i*72,122,42,3)}${bar(64+i*72,128,46,3)}`).join('')}`),
+    preise: win(`${[0,1,2].map(i=>{const h=i===1; return `<rect ${h?'class="acc"':''} x="${58+i*70}" y="${h?46:54}" width="64" height="${h?106:94}" rx="6" fill="${h?D:'#F8FAFC'}" stroke="${h?'none':L}"/>${bar(66+i*70,(h?56:64),26,4,h?'#64748B':M)}${bar(66+i*70,(h?66:74),36,9,h?W:D,2)}${[0,1,2].map(k=>bar(66+i*70,(h?84:92)+k*9,44,3,h?'#334155':L)).join('')}${bar(66+i*70,(h?136:132),48,9,h?'#5FA8FF':L,4.5)}`}).join('')}`),
+    stimmen: win(`<text x="60" y="80" font-family="Georgia,serif" font-size="44" fill="${L}">“</text>${bar(84,56,170,7,D,2)}${bar(84,68,150,7,D,2)}${bar(84,80,110,7,D,2)}
+      <circle class="acc" cx="96" cy="112" r="11" fill="${M}"/>${bar(114,106,50,5,D,2)}${bar(114,115,36,3)}
+      ${[0,1,2,3,4].map(i=>`<path d="M${186+i*14} 104l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7z" fill="#F59E0B"/>`).join('')}
+      ${bar(140,140,8,8,D,4)}${bar(154,140,8,8,L,4)}${bar(168,140,8,8,L,4)}`),
+    team: win(`${[0,1,2,3].map(i=>`<rect x="${56+i*54}" y="50" width="46" height="58" rx="5" fill="${i===1?'#94A3B8':'#E2E8F0'}" ${i===1?'class="acc"':''}/><circle cx="${79+i*54}" cy="72" r="9" fill="${i===1?W:'#CBD5E1'}"/><path d="M${63+i*54} 108c0-11 7-17 16-17s16 6 16 17z" fill="${i===1?W:'#CBD5E1'}"/>${bar(56+i*54,116,34,5,D,2)}${bar(56+i*54,125,26,3)}`).join('')}${bar(56,142,90,4)}`),
+    galerie: win(`<rect x="52" y="48" width="98" height="64" rx="4" fill="${M}"/><path d="M58 106l24-26 18 18 12-10 32 18z" fill="${L}"/><circle cx="130" cy="64" r="6" fill="${L}"/>
+      <rect class="acc" x="156" y="48" width="56" height="30" rx="4" fill="${D}"/><rect x="218" y="48" width="50" height="46" rx="4" fill="${L}"/><rect x="156" y="84" width="56" height="28" rx="4" fill="${L}"/><rect x="218" y="100" width="50" height="50" rx="4" fill="${M}"/>
+      <rect x="52" y="118" width="46" height="32" rx="4" fill="${L}"/><rect x="104" y="118" width="108" height="32" rx="4" fill="${M}"/>`),
+    kontakt: win(`${bar(56,50,70,8,D,2)}${bar(56,64,90,4)}
+      <rect x="56" y="78" width="104" height="14" rx="3" fill="${W}" stroke="${L}"/><rect x="56" y="98" width="104" height="14" rx="3" fill="${W}" stroke="${L}"/><rect x="56" y="118" width="104" height="22" rx="3" fill="${W}" stroke="${L}"/>
+      <rect class="acc" x="56" y="146" width="44" height="10" rx="5" fill="${D}"/>
+      <rect x="174" y="50" width="94" height="100" rx="6" fill="#F1F5F9"/><path d="M174 90h94M206 50v100" stroke="${L}" stroke-width="3"/><path d="M221 82c-7 0-12 5-12 11 0 8 12 19 12 19s12-11 12-19c0-6-5-11-12-11z" fill="#EF4444"/><circle cx="221" cy="93" r="4" fill="${W}"/>`),
+    faq: win(`${bar(56,48,90,8,D,2)}${[0,1,2,3].map(i=>{const o=i===1; const y=64+i*20+(i>1?22:0); return `<rect x="56" y="${y}" width="208" height="${o?38:16}" rx="4" fill="${o?'#F8FAFC':W}" stroke="${L}"/>${bar(64,y+6,o?120:100,4,D,2)}<path d="M252 ${y+5}v6M249 ${y+8}h6" stroke="${M}" stroke-width="1.6" ${o?'transform="rotate(45 252 '+(y+8)+')"':''}/>${o?bar(64,y+18,170,3)+bar(64,y+25,140,3):''}`}).join('')}`),
+    cta: win(`${bar(52,48,216,5)}${bar(52,58,180,5)}<rect class="acc" x="52" y="74" width="216" height="62" rx="8" fill="${D}"/>${bar(66,88,110,8,W,2)}${bar(66,102,80,4,'#64748B')}<rect x="196" y="94" width="58" height="16" rx="8" fill="#5FA8FF"/>${bar(52,146,150,5)}`),
+    kennzahlen: win(`${[0,1,2,3].map(i=>`${bar(58+i*54,52,34,12,i===0?'#007BFF':D,2)}${bar(58+i*54,70,40,3)}`).join('')}
+      <path d="M62 110h196" stroke="${L}" stroke-width="2"/>${[0,1,2,3].map(i=>`<circle ${i<2?'class="acc"':''} cx="${68+i*62}" cy="110" r="7" fill="${i<2?D:W}" stroke="${i<2?D:L}" stroke-width="2"/>${bar(56+i*62,124,26,4,D,2)}${bar(56+i*62,132,34,3)}`).join('')}`),
+  };
+  const blocks = [
+    { slug: 'navigation', name: 'Navigation & Menüs',     n: 12, text: 'Von der klassischen Leiste über Mega-Menüs bis zum Vollbild-Overlay – jeweils mit funktionierendem Handy-Menü.' },
+    { slug: 'header',     name: 'Header & Hero-Bereiche', n: 12, text: 'Der erste Eindruck: Vollbild-Fotos, große Typografie, Produkt-Mockups, Buchungsleisten und mehr.' },
+    { slug: 'footer',     name: 'Footer',                 n: 10, text: 'Mehrspaltig, minimal, mit Newsletter, Anfahrt, Sponsoren oder großer Wortmarke.' },
+    { slug: 'leistungen', name: 'Leistungen & Features',  n: 10, text: 'Karten, Bento-Grids, Tabs, Vorher-Nachher-Regler – Angebote klar und attraktiv präsentiert.' },
+    { slug: 'preise',     name: 'Preistabellen',          n: 10, text: 'Tarife, Vergleichstabellen, Preislisten und interaktive Preisrechner.' },
+    { slug: 'stimmen',    name: 'Kundenstimmen',          n: 10, text: 'Zitate, Bewertungsübersichten, Karussells und Laufbänder, die Vertrauen schaffen.' },
+    { slug: 'team',       name: 'Team',                   n: 8,  text: 'Portraits, Ansprechpartner, Gründer-Spotlights und Stellenangebote.' },
+    { slug: 'galerie',    name: 'Galerien & Portfolios',  n: 10, text: 'Masonry, Lightbox, Filter, Slider und Bento-Portfolios für Bilder und Projekte.' },
+    { slug: 'kontakt',    name: 'Kontakt & Formulare',    n: 10, text: 'Kontakt, Terminbuchung, Reservierung, Rückruf und mehrstufige Anfragen.' },
+    { slug: 'faq',        name: 'FAQ',                    n: 8,  text: 'Häufige Fragen als Akkordeon, mit Suche, Kategorien oder im Chat-Stil.' },
+    { slug: 'cta',        name: 'Call-to-Action',         n: 12, text: 'Banner, Aufforderungen und ein komplettes Button-Set, die zum Anrufen, Buchen oder Anfragen bewegen.' },
+    { slug: 'kennzahlen', name: 'Kennzahlen & Abläufe',   n: 10, text: 'Zahlen, Prozessschritte, Zeitleisten und Roadmaps anschaulich dargestellt.' },
+  ];
+  document.getElementById('bgrid').innerHTML = blocks.map((b) => `
+    <a class="bcard" href="beispiele/bausteine/${b.slug}.html">
+      <span class="bart">${art[b.slug]}</span>
+      <div class="bmeta">
+        <span class="count">${b.n} Varianten</span>
+        <h3>${esc(b.name)}</h3>
+        <p>${esc(b.text)}</p>
+        <span class="go">Varianten ansehen ${arrow}</span>
+      </div>
+    </a>`).join('');
+  const total = blocks.reduce((s, b) => s + b.n, 0);
+  document.getElementById('cats').innerHTML =
+    `<a class="primary" href="#websites">Komplette Websites <small>${examples.length}</small></a>` +
+    `<a href="#bausteine">Alle Bausteine <small>${total}</small></a>` +
+    blocks.map((b) => `<a href="beispiele/bausteine/${b.slug}.html">${esc(b.name)} <small>${b.n}</small></a>`).join('');
 
   // Vorschau-iframes auf Kartenbreite skalieren
   const fit = () => document.querySelectorAll('.shot').forEach((shot) => {

@@ -1,0 +1,1191 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galerien &amp; Portfolios – Bausteine – meuser.biz</title>
+<meta name="description" content="Galerien &amp; Portfolios: 10 Gestaltungsvarianten, wie meuser.biz sie für Websites umsetzt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Shell-Schrift (Inter) bleibt; weitere Schriften der Varianten in DIESEN einen Link mit aufnehmen -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=Playfair+Display:ital,wght@0,400;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================================
+     SHELL – nicht verändern. Gilt für alle Kategorieseiten gleich.
+     ===================================================================== */
+  :root { --ink:#0F172A; --muted:#64748B; --body:#475569; --line:#E2E8F0; --soft:#F8FAFC; --blue:#007BFF; --blue-l:#5FA8FF; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 150px; }
+  body.shell { margin:0; font-family:'Inter',sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; }
+  .shell a { color:inherit; text-decoration:none; }
+  .sh-header { position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.9); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+  .sh-bar { max-width:1400px; margin:0 auto; padding:12px 5%; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .sh-bar img { height:44px; width:auto; display:block; }
+  .sh-actions { display:flex; gap:8px; }
+  .sh-btn { display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font:600 14px 'Inter',sans-serif; white-space:nowrap; transition:.25s; }
+  .sh-btn.ghost { background:rgba(15,23,42,.05); } .sh-btn.ghost:hover { background:rgba(15,23,42,.1); }
+  .sh-btn.blue { background:linear-gradient(135deg,#007BFF,#0062cc); color:#fff !important; box-shadow:0 6px 16px -4px rgba(0,123,255,.6); }
+  .sh-cats { max-width:1400px; margin:0 auto; padding:0 5% 12px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; }
+  .sh-cats::-webkit-scrollbar { display:none; }
+  .sh-cats a { flex-shrink:0; font:600 13px 'Inter',sans-serif; color:var(--body); padding:7px 13px; border-radius:999px; border:1px solid var(--line); background:#fff; transition:.2s; }
+  .sh-cats a:hover { border-color:var(--ink); color:var(--ink); }
+  .sh-cats a[aria-current="page"] { background:var(--ink); border-color:var(--ink); color:#fff; }
+  .sh-hero { background:linear-gradient(120deg,#0F172A,#132238,#0F172A); color:#fff; padding:72px 5% 64px; position:relative; overflow:hidden; }
+  .sh-hero::after { content:""; position:absolute; top:-160px; right:-120px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle,rgba(0,123,255,.35),transparent 70%); pointer-events:none; }
+  .sh-hero-in { max-width:1400px; margin:0 auto; position:relative; z-index:1; }
+  .sh-eyebrow { color:var(--blue-l); font:700 13px 'Inter',sans-serif; letter-spacing:2px; margin-bottom:14px; }
+  .sh-hero h1 { font:800 clamp(32px,5vw,52px)/1.08 'Inter',sans-serif; letter-spacing:-1px; margin:0 0 16px; }
+  .sh-hero p { font:400 clamp(16px,2vw,18px)/1.6 'Inter',sans-serif; color:#CBD5E1; max-width:680px; margin:0; }
+  .sh-index { max-width:1400px; margin:0 auto; padding:32px 5% 0; display:flex; flex-wrap:wrap; gap:8px; }
+  .sh-index a { font:600 13px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:7px 12px; border-radius:8px; transition:.2s; }
+  .sh-index a:hover { color:var(--blue); border-color:var(--blue); }
+  .sh-index a b { color:var(--blue); margin-right:6px; }
+  .sh-main { max-width:1400px; margin:0 auto; padding:24px 5% 96px; }
+  .variant { padding:56px 0 0; }
+  .v-head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:20px; }
+  .v-num { font:700 12px 'Inter',sans-serif; letter-spacing:1.5px; color:var(--blue); margin-bottom:6px; }
+  .v-head h2 { font:800 24px/1.2 'Inter',sans-serif; letter-spacing:-.3px; margin:0 0 6px; }
+  .v-head p { font:400 15px/1.6 'Inter',sans-serif; color:var(--body); margin:0; max-width:720px; }
+  .v-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; padding:0; list-style:none; }
+  .v-tags li { font:600 12px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:4px 10px; border-radius:999px; }
+  .v-switch { display:inline-flex; background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:4px; gap:2px; }
+  .v-switch button { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font:600 13px 'Inter',sans-serif; color:var(--muted); padding:7px 12px; border-radius:7px; transition:.2s; }
+  .v-switch button:hover { color:var(--ink); }
+  .v-switch button[aria-pressed="true"] { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(15,23,42,.15); }
+  .v-switch button:focus-visible { outline:2px solid var(--blue); }
+  .stage { background:#EEF2F6; background-image:radial-gradient(rgba(15,23,42,.08) 1px, transparent 1px); background-size:18px 18px; border:1px solid var(--line); border-radius:16px; padding:28px; overflow:hidden; }
+  .frame { /* Jede Variante lebt in diesem Rahmen */
+    container: demo / inline-size;
+    position:relative; contain:layout paint; /* position:fixed in Varianten bleibt im Rahmen */
+    width:var(--w,100%); max-width:100%; min-height:var(--h,auto);
+    margin:0 auto; background:#fff; border-radius:10px; overflow:hidden;
+    box-shadow:0 1px 2px rgba(15,23,42,.06), 0 18px 40px -20px rgba(15,23,42,.35);
+    transition:width .45s cubic-bezier(.2,.8,.2,1);
+  }
+  .sh-cta { background:var(--soft); border-top:1px solid var(--line); padding:80px 5%; text-align:center; }
+  .sh-cta h2 { font:800 clamp(26px,4vw,36px) 'Inter',sans-serif; letter-spacing:-.5px; margin:0 0 12px; }
+  .sh-cta p { font:400 16px/1.6 'Inter',sans-serif; color:var(--muted); max-width:560px; margin:0 auto 26px; }
+  .sh-cta .sh-btn { border-radius:8px; padding:14px 28px; font-size:15px; }
+  .sh-footer { background:var(--ink); color:#94A3B8; font:400 14px 'Inter',sans-serif; padding:28px 5%; text-align:center; }
+  .sh-footer a { color:#fff; }
+  @media (max-width:640px) {
+    .sh-bar img { height:36px; } .sh-btn .long { display:none; }
+    .stage { padding:12px; border-radius:12px; }
+    .v-switch { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .frame { transition:none; } }
+
+  /* =====================================================================
+     VARIANTEN – CSS jeder Variante NUR unter ihrer ID (#v01, #v02 …).
+     Responsiv ausschließlich mit @container demo (…) – NICHT @media.
+     ===================================================================== */
+
+  /* ---------- v01 · Masonry mit Bildlegende ---------- */
+  #v01 { --paper:#F6F2EA; --ink:#2A2620; --soft:#6B6255; --line:#DDD4C5; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; padding:56px 52px 60px; }
+  #v01 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:22px; margin-bottom:30px; }
+  #v01 .eyebrow { font:600 11px/1 'Inter',sans-serif; letter-spacing:.22em; text-transform:uppercase; color:var(--soft); margin:0 0 12px; }
+  #v01 h3 { font:500 italic 50px/1 'Cormorant Garamond',serif; letter-spacing:-.01em; margin:0; }
+  #v01 .hd p { font:400 14px/1.6 'Inter',sans-serif; color:var(--soft); max-width:300px; margin:0; }
+  #v01 .wall { column-count:4; column-gap:18px; }
+  @container demo (max-width:1000px) { #v01 .wall { column-count:3; } }
+  #v01 figure { break-inside:avoid; margin:0 0 22px; }
+  #v01 .ph { overflow:hidden; background:#E7E0D3; }
+  #v01 img { display:block; width:100%; height:auto; object-fit:cover; transition:transform 1.2s cubic-bezier(.2,.7,.2,1), filter .6s; filter:saturate(.92); }
+  #v01 figure:hover img { transform:scale(1.035); filter:saturate(1.05); }
+  #v01 figcaption { display:flex; gap:12px; align-items:baseline; padding-top:10px; font:400 13px/1.45 'Inter',sans-serif; color:var(--soft); }
+  #v01 figcaption b { font:500 italic 17px/1 'Cormorant Garamond',serif; color:var(--ink); min-width:24px; }
+  #v01 figcaption span { flex:1; }
+  #v01 figcaption em { font-style:normal; font-size:11px; letter-spacing:.14em; text-transform:uppercase; white-space:nowrap; }
+  #v01 .more { display:flex; justify-content:center; margin-top:14px; }
+  #v01 .more a { font:600 13px 'Inter',sans-serif; letter-spacing:.06em; color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:4px; }
+  #v01 .more a:hover { color:#7A5A2E; border-color:#7A5A2E; }
+  #v01 a:focus-visible { outline:2px solid var(--ink); outline-offset:4px; }
+  @container demo (max-width:760px) {
+    #v01 { padding:40px 26px 44px; }
+    #v01 .wall { column-count:2; column-gap:14px; }
+    #v01 h3 { font-size:40px; }
+  }
+  @container demo (max-width:440px) {
+    #v01 { padding:30px 16px 34px; }
+    #v01 h3 { font-size:34px; }
+    #v01 .wall { column-gap:10px; }
+    #v01 figure { margin-bottom:16px; }
+    #v01 figcaption { font-size:11.5px; gap:6px; flex-wrap:wrap; }
+    #v01 figcaption em { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v01 img { transition:none; } #v01 figure:hover img { transform:none; } }
+
+  /* ---------- v02 · Raster mit Lightbox ---------- */
+  #v02 { --green:#1F3B2D; --ink:#14201A; --soft:#56635B; --line:#E3E7E4; position:relative; min-height:640px; background:#fff; color:var(--ink); font-family:'Inter',sans-serif; padding:52px 48px; }
+  #v02 .hd { display:grid; grid-template-columns:1fr auto; gap:20px 40px; align-items:end; margin-bottom:28px; }
+  #v02 .eyebrow { display:inline-flex; align-items:center; gap:8px; font:600 12px 'Inter',sans-serif; color:var(--green); letter-spacing:.08em; text-transform:uppercase; margin:0 0 10px; }
+  #v02 .eyebrow::before { content:""; width:18px; height:2px; background:var(--green); }
+  #v02 h3 { font:800 34px/1.1 'Inter',sans-serif; letter-spacing:-.03em; margin:0; }
+  #v02 .hd p { font:400 15px/1.6 'Inter',sans-serif; color:var(--soft); margin:0; max-width:360px; }
+  #v02 .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; list-style:none; margin:0; padding:0; }
+  #v02 .grid button { all:unset; box-sizing:border-box; cursor:zoom-in; display:block; width:100%; position:relative; aspect-ratio:4/3; border-radius:10px; overflow:hidden; background:#E8ECE9; }
+  #v02 .grid img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s cubic-bezier(.2,.7,.2,1); }
+  #v02 .grid button::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(10,20,14,.72), rgba(10,20,14,0) 55%); opacity:.85; transition:opacity .3s; }
+  #v02 .grid .cap { position:absolute; left:14px; right:46px; bottom:12px; z-index:1; color:#fff; font:600 14px/1.3 'Inter',sans-serif; }
+  #v02 .grid .cap small { display:block; font-weight:400; font-size:12px; color:#D6E2DA; margin-top:2px; }
+  #v02 .grid .zoom { position:absolute; right:10px; bottom:10px; z-index:1; width:30px; height:30px; border-radius:50%; background:rgba(255,255,255,.95); color:var(--green); display:grid; place-items:center; transform:scale(.8); opacity:0; transition:.3s; }
+  #v02 .grid button:hover img, #v02 .grid button:focus-visible img { transform:scale(1.06); }
+  #v02 .grid button:hover .zoom, #v02 .grid button:focus-visible .zoom { opacity:1; transform:none; }
+  #v02 .grid button:focus-visible { outline:3px solid var(--green); outline-offset:3px; }
+  /* Lightbox – bleibt im Rahmen */
+  #v02 .lb { position:absolute; inset:0; z-index:20; background:rgba(9,15,12,.96); color:#fff; display:grid; grid-template-rows:auto 1fr auto; padding:18px 22px 16px; animation:v02-in .3s ease both; }
+  #v02 .lb[hidden] { display:none; }
+  #v02 .lb-top { display:flex; justify-content:space-between; align-items:center; gap:16px; font:500 13px 'Inter',sans-serif; color:#C9D5CD; }
+  #v02 .lb-top b { color:#fff; font-weight:700; }
+  #v02 .lb button { all:unset; box-sizing:border-box; cursor:pointer; display:grid; place-items:center; border-radius:50%; color:#fff; transition:background .2s; }
+  #v02 .lb button:focus-visible { outline:2px solid #9BE3B5; outline-offset:2px; }
+  #v02 .lb .x { width:40px; height:40px; background:rgba(255,255,255,.1); }
+  #v02 .lb .x:hover, #v02 .lb .nav:hover { background:rgba(255,255,255,.22); }
+  #v02 .lb-stage { position:relative; display:flex; align-items:center; justify-content:center; min-height:0; padding:14px 64px; }
+  #v02 .lb figure { margin:0; display:flex; flex-direction:column; align-items:center; gap:12px; max-height:100%; min-height:0; }
+  #v02 .lb figure img { max-width:100%; max-height:380px; object-fit:contain; border-radius:6px; display:block; animation:v02-img .35s ease both; }
+  #v02 .lb figcaption { font:400 14px/1.5 'Inter',sans-serif; color:#C9D5CD; text-align:center; }
+  #v02 .lb figcaption strong { color:#fff; font-weight:600; }
+  #v02 .lb .nav { position:absolute; top:50%; translate:0 -50%; width:46px; height:46px; background:rgba(255,255,255,.1); }
+  #v02 .lb .prev { left:6px; } #v02 .lb .next { right:6px; }
+  #v02 .thumbs { display:flex; gap:8px; justify-content:center; overflow-x:auto; padding:4px; scrollbar-width:none; }
+  #v02 .lb .thumbs button { flex:0 0 auto; width:64px; height:46px; border-radius:6px; overflow:hidden; opacity:.45; transition:opacity .2s, box-shadow .2s; }
+  #v02 .lb .thumbs button:hover { opacity:.8; }
+  #v02 .lb .thumbs button[aria-current="true"] { opacity:1; box-shadow:0 0 0 2px #9BE3B5; }
+  #v02 .thumbs img { width:100%; height:100%; object-fit:cover; display:block; }
+  @keyframes v02-in { from { opacity:0; } to { opacity:1; } }
+  @keyframes v02-img { from { opacity:0; transform:scale(.985); } to { opacity:1; transform:none; } }
+  @container demo (max-width:900px) { #v02 .grid { grid-template-columns:repeat(3,1fr); } }
+  @container demo (max-width:640px) {
+    #v02 { padding:34px 18px; }
+    #v02 .hd { grid-template-columns:1fr; }
+    #v02 h3 { font-size:28px; }
+    #v02 .grid { grid-template-columns:repeat(2,1fr); gap:8px; }
+    #v02 .grid .cap { left:10px; bottom:8px; font-size:12.5px; right:10px; }
+    #v02 .grid .cap small { display:none; }
+    #v02 .lb { padding:14px 12px; }
+    #v02 .lb-stage { padding:12px 0 64px; }
+    #v02 .lb .nav { top:auto; bottom:6px; translate:none; }
+    #v02 .lb .prev { left:calc(50% - 56px); } #v02 .lb .next { right:calc(50% - 56px); }
+    #v02 .lb figure img { max-height:300px; }
+    #v02 .thumbs { justify-content:flex-start; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v02 .lb, #v02 .lb figure img { animation:none; } #v02 .grid img { transition:none; } }
+
+  /* ---------- v03 · Portfolio mit Kategorie-Filter ---------- */
+  #v03 { --bg:#FAFAF7; --ink:#161616; --soft:#5E5E58; --line:#E4E2DA; --acc:#B4532A; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:56px 48px; }
+  #v03 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:28px; }
+  #v03 h3 { font:600 44px/1 'Space Grotesk',sans-serif; letter-spacing:-.04em; margin:0; }
+  #v03 h3 span { color:var(--acc); }
+  #v03 .hd p { font:400 14px/1.6 'Inter',sans-serif; color:var(--soft); margin:0; max-width:320px; }
+  #v03 .bar { display:flex; justify-content:space-between; align-items:center; gap:16px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:12px 0; margin-bottom:28px; }
+  #v03 .filters { display:flex; gap:6px; flex-wrap:wrap; }
+  #v03 .filters button { all:unset; box-sizing:border-box; cursor:pointer; font:500 14px 'Space Grotesk',sans-serif; color:var(--soft); padding:8px 14px; border-radius:999px; border:1px solid transparent; transition:.2s; display:inline-flex; align-items:center; gap:7px; }
+  #v03 .filters button sup { font-size:10.5px; color:inherit; opacity:.75; top:0; }
+  #v03 .filters button:hover { color:var(--ink); border-color:var(--line); }
+  #v03 .filters button[aria-pressed="true"] { background:var(--ink); color:#fff; }
+  #v03 .filters button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  #v03 .count { font:500 13px 'Space Grotesk',sans-serif; color:var(--soft); white-space:nowrap; }
+  #v03 .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px 22px; list-style:none; margin:0; padding:0; }
+  #v03 .grid li { animation:v03-in .45s cubic-bezier(.2,.7,.2,1) both; }
+  #v03 .grid li[hidden] { display:none; }
+  #v03 .card { display:block; }
+  #v03 .ph { aspect-ratio:4/3; overflow:hidden; background:#ECEAE3; border-radius:4px; }
+  #v03 .ph img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s cubic-bezier(.2,.7,.2,1); }
+  #v03 .card:hover img, #v03 .card:focus-visible img { transform:scale(1.04); }
+  #v03 .card:focus-visible { outline:2px solid var(--acc); outline-offset:4px; }
+  #v03 .meta { display:flex; justify-content:space-between; gap:12px; margin-top:12px; align-items:baseline; }
+  #v03 .meta strong { font:600 17px/1.3 'Space Grotesk',sans-serif; letter-spacing:-.01em; }
+  #v03 .meta span { font:500 11px 'Inter',sans-serif; letter-spacing:.12em; text-transform:uppercase; color:var(--acc); white-space:nowrap; }
+  #v03 .meta + p { margin:4px 0 0; font:400 13px/1.5 'Inter',sans-serif; color:var(--soft); }
+  @keyframes v03-in { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+  @container demo (max-width:700px) { #v03 .grid { grid-template-columns:repeat(2,1fr); } }
+  @container demo (max-width:600px) {
+    #v03 { padding:36px 18px; }
+    #v03 h3 { font-size:34px; }
+    #v03 .bar { flex-direction:column; align-items:flex-start; gap:8px; }
+    #v03 .filters { flex-wrap:nowrap; overflow-x:auto; width:100%; scrollbar-width:none; padding:2px; }
+    #v03 .filters button { flex:0 0 auto; padding:7px 12px; font-size:13px; }
+    #v03 .grid { gap:22px 12px; }
+    #v03 .meta { flex-direction:column; gap:4px; }
+    #v03 .meta strong { font-size:15px; }
+    #v03 .meta + p { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v03 .grid li { animation:none; } #v03 .ph img { transition:none; } }
+
+  /* ---------- v04 · Scroll-Band mit Einrasten ---------- */
+  #v04 { --bg:#0E0E0E; --ink:#F2F0EB; --soft:#A9A59C; --acc:#D7FF3A; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:52px 0 48px; overflow:hidden; }
+  #v04 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; padding:0 48px; margin-bottom:30px; }
+  #v04 .brand { font:700 12px 'Syne',sans-serif; letter-spacing:.32em; color:var(--acc); margin:0 0 14px; }
+  #v04 h3 { font:800 clamp(30px,4.4cqi,54px)/.95 'Syne',sans-serif; letter-spacing:-.03em; text-transform:uppercase; margin:0; }
+  #v04 h3 i { font-style:normal; -webkit-text-stroke:1.5px var(--ink); color:transparent; }
+  #v04 .ctrl { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+  #v04 .ctrl output { font:600 13px 'Syne',sans-serif; letter-spacing:.1em; color:var(--soft); min-width:60px; text-align:right; margin-right:6px; }
+  #v04 .ctrl button { all:unset; box-sizing:border-box; cursor:pointer; width:48px; height:48px; border-radius:50%; border:1px solid rgba(242,240,235,.3); display:grid; place-items:center; color:var(--ink); transition:.25s; }
+  #v04 .ctrl button:hover:not(:disabled) { background:var(--acc); border-color:var(--acc); color:#0E0E0E; }
+  #v04 .ctrl button:disabled { opacity:.3; cursor:default; }
+  #v04 .ctrl button:focus-visible, #v04 .band:focus-visible { outline:2px solid var(--acc); outline-offset:3px; }
+  #v04 .band { display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:48px; padding:0 48px 6px; list-style:none; margin:0; scrollbar-width:none; overscroll-behavior-x:contain; }
+  #v04 .band::-webkit-scrollbar { display:none; }
+  #v04 .band li { flex:0 0 clamp(220px,30cqi,360px); scroll-snap-align:start; }
+  #v04 .band li:last-child { margin-right:30px; }
+  #v04 .look { position:relative; aspect-ratio:3/4; overflow:hidden; background:#1A1A1A; }
+  #v04 .look img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 1s cubic-bezier(.2,.7,.2,1); }
+  #v04 li:hover .look img { transform:scale(1.04); }
+  #v04 .look b { position:absolute; top:12px; left:12px; font:700 12px 'Syne',sans-serif; letter-spacing:.14em; background:var(--acc); color:#0E0E0E; padding:5px 8px; }
+  #v04 .info { display:flex; justify-content:space-between; gap:12px; margin-top:12px; font:500 14px/1.35 'Inter',sans-serif; }
+  #v04 .info span { color:var(--soft); font-size:13px; display:block; margin-top:2px; font-weight:400; }
+  #v04 .info em { font-style:normal; font-family:'Syne',sans-serif; font-weight:700; white-space:nowrap; }
+  #v04 .track { margin:28px 48px 0; height:2px; background:rgba(242,240,235,.15); position:relative; }
+  #v04 .track span { position:absolute; left:0; top:0; height:100%; width:var(--p,20%); background:var(--acc); transition:width .2s; }
+  @container demo (max-width:700px) {
+    #v04 { padding:36px 0; }
+    #v04 .hd { padding:0 18px; flex-direction:column; align-items:flex-start; }
+    #v04 h3 { font-size:30px; }
+    #v04 .ctrl button { width:42px; height:42px; }
+    #v04 .ctrl output { text-align:left; min-width:0; }
+    #v04 .band { padding:0 18px 6px; scroll-padding-inline:18px; gap:12px; }
+    #v04 .band li { flex-basis:72cqi; }
+    #v04 .track { margin:22px 18px 0; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v04 .look img, #v04 .track span { transition:none; } }
+
+  /* ---------- v05 · Bühnen-Slider mit Fortschritt ---------- */
+  #v05 { --gold:#E9C987; position:relative; height:580px; background:#0D0F12; color:#fff; font-family:'Inter',sans-serif; overflow:hidden; }
+  #v05 .slides { position:absolute; inset:0; margin:0; padding:0; list-style:none; }
+  #v05 .slide { position:absolute; inset:0; opacity:0; visibility:hidden; transition:opacity 1s ease, visibility 0s 1s; }
+  #v05 .slide.is-on { opacity:1; visibility:visible; transition:opacity 1s ease; }
+  #v05 .slide img { width:100%; height:100%; object-fit:cover; display:block; transform:scale(1.08); transition:transform 7s linear; }
+  #v05 .slide.is-on img { transform:scale(1); }
+  #v05 .slide::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(8,10,14,.9) 0%, rgba(8,10,14,.6) 38%, rgba(8,10,14,.1) 68%, rgba(8,10,14,.5) 100%); }
+  #v05 .txt { position:absolute; left:56px; bottom:92px; right:56px; z-index:2; max-width:560px; }
+  #v05 .txt p:first-child { text-shadow:0 1px 8px rgba(0,0,0,.5); font:600 12px 'Inter',sans-serif; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); margin:0 0 14px; }
+  #v05 .txt h3 { font:400 60px/1 'Playfair Display',serif; letter-spacing:-.01em; margin:0 0 14px; }
+  #v05 .txt h3 em { font-style:italic; color:var(--gold); }
+  #v05 .txt p:last-child { font:400 16px/1.6 'Inter',sans-serif; color:#E4E4E7; margin:0; }
+  #v05 .slide.is-on .txt > * { animation:v05-up .9s cubic-bezier(.2,.7,.2,1) both; }
+  #v05 .slide.is-on .txt h3 { animation-delay:.12s; } #v05 .slide.is-on .txt p:last-child { animation-delay:.22s; }
+  #v05 .bars { position:absolute; top:24px; left:56px; right:56px; z-index:3; display:flex; gap:6px; }
+  #v05 .bars button { all:unset; cursor:pointer; flex:1; height:20px; display:flex; align-items:center; }
+  #v05 .bars button i { display:block; width:100%; height:3px; border-radius:3px; background:rgba(255,255,255,.3); overflow:hidden; position:relative; }
+  #v05 .bars button i::after { content:""; position:absolute; inset:0; background:#fff; transform-origin:left; transform:scaleX(0); }
+  #v05 .bars button.done i::after { transform:scaleX(1); }
+  #v05 .bars button.is-on i::after { animation:v05-fill 6s linear forwards; }
+  #v05.is-paused .bars button.is-on i::after { animation-play-state:paused; }
+  #v05.is-static .bars button.is-on i::after { animation:none; transform:scaleX(1); }
+  #v05 .bars button:focus-visible i { outline:2px solid var(--gold); outline-offset:4px; }
+  #v05 .ui { position:absolute; right:56px; bottom:40px; z-index:3; display:flex; align-items:center; gap:10px; }
+  #v05 .ui output { font:400 15px 'Playfair Display',serif; color:#E4E4E7; margin-right:10px; }
+  #v05 .ui output b { font-size:22px; color:#fff; font-weight:400; }
+  #v05 .ui button { all:unset; box-sizing:border-box; cursor:pointer; width:46px; height:46px; border-radius:50%; display:grid; place-items:center; color:#fff; background:rgba(255,255,255,.12); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.25); transition:.25s; }
+  #v05 .ui button:hover { background:#fff; color:#0D0F12; }
+  #v05 .ui button:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+  #v05 .ui .pp .play { display:none; }
+  #v05.is-paused .ui .pp .play, #v05.is-static .ui .pp .play { display:block; }
+  #v05.is-paused .ui .pp .pause, #v05.is-static .ui .pp .pause { display:none; }
+  #v05 .logo { position:absolute; left:56px; bottom:40px; z-index:3; font:400 italic 20px 'Playfair Display',serif; color:#fff; display:flex; align-items:center; gap:10px; }
+  #v05 .logo svg { color:var(--gold); }
+  @keyframes v05-fill { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+  @keyframes v05-up { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
+  @container demo (max-width:700px) {
+    #v05 { height:520px; }
+    #v05 .bars { left:18px; right:18px; top:16px; }
+    #v05 .txt { left:20px; right:20px; bottom:96px; }
+    #v05 .txt h3 { font-size:40px; }
+    #v05 .txt p:last-child { font-size:15px; }
+    #v05 .logo { left:20px; bottom:32px; font-size:17px; }
+    #v05 .ui { right:16px; bottom:24px; gap:6px; }
+    #v05 .ui output { display:none; }
+    #v05 .ui button { width:42px; height:42px; }
+  }
+  @container demo (max-width:420px) { #v05 .logo span { display:none; } }
+  @media (prefers-reduced-motion:reduce) {
+    #v05 .slide, #v05 .slide.is-on, #v05 .slide img { transition:none; }
+    #v05 .slide img { transform:none; }
+    #v05 .slide.is-on .txt > * { animation:none; }
+  }
+
+  /* ---------- v06 · Vorher / Nachher ---------- */
+  #v06 { --bg:#141518; --panel:#1D1F24; --line:#2C2F36; --ink:#ECECEE; --soft:#A2A5AE; --acc:#F5B544; --pos:50%; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:40px; display:grid; grid-template-columns:1fr 280px; gap:28px; }
+  #v06 .cmp { position:relative; aspect-ratio:3/2; border-radius:12px; overflow:hidden; background:#000; touch-action:pan-y; user-select:none; }
+  #v06 .cmp img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
+  #v06 .cmp .before { filter:saturate(.45) contrast(.78) brightness(.9) sepia(.12); clip-path:inset(0 calc(100% - var(--pos)) 0 0); }
+  #v06 .tag { position:absolute; top:14px; z-index:2; font:600 11px 'Inter',sans-serif; letter-spacing:.14em; text-transform:uppercase; padding:6px 10px; border-radius:6px; background:rgba(10,10,12,.72); color:#fff; backdrop-filter:blur(6px); pointer-events:none; }
+  #v06 .tag.l { left:14px; } #v06 .tag.r { right:14px; background:var(--acc); color:#1B1405; }
+  #v06 .handle { position:absolute; top:0; bottom:0; left:var(--pos); width:2px; margin-left:-1px; background:#fff; z-index:2; pointer-events:none; box-shadow:0 0 12px rgba(0,0,0,.4); }
+  #v06 .handle span { position:absolute; top:50%; left:50%; width:46px; height:46px; margin:-23px 0 0 -23px; border-radius:50%; background:#fff; color:#141518; display:grid; place-items:center; box-shadow:0 6px 20px rgba(0,0,0,.4); transition:transform .2s; }
+  #v06 .cmp input { position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize; z-index:3; -webkit-appearance:none; appearance:none; background:transparent; }
+  #v06 .cmp input::-webkit-slider-thumb { -webkit-appearance:none; width:2px; height:200px; }
+  #v06 .cmp input::-moz-range-thumb { width:2px; height:200px; border:0; }
+  #v06 .cmp:has(input:focus-visible) .handle span { outline:3px solid var(--acc); outline-offset:3px; transform:scale(1.08); }
+  #v06 .cmp:hover .handle span { transform:scale(1.08); }
+  #v06 aside { display:flex; flex-direction:column; gap:18px; min-width:0; }
+  #v06 .brand { display:flex; align-items:center; gap:10px; font:700 16px 'Space Grotesk',sans-serif; letter-spacing:-.01em; }
+  #v06 .brand i { width:28px; height:28px; border-radius:8px; background:conic-gradient(from 200deg,#F5B544,#E8644A,#7C5CFF,#3FB8AF,#F5B544); }
+  #v06 aside h3 { font:600 24px/1.2 'Space Grotesk',sans-serif; letter-spacing:-.02em; margin:0; }
+  #v06 aside > p { font:400 14px/1.6 'Inter',sans-serif; color:var(--soft); margin:0; }
+  #v06 .list { display:flex; flex-direction:column; gap:8px; list-style:none; margin:0; padding:0; }
+  #v06 .list button { all:unset; box-sizing:border-box; cursor:pointer; width:100%; display:flex; align-items:center; gap:12px; padding:8px; border-radius:10px; border:1px solid var(--line); background:var(--panel); transition:.2s; }
+  #v06 .list button:hover { border-color:#4A4E58; }
+  #v06 .list button[aria-pressed="true"] { border-color:var(--acc); box-shadow:inset 0 0 0 1px var(--acc); }
+  #v06 .list button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  #v06 .list img { width:56px; height:42px; object-fit:cover; border-radius:6px; flex-shrink:0; }
+  #v06 .list strong { display:block; font:600 14px 'Inter',sans-serif; }
+  #v06 .list small { display:block; font:400 12px 'Inter',sans-serif; color:var(--soft); margin-top:2px; }
+  #v06 .hint { font:400 12px 'Inter',sans-serif; color:var(--soft); display:flex; gap:8px; align-items:center; margin-top:auto; }
+  #v06 kbd { font:600 11px 'Inter',sans-serif; color:var(--ink); border:1px solid var(--line); border-bottom-width:2px; border-radius:4px; padding:1px 6px; }
+  @container demo (max-width:820px) {
+    #v06 { grid-template-columns:1fr; padding:28px; }
+    #v06 aside { order:-1; }
+    #v06 .list { flex-direction:row; overflow-x:auto; scrollbar-width:none; padding:2px; }
+    #v06 .list li { flex:0 0 auto; }
+    #v06 .list button { width:auto; padding:6px 12px 6px 6px; }
+    #v06 .hint { display:none; }
+  }
+  @container demo (max-width:480px) {
+    #v06 { padding:20px 16px; gap:18px; }
+    #v06 .cmp { aspect-ratio:4/5; }
+    #v06 aside h3 { font-size:21px; }
+    #v06 .handle span { width:40px; height:40px; margin:-20px 0 0 -20px; }
+  }
+
+  /* ---------- v07 · Projektkarten mit Overlay ---------- */
+  #v07 { --bg:#EEEDE9; --ink:#111110; --soft:#55544F; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:56px 48px; }
+  #v07 .hd { display:grid; grid-template-columns:auto 1fr auto; align-items:end; gap:20px 40px; margin-bottom:32px; }
+  #v07 .mark { width:54px; height:54px; border:1.5px solid var(--ink); display:grid; place-items:center; font:500 15px 'Fraunces',serif; letter-spacing:.02em; }
+  #v07 h3 { font:300 46px/1 'Fraunces',serif; letter-spacing:-.03em; margin:0; }
+  #v07 h3 em { font-style:italic; }
+  #v07 .hd p { margin:0; font:500 12px/1.6 'Inter',sans-serif; letter-spacing:.12em; text-transform:uppercase; color:var(--soft); text-align:right; }
+  #v07 .grid { display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:110px; gap:12px; grid-template-areas:"a a a a b b" "a a a a b b" "a a a a c c" "a a a a c c" "d d e e f f" "d d e e f f"; list-style:none; margin:0; padding:0; }
+  #v07 .grid li:nth-child(1) { grid-area:a; } #v07 .grid li:nth-child(2) { grid-area:b; } #v07 .grid li:nth-child(3) { grid-area:c; }
+  #v07 .grid li:nth-child(4) { grid-area:d; } #v07 .grid li:nth-child(5) { grid-area:e; } #v07 .grid li:nth-child(6) { grid-area:f; }
+  #v07 .card { position:relative; display:block; height:100%; overflow:hidden; color:#fff; background:#2A2A28; }
+  #v07 .card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1.1s cubic-bezier(.2,.7,.2,1), filter .6s; filter:grayscale(.25); }
+  #v07 .card::before { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(10,10,9,.88) 0%, rgba(10,10,9,.35) 45%, rgba(10,10,9,0) 70%); transition:opacity .5s; }
+  #v07 .body { position:absolute; left:22px; right:22px; bottom:20px; z-index:2; transform:translateY(var(--lift,34px)); transition:transform .6s cubic-bezier(.2,.7,.2,1); }
+  #v07 .code { font:500 11px 'Inter',sans-serif; letter-spacing:.18em; color:#E2E0D8; margin:0 0 8px; }
+  #v07 .card h4 { font:400 26px/1.1 'Fraunces',serif; letter-spacing:-.02em; margin:0 0 6px; }
+  #v07 .meta { font:400 13px 'Inter',sans-serif; color:#E2E0D8; margin:0; }
+  #v07 .more { display:inline-flex; align-items:center; gap:8px; margin-top:14px; font:600 13px 'Inter',sans-serif; opacity:0; transition:opacity .4s .05s; border-bottom:1px solid rgba(255,255,255,.6); padding-bottom:3px; }
+  #v07 .grid li:nth-child(1) .card h4 { font-size:40px; }
+  #v07 .card:hover img, #v07 .card:focus-visible img { transform:scale(1.05); filter:grayscale(0); }
+  #v07 .card:hover .body, #v07 .card:focus-visible .body { transform:none; }
+  #v07 .card:hover .more, #v07 .card:focus-visible .more { opacity:1; }
+  #v07 .card:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+  #v07 .foot { display:flex; justify-content:space-between; align-items:center; margin-top:22px; font:500 13px 'Inter',sans-serif; color:var(--soft); }
+  #v07 .foot a { color:var(--ink); font-weight:600; border-bottom:1px solid var(--ink); padding-bottom:2px; }
+  #v07 .foot a:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
+  @container demo (max-width:820px) {
+    #v07 { padding:40px 24px; }
+    #v07 .hd { grid-template-columns:auto 1fr; }
+    #v07 .hd p { grid-column:1 / -1; text-align:left; }
+    #v07 h3 { font-size:36px; }
+    #v07 .grid { grid-template-columns:1fr 1fr; grid-template-areas:"a a" "a a" "a a" "b c" "b c" "d e" "d e" "f f" "f f"; }
+    #v07 .grid li:nth-child(1) .card h4 { font-size:32px; }
+  }
+  @container demo (max-width:480px) {
+    #v07 { padding:30px 16px; }
+    #v07 .mark { width:44px; height:44px; }
+    #v07 h3 { font-size:30px; }
+    #v07 .grid { grid-template-columns:1fr; grid-template-areas:"a" "a" "b" "b" "c" "c" "d" "d" "e" "e" "f" "f"; grid-auto-rows:120px; }
+    #v07 .body { --lift:0px; left:16px; right:16px; bottom:16px; }
+    #v07 .more { display:none; }
+    #v07 .card h4, #v07 .grid li:nth-child(1) .card h4 { font-size:24px; }
+    #v07 .foot { flex-direction:column; align-items:flex-start; gap:8px; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v07 .card img, #v07 .body { transition:none; } }
+
+  /* ---------- v08 · Polaroid-Collage ---------- */
+  #v08 { --bg:#F1E9DF; --ink:#3B2F2A; --soft:#6E5F57; --rose:#9E3A51; background-color:var(--bg); background-image:radial-gradient(rgba(59,47,42,.07) 1px, transparent 1.2px); background-size:14px 14px; color:var(--ink); font-family:'Inter',sans-serif; padding:56px 40px 64px; overflow:hidden; }
+  #v08 .hd { text-align:center; margin-bottom:34px; }
+  #v08 .hand { font:600 26px/1 'Caveat',cursive; color:var(--rose); margin:0 0 6px; transform:rotate(-2deg); display:inline-block; }
+  #v08 h3 { font:400 italic 46px/1.1 'Playfair Display',serif; letter-spacing:-.01em; margin:0; }
+  #v08 .wall { display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; max-width:1000px; margin:0 auto; list-style:none; padding:0; }
+  #v08 .pol { --r:-3deg; position:relative; width:216px; margin:-4px -7px 12px; padding:12px 12px 0; background:#FFFDF9; box-shadow:0 1px 2px rgba(59,47,42,.12), 0 14px 28px -12px rgba(59,47,42,.35); transform:rotate(var(--r)); transition:transform .45s cubic-bezier(.2,.8,.2,1.2), box-shadow .45s; }
+  #v08 .pol:nth-child(2) { --r:4deg; margin-top:22px; } #v08 .pol:nth-child(3) { --r:-1.5deg; } #v08 .pol:nth-child(4) { --r:3deg; margin-top:30px; }
+  #v08 .pol:nth-child(5) { --r:2.5deg; } #v08 .pol:nth-child(6) { --r:-4deg; margin-top:18px; } #v08 .pol:nth-child(7) { --r:1.5deg; } #v08 .pol:nth-child(8) { --r:-2.5deg; margin-top:26px; }
+  #v08 .pol::before { content:""; position:absolute; top:-12px; left:50%; width:84px; height:24px; margin-left:-42px; background:rgba(214,190,160,.6); transform:rotate(calc(var(--r) * -1.5)); box-shadow:0 1px 1px rgba(0,0,0,.05); }
+  #v08 .pol:nth-child(3n)::before { background:rgba(181,72,95,.28); }
+  #v08 .pol figure { margin:0; }
+  #v08 .pol img { display:block; width:100%; aspect-ratio:1/1; object-fit:cover; filter:sepia(.12) saturate(.95) contrast(1.02); }
+  #v08 .pol figcaption { font:500 23px/1.1 'Caveat',cursive; color:var(--ink); text-align:center; padding:12px 4px 16px; }
+  #v08 .pol:hover, #v08 .pol:focus-within { transform:rotate(0) scale(1.07); z-index:5; box-shadow:0 2px 4px rgba(59,47,42,.12), 0 28px 50px -18px rgba(59,47,42,.5); }
+  #v08 .note { width:216px; margin:18px -6px 12px; padding:26px 22px; background:#FFF6C7; transform:rotate(-2deg); box-shadow:0 12px 24px -12px rgba(59,47,42,.35); font:500 23px/1.2 'Caveat',cursive; color:var(--ink); }
+  #v08 .note a { display:inline-block; margin-top:10px; color:var(--rose); border-bottom:2px solid currentColor; font-weight:700; }
+  #v08 .note a:focus-visible { outline:2px solid var(--rose); outline-offset:3px; }
+  @container demo (max-width:700px) {
+    #v08 { padding:40px 16px 48px; }
+    #v08 h3 { font-size:34px; }
+    #v08 .pol, #v08 .note { width:calc(50% - 4px); margin:-2px -4px 10px; }
+    #v08 .pol { padding:8px 8px 0; }
+    #v08 .pol figcaption { font-size:19px; padding:8px 2px 10px; }
+    #v08 .pol::before { width:60px; margin-left:-30px; height:18px; top:-9px; }
+    #v08 .pol:nth-child(n) { margin-top:0; }
+    #v08 .pol:nth-child(even) { margin-top:16px; }
+    #v08 .note { font-size:19px; padding:18px 14px; margin-top:16px; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v08 .pol { transition:none; } }
+
+  /* ---------- v09 · Bento-Portfolio ---------- */
+  #v09 { --bg:#F4F2EE; --ink:#17132B; --violet:#2B1B6B; --lime:#C8F560; --coral:#FF6B4A; --soft:#5B5670; background:var(--bg); color:var(--ink); font-family:'Space Grotesk',sans-serif; padding:48px; }
+  #v09 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:24px; flex-wrap:wrap; }
+  #v09 .logo { display:flex; align-items:center; gap:10px; font:700 17px 'Space Grotesk',sans-serif; margin-bottom:14px; }
+  #v09 h3 { font:700 44px/1 'Space Grotesk',sans-serif; letter-spacing:-.045em; margin:0; max-width:620px; }
+  #v09 h3 span { background:var(--lime); padding:0 .12em; border-radius:6px; }
+  #v09 .hd a { font:600 14px 'Space Grotesk',sans-serif; display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:#fff; padding:12px 18px; border-radius:999px; transition:.2s; }
+  #v09 .hd a:hover { background:var(--violet); }
+  #v09 .bento { display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:180px; gap:12px; grid-template-areas:"a a b c" "a a d c" "e e f g"; list-style:none; margin:0; padding:0; }
+  #v09 .t { position:relative; height:100%; border-radius:20px; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; padding:20px; transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s; }
+  #v09 a.t:hover, #v09 a.t:focus-visible { transform:translateY(-4px); box-shadow:0 18px 36px -18px rgba(23,19,43,.5); }
+  #v09 a:focus-visible { outline:3px solid var(--violet); outline-offset:3px; }
+  #v09 .img { color:#fff; }
+  #v09 .img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .9s cubic-bezier(.2,.7,.2,1); }
+  #v09 .img::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(14,10,30,.8), rgba(14,10,30,0) 55%); }
+  #v09 .img:hover img, #v09 .img:focus-visible img { transform:scale(1.05); }
+  #v09 .img > span, #v09 .img > div { position:relative; z-index:1; }
+  #v09 .chip { align-self:flex-start; font:600 11px 'Space Grotesk',sans-serif; letter-spacing:.08em; text-transform:uppercase; background:rgba(255,255,255,.92); color:var(--ink); padding:5px 10px; border-radius:999px; }
+  #v09 .img strong { display:block; font:600 19px/1.2 'Space Grotesk',sans-serif; letter-spacing:-.02em; }
+  #v09 .img small { display:block; font:400 13px 'Inter',sans-serif; color:#E6E3F2; margin-top:4px; }
+  #v09 li:nth-child(1) { grid-area:a; } #v09 li:nth-child(2) { grid-area:b; } #v09 li:nth-child(3) { grid-area:c; } #v09 li:nth-child(4) { grid-area:d; }
+  #v09 li:nth-child(5) { grid-area:e; } #v09 li:nth-child(6) { grid-area:f; } #v09 li:nth-child(7) { grid-area:g; }
+  #v09 li:nth-child(1) .img strong { font-size:28px; }
+  #v09 .stat { background:var(--violet); color:#fff; }
+  #v09 .stat b { font:700 56px/1 'Space Grotesk',sans-serif; letter-spacing:-.05em; color:var(--lime); }
+  #v09 .stat p { margin:0; font:500 14px/1.4 'Space Grotesk',sans-serif; color:#E4DEFF; }
+  #v09 .type { background:var(--lime); color:var(--ink); }
+  #v09 .type b { font:700 64px/.9 'Space Grotesk',sans-serif; letter-spacing:-.06em; }
+  #v09 .type p { margin:0; font:500 13px/1.35 'Space Grotesk',sans-serif; }
+  #v09 .type .row { display:flex; justify-content:space-between; align-items:flex-start; }
+  #v09 .type .row span { font:500 11px 'Space Grotesk',sans-serif; letter-spacing:.06em; border:1.5px solid var(--ink); border-radius:999px; padding:3px 8px; }
+  #v09 .quote { background:var(--coral); color:#1E0B05; }
+  #v09 .quote p { margin:0; font:600 17px/1.3 'Space Grotesk',sans-serif; letter-spacing:-.01em; }
+  #v09 .quote small { font:500 12px 'Inter',sans-serif; }
+  @container demo (max-width:860px) {
+    #v09 { padding:36px 24px; }
+    #v09 h3 { font-size:36px; }
+    #v09 .bento { grid-template-columns:1fr 1fr; grid-auto-rows:170px; grid-template-areas:"a a" "a a" "b d" "c e" "c f" "g g"; }
+  }
+  @container demo (max-width:480px) {
+    #v09 { padding:28px 14px; }
+    #v09 h3 { font-size:30px; }
+    #v09 .bento { gap:10px; grid-auto-rows:150px; grid-template-areas:"a a" "a a" "b d" "c c" "c c" "e e" "f f" "g g"; }
+    #v09 .t { padding:16px; border-radius:16px; }
+    #v09 .stat b { font-size:42px; } #v09 .type b { font-size:48px; }
+    #v09 li:nth-child(1) .img strong { font-size:22px; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v09 .t, #v09 .img img { transition:none; } }
+
+  /* ---------- v10 · Hover-Zoom mit Bildunterschrift ---------- */
+  #v10 { --bg:#1C1512; --ink:#F3E9DC; --soft:#BFAF9C; --gold:#E0A458; --line:rgba(243,233,220,.14); background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:60px 52px; }
+  #v10 .hd { text-align:center; margin:0 auto 40px; max-width:560px; }
+  #v10 .orn { display:flex; align-items:center; justify-content:center; gap:14px; color:var(--gold); font:500 12px 'Inter',sans-serif; letter-spacing:.3em; text-transform:uppercase; margin:0 0 14px; }
+  #v10 .orn::before, #v10 .orn::after { content:""; width:40px; height:1px; background:currentColor; opacity:.6; }
+  #v10 h3 { font:400 50px/1.05 'Playfair Display',serif; margin:0 0 12px; }
+  #v10 h3 em { color:var(--gold); }
+  #v10 .hd p:last-child { font:400 15px/1.6 'Inter',sans-serif; color:var(--soft); margin:0; }
+  #v10 .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:34px 22px; list-style:none; margin:0; padding:0; }
+  #v10 figure { margin:0; }
+  #v10 .ph { position:relative; aspect-ratio:1/1; overflow:hidden; border-radius:999px 999px 6px 6px; background:#2A201B; }
+  #v10 .grid li:nth-child(even) .ph { border-radius:6px; }
+  #v10 .ph img { width:100%; height:100%; object-fit:cover; display:block; transform:scale(1.001); transition:transform 1.2s cubic-bezier(.2,.7,.2,1), filter .6s; filter:brightness(.92); }
+  #v10 figure:hover .ph img { transform:scale(1.12); filter:brightness(1.02); }
+  #v10 .badge { position:absolute; bottom:12px; left:12px; font:600 11px 'Inter',sans-serif; letter-spacing:.06em; background:var(--gold); color:#21160C; padding:5px 9px; border-radius:999px; }
+  #v10 figcaption { padding-top:16px; text-align:center; }
+  #v10 figcaption strong { display:block; font:400 21px/1.2 'Playfair Display',serif; }
+  #v10 figcaption span { display:block; font:400 13px/1.5 'Inter',sans-serif; color:var(--soft); margin:5px 0 8px; }
+  #v10 figcaption em { font:italic 500 16px 'Playfair Display',serif; color:var(--gold); }
+  #v10 .foot { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:44px; }
+  #v10 .foot a { font:600 14px 'Inter',sans-serif; padding:13px 22px; border-radius:999px; border:1px solid var(--line); transition:.25s; }
+  #v10 .foot a:first-child { background:var(--gold); color:#21160C; border-color:var(--gold); }
+  #v10 .foot a:hover { border-color:var(--gold); }
+  #v10 .foot a:first-child:hover { background:#EDB874; }
+  #v10 .foot a:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+  @container demo (max-width:900px) { #v10 { padding:48px 28px; } #v10 .grid { gap:30px 14px; } #v10 figcaption strong { font-size:18px; } }
+  @container demo (max-width:700px) { #v10 .grid { grid-template-columns:repeat(2,1fr); gap:30px 20px; } }
+  @container demo (max-width:480px) {
+    #v10 { padding:40px 16px; }
+    #v10 h3 { font-size:36px; }
+    #v10 .grid { gap:26px 12px; }
+    #v10 figcaption strong { font-size:17px; }
+    #v10 figcaption span { font-size:12px; }
+    #v10 .badge { bottom:8px; left:8px; font-size:10px; padding:4px 7px; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v10 .ph img { transition:none; } #v10 figure:hover .ph img { transform:none; } }
+
+</style>
+</head>
+<body class="shell">
+
+<header class="sh-header">
+  <div class="sh-bar">
+    <a href="../../Meuster%20Landing%20Page.dc.html" aria-label="meuser.biz Startseite"><img src="../../assets/meuser-logo.png" alt="meuser.biz – Modern Webservices"></a>
+    <div class="sh-actions">
+      <a class="sh-btn ghost" href="../../beispiele.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>Alle<span class="long"> Beispiele</span></span></a>
+      <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Anfrage</a>
+    </div>
+  </div>
+  <nav class="sh-cats" aria-label="Kategorien">
+    <a href="../../beispiele.html#websites">Komplette Websites</a>
+    <a href="navigation.html">Navigation &amp; Menüs</a>
+    <a href="header.html">Header &amp; Hero</a>
+    <a href="footer.html">Footer</a>
+    <a href="leistungen.html">Leistungen &amp; Features</a>
+    <a href="preise.html">Preistabellen</a>
+    <a href="stimmen.html">Kundenstimmen</a>
+    <a href="team.html">Team</a>
+    <a href="galerie.html">Galerien</a>
+    <a href="kontakt.html">Kontakt &amp; Formulare</a>
+    <a href="faq.html">FAQ</a>
+    <a href="cta.html">Call-to-Action</a>
+    <a href="kennzahlen.html">Kennzahlen &amp; Abläufe</a>
+  </nav>
+</header>
+
+<section class="sh-hero">
+  <div class="sh-hero-in">
+    <div class="sh-eyebrow">BAUSTEINE · 10 VARIANTEN</div>
+    <h1>Galerien &amp; Portfolios</h1>
+    <p>Zehn Wege, Ihre Arbeiten, Räume oder Gerichte ins rechte Licht zu rücken – vom ruhigen Bildband bis zum interaktiven Vorher/Nachher-Vergleich. Jede Variante funktioniert auf Smartphone, Tablet und Desktop.</p>
+  </div>
+</section>
+
+<nav class="sh-index" aria-label="Varianten auf dieser Seite">
+  <a href="#v01-wrap"><b>01</b>Masonry mit Bildlegende</a>
+  <a href="#v02-wrap"><b>02</b>Raster mit Lightbox</a>
+  <a href="#v03-wrap"><b>03</b>Portfolio mit Kategorie-Filter</a>
+  <a href="#v04-wrap"><b>04</b>Scroll-Band mit Einrasten</a>
+  <a href="#v05-wrap"><b>05</b>Bühnen-Slider mit Fortschritt</a>
+  <a href="#v06-wrap"><b>06</b>Vorher / Nachher</a>
+  <a href="#v07-wrap"><b>07</b>Projektkarten mit Overlay</a>
+  <a href="#v08-wrap"><b>08</b>Polaroid-Collage</a>
+  <a href="#v09-wrap"><b>09</b>Bento-Portfolio</a>
+  <a href="#v10-wrap"><b>10</b>Hover-Zoom mit Bildunterschrift</a>
+</nav>
+
+<main class="sh-main">
+
+  <!-- ===== VARIANTE (Muster, für jede Variante wiederholen) =====
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Name der Variante</h2>
+        <p>Ein bis zwei Sätze: Wie wirkt sie, wofür eignet sie sich?</p>
+        <ul class="v-tags"><li>Restaurant</li><li>Hotel</li><li>mit Dropdown</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame" style="--h:420px">
+        <div id="v01"> … Baustein … </div>
+      </div>
+    </div>
+  </section>
+  ============================================================== -->
+
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Masonry mit Bildlegende</h2>
+        <p>Ruhiges Mauerwerk-Raster, in dem Hoch- und Querformate natürlich ineinandergreifen. Jede Aufnahme trägt eine feine Legende – wie in einem Bildband.</p>
+        <ul class="v-tags"><li>Fotografie</li><li>Reise &amp; Natur</li><li>Künstler</li><li>reines CSS</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v01">
+          <div class="hd">
+            <div>
+              <p class="eyebrow">Weitblick Fotografie</p>
+              <h3>Licht, Weite, Stille.</h3>
+            </div>
+            <p>Landschaften zwischen Niederrhein und Hochgebirge – fotografiert in den ersten und letzten Stunden des Tages.</p>
+          </div>
+          <div class="wall">
+            <figure><div class="ph"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&auto=format&fit=crop" alt="Berggipfel über einem Wolkenmeer im Abendlicht" style="aspect-ratio:4/5" loading="lazy"></div><figcaption><b>01</b><span>Über den Wolken</span><em>Alpen · 2025</em></figcaption></figure>
+            <figure><div class="ph"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80&auto=format&fit=crop" alt="Türkiser Bergsee mit einem Boot zwischen steilen Felswänden" style="aspect-ratio:3/2" loading="lazy"></div><figcaption><b>02</b><span>Stiller See</span><em>Dolomiten · 2024</em></figcaption></figure>
+            <figure><div class="ph"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1200&q=80&auto=format&fit=crop" alt="Schmale Holzbrücke führt in einen dichten grünen Wald" style="aspect-ratio:2/3" loading="lazy"></div><figcaption><b>03</b><span>Der Weg hinein</span><em>Schwarzwald · 2024</em></figcaption></figure>
+            <figure><div class="ph"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=80&auto=format&fit=crop" alt="Nebelschwaden über grünen Hügeln bei Sonnenaufgang" style="aspect-ratio:4/3" loading="lazy"></div><figcaption><b>04</b><span>Morgennebel</span><em>Eifel · 2025</em></figcaption></figure>
+            <figure><div class="ph"><img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&q=80&auto=format&fit=crop" alt="Wasserfall mit steinerner Bogenbrücke in einer bewachsenen Schlucht" style="aspect-ratio:3/4" loading="lazy"></div><figcaption><b>05</b><span>Fallendes Wasser</span><em>Oregon · 2023</em></figcaption></figure>
+            <figure><div class="ph"><img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80&auto=format&fit=crop" alt="Schneebedeckte Gipfel ragen aus dichtem Nebel" style="aspect-ratio:1/1" loading="lazy"></div><figcaption><b>06</b><span>Schneegrat</span><em>Tirol · 2025</em></figcaption></figure>
+            <figure><div class="ph"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80&auto=format&fit=crop" alt="Sonnenlicht fällt zwischen hohen Bäumen auf einen Waldweg" style="aspect-ratio:4/5" loading="lazy"></div><figcaption><b>07</b><span>Lichtung</span><em>Hülser Bruch · 2025</em></figcaption></figure>
+            <figure><div class="ph"><img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?w=1200&q=80&auto=format&fit=crop" alt="Nebel über einem dunklen Tannenwald" style="aspect-ratio:16/10" loading="lazy"></div><figcaption><b>08</b><span>Nach dem Regen</span><em>Harz · 2024</em></figcaption></figure>
+            <figure><div class="ph"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80&auto=format&fit=crop" alt="Weites Tal mit See, Wald und Bergen unter Wolken" style="aspect-ratio:5/4" loading="lazy"></div><figcaption><b>09</b><span>Das weite Tal</span><em>Kanada · 2023</em></figcaption></figure>
+          </div>
+          <div class="more"><a href="#" onclick="return false">Alle 64 Aufnahmen ansehen</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v02-wrap" aria-labelledby="v02-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 02</div>
+        <h2 id="v02-title">Raster mit Lightbox</h2>
+        <p>Gleichmäßiges Bildraster; ein Klick öffnet die Großansicht mit Bildtext, Zähler und Vorschauleiste. Bedienbar mit Pfeiltasten, Esc schließt.</p>
+        <ul class="v-tags"><li>Bauunternehmen</li><li>Immobilien</li><li>Handwerk</li><li>mit Lightbox</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame" style="--h:640px">
+        <div id="v02">
+          <div class="hd">
+            <div>
+              <p class="eyebrow">Lindner Hausbau</p>
+              <h3>Referenzhäuser am Niederrhein</h3>
+            </div>
+            <p>Acht von über 120 Häusern, die wir schlüsselfertig übergeben haben. Tippen Sie auf ein Bild für die Großansicht.</p>
+          </div>
+          <ul class="grid">
+            <li><button type="button" data-i="0"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop" alt="Modernes Einfamilienhaus mit großen Glasflächen in der Abenddämmerung" loading="lazy"><span class="cap">Haus am Wald<small>Viersen · 2025</small></span><span class="zoom" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></li>
+            <li><button type="button" data-i="1"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format&fit=crop" alt="Offener Wohnbereich mit heller Küche und großen Fenstern" loading="lazy"><span class="cap">Wohnen &amp; Kochen<small>Haus am Wald</small></span><span class="zoom" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></li>
+            <li><button type="button" data-i="2"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&auto=format&fit=crop" alt="Weißes kubisches Haus mit Pool und Terrasse" loading="lazy"><span class="cap">Villa Weiß<small>Meerbusch · 2024</small></span><span class="zoom" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></li>
+            <li><button type="button" data-i="3"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=80&auto=format&fit=crop" alt="Helles Wohnzimmer mit weißem Sofa und blauen Kissen" loading="lazy"><span class="cap">Wohnzimmer<small>Villa Weiß</small></span><span class="zoom" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></li>
+            <li><button type="button" data-i="4"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80&auto=format&fit=crop" alt="Haus mit Holzfassade und Flachdach unter blauem Himmel" loading="lazy"><span class="cap">Holzhaus<small>Grefrath · 2024</small></span><span class="zoom" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></li>
+            <li><button type="button" data-i="5"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80&auto=format&fit=crop" alt="Weißer Bungalow mit Pool und Palmen im Garten" loading="lazy"><span class="cap">Bungalow<small>Kempen · 2023</small></span><span class="zoom" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></li>
+            <li><button type="button" data-i="6"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=80&auto=format&fit=crop" alt="Weiße Küche mit Kochinsel, Barhockern und Pendelleuchten" loading="lazy"><span class="cap">Küche<small>Bungalow Kempen</small></span><span class="zoom" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></li>
+            <li><button type="button" data-i="7"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=80&auto=format&fit=crop" alt="Stadthaus mit beleuchtetem Eingang in der Abenddämmerung" loading="lazy"><span class="cap">Stadthaus<small>Krefeld · 2025</small></span><span class="zoom" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></li>
+          </ul>
+          <div class="lb" role="dialog" aria-modal="true" aria-label="Bildansicht" hidden>
+            <div class="lb-top"><span><b class="lb-n">1</b> / 8</span><button type="button" class="x" aria-label="Großansicht schließen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+            <div class="lb-stage">
+              <button type="button" class="nav prev" aria-label="Vorheriges Bild"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <figure><img src="" alt=""><figcaption></figcaption></figure>
+              <button type="button" class="nav next" aria-label="Nächstes Bild"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+            </div>
+            <div class="thumbs" role="group" aria-label="Alle Bilder"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v03-wrap" aria-labelledby="v03-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 03</div>
+        <h2 id="v03-title">Portfolio mit Kategorie-Filter</h2>
+        <p>Projekte lassen sich per Filter nach Raumtyp eingrenzen – mit Trefferzahl und sanftem Einblenden. Ideal, wenn viele Arbeiten in mehrere Sparten fallen.</p>
+        <ul class="v-tags"><li>Innenarchitektur</li><li>Agentur</li><li>Handwerk</li><li>mit Filter</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v03">
+          <div class="hd">
+            <h3>Raumkontor<span>.</span><br>Projekte</h3>
+            <p>Innenarchitektur für Wohnungen, Häuser und Arbeitswelten in Krefeld, Düsseldorf und am linken Niederrhein.</p>
+          </div>
+          <div class="bar">
+            <div class="filters" role="group" aria-label="Projekte filtern">
+              <button type="button" data-f="alle" aria-pressed="true">Alle <sup>12</sup></button>
+              <button type="button" data-f="wohnen" aria-pressed="false">Wohnen <sup>4</sup></button>
+              <button type="button" data-f="kueche" aria-pressed="false">Küche <sup>2</sup></button>
+              <button type="button" data-f="arbeiten" aria-pressed="false">Arbeiten <sup>4</sup></button>
+              <button type="button" data-f="details" aria-pressed="false">Details <sup>2</sup></button>
+            </div>
+            <p class="count" aria-live="polite">12 Projekte</p>
+          </div>
+          <ul class="grid">
+            <li data-c="wohnen"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80&auto=format&fit=crop" alt="Heller Wohnraum mit Bilderwand, Ledersofa und Pflanzen" loading="lazy"></div><div class="meta"><strong>Altbau Ostwall</strong><span>Wohnen</span></div><p>Krefeld · 140 m² · 2025</p></a></li>
+            <li data-c="kueche"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&q=80&auto=format&fit=crop" alt="Weiße Küche mit Arbeitsplatte aus Marmor und frischem Obst" loading="lazy"></div><div class="meta"><strong>Küche Linn</strong><span>Küche</span></div><p>Krefeld-Linn · 2024</p></a></li>
+            <li data-c="arbeiten"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80&auto=format&fit=crop" alt="Offene Bürofläche mit Betonboden und großen Fensterfronten" loading="lazy"></div><div class="meta"><strong>Loft Rheinhafen</strong><span>Arbeiten</span></div><p>Düsseldorf · 620 m² · 2025</p></a></li>
+            <li data-c="wohnen"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=1200&q=80&auto=format&fit=crop" alt="Wohnzimmer in Grautönen mit großem Ecksofa und Pendelleuchte" loading="lazy"></div><div class="meta"><strong>Stadtvilla Bockum</strong><span>Wohnen</span></div><p>Krefeld · 210 m² · 2024</p></a></li>
+            <li data-c="details"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80&auto=format&fit=crop" alt="Gelber Sessel vor dunkler Wand mit Stehleuchte und Kunstdruck" loading="lazy"></div><div class="meta"><strong>Leseecke</strong><span>Details</span></div><p>Privatwohnung Kempen</p></a></li>
+            <li data-c="arbeiten"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80&auto=format&fit=crop" alt="Lange Flurzone eines modernen Büros mit Glaswänden" loading="lazy"></div><div class="meta"><strong>Kanzlei am Markt</strong><span>Arbeiten</span></div><p>Viersen · 380 m² · 2023</p></a></li>
+            <li data-c="wohnen"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80&auto=format&fit=crop" alt="Wohnzimmer mit langem Sofa, Holztischen und Wandbild" loading="lazy"></div><div class="meta"><strong>Penthouse Mitte</strong><span>Wohnen</span></div><p>Düsseldorf · 165 m² · 2025</p></a></li>
+            <li data-c="kueche"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80&auto=format&fit=crop" alt="Paar kocht gemeinsam in einer hellen offenen Küche" loading="lazy"></div><div class="meta"><strong>Familienküche</strong><span>Küche</span></div><p>Tönisvorst · 2024</p></a></li>
+            <li data-c="arbeiten"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200&q=80&auto=format&fit=crop" alt="Lounge-Bereich eines Büros mit Sesseln und Stehleuchte" loading="lazy"></div><div class="meta"><strong>Agentur Südwall</strong><span>Arbeiten</span></div><p>Krefeld · 240 m² · 2024</p></a></li>
+            <li data-c="wohnen"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80&auto=format&fit=crop" alt="Helles Wohnzimmer mit beigem Sofa, runden Beistelltischen und Wanduhren" loading="lazy"></div><div class="meta"><strong>Reihenhaus Anrath</strong><span>Wohnen</span></div><p>Willich · 120 m² · 2023</p></a></li>
+            <li data-c="details"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80&auto=format&fit=crop" alt="Sitzecke mit Sofa, Holzstuhl und Hängepflanzen vor einem Regal" loading="lazy"></div><div class="meta"><strong>Regal &amp; Grün</strong><span>Details</span></div><p>Privatwohnung Krefeld</p></a></li>
+            <li data-c="arbeiten"><a class="card" href="#" onclick="return false"><div class="ph"><img src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=1200&q=80&auto=format&fit=crop" alt="Helles Büro mit Lounge-Sesseln und Blick ins Grüne" loading="lazy"></div><div class="meta"><strong>Praxis am Park</strong><span>Arbeiten</span></div><p>Meerbusch · 190 m² · 2025</p></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v04-wrap" aria-labelledby="v04-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 04</div>
+        <h2 id="v04-title">Scroll-Band mit Einrasten</h2>
+        <p>Ein Lookbook als horizontales Band: wischen, scrollen oder Pfeile nutzen – jedes Motiv rastet sauber ein. Ein Fortschrittsbalken zeigt die Position.</p>
+        <ul class="v-tags"><li>Mode</li><li>Concept Store</li><li>Kampagnen</li><li>Scroll-Snap</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v04">
+          <div class="hd">
+            <div>
+              <p class="brand">NORDKANTE</p>
+              <h3>Herbst / Winter<br><i>Lookbook</i> 26</h3>
+            </div>
+            <div class="ctrl">
+              <output aria-live="polite">01 / 08</output>
+              <button type="button" class="prev" aria-label="Vorheriger Look"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+              <button type="button" class="next" aria-label="Nächster Look"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+          <ul class="band" tabindex="0" aria-label="Looks, horizontal scrollbar">
+            <li><div class="look"><img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=1200&q=80&auto=format&fit=crop" alt="Frau im karierten Wollmantel auf einer Straße" loading="lazy"><b>01</b></div><div class="info"><div>Mantel „Deich“<span>Schurwolle, Karo</span></div><em>329 €</em></div></li>
+            <li><div class="look"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1200&q=80&auto=format&fit=crop" alt="Frau im hellblauen Mantel vor einer Kathedrale" loading="lazy"><b>02</b></div><div class="info"><div>Coat „Himmel“<span>Baumwoll-Twill</span></div><em>279 €</em></div></li>
+            <li><div class="look"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&q=80&auto=format&fit=crop" alt="Person in senfgelber weiter Hose vor hellem Hintergrund" loading="lazy"><b>03</b></div><div class="info"><div>Hose „Raps“<span>Weites Bein, Leinen</span></div><em>149 €</em></div></li>
+            <li><div class="look"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1200&q=80&auto=format&fit=crop" alt="Frau in gestreifter Hose vor türkisem Hintergrund" loading="lazy"><b>04</b></div><div class="info"><div>Set „Streifen“<span>Viskose, Nadelstreifen</span></div><em>199 €</em></div></li>
+            <li><div class="look"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1200&q=80&auto=format&fit=crop" alt="Wehendes geblümtes Kleid am Meer" loading="lazy"><b>05</b></div><div class="info"><div>Kleid „Brise“<span>Seide, Blumenprint</span></div><em>239 €</em></div></li>
+            <li><div class="look"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1200&q=80&auto=format&fit=crop" alt="Frau mit Sonnenbrille in rotem Shirt und dunkler Jacke" loading="lazy"><b>06</b></div><div class="info"><div>Shirt „Signal“<span>Bio-Baumwolle</span></div><em>59 €</em></div></li>
+            <li><div class="look"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80&auto=format&fit=crop" alt="Frau mit Sonnenbrille vor einer gelben Wand" loading="lazy"><b>07</b></div><div class="info"><div>Top „Lagune“<span>Strick, Petrol</span></div><em>89 €</em></div></li>
+            <li><div class="look"><img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&q=80&auto=format&fit=crop" alt="Kleiderstange mit Jacken und Pullovern in Erdtönen" loading="lazy"><b>08</b></div><div class="info"><div>Die ganze Kollektion<span>42 Teile im Store</span></div><em>→</em></div></li>
+          </ul>
+          <div class="track" aria-hidden="true"><span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v05-wrap" aria-labelledby="v05-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 05</div>
+        <h2 id="v05-title">Bühnen-Slider mit Fortschritt</h2>
+        <p>Randlose Bildbühne mit sanftem Überblenden und Story-artigen Fortschrittsbalken. Pausiert bei Hover und Fokus, lässt sich per Pfeiltasten steuern.</p>
+        <ul class="v-tags"><li>Hotel</li><li>Ferienwohnung</li><li>Eventlocation</li><li>Autoplay mit Pause</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v05" role="region" aria-roledescription="Karussell" aria-label="Eindrücke aus der Finca Casa Lumen">
+          <ul class="slides">
+            <li class="slide is-on" role="group" aria-roledescription="Bild" aria-label="1 von 5"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80&auto=format&fit=crop" alt="Hotelanlage mit Holzfassade, Pool und Liegen"><div class="txt"><p>Finca Casa Lumen · Mallorca</p><h3>Ankommen. <em>Durchatmen.</em></h3><p>Zwölf Zimmer, ein Pool unter Palmen und zehn Minuten zum Meer – geführt von einer Familie aus Kempen.</p></div></li>
+            <li class="slide" role="group" aria-roledescription="Bild" aria-label="2 von 5"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&q=80&auto=format&fit=crop" alt="Elegantes Hotelzimmer mit Doppelbett, Sessel und Stehlampe" loading="lazy"><div class="txt"><p>Zimmer &amp; Suiten</p><h3>12 Zimmer, <em>12 Charaktere</em></h3><p>Jedes Zimmer ist individuell eingerichtet – mit Möbeln aus Werkstätten der Insel.</p></div></li>
+            <li class="slide" role="group" aria-roledescription="Bild" aria-label="3 von 5"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80&auto=format&fit=crop" alt="Entspannende Rückenmassage im Spa" loading="lazy"><div class="txt"><p>Spa am Hof</p><h3>Zeit, die <em>nur Ihnen</em> gehört</h3><p>Massagen, Sauna und ein Ruheraum mit Blick in den alten Olivenhain.</p></div></li>
+            <li class="slide" role="group" aria-roledescription="Bild" aria-label="4 von 5"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200&q=80&auto=format&fit=crop" alt="Hotelzimmer mit dunklem Holz, warmem Licht und großem Bett" loading="lazy"><div class="txt"><p>Die Turmsuite</p><h3>Warmes Licht, <em>tiefer Schlaf</em></h3><p>Eichenholz, Leinen und schwere Vorhänge – unsere beliebteste Suite für zwei.</p></div></li>
+            <li class="slide" role="group" aria-roledescription="Bild" aria-label="5 von 5"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80&auto=format&fit=crop" alt="Beleuchteter Pool vor dem Hotel zur blauen Stunde" loading="lazy"><div class="txt"><p>Abends am Pool</p><h3>Die <em>blaue Stunde</em></h3><p>Wenn die Tagesgäste gegangen sind, gehört der Pool den Hausgästen.</p></div></li>
+          </ul>
+          <div class="bars" role="group" aria-label="Bild wählen">
+            <button type="button" class="is-on" aria-label="Bild 1" aria-current="true"><i></i></button>
+            <button type="button" aria-label="Bild 2"><i></i></button>
+            <button type="button" aria-label="Bild 3"><i></i></button>
+            <button type="button" aria-label="Bild 4"><i></i></button>
+            <button type="button" aria-label="Bild 5"><i></i></button>
+          </div>
+          <div class="logo"><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 28V13l12-9 12 9v15"/><path d="M12 28v-8h8v8"/><circle cx="16" cy="12.5" r="2"/></svg><span>Casa Lumen</span></div>
+          <div class="ui">
+            <output><b>01</b> / 05</output>
+            <button type="button" class="prev" aria-label="Vorheriges Bild"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button type="button" class="pp" aria-label="Automatischen Wechsel pausieren"><svg class="pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></button>
+            <button type="button" class="next" aria-label="Nächstes Bild"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v06-wrap" aria-labelledby="v06-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 06</div>
+        <h2 id="v06-title">Vorher / Nachher</h2>
+        <p>Vergleichsregler über dem Bild: Ziehen, tippen oder mit den Pfeiltasten verschieben. Eine Projektliste wechselt zwischen mehreren Bildpaaren.</p>
+        <ul class="v-tags"><li>Bildbearbeitung</li><li>Renovierung</li><li>Kosmetik</li><li>Vergleichsregler</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v06">
+          <div class="cmp">
+            <img class="after" src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1200&q=80&auto=format&fit=crop" alt="Nachher: Felswand im Tal mit kräftigen, warmen Farben">
+            <img class="before" src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1200&q=80&auto=format&fit=crop" alt="Vorher: dieselbe Aufnahme flau und farbarm als RAW-Datei">
+            <span class="tag l">Vorher · RAW</span><span class="tag r">Nachher</span>
+            <div class="handle" aria-hidden="true"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
+            <input type="range" min="0" max="100" value="50" step="1" aria-label="Vergleich: links Vorher, rechts Nachher" aria-valuetext="50 Prozent Vorher">
+          </div>
+          <aside>
+            <div class="brand"><i aria-hidden="true"></i>Lichtwerk</div>
+            <h3>Bildbearbeitung, die man sieht – und nicht bemerkt.</h3>
+            <p>Farbkorrektur, Retusche und Looks für Fotograf:innen, Hotels und Online-Shops aus Mönchengladbach.</p>
+            <ul class="list" aria-label="Bildpaare">
+              <li><button type="button" aria-pressed="true" data-src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1200&q=80&auto=format&fit=crop" data-alt="Felswand im Tal"><img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1200&q=80&auto=format&fit=crop" alt=""><span><strong>Landschaft</strong><small>Farblook „Spätsommer“</small></span></button></li>
+              <li><button type="button" aria-pressed="false" data-src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&q=80&auto=format&fit=crop" data-alt="Brautpaar inmitten feiernder Gäste"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy"><span><strong>Hochzeit</strong><small>Hauttöne &amp; Licht</small></span></button></li>
+              <li><button type="button" aria-pressed="false" data-src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop" data-alt="Gedeckter Tisch mit mehreren Gerichten von oben"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy"><span><strong>Food</strong><small>Speisekarte &amp; Shop</small></span></button></li>
+              <li><button type="button" aria-pressed="false" data-src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&q=80&auto=format&fit=crop" data-alt="Grüne Hügellandschaft bei Sonnenuntergang"><img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy"><span><strong>Abendlicht</strong><small>Himmel &amp; Dynamik</small></span></button></li>
+            </ul>
+            <p class="hint"><kbd>←</kbd><kbd>→</kbd> Regler verschieben</p>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v07-wrap" aria-labelledby="v07-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 07</div>
+        <h2 id="v07-title">Projektkarten mit Overlay</h2>
+        <p>Großzügige Projektkacheln mit Text direkt auf dem Bild. Beim Überfahren steigt die Kurzbeschreibung auf – sachlich, präzise, architektonisch.</p>
+        <ul class="v-tags"><li>Architektur</li><li>Bauträger</li><li>Ingenieurbüro</li><li>Hover-Reveal</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v07">
+          <div class="hd">
+            <div class="mark" aria-hidden="true">K|A</div>
+            <h3>Gebaute <em>Haltung.</em></h3>
+            <p>Kessler Arndt Architekten<br>Projekte 2019 – 2026</p>
+          </div>
+          <ul class="grid">
+            <li><a class="card" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80&auto=format&fit=crop" alt="Weißes Gebäude mit scharf geschnittenen, schrägen Fassadenflächen" loading="lazy"><div class="body"><p class="code">P—031 · KULTUR</p><h4>Museum am Rheinbogen</h4><p class="meta">Neubau · Duisburg · 2025 · 4.800 m²</p><span class="more">Projekt ansehen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a></li>
+            <li><a class="card" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=1200&q=80&auto=format&fit=crop" alt="Weiße Fassade mit gestapelten, versetzten Kuben und Fenstern" loading="lazy"><div class="body"><p class="code">P—028 · WOHNEN</p><h4>Kubus Haus</h4><p class="meta">Krefeld · 2024</p><span class="more">Projekt ansehen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a></li>
+            <li><a class="card" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&q=80&auto=format&fit=crop" alt="Geschwungene blau-weiße Fassadenbänder vor blauem Himmel" loading="lazy"><div class="body"><p class="code">P—026 · BÜRO</p><h4>Welle Nord</h4><p class="meta">Düsseldorf · 2024</p><span class="more">Projekt ansehen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a></li>
+            <li><a class="card" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=1200&q=80&auto=format&fit=crop" alt="Weiße Terrassenfassade mit horizontalen Bändern von unten gesehen" loading="lazy"><div class="body"><p class="code">P—022 · WOHNEN</p><h4>Terrassenhaus</h4><p class="meta">Neuss · 2023</p><span class="more">Projekt ansehen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a></li>
+            <li><a class="card" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80&auto=format&fit=crop" alt="Dunkles Wohngebäude mit regelmäßigen Fensterreihen" loading="lazy"><div class="body"><p class="code">P—019 · QUARTIER</p><h4>Hafenkante</h4><p class="meta">Uerdingen · 2022</p><span class="more">Projekt ansehen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a></li>
+            <li><a class="card" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=1200&q=80&auto=format&fit=crop" alt="Spiegelnde Glasfassaden in warmem Licht von unten" loading="lazy"><div class="body"><p class="code">P—014 · GEWERBE</p><h4>Glashof</h4><p class="meta">Mönchengladbach · 2021</p><span class="more">Projekt ansehen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a></li>
+          </ul>
+          <div class="foot"><span>6 von 38 Projekten</span><a href="#" onclick="return false">Werkverzeichnis öffnen</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v08-wrap" aria-labelledby="v08-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 08</div>
+        <h2 id="v08-title">Polaroid-Collage</h2>
+        <p>Verspielte Sofortbild-Collage mit Klebeband und handschriftlichen Notizen. Beim Überfahren richtet sich jedes Bild auf – persönlich und warm.</p>
+        <ul class="v-tags"><li>Hochzeit</li><li>Event</li><li>Familienfotografie</li><li>verspielt</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v08">
+          <div class="hd">
+            <p class="hand">Zweisam Hochzeitsfotografie</p>
+            <h3>Momente, die bleiben.</h3>
+          </div>
+          <ul class="wall">
+            <li class="pol"><figure><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80&auto=format&fit=crop" alt="Brautpaar zwischen Blumenschmuck im Freien" loading="lazy"><figcaption>Anna &amp; Jonas</figcaption></figure></li>
+            <li class="pol"><figure><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80&auto=format&fit=crop" alt="Zwei Hände mit Eheringen übereinander" loading="lazy"><figcaption>Ja, für immer.</figcaption></figure></li>
+            <li class="pol"><figure><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop" alt="Festlich gedeckte lange Tafel mit Blumen" loading="lazy"><figcaption>Die Tafel im Gutshof</figcaption></figure></li>
+            <li class="pol"><figure><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200&q=80&auto=format&fit=crop" alt="Zwei geschmückte Stühle auf einer Wiese" loading="lazy"><figcaption>Platz für zwei</figcaption></figure></li>
+            <li class="pol"><figure><img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1200&q=80&auto=format&fit=crop" alt="Lachendes Brautpaar unter Bäumen am Abend" loading="lazy"><figcaption>Lea &amp; Tim ♥</figcaption></figure></li>
+            <li class="pol"><figure><img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=1200&q=80&auto=format&fit=crop" alt="Braut hält einen bunten Brautstrauß" loading="lazy"><figcaption>Der Strauß</figcaption></figure></li>
+            <li class="pol"><figure><img src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=1200&q=80&auto=format&fit=crop" alt="Brautpaar küsst sich, Schleier im Wind, schwarz-weiß" loading="lazy"><figcaption>Wind im Schleier</figcaption></figure></li>
+            <li class="note">Noch frei für 2027: 14 Samstage am Niederrhein.<br><a href="#" onclick="return false">Termin anfragen →</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v09-wrap" aria-labelledby="v09-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 09</div>
+        <h2 id="v09-title">Bento-Portfolio</h2>
+        <p>Kacheln unterschiedlicher Größe mischen Projektbilder mit Kennzahl, Schriftmuster und Kundenzitat. Lebendig, selbstbewusst – ein Portfolio mit Persönlichkeit.</p>
+        <ul class="v-tags"><li>Designstudio</li><li>Startup</li><li>Kreativberufe</li><li>Bento-Raster</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v09">
+          <div class="hd">
+            <div>
+              <div class="logo"><svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 18c6-1 10-5 13-11 1 5 4 8 11 8-4 3-8 4-12 4l-6 8 1-7c-3 0-5-1-7-2z" fill="#2B1B6B"/><circle cx="21" cy="12" r="1.4" fill="#C8F560"/></svg>Studio Kolibri</div>
+              <h3>Marken mit <span>Herzschlag</span> – gestaltet in Krefeld.</h3>
+            </div>
+            <a href="#" onclick="return false">Alle Arbeiten <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          </div>
+          <ul class="bento">
+            <li><a class="t img" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80&auto=format&fit=crop" alt="Farbmuster und Druckproben auf einem Tisch" loading="lazy"><span class="chip">Branding</span><div><strong>Bohnwerk Kaffeerösterei</strong><small>Logo, Verpackung, Ladenbau-Grafik</small></div></a></li>
+            <li><div class="t stat"><b>48</b><p>Marken begleitet<br>seit 2016</p></div></li>
+            <li><a class="t img" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1200&q=80&auto=format&fit=crop" alt="Hand skizziert mit Stift Entwürfe auf einem Tablet" loading="lazy"><span class="chip">UX</span><div><strong>App „Rheinticket“</strong><small>Vom Wireframe zum Prototyp</small></div></a></li>
+            <li><div class="t type"><div class="row"><b>Aa</b><span>HAUSSCHRIFT</span></div><p>„Niers Grotesk“ – Hausschrift für Velo Niers</p></div></li>
+            <li><a class="t img" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&q=80&auto=format&fit=crop" alt="Aufgeschlagenes Buch mit Piktogrammen, daneben ein Tablet mit Stift" loading="lazy"><span class="chip">Leitsystem</span><div><strong>Piktogramme für den Rheinpark</strong><small>58 Symbole, Wegweiser, Infotafeln</small></div></a></li>
+            <li><div class="t quote"><p>„Endlich sieht unser Laden so aus, wie er sich anfühlt.“</p><small>— Hofladen Lindenau, Grefrath</small></div></li>
+            <li><a class="t img" href="#" onclick="return false"><img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=1200&q=80&auto=format&fit=crop" alt="Hand zeichnet mit Stift auf einem Grafiktablett neben einem Laptop" loading="lazy"><span class="chip">Illustration</span><div><strong>Kinderbuch „Fuchsbau“</strong></div></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v10-wrap" aria-labelledby="v10-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 10</div>
+        <h2 id="v10-title">Hover-Zoom mit Bildunterschrift</h2>
+        <p>Warmes, dunkles Raster: Bilder zoomen beim Überfahren leicht heran, darunter stehen Gericht, Zutaten und Preis. Appetit statt Speisekarten-PDF.</p>
+        <ul class="v-tags"><li>Restaurant</li><li>Café</li><li>Feinkost</li><li>Hover-Zoom</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+        <div id="v10">
+          <div class="hd">
+            <p class="orn">Trattoria al Fiume</p>
+            <h3>Aus unserer <em>Küche</em></h3>
+            <p>Hausgemachte Pasta, Pizza aus dem Holzofen und was der Markt in Kempen heute hergibt.</p>
+          </div>
+          <ul class="grid">
+            <li><figure><div class="ph"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1200&q=80&auto=format&fit=crop" alt="Pizza Margherita mit Basilikum auf einem Holzbrett" loading="lazy"><span class="badge">Klassiker</span></div><figcaption><strong>Margherita</strong><span>San-Marzano-Tomaten, Fior di Latte, Basilikum</span><em>11,50 €</em></figcaption></figure></li>
+            <li><figure><div class="ph"><img src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?w=1200&q=80&auto=format&fit=crop" alt="Teller Linguine mit Meeresfrüchten und Zitrone" loading="lazy"></div><figcaption><strong>Linguine allo Scoglio</strong><span>Muscheln, Garnelen, Kirschtomaten</span><em>21,00 €</em></figcaption></figure></li>
+            <li><figure><div class="ph"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=1200&q=80&auto=format&fit=crop" alt="Penne in kräftiger Tomatensauce auf einem weißen Teller" loading="lazy"></div><figcaption><strong>Penne all’Arrabbiata</strong><span>Tomate, Knoblauch, Peperoncino</span><em>13,50 €</em></figcaption></figure></li>
+            <li><figure><div class="ph"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=1200&q=80&auto=format&fit=crop" alt="Spaghetti mit Tomaten und Kräutern in einer Pfanne" loading="lazy"><span class="badge">Neu</span></div><figcaption><strong>Spaghetti della Casa</strong><span>Datteltomaten, Kapern, Oliven</span><em>15,00 €</em></figcaption></figure></li>
+            <li><figure><div class="ph"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=1200&q=80&auto=format&fit=crop" alt="Farfalle-Nudelsalat mit Tomaten und Rucola" loading="lazy"></div><figcaption><strong>Insalata di Farfalle</strong><span>Rucola, Tomate, Parmesan</span><em>12,50 €</em></figcaption></figure></li>
+            <li><figure><div class="ph"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80&auto=format&fit=crop" alt="In Stücke geschnittene Pizza auf einem Holzbrett" loading="lazy"></div><figcaption><strong>Pizza Fiume</strong><span>Salsiccia, Oliven, rote Zwiebeln</span><em>14,50 €</em></figcaption></figure></li>
+            <li><figure><div class="ph"><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=1200&q=80&auto=format&fit=crop" alt="Bandnudeln mit Fleischsauce in einer schwarzen Pfanne" loading="lazy"><span class="badge">Hausgemacht</span></div><figcaption><strong>Tagliatelle al Ragù</strong><span>Sechs Stunden geschmort</span><em>16,50 €</em></figcaption></figure></li>
+            <li><figure><div class="ph"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=1200&q=80&auto=format&fit=crop" alt="Bunter Salat mit Gemüse in einer dunklen Schale" loading="lazy"></div><figcaption><strong>Insalata dell’Orto</strong><span>Gemüse vom Hof Lindenau</span><em>10,50 €</em></figcaption></figure></li>
+          </ul>
+          <div class="foot"><a href="#" onclick="return false">Tisch reservieren</a><a href="#" onclick="return false">Ganze Speisekarte</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="sh-cta">
+  <h2>Der passende Baustein für Ihre Website?</h2>
+  <p>Alle Varianten sind Ausgangspunkte. Wir kombinieren und gestalten sie individuell – passend zu Ihrer Marke.</p>
+  <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Projekt besprechen</a>
+</section>
+
+<footer class="sh-footer">
+  Alle gezeigten Marken und Inhalte sind fiktiv. Design &amp; Umsetzung: <a href="../../Meuster%20Landing%20Page.dc.html">meuser.biz</a> · © 2026
+</footer>
+
+<script>
+  /* SHELL-Skript – nicht verändern */
+  (function () {
+    var here = location.pathname.split('/').pop();
+    document.querySelectorAll('.sh-cats a').forEach(function (a) {
+      if (a.getAttribute('href') === here) { a.setAttribute('aria-current', 'page'); a.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+    });
+    document.querySelectorAll('.variant').forEach(function (v) {
+      var frame = v.querySelector('.frame');
+      v.querySelectorAll('.v-switch button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          v.querySelectorAll('.v-switch button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          frame.style.setProperty('--w', b.dataset.w);
+        });
+      });
+    });
+  })();
+</script>
+<!-- Varianten-Skripte hierunter, jedes in eigenem IIFE, nur auf die eigene #vNN zugreifen -->
+<script>
+/* v02 · Raster mit Lightbox */
+(function () {
+  var root = document.getElementById('v02'); if (!root) return;
+  var items = [].slice.call(root.querySelectorAll('.grid button'));
+  var lb = root.querySelector('.lb'), big = lb.querySelector('figure img'), cap = lb.querySelector('figcaption'), num = lb.querySelector('.lb-n'), strip = lb.querySelector('.thumbs');
+  var cur = 0, opener = null;
+  var data = items.map(function (b) {
+    var img = b.querySelector('img'), c = b.querySelector('.cap');
+    return { src: img.src, alt: img.alt, title: c.firstChild.textContent, sub: c.querySelector('small').textContent };
+  });
+  data.forEach(function (d, i) {
+    var t = document.createElement('button'); t.type = 'button';
+    t.setAttribute('aria-label', 'Bild ' + (i + 1) + ': ' + d.title);
+    t.innerHTML = '<img src="' + d.src + '" alt="">';
+    t.addEventListener('click', function () { show(i); });
+    strip.appendChild(t);
+  });
+  var thumbs = [].slice.call(strip.children);
+  function show(i) {
+    cur = (i + data.length) % data.length; var d = data[cur];
+    big.src = d.src; big.alt = d.alt;
+    big.style.animation = 'none'; void big.offsetWidth; big.style.animation = '';
+    cap.innerHTML = '<strong>' + d.title + '</strong> · ' + d.sub;
+    num.textContent = cur + 1;
+    thumbs.forEach(function (t, k) { t.setAttribute('aria-current', String(k === cur)); });
+    var th = thumbs[cur]; strip.scrollTo({ left: th.offsetLeft - strip.clientWidth / 2 + th.offsetWidth / 2, behavior: 'smooth' });
+  }
+  function open(i, btn) { opener = btn; lb.hidden = false; show(i); lb.querySelector('.x').focus(); }
+  function close() { lb.hidden = true; if (opener) opener.focus(); }
+  items.forEach(function (b, i) { b.addEventListener('click', function () { open(i, b); }); });
+  lb.querySelector('.x').addEventListener('click', close);
+  lb.querySelector('.prev').addEventListener('click', function () { show(cur - 1); });
+  lb.querySelector('.next').addEventListener('click', function () { show(cur + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('lb-stage')) close(); });
+  lb.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { e.preventDefault(); close(); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); show(cur + 1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); show(cur - 1); }
+    else if (e.key === 'Tab') {
+      var f = [].slice.call(lb.querySelectorAll('button')); var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+})();
+</script>
+<script>
+/* v03 · Portfolio mit Kategorie-Filter */
+(function () {
+  var root = document.getElementById('v03'); if (!root) return;
+  var btns = [].slice.call(root.querySelectorAll('.filters button'));
+  var items = [].slice.call(root.querySelectorAll('.grid li'));
+  var count = root.querySelector('.count');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.dataset.f, n = 0;
+      btns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      items.forEach(function (li) {
+        var show = f === 'alle' || li.dataset.c === f;
+        li.hidden = !show;
+        if (show) { n++; li.style.animation = 'none'; void li.offsetWidth; li.style.animation = ''; li.style.animationDelay = (n * 40) + 'ms'; }
+      });
+      count.textContent = n + (n === 1 ? ' Projekt' : ' Projekte');
+    });
+  });
+})();
+</script>
+<script>
+/* v04 · Scroll-Band mit Einrasten */
+(function () {
+  var root = document.getElementById('v04'); if (!root) return;
+  var band = root.querySelector('.band'), items = band.children, out = root.querySelector('output');
+  var prev = root.querySelector('.prev'), next = root.querySelector('.next'), bar = root.querySelector('.track span');
+  var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function step() { return items[1].offsetLeft - items[0].offsetLeft; }
+  function update() {
+    var max = band.scrollWidth - band.clientWidth;
+    var p = max > 0 ? band.scrollLeft / max : 0;
+    var i = Math.min(items.length - 1, Math.round(band.scrollLeft / step()));
+    if (band.scrollLeft >= max - 2) i = items.length - 1;
+    out.textContent = String(i + 1).padStart(2, '0') + ' / ' + String(items.length).padStart(2, '0');
+    root.style.setProperty('--p', (12 + p * 88) + '%');
+    prev.disabled = band.scrollLeft < 4; next.disabled = band.scrollLeft > max - 4;
+  }
+  prev.addEventListener('click', function () { band.scrollBy({ left: -step(), behavior: smooth ? 'smooth' : 'auto' }); });
+  next.addEventListener('click', function () { band.scrollBy({ left: step(), behavior: smooth ? 'smooth' : 'auto' }); });
+  band.addEventListener('scroll', update, { passive: true });
+  if (window.ResizeObserver) new ResizeObserver(update).observe(band);
+  update();
+})();
+</script>
+<script>
+/* v05 · Bühnen-Slider mit Fortschritt */
+(function () {
+  var root = document.getElementById('v05'); if (!root) return;
+  var slides = root.querySelectorAll('.slide'), bars = root.querySelectorAll('.bars button');
+  var out = root.querySelector('.ui output b'), pp = root.querySelector('.pp');
+  var cur = 0, userPaused = false, hover = false;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { root.classList.add('is-static'); userPaused = true; pp.setAttribute('aria-label', 'Automatischen Wechsel starten'); }
+  function go(i) {
+    cur = (i + slides.length) % slides.length;
+    slides.forEach(function (s, k) { s.classList.toggle('is-on', k === cur); s.setAttribute('aria-hidden', String(k !== cur)); });
+    bars.forEach(function (b, k) {
+      b.classList.remove('is-on'); b.classList.toggle('done', k < cur);
+      if (k === cur) { void b.offsetWidth; b.classList.add('is-on'); b.setAttribute('aria-current', 'true'); } else b.removeAttribute('aria-current');
+    });
+    out.textContent = String(cur + 1).padStart(2, '0');
+  }
+  function sync() { root.classList.toggle('is-paused', !userPaused && hover); }
+  bars.forEach(function (b, k) {
+    b.addEventListener('click', function () { go(k); });
+    b.querySelector('i').addEventListener('animationend', function () { if (!userPaused && k === cur) go(cur + 1); });
+  });
+  root.querySelector('.prev').addEventListener('click', function () { go(cur - 1); });
+  root.querySelector('.next').addEventListener('click', function () { go(cur + 1); });
+  pp.addEventListener('click', function () {
+    userPaused = !userPaused;
+    root.classList.toggle('is-static', userPaused);
+    pp.setAttribute('aria-label', userPaused ? 'Automatischen Wechsel starten' : 'Automatischen Wechsel pausieren');
+    if (!userPaused) go(cur);
+    sync();
+  });
+  root.addEventListener('mouseenter', function () { hover = true; sync(); });
+  root.addEventListener('mouseleave', function () { hover = false; sync(); });
+  root.addEventListener('focusin', function () { hover = true; sync(); });
+  root.addEventListener('focusout', function (e) { if (!root.contains(e.relatedTarget)) { hover = false; sync(); } });
+  root.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(cur + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1); }
+  });
+  go(0);
+})();
+</script>
+<script>
+/* v06 · Vorher / Nachher */
+(function () {
+  var root = document.getElementById('v06'); if (!root) return;
+  var range = root.querySelector('.cmp input'), after = root.querySelector('.cmp .after'), before = root.querySelector('.cmp .before');
+  var btns = [].slice.call(root.querySelectorAll('.list button'));
+  function set(v) { root.style.setProperty('--pos', v + '%'); range.setAttribute('aria-valuetext', v + ' Prozent Vorher'); }
+  range.addEventListener('input', function () { set(range.value); });
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      btns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      after.src = before.src = b.dataset.src;
+      after.alt = 'Nachher: ' + b.dataset.alt + ', farblich bearbeitet';
+      before.alt = 'Vorher: ' + b.dataset.alt + ', unbearbeitete RAW-Datei';
+      range.value = 50; set(50);
+    });
+  });
+  set(range.value);
+})();
+</script>
+</body>
+</html>

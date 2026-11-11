@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ – Bausteine – meuser.biz</title>
+<meta name="description" content="FAQ: 8 Gestaltungsvarianten, wie meuser.biz sie für Websites umsetzt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Shell-Schrift (Inter) bleibt; weitere Schriften der Varianten in DIESEN einen Link mit aufnehmen -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================================
+     SHELL – nicht verändern. Gilt für alle Kategorieseiten gleich.
+     ===================================================================== */
+  :root { --ink:#0F172A; --muted:#64748B; --body:#475569; --line:#E2E8F0; --soft:#F8FAFC; --blue:#007BFF; --blue-l:#5FA8FF; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 150px; }
+  body.shell { margin:0; font-family:'Inter',sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; }
+  .shell a { color:inherit; text-decoration:none; }
+  .sh-header { position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.9); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+  .sh-bar { max-width:1400px; margin:0 auto; padding:12px 5%; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .sh-bar img { height:44px; width:auto; display:block; }
+  .sh-actions { display:flex; gap:8px; }
+  .sh-btn { display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font:600 14px 'Inter',sans-serif; white-space:nowrap; transition:.25s; }
+  .sh-btn.ghost { background:rgba(15,23,42,.05); } .sh-btn.ghost:hover { background:rgba(15,23,42,.1); }
+  .sh-btn.blue { background:linear-gradient(135deg,#007BFF,#0062cc); color:#fff !important; box-shadow:0 6px 16px -4px rgba(0,123,255,.6); }
+  .sh-cats { max-width:1400px; margin:0 auto; padding:0 5% 12px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; }
+  .sh-cats::-webkit-scrollbar { display:none; }
+  .sh-cats a { flex-shrink:0; font:600 13px 'Inter',sans-serif; color:var(--body); padding:7px 13px; border-radius:999px; border:1px solid var(--line); background:#fff; transition:.2s; }
+  .sh-cats a:hover { border-color:var(--ink); color:var(--ink); }
+  .sh-cats a[aria-current="page"] { background:var(--ink); border-color:var(--ink); color:#fff; }
+  .sh-hero { background:linear-gradient(120deg,#0F172A,#132238,#0F172A); color:#fff; padding:72px 5% 64px; position:relative; overflow:hidden; }
+  .sh-hero::after { content:""; position:absolute; top:-160px; right:-120px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle,rgba(0,123,255,.35),transparent 70%); pointer-events:none; }
+  .sh-hero-in { max-width:1400px; margin:0 auto; position:relative; z-index:1; }
+  .sh-eyebrow { color:var(--blue-l); font:700 13px 'Inter',sans-serif; letter-spacing:2px; margin-bottom:14px; }
+  .sh-hero h1 { font:800 clamp(32px,5vw,52px)/1.08 'Inter',sans-serif; letter-spacing:-1px; margin:0 0 16px; }
+  .sh-hero p { font:400 clamp(16px,2vw,18px)/1.6 'Inter',sans-serif; color:#CBD5E1; max-width:680px; margin:0; }
+  .sh-index { max-width:1400px; margin:0 auto; padding:32px 5% 0; display:flex; flex-wrap:wrap; gap:8px; }
+  .sh-index a { font:600 13px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:7px 12px; border-radius:8px; transition:.2s; }
+  .sh-index a:hover { color:var(--blue); border-color:var(--blue); }
+  .sh-index a b { color:var(--blue); margin-right:6px; }
+  .sh-main { max-width:1400px; margin:0 auto; padding:24px 5% 96px; }
+  .variant { padding:56px 0 0; }
+  .v-head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:20px; }
+  .v-num { font:700 12px 'Inter',sans-serif; letter-spacing:1.5px; color:var(--blue); margin-bottom:6px; }
+  .v-head h2 { font:800 24px/1.2 'Inter',sans-serif; letter-spacing:-.3px; margin:0 0 6px; }
+  .v-head p { font:400 15px/1.6 'Inter',sans-serif; color:var(--body); margin:0; max-width:720px; }
+  .v-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; padding:0; list-style:none; }
+  .v-tags li { font:600 12px 'Inter',sans-serif; color:var(--body); background:var(--soft); border:1px solid var(--line); padding:4px 10px; border-radius:999px; }
+  .v-switch { display:inline-flex; background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:4px; gap:2px; }
+  .v-switch button { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font:600 13px 'Inter',sans-serif; color:var(--muted); padding:7px 12px; border-radius:7px; transition:.2s; }
+  .v-switch button:hover { color:var(--ink); }
+  .v-switch button[aria-pressed="true"] { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(15,23,42,.15); }
+  .v-switch button:focus-visible { outline:2px solid var(--blue); }
+  .stage { background:#EEF2F6; background-image:radial-gradient(rgba(15,23,42,.08) 1px, transparent 1px); background-size:18px 18px; border:1px solid var(--line); border-radius:16px; padding:28px; overflow:hidden; }
+  .frame { /* Jede Variante lebt in diesem Rahmen */
+    container: demo / inline-size;
+    position:relative; contain:layout paint; /* position:fixed in Varianten bleibt im Rahmen */
+    width:var(--w,100%); max-width:100%; min-height:var(--h,auto);
+    margin:0 auto; background:#fff; border-radius:10px; overflow:hidden;
+    box-shadow:0 1px 2px rgba(15,23,42,.06), 0 18px 40px -20px rgba(15,23,42,.35);
+    transition:width .45s cubic-bezier(.2,.8,.2,1);
+  }
+  .sh-cta { background:var(--soft); border-top:1px solid var(--line); padding:80px 5%; text-align:center; }
+  .sh-cta h2 { font:800 clamp(26px,4vw,36px) 'Inter',sans-serif; letter-spacing:-.5px; margin:0 0 12px; }
+  .sh-cta p { font:400 16px/1.6 'Inter',sans-serif; color:var(--muted); max-width:560px; margin:0 auto 26px; }
+  .sh-cta .sh-btn { border-radius:8px; padding:14px 28px; font-size:15px; }
+  .sh-footer { background:var(--ink); color:#94A3B8; font:400 14px 'Inter',sans-serif; padding:28px 5%; text-align:center; }
+  .sh-footer a { color:#fff; }
+  @media (max-width:640px) {
+    .sh-bar img { height:36px; } .sh-btn .long { display:none; }
+    .stage { padding:12px; border-radius:12px; }
+    .v-switch { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .frame { transition:none; } }
+
+  /* =====================================================================
+     VARIANTEN – CSS jeder Variante NUR unter ihrer ID (#v01, #v02 …).
+     Responsiv ausschließlich mit @container demo (…) – NICHT @media.
+     ===================================================================== */
+
+  /* ---------- v01 · Klassisches Akkordeon ---------- */
+  #v01 { --ink:#13293D; --mut:#4D6275; --acc:#1A73A8; --line:#DCE6EE; background:#F7FAFC; color:var(--ink); font-family:'Manrope',sans-serif; padding:72px 40px; }
+  #v01 .in { max-width:780px; margin:0 auto; }
+  #v01 .hd { text-align:center; margin-bottom:40px; }
+  #v01 .tooth { width:40px; height:40px; color:var(--acc); }
+  #v01 .kick { font:700 13px 'Manrope',sans-serif; letter-spacing:.12em; text-transform:uppercase; color:var(--acc); margin:12px 0 10px; }
+  #v01 h3 { font:800 40px/1.1 'Manrope',sans-serif; letter-spacing:-.03em; margin:0 0 12px; }
+  #v01 .hd p { color:var(--mut); margin:0; font-size:16px; line-height:1.6; }
+  #v01 .list { background:#fff; border:1px solid var(--line); border-radius:18px; padding:4px 0; box-shadow:0 12px 30px -20px rgba(19,41,61,.25); }
+  #v01 .it + .it { border-top:1px solid var(--line); }
+  #v01 h4 { margin:0; }
+  #v01 .q { all:unset; box-sizing:border-box; cursor:pointer; width:100%; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 28px; font:700 17px/1.4 'Manrope',sans-serif; color:var(--ink); transition:color .2s; }
+  #v01 .q:hover { color:var(--acc); }
+  #v01 .q:focus-visible { outline:3px solid var(--acc); outline-offset:-3px; border-radius:12px; }
+  #v01 .chev { flex:none; width:32px; height:32px; border-radius:50%; background:#EAF2F8; color:var(--acc); display:grid; place-items:center; transition:transform .35s cubic-bezier(.2,.8,.2,1), background .25s; }
+  #v01 .chev svg { width:16px; height:16px; }
+  #v01 .q[aria-expanded="true"] .chev { transform:rotate(180deg); background:var(--acc); color:#fff; }
+  #v01 .pn { display:grid; grid-template-rows:0fr; visibility:hidden; transition:grid-template-rows .35s cubic-bezier(.2,.8,.2,1), visibility 0s .35s; }
+  #v01 .pn > div { overflow:hidden; }
+  #v01 .pn p { margin:0; padding:0 80px 24px 28px; color:var(--mut); font-size:15.5px; line-height:1.7; }
+  #v01 .it.open .pn { grid-template-rows:1fr; visibility:visible; transition:grid-template-rows .35s cubic-bezier(.2,.8,.2,1), visibility 0s; }
+  #v01 .more { text-align:center; margin:28px 0 0; color:var(--mut); font-size:15px; }
+  #v01 .more a { color:var(--acc); font-weight:700; text-underline-offset:3px; }
+  #v01 .more a:focus-visible { outline:2px solid var(--acc); outline-offset:3px; }
+  @container demo (max-width:640px) { #v01 { padding:48px 16px; } #v01 h3 { font-size:30px; } #v01 .q { padding:18px 18px; font-size:16px; } #v01 .pn p { padding:0 18px 20px; } }
+  @media (prefers-reduced-motion:reduce) { #v01 .pn, #v01 .it.open .pn, #v01 .chev { transition:none; } }
+
+  /* ---------- v02 · Zweispaltig mit Themen-Navigation ---------- */
+  #v02 { --ink:#1D2433; --mut:#555E70; --acc:#8C2F39; --side:#F4F1EA; --line:#E4DFD3; background:#fff; color:var(--ink); font-family:'Inter',sans-serif; display:grid; grid-template-columns:320px 1fr; min-height:100%; }
+  #v02 .side { background:var(--side); padding:56px 36px; }
+  #v02 .logo { font:600 20px/1.1 'Source Serif 4',serif; margin:0 0 4px; }
+  #v02 .logo span { color:var(--acc); }
+  #v02 .sub { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--mut); margin:0 0 44px; }
+  #v02 h3 { font:600 34px/1.1 'Source Serif 4',serif; margin:0 0 26px; letter-spacing:-.01em; }
+  #v02 [role="tablist"] { display:flex; flex-direction:column; gap:2px; }
+  #v02 [role="tab"] { all:unset; box-sizing:border-box; cursor:pointer; display:flex; justify-content:space-between; align-items:center; padding:13px 16px; border-radius:8px; font:500 15px 'Inter',sans-serif; color:var(--mut); transition:background .2s, color .2s; }
+  #v02 [role="tab"] small { font-size:12px; color:var(--mut); font-variant-numeric:tabular-nums; }
+  #v02 [role="tab"]:hover { color:var(--ink); background:rgba(29,36,51,.05); }
+  #v02 [role="tab"][aria-selected="true"] { background:#fff; color:var(--ink); font-weight:600; box-shadow:inset 3px 0 0 var(--acc), 0 2px 8px -4px rgba(29,36,51,.2); }
+  #v02 [role="tab"]:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  #v02 .main { padding:56px 56px 48px; }
+  #v02 [role="tabpanel"] h4 { font:600 24px 'Source Serif 4',serif; margin:0 0 18px; color:var(--acc); }
+  #v02 [role="tabpanel"]:focus-visible { outline:2px solid var(--acc); outline-offset:8px; }
+  #v02 details { border-bottom:1px solid var(--line); }
+  #v02 details:first-of-type { border-top:1px solid var(--line); }
+  #v02 summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:20px; padding:20px 0; font:600 19px/1.35 'Source Serif 4',serif; }
+  #v02 summary::-webkit-details-marker { display:none; }
+  #v02 summary::after { content:""; flex:none; width:10px; height:10px; margin-top:6px; border-right:1.5px solid var(--acc); border-bottom:1.5px solid var(--acc); transform:rotate(45deg); transition:transform .3s; }
+  #v02 details[open] summary::after { transform:rotate(225deg); margin-top:10px; }
+  #v02 summary:hover { color:var(--acc); }
+  #v02 summary:focus-visible { outline:2px solid var(--acc); outline-offset:4px; }
+  #v02 details p { margin:0 0 22px; color:var(--mut); font-size:15.5px; line-height:1.7; max-width:640px; animation:v02-in .35s ease both; }
+  @keyframes v02-in { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:none; } }
+  #v02 .ct { margin-top:36px; display:flex; gap:12px; align-items:center; font-size:14px; color:var(--mut); }
+  #v02 .ct a { color:var(--ink); font-weight:600; }
+  #v02 .ct a:focus-visible { outline:2px solid var(--acc); outline-offset:3px; }
+  @container demo (max-width:820px) {
+    #v02 { grid-template-columns:minmax(0,1fr); }
+    #v02 .side { padding:40px 20px 16px; min-width:0; }
+    #v02 .sub { margin-bottom:24px; }
+    #v02 h3 { font-size:28px; margin-bottom:18px; }
+    #v02 [role="tablist"] { flex-direction:row; overflow-x:auto; scrollbar-width:none; gap:6px; margin:0 -20px; padding:0 20px 4px; }
+    #v02 [role="tab"] { flex:none; gap:8px; border:1px solid var(--line); background:#fff; padding:10px 14px; }
+    #v02 [role="tab"][aria-selected="true"] { box-shadow:none; background:var(--ink); color:#fff; border-color:var(--ink); }
+    #v02 [role="tab"][aria-selected="true"] small { color:#C9CEDA; }
+    #v02 .main { padding:28px 20px 40px; }
+    #v02 summary { font-size:17px; }
+  }
+  @media (prefers-reduced-motion:reduce) { #v02 details p { animation:none; } #v02 summary::after { transition:none; } }
+
+  /* ---------- v03 · FAQ mit Live-Suche und Filter ---------- */
+  #v03 { --ink:#161616; --mut:#555; --acc:#FFD23F; --line:#E7E3D6; background:#FFFDF6; color:var(--ink); font-family:'Space Grotesk',sans-serif; padding:64px 48px; }
+  #v03 .in { max-width:860px; margin:0 auto; }
+  #v03 .top { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-bottom:28px; }
+  #v03 .logo { display:inline-flex; align-items:center; gap:10px; font:700 16px 'Space Grotesk',sans-serif; margin-bottom:20px; }
+  #v03 .logo svg { width:40px; height:24px; }
+  #v03 h3 { font:700 46px/1 'Space Grotesk',sans-serif; letter-spacing:-.04em; margin:0; }
+  #v03 h3 span { background:linear-gradient(transparent 62%,var(--acc) 62%); padding:0 4px; }
+  #v03 .sb { position:relative; margin-bottom:16px; }
+  #v03 .sb svg { position:absolute; left:20px; top:50%; transform:translateY(-50%); width:22px; height:22px; color:var(--mut); pointer-events:none; }
+  #v03 .sb input { width:100%; box-sizing:border-box; font:500 18px 'Space Grotesk',sans-serif; color:var(--ink); padding:20px 56px 20px 56px; border:2px solid var(--ink); border-radius:14px; background:#fff; box-shadow:4px 4px 0 var(--ink); outline:none; transition:box-shadow .2s, transform .2s; }
+  #v03 .sb input:focus { box-shadow:6px 6px 0 var(--ink); transform:translate(-2px,-2px); }
+  #v03 .sb input::placeholder { color:#6B6B6B; }
+  #v03 .clr { all:unset; cursor:pointer; position:absolute; right:14px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; display:none; place-items:center; background:#F0EDE2; }
+  #v03 .clr.on { display:grid; }
+  #v03 .clr svg { position:static; transform:none; width:14px; height:14px; color:var(--ink); }
+  #v03 .clr:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  #v03 .chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+  #v03 .chips button { all:unset; cursor:pointer; font:600 14px 'Space Grotesk',sans-serif; padding:9px 14px; border:1.5px solid var(--ink); border-radius:999px; background:#fff; transition:background .2s; }
+  #v03 .chips button:hover { background:#FFF3C4; }
+  #v03 .chips button[aria-pressed="true"] { background:var(--ink); color:#fff; }
+  #v03 .chips button:focus-visible { outline:3px solid #C99A00; outline-offset:2px; }
+  #v03 .cnt { font-size:14px; color:var(--mut); margin:0 0 18px; }
+  #v03 .list { display:grid; gap:10px; }
+  #v03 details { background:#fff; border:1.5px solid var(--line); border-radius:12px; transition:border-color .2s; }
+  #v03 details[open] { border-color:var(--ink); }
+  #v03 details[hidden] { display:none; }
+  #v03 summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:14px; padding:18px 20px; font:600 17px/1.35 'Space Grotesk',sans-serif; }
+  #v03 summary::-webkit-details-marker { display:none; }
+  #v03 summary:focus-visible { outline:3px solid #C99A00; outline-offset:2px; border-radius:10px; }
+  #v03 .cat { flex:none; font:600 11px/1 'Space Grotesk',sans-serif; letter-spacing:.06em; text-transform:uppercase; padding:6px 8px; border-radius:6px; background:#F3F0E6; color:#4A4636; }
+  #v03 .qt { flex:1; }
+  #v03 summary::after { content:"+"; flex:none; font:500 24px/1 'Space Grotesk',sans-serif; transition:transform .25s; }
+  #v03 details[open] summary::after { transform:rotate(45deg); }
+  #v03 details p { margin:0; padding:0 20px 20px 20px; color:#3E3E3E; line-height:1.65; font-size:15.5px; }
+  #v03 mark { background:var(--acc); color:var(--ink); border-radius:3px; padding:0 2px; }
+  #v03 .empty { display:none; text-align:center; padding:36px 20px; border:1.5px dashed #CFC8B2; border-radius:12px; color:var(--mut); }
+  #v03 .empty.on { display:block; }
+  #v03 .empty b { display:block; color:var(--ink); font-size:18px; margin-bottom:6px; }
+  #v03 .empty a { color:var(--ink); font-weight:700; }
+  @container demo (max-width:640px) { #v03 { padding:44px 16px; } #v03 h3 { font-size:36px; } #v03 .sb input { font-size:16px; padding:16px 48px 16px 50px; } #v03 .sb svg { left:16px; } #v03 summary { flex-wrap:wrap; padding:16px; gap:8px 12px; } #v03 .qt { order:2; flex-basis:calc(100% - 30px); } #v03 summary::after { order:3; } #v03 details p { padding:0 16px 18px; } }
+  @media (prefers-reduced-motion:reduce) { #v03 .sb input, #v03 summary::after { transition:none; } #v03 .sb input:focus { transform:none; } }
+
+  /* ---------- v04 · Karten-Raster mit Kurzantworten ---------- */
+  #v04 { --ink:#28301F; --mut:#5A6150; --acc:#5E6B3A; --bg:#EFEDE4; --card:#FBFAF5; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; padding:72px 48px; }
+  #v04 .hd { display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:end; max-width:1100px; margin:0 auto 40px; }
+  #v04 .kick { font:italic 400 18px 'Fraunces',serif; color:var(--acc); margin:0 0 8px; }
+  #v04 h3 { font:400 52px/1.02 'Fraunces',serif; letter-spacing:-.025em; margin:0; }
+  #v04 .hd p { margin:0; color:var(--mut); line-height:1.65; font-size:15.5px; }
+  #v04 .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:1100px; margin:0 auto; list-style:none; padding:0; }
+  #v04 .c { background:var(--card); border-radius:18px; padding:26px 26px 24px; border:1px solid #E0DCCD; transition:transform .3s, box-shadow .3s; }
+  #v04 .c:hover { transform:translateY(-3px); box-shadow:0 18px 30px -22px rgba(40,48,31,.45); }
+  #v04 .ic { width:48px; height:48px; border-radius:14px; background:#E6E8D6; color:var(--acc); display:grid; place-items:center; margin-bottom:20px; }
+  #v04 .ic svg { width:24px; height:24px; }
+  #v04 h4 { font:500 21px/1.25 'Fraunces',serif; margin:0 0 8px; }
+  #v04 .a { margin:0; font-size:15px; line-height:1.6; color:var(--mut); }
+  #v04 .a b { color:var(--ink); font-weight:600; }
+  #v04 .c.wide { grid-column:1 / -1; background:var(--acc); color:#fff; border-color:var(--acc); display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  #v04 .c.wide h4 { font-size:26px; }
+  #v04 .c.wide .a { color:#E7EBD7; }
+  #v04 .c.wide a { flex:none; background:#fff; color:var(--ink); text-decoration:none; font:600 14px 'Inter',sans-serif; padding:13px 18px; border-radius:999px; }
+  #v04 .c.wide a:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+  @container demo (max-width:900px) { #v04 { padding:56px 24px; } #v04 .grid { grid-template-columns:1fr 1fr; } #v04 h3 { font-size:42px; } }
+  @container demo (max-width:600px) { #v04 { padding:48px 16px; } #v04 .hd { grid-template-columns:1fr; gap:14px; } #v04 h3 { font-size:36px; } #v04 .grid { grid-template-columns:1fr; } #v04 .c.wide { grid-column:auto; flex-direction:column; align-items:flex-start; } }
+  @media (prefers-reduced-motion:reduce) { #v04 .c { transition:none; } #v04 .c:hover { transform:none; } }
+
+  /* ---------- v05 · Fragen im Chat-Stil ---------- */
+  #v05 { --ink:#111827; --mut:#4B5563; --acc:#2E5BFF; --bg:#EEF1FF; background:var(--bg); color:var(--ink); font-family:'Manrope',sans-serif; padding:64px 48px; }
+  #v05 .in { max-width:1040px; margin:0 auto; display:grid; grid-template-columns:1fr 420px; gap:56px; align-items:center; }
+  #v05 .logo { display:inline-flex; align-items:center; gap:10px; font:800 20px 'Manrope',sans-serif; letter-spacing:-.02em; margin-bottom:24px; }
+  #v05 .logo i { width:30px; height:30px; border-radius:9px; background:var(--acc); display:grid; place-items:center; }
+  #v05 .logo svg { width:18px; height:18px; }
+  #v05 h3 { font:800 46px/1.05 'Manrope',sans-serif; letter-spacing:-.04em; margin:0 0 16px; }
+  #v05 .intro p { color:var(--mut); font-size:16px; line-height:1.65; margin:0 0 24px; max-width:420px; }
+  #v05 .pts { display:flex; gap:10px; flex-wrap:wrap; }
+  #v05 .pts span { font:700 13px 'Manrope',sans-serif; background:#fff; padding:8px 12px; border-radius:999px; color:var(--ink); }
+  #v05 .phone { background:#fff; border-radius:28px; box-shadow:0 30px 60px -30px rgba(46,91,255,.45), 0 0 0 1px rgba(17,24,39,.06); display:flex; flex-direction:column; height:540px; overflow:hidden; }
+  #v05 .bar { display:flex; align-items:center; gap:12px; padding:16px 18px; border-bottom:1px solid #EEF0F4; }
+  #v05 .av { width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,#2E5BFF,#7C9BFF); display:grid; place-items:center; color:#fff; font:800 15px 'Manrope',sans-serif; position:relative; }
+  #v05 .av::after { content:""; position:absolute; right:0; bottom:0; width:10px; height:10px; border-radius:50%; background:#22C55E; border:2px solid #fff; }
+  #v05 .bar b { display:block; font-size:15px; }
+  #v05 .bar small { color:var(--mut); font-size:12.5px; }
+  #v05 .rs { all:unset; cursor:pointer; margin-left:auto; font:700 12.5px 'Manrope',sans-serif; color:var(--acc); padding:6px 10px; border-radius:8px; }
+  #v05 .rs:hover { background:var(--bg); }
+  #v05 .rs:focus-visible { outline:2px solid var(--acc); }
+  #v05 .log { flex:1; overflow-y:auto; padding:18px 16px; display:flex; flex-direction:column; gap:8px; background:#FAFBFF; scroll-behavior:smooth; }
+  #v05 .b { max-width:82%; padding:11px 14px; font-size:14.5px; line-height:1.5; border-radius:18px; animation:v05-pop .3s cubic-bezier(.2,.9,.3,1.3) both; }
+  #v05 .b.bot { background:#fff; border:1px solid #E7EAF3; border-bottom-left-radius:6px; align-self:flex-start; }
+  #v05 .b.me { background:var(--acc); color:#fff; border-bottom-right-radius:6px; align-self:flex-end; }
+  #v05 .ty { display:inline-flex; gap:4px; padding:14px 16px; }
+  #v05 .ty i { width:7px; height:7px; border-radius:50%; background:#9CA3AF; animation:v05-dot 1s infinite; }
+  #v05 .ty i:nth-child(2) { animation-delay:.15s; } #v05 .ty i:nth-child(3) { animation-delay:.3s; }
+  @keyframes v05-pop { from { opacity:0; transform:translateY(6px) scale(.96); } to { opacity:1; transform:none; } }
+  @keyframes v05-dot { 0%, 60%, 100% { transform:none; opacity:.5; } 30% { transform:translateY(-4px); opacity:1; } }
+  #v05 .qs { padding:12px 14px 16px; border-top:1px solid #EEF0F4; display:flex; flex-wrap:wrap; gap:6px; }
+  #v05 .qs p { width:100%; margin:0 0 4px; font:700 11.5px 'Manrope',sans-serif; letter-spacing:.06em; text-transform:uppercase; color:var(--mut); }
+  #v05 .qs button { all:unset; cursor:pointer; font:700 13px 'Manrope',sans-serif; color:#1E40CC; background:var(--bg); padding:9px 12px; border-radius:999px; transition:background .2s, opacity .2s; }
+  #v05 .qs button:hover { background:#DDE4FF; }
+  #v05 .qs button:disabled { opacity:.45; cursor:default; }
+  #v05 .qs button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  @container demo (max-width:860px) { #v05 { padding:48px 20px; } #v05 .in { grid-template-columns:1fr; gap:32px; max-width:480px; } #v05 h3 { font-size:36px; } }
+  @container demo (max-width:420px) { #v05 { padding:36px 12px; } #v05 .phone { height:520px; border-radius:22px; } #v05 .intro { padding:0 6px; } }
+  @media (prefers-reduced-motion:reduce) { #v05 .b, #v05 .ty i { animation:none; } #v05 .log { scroll-behavior:auto; } }
+
+  /* ---------- v06 · Nummeriert im Editorial-Stil ---------- */
+  #v06 { --ink:#141414; --mut:#575757; --line:#D9D6CF; background:#F5F3EE; color:var(--ink); font-family:'Inter',sans-serif; padding:80px 56px; }
+  #v06 .in { max-width:1120px; margin:0 auto; }
+  #v06 .hd { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; padding-bottom:28px; border-bottom:1px solid var(--ink); }
+  #v06 h3 { font:400 88px/.9 'Instrument Serif',serif; letter-spacing:-.03em; margin:0; }
+  #v06 h3 i { font-style:italic; }
+  #v06 .meta { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--mut); text-align:right; line-height:1.8; }
+  #v06 ol { list-style:none; padding:0; margin:0; }
+  #v06 li { display:grid; grid-template-columns:120px 1fr 1fr; gap:32px; padding:36px 0; border-bottom:1px solid var(--line); }
+  #v06 .n { font:400 64px/.8 'Instrument Serif',serif; color:#8A8478; font-variant-numeric:lining-nums; }
+  #v06 h4 { font:400 32px/1.1 'Instrument Serif',serif; margin:0; letter-spacing:-.01em; }
+  #v06 li p { margin:0; font-size:15.5px; line-height:1.7; color:var(--mut); }
+  #v06 li p::first-line { color:var(--ink); }
+  #v06 .ft { display:flex; justify-content:space-between; gap:20px; padding-top:28px; flex-wrap:wrap; font-size:14px; color:var(--mut); }
+  #v06 .ft a { color:var(--ink); font:400 22px 'Instrument Serif',serif; font-style:italic; text-decoration:none; border-bottom:1px solid var(--ink); }
+  #v06 .ft a:focus-visible { outline:2px solid var(--ink); outline-offset:4px; }
+  @container demo (max-width:900px) { #v06 { padding:56px 28px; } #v06 h3 { font-size:64px; } #v06 li { grid-template-columns:80px 1fr; gap:12px 20px; } #v06 li p { grid-column:2; } #v06 .n { font-size:48px; } }
+  @container demo (max-width:520px) { #v06 { padding:44px 18px; } #v06 h3 { font-size:50px; } #v06 .meta { text-align:left; } #v06 li { grid-template-columns:1fr; padding:28px 0; } #v06 li p { grid-column:auto; } #v06 h4 { font-size:28px; } #v06 .n { font-size:40px; } }
+
+  /* ---------- v07 · Dunkles Akkordeon mit Plus/Minus ---------- */
+  #v07 { --tx:#F5F2EC; --mut:#ABA69C; --acc:#FF6B2C; --line:#2C2A27; background:#121110; color:var(--tx); font-family:'Bricolage Grotesque',sans-serif; padding:80px 56px; }
+  #v07 .in { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:340px 1fr; gap:64px; }
+  #v07 .tag { display:inline-flex; align-items:center; gap:8px; font:600 13px 'Bricolage Grotesque',sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--acc); margin:0 0 20px; }
+  #v07 .tag::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--acc); box-shadow:0 0 12px var(--acc); }
+  #v07 h3 { font:800 64px/.92 'Bricolage Grotesque',sans-serif; letter-spacing:-.04em; margin:0 0 20px; }
+  #v07 .side p { color:var(--mut); font-size:16px; line-height:1.6; margin:0 0 28px; }
+  #v07 .side a { display:inline-flex; gap:10px; align-items:center; color:var(--tx); text-decoration:none; font:600 15px 'Bricolage Grotesque',sans-serif; border:1px solid #4A4640; padding:13px 18px; border-radius:999px; transition:border-color .2s, background .2s; }
+  #v07 .side a:hover { border-color:var(--acc); background:rgba(255,107,44,.08); }
+  #v07 .side a:focus-visible { outline:2px solid var(--acc); outline-offset:3px; }
+  #v07 .acc { border-top:1px solid var(--line); }
+  #v07 .it { border-bottom:1px solid var(--line); }
+  #v07 h4 { margin:0; }
+  #v07 .q { all:unset; box-sizing:border-box; cursor:pointer; width:100%; display:grid; grid-template-columns:48px 1fr 44px; align-items:center; gap:16px; padding:26px 0; font:600 24px/1.25 'Bricolage Grotesque',sans-serif; letter-spacing:-.015em; color:var(--tx); transition:color .25s; }
+  #v07 .q small { font:500 14px 'Bricolage Grotesque',sans-serif; color:var(--mut); font-variant-numeric:tabular-nums; }
+  #v07 .q:hover, #v07 .q[aria-expanded="true"] { color:#fff; }
+  #v07 .q:focus-visible { outline:2px solid var(--acc); outline-offset:4px; border-radius:6px; }
+  #v07 .pm { position:relative; width:44px; height:44px; border-radius:50%; border:1px solid #4A4640; transition:background .3s, border-color .3s; }
+  #v07 .pm::before, #v07 .pm::after { content:""; position:absolute; left:50%; top:50%; width:16px; height:2px; margin:-1px 0 0 -8px; background:currentColor; border-radius:2px; transition:transform .4s cubic-bezier(.6,0,.2,1); }
+  #v07 .pm::after { transform:rotate(90deg); }
+  #v07 .q[aria-expanded="true"] .pm { background:var(--acc); border-color:var(--acc); color:#121110; }
+  #v07 .q[aria-expanded="true"] .pm::after { transform:rotate(0deg); }
+  #v07 .q[aria-expanded="true"] .pm::before { transform:rotate(180deg); }
+  #v07 .q:hover .pm { border-color:var(--acc); }
+  #v07 .pn { display:grid; grid-template-rows:0fr; visibility:hidden; transition:grid-template-rows .45s cubic-bezier(.6,0,.2,1), visibility 0s .45s; }
+  #v07 .pn > div { overflow:hidden; }
+  #v07 .pn p { margin:0; padding:0 60px 28px 64px; color:#C9C4BA; font:400 17px/1.65 'Bricolage Grotesque',sans-serif; }
+  #v07 .it.open .pn { grid-template-rows:1fr; visibility:visible; transition:grid-template-rows .45s cubic-bezier(.6,0,.2,1), visibility 0s; }
+  @container demo (max-width:900px) { #v07 { padding:56px 28px; } #v07 .in { grid-template-columns:1fr; gap:36px; } #v07 h3 { font-size:52px; } }
+  @container demo (max-width:560px) { #v07 { padding:44px 18px; } #v07 h3 { font-size:42px; } #v07 .q { grid-template-columns:1fr 40px; font-size:19px; padding:20px 0; gap:12px; } #v07 .q small { display:none; } #v07 .pm { width:40px; height:40px; } #v07 .pn p { padding:0 0 22px; font-size:16px; } }
+  @media (prefers-reduced-motion:reduce) { #v07 .pn, #v07 .it.open .pn, #v07 .pm, #v07 .pm::before, #v07 .pm::after { transition:none; } }
+
+  /* ---------- v08 · FAQ mit Kontaktbox ---------- */
+  #v08 { --ink:#1F2A37; --mut:#536070; --acc:#B4402A; --line:#E3E7EC; background:#fff; color:var(--ink); font-family:'Inter',sans-serif; padding:72px 48px; }
+  #v08 .in { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 360px; gap:56px; align-items:start; }
+  #v08 .kick { display:flex; align-items:center; gap:10px; font:700 13px 'Inter',sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--acc); margin:0 0 14px; }
+  #v08 .kick svg { width:26px; height:20px; }
+  #v08 h3 { font:800 40px/1.08 'Inter',sans-serif; letter-spacing:-.03em; margin:0 0 30px; }
+  #v08 details { border-bottom:1px solid var(--line); }
+  #v08 details:first-of-type { border-top:1px solid var(--line); }
+  #v08 summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:18px; padding:20px 4px; font:600 17px/1.4 'Inter',sans-serif; }
+  #v08 summary::-webkit-details-marker { display:none; }
+  #v08 summary:hover { color:var(--acc); }
+  #v08 summary:focus-visible { outline:3px solid rgba(180,64,42,.45); outline-offset:2px; border-radius:6px; }
+  #v08 .ar { flex:none; width:28px; height:28px; border-radius:8px; background:#F7ECE9; color:var(--acc); display:grid; place-items:center; transition:transform .3s; }
+  #v08 .ar svg { width:14px; height:14px; }
+  #v08 details[open] .ar { transform:rotate(90deg); }
+  #v08 details p { margin:0; padding:0 48px 22px 4px; color:var(--mut); line-height:1.7; font-size:15.5px; }
+  #v08 .box { background:#F5F7F9; border-radius:20px; padding:28px; position:sticky; top:20px; }
+  #v08 .who { display:flex; gap:14px; align-items:center; margin-bottom:18px; }
+  #v08 .who svg { width:56px; height:56px; flex:none; }
+  #v08 .who b { display:block; font-size:16px; }
+  #v08 .who small { color:var(--mut); font-size:13px; }
+  #v08 .box h4 { font:800 22px/1.2 'Inter',sans-serif; letter-spacing:-.02em; margin:0 0 8px; }
+  #v08 .box > p { margin:0 0 18px; color:var(--mut); font-size:14.5px; line-height:1.6; }
+  #v08 .tel { display:flex; align-items:center; gap:12px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; text-decoration:none; color:var(--ink); margin-bottom:18px; transition:border-color .2s; }
+  #v08 .tel:hover { border-color:var(--acc); }
+  #v08 .tel svg { width:20px; height:20px; color:var(--acc); }
+  #v08 .tel span { display:flex; flex-direction:column; font:700 16px 'Inter',sans-serif; }
+  #v08 .tel small { font:500 12px 'Inter',sans-serif; color:var(--mut); }
+  #v08 label { display:block; font:600 13px 'Inter',sans-serif; margin:0 0 6px; }
+  #v08 input, #v08 textarea { width:100%; box-sizing:border-box; font:400 15px 'Inter',sans-serif; color:var(--ink); background:#fff; border:1.5px solid #D2D8DF; border-radius:10px; padding:11px 12px; margin-bottom:12px; transition:border-color .2s, box-shadow .2s; }
+  #v08 textarea { resize:vertical; min-height:84px; }
+  #v08 input:focus, #v08 textarea:focus { outline:none; border-color:var(--acc); box-shadow:0 0 0 3px rgba(180,64,42,.18); }
+  #v08 .send { all:unset; box-sizing:border-box; cursor:pointer; display:block; width:100%; text-align:center; background:var(--acc); color:#fff; font:700 15px 'Inter',sans-serif; padding:14px; border-radius:10px; transition:background .2s; }
+  #v08 .send:hover { background:#963420; }
+  #v08 a:focus-visible, #v08 .send:focus-visible { outline:3px solid rgba(180,64,42,.5); outline-offset:3px; }
+  #v08 .ok { font-size:14px; color:#1C6B3A; margin:10px 0 0; font-weight:600; }
+  @container demo (max-width:860px) { #v08 { padding:52px 24px; } #v08 .in { grid-template-columns:1fr; gap:36px; } #v08 .box { position:static; } #v08 h3 { font-size:32px; } }
+  @container demo (max-width:480px) { #v08 { padding:44px 16px; } #v08 .box { padding:22px 18px; } #v08 details p { padding-right:4px; } #v08 summary { font-size:16px; } }
+  @media (prefers-reduced-motion:reduce) { #v08 .ar { transition:none; } }
+
+</style>
+</head>
+<body class="shell">
+
+<header class="sh-header">
+  <div class="sh-bar">
+    <a href="../../Meuster%20Landing%20Page.dc.html" aria-label="meuser.biz Startseite"><img src="../../assets/meuser-logo.png" alt="meuser.biz – Modern Webservices"></a>
+    <div class="sh-actions">
+      <a class="sh-btn ghost" href="../../beispiele.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>Alle<span class="long"> Beispiele</span></span></a>
+      <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Anfrage</a>
+    </div>
+  </div>
+  <nav class="sh-cats" aria-label="Kategorien">
+    <a href="../../beispiele.html#websites">Komplette Websites</a>
+    <a href="navigation.html">Navigation &amp; Menüs</a>
+    <a href="header.html">Header &amp; Hero</a>
+    <a href="footer.html">Footer</a>
+    <a href="leistungen.html">Leistungen &amp; Features</a>
+    <a href="preise.html">Preistabellen</a>
+    <a href="stimmen.html">Kundenstimmen</a>
+    <a href="team.html">Team</a>
+    <a href="galerie.html">Galerien</a>
+    <a href="kontakt.html">Kontakt &amp; Formulare</a>
+    <a href="faq.html">FAQ</a>
+    <a href="cta.html">Call-to-Action</a>
+    <a href="kennzahlen.html">Kennzahlen &amp; Abläufe</a>
+  </nav>
+</header>
+
+<section class="sh-hero">
+  <div class="sh-hero-in">
+    <div class="sh-eyebrow">BAUSTEINE · 8 VARIANTEN</div>
+    <h1>FAQ</h1>
+    <p>Häufige Fragen gut beantwortet entlasten Ihr Telefon und schaffen Vertrauen. Hier sehen Sie, wie unterschiedlich ein FAQ-Bereich aussehen kann – vom ruhigen Akkordeon bis zum Chat.</p>
+  </div>
+</section>
+
+<nav class="sh-index" aria-label="Varianten auf dieser Seite">
+  <!-- je Variante: <a href="#v01-wrap"><b>01</b>Name</a> -->
+  <a href="#v01-wrap"><b>01</b>Klassisches Akkordeon</a>
+  <a href="#v02-wrap"><b>02</b>Zweispaltig mit Themen-Navigation</a>
+  <a href="#v03-wrap"><b>03</b>FAQ mit Live-Suche und Filter</a>
+  <a href="#v04-wrap"><b>04</b>Karten-Raster mit Kurzantworten</a>
+  <a href="#v05-wrap"><b>05</b>Fragen im Chat-Stil</a>
+  <a href="#v06-wrap"><b>06</b>Nummeriert im Editorial-Stil</a>
+  <a href="#v07-wrap"><b>07</b>Dunkles Akkordeon mit Plus/Minus</a>
+  <a href="#v08-wrap"><b>08</b>FAQ mit Kontaktbox</a>
+</nav>
+
+<main class="sh-main">
+
+  <!-- ===== VARIANTE (Muster, für jede Variante wiederholen) =====
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Name der Variante</h2>
+        <p>Ein bis zwei Sätze: Wie wirkt sie, wofür eignet sie sich?</p>
+        <ul class="v-tags"><li>Restaurant</li><li>Hotel</li><li>mit Dropdown</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame" style="--h:420px">
+        <div id="v01"> … Baustein … </div>
+      </div>
+    </div>
+  </section>
+  ============================================================== -->
+
+  <section class="variant" id="v01-wrap" aria-labelledby="v01-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 01</div>
+        <h2 id="v01-title">Klassisches Akkordeon</h2>
+        <p>Ruhig, hell und vertraut: Fragen klappen weich auf, ein Pfeil zeigt den Zustand. Die sichere Wahl für Praxen und Dienstleister, die Vertrauen ausstrahlen wollen.</p>
+        <ul class="v-tags"><li>Arztpraxis</li><li>Zahnarzt</li><li>Dienstleister</li><li>Tastaturbedienbar</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v01">
+  <div class="in">
+    <div class="hd">
+      <svg class="tooth" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 6c-5 0-8 4-7 9 1 4 3 6 3.5 11 .4 4 1.5 8 3.5 8s2.5-4 3-7c.4-2 1.2-3 4-3s3.6 1 4 3c.5 3 1 7 3 7s3.1-4 3.5-8c.5-5 2.5-7 3.5-11 1-5-2-9-7-9-3 0-4.5 1.5-7 1.5S16 6 13 6z"/></svg>
+      <p class="kick">Zahnarztpraxis am Wasserturm</p>
+      <h3>Häufige Fragen</h3>
+      <p>Alles Wichtige vor Ihrem ersten Besuch in unserer Praxis in Tönisvorst.</p>
+    </div>
+    <div class="list">
+      <div class="it open"><h4><button class="q" type="button" aria-expanded="true" aria-controls="v01-a1" id="v01-q1">Nehmen Sie neue Patientinnen und Patienten auf?<span class="chev" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span></button></h4><div class="pn" id="v01-a1" role="region" aria-labelledby="v01-q1"><div><p>Ja, gesetzlich und privat Versicherte sind gleichermaßen willkommen. Einen ersten Termin erhalten Sie in der Regel innerhalb von zwei Wochen.</p></div></div></div>
+      <div class="it"><h4><button class="q" type="button" aria-expanded="false" aria-controls="v01-a2" id="v01-q2">Was mache ich bei akuten Zahnschmerzen?<span class="chev" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span></button></h4><div class="pn" id="v01-a2" role="region" aria-labelledby="v01-q2"><div><p>Rufen Sie uns morgens ab 7:30 Uhr unter 02151 123 45 67 an. Für Schmerzpatienten halten wir täglich feste Zeitfenster frei.</p></div></div></div>
+      <div class="it"><h4><button class="q" type="button" aria-expanded="false" aria-controls="v01-a3" id="v01-q3">Bieten Sie Behandlungen für Angstpatienten an?<span class="chev" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span></button></h4><div class="pn" id="v01-a3" role="region" aria-labelledby="v01-q3"><div><p>Ja. Wir nehmen uns beim ersten Termin bewusst mehr Zeit, erklären jeden Schritt und bieten auf Wunsch eine Behandlung mit Lachgas an.</p></div></div></div>
+      <div class="it"><h4><button class="q" type="button" aria-expanded="false" aria-controls="v01-a4" id="v01-q4">Wie oft sollte ich zur professionellen Zahnreinigung?<span class="chev" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span></button></h4><div class="pn" id="v01-a4" role="region" aria-labelledby="v01-q4"><div><p>Für die meisten Erwachsenen empfehlen wir zwei Termine pro Jahr. Viele Krankenkassen beteiligen sich an den Kosten – wir beraten Sie gern.</p></div></div></div>
+      <div class="it"><h4><button class="q" type="button" aria-expanded="false" aria-controls="v01-a5" id="v01-q5">Gibt es Parkplätze an der Praxis?<span class="chev" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></span></button></h4><div class="pn" id="v01-a5" role="region" aria-labelledby="v01-q5"><div><p>Direkt hinter dem Haus stehen sechs Patientenparkplätze bereit, einer davon barrierefrei. Der Eingang ist ebenerdig erreichbar.</p></div></div></div>
+    </div>
+    <p class="more">Noch Fragen? <a href="#" onclick="return false">Schreiben Sie uns</a></p>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v02-wrap" aria-labelledby="v02-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 02</div>
+        <h2 id="v02-title">Zweispaltig mit Themen-Navigation</h2>
+        <p>Links die Themen, rechts die passenden Fragen: Ideal, wenn es viele Fragen gibt. Seriöse Serifenschrift und gedeckte Farben – auf dem Smartphone werden die Themen zu wischbaren Reitern.</p>
+        <ul class="v-tags"><li>Steuerberatung</li><li>Kanzlei</li><li>Versicherung</li><li>Viele Fragen</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v02">
+  <div class="side">
+    <p class="logo">Berns <span>&amp;</span> Voss</p>
+    <p class="sub">Steuerberatung · Krefeld</p>
+    <h3>Fragen &amp; Antworten</h3>
+    <div role="tablist" aria-label="Themen" aria-orientation="vertical">
+      <button role="tab" id="v02-t1" aria-controls="v02-p1" aria-selected="true">Zusammenarbeit <small>3</small></button>
+      <button role="tab" id="v02-t2" aria-controls="v02-p2" aria-selected="false" tabindex="-1">Kosten <small>3</small></button>
+      <button role="tab" id="v02-t3" aria-controls="v02-p3" aria-selected="false" tabindex="-1">Unterlagen <small>3</small></button>
+      <button role="tab" id="v02-t4" aria-controls="v02-p4" aria-selected="false" tabindex="-1">Digitale Kanzlei <small>2</small></button>
+    </div>
+  </div>
+  <div class="main">
+    <div role="tabpanel" id="v02-p1" aria-labelledby="v02-t1" tabindex="0">
+      <h4>Zusammenarbeit</h4>
+      <details open><summary>Für wen sind Sie die richtige Kanzlei?</summary><p>Wir betreuen vor allem Selbstständige, Freiberufler und mittelständische Familienunternehmen am Niederrhein – ebenso Privatpersonen mit Vermietung oder Kapitalvermögen.</p></details>
+      <details><summary>Wie läuft das erste Gespräch ab?</summary><p>Das Kennenlerngespräch dauert rund 45 Minuten und ist kostenfrei. Wir klären Ihre Situation, Fristen und welche Leistungen sinnvoll sind.</p></details>
+      <details><summary>Habe ich eine feste Ansprechperson?</summary><p>Ja. Sie erhalten eine Steuerberaterin oder einen Steuerberater als festen Kontakt, plus eine Vertretung aus demselben Team.</p></details>
+    </div>
+    <div role="tabpanel" id="v02-p2" aria-labelledby="v02-t2" tabindex="0" hidden>
+      <h4>Kosten</h4>
+      <details><summary>Wie berechnen sich Ihre Honorare?</summary><p>Grundlage ist die Steuerberatervergütungsverordnung. Für laufende Buchhaltung vereinbaren wir auf Wunsch eine monatliche Pauschale.</p></details>
+      <details><summary>Erhalte ich vorab einen Kostenrahmen?</summary><p>Immer. Nach dem Erstgespräch bekommen Sie ein schriftliches Angebot mit allen erwartbaren Positionen.</p></details>
+      <details><summary>Sind die Beratungskosten absetzbar?</summary><p>Steuerberatungskosten für betriebliche Zwecke sind als Betriebsausgaben abziehbar. Private Anteile sind derzeit nur eingeschränkt berücksichtigungsfähig.</p></details>
+    </div>
+    <div role="tabpanel" id="v02-p3" aria-labelledby="v02-t3" tabindex="0" hidden>
+      <h4>Unterlagen</h4>
+      <details><summary>Welche Unterlagen brauchen Sie zum Start?</summary><p>Den letzten Steuerbescheid, Ihre Steuer-ID, Vollmachten für das Finanzamt sowie – bei Unternehmen – die letzten Jahresabschlüsse.</p></details>
+      <details><summary>Wie lange muss ich Belege aufbewahren?</summary><p>Buchungsbelege acht Jahre, Bücher, Inventare und Jahresabschlüsse zehn Jahre. Wir erinnern Sie rechtzeitig an Fristen.</p></details>
+      <details><summary>Kann ich Belege auch in Papierform bringen?</summary><p>Natürlich. Wir digitalisieren sie für Sie und geben die Originale nach der Verarbeitung zurück.</p></details>
+    </div>
+    <div role="tabpanel" id="v02-p4" aria-labelledby="v02-t4" tabindex="0" hidden>
+      <h4>Digitale Kanzlei</h4>
+      <details><summary>Wie lade ich Belege hoch?</summary><p>Per App, per E-Mail-Weiterleitung oder über unser Mandantenportal. Belege landen automatisch bei der richtigen Sachbearbeitung.</p></details>
+      <details><summary>Sind meine Daten sicher?</summary><p>Alle Daten liegen verschlüsselt in einem zertifizierten Rechenzentrum in Deutschland. Der Zugang ist mit Zwei-Faktor-Anmeldung geschützt.</p></details>
+    </div>
+    <p class="ct">Ihre Frage ist nicht dabei? <a href="#" onclick="return false">02151 123 45 67</a></p>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v03-wrap" aria-labelledby="v03-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 03</div>
+        <h2 id="v03-title">FAQ mit Live-Suche und Filter</h2>
+        <p>Ein Suchfeld filtert die Fragen beim Tippen und markiert Treffer, Themen-Chips grenzen weiter ein. Für umfangreiche Hilfebereiche, in denen niemand lange scrollen möchte.</p>
+        <ul class="v-tags"><li>Werkstatt &amp; Handel</li><li>Onlineshop</li><li>Kundenservice</li><li>Suche per JavaScript</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v03">
+  <div class="in">
+    <div class="top">
+      <div>
+        <div class="logo"><svg viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="8" cy="16" r="7"/><circle cx="32" cy="16" r="7"/><path d="M8 16l7-10h12l5 10M15 6l5 10h-12M20 16l7-10"/></svg>Speiche &amp; Kette</div>
+        <h3>Wie können wir <span>helfen?</span></h3>
+      </div>
+    </div>
+    <div class="sb" role="search">
+      <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9.5" cy="9.5" r="6.5"/><path d="M14.5 14.5l5 5"/></svg>
+      <input type="search" id="v03-s" placeholder="Suche, z. B. „Inspektion“ oder „Akku“" aria-label="Fragen durchsuchen" autocomplete="off">
+      <button class="clr" type="button" aria-label="Suche leeren"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8"/></svg></button>
+    </div>
+    <div class="chips" role="group" aria-label="Thema filtern">
+      <button type="button" data-c="alle" aria-pressed="true">Alle</button>
+      <button type="button" data-c="werkstatt" aria-pressed="false">Werkstatt</button>
+      <button type="button" data-c="ebike" aria-pressed="false">E-Bike</button>
+      <button type="button" data-c="kauf" aria-pressed="false">Kauf &amp; Leasing</button>
+    </div>
+    <p class="cnt" aria-live="polite" id="v03-cnt">8 Fragen</p>
+    <div class="list">
+      <details data-c="werkstatt"><summary><span class="cat">Werkstatt</span><span class="qt">Brauche ich einen Termin für die Reparatur?</span></summary><p>Für Inspektionen ja, kleine Reparaturen wie Schlauchwechsel erledigen wir meist sofort, während Sie einen Kaffee trinken.</p></details>
+      <details data-c="werkstatt"><summary><span class="cat">Werkstatt</span><span class="qt">Was kostet eine Inspektion?</span></summary><p>Die Basis-Inspektion kostet 69 €, für E-Bikes inklusive Software-Update und Akku-Diagnose 99 €. Verschleißteile berechnen wir nach Aufwand.</p></details>
+      <details data-c="werkstatt"><summary><span class="cat">Werkstatt</span><span class="qt">Reparieren Sie auch Räder, die woanders gekauft wurden?</span></summary><p>Selbstverständlich. Wir reparieren alle gängigen Marken, auch ältere Stahlrahmen und Lastenräder.</p></details>
+      <details data-c="ebike"><summary><span class="cat">E-Bike</span><span class="qt">Wie lange hält ein E-Bike-Akku?</span></summary><p>Rund 800 bis 1.000 volle Ladezyklen. Lagern Sie den Akku im Winter bei Zimmertemperatur und etwa halb geladen.</p></details>
+      <details data-c="ebike"><summary><span class="cat">E-Bike</span><span class="qt">Kann ich eine Probefahrt machen?</span></summary><p>Jederzeit während der Öffnungszeiten – bringen Sie nur Ihren Ausweis mit. Für längere Touren verleihen wir Testräder für einen Tag.</p></details>
+      <details data-c="ebike"><summary><span class="cat">E-Bike</span><span class="qt">Lohnt sich ein zweiter Akku?</span></summary><p>Für Pendler mit mehr als 60 km täglich oft ja. Wir messen gern Ihren Verbrauch und rechnen gemeinsam nach.</p></details>
+      <details data-c="kauf"><summary><span class="cat">Kauf</span><span class="qt">Bieten Sie Dienstrad-Leasing an?</span></summary><p>Ja, wir arbeiten mit allen großen Leasing-Anbietern zusammen. Ihr Arbeitgeber muss lediglich einen Rahmenvertrag abschließen.</p></details>
+      <details data-c="kauf"><summary><span class="cat">Kauf</span><span class="qt">Kann ich mein altes Rad in Zahlung geben?</span></summary><p>Gern. Wir bewerten Ihr Fahrrad kostenlos und rechnen den Betrag direkt auf das neue Rad an.</p></details>
+    </div>
+    <div class="empty" id="v03-e"><b>Keine passende Frage gefunden.</b>Rufen Sie uns an: <a href="#" onclick="return false">02151 123 45 67</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v04-wrap" aria-labelledby="v04-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 04</div>
+        <h2 id="v04-title">Karten-Raster mit Kurzantworten</h2>
+        <p>Die wichtigsten Antworten sofort sichtbar, ohne Klick: kleine Karten mit Symbol und kurzer Antwort. Perfekt für praktische Fragen vor der Buchung oder dem Besuch.</p>
+        <ul class="v-tags"><li>Hotel &amp; Pension</li><li>Ferienwohnung</li><li>Gastronomie</li><li>Ohne Aufklappen</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v04">
+  <div class="hd">
+    <div><p class="kick">Landhotel Niersgrund</p><h3>Gut zu wissen vor Ihrer Anreise</h3></div>
+    <p>Kurz und knapp beantwortet – für alles Weitere ist unsere Rezeption täglich von 7 bis 22 Uhr für Sie da.</p>
+  </div>
+  <ul class="grid">
+    <li class="c"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h4>Wann kann ich einchecken?</h4><p class="a">Ab <b>15 Uhr</b>, Check-out bis <b>11 Uhr</b>. Späte Anreise? Wir hinterlegen Ihren Schlüssel.</p></li>
+    <li class="c"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M9.5 16V8h3.5a2.5 2.5 0 010 5H9.5"/></svg></span><h4>Gibt es Parkplätze?</h4><p class="a"><b>Kostenfrei</b> direkt am Haus, dazu zwei Ladepunkte für E-Autos.</p></li>
+    <li class="c"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7.5c0-2 1-3.5 2.5-3.5S13 5.5 13 7.5 12 11 10.5 11 8 9.5 8 7.5zM4.5 12c0-1.4.8-2.5 1.8-2.5S8 10.6 8 12s-.7 2.5-1.7 2.5S4.5 13.4 4.5 12zM15 8.5c0-1.4.8-2.5 1.8-2.5s1.7 1.1 1.7 2.5-.7 2.5-1.7 2.5S15 9.9 15 8.5zM9 19c0-3 1.6-5.5 4-5.5s4.5 1.5 4.5 3.5-1.3 3-3 3-2.4-1-3.6-1H9z"/></svg></span><h4>Sind Hunde willkommen?</h4><p class="a">Ja, in ausgewählten Zimmern für <b>12 € pro Nacht</b> inklusive Decke und Napf.</p></li>
+    <li class="c"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11h13v3a5 5 0 01-5 5H9a5 5 0 01-5-5z"/><path d="M17 12h1.5a2.5 2.5 0 010 5H16M8 4c0 1.5 1 1.5 1 3M12 4c0 1.5 1 1.5 1 3"/></svg></span><h4>Wie lange gibt es Frühstück?</h4><p class="a">Werktags <b>7–10:30 Uhr</b>, am Wochenende bis 11:30 Uhr – mit Eiern vom Hof nebenan.</p></li>
+    <li class="c"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M10 14.5l4 0"/></svg></span><h4>Kann ich kostenlos stornieren?</h4><p class="a">Bis <b>3 Tage vor Anreise</b> ohne Gebühren, danach berechnen wir 80 % des Zimmerpreises.</p></li>
+    <li class="c"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="16" r="4"/><circle cx="18" cy="16" r="4"/><path d="M6 16l4-7h5l3 7M10 9l3 7H6M9 6h3"/></svg></span><h4>Verleihen Sie Fahrräder?</h4><p class="a">Ja, <b>E-Bikes ab 25 € pro Tag</b> – ideal für die Niers-Radroute direkt vor der Tür.</p></li>
+    <li class="c wide"><div><h4>Ihre Frage war nicht dabei?</h4><p class="a">Rufen Sie uns an oder schreiben Sie an rezeption@example.de.</p></div><a href="#" onclick="return false">02151 123 45 67</a></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v05-wrap" aria-labelledby="v05-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 05</div>
+        <h2 id="v05-title">Fragen im Chat-Stil</h2>
+        <p>Wie ein Messenger: Besucher tippen auf eine Frage, die Antwort erscheint nach kurzem Tippen-Indikator als Sprechblase. Nahbar, modern und spielerisch.</p>
+        <ul class="v-tags"><li>Startups &amp; Abos</li><li>Junge Zielgruppen</li><li>Mobilität</li><li>Interaktiv</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v05">
+  <div class="in">
+    <div class="intro">
+      <div class="logo"><i><svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="4.5" cy="12" r="3"/><circle cx="13.5" cy="12" r="3"/><path d="M4.5 12L8 6h4l1.5 6M7 4h3"/></svg></i>velomio</div>
+      <h3>Fragen? Einfach antippen.</h3>
+      <p>Ihr E-Bike im Monatsabo – mit Wartung, Versicherung und Austausch-Service in Krefeld, Kempen und Umgebung.</p>
+      <div class="pts"><span>ab 59 € / Monat</span><span>monatlich kündbar</span><span>Service inklusive</span></div>
+    </div>
+    <div class="phone">
+      <div class="bar"><span class="av" aria-hidden="true">V</span><div><b>Velomio-Team</b><small>antwortet sofort</small></div><button class="rs" type="button">Neu starten</button></div>
+      <div class="log" role="log" aria-live="polite" aria-label="Chatverlauf"></div>
+      <div class="qs" role="group" aria-labelledby="v05-ql"><p id="v05-ql">Häufige Fragen</p>
+        <button type="button" data-i="0">Was ist im Abo enthalten?</button>
+        <button type="button" data-i="1">Wie lange läuft der Vertrag?</button>
+        <button type="button" data-i="2">Was passiert bei einem Platten?</button>
+        <button type="button" data-i="3">Ist das Rad versichert?</button>
+        <button type="button" data-i="4">Kann ich das Rad kaufen?</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v06-wrap" aria-labelledby="v06-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 06</div>
+        <h2 id="v06-title">Nummeriert im Editorial-Stil</h2>
+        <p>Groß gesetzte Nummern, elegante Serifenschrift und alle Antworten offen sichtbar – wie eine Seite aus einem Architekturmagazin. Für Branchen, in denen Gestaltung selbst das Argument ist.</p>
+        <ul class="v-tags"><li>Architektur</li><li>Innenarchitektur</li><li>Manufaktur</li><li>Alles sichtbar</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v06">
+  <div class="in">
+    <div class="hd">
+      <h3>Häufig <i>gefragt</i></h3>
+      <div class="meta">Atelier Lindgren Architekten<br>Neubau · Umbau · Denkmal</div>
+    </div>
+    <ol>
+      <li><span class="n" aria-hidden="true">01</span><h4>Ab welcher Projektgröße lohnt sich ein Architekt?</h4><p>Schon beim Dachausbau oder einer neuen Raumaufteilung. Gute Planung spart oft mehr, als sie kostet – und vermeidet teure Überraschungen auf der Baustelle.</p></li>
+      <li><span class="n" aria-hidden="true">02</span><h4>Wie lange dauert die Planung eines Einfamilienhauses?</h4><p>Vom ersten Entwurf bis zur Baugenehmigung rechnen wir mit sechs bis neun Monaten, abhängig vom Bauamt und Ihrer Entscheidungsfreude.</p></li>
+      <li><span class="n" aria-hidden="true">03</span><h4>Begleiten Sie auch die Bauphase?</h4><p>Ja. Auf Wunsch übernehmen wir Ausschreibung, Vergabe und Bauleitung – Sie haben eine Ansprechperson von der Skizze bis zur Schlüsselübergabe.</p></li>
+      <li><span class="n" aria-hidden="true">04</span><h4>Arbeiten Sie mit Bestandsgebäuden?</h4><p>Sehr gern, das ist sogar ein Schwerpunkt. Wir sanieren Hofanlagen, Siedlungshäuser und denkmalgeschützte Bauten am Niederrhein.</p></li>
+    </ol>
+    <div class="ft"><span>Weitere Fragen beantworten wir im persönlichen Gespräch.</span><a href="#" onclick="return false">Gespräch vereinbaren</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v07-wrap" aria-labelledby="v07-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 07</div>
+        <h2 id="v07-title">Dunkles Akkordeon mit Plus/Minus</h2>
+        <p>Kräftige Schrift auf Schwarz, ein Plus, das sich beim Öffnen zum Minus dreht, und ein leuchtender Akzent. Es ist immer nur eine Antwort offen – das hält den Block kompakt.</p>
+        <ul class="v-tags"><li>Eventlocation</li><li>Club &amp; Bar</li><li>Festival</li><li>Exklusiv geöffnet</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v07">
+  <div class="in">
+    <div class="side">
+      <p class="tag">Kesselhaus Krefeld</p>
+      <h3>Bevor Sie buchen.</h3>
+      <p>Industriecharme für 40 bis 400 Gäste: Firmenfeiern, Hochzeiten, Konzerte. Hier die Fragen, die uns am häufigsten erreichen.</p>
+      <a href="#" onclick="return false">Besichtigung anfragen <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="acc">
+      <div class="it open"><h4><button class="q" type="button" aria-expanded="true" aria-controls="v07-a1" id="v07-q1"><small>01</small>Wie viele Gäste passen in die Halle?<span class="pm" aria-hidden="true"></span></button></h4><div class="pn" id="v07-a1" role="region" aria-labelledby="v07-q1"><div><p>Bis zu 400 Gäste beim Stehempfang, 240 an runden Tischen. Die Galerie lässt sich für kleinere Runden bis 40 Personen separat buchen.</p></div></div></div>
+      <div class="it"><h4><button class="q" type="button" aria-expanded="false" aria-controls="v07-a2" id="v07-q2"><small>02</small>Dürfen wir eigenes Catering mitbringen?<span class="pm" aria-hidden="true"></span></button></h4><div class="pn" id="v07-a2" role="region" aria-labelledby="v07-q2"><div><p>Wir arbeiten mit drei festen Partnern aus der Region zusammen. Eigenes Catering ist gegen eine Küchenpauschale nach Absprache möglich.</p></div></div></div>
+      <div class="it"><h4><button class="q" type="button" aria-expanded="false" aria-controls="v07-a3" id="v07-q3"><small>03</small>Ist Technik für Licht und Ton vorhanden?<span class="pm" aria-hidden="true"></span></button></h4><div class="pn" id="v07-a3" role="region" aria-labelledby="v07-q3"><div><p>Ja, eine komplette Grundausstattung mit Beschallung, LED-Licht und Beamer ist im Mietpreis enthalten. Ein Techniker begleitet jede Veranstaltung.</p></div></div></div>
+      <div class="it"><h4><button class="q" type="button" aria-expanded="false" aria-controls="v07-a4" id="v07-q4"><small>04</small>Bis wann darf gefeiert werden?<span class="pm" aria-hidden="true"></span></button></h4><div class="pn" id="v07-a4" role="region" aria-labelledby="v07-q4"><div><p>Freitags und samstags bis 3 Uhr, unter der Woche bis Mitternacht. Ab 22 Uhr schließen wir die Rolltore zur Nachbarschaft.</p></div></div></div>
+      <div class="it"><h4><button class="q" type="button" aria-expanded="false" aria-controls="v07-a5" id="v07-q5"><small>05</small>Wie weit im Voraus sollten wir reservieren?<span class="pm" aria-hidden="true"></span></button></h4><div class="pn" id="v07-a5" role="region" aria-labelledby="v07-q5"><div><p>Für Samstage in der Hochzeitssaison empfehlen wir zwölf Monate Vorlauf, für Firmenevents unter der Woche reichen oft acht Wochen.</p></div></div></div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="variant" id="v08-wrap" aria-labelledby="v08-title">
+    <div class="v-head">
+      <div>
+        <div class="v-num">VARIANTE 08</div>
+        <h2 id="v08-title">FAQ mit Kontaktbox</h2>
+        <p>Links die Antworten, rechts eine persönliche Kontaktbox mit Ansprechpartner und Kurzformular für die eine Frage, die noch fehlt. Wandelt offene Fragen direkt in Anfragen um.</p>
+        <ul class="v-tags"><li>Handwerk</li><li>Dachdecker &amp; Bau</li><li>Lokale Betriebe</li><li>mit Kurzformular</li></ul>
+      </div>
+      <div class="v-switch" role="group" aria-label="Ansicht">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobil</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame">
+<div id="v08">
+  <div class="in">
+    <div>
+      <p class="kick"><svg viewBox="0 0 26 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M2 11L13 2l11 9M5 9v9h16V9"/><path d="M10 18v-5h6v5"/></svg>Dachbau Hülsmann · seit 1987</p>
+      <h3>Fragen rund um Ihr Dach</h3>
+      <details open><summary>Wie schnell können Sie bei einem Sturmschaden kommen?<span class="ar" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l4 4-4 4"/></svg></span></summary><p>Bei akuten Schäden sichern wir Ihr Dach in der Regel noch am selben Tag provisorisch ab. Die Reparatur planen wir anschließend in Ruhe mit Ihrer Versicherung.</p></details>
+      <details><summary>Übernehmen Sie die Abwicklung mit der Versicherung?<span class="ar" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l4 4-4 4"/></svg></span></summary><p>Ja. Wir dokumentieren den Schaden mit Fotos, erstellen den Kostenvoranschlag und stimmen uns direkt mit dem Gutachter ab.</p></details>
+      <details><summary>Lohnt sich eine Dachsanierung mit Dämmung?<span class="ar" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l4 4-4 4"/></svg></span></summary><p>Bei Häusern vor 1980 fast immer. Über das Dach gehen bis zu 30 % der Heizwärme verloren – wir prüfen auch, welche Förderung infrage kommt.</p></details>
+      <details><summary>Montieren Sie auch Photovoltaik?<span class="ar" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l4 4-4 4"/></svg></span></summary><p>Wir bereiten das Dach vor und montieren die Unterkonstruktion, den elektrischen Anschluss übernimmt unser Partnerbetrieb aus Kempen.</p></details>
+      <details><summary>Was kostet ein Angebot?<span class="ar" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l4 4-4 4"/></svg></span></summary><p>Besichtigung und Angebot sind im Umkreis von 25 km um Tönisvorst kostenfrei und unverbindlich.</p></details>
+    </div>
+    <aside class="box" aria-labelledby="v08-bt">
+      <div class="who"><svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#F0D9D3"/><circle cx="28" cy="23" r="9" fill="#B4402A"/><path d="M12 48a16 16 0 0132 0" fill="#B4402A"/></svg><div><b>Jens Hülsmann</b><small>Dachdeckermeister</small></div></div>
+      <h4 id="v08-bt">Ihre Frage ist nicht dabei?</h4>
+      <p>Rufen Sie direkt an oder schreiben Sie uns kurz – Sie erhalten innerhalb eines Werktags eine Antwort.</p>
+      <a class="tel" href="#" onclick="return false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2.5h3l1.5 4-2 1.3a9 9 0 005.7 5.7l1.3-2 4 1.5v3a2 2 0 01-2 2A14.5 14.5 0 012 4.5a2 2 0 012-2z"/></svg><span>02151 123 45 67<small>Mo–Fr 7–17 Uhr</small></span></a>
+      <form onsubmit="event.preventDefault()">
+        <label for="v08-n">Name</label><input id="v08-n" type="text" autocomplete="name" required>
+        <label for="v08-f">Ihre Frage</label><textarea id="v08-f" required></textarea>
+        <button class="send" type="submit">Frage senden</button>
+        <p class="ok" role="status"></p>
+      </form>
+    </aside>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="sh-cta">
+  <h2>Der passende Baustein für Ihre Website?</h2>
+  <p>Alle Varianten sind Ausgangspunkte. Wir kombinieren und gestalten sie individuell – passend zu Ihrer Marke.</p>
+  <a class="sh-btn blue" href="../../Meuster%20Landing%20Page.dc.html#kontakt">Projekt besprechen</a>
+</section>
+
+<footer class="sh-footer">
+  Alle gezeigten Marken und Inhalte sind fiktiv. Design &amp; Umsetzung: <a href="../../Meuster%20Landing%20Page.dc.html">meuser.biz</a> · © 2026
+</footer>
+
+<script>
+  /* SHELL-Skript – nicht verändern */
+  (function () {
+    var here = location.pathname.split('/').pop();
+    document.querySelectorAll('.sh-cats a').forEach(function (a) {
+      if (a.getAttribute('href') === here) { a.setAttribute('aria-current', 'page'); a.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+    });
+    document.querySelectorAll('.variant').forEach(function (v) {
+      var frame = v.querySelector('.frame');
+      v.querySelectorAll('.v-switch button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          v.querySelectorAll('.v-switch button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          frame.style.setProperty('--w', b.dataset.w);
+        });
+      });
+    });
+  })();
+</script>
+<!-- Varianten-Skripte hierunter, jedes in eigenem IIFE, nur auf die eigene #vNN zugreifen -->
+<script>
+/* v01 · Klassisches Akkordeon */
+(function () {
+  var r = document.getElementById('v01'); if (!r) return;
+  r.querySelectorAll('.q').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var open = b.getAttribute('aria-expanded') === 'true';
+      b.setAttribute('aria-expanded', String(!open));
+      b.closest('.it').classList.toggle('open', !open);
+    });
+  });
+})();
+</script>
+<script>
+/* v02 · Zweispaltig mit Themen-Navigation */
+(function () {
+  var r = document.getElementById('v02'); if (!r) return;
+  var tabs = [].slice.call(r.querySelectorAll('[role="tab"]'));
+  function sel(t, focus) {
+    tabs.forEach(function (x) {
+      var on = x === t;
+      x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1;
+      r.querySelector('#' + x.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) t.focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { sel(t); });
+    t.addEventListener('keydown', function (e) {
+      var n = null, L = tabs.length;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') n = tabs[(i + 1) % L];
+      else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') n = tabs[(i - 1 + L) % L];
+      else if (e.key === 'Home') n = tabs[0];
+      else if (e.key === 'End') n = tabs[L - 1];
+      if (n) { e.preventDefault(); sel(n, true); }
+    });
+  });
+})();
+</script>
+<script>
+/* v03 · FAQ mit Live-Suche und Filter */
+(function () {
+  var r = document.getElementById('v03'); if (!r) return;
+  var inp = r.querySelector('#v03-s'), clr = r.querySelector('.clr'), cat = 'alle';
+  var items = [].slice.call(r.querySelectorAll('details'));
+  items.forEach(function (d) { var q = d.querySelector('.qt'); q.dataset.t = q.textContent; });
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function rx(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+  function run() {
+    var q = inp.value.trim().toLowerCase(), terms = q.split(/\s+/).filter(Boolean), n = 0;
+    clr.classList.toggle('on', q.length > 0);
+    items.forEach(function (d) {
+      var qt = d.querySelector('.qt'), txt = (qt.dataset.t + ' ' + d.querySelector('p').textContent).toLowerCase();
+      var ok = (cat === 'alle' || d.dataset.c === cat) && terms.every(function (t) { return txt.indexOf(t) > -1; });
+      d.hidden = !ok; if (ok) n++;
+      var h = esc(qt.dataset.t);
+      if (terms.length) h = h.replace(new RegExp('(' + terms.map(function (t) { return rx(esc(t)); }).join('|') + ')', 'gi'), '<mark>$1</mark>');
+      qt.innerHTML = h;
+      if (q.length > 2) d.open = ok;
+    });
+    r.querySelector('#v03-cnt').textContent = n === 1 ? '1 Frage' : n + ' Fragen';
+    r.querySelector('#v03-e').classList.toggle('on', n === 0);
+  }
+  inp.addEventListener('input', run);
+  inp.addEventListener('keydown', function (e) { if (e.key === 'Escape') { inp.value = ''; run(); } });
+  clr.addEventListener('click', function () { inp.value = ''; run(); inp.focus(); });
+  r.querySelectorAll('.chips button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      cat = b.dataset.c;
+      r.querySelectorAll('.chips button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      run();
+    });
+  });
+})();
+</script>
+<script>
+/* v05 · Fragen im Chat-Stil */
+(function () {
+  var r = document.getElementById('v05'); if (!r) return;
+  var log = r.querySelector('.log'), busy = false;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var A = [
+    'Rad, Schloss, Wartung, Diebstahl- und Schadensversicherung sowie unser Vor-Ort-Service. Sie zahlen nur noch Ihre Monatsrate.',
+    'Mindestens drei Monate, danach monatlich kündbar. Bei 12 Monaten Laufzeit sparen Sie 10 € pro Monat.',
+    'Melden Sie sich in der App – wir kommen innerhalb von 48 Stunden zu Ihnen, reparieren vor Ort oder tauschen das Rad direkt aus.',
+    'Ja, gegen Diebstahl und Schäden. Bei Diebstahl zahlen Sie einmalig 100 € Selbstbeteiligung, den Rest übernehmen wir.',
+    'Nach 24 Monaten können Sie Ihr E-Bike zum Restwert übernehmen – den nennen wir Ihnen vorab transparent.'
+  ];
+  function add(cls, txt) {
+    var d = document.createElement('div'); d.className = 'b ' + cls; d.textContent = txt; log.appendChild(d);
+    log.scrollTop = log.scrollHeight; return d;
+  }
+  function start() {
+    log.innerHTML = '';
+    r.querySelectorAll('.qs button').forEach(function (b) { b.disabled = false; });
+    add('bot', 'Hallo! Ich bin Ihr Velomio-Team. Wählen Sie unten eine Frage aus.');
+  }
+  r.querySelectorAll('.qs button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (busy) return; busy = true;
+      add('me', b.textContent); b.disabled = true;
+      var t = document.createElement('div'); t.className = 'b bot ty'; t.setAttribute('aria-label', 'Velomio schreibt'); t.innerHTML = '<i></i><i></i><i></i>';
+      log.appendChild(t); log.scrollTop = log.scrollHeight;
+      setTimeout(function () {
+        t.remove(); add('bot', A[+b.dataset.i]); busy = false;
+        var next = r.querySelector('.qs button:not(:disabled)');
+        if (document.activeElement === b && next) next.focus();
+      }, reduce ? 150 : 900);
+    });
+  });
+  r.querySelector('.rs').addEventListener('click', start);
+  start();
+})();
+</script>
+<script>
+/* v07 · Dunkles Akkordeon mit Plus/Minus */
+(function () {
+  var r = document.getElementById('v07'); if (!r) return;
+  var qs = [].slice.call(r.querySelectorAll('.q'));
+  qs.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var open = b.getAttribute('aria-expanded') === 'true';
+      qs.forEach(function (x) { x.setAttribute('aria-expanded', 'false'); x.closest('.it').classList.remove('open'); });
+      if (!open) { b.setAttribute('aria-expanded', 'true'); b.closest('.it').classList.add('open'); }
+    });
+  });
+})();
+</script>
+<script>
+/* v08 · FAQ mit Kontaktbox */
+(function () {
+  var r = document.getElementById('v08'); if (!r) return;
+  var f = r.querySelector('form');
+  f.addEventListener('submit', function () { r.querySelector('.ok').textContent = 'Danke! Wir melden uns innerhalb eines Werktags.'; f.reset(); });
+})();
+</script>
+</body>
+</html>
