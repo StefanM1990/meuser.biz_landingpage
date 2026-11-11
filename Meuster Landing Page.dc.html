@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>meuser.biz – Websites &amp; Web-Apps, die wirken</title>
+<meta name="description" content="meuser.biz gestaltet moderne Websites und entwickelt maßgeschneiderte Web-Apps – schnell, mobil optimiert und persönlich betreut. Jetzt kostenloses Erstgespräch vereinbaren.">
+<link rel="canonical" href="https://meuser.biz/">
+<meta name="theme-color" content="#0F172A">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="meuser.biz">
+<meta property="og:title" content="meuser.biz – Homepages &amp; Web-Apps">
+<meta property="og:description" content="Moderne Homepages, Landing Pages und maßgeschneiderte Web-Apps – schnell, mobil optimiert und persönlich betreut.">
+<meta property="og:url" content="https://meuser.biz/">
+<meta property="og:image" content="https://meuser.biz/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="./assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script src="./support.js?v=2"></script>
 </head>
 <body>
 <x-dc>
@@ -14,11 +32,9 @@
   </svg>
 </template>
 <helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
 <style>
+  @font-face { font-family:'Inter'; font-style:normal; font-weight:100 900; font-display:swap; src:url('./assets/fonts/inter-latin-ext.woff2') format('woff2'); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+  @font-face { font-family:'Inter'; font-style:normal; font-weight:100 900; font-display:swap; src:url('./assets/fonts/inter-latin.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
   body { margin: 0; }
   a { color: #007BFF; text-decoration: none; }
   a:hover { color: #0F172A; }
@@ -27,6 +43,151 @@
   @keyframes blobFloat { 0%,100% { transform:translate(0,0) scale(1); } 50% { transform:translate(30px,-30px) scale(1.08); } }
   @keyframes gradientShift { 0% { background-position:0% 50%; } 50% { background-position:100% 50%; } 100% { background-position:0% 50%; } }
   @keyframes shimmer { 0% { background-position:-200% 0; } 100% { background-position:200% 0; } }
+  @font-face { font-family:'Bricolage Grotesque'; font-style:normal; font-weight:200 800; font-display:swap; src:url('./assets/fonts/bricolage-latin-ext.woff2') format('woff2'); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+  @font-face { font-family:'Bricolage Grotesque'; font-style:normal; font-weight:200 800; font-display:swap; src:url('./assets/fonts/bricolage-latin.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  h1, h2, .display { font-family:'Bricolage Grotesque','Inter',sans-serif; }
+
+  /* ---------- Hero */
+  .hero-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:56px; align-items:center; }
+  .hero-grid > * { min-width:0; }
+  .eyebrow-pill { display:inline-flex; align-items:center; gap:10px; padding:7px 14px 7px 10px; border-radius:999px; background:rgba(95,168,255,0.1); border:1px solid rgba(95,168,255,0.28); color:#BFDBFE; font-size:13px; font-weight:600; letter-spacing:0.3px; }
+  .live-dot { width:8px; height:8px; border-radius:50%; background:#22C55E; box-shadow:0 0 0 0 rgba(34,197,94,0.6); animation:pulseDot 2.2s infinite; }
+  @keyframes pulseDot { 0% { box-shadow:0 0 0 0 rgba(34,197,94,0.55); } 70% { box-shadow:0 0 0 9px rgba(34,197,94,0); } 100% { box-shadow:0 0 0 0 rgba(34,197,94,0); } }
+  .mock { position:relative; aspect-ratio:1.16; max-width:680px; margin-left:auto; width:100%; }
+  .mock-browser { position:absolute; left:0; top:3%; width:88%; border-radius:14px; overflow:hidden; background:#0B1222; border:1px solid rgba(255,255,255,0.12); box-shadow:0 50px 90px -30px rgba(0,0,0,0.75); transform:perspective(1600px) rotateY(-6deg) rotateX(2deg); transform-origin:left center; }
+  .mock-bar { display:flex; align-items:center; gap:6px; padding:10px 14px; background:#111A2E; border-bottom:1px solid rgba(255,255,255,0.07); }
+  .mock-bar i { width:9px; height:9px; border-radius:50%; display:block; }
+  .mock-url { position:relative; margin-left:12px; flex:1; height:22px; border-radius:6px; background:rgba(255,255,255,0.06); overflow:hidden; }
+  .mock-url span { position:absolute; inset:0; display:flex; align-items:center; padding:0 10px; font-size:11px; font-weight:500; color:#94A3B8; white-space:nowrap; }
+  .mock-screen { position:relative; aspect-ratio:16/10; overflow:hidden; background:#0F172A; }
+  .mock-phone { position:absolute; right:0; bottom:0; width:31%; aspect-ratio:9/19; border-radius:30px; background:#0B1222; padding:7px; border:1px solid rgba(255,255,255,0.16); box-shadow:0 40px 70px -20px rgba(0,0,0,0.85); animation:floatY 7s ease-in-out infinite; }
+  .mock-phone .mock-screen { aspect-ratio:auto; height:100%; border-radius:23px; }
+  .mock-badge { position:absolute; display:flex; align-items:center; gap:10px; padding:11px 14px; border-radius:14px; background:rgba(15,23,42,0.82); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.12); color:#fff; font-size:13px; font-weight:600; box-shadow:0 18px 40px -18px rgba(0,0,0,0.8); animation:floatY 6s ease-in-out infinite; white-space:nowrap; }
+  .mock-badge b { display:flex; width:28px; height:28px; border-radius:9px; align-items:center; justify-content:center; background:rgba(95,168,255,0.16); }
+  @keyframes floatY { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
+  .slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; opacity:0; animation:slideCycle 27s infinite; }
+  .mock-url .slide { animation-name:labelCycle; }
+  .slide.s1 { animation-delay:0s; } .slide.s2 { animation-delay:4.5s; } .slide.s3 { animation-delay:9s; }
+  .slide.s4 { animation-delay:13.5s; } .slide.s5 { animation-delay:18s; } .slide.s6 { animation-delay:22.5s; }
+  .slide.s1 { opacity:1; }
+  @keyframes slideCycle { 0% { opacity:0; transform:scale(1.04); } 3% { opacity:1; transform:scale(1); } 16.7% { opacity:1; } 19.5% { opacity:0; } 100% { opacity:0; } }
+  @keyframes labelCycle { 0% { opacity:0; transform:translateY(6px); } 3% { opacity:1; transform:none; } 16.7% { opacity:1; } 18% { opacity:0; } 100% { opacity:0; } }
+  .hero-trust { display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:34px; color:#CBD5E1; font-size:14px; font-weight:500; }
+  .hero-trust span { display:inline-flex; align-items:center; gap:8px; }
+  @media (max-width:1100px) {
+    .hero-grid { grid-template-columns:1fr; gap:56px; }
+    .mock { margin:0 auto; max-width:600px; }
+  }
+  @media (max-width:560px) { .mock-badge { display:none; } .mock-phone { border-radius:22px; padding:5px; } .mock-phone .mock-screen { border-radius:17px; } }
+
+  /* ---------- Kennzahlen */
+  .stats { max-width:1400px; margin:0 auto; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); }
+  .stat { padding:34px 28px; border-left:1px solid rgba(255,255,255,0.08); }
+  .stat:first-child { border-left:none; }
+  .stat-num { font-family:'Bricolage Grotesque','Inter',sans-serif; font-size:clamp(34px,3.6vw,48px); font-weight:800; letter-spacing:-1px; line-height:1; background:linear-gradient(120deg,#fff 20%,#5FA8FF); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .stat-label { margin-top:10px; color:#94A3B8; font-size:14.5px; line-height:1.5; }
+  @media (max-width:900px) { .stats { grid-template-columns:repeat(2, minmax(0,1fr)); } .stat:nth-child(3) { border-left:none; } .stat:nth-child(n+3) { border-top:1px solid rgba(255,255,255,0.08); } }
+  @media (max-width:420px) { .stat { padding:26px 16px; } }
+
+  /* ---------- Leistungen (Bento) */
+  .bento { display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:22px; }
+  .b-web { grid-column:span 4; } .b-app { grid-column:span 2; } .b-lp { grid-column:span 2; } .b-re { grid-column:span 4; }
+  .tile { position:relative; border-radius:24px; border:1px solid #E2E8F0; background:#fff; overflow:hidden; display:flex; flex-direction:column; transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+  .tile:hover { transform:translateY(-4px); box-shadow:0 30px 60px -30px rgba(15,23,42,0.3); border-color:#BFD9FF; }
+  .tile-dark { background:linear-gradient(150deg,#0F172A,#132a4f); border-color:#1E293B; color:#fff; }
+  .tile-dark:hover { border-color:#2F5FA8; }
+  .tile-body { padding:32px 32px 28px; position:relative; z-index:1; }
+  .tile h3 { font-family:'Bricolage Grotesque','Inter',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.3px; margin:0 0 10px; }
+  .tile p { font-size:15.5px; line-height:1.6; margin:0; color:#475569; }
+  .tile-dark p { color:#A5B4CB; }
+  .tile-icon { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:#EFF6FF; margin-bottom:20px; }
+  .tile-dark .tile-icon { background:rgba(95,168,255,0.14); }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+  .chips span { font-size:13px; font-weight:600; color:#334155; background:#F1F5F9; border:1px solid #E2E8F0; padding:6px 11px; border-radius:999px; }
+  .tile-dark .chips span { color:#CBD5E1; background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.1); }
+  .web-split { display:grid; grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr); align-items:end; height:100%; }
+  .web-visual { position:relative; height:100%; min-height:320px; overflow:hidden; }
+  .web-visual .wv-browser { position:absolute; left:8%; right:-10%; top:40px; border-radius:12px 12px 0 0; overflow:hidden; border:1px solid rgba(255,255,255,0.14); box-shadow:0 30px 60px -20px rgba(0,0,0,0.7); transition:transform .5s ease; }
+  .tile:hover .wv-browser { transform:translateY(-8px); }
+  .web-visual .wv-phone { position:absolute; left:0; top:34%; width:26%; aspect-ratio:9/19; border-radius:18px; padding:4px; background:#0B1222; border:1px solid rgba(255,255,255,0.18); box-shadow:0 24px 40px -14px rgba(0,0,0,0.8); transition:transform .5s ease; }
+  .tile:hover .wv-phone { transform:translateY(-14px); }
+  .wv-phone img { width:100%; height:100%; object-fit:cover; object-position:top; border-radius:14px; display:block; }
+  .cal { margin:4px 26px 26px; background:#fff; border:1px solid #E2E8F0; border-radius:16px; padding:16px; box-shadow:0 18px 40px -26px rgba(15,23,42,0.35); }
+  .cal-head { display:flex; justify-content:space-between; align-items:center; font-size:13px; font-weight:700; color:#0F172A; margin-bottom:12px; }
+  .cal-days { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin-bottom:10px; }
+  .cal-days span { text-align:center; font-size:11px; color:#64748B; font-weight:600; padding:6px 0; border-radius:8px; }
+  .cal-days span.on { background:#0F172A; color:#fff; }
+  .cal-slots { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+  .cal-slots span { text-align:center; font-size:12px; font-weight:600; color:#334155; border:1px solid #E2E8F0; border-radius:8px; padding:7px 0; }
+  .cal-slots span.off { color:#CBD5E1; text-decoration:line-through; }
+  .cal-slots span.pick { background:#007BFF; border-color:#007BFF; color:#fff; animation:pickPulse 2.4s ease-in-out infinite; }
+  @keyframes pickPulse { 0%,100% { box-shadow:0 0 0 0 rgba(0,123,255,0.45); } 50% { box-shadow:0 0 0 6px rgba(0,123,255,0); } }
+  .cal-ok { margin-top:12px; display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; color:#15803D; background:#F0FDF4; border:1px solid #BBF7D0; border-radius:10px; padding:8px 10px; }
+  .lp-visual { margin:auto 26px; border-radius:16px; background:#fff; border:1px solid #DBEAFE; padding:18px; position:relative; box-shadow:0 18px 40px -26px rgba(0,123,255,0.5); }
+  .lp-line { height:8px; border-radius:6px; background:#E2E8F0; margin-bottom:8px; }
+  .lp-cta { margin-top:14px; display:inline-flex; align-items:center; gap:6px; background:#007BFF; color:#fff; font-size:12.5px; font-weight:700; padding:9px 14px; border-radius:9px; animation:pickPulse 2.4s ease-in-out infinite; }
+  .lp-cursor { position:absolute; left:46%; bottom:6px; animation:cursorMove 3.2s ease-in-out infinite; }
+  @keyframes cursorMove { 0%,100% { transform:translate(30px,18px); } 50% { transform:translate(0,0); } }
+  .ba { position:relative; margin:0 26px 26px; border-radius:16px; overflow:hidden; aspect-ratio:16/8; border:1px solid #E2E8F0; background:#F1F5F9; user-select:none; }
+  .ba > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; }
+  .ba-old { position:absolute; inset:0; background:#C9C9C9; font-family:'Times New Roman',Times,serif; color:#000; overflow:hidden; }
+  .ba-old .o-head { background:linear-gradient(#5d7fb3,#2c4a7c); color:#FFFF66; text-align:center; font-size:clamp(14px,1.8vw,22px); font-weight:bold; padding:10px 6px; border-bottom:3px ridge #999; font-style:italic; }
+  .ba-old .o-nav { background:#E8E8E8; text-align:center; font-size:clamp(10px,1vw,13px); padding:5px; border-bottom:1px solid #888; }
+  .ba-old .o-nav u { color:#0000EE; margin:0 6px; }
+  .ba-old .o-main { display:grid; grid-template-columns:28% 1fr; gap:10px; padding:10px; font-size:clamp(10px,1.05vw,14px); }
+  .ba-old .o-side { background:#FFFFCC; border:2px outset #ccc; padding:8px; }
+  .ba-old .o-side u { color:#0000EE; display:block; margin-bottom:4px; }
+  .ba-old .o-box { background:#fff; border:2px inset #ccc; padding:8px 10px; line-height:1.35; }
+  .ba-old .o-count { margin-top:8px; display:inline-block; background:#000; color:#0F0; font-family:'Courier New',monospace; padding:2px 6px; letter-spacing:2px; }
+  .ba-old .o-pic { float:right; width:30%; aspect-ratio:4/3; margin:0 0 6px 8px; border:3px ridge #aaa; background:repeating-linear-gradient(45deg,#d9b48a 0 6px,#c79a66 6px 12px); }
+  .ba-handle { position:absolute; top:0; bottom:0; width:3px; margin-left:-1.5px; background:#fff; box-shadow:0 0 0 1px rgba(15,23,42,0.15), 0 0 20px rgba(0,0,0,0.25); pointer-events:none; }
+  .ba-knob { position:absolute; top:50%; left:50%; width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px -6px rgba(15,23,42,0.5); }
+  .ba-tag { position:absolute; top:12px; padding:5px 10px; border-radius:999px; font:700 11px 'Inter',sans-serif; letter-spacing:1px; pointer-events:none; }
+  .ba input[type=range] { position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize; }
+  .ba input[type=range]:focus-visible + .ba-focus { outline:3px solid #007BFF; outline-offset:-3px; }
+  .ba-focus { position:absolute; inset:0; border-radius:16px; pointer-events:none; }
+  @media (max-width:1000px) { .bento { grid-template-columns:repeat(2, minmax(0,1fr)); } .b-web, .b-re { grid-column:span 2; } .b-app, .b-lp { grid-column:span 1; } }
+  @media (max-width:700px) { .bento { grid-template-columns:1fr; } .bento > * { grid-column:auto !important; } .web-split { grid-template-columns:1fr; } .web-visual { height:280px; min-height:0; } .web-visual .wv-browser { top:8px; } .web-visual .wv-phone { top:24%; width:24%; } .ba { aspect-ratio:4/3; } }
+
+  /* ---------- Ablauf (Zeitleiste) */
+  .tl { position:relative; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:32px; }
+  .tl-line { position:absolute; top:31px; left:12.5%; right:12.5%; height:2px; background:#E2E8F0; }
+  .tl-fill { height:100%; width:100%; background:linear-gradient(90deg,#007BFF,#5FA8FF); transform-origin:left top; }
+  .tl-step { position:relative; text-align:center; }
+  .tl-dot { position:relative; z-index:1; width:64px; height:64px; margin:0 auto 22px; border-radius:50%; background:#fff; border:2px solid #007BFF; display:flex; align-items:center; justify-content:center; font-family:'Bricolage Grotesque','Inter',sans-serif; font-size:20px; font-weight:800; color:#0F172A; box-shadow:0 0 0 8px #F8FAFC, 0 14px 30px -14px rgba(0,123,255,0.6); transition:background .3s ease, color .3s ease, transform .3s ease; }
+  .tl-step:hover .tl-dot { background:#007BFF; color:#fff; transform:scale(1.06); }
+  .tl-step h3 { font-size:19px; font-weight:700; margin:0 0 10px; color:#0F172A; }
+  .tl-step p { font-size:15px; line-height:1.6; color:#475569; margin:0 auto; max-width:280px; }
+  @media (max-width:900px) {
+    .tl { grid-template-columns:1fr; gap:28px; }
+    .tl-line { top:0; bottom:0; left:31px; right:auto; width:2px; height:auto; }
+    .tl-step { display:grid; grid-template-columns:64px 1fr; gap:20px; text-align:left; align-items:start; }
+    .tl-dot { margin:0; }
+    .tl-step p { margin:0; max-width:none; }
+  }
+
+  /* ---------- Bewegung reduzieren */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+    [data-reveal] { opacity:1 !important; transform:none !important; }
+    .slide { opacity:0 !important; } .slide.s1 { opacity:1 !important; }
+  }
+  .todo { background:#FEF3C7; color:#92400E; border:1px dashed #F59E0B; border-radius:4px; padding:0 5px; font-weight:700; }
+  .work-grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:28px; }
+  .pkg-grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px; align-items:stretch; }
+  @media (max-width:1100px) { .work-grid { grid-template-columns:repeat(2, minmax(0,1fr)); } .pkg-grid { grid-template-columns:1fr; max-width:560px; margin:0 auto; } }
+  @media (max-width:640px) { .work-grid { grid-template-columns:1fr; } }
+  .faq-item { border-bottom:1px solid #E2E8F0; }
+  .faq-item summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 0; font-size:17px; font-weight:700; color:#0F172A; }
+  .faq-item summary::-webkit-details-marker { display:none; }
+  .faq-item summary:hover { color:#007BFF; }
+  .faq-item summary:focus-visible { outline:2px solid #007BFF; outline-offset:4px; border-radius:4px; }
+  .faq-icon { flex-shrink:0; width:32px; height:32px; border-radius:50%; background:#F1F5F9; display:flex; align-items:center; justify-content:center; transition:transform .25s ease, background .25s ease; }
+  .faq-item[open] .faq-icon { transform:rotate(45deg); background:#007BFF; }
+  .faq-item[open] .faq-icon svg { stroke:#fff; }
+  .faq-item p { margin:0 0 22px; font-size:15.5px; line-height:1.7; color:#475569; max-width:680px; }
+  .work-card img { transition:transform .6s ease; }
+  .work-card:hover img { transform:scale(1.04); }
   .services-grid { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:24px; }
   @media (max-width:1180px) { .services-grid { grid-template-columns:repeat(2, minmax(0,1fr)); } }
   @media (max-width:640px) { .services-grid { grid-template-columns:1fr; } }
@@ -40,18 +201,18 @@
   <!-- NAV -->
   <header style="{{ navStyle }}">
     <div style="max-width:1400px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 5%; gap:16px;">
-      <div style="display:flex; align-items:center;">
+      <a href="#start" aria-label="meuser.biz – zum Seitenanfang" style="display:flex; align-items:center;">
         <img src="./assets/meuser-logo.png" alt="meuser.biz Logo" style="height:{{ logoHeight }}px; width:auto; display:block;">
-      </div>
+      </a>
       <div style="display:{{ desktopNavDisplay }}; align-items:center; gap:12px; flex-wrap:nowrap;">
       <nav style="display:flex; align-items:center; gap:4px; flex-wrap:nowrap; white-space:nowrap; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); padding:6px; border-radius:999px; border:1px solid rgba(255,255,255,0.6); box-shadow:0 10px 30px -10px rgba(15,23,42,0.2);">
-        <a href="#start" style="{{ navStart }}" style-hover="color:#fff; background:linear-gradient(135deg,#0F172A,#1e293b);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v9h13v-9"></path></svg>Start</a>
         <a href="#leistungen" style="{{ navLeistungen }}" style-hover="color:#0F172A; background:rgba(255,255,255,0.7);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-3 11.2c.4.25.6.7.6 1.15V16h4.8v-.65c0-.45.2-.9.6-1.15A6 6 0 0 0 12 3Z"></path><path d="M9 18h6M10 21h4"></path></svg>Leistungen</a>
+        <a href="#arbeiten" style="{{ navArbeiten }}" style-hover="color:#0F172A; background:rgba(255,255,255,0.7);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"></rect></svg>Arbeiten</a>
+        <a href="#pakete" style="{{ navPakete }}" style-hover="color:#0F172A; background:rgba(255,255,255,0.7);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"></path><circle cx="7.5" cy="7.5" r="1.3"></circle></svg>Pakete</a>
         <a href="#ueber-uns" style="{{ navUeberUns }}" style-hover="color:#0F172A; background:rgba(255,255,255,0.7);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"></path></svg>Über uns</a>
-        <a href="#referenzen" style="{{ navReferenzen }}" style-hover="color:#0F172A; background:rgba(255,255,255,0.7);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.6 5.9 6.4.6-4.8 4.3 1.5 6.3L12 16.4l-5.7 3.2 1.5-6.3-4.8-4.3 6.4-.6z"></path></svg>Referenzen</a>
-        <a href="beispiele.html" style="{{ navBeispiele }}" style-hover="color:#0F172A; background:rgba(255,255,255,0.7);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"></rect></svg>Beispiele</a>
+        <a href="#faq" style="{{ navFaq }}" style-hover="color:#0F172A; background:rgba(255,255,255,0.7);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .8c0 1.8-2.5 2.2-2.5 3.8"></path><path d="M12 17h.01"></path></svg>FAQ</a>
         <a href="#kontakt" style="{{ navKontakt }}" style-hover="color:#0F172A; background:rgba(255,255,255,0.7);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"></path><path d="M4 7l8 6 8-6"></path></svg>Kontakt</a>
-        <a href="#kontakt" style="margin-left:6px; background:linear-gradient(135deg,#007BFF,#0062cc); color:#fff; padding:10px 22px; border-radius:999px; font-size:14px; font-weight:600; box-shadow:0 6px 16px -4px rgba(0,123,255,0.6); transition:0.25s; white-space:nowrap;" style-hover="transform:translateY(-2px);">Anfrage</a>
+        <a href="#kontakt" style="margin-left:6px; background:linear-gradient(135deg,#007BFF,#0062cc); color:#fff; padding:10px 20px; border-radius:999px; font-size:14px; font-weight:600; box-shadow:0 6px 16px -4px rgba(0,123,255,0.6); transition:0.25s; white-space:nowrap;" style-hover="transform:translateY(-2px);">Erstgespräch</a>
       </nav>
       </div>
       <button onclick="{{ toggleMenu }}" aria-label="Menü" style="display:{{ mobileToggleDisplay }}; align-items:center; justify-content:center; width:44px; height:44px; border-radius:8px; background:rgba(15,23,42,0.06); border:none; cursor:pointer; flex-shrink:0;">
@@ -60,158 +221,273 @@
     </div>
     <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
       <div style="position: absolute; top: 100%; left: 0; right: 0; display: flex; flex-direction: column; gap: 4px; padding: 8px 5% 20px; backdrop-filter: blur(14px); border-top: 1px solid #E2E8F0; box-shadow: 0 16px 30px -12px rgba(15,23,42,0.25); background-color: #F8FAFCF5">
-        <a href="#start" onclick="{{ closeMenu }}" style="display:flex; align-items:center; gap:10px; color:#0F172A; font-size:15px; font-weight:600; padding:12px 8px; border-radius:8px; transition:0.2s; border-bottom:1px solid #E2E8F0;" style-hover="background:rgba(15,23,42,0.06);"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v9h13v-9"></path></svg>Start</a>
         <a href="#leistungen" onclick="{{ closeMenu }}" style="display:flex; align-items:center; gap:10px; color:#0F172A; font-size:15px; font-weight:600; padding:12px 8px; border-radius:8px; transition:0.2s; border-bottom:1px solid #E2E8F0;" style-hover="background:rgba(15,23,42,0.06);"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-3 11.2c.4.25.6.7.6 1.15V16h4.8v-.65c0-.45.2-.9.6-1.15A6 6 0 0 0 12 3Z"></path><path d="M9 18h6M10 21h4"></path></svg>Leistungen</a>
+        <a href="#arbeiten" onclick="{{ closeMenu }}" style="display:flex; align-items:center; gap:10px; color:#0F172A; font-size:15px; font-weight:600; padding:12px 8px; border-radius:8px; transition:0.2s; border-bottom:1px solid #E2E8F0;" style-hover="background:rgba(15,23,42,0.06);"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"></rect></svg>Arbeiten</a>
+        <a href="#pakete" onclick="{{ closeMenu }}" style="display:flex; align-items:center; gap:10px; color:#0F172A; font-size:15px; font-weight:600; padding:12px 8px; border-radius:8px; transition:0.2s; border-bottom:1px solid #E2E8F0;" style-hover="background:rgba(15,23,42,0.06);"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"></path><circle cx="7.5" cy="7.5" r="1.3"></circle></svg>Pakete</a>
         <a href="#ueber-uns" onclick="{{ closeMenu }}" style="display:flex; align-items:center; gap:10px; color:#0F172A; font-size:15px; font-weight:600; padding:12px 8px; border-radius:8px; transition:0.2s; border-bottom:1px solid #E2E8F0;" style-hover="background:rgba(15,23,42,0.06);"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"></path></svg>Über uns</a>
-        <a href="#referenzen" onclick="{{ closeMenu }}" style="display:flex; align-items:center; gap:10px; color:#0F172A; font-size:15px; font-weight:600; padding:12px 8px; border-radius:8px; transition:0.2s; border-bottom:1px solid #E2E8F0;" style-hover="background:rgba(15,23,42,0.06);"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.6 5.9 6.4.6-4.8 4.3 1.5 6.3L12 16.4l-5.7 3.2 1.5-6.3-4.8-4.3 6.4-.6z"></path></svg>Referenzen</a>
-        <a href="beispiele.html" onclick="{{ closeMenu }}" style="display:flex; align-items:center; gap:10px; color:#0F172A; font-size:15px; font-weight:600; padding:12px 8px; border-radius:8px; transition:0.2s; border-bottom:1px solid #E2E8F0;" style-hover="background:rgba(15,23,42,0.06);"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"></rect></svg>Beispiele</a>
+        <a href="#faq" onclick="{{ closeMenu }}" style="display:flex; align-items:center; gap:10px; color:#0F172A; font-size:15px; font-weight:600; padding:12px 8px; border-radius:8px; transition:0.2s; border-bottom:1px solid #E2E8F0;" style-hover="background:rgba(15,23,42,0.06);"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .8c0 1.8-2.5 2.2-2.5 3.8"></path><path d="M12 17h.01"></path></svg>FAQ</a>
         <a href="#kontakt" onclick="{{ closeMenu }}" style="display:flex; align-items:center; gap:10px; color:#0F172A; font-size:15px; font-weight:600; padding:12px 8px; border-radius:8px; transition:0.2s;" style-hover="background:rgba(15,23,42,0.06);"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"></path><path d="M4 7l8 6 8-6"></path></svg>Kontakt</a>
-        <a href="#kontakt" onclick="{{ closeMenu }}" style="background:#007BFF; color:#fff; padding:12px 18px; border-radius:10px; font-size:15px; font-weight:600; text-align:center; margin-top:8px;">Anfrage</a>
+        <a href="#kontakt" onclick="{{ closeMenu }}" style="background:#007BFF; color:#fff; padding:12px 18px; border-radius:10px; font-size:15px; font-weight:600; text-align:center; margin-top:8px;">Kostenloses Erstgespräch</a>
       </div>
     </sc-if>
   </header>
 
   <!-- HERO -->
-  <section id="start" style="position:relative; min-height:88vh; display:flex; align-items:center; overflow:hidden;">
-    <image-slot id="hero-image" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1920&amp;q=80" credit="Photo by Fahim Muntashir on Unsplash" credit-href="https://unsplash.com/@iamfahim08" placeholder="Hero-Bild: App-Entwicklung / Code auf Smartphone" style="position:absolute; inset:0; width:100%; height:100%; z-index:0;"></image-slot>
-    <div style="position:absolute; inset:0; background:linear-gradient(100deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.88) 50%, rgba(15,23,42,0.55) 100%); z-index:1;"></div>
-    <div style="position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 20% 35%, rgba(15,23,42,0.55), transparent 70%); z-index:1;"></div>
-    <div style="position:absolute; inset:0; background:rgba(15,23,42,0.35); z-index:1;"></div>
-    <div style="position:absolute; top:-140px; right:-100px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.3), transparent 70%); filter:blur(10px); animation:blobFloat 12s ease-in-out infinite; pointer-events:none; z-index:1;"></div>
-    <div style="position:relative; z-index:2; max-width:1400px; margin:0 auto; padding:120px 5% 90px; width:100%; animation:fadeInUp 0.9s ease both;">
-      <div style="color:#5FA8FF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:18px;">KREATIV. PROFESSIONELL. ZUVERLÄSSIG.</div>
-      <h1 style="font-size:clamp(34px,6.5vw,64px); line-height:1.08; font-weight:800; margin:0 0 24px; letter-spacing:-1.2px; color:#fff; max-width:760px;">Ihre Ideen.<br><span style="background:linear-gradient(90deg,#fff,#5FA8FF,#fff); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:gradientShift 6s ease infinite;">Unsere Wirkung.</span></h1>
-      <p style="font-size:clamp(16px,2vw,19px); line-height:1.6; color:#CBD5E1; max-width:580px; margin:0 0 36px;">meuser.biz ist spezialisiert auf Homepages jeder Art und maßgeschneiderte Web-Apps – vom schlanken Onepager bis zur individuellen Anwendung für Ihr Unternehmen.</p>
-      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:48px;">
-        <a href="#kontakt" style="background:#007BFF; color:#fff; padding:14px 28px; border-radius:8px; font-weight:600; font-size:15px; box-shadow:0 14px 30px -10px rgba(0,123,255,0.55); transition:0.25s;" style-hover="background:#fff; color:#0F172A; transform:translateY(-3px);">Jetzt anfragen</a><a href="#leistungen" style="background:rgba(255,255,255,0.08); color:#fff; padding:14px 28px; border-radius:8px; font-weight:600; font-size:15px; border:1px solid rgba(255,255,255,0.4); transition:0.25s; backdrop-filter:blur(6px);" style-hover="border-color:#fff; transform:translateY(-3px); background:rgba(255,255,255,0.16);">Unsere Leistungen</a>
-        
+  <section id="start" style="position:relative; overflow:hidden; background:#0B1222;">
+    <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px); background-size:64px 64px; -webkit-mask-image:radial-gradient(ellipse 80% 70% at 70% 40%, #000 30%, transparent 75%); mask-image:radial-gradient(ellipse 80% 70% at 70% 40%, #000 30%, transparent 75%); pointer-events:none;"></div>
+    <div style="position:absolute; top:-220px; right:-120px; width:760px; height:760px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.32), transparent 65%); pointer-events:none; animation:blobFloat 14s ease-in-out infinite;"></div>
+    <div style="position:absolute; bottom:-260px; left:-200px; width:640px; height:640px; border-radius:50%; background:radial-gradient(circle, rgba(95,168,255,0.14), transparent 65%); pointer-events:none;"></div>
+    <div class="hero-grid" style="position:relative; z-index:2; max-width:1400px; margin:0 auto; padding:clamp(64px,8vw,112px) 5% clamp(64px,7vw,96px);">
+      <div style="animation:fadeInUp 0.9s ease both;">
+        <div class="eyebrow-pill"><span class="live-dot"></span>Webdesign &amp; Web-Entwicklung</div>
+        <h1 style="font-size:clamp(36px,3.7vw,56px); line-height:1.04; font-weight:800; margin:26px 0 26px; letter-spacing:-1.8px; color:#fff;">Websites, die wirken.<br><span style="background:linear-gradient(90deg,#fff,#5FA8FF 45%,#B9D8FF); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:gradientShift 8s ease infinite;"><span style="white-space:nowrap;">Web-Apps,</span> die entlasten.</span></h1>
+        <p style="font-size:clamp(16px,1.6vw,19px); line-height:1.65; color:#CBD5E1; max-width:560px; margin:0 0 36px;">Wir gestalten moderne Websites und entwickeln maßgeschneiderte Web-Apps – schnell, mobil optimiert und persönlich betreut, von der ersten Idee bis zum Livegang.</p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="#kontakt" style="display:inline-flex; align-items:center; gap:10px; background:#007BFF; color:#fff; padding:16px 26px; border-radius:12px; font-weight:600; font-size:15.5px; box-shadow:0 18px 36px -12px rgba(0,123,255,0.65); transition:0.25s;" style-hover="background:#fff; color:#0F172A; transform:translateY(-3px);">Kostenloses Erstgespräch <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          <a href="#arbeiten" style="display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,0.06); color:#fff; padding:16px 24px; border-radius:12px; font-weight:600; font-size:15.5px; border:1px solid rgba(255,255,255,0.22); transition:0.25s; backdrop-filter:blur(6px);" style-hover="border-color:#fff; transform:translateY(-3px); background:rgba(255,255,255,0.12);">Arbeiten ansehen</a>
+        </div>
+        <div class="hero-trust"><span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#5FA8FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"></path></svg>Kostenloses Erstgespräch</span><span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#5FA8FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"></path></svg>Verbindlicher Festpreis</span><span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#5FA8FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"></path></svg>Antwort in 24&nbsp;Stunden</span></div>
       </div>
-      <div style="display:flex; gap:36px; flex-wrap:wrap;">
-        <div style="display:flex; align-items:center; gap:8px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#5FA8FF" stroke-width="1.8" width="20" height="20"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M3 8h18M7 6h.01M10 6h.01"></path></svg>
-          <span style="font-size:14px; font-weight:600; color:#fff;">Homepages</span>
+      <div class="mock" aria-hidden="true" style="animation:fadeInUp 1.1s ease 0.15s both;">
+        <div class="mock-browser">
+          <div class="mock-bar"><i style="background:#FF5F57;"></i><i style="background:#FEBC2E;"></i><i style="background:#28C840;"></i><div class="mock-url"><span class="slide s1">Designkonzept · Arztpraxis</span><span class="slide s2">Designkonzept · Restaurant</span><span class="slide s3">Designkonzept · Software</span><span class="slide s4">Designkonzept · Handwerk</span><span class="slide s5">Designkonzept · Fitnessstudio</span><span class="slide s6">Designkonzept · Fotografie</span></div></div>
+          <div class="mock-screen"><img class="slide s1" src="./assets/img/arbeiten/zahnarzt.jpg" alt="" width="960" height="600"><img class="slide s2" src="./assets/img/arbeiten/restaurant.jpg" alt="" loading="lazy" width="960" height="600"><img class="slide s3" src="./assets/img/arbeiten/saas.jpg" alt="" loading="lazy" width="960" height="600"><img class="slide s4" src="./assets/img/arbeiten/schreinerei.jpg" alt="" loading="lazy" width="960" height="600"><img class="slide s5" src="./assets/img/arbeiten/fitness.jpg" alt="" loading="lazy" width="960" height="600"><img class="slide s6" src="./assets/img/arbeiten/fotografie.jpg" alt="" loading="lazy" width="960" height="600"></div>
         </div>
-        <div style="display:flex; align-items:center; gap:8px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#5FA8FF" stroke-width="1.8" width="20" height="20"><path d="M4 4h16v6H4zM4 14h7v6H4zM15 14h5v6h-5z"></path></svg>
-          <span style="font-size:14px; font-weight:600; color:#fff;">Landing Pages</span>
-        </div>
-        <div style="display:flex; align-items:center; gap:8px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#5FA8FF" stroke-width="1.8" width="20" height="20"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"></path></svg>
-          <span style="font-size:14px; font-weight:600; color:#fff;">Web-Apps</span>
-        </div>
-        <div style="display:flex; align-items:center; gap:8px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#5FA8FF" stroke-width="1.8" width="20" height="20"><rect x="7" y="2.5" width="10" height="19" rx="2"></rect><path d="M11 18.5h2"></path></svg>
-          <span style="font-size:14px; font-weight:600; color:#fff;">Mobil optimiert</span>
-        </div>
+        <div class="mock-phone"><div class="mock-screen"><img class="slide s1" src="./assets/img/arbeiten/mobil/zahnarzt.jpg" alt="" width="520" height="1125"><img class="slide s2" src="./assets/img/arbeiten/mobil/restaurant.jpg" alt="" loading="lazy" width="520" height="1125"><img class="slide s3" src="./assets/img/arbeiten/mobil/saas.jpg" alt="" loading="lazy" width="520" height="1125"><img class="slide s4" src="./assets/img/arbeiten/mobil/schreinerei.jpg" alt="" loading="lazy" width="520" height="1125"><img class="slide s5" src="./assets/img/arbeiten/mobil/fitness.jpg" alt="" loading="lazy" width="520" height="1125"><img class="slide s6" src="./assets/img/arbeiten/mobil/fotografie.jpg" alt="" loading="lazy" width="520" height="1125"></div></div>
+        <div class="mock-badge" style="left:-4%; bottom:16%; animation-delay:-2s;"><b><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#5FA8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"></rect><path d="M11 18.5h2"></path></svg></b>Für jedes Gerät optimiert</div>
+        <div class="mock-badge" style="right:22%; top:-3%; animation-delay:-4s;"><b><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#5FA8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 6-5.3-3.2-5.3 3.2 1.4-6-4.6-4 6.1-.5z"></path></svg></b>Individuelles Design</div>
       </div>
+    </div>
+  </section>
+
+  <!-- KENNZAHLEN -->
+  <section aria-label="Auf einen Blick" style="background:#0B1222; border-top:1px solid rgba(255,255,255,0.07); padding:0 5%;">
+    <div class="stats">
+      <div class="stat"><div class="stat-num">24&nbsp;h</div><div class="stat-label">Antwort auf jede Anfrage</div></div>
+      <div class="stat"><div class="stat-num">100&nbsp;%</div><div class="stat-label">mobil optimiert – auf jedem Gerät</div></div>
+      <div class="stat"><div class="stat-num">1</div><div class="stat-label">fester Ansprechpartner für Ihr Projekt</div></div>
+      <div class="stat"><div class="stat-num">0&nbsp;€</div><div class="stat-label">für Ihr Erstgespräch</div></div>
     </div>
   </section>
 
   <!-- LEISTUNGEN -->
-  <section id="leistungen" style="background:#fff; padding:100px 5%; position:relative; overflow:hidden;">
-    <div style="position:absolute; top:-140px; right:-120px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.12), transparent 70%); pointer-events:none;"></div>
+  <section id="leistungen" style="background:#fff; padding:110px 5%; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:-140px; right:-120px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.1), transparent 70%); pointer-events:none;"></div>
     <div style="max-width:1400px; margin:0 auto; position:relative; z-index:1;">
-      <div data-reveal="true" style="text-align:center; margin-bottom:56px; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
-        <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">WAS WIR MACHEN</div>
-        <h2 style="font-size:38px; font-weight:800; margin:0; letter-spacing:-0.5px;">Homepages &amp; Web-Apps. Darauf sind wir spezialisiert.</h2>
-        <p style="font-size:16px; color:#64748B; max-width:620px; margin:16px auto 0; line-height:1.6;">Wir konzentrieren uns auf das, was wir am besten können: Websites in jeder Form und maßgeschneiderte Web-Anwendungen – von der ersten Skizze bis zum Livegang.</p>
+      <div data-reveal="true" style="display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-bottom:52px; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
+        <div style="max-width:720px;">
+          <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">WAS WIR MACHEN</div>
+          <h2 style="font-size:clamp(28px,4vw,48px); line-height:1.08; font-weight:800; margin:0; letter-spacing:-1px;">Homepages &amp; <span style="white-space:nowrap;">Web-Apps.</span><br>Darauf sind wir spezialisiert.</h2>
+        </div>
+        <p style="font-size:16.5px; color:#64748B; max-width:440px; margin:0; line-height:1.65;">Wir konzentrieren uns auf das, was wir am besten können: Websites in jeder Form und maßgeschneiderte Web-Anwendungen – von der ersten Skizze bis zum Livegang.</p>
       </div>
-      <div class="services-grid">
-          <div data-reveal="true" style="background:#fff; border:1px solid #E2E8F0; border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; transition:opacity 0.6s ease 0ms, transform 0.6s ease 0ms, box-shadow 0.3s ease, border-color 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-6px); box-shadow:0 20px 40px -14px rgba(15,23,42,0.18); border-color:#007BFF;">
-            <div style="width:52px; height:52px; border-radius:12px; background:linear-gradient(135deg,#0F172A,#1e293b); display:flex; align-items:center; justify-content:center; margin-bottom:22px;">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#5FA8FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M3 8h18M7 6h.01M10 6h.01"></path></svg>
+      <div class="bento">
+        <div class="tile tile-dark b-web" data-reveal="true" style="opacity:0; transform:translateY(24px); transition:opacity 0.7s ease 0ms, transform 0.7s ease 0ms, box-shadow .35s ease, border-color .35s ease;">
+          <div class="web-split">
+            <div class="tile-body">
+              <div class="tile-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#5FA8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M3 8h18M7 6h.01M10 6h.01"></path></svg></div>
+              <h3>Unternehmens-Websites</h3>
+              <p>Moderne, schnelle Websites, die Ihr Unternehmen klar präsentieren und Anfragen bringen.</p>
+              <div class="chips"><span>Responsives Design</span><span>Inhalte selbst pflegbar</span><span>Schnelle Ladezeiten</span><span>SEO-Grundlagen</span></div>
             </div>
-            <h3 style="font-size:20px; font-weight:700; margin:0 0 10px; color:#0F172A;">Unternehmens-Websites</h3>
-            <p style="font-size:15px; line-height:1.6; color:#475569; margin:0 0 20px;">Moderne, schnelle Websites, die Ihr Unternehmen klar präsentieren und Anfragen bringen.</p>
-            <ul style="list-style:none; padding:20px 0 0; margin:auto 0 0; border-top:1px solid #E2E8F0; display:flex; flex-direction:column; gap:10px;">
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Responsives Design für alle Geräte</span></li>
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Inhalte selbst pflegbar</span></li>
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Schnelle Ladezeiten &amp; SEO-Grundlagen</span></li>
-            </ul>
-          </div>
-          <div data-reveal="true" style="background:#fff; border:1px solid #E2E8F0; border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; transition:opacity 0.6s ease 100ms, transform 0.6s ease 100ms, box-shadow 0.3s ease, border-color 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-6px); box-shadow:0 20px 40px -14px rgba(15,23,42,0.18); border-color:#007BFF;">
-            <div style="width:52px; height:52px; border-radius:12px; background:linear-gradient(135deg,#0F172A,#1e293b); display:flex; align-items:center; justify-content:center; margin-bottom:22px;">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#5FA8FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"></path></svg>
+            <div class="web-visual" aria-hidden="true">
+              <div class="wv-browser"><div class="mock-bar"><i style="background:#FF5F57;"></i><i style="background:#FEBC2E;"></i><i style="background:#28C840;"></i></div><img src="./assets/img/arbeiten/immobilien.jpg" alt="" loading="lazy" width="960" height="600" style="width:100%; display:block;"></div>
+              <div class="wv-phone"><img src="./assets/img/arbeiten/mobil/kanzlei.jpg" alt="" loading="lazy" width="520" height="1125"></div>
             </div>
-            <h3 style="font-size:20px; font-weight:700; margin:0 0 10px; color:#0F172A;">Web-Apps &amp; Software</h3>
-            <p style="font-size:15px; line-height:1.6; color:#475569; margin:0 0 20px;">Maßgeschneiderte Anwendungen, die Abläufe in Ihrem Betrieb oder Verein digitalisieren.</p>
-            <ul style="list-style:none; padding:20px 0 0; margin:auto 0 0; border-top:1px solid #E2E8F0; display:flex; flex-direction:column; gap:10px;">
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Verwaltungs- und Abrechnungstools</span></li>
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Kundenportale &amp; Online-Buchung</span></li>
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Anbindung an bestehende Systeme</span></li>
-            </ul>
           </div>
-          <div data-reveal="true" style="background:#fff; border:1px solid #E2E8F0; border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; transition:opacity 0.6s ease 200ms, transform 0.6s ease 200ms, box-shadow 0.3s ease, border-color 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-6px); box-shadow:0 20px 40px -14px rgba(15,23,42,0.18); border-color:#007BFF;">
-            <div style="width:52px; height:52px; border-radius:12px; background:linear-gradient(135deg,#0F172A,#1e293b); display:flex; align-items:center; justify-content:center; margin-bottom:22px;">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#5FA8FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6H4zM4 14h7v6H4zM15 14h5v6h-5z"></path></svg>
+        </div>
+        <div class="tile b-app" data-reveal="true" style="opacity:0; transform:translateY(24px); transition:opacity 0.7s ease 100ms, transform 0.7s ease 100ms, box-shadow .35s ease, border-color .35s ease;">
+          <div class="tile-body">
+            <div class="tile-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#007BFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"></path></svg></div>
+            <h3>Web-Apps &amp; Software</h3>
+            <p>Maßgeschneiderte Anwendungen, die Abläufe in Ihrem Betrieb oder Verein digitalisieren.</p>
+          </div>
+          <div class="cal" aria-hidden="true">
+            <div class="cal-head"><span>Termin wählen</span><span style="color:#94A3B8; font-weight:600;">KW 47</span></div>
+            <div class="cal-days"><span>Mo</span><span>Di</span><span class="on">Mi</span><span>Do</span><span>Fr</span></div>
+            <div class="cal-slots"><span class="off">08:30</span><span>09:15</span><span class="pick">10:30</span><span>11:45</span><span class="off">14:00</span><span>15:30</span></div>
+            <div class="cal-ok"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7"></path></svg>Termin gebucht – Bestätigung per E-Mail</div>
+          </div>
+          <div style="padding:0 32px 30px;"><div class="chips"><span>Kundenportale</span><span>Online-Buchung</span><span>Verwaltung</span><span>Schnittstellen</span></div></div>
+        </div>
+        <div class="tile b-lp" data-reveal="true" style="background:linear-gradient(160deg,#EFF6FF,#fff 60%); opacity:0; transform:translateY(24px); transition:opacity 0.7s ease 0ms, transform 0.7s ease 0ms, box-shadow .35s ease, border-color .35s ease;">
+          <div class="tile-body">
+            <div class="tile-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#007BFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6H4zM4 14h7v6H4zM15 14h5v6h-5z"></path></svg></div>
+            <h3>Landing Pages &amp; Onepager</h3>
+            <p>Fokussierte Seiten für ein Angebot, eine Aktion oder einen Neustart – klar auf Anfragen ausgerichtet.</p>
+          </div>
+          <div class="lp-visual" aria-hidden="true">
+            <div style="font:800 15px 'Bricolage Grotesque','Inter',sans-serif; color:#0F172A; margin-bottom:10px;">Jetzt Probetraining sichern</div>
+            <div class="lp-line" style="width:92%;"></div><div class="lp-line" style="width:76%;"></div><div class="lp-line" style="width:58%;"></div>
+            <span class="lp-cta">Termin anfragen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+            <svg class="lp-cursor" viewBox="0 0 24 24" width="22" height="22"><path d="M5 3l14 7-6 2-2 6z" fill="#0F172A" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+          </div>
+          <div style="padding:26px 32px 30px;"><div class="chips"><span>Kampagnen</span><span>Onepager</span><span>Kontaktformular</span></div></div>
+        </div>
+        <div class="tile b-re" data-reveal="true" style="opacity:0; transform:translateY(24px); transition:opacity 0.7s ease 100ms, transform 0.7s ease 100ms, box-shadow .35s ease, border-color .35s ease;">
+          <div class="tile-body" style="display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:flex-end;">
+            <div style="max-width:440px;">
+              <div class="tile-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#007BFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.9-4M4 4v4h4M4 13a8 8 0 0 0 14.9 4M20 20v-4h-4"></path></svg></div>
+              <h3>Relaunch &amp; Modernisierung</h3>
+              <p>Ihre bestehende Website wirkt veraltet? Wir bringen sie technisch und optisch auf den neuesten Stand – ziehen Sie den Regler.</p>
             </div>
-            <h3 style="font-size:20px; font-weight:700; margin:0 0 10px; color:#0F172A;">Landing Pages &amp; Onepager</h3>
-            <p style="font-size:15px; line-height:1.6; color:#475569; margin:0 0 20px;">Fokussierte Seiten für ein Angebot, eine Aktion oder einen Neustart – schnell online und klar auf Anfragen ausgerichtet.</p>
-            <ul style="list-style:none; padding:20px 0 0; margin:auto 0 0; border-top:1px solid #E2E8F0; display:flex; flex-direction:column; gap:10px;">
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Kampagnen- und Produktseiten</span></li>
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Onepager für Selbstständige &amp; Vereine</span></li>
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Klare Struktur mit Kontaktformular</span></li>
-            </ul>
+            <div class="chips"><span>Neues Design</span><span>Inhalte übernommen</span><span>Bessere Mobilansicht</span></div>
           </div>
-          <div data-reveal="true" style="background:#fff; border:1px solid #E2E8F0; border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; transition:opacity 0.6s ease 300ms, transform 0.6s ease 300ms, box-shadow 0.3s ease, border-color 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-6px); box-shadow:0 20px 40px -14px rgba(15,23,42,0.18); border-color:#007BFF;">
-            <div style="width:52px; height:52px; border-radius:12px; background:linear-gradient(135deg,#0F172A,#1e293b); display:flex; align-items:center; justify-content:center; margin-bottom:22px;">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#5FA8FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.9-4M4 4v4h4M4 13a8 8 0 0 0 14.9 4M20 20v-4h-4"></path></svg>
+          <div class="ba">
+            <img src="./assets/img/arbeiten/baeckerei.jpg" alt="Nachher: modernes Design der Bäckerei-Website" loading="lazy" width="960" height="600">
+            <div class="ba-old" aria-hidden="true" style="clip-path:inset(0 {{ relaunchClip }}% 0 0);">
+              <div class="o-head">~*~ Willkommen bei der Bäckerei Kornblume ~*~</div>
+              <div class="o-nav"><u>Startseite</u>|<u>Unser Brot</u>|<u>Anfahrt</u>|<u>Gästebuch</u>|<u>Impressum</u></div>
+              <div class="o-main">
+                <div class="o-side"><b>Navigation</b><br><u>» Aktuelles</u><u>» Sortiment</u><u>» Öffnungszeiten</u><u>» Kontakt</u></div>
+                <div class="o-box"><div class="o-pic"></div><b>Herzlich Willkommen!!!</b><br>Auf unserer Homepage finden Sie alles über unsere Bäckerei. Diese Seite ist optimiert für Internet Explorer 6 und eine Auflösung von 800x600.<br><span style="color:#C00;">*** NEU: Jetzt auch mit Gästebuch! ***</span><br><span class="o-count">004211</span> Besucher</div>
+              </div>
             </div>
-            <h3 style="font-size:20px; font-weight:700; margin:0 0 10px; color:#0F172A;">Relaunch &amp; Modernisierung</h3>
-            <p style="font-size:15px; line-height:1.6; color:#475569; margin:0 0 20px;">Ihre bestehende Website wirkt veraltet? Wir bringen sie technisch und optisch auf den neuesten Stand.</p>
-            <ul style="list-style:none; padding:20px 0 0; margin:auto 0 0; border-top:1px solid #E2E8F0; display:flex; flex-direction:column; gap:10px;">
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Neues, zeitgemäßes Design</span></li>
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Übernahme bestehender Inhalte</span></li>
-              <li style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Bessere Ladezeiten &amp; Mobilansicht</span></li>
-            </ul>
+            <div class="ba-handle" style="left:{{ relaunchPos }}%;"><div class="ba-knob"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"></path></svg></div></div>
+            <span class="ba-tag" style="left:12px; background:rgba(0,0,0,0.65); color:#fff;">VORHER</span>
+            <span class="ba-tag" style="right:12px; background:#007BFF; color:#fff;">NACHHER</span>
+            <input type="range" min="0" max="100" value="{{ relaunchPos }}" oninput="{{ setRelaunch }}" aria-label="Vorher-Nachher-Vergleich: Regler verschieben">
+            <div class="ba-focus"></div>
           </div>
+        </div>
       </div>
-      <div data-reveal="true" style="text-align:center; margin-top:48px; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
-        <a href="#kontakt" style="display:inline-block; background:#0F172A; color:#fff; padding:14px 28px; border-radius:8px; font-weight:600; font-size:15px; transition:0.25s;" style-hover="background:#007BFF; color:#fff; transform:translateY(-3px);">Projekt besprechen</a>
-        <a href="beispiele.html" style="display:inline-block; margin-left:12px; background:#fff; color:#0F172A; padding:13px 27px; border-radius:8px; font-weight:600; font-size:15px; border:1px solid #CBD5E1; transition:0.25s;" style-hover="border-color:#007BFF; color:#007BFF; transform:translateY(-3px);">Beispiele ansehen</a>
+      <div data-reveal="true" style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:48px; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
+        <a href="#kontakt" style="display:inline-flex; align-items:center; gap:10px; background:#0F172A; color:#fff; padding:15px 26px; border-radius:12px; font-weight:600; font-size:15px; transition:0.25s;" style-hover="background:#007BFF; color:#fff; transform:translateY(-3px);">Erstgespräch vereinbaren <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <a href="#pakete" style="display:inline-flex; align-items:center; background:#fff; color:#0F172A; padding:14px 25px; border-radius:12px; font-weight:600; font-size:15px; border:1px solid #CBD5E1; transition:0.25s;" style-hover="border-color:#007BFF; color:#007BFF; transform:translateY(-3px);">Pakete ansehen</a>
       </div>
     </div>
   </section>
 
-  <!-- ABLAUF -->
-  <section id="ablauf" style="background:linear-gradient(180deg,#ffffff,#F8FAFC); padding:100px 5%; border-top:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; position:relative; overflow:hidden;">
-    <div style="position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&amp;q=60'); background-size:cover; background-position:center; opacity:0.05; filter:grayscale(1); pointer-events:none;"></div>
-    <div style="position:absolute; top:-120px; left:-80px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.16), transparent 70%); pointer-events:none;"></div>
-    <div style="position:absolute; bottom:-160px; right:-100px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle, rgba(15,23,42,0.1), transparent 70%); pointer-events:none;"></div>
+  <!-- ARBEITEN -->
+  <section id="arbeiten" style="background:#0F172A; padding:110px 5%; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:-180px; left:-140px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.22), transparent 70%); pointer-events:none;"></div>
+    <div style="position:absolute; bottom:-200px; right:-160px; width:560px; height:560px; border-radius:50%; background:radial-gradient(circle, rgba(95,168,255,0.12), transparent 70%); pointer-events:none;"></div>
     <div style="max-width:1400px; margin:0 auto; position:relative; z-index:1;">
-      <div data-reveal="true" style="text-align:center; margin-bottom:64px; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
-        <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">UNSER ABLAUF</div>
-        <h2 style="font-size:38px; font-weight:800; margin:0; letter-spacing:-0.5px;">Von der Idee zur Umsetzung.</h2>
-        <p style="font-size:16px; color:#64748B; max-width:560px; margin:16px auto 0; line-height:1.6;">Ein klarer, transparenter Prozess in vier Schritten – von der ersten Beratung bis zur Online-Schaltung.</p>
-      </div>
-      <div style="position:relative;">
-        <div style="position:absolute; top:23px; left:5%; right:5%; height:2px; background:linear-gradient(90deg,#007BFF,#E2E8F0); display:none;" class="workflow-line"></div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:28px;">
-          <div data-reveal="true" style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:14px; padding:34px 28px; transition:opacity 0.6s ease 0ms, transform 0.6s ease 0ms, box-shadow 0.3s ease, border-color 0.3s ease; position:relative; overflow:hidden; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-8px); box-shadow:0 20px 40px -14px rgba(15,23,42,0.2); border-color:#007BFF;">
-            <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#007BFF,#0F172A);"></div>
-            <div style="width:46px; height:46px; border-radius:50%; background:#0F172A; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:17px; margin-bottom:20px; transition:0.3s;" style-hover="transform:scale(1.1); background:#007BFF;">01</div>
-            <h3 style="font-size:19px; font-weight:700; margin:0 0 10px;">Beratung</h3>
-            <p style="font-size:14.5px; line-height:1.6; color:#475569; margin:0;">Im persönlichen Gespräch klären wir Ihre Ziele, Anforderungen und Wünsche – die Basis für ein passgenaues Konzept.</p>
-          </div>
-          <div data-reveal="true" style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:14px; padding:34px 28px; transition:opacity 0.6s ease 100ms, transform 0.6s ease 100ms, box-shadow 0.3s ease, border-color 0.3s ease; position:relative; overflow:hidden; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-8px); box-shadow:0 20px 40px -14px rgba(15,23,42,0.2); border-color:#007BFF;">
-            <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#007BFF,#0F172A);"></div>
-            <div style="width:46px; height:46px; border-radius:50%; background:#0F172A; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:17px; margin-bottom:20px; transition:0.3s;" style-hover="transform:scale(1.1); background:#007BFF;">02</div>
-            <h3 style="font-size:19px; font-weight:700; margin:0 0 10px;">Vorschau</h3>
-            <p style="font-size:14.5px; line-height:1.6; color:#475569; margin:0;">Wir setzen Ihr Konzept in eine erste, konkrete Vorschau um – so wird Ihr Projekt frühzeitig sichtbar und greifbar.</p>
-          </div>
-          <div data-reveal="true" style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:14px; padding:34px 28px; transition:opacity 0.6s ease 200ms, transform 0.6s ease 200ms, box-shadow 0.3s ease, border-color 0.3s ease; position:relative; overflow:hidden; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-8px); box-shadow:0 20px 40px -14px rgba(15,23,42,0.2); border-color:#007BFF;">
-            <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#007BFF,#0F172A);"></div>
-            <div style="width:46px; height:46px; border-radius:50%; background:#0F172A; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:17px; margin-bottom:20px; transition:0.3s;" style-hover="transform:scale(1.1); background:#007BFF;">03</div>
-            <h3 style="font-size:19px; font-weight:700; margin:0 0 10px;">Validierung</h3>
-            <p style="font-size:14.5px; line-height:1.6; color:#475569; margin:0;">Gemeinsam prüfen wir die Ergebnisse, holen Ihr Feedback ein und nehmen letzte Anpassungen präzise vor.</p>
-          </div>
-          <div data-reveal="true" style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:14px; padding:34px 28px; transition:opacity 0.6s ease 300ms, transform 0.6s ease 300ms, box-shadow 0.3s ease, border-color 0.3s ease; position:relative; overflow:hidden; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-8px); box-shadow:0 20px 40px -14px rgba(15,23,42,0.2); border-color:#007BFF;">
-            <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#007BFF,#0F172A);"></div>
-            <div style="width:46px; height:46px; border-radius:50%; background:#0F172A; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:17px; margin-bottom:20px; transition:0.3s;" style-hover="transform:scale(1.1); background:#007BFF;">04</div>
-            <h3 style="font-size:19px; font-weight:700; margin:0 0 10px;">Online-Schaltung</h3>
-            <p style="font-size:14.5px; line-height:1.6; color:#475569; margin:0;">Nach Ihrer finalen Freigabe gehen wir live – inklusive technischer Umsetzung, Feinschliff und Übergabe.</p>
-          </div>
+      <div data-reveal="true" style="display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-bottom:56px; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
+        <div style="max-width:640px;">
+          <div style="color:#5FA8FF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">ARBEITSPROBEN</div>
+          <h2 style="font-size:clamp(30px,4vw,42px); line-height:1.12; font-weight:800; margin:0; letter-spacing:-0.8px; color:#fff;">So können Websites von uns aussehen.</h2>
+          <p style="font-size:16.5px; line-height:1.65; color:#94A3B8; margin:18px 0 0;">Designkonzepte für fiktive Unternehmen aus ganz unterschiedlichen Branchen – jedes mit eigenem Stil, voll funktionsfähig und für alle Geräte optimiert.</p>
         </div>
+        <a href="beispiele.html" style="display:inline-flex; align-items:center; gap:8px; color:#fff; border:1px solid rgba(255,255,255,0.3); padding:13px 22px; border-radius:8px; font-weight:600; font-size:15px; transition:0.25s; white-space:nowrap;" style-hover="border-color:#fff; background:rgba(255,255,255,0.08);">Alle Beispiele &amp; Bausteine <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div class="work-grid">
+        <a class="work-card" href="beispiele/restaurant.html" data-reveal="true" style="display:flex; flex-direction:column; background:#132238; border:1px solid rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; color:#fff; transition:opacity 0.6s ease 0ms, transform 0.6s ease 0ms, border-color 0.3s ease, box-shadow 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="border-color:rgba(95,168,255,0.6); box-shadow:0 24px 50px -20px rgba(0,123,255,0.45); transform:translateY(-6px);">
+          <div style="display:flex; align-items:center; gap:6px; padding:10px 14px; background:rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.08);">
+            <span style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></span><span style="width:9px; height:9px; border-radius:50%; background:#FEBC2E;"></span><span style="width:9px; height:9px; border-radius:50%; background:#28C840;"></span>
+          </div>
+          <div style="aspect-ratio:16/10; overflow:hidden; background:#0F172A;">
+            <img src="./assets/img/arbeiten/restaurant.jpg" alt="Designkonzept Brasserie Lumen – Startseite" loading="lazy" width="960" height="600" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
+          </div>
+          <div style="padding:22px 24px 24px; display:flex; flex-direction:column; gap:8px; flex:1;">
+            <div style="color:#5FA8FF; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">Restaurant</div>
+            <div style="font-size:19px; font-weight:700;">Brasserie Lumen</div>
+            <p style="margin:0; font-size:14.5px; line-height:1.6; color:#94A3B8;">Elegant und ruhig – mit Speisekarte und Tischreservierung.</p>
+            <span style="margin-top:auto; padding-top:10px; font-size:14px; font-weight:600; color:#fff; display:inline-flex; align-items:center; gap:6px;">Konzept ansehen <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </div>
+        </a>
+        <a class="work-card" href="beispiele/schreinerei.html" data-reveal="true" style="display:flex; flex-direction:column; background:#132238; border:1px solid rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; color:#fff; transition:opacity 0.6s ease 100ms, transform 0.6s ease 100ms, border-color 0.3s ease, box-shadow 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="border-color:rgba(95,168,255,0.6); box-shadow:0 24px 50px -20px rgba(0,123,255,0.45); transform:translateY(-6px);">
+          <div style="display:flex; align-items:center; gap:6px; padding:10px 14px; background:rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.08);">
+            <span style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></span><span style="width:9px; height:9px; border-radius:50%; background:#FEBC2E;"></span><span style="width:9px; height:9px; border-radius:50%; background:#28C840;"></span>
+          </div>
+          <div style="aspect-ratio:16/10; overflow:hidden; background:#0F172A;">
+            <img src="./assets/img/arbeiten/schreinerei.jpg" alt="Designkonzept Holzwerk Brandt – Startseite" loading="lazy" width="960" height="600" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
+          </div>
+          <div style="padding:22px 24px 24px; display:flex; flex-direction:column; gap:8px; flex:1;">
+            <div style="color:#5FA8FF; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">Handwerk</div>
+            <div style="font-size:19px; font-weight:700;">Holzwerk Brandt</div>
+            <p style="margin:0; font-size:14.5px; line-height:1.6; color:#94A3B8;">Warm und handwerklich – mit Projektgalerie und Ablauf.</p>
+            <span style="margin-top:auto; padding-top:10px; font-size:14px; font-weight:600; color:#fff; display:inline-flex; align-items:center; gap:6px;">Konzept ansehen <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </div>
+        </a>
+        <a class="work-card" href="beispiele/zahnarzt.html" data-reveal="true" style="display:flex; flex-direction:column; background:#132238; border:1px solid rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; color:#fff; transition:opacity 0.6s ease 200ms, transform 0.6s ease 200ms, border-color 0.3s ease, box-shadow 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="border-color:rgba(95,168,255,0.6); box-shadow:0 24px 50px -20px rgba(0,123,255,0.45); transform:translateY(-6px);">
+          <div style="display:flex; align-items:center; gap:6px; padding:10px 14px; background:rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.08);">
+            <span style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></span><span style="width:9px; height:9px; border-radius:50%; background:#FEBC2E;"></span><span style="width:9px; height:9px; border-radius:50%; background:#28C840;"></span>
+          </div>
+          <div style="aspect-ratio:16/10; overflow:hidden; background:#0F172A;">
+            <img src="./assets/img/arbeiten/zahnarzt.jpg" alt="Designkonzept Zahnärzte am Rosengarten – Startseite" loading="lazy" width="960" height="600" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
+          </div>
+          <div style="padding:22px 24px 24px; display:flex; flex-direction:column; gap:8px; flex:1;">
+            <div style="color:#5FA8FF; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">Arztpraxis</div>
+            <div style="font-size:19px; font-weight:700;">Zahnärzte am Rosengarten</div>
+            <p style="margin:0; font-size:14.5px; line-height:1.6; color:#94A3B8;">Vertrauensvoll und klar – mit Online-Terminbuchung.</p>
+            <span style="margin-top:auto; padding-top:10px; font-size:14px; font-weight:600; color:#fff; display:inline-flex; align-items:center; gap:6px;">Konzept ansehen <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </div>
+        </a>
+        <a class="work-card" href="beispiele/saas.html" data-reveal="true" style="display:flex; flex-direction:column; background:#132238; border:1px solid rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; color:#fff; transition:opacity 0.6s ease 0ms, transform 0.6s ease 0ms, border-color 0.3s ease, box-shadow 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="border-color:rgba(95,168,255,0.6); box-shadow:0 24px 50px -20px rgba(0,123,255,0.45); transform:translateY(-6px);">
+          <div style="display:flex; align-items:center; gap:6px; padding:10px 14px; background:rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.08);">
+            <span style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></span><span style="width:9px; height:9px; border-radius:50%; background:#FEBC2E;"></span><span style="width:9px; height:9px; border-radius:50%; background:#28C840;"></span>
+          </div>
+          <div style="aspect-ratio:16/10; overflow:hidden; background:#0F172A;">
+            <img src="./assets/img/arbeiten/saas.jpg" alt="Designkonzept Flowgrid – Startseite" loading="lazy" width="960" height="600" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
+          </div>
+          <div style="padding:22px 24px 24px; display:flex; flex-direction:column; gap:8px; flex:1;">
+            <div style="color:#5FA8FF; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">Software</div>
+            <div style="font-size:19px; font-weight:700;">Flowgrid</div>
+            <p style="margin:0; font-size:14.5px; line-height:1.6; color:#94A3B8;">Modernes Produktmarketing für eine B2B-Software.</p>
+            <span style="margin-top:auto; padding-top:10px; font-size:14px; font-weight:600; color:#fff; display:inline-flex; align-items:center; gap:6px;">Konzept ansehen <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </div>
+        </a>
+        <a class="work-card" href="beispiele/fotografie.html" data-reveal="true" style="display:flex; flex-direction:column; background:#132238; border:1px solid rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; color:#fff; transition:opacity 0.6s ease 100ms, transform 0.6s ease 100ms, border-color 0.3s ease, box-shadow 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="border-color:rgba(95,168,255,0.6); box-shadow:0 24px 50px -20px rgba(0,123,255,0.45); transform:translateY(-6px);">
+          <div style="display:flex; align-items:center; gap:6px; padding:10px 14px; background:rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.08);">
+            <span style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></span><span style="width:9px; height:9px; border-radius:50%; background:#FEBC2E;"></span><span style="width:9px; height:9px; border-radius:50%; background:#28C840;"></span>
+          </div>
+          <div style="aspect-ratio:16/10; overflow:hidden; background:#0F172A;">
+            <img src="./assets/img/arbeiten/fotografie.jpg" alt="Designkonzept Mara Lenz – Startseite" loading="lazy" width="960" height="600" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
+          </div>
+          <div style="padding:22px 24px 24px; display:flex; flex-direction:column; gap:8px; flex:1;">
+            <div style="color:#5FA8FF; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">Fotografie</div>
+            <div style="font-size:19px; font-weight:700;">Mara Lenz</div>
+            <p style="margin:0; font-size:14.5px; line-height:1.6; color:#94A3B8;">Editorial und mutig – das Portfolio steht im Mittelpunkt.</p>
+            <span style="margin-top:auto; padding-top:10px; font-size:14px; font-weight:600; color:#fff; display:inline-flex; align-items:center; gap:6px;">Konzept ansehen <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </div>
+        </a>
+        <a class="work-card" href="beispiele/sportverein.html" data-reveal="true" style="display:flex; flex-direction:column; background:#132238; border:1px solid rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; color:#fff; transition:opacity 0.6s ease 200ms, transform 0.6s ease 200ms, border-color 0.3s ease, box-shadow 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="border-color:rgba(95,168,255,0.6); box-shadow:0 24px 50px -20px rgba(0,123,255,0.45); transform:translateY(-6px);">
+          <div style="display:flex; align-items:center; gap:6px; padding:10px 14px; background:rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.08);">
+            <span style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></span><span style="width:9px; height:9px; border-radius:50%; background:#FEBC2E;"></span><span style="width:9px; height:9px; border-radius:50%; background:#28C840;"></span>
+          </div>
+          <div style="aspect-ratio:16/10; overflow:hidden; background:#0F172A;">
+            <img src="./assets/img/arbeiten/sportverein.jpg" alt="Designkonzept SV Grünfeld – Startseite" loading="lazy" width="960" height="600" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
+          </div>
+          <div style="padding:22px 24px 24px; display:flex; flex-direction:column; gap:8px; flex:1;">
+            <div style="color:#5FA8FF; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">Sportverein</div>
+            <div style="font-size:19px; font-weight:700;">SV Grünfeld</div>
+            <p style="margin:0; font-size:14.5px; line-height:1.6; color:#94A3B8;">Laut und lebendig – mit Spielplan und Mitgliedsantrag.</p>
+            <span style="margin-top:auto; padding-top:10px; font-size:14px; font-weight:600; color:#fff; display:inline-flex; align-items:center; gap:6px;">Konzept ansehen <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </div>
+        </a>
+      </div>
+      <p style="margin:36px 0 0; font-size:13px; color:#64748B; text-align:center;">Alle gezeigten Unternehmen sind fiktiv. Die Konzepte zeigen, was wir gestalten und umsetzen können.</p>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section id="ablauf" style="background:#F8FAFC; padding:110px 5%; border-top:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:-120px; left:-80px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.12), transparent 70%); pointer-events:none;"></div>
+    <div style="max-width:1300px; margin:0 auto; position:relative; z-index:1;">
+      <div data-reveal="true" style="text-align:center; margin-bottom:72px; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
+        <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">UNSER ABLAUF</div>
+        <h2 style="font-size:clamp(32px,4vw,46px); line-height:1.1; font-weight:800; margin:0; letter-spacing:-1px;">In vier Schritten zur neuen Website.</h2>
+        <p style="font-size:16.5px; color:#64748B; max-width:560px; margin:16px auto 0; line-height:1.6;">Ein klarer, transparenter Prozess – Sie wissen jederzeit, wo Ihr Projekt steht.</p>
+      </div>
+      <div class="tl">
+        <div class="tl-line" aria-hidden="true"><div class="tl-fill" data-reveal="true" style="opacity:1; transform:scale(0); transition:transform 1.6s cubic-bezier(.2,.7,.2,1) 0.2s;"></div></div>
+          <div class="tl-step" data-reveal="true" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease 300ms, transform 0.6s ease 300ms;">
+            <div class="tl-dot">01</div>
+            <div><h3>Erstgespräch</h3><p>Im kostenlosen Gespräch klären wir Ihre Ziele, Anforderungen und Wünsche – die Basis für ein passgenaues Konzept.</p></div>
+          </div>
+          <div class="tl-step" data-reveal="true" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease 550ms, transform 0.6s ease 550ms;">
+            <div class="tl-dot">02</div>
+            <div><h3>Vorschau</h3><p>Wir setzen Ihr Konzept in eine erste, konkrete Vorschau um – so wird Ihr Projekt frühzeitig sichtbar und greifbar.</p></div>
+          </div>
+          <div class="tl-step" data-reveal="true" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease 800ms, transform 0.6s ease 800ms;">
+            <div class="tl-dot">03</div>
+            <div><h3>Feinschliff</h3><p>Gemeinsam prüfen wir die Ergebnisse, holen Ihr Feedback ein und nehmen letzte Anpassungen präzise vor.</p></div>
+          </div>
+          <div class="tl-step" data-reveal="true" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease 1050ms, transform 0.6s ease 1050ms;">
+            <div class="tl-dot">04</div>
+            <div><h3>Livegang</h3><p>Nach Ihrer finalen Freigabe gehen wir live – inklusive technischer Umsetzung und persönlicher Übergabe.</p></div>
+          </div>
       </div>
     </div>
   </section>
@@ -220,13 +496,22 @@
   <section id="ueber-uns" style="max-width:1400px; margin:0 auto; padding:100px 5%; display:grid; grid-template-columns:{{ ueberUnsGridCols }}; gap:56px; align-items:center; position:relative;">
     <div style="position:absolute; top:10%; left:-10%; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.14), transparent 70%); pointer-events:none; z-index:0;"></div>
     <div data-reveal="true" style="border-radius:16px; overflow:hidden; border:1px solid #E2E8F0; box-shadow:0 24px 50px -20px rgba(15,23,42,0.25); opacity:0; transform:translateX(-30px) rotate(-0.4deg); transition:opacity 0.8s ease, transform 0.8s ease;">
-      <image-slot id="team-image" src="https://picsum.photos/seed/meuserteam/1200/900" placeholder="Team / Arbeitsplatz Foto" style="width:100%; aspect-ratio:4/3; display:block;"></image-slot>
+      <img src="./assets/img/arbeitsplatz.jpg" alt="Arbeitsplatz mit Laptop und Programmcode" loading="lazy" width="1200" height="800" style="width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block;">
     </div>
     <div data-reveal="true" style="opacity:0; transform:translateX(30px); transition:opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s;">
       <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">ÜBER UNS</div>
       <h2 style="font-size:34px; font-weight:800; margin:0 0 22px; letter-spacing:-0.5px;">Alles aus einer Hand</h2>
       <p style="font-size:16.5px; line-height:1.7; color:#334155; margin:0 0 20px;">Von der ersten Idee über Design und Entwicklung bis zum Livegang – meuser.biz begleitet Sie durch den gesamten Prozess Ihrer Website oder Web-App. Als kleines, spezialisiertes Team legen wir Wert auf klare Kommunikation, saubere Ergebnisse und langfristige Partnerschaften.</p>
       <p style="font-size:16.5px; line-height:1.7; color:#334155; margin:0;">Wir machen bewusst nur Websites und Web-Apps – und die dafür richtig. Sie haben einen festen Ansprechpartner, der Ihr Projekt von Anfang bis Ende kennt.</p>
+      <div style="margin-top:32px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; background:#fff; border:1px solid #E2E8F0; border-radius:16px; padding:20px 22px; box-shadow:0 16px 36px -22px rgba(15,23,42,0.35);">
+        <div aria-hidden="true" style="width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,#0F172A,#1e3a6b); color:#fff; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:800; letter-spacing:0.5px; flex-shrink:0; box-shadow:0 0 0 4px #E8F1FF;">SM</div>
+        <div style="flex:1; min-width:180px;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:1.5px; color:#007BFF; text-transform:uppercase;">Ihr Ansprechpartner</div>
+          <div style="font-size:18px; font-weight:800; color:#0F172A; margin-top:2px;">Stefan Meuser</div>
+          <div style="font-size:14px; color:#64748B;">Geschäftsführer</div>
+        </div>
+        <a href="#kontakt" style="background:#0F172A; color:#fff; padding:12px 20px; border-radius:8px; font-weight:600; font-size:14px; transition:0.25s; white-space:nowrap;" style-hover="background:#007BFF; transform:translateY(-2px);">Erstgespräch vereinbaren</a>
+      </div>
     </div>
   </section>
 
@@ -235,55 +520,150 @@
     <div style="position:absolute; top:-80px; right:8%; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.28), transparent 70%); animation:blobFloat 10s ease-in-out infinite;"></div>
     <div data-reveal="true" style="max-width:1400px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; position:relative; z-index:1; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
       <div>
-        <h2 style="color:#fff; font-size:32px; font-weight:800; margin:0 0 10px; letter-spacing:-0.5px;">Mehr als Werbung.</h2>
+        <h2 style="color:#fff; font-size:32px; font-weight:800; margin:0 0 10px; letter-spacing:-0.5px;">Bereit für Ihre neue Website?</h2>
         <div style="width:60px; height:3px; background:#007BFF; margin-bottom:14px;"></div>
-        <p style="color:#94A3BB; font-size:15px; margin:0; letter-spacing:1px;">IDEEN. DESIGNS. WIRKUNG.</p>
+        <p style="color:#94A3BB; font-size:15px; margin:0; letter-spacing:1px;">HOMEPAGES. WEB-APPS. PERSÖNLICH BETREUT.</p>
       </div>
-      <a href="#kontakt" style="background:#007BFF; color:#fff; padding:16px 32px; border-radius:8px; font-weight:600; font-size:15px; white-space:nowrap; box-shadow:0 16px 34px -10px rgba(0,123,255,0.55); transition:0.25s;" style-hover="background:#fff; color:#0F172A; transform:translateY(-3px);">Projekt starten</a>
+      <a href="#kontakt" style="background:#007BFF; color:#fff; padding:16px 32px; border-radius:8px; font-weight:600; font-size:15px; white-space:nowrap; box-shadow:0 16px 34px -10px rgba(0,123,255,0.55); transition:0.25s;" style-hover="background:#fff; color:#0F172A; transform:translateY(-3px);">Kostenloses Erstgespräch</a>
     </div>
   </section>
 
   <!-- REFERENZEN -->
   <section id="referenzen" style="background:#F8FAFC; padding:90px 5%; border-bottom:1px solid #E2E8F0; position:relative; overflow:hidden;">
-    <div style="position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600&amp;q=60'); background-size:cover; background-position:center; opacity:0.05; filter:grayscale(1); pointer-events:none;"></div>
+    <div style="position:absolute; inset:0; background-image:url('./assets/img/bg-referenzen.jpg'); background-size:cover; background-position:center; opacity:0.05; filter:grayscale(1); pointer-events:none;"></div>
     <div style="max-width:1400px; margin:0 auto; position:relative; z-index:1;">
       <div data-reveal="true" style="text-align:center; margin-bottom:56px; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
-        <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">REFERENZEN</div>
-        <h2 style="font-size:34px; font-weight:800; margin:0; letter-spacing:-0.5px;">Was Kunden sagen</h2>
-        <p style="font-size:16px; color:#64748B; max-width:560px; margin:16px auto 0; line-height:1.6;">Ergebnisse und Stimmen von Unternehmen, die wir bei ihrem digitalen Auftritt begleitet haben.</p>
+        <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">UNSER VERSPRECHEN</div>
+        <h2 style="font-size:34px; font-weight:800; margin:0; letter-spacing:-0.5px;">Darauf können Sie sich verlassen</h2>
+        <p style="font-size:16px; color:#64748B; max-width:560px; margin:16px auto 0; line-height:1.6;">So arbeiten wir mit jedem Kunden – vom ersten Gespräch bis nach dem Livegang.</p>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:28px;">
-        <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
-          <div data-reveal="true" style="background:#fff; border:1px solid #E2E8F0; border-radius:14px; padding:34px 30px; display:flex; flex-direction:column; gap:18px; position:relative; overflow:hidden; transition:opacity 0.6s ease {{ $index }}00ms, transform 0.6s ease {{ $index }}00ms, box-shadow 0.3s ease, border-color 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-6px); box-shadow:0 18px 36px -14px rgba(15,23,42,0.18); border-color:#007BFF;">
+      <div class="services-grid">
+          <div data-reveal="true" style="background:#fff; border:1px solid #E2E8F0; border-radius:14px; padding:30px 26px; display:flex; flex-direction:column; gap:14px; position:relative; overflow:hidden; transition:opacity 0.6s ease 0ms, transform 0.6s ease 0ms, box-shadow 0.3s ease, border-color 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-6px); box-shadow:0 18px 36px -14px rgba(15,23,42,0.18); border-color:#007BFF;">
             <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#007BFF,#0F172A);"></div>
-            <svg viewBox="0 0 32 24" width="34" height="26" fill="#007BFF" style="opacity:0.15;"><path d="M0 24V13.6C0 5.6 5.1 0.6 12.6 0v5.8c-3.7 0.7-5.7 2.9-6 6.6H12v11.6H0zm18 0V13.6C18 5.6 23.1 0.6 30.6 0v5.8c-3.7 0.7-5.7 2.9-6 6.6H30v11.6H18z"></path></svg>
-            <p style="font-size:15px; line-height:1.7; color:#334155; margin:0;">„{{ t.quote }}"</p>
-            <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:10px 14px; display:flex; align-items:center; gap:8px; width:fit-content;">
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#007BFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"></path><path d="M15 7h6v6"></path></svg>
-              <span style="font-size:13.5px; font-weight:700; color:#0F172A;">{{ t.result }}</span>
+            <div style="width:46px; height:46px; border-radius:12px; background:linear-gradient(135deg,#0F172A,#1e293b); display:flex; align-items:center; justify-content:center;">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#5FA8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
             </div>
-            <div style="display:flex; align-items:center; gap:12px; margin-top:auto; padding-top:8px; border-top:1px solid #E2E8F0;">
-              <div style="width:42px; height:42px; border-radius:50%; background:linear-gradient(135deg,#0F172A,#334155); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0;">{{ t.initials }}</div>
-              <div>
-                <div style="font-size:14px; font-weight:700; color:#0F172A;">{{ t.name }}</div>
-                <div style="font-size:12.5px; color:#94A3BB;">{{ t.role }}, {{ t.company }}</div>
-              </div>
-            </div>
+            <h3 style="font-size:18px; font-weight:700; margin:0; color:#0F172A;">Antwort innerhalb von 24&nbsp;Stunden</h3>
+            <p style="font-size:15px; line-height:1.65; color:#475569; margin:0;">Auf jede Anfrage erhalten Sie schnell eine persönliche Rückmeldung – kein Ticketsystem, keine Warteschleife.</p>
           </div>
-        </sc-for>
+          <div data-reveal="true" style="background:#fff; border:1px solid #E2E8F0; border-radius:14px; padding:30px 26px; display:flex; flex-direction:column; gap:14px; position:relative; overflow:hidden; transition:opacity 0.6s ease 100ms, transform 0.6s ease 100ms, box-shadow 0.3s ease, border-color 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-6px); box-shadow:0 18px 36px -14px rgba(15,23,42,0.18); border-color:#007BFF;">
+            <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#007BFF,#0F172A);"></div>
+            <div style="width:46px; height:46px; border-radius:12px; background:linear-gradient(135deg,#0F172A,#1e293b); display:flex; align-items:center; justify-content:center;">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#5FA8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"></circle><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"></path></svg>
+            </div>
+            <h3 style="font-size:18px; font-weight:700; margin:0; color:#0F172A;">Ein fester Ansprechpartner</h3>
+            <p style="font-size:15px; line-height:1.65; color:#475569; margin:0;">Sie sprechen von der ersten Idee bis zum Livegang mit derselben Person, die Ihr Projekt kennt.</p>
+          </div>
+          <div data-reveal="true" style="background:#fff; border:1px solid #E2E8F0; border-radius:14px; padding:30px 26px; display:flex; flex-direction:column; gap:14px; position:relative; overflow:hidden; transition:opacity 0.6s ease 200ms, transform 0.6s ease 200ms, box-shadow 0.3s ease, border-color 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-6px); box-shadow:0 18px 36px -14px rgba(15,23,42,0.18); border-color:#007BFF;">
+            <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#007BFF,#0F172A);"></div>
+            <div style="width:46px; height:46px; border-radius:12px; background:linear-gradient(135deg,#0F172A,#1e293b); display:flex; align-items:center; justify-content:center;">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#5FA8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+            <h3 style="font-size:18px; font-weight:700; margin:0; color:#0F172A;">Erst sehen, dann entscheiden</h3>
+            <p style="font-size:15px; line-height:1.65; color:#475569; margin:0;">Sie bekommen früh eine konkrete Vorschau und geben jeden Schritt frei, bevor etwas online geht.</p>
+          </div>
+          <div data-reveal="true" style="background:#fff; border:1px solid #E2E8F0; border-radius:14px; padding:30px 26px; display:flex; flex-direction:column; gap:14px; position:relative; overflow:hidden; transition:opacity 0.6s ease 300ms, transform 0.6s ease 300ms, box-shadow 0.3s ease, border-color 0.3s ease; opacity:0; transform:translateY(24px);" style-hover="transform:translateY(-6px); box-shadow:0 18px 36px -14px rgba(15,23,42,0.18); border-color:#007BFF;">
+            <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#007BFF,#0F172A);"></div>
+            <div style="width:46px; height:46px; border-radius:12px; background:linear-gradient(135deg,#0F172A,#1e293b); display:flex; align-items:center; justify-content:center;">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#5FA8FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </div>
+            <h3 style="font-size:18px; font-weight:700; margin:0; color:#0F172A;">Inhalte selbst pflegen</h3>
+            <p style="font-size:15px; line-height:1.65; color:#475569; margin:0;">Ihre Website lässt sich auf Wunsch so umsetzen, dass Sie Texte und Bilder später selbst ändern können.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAKETE -->
+  <section id="pakete" style="background:linear-gradient(180deg,#F8FAFC,#ffffff); padding:100px 5%; position:relative; overflow:hidden; border-bottom:1px solid #E2E8F0;">
+    <div style="position:absolute; top:-160px; left:50%; transform:translateX(-50%); width:760px; height:420px; border-radius:50%; background:radial-gradient(ellipse, rgba(0,123,255,0.12), transparent 70%); pointer-events:none;"></div>
+    <div style="max-width:1200px; margin:0 auto; position:relative; z-index:1;">
+      <div data-reveal="true" style="text-align:center; margin-bottom:64px; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
+        <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">PAKETE</div>
+        <h2 style="font-size:clamp(30px,4vw,38px); font-weight:800; margin:0; letter-spacing:-0.5px;">Klare Pakete. Feste Preise.</h2>
+        <p style="font-size:16px; color:#64748B; max-width:600px; margin:16px auto 0; line-height:1.6;">Nach dem kostenlosen Erstgespräch erhalten Sie ein verbindliches Festpreis-Angebot. Die Pakete geben Ihnen eine erste Orientierung.</p>
+      </div>
+      <div class="pkg-grid">
+        <div data-reveal="true" style="position:relative; background:#fff; border:1px solid #E2E8F0; border-radius:18px; padding:36px 30px 30px; display:flex; flex-direction:column;  transition:opacity 0.6s ease 0ms, transform 0.6s ease 0ms; opacity:0; transform:translateY(24px);">
+          
+          <h3 style="font-size:21px; font-weight:800; margin:0; color:#0F172A;">Onepager</h3>
+          <p style="font-size:15px; line-height:1.6; color:#64748B; margin:8px 0 22px; min-height:48px;">Ideal für Selbstständige, Vereine und einzelne Angebote.</p>
+          <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:24px;"><span style="font-size:15px; color:#64748B; font-weight:600;">ab</span><span style="font-size:38px; font-weight:800; letter-spacing:-1px; color:#0F172A;"><span class="todo" style="font-size:20px; letter-spacing:0; vertical-align:middle;">[Preis]</span>&nbsp;€</span></div>
+          <ul style="list-style:none; padding:22px 0 0; margin:0 0 28px; border-top:1px solid #E2E8F0; display:flex; flex-direction:column; gap:12px;"><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Eine Seite mit allen wichtigen Inhalten</span></li><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Responsives Design für alle Geräte</span></li><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Kontaktformular</span></li><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>SEO-Grundlagen &amp; schnelle Ladezeiten</span></li></ul>
+          <a href="#kontakt" style="margin-top:auto; text-align:center; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:14px 20px; border-radius:10px; font-weight:600; font-size:15px; transition:0.25s;" style-hover="border-color:#007BFF; color:#007BFF; transform:translateY(-2px);">Erstgespräch vereinbaren</a>
+        </div>
+        <div data-reveal="true" style="position:relative; background:#fff; border:2px solid #007BFF; border-radius:18px; padding:36px 30px 30px; display:flex; flex-direction:column; box-shadow:0 28px 60px -28px rgba(0,123,255,0.45); transition:opacity 0.6s ease 100ms, transform 0.6s ease 100ms; opacity:0; transform:translateY(24px);">
+          <div style="position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:#007BFF; color:#fff; font-size:12px; font-weight:700; letter-spacing:1px; padding:5px 14px; border-radius:999px; white-space:nowrap;">EMPFEHLUNG</div>
+          <h3 style="font-size:21px; font-weight:800; margin:0; color:#0F172A;">Unternehmens-Website</h3>
+          <p style="font-size:15px; line-height:1.6; color:#64748B; margin:8px 0 22px; min-height:48px;">Der vollständige, individuelle Auftritt für Ihr Unternehmen.</p>
+          <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:24px;"><span style="font-size:15px; color:#64748B; font-weight:600;">ab</span><span style="font-size:38px; font-weight:800; letter-spacing:-1px; color:#0F172A;"><span class="todo" style="font-size:20px; letter-spacing:0; vertical-align:middle;">[Preis]</span>&nbsp;€</span></div>
+          <ul style="list-style:none; padding:22px 0 0; margin:0 0 28px; border-top:1px solid #E2E8F0; display:flex; flex-direction:column; gap:12px;"><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Mehrere Unterseiten nach Bedarf</span></li><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Individuelles Design in Ihrem Stil</span></li><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Inhalte auf Wunsch selbst pflegbar</span></li><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Kontakt- und Anfrageformulare</span></li><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>SEO-Grundlagen &amp; schnelle Ladezeiten</span></li></ul>
+          <a href="#kontakt" style="margin-top:auto; text-align:center; background:#007BFF; color:#fff; box-shadow:0 12px 26px -10px rgba(0,123,255,0.6); padding:14px 20px; border-radius:10px; font-weight:600; font-size:15px; transition:0.25s;" style-hover="background:#0F172A; transform:translateY(-2px);">Erstgespräch vereinbaren</a>
+        </div>
+        <div data-reveal="true" style="position:relative; background:#fff; border:1px solid #E2E8F0; border-radius:18px; padding:36px 30px 30px; display:flex; flex-direction:column;  transition:opacity 0.6s ease 200ms, transform 0.6s ease 200ms; opacity:0; transform:translateY(24px);">
+          
+          <h3 style="font-size:21px; font-weight:800; margin:0; color:#0F172A;">Web-App</h3>
+          <p style="font-size:15px; line-height:1.6; color:#64748B; margin:8px 0 22px; min-height:48px;">Maßgeschneiderte Software für Ihre Abläufe.</p>
+          <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:24px;"><span style="font-size:15px; color:#64748B; font-weight:600;">ab</span><span style="font-size:38px; font-weight:800; letter-spacing:-1px; color:#0F172A;"><span class="todo" style="font-size:20px; letter-spacing:0; vertical-align:middle;">[Preis]</span>&nbsp;€</span></div>
+          <ul style="list-style:none; padding:22px 0 0; margin:0 0 28px; border-top:1px solid #E2E8F0; display:flex; flex-direction:column; gap:12px;"><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Analyse Ihrer Abläufe</span></li><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Kundenportale, Buchung oder Verwaltung</span></li><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Anbindung an bestehende Systeme</span></li><li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#334155; line-height:1.5;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#007BFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:3px;"><path d="M5 12.5 10 17 19 7"></path></svg><span>Schrittweise Entwicklung mit Vorschau</span></li></ul>
+          <a href="#kontakt" style="margin-top:auto; text-align:center; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:14px 20px; border-radius:10px; font-weight:600; font-size:15px; transition:0.25s;" style-hover="border-color:#007BFF; color:#007BFF; transform:translateY(-2px);">Erstgespräch vereinbaren</a>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:13.5px; color:#64748B; margin:32px 0 0;">Alle Preise <span class="todo">[zzgl. / inkl. MwSt. – bitte ergänzen]</span>. Sie haben etwas anderes vor? Wir erstellen Ihnen gern ein individuelles Angebot.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:#fff; padding:100px 5%; border-bottom:1px solid #E2E8F0;">
+    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:{{ faqGridCols }}; gap:56px; align-items:start;">
+      <div data-reveal="true" style="opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease;">
+        <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">FAQ</div>
+        <h2 style="font-size:clamp(30px,4vw,38px); line-height:1.15; font-weight:800; margin:0 0 18px; letter-spacing:-0.5px;">Häufige Fragen</h2>
+        <p style="font-size:16px; line-height:1.65; color:#64748B; margin:0 0 28px;">Die wichtigsten Antworten auf einen Blick. Ihre Frage ist nicht dabei? Wir beantworten sie gern persönlich.</p>
+        <a href="#kontakt" style="display:inline-flex; align-items:center; gap:8px; background:#0F172A; color:#fff; padding:13px 22px; border-radius:8px; font-weight:600; font-size:15px; transition:0.25s;" style-hover="background:#007BFF; transform:translateY(-2px);">Frage stellen <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div data-reveal="true" style="border-top:1px solid #E2E8F0; opacity:0; transform:translateY(24px); transition:opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;">
+          <details class="faq-item">
+            <summary>Was kostet eine Website?<span class="faq-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+            <p>Das hängt vom Umfang ab. Unsere Pakete geben Ihnen eine erste Orientierung. Nach dem kostenlosen Erstgespräch erhalten Sie ein verbindliches Festpreis-Angebot.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Was passiert im kostenlosen Erstgespräch?<span class="faq-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+            <p>Wir sprechen über Ihr Vorhaben, Ihre Ziele und Ihren Zeitrahmen – telefonisch oder per Video. Danach erhalten Sie ein konkretes Angebot. Das Gespräch ist für Sie unverbindlich.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie lange dauert ein Projekt?<span class="faq-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+            <p>Das hängt vom Umfang ab. Einen verbindlichen Zeitplan legen wir gemeinsam im Erstgespräch fest – und Sie sehen in jeder Phase, wie Ihr Projekt vorankommt.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kann ich die Inhalte später selbst ändern?<span class="faq-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+            <p>Ja, auf Wunsch setzen wir Ihre Website so um, dass Sie Texte und Bilder selbst bearbeiten können – ganz ohne Programmierkenntnisse.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Ist meine Website auf Smartphones optimiert?<span class="faq-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+            <p>Ja. Jede Website, die wir bauen, ist für Smartphone, Tablet und Desktop optimiert und lädt schnell.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Können Sie meine bestehende Website modernisieren?<span class="faq-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+            <p>Ja. Bei einem Relaunch übernehmen wir Ihre bestehenden Inhalte und bringen Design, Technik und Ladezeiten auf den neuesten Stand.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Arbeiten Sie nur mit Unternehmen aus der Region?<span class="faq-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+            <p>Nein. Wir arbeiten mit Kunden in ganz Deutschland zusammen – die Abstimmung läuft bequem per Telefon, Video und E-Mail.</p>
+          </details>
       </div>
     </div>
   </section>
 
   <!-- KONTAKTFORMULAR -->
   <section id="kontakt" style="background:#fff; padding:100px 5%; border-bottom:1px solid #E2E8F0; position:relative; overflow:hidden;">
-    <div style="position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&amp;q=60'); background-size:cover; background-position:center; opacity:0.05; filter:grayscale(1); pointer-events:none;"></div>
+    <div style="position:absolute; inset:0; background-image:url('./assets/img/bg-kontakt.jpg'); background-size:cover; background-position:center; opacity:0.05; filter:grayscale(1); pointer-events:none;"></div>
     <div style="position:absolute; top:-100px; right:-80px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(0,123,255,0.13), transparent 70%); pointer-events:none;"></div>
     <div style="max-width:1400px; margin:0 auto; display:grid; grid-template-columns:{{ ueberUnsGridCols }}; gap:56px; position:relative; z-index:1;">
       <div>
         <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:14px;">KONTAKT</div>
-        <h2 style="font-size:34px; font-weight:800; margin:0 0 22px; letter-spacing:-0.5px;">Lassen Sie uns sprechen</h2>
-        <p style="font-size:16.5px; line-height:1.7; color:#334155; margin:0 0 32px; max-width:440px;">Erzählen Sie uns von Ihrem Projekt – wir melden uns innerhalb von 24 Stunden zurück.</p>
+        <h2 style="font-size:34px; font-weight:800; margin:0 0 22px; letter-spacing:-0.5px;">Kostenloses Erstgespräch vereinbaren</h2>
+        <p style="font-size:16.5px; line-height:1.7; color:#334155; margin:0 0 32px; max-width:440px;">Erzählen Sie uns kurz von Ihrem Vorhaben – wir melden uns innerhalb von 24 Stunden und vereinbaren einen Termin für ein unverbindliches Gespräch.</p>
         <div style="color:#334155; font-size:15px; line-height:2;">
           <div>Stefan Meuser, Geschäftsführer</div>
           <div>+49 160 123 4567</div>
@@ -296,11 +676,11 @@
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg>
           </div>
           <h3 style="font-size:20px; font-weight:700; margin:0;">Vielen Dank!</h3>
-          <p style="font-size:14.5px; color:#475569; margin:0;">Ihre Nachricht wurde übermittelt. Wir melden uns in Kürze bei Ihnen.</p>
+          <p style="font-size:14.5px; color:#475569; margin:0;">{{ successText }}</p>
         </div>
       </sc-if>
       <sc-if value="{{ formNotSubmitted }}" hint-placeholder-val="{{ true }}">
-        <form onsubmit="{{ handleSubmit }}" style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:14px; padding:36px; display:flex; flex-direction:column; gap:18px;">
+        <form onsubmit="{{ handleSubmit }}" style="position:relative; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:14px; padding:36px; display:flex; flex-direction:column; gap:18px;">
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:18px;">
             <div style="display:flex; flex-direction:column; gap:6px;">
               <label style="font-size:13px; font-weight:600; color:#334155;">Name</label>
@@ -319,9 +699,13 @@
             <label style="font-size:13px; font-weight:600; color:#334155;">Nachricht</label>
             <textarea name="message" required="true" rows="5" placeholder="Ihre Nachricht an uns" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px; background:#fff; resize:vertical; font-family:inherit;"></textarea>
           </div>
+          <div aria-hidden="true" style="position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden;">
+            <label>Bitte leer lassen<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+          </div>
           <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
             <div style="color:#DC2626; font-size:13.5px;">{{ formErrorMsg }}</div>
           </sc-if>
+          <p style="font-size:12.5px; line-height:1.55; color:#64748B; margin:0;">Ihre Angaben verwenden wir ausschließlich zur Bearbeitung Ihrer Anfrage. Mehr dazu in der <a href="datenschutz.html" style="color:#007BFF; text-decoration:underline;">Datenschutzerklärung</a>.</p>
           <button type="submit" disabled="{{ formSending }}" style="background:#007BFF; color:#fff; padding:14px 28px; border-radius:8px; font-weight:600; font-size:15px; border:none; cursor:pointer; box-shadow:0 14px 30px -10px rgba(0,123,255,0.55); transition:0.25s; align-self:flex-start;" style-hover="background:#0F172A; transform:translateY(-2px);">{{ submitLabel }}</button>
         </form>
       </sc-if>
@@ -354,181 +738,44 @@
           </div>
         </div>
         <div>
-          <div style="color:#fff; font-weight:700; font-size:14px; margin-bottom:16px;">Social Media</div>
-          <div style="display:flex; gap:12px;">
-            <a href="#" aria-label="LinkedIn" style="width:38px; height:38px; border-radius:8px; background:#1E293B; display:flex; align-items:center; justify-content:center; color:#94A3BB;" style-hover="background:#007BFF; color:#fff;">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5ZM3.5 9h3v12h-3V9Zm6 0h2.9v1.7h.04c.4-.75 1.4-1.7 2.9-1.7 3.1 0 3.66 2 3.66 4.6V21h-3v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.03 1.38-2.03 2.8V21h-3V9Z"></path></svg>
-            </a>
-            <a href="#" aria-label="Instagram" style="width:38px; height:38px; border-radius:8px; background:#1E293B; display:flex; align-items:center; justify-content:center; color:#94A3BB;" style-hover="background:#007BFF; color:#fff;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg>
-            </a>
-            <a href="#" aria-label="Facebook" style="width:38px; height:38px; border-radius:8px; background:#1E293B; display:flex; align-items:center; justify-content:center; color:#94A3BB;" style-hover="background:#007BFF; color:#fff;">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M14 9h2.5V6H14c-2.2 0-4 1.8-4 4v2H8v3h2v6h3v-6h2.4l.6-3H13v-1.6c0-.8.2-1.4 1-1.4Z"></path></svg>
-            </a>
-            <a href="#" aria-label="YouTube" style="width:38px; height:38px; border-radius:8px; background:#1E293B; display:flex; align-items:center; justify-content:center; color:#94A3BB;" style-hover="background:#007BFF; color:#fff;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><rect x="2.5" y="6" width="19" height="12" rx="3"></rect><path d="M11 10l4 2-4 2v-4Z" fill="currentColor" stroke="none"></path></svg>
-            </a>
+          <div style="color:#fff; font-weight:700; font-size:14px; margin-bottom:16px;">Rechtliches</div>
+          <div style="color:#94A3BB; font-size:14px; line-height:2; display:flex; flex-direction:column;">
+            <a href="impressum.html" style="color:#94A3BB;" style-hover="color:#fff;">Impressum</a>
+            <a href="datenschutz.html" style="color:#94A3BB;" style-hover="color:#fff;">Datenschutz</a>
           </div>
         </div>
       </div>
       <div style="padding:28px 0; display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap;">
         <span style="color:#64748B; font-size:13px;">© 2026 meuser.biz. Alle Rechte vorbehalten.</span>
-        <a href="#" onclick="{{ openAdmin }}" style="color:#64748B; font-size:13px; text-decoration:underline;">Admin-Login</a>
+        <a href="impressum.html" style="color:#64748B; font-size:13px;" style-hover="color:#fff;">Impressum</a>
+        <a href="datenschutz.html" style="color:#64748B; font-size:13px;" style-hover="color:#fff;">Datenschutz</a>
       </div>
     </div>
   </footer>
 
 </sc-if>
 
-<sc-if value="{{ showAdminLogin }}" hint-placeholder-val="{{ false }}">
-  <div style="min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; background:#0F172A;">
-    <form onsubmit="{{ handleLogin }}" style="background:#fff; border-radius:14px; padding:44px; width:100%; max-width:380px; display:flex; flex-direction:column; gap:18px; box-shadow:0 30px 60px -20px rgba(0,0,0,0.4);">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
-        <img src="./assets/meuser-logo.png" alt="meuser.biz Logo" style="height:40px; width:auto;">
-      </div>
-      <h2 style="font-size:20px; font-weight:800; margin:0;">Admin-Login</h2>
-      <div style="display:flex; flex-direction:column; gap:6px;">
-        <label style="font-size:13px; font-weight:600; color:#334155;">Benutzername</label>
-        <input type="text" value="{{ loginUser }}" oninput="{{ setLoginUser }}" placeholder="admin" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px;">
-      </div>
-      <div style="display:flex; flex-direction:column; gap:6px;">
-        <label style="font-size:13px; font-weight:600; color:#334155;">Passwort</label>
-        <input type="password" value="{{ loginPass }}" oninput="{{ setLoginPass }}" placeholder="••••••••" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px;">
-      </div>
-      <sc-if value="{{ loginError }}" hint-placeholder-val="{{ false }}">
-        <div style="color:#DC2626; font-size:13px;">Benutzername oder Passwort falsch.</div>
-      </sc-if>
-      <button type="submit" style="background:#007BFF; color:#fff; padding:13px 24px; border-radius:8px; font-weight:600; font-size:15px; border:none; cursor:pointer;" style-hover="background:#0F172A;">Anmelden</button>
-      <a href="#" onclick="{{ closeAdmin }}" style="text-align:center; font-size:13px; color:#64748B;">Zurück zur Website</a>
-    </form>
-  </div>
-</sc-if>
-
-<sc-if value="{{ showAdminDashboard }}" hint-placeholder-val="{{ false }}">
-  <div style="min-height:100vh; display:flex; background:#F8FAFC;">
-    <aside style="width:240px; background:#0F172A; padding:28px 0; display:flex; flex-direction:column; flex-shrink:0;">
-      <div style="padding:0 24px 24px; display:flex; align-items:center;">
-        <img src="./assets/meuser-logo.png" alt="meuser.biz Logo" style="height:32px; width:auto; filter:brightness(0) invert(1);">
-      </div>
-      <a href="#" onclick="{{ setAdminSection.smtp }}" style="color:#fff; background:{{ smtpNavBg }}; border-left:3px solid {{ smtpNavBorder }}; padding:14px 24px; font-size:14px; font-weight:600;">SMTP Relay Server</a>
-      <a href="#" onclick="{{ setAdminSection.postal }}" style="color:#fff; background:{{ postalNavBg }}; border-left:3px solid {{ postalNavBorder }}; padding:14px 24px; font-size:14px; font-weight:600;">Postal API</a>
-      <div style="margin-top:auto; padding:0 24px;">
-        <a href="#" onclick="{{ logout }}" style="color:#94A3BB; font-size:13px;">Abmelden</a>
-      </div>
-    </aside>
-    <main style="flex:1; padding:48px 5%; max-width:720px;">
-      <div style="color:#007BFF; font-weight:700; font-size:13px; letter-spacing:2px; margin-bottom:10px;">EINSTELLUNGEN</div>
-      <sc-if value="{{ showSmtpSection }}" hint-placeholder-val="{{ true }}">
-      <h2 style="font-size:28px; font-weight:800; margin:0 0 8px;">SMTP Relay Server</h2>
-      <p style="font-size:14.5px; color:#64748B; margin:0 0 32px;">Konfiguriere den Mailserver, über den Formular- und Systembenachrichtigungen versendet werden.</p>
-      </sc-if>
-      <sc-if value="{{ showPostalSection }}" hint-placeholder-val="{{ false }}">
-      <h2 style="font-size:28px; font-weight:800; margin:0 0 8px;">Postal API</h2>
-      <p style="font-size:14.5px; color:#64748B; margin:0 0 32px;">Trage die URL deines Postal-Proxys ein (der API-Key liegt sicher serverseitig im Proxy, nicht im Browser).</p>
-      </sc-if>
-      <sc-if value="{{ showSmtpSection }}" hint-placeholder-val="{{ true }}">
-      <form onsubmit="{{ saveSmtp }}" style="background:#fff; border:1px solid #E2E8F0; border-radius:14px; padding:32px; display:flex; flex-direction:column; gap:18px;">
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px;">
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <label style="font-size:13px; font-weight:600; color:#334155;">SMTP-Host</label>
-            <input type="text" value="{{ smtp.host }}" oninput="{{ setSmtpField.host }}" placeholder="smtp.meuser.biz" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px;">
-          </div>
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <label style="font-size:13px; font-weight:600; color:#334155;">Port</label>
-            <input type="text" value="{{ smtp.port }}" oninput="{{ setSmtpField.port }}" placeholder="587" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px;">
-          </div>
-        </div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px;">
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <label style="font-size:13px; font-weight:600; color:#334155;">Benutzername</label>
-            <input type="text" value="{{ smtp.username }}" oninput="{{ setSmtpField.username }}" placeholder="relay@meuser.biz" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px;">
-          </div>
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <label style="font-size:13px; font-weight:600; color:#334155;">Passwort</label>
-            <input type="password" value="{{ smtp.password }}" oninput="{{ setSmtpField.password }}" placeholder="••••••••" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px;">
-          </div>
-        </div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px;">
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <label style="font-size:13px; font-weight:600; color:#334155;">Verschlüsselung</label>
-            <select value="{{ smtp.encryption }}" onchange="{{ setSmtpField.encryption }}" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px; background:#fff;">
-              <option value="none">Keine</option>
-              <option value="starttls">STARTTLS</option>
-              <option value="tls">TLS/SSL</option>
-            </select>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <label style="font-size:13px; font-weight:600; color:#334155;">Absender-Adresse</label>
-            <input type="email" value="{{ smtp.fromEmail }}" oninput="{{ setSmtpField.fromEmail }}" placeholder="info@meuser.biz" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px;">
-          </div>
-        </div>
-        <div style="display:flex; align-items:center; gap:16px; margin-top:8px;">
-          <button type="submit" style="background:#007BFF; color:#fff; padding:13px 26px; border-radius:8px; font-weight:600; font-size:14.5px; border:none; cursor:pointer;" style-hover="background:#0F172A;">Speichern</button>
-          <sc-if value="{{ smtpSaved }}" hint-placeholder-val="{{ false }}">
-            <span style="color:#16A34A; font-size:13.5px; font-weight:600;">Gespeichert.</span>
-          </sc-if>
-        </div>
-      </form>
-      </sc-if>
-      <sc-if value="{{ showPostalSection }}" hint-placeholder-val="{{ false }}">
-      <form onsubmit="{{ savePostal }}" style="background:#fff; border:1px solid #E2E8F0; border-radius:14px; padding:32px; display:flex; flex-direction:column; gap:18px;">
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <label style="font-size:13px; font-weight:600; color:#334155;">Proxy-URL</label>
-          <input type="text" value="{{ postal.url }}" oninput="{{ setPostalField.url }}" placeholder="https://proxy.meuser.biz" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px;">
-        </div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px;">
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <label style="font-size:13px; font-weight:600; color:#334155;">Absender-Adresse</label>
-            <input type="email" value="{{ postal.fromEmail }}" oninput="{{ setPostalField.fromEmail }}" placeholder="info@meuser.biz" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px;">
-          </div>
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <label style="font-size:13px; font-weight:600; color:#334155;">Empfänger-Adresse (Formular)</label>
-            <input type="email" value="{{ postal.toEmail }}" oninput="{{ setPostalField.toEmail }}" placeholder="info@meuser.biz" style="padding:12px 14px; border-radius:8px; border:1px solid #CBD5E1; font-size:14.5px;">
-          </div>
-        </div>
-        <div style="display:flex; align-items:center; gap:16px; margin-top:8px;">
-          <button type="submit" style="background:#007BFF; color:#fff; padding:13px 26px; border-radius:8px; font-weight:600; font-size:14.5px; border:none; cursor:pointer;" style-hover="background:#0F172A;">Speichern</button>
-          <button type="button" onclick="{{ sendTestMail }}" disabled="{{ testMailSending }}" style="background:#fff; color:#0F172A; padding:13px 26px; border-radius:8px; font-weight:600; font-size:14.5px; border:1px solid #CBD5E1; cursor:pointer;" style-hover="border-color:#0F172A;">{{ testMailLabel }}</button>
-          <sc-if value="{{ postalSaved }}" hint-placeholder-val="{{ false }}">
-            <span style="color:#16A34A; font-size:13.5px; font-weight:600;">Gespeichert.</span>
-          </sc-if>
-        </div>
-        <sc-if value="{{ testMailResult }}" hint-placeholder-val="{{ false }}">
-          <p style="font-size:13.5px; color:{{ testMailResultColor }}; margin:0;">{{ testMailResultMsg }}</p>
-        </sc-if>
-        <p style="font-size:12.5px; color:#94A3BB; margin:8px 0 0;">Der API-Key liegt nur serverseitig im Proxy (Umgebungsvariable) — nicht im Browser.</p>
-      </form>
-      </sc-if>
-    </main>
-  </div>
-</sc-if>
-
 </div>
 
 </x-dc>
 <script type="text/x-dc" data-dc-script>
+// Kontaktformular: Adresse des Postal-Proxys, z. B. 'https://proxy.meuser.biz/api/contact'
+// (siehe postal-proxy/README.md). Solange sie leer ist, öffnet das Formular eine
+// vorausgefüllte E-Mail an CONTACT_EMAIL.
+const CONTACT_ENDPOINT = '';
+const CONTACT_EMAIL = 'info@meuser.biz';
+
 const ICONS = {
   bulb: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3 11.2c.4.25.6.7.6 1.15V16h4.8v-.65c0-.45.2-.9.6-1.15A6 6 0 0 0 12 3Z"/></svg>',
   monitor: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="100%" height="100%"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg>',
   printer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="100%" height="100%"><path d="M6 9V3h12v6"/><rect x="4" y="9" width="16" height="8" rx="1.2"/><path d="M8 17v4h8v-4"/></svg>',
-  chart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="100%" height="100%"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>',
-  linkedin: '<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5ZM3.5 9h3v12h-3V9Zm6 0h2.9v1.7h.04c.4-.75 1.4-1.7 2.9-1.7 3.1 0 3.66 2 3.66 4.6V21h-3v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.03 1.38-2.03 2.8V21h-3V9Z"/></svg>',
-  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>',
-  facebook: '<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M14 9h2.5V6H14c-2.2 0-4 1.8-4 4v2H8v3h2v6h3v-6h2.4l.6-3H13v-1.6c0-.8.2-1.4 1-1.4Z"/></svg>',
-  youtube: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><rect x="2.5" y="6" width="19" height="12" rx="3"/><path d="M11 10l4 2-4 2v-4Z" fill="currentColor" stroke="none"/></svg>'
+  chart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="100%" height="100%"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>'
 };
 
 class Component extends DCLogic {
   state = {
     scrolled: false, mobileMenuOpen: false, isMobile: false, formSubmitted: false, activeSection: 'start',
-    adminView: false, loggedIn: false, loginUser: '', loginPass: '', loginError: false,
-    adminSection: 'smtp',
-    smtp: { host: '', port: '587', username: '', password: '', encryption: 'starttls', fromEmail: '' },
-    smtpSaved: false,
-    postal: { url: '', apiKey: '', fromEmail: '', toEmail: '' },
-    postalSaved: false,
-    testMailSending: false, testMailResult: false, testMailResultMsg: '', testMailResultOk: false,
-    formSending: false, formError: false, formErrorMsg: ''
+    formSending: false, formError: false, formErrorMsg: '', formViaMail: false, relaunchPos: 50
   };
 
   componentDidMount2() {}
@@ -546,12 +793,6 @@ class Component extends DCLogic {
     window.addEventListener('scroll', this._onScroll);
     window.addEventListener('resize', this._onResize);
     this._onResize();
-    try {
-      const saved = JSON.parse(localStorage.getItem('meuser_smtp_settings') || 'null');
-      if (saved) this.setState({ smtp: saved });
-      const savedPostal = JSON.parse(localStorage.getItem('meuser_postal_settings') || 'null');
-      if (savedPostal) this.setState({ postal: savedPostal });
-    } catch (e) {}
     this._revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -563,8 +804,10 @@ class Component extends DCLogic {
     }, { threshold: 0.15 });
     setTimeout(() => {
       document.querySelectorAll('[data-reveal]').forEach((el) => this._revealObserver.observe(el));
+      const firstFaq = document.querySelector('#faq details');
+      if (firstFaq) firstFaq.open = true;
     }, 50);
-    this._sectionIds = ['start', 'leistungen', 'ueber-uns', 'referenzen', 'kontakt'];
+    this._sectionIds = ['start', 'leistungen', 'arbeiten', 'ablauf', 'ueber-uns', 'referenzen', 'pakete', 'faq', 'kontakt'];
     this._onSectionScroll = () => {
       const probe = window.scrollY + window.innerHeight * 0.3;
       let current = this._sectionIds[0];
@@ -593,11 +836,11 @@ class Component extends DCLogic {
     const pillStyle = 'display:flex; align-items:center; gap:7px; color:#fff; background:linear-gradient(135deg,#0F172A,#1e293b); font-size:14px; font-weight:600; padding:10px 16px; border-radius:999px; box-shadow:0 4px 12px -2px rgba(15,23,42,0.4); transition:0.3s;';
     const plainStyle = 'display:flex; align-items:center; gap:7px; color:#334155; font-size:14px; font-weight:600; padding:10px 16px; border-radius:999px; transition:0.3s;';
     return {
-      navStart: active === 'start' ? pillStyle : plainStyle,
       navLeistungen: active === 'leistungen' ? pillStyle : plainStyle,
-      navBeispiele: plainStyle,
-      navUeberUns: active === 'ueber-uns' ? pillStyle : plainStyle,
-      navReferenzen: active === 'referenzen' ? pillStyle : plainStyle,
+      navArbeiten: active === 'arbeiten' ? pillStyle : plainStyle,
+      navPakete: active === 'pakete' ? pillStyle : plainStyle,
+      navUeberUns: (active === 'ueber-uns' || active === 'referenzen') ? pillStyle : plainStyle,
+      navFaq: active === 'faq' ? pillStyle : plainStyle,
       navKontakt: active === 'kontakt' ? pillStyle : plainStyle,
       navStyle: `position:sticky; top:0; z-index:50; transition:0.3s ease; overflow:visible; background:rgba(248,250,252,${(scrolled || open) ? 0.95 : 0.85}); backdrop-filter:blur(14px); box-shadow:${scrolled ? '0 8px 24px -12px rgba(15,23,42,0.15)' : 'none'};`,
       logoHeight: isMobile ? 56 : 88,
@@ -608,135 +851,51 @@ class Component extends DCLogic {
       toggleMenu: () => this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen }),
       closeMenu: () => this.setState({ mobileMenuOpen: false }),
       ueberUnsGridCols: isMobile ? '1fr' : 'minmax(0,1fr) minmax(0,1fr)',
+      relaunchPos: this.state.relaunchPos,
+      relaunchClip: 100 - this.state.relaunchPos,
+      setRelaunch: (e) => this.setState({ relaunchPos: Number(e.target.value) }),
+      faqGridCols: isMobile ? '1fr' : 'minmax(0,0.8fr) minmax(0,1.4fr)',
       formSubmitted: this.state.formSubmitted,
       formNotSubmitted: !this.state.formSubmitted,
       formSending: this.state.formSending,
       formError: this.state.formError,
       formErrorMsg: this.state.formErrorMsg,
       submitLabel: this.state.formSending ? 'Wird gesendet…' : 'Nachricht senden',
+      successText: this.state.formViaMail
+        ? 'Ihr E-Mail-Programm wurde mit Ihrer Nachricht geöffnet – bitte senden Sie die E-Mail dort ab. Alternativ erreichen Sie uns direkt unter ' + CONTACT_EMAIL + '.'
+        : 'Ihre Nachricht wurde übermittelt. Wir melden uns in Kürze bei Ihnen.',
       handleSubmit: async (e) => {
         e.preventDefault();
         const fd = new FormData(e.target);
-        const name = fd.get('name'), email = fd.get('email'), subject = fd.get('subject') || 'Kontaktanfrage', message = fd.get('message');
-        const p = this.state.postal;
-        if (!p.url) {
-          this.setState({ formError: true, formErrorMsg: 'Proxy ist noch nicht konfiguriert (siehe Admin-Bereich).' });
+        const name = String(fd.get('name') || '').trim();
+        const email = String(fd.get('email') || '').trim();
+        const subject = String(fd.get('subject') || '').trim() || 'Kontaktanfrage';
+        const message = String(fd.get('message') || '').trim();
+        if (fd.get('website')) { this.setState({ formSubmitted: true }); return; }
+        if (!CONTACT_ENDPOINT) {
+          const body = 'Name: ' + name + '\nE-Mail: ' + email + '\n\n' + message;
+          window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+          this.setState({ formSubmitted: true, formViaMail: true });
           return;
         }
         this.setState({ formSending: true, formError: false });
         try {
-          const res = await fetch(p.url.replace(/\/$/, '') + '/api/contact', {
+          const res = await fetch(CONTACT_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, subject, message, to: p.toEmail, from: p.fromEmail })
+            body: JSON.stringify({ name, email, subject, message, website: '' })
           });
           const json = await res.json().catch(() => ({}));
           if (!res.ok || !json.ok) throw new Error(json.error || ('Status ' + res.status));
           this.setState({ formSubmitted: true, formSending: false });
         } catch (err) {
-          this.setState({ formSending: false, formError: true, formErrorMsg: 'Versand fehlgeschlagen: ' + err.message });
+          this.setState({ formSending: false, formError: true, formErrorMsg: 'Die Nachricht konnte nicht gesendet werden. Bitte schreiben Sie uns direkt an ' + CONTACT_EMAIL + '.' });
         }
       },
-      showSite: !this.state.adminView,
-      showAdminLogin: this.state.adminView && !this.state.loggedIn,
-      showAdminDashboard: this.state.adminView && this.state.loggedIn,
-      openAdmin: (e) => { e.preventDefault(); this.setState({ adminView: true }); },
-      closeAdmin: (e) => { e.preventDefault(); this.setState({ adminView: false, loginError: false }); },
-      logout: (e) => { e.preventDefault(); this.setState({ loggedIn: false, loginUser: '', loginPass: '' }); },
-      loginUser: this.state.loginUser,
-      loginPass: this.state.loginPass,
-      loginError: this.state.loginError,
-      setLoginUser: (e) => this.setState({ loginUser: e.target.value }),
-      setLoginPass: (e) => this.setState({ loginPass: e.target.value }),
-      handleLogin: (e) => {
-        e.preventDefault();
-        if (this.state.loginUser === 'admin' && this.state.loginPass === 'admin') {
-          this.setState({ loggedIn: true, loginError: false });
-        } else {
-          this.setState({ loginError: true });
-        }
-      },
-      smtp: this.state.smtp,
-      smtpSaved: this.state.smtpSaved,
-      setSmtpField: {
-        host: (e) => this.setState({ smtp: { ...this.state.smtp, host: e.target.value }, smtpSaved: false }),
-        port: (e) => this.setState({ smtp: { ...this.state.smtp, port: e.target.value }, smtpSaved: false }),
-        username: (e) => this.setState({ smtp: { ...this.state.smtp, username: e.target.value }, smtpSaved: false }),
-        password: (e) => this.setState({ smtp: { ...this.state.smtp, password: e.target.value }, smtpSaved: false }),
-        encryption: (e) => this.setState({ smtp: { ...this.state.smtp, encryption: e.target.value }, smtpSaved: false }),
-        fromEmail: (e) => this.setState({ smtp: { ...this.state.smtp, fromEmail: e.target.value }, smtpSaved: false })
-      },
-      saveSmtp: (e) => {
-        e.preventDefault();
-        try { localStorage.setItem('meuser_smtp_settings', JSON.stringify(this.state.smtp)); } catch (err) {}
-        this.setState({ smtpSaved: true });
-      },
-      adminSection: this.state.adminSection,
-      showSmtpSection: this.state.adminSection === 'smtp',
-      showPostalSection: this.state.adminSection === 'postal',
-      smtpNavBg: this.state.adminSection === 'smtp' ? 'rgba(0,123,255,0.2)' : 'transparent',
-      smtpNavBorder: this.state.adminSection === 'smtp' ? '#007BFF' : 'transparent',
-      postalNavBg: this.state.adminSection === 'postal' ? 'rgba(0,123,255,0.2)' : 'transparent',
-      postalNavBorder: this.state.adminSection === 'postal' ? '#007BFF' : 'transparent',
-      setAdminSection: {
-        smtp: (e) => { e.preventDefault(); this.setState({ adminSection: 'smtp' }); },
-        postal: (e) => { e.preventDefault(); this.setState({ adminSection: 'postal' }); }
-      },
-      postal: this.state.postal,
-      postalSaved: this.state.postalSaved,
-      setPostalField: {
-        url: (e) => this.setState({ postal: { ...this.state.postal, url: e.target.value }, postalSaved: false }),
-        apiKey: (e) => this.setState({ postal: { ...this.state.postal, apiKey: e.target.value }, postalSaved: false }),
-        fromEmail: (e) => this.setState({ postal: { ...this.state.postal, fromEmail: e.target.value }, postalSaved: false }),
-        toEmail: (e) => this.setState({ postal: { ...this.state.postal, toEmail: e.target.value }, postalSaved: false })
-      },
-      savePostal: (e) => {
-        e.preventDefault();
-        try { localStorage.setItem('meuser_postal_settings', JSON.stringify(this.state.postal)); } catch (err) {}
-        this.setState({ postalSaved: true });
-      },
-      testMailSending: this.state.testMailSending,
-      testMailLabel: this.state.testMailSending ? 'Wird gesendet…' : 'Test-Mail senden',
-      testMailResult: this.state.testMailResult,
-      testMailResultMsg: this.state.testMailResultMsg,
-      testMailResultColor: this.state.testMailResultOk ? '#16A34A' : '#DC2626',
-      sendTestMail: async () => {
-        const p = this.state.postal;
-        if (!p.url) {
-          this.setState({ testMailResult: true, testMailResultOk: false, testMailResultMsg: 'Bitte Proxy-URL ausfüllen.' });
-          return;
-        }
-        this.setState({ testMailSending: true, testMailResult: false });
-        try {
-          const res = await fetch(p.url.replace(/\/$/, '') + '/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              name: 'Test', email: p.fromEmail || 'test@meuser.biz', subject: 'Test-Mail von meuser.biz',
-              message: 'Dies ist eine Test-Mail zur Überprüfung der Proxy-/Postal-Konfiguration.', to: p.toEmail, from: p.fromEmail
-            })
-          });
-          const json = await res.json().catch(() => ({}));
-          if (!res.ok || !json.ok) throw new Error(json.error || ('Status ' + res.status));
-          this.setState({ testMailSending: false, testMailResult: true, testMailResultOk: true, testMailResultMsg: 'Test-Mail erfolgreich gesendet.' });
-        } catch (err) {
-          this.setState({ testMailSending: false, testMailResult: true, testMailResultOk: false, testMailResultMsg: 'Fehler: ' + err.message });
-        }
-      },
+      showSite: true,
       services: [
         { title: 'Homepages', desc: 'Websites jeder Art – vom Onepager bis zum umfangreichen Unternehmensauftritt.', iconHtml: { __html: ICONS.monitor } },
         { title: 'Web-Apps', desc: 'Maßgeschneiderte Anwendungen, die Abläufe digitalisieren.', iconHtml: { __html: ICONS.chart } }
-      ],
-      testimonials: [
-        { quote: 'Von der Beratung bis zum Go-Live hat uns meuser.biz eng begleitet. Zeitplan und Budget wurden exakt eingehalten, die Kommunikation war jederzeit transparent.', result: '+42% mehr Kontaktanfragen', name: 'M. Schulte', role: 'Geschäftsführer', initials: 'MS', company: 'Schulte Handel GmbH' },
-        { quote: 'Unsere alte Website war technisch veraltet und kaum noch zu pflegen. Der neue Auftritt lädt schnell, wirkt hochwertig und lässt sich von uns selbst aktuell halten.', result: 'Ladezeit von 4,8s auf 0,9s reduziert', name: 'J. Fischer', role: 'Inhaber', initials: 'JF', company: 'Fischer Bau' },
-        { quote: 'Unsere Terminvergabe lief früher per Telefon und Zettel. Die neue Web-App hat das komplett ersetzt – unsere Kunden buchen jetzt einfach online.', result: 'Online-Terminbuchung in 6 Wochen live', name: 'A. Krüger', role: 'Marketingleiterin', initials: 'AK', company: 'Krüger Consulting' }
-      ],
-      socials: [
-        { iconHtml: { __html: ICONS.linkedin } },
-        { iconHtml: { __html: ICONS.instagram } },
-        { iconHtml: { __html: ICONS.facebook } },
-        { iconHtml: { __html: ICONS.youtube } }
       ]
     };
   }

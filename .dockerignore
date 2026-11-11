@@ -1,0 +1,12 @@
+# Nur die Website ausliefern – interne Dateien nicht ins Image kopieren
+.git
+.gitignore
+.claude
+.dockerignore
+Dockerfile
+README.md
+github.md
+uploads
+screenshots
+postal-proxy
+beispiele/bausteine/_vorlage.html
